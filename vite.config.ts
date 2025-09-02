@@ -33,83 +33,35 @@ export default defineConfig(({ mode }) => {
       // Optimize bundle size and performance
       chunkSizeWarningLimit: 800,
       target: 'es2020', // Modern browsers for better optimization
+      // Use esbuild but preserve React hooks and function names
+      minify: 'esbuild',
+      // CRITICAL: Preserve React hook names and structure
+      esbuild: {
+        keepNames: true,
+      },
       rollupOptions: {
         output: {
-          // Optimized manual chunks for better caching and loading
-          manualChunks: (id) => {
-            // Core React bundle - highest priority
-            if (
-              ['react', 'react-dom', 'react-router-dom'].some((pkg) =>
-                id.includes(pkg)
-              )
-            ) {
-              return 'react-core';
-            }
-
-            // Remove framer-motion from bundle (not used anymore)
-            // Heavy animation library replaced with CSS animations
-
-            // UI and state management
-            if (
-              ['@reduxjs/toolkit', 'react-redux', 'zustand'].some((pkg) =>
-                id.includes(pkg)
-              )
-            ) {
-              return 'state-management';
-            }
-
-            // Forms and validation
-            if (
-              ['react-hook-form', '@hookform/resolvers', 'yup', 'zod'].some(
-                (pkg) => id.includes(pkg)
-              )
-            ) {
-              return 'forms';
-            }
-
-            // Charts - lazy load for dashboard
-            if (['recharts', 'd3-scale'].some((pkg) => id.includes(pkg))) {
-              return 'charts';
-            }
-
+          // CRITICAL: Simplified chunking to prevent React singleton breaking
+          manualChunks: {
+            // Keep React as single, unified chunk - NEVER split React
+            'react-vendor': ['react', 'react-dom'],
+            // Router separate to allow lazy loading
+            'react-router': ['react-router-dom'],
+            // State management
+            'state': ['@reduxjs/toolkit', 'react-redux', 'zustand'],
             // Authentication
-            if (id.includes('@supabase/')) {
-              return 'auth';
-            }
-
-            // Icons - separate chunk as they're used everywhere
-            if (id.includes('lucide-react')) {
-              return 'icons';
-            }
-
-            // Utilities
-            if (
-              [
-                'date-fns',
-                'clsx',
-                'tailwind-merge',
-                'class-variance-authority',
-              ].some((pkg) => id.includes(pkg))
-            ) {
-              return 'utils';
-            }
-
-            // Large individual packages
-            if (id.includes('react-beautiful-dnd')) return 'dnd';
-            if (id.includes('react-simple-maps')) return 'maps';
-            if (id.includes('posthog-js')) return 'analytics';
-
-            // Node modules as vendor chunk
-            if (id.includes('node_modules')) {
-              return 'vendor';
-            }
+            'auth': ['@supabase/supabase-js', '@supabase/auth-helpers-react'],
+            // Charts
+            'charts': ['recharts', 'd3-scale'],
+            // Query and async
+            'query': ['@tanstack/react-query', '@tanstack/react-query-devtools'],
           },
         },
       },
-      // Disable source maps in production for performance
+      // Enable source maps for debugging
       sourcemap: false,
-      // Use esbuild for fastest minification
-      minify: 'esbuild',
+      // CSS optimization
+      cssMinify: true,
       // CSS optimization
       cssMinify: true,
     },

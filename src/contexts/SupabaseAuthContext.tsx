@@ -1,3 +1,5 @@
+console.log('%c[DIAGNOSTIC] SupabaseAuthContext.tsx file execution started.', 'color: orange;');
+
 /**
  * Supabase Authentication Context for War Room Platform
  * Provides auth state and methods using Supabase Auth

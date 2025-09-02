@@ -1,0 +1,10 @@
+{
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "env": {
+    "VITE_SUPABASE_URL": "https://ksnrafwskxaxhaczvwjs.supabase.co",
+    "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzbmJfcmF3c2t4YXhoYWN6dndqcyIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzI0NzU1MTU4LCJleHAiOjIwNDAzMzExNTh9.YQJz1VvNSE0yJo4K3ykXxv1x2kJ4fQCktB7nz3Xf3rE",
+    "VITE_ENCORE_API_URL": "https://war-room-3-backend-d2msjrk82vjjq794glog.lp.dev",
+    "VITE_USE_MOCK_DATA": "false"
+  }
+}

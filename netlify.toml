@@ -29,7 +29,19 @@
     # Don't cache the main HTML file
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# Redirects handled by public/_redirects file for better control
+# API Proxy - Forward all /api/* requests to Encore backend
+[[redirects]]
+  from = "/api/*"
+  to = "https://war-room-3-backend-d2msjrk82vjjq794glog.lp.dev/api/:splat"
+  status = 200
+  force = true
+  
+# Additional API endpoints if needed
+[[redirects]]
+  from = "/auth/*"
+  to = "https://war-room-3-backend-d2msjrk82vjjq794glog.lp.dev/auth/:splat"
+  status = 200
+  force = true
 
 # Environment-specific settings
 [context.production]

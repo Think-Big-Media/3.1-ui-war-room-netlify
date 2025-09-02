@@ -2,11 +2,13 @@
  * Application constants and configuration
  */
 
-// API Configuration
-// Use relative URL in production to avoid cross-origin issues on Render
+// API Configuration - Netlify Proxy Architecture
+// CRITICAL: Use relative URLs in production to leverage Netlify proxy
+// In development, use direct Encore URL for testing
 const inferredHost = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-export const API_BASE_URL =
-  import.meta.env.VITE_API_URL ?? (inferredHost === 'localhost' ? 'http://localhost:10000' : '');
+export const API_BASE_URL = inferredHost === 'localhost' 
+  ? (import.meta.env.VITE_ENCORE_API_URL ?? 'http://localhost:10000')
+  : ''; // Empty string = relative URLs, Netlify proxies to Encore backend
 export const API_VERSION = '/api/v1';
 
 // WebSocket Configuration

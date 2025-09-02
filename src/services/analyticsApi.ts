@@ -2,7 +2,9 @@
  * RTK Query API slice for analytics endpoints.
  * Handles caching, real-time updates, and background refetching.
  */
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
+import { baseQueryWithReauth } from './apiClient';
+import { transformApiResponse } from '../utils/caseTransform';
 import type {
   AnalyticsDashboard,
   MetricCard,
@@ -20,17 +22,7 @@ const tagTypes = ['Analytics', 'Metrics', 'Charts', 'Export'] as const;
 
 export const analyticsApi = createApi({
   reducerPath: 'analyticsApi',
-  baseQuery: fetchBaseQuery({
-    baseUrl: '/api/v1/analytics',
-    prepareHeaders: (headers) => {
-      // Get token from localStorage or Redux store
-      const token = localStorage.getItem('access_token');
-      if (token) {
-        headers.set('authorization', `Bearer ${token}`);
-      }
-      return headers;
-    },
-  }),
+  baseQuery: baseQueryWithReauth,
   tagTypes,
   endpoints: (builder) => ({
     // Get full dashboard data
@@ -43,7 +35,7 @@ export const analyticsApi = createApi({
       }
     >({
       query: ({ dateRange, startDate, endDate }) => ({
-        url: '/summary', // Backend provides /summary, not /dashboard
+        url: '/api/v1/analytics/summary', // Full path with prefix
         params: {
           date_range: dateRange,
           ...(startDate && { start_date: startDate }),
@@ -58,7 +50,7 @@ export const analyticsApi = createApi({
     // Get metric cards
     getMetricCards: builder.query<MetricCard[], { dateRange: DateRangeEnum }>({
       query: ({ dateRange }) => ({
-        url: '/sentiment', // Backend provides /sentiment for metrics
+        url: '/api/v1/analytics/sentiment', // Full path
         params: { date_range: dateRange },
       }),
       providesTags: ['Metrics'],
@@ -67,7 +59,7 @@ export const analyticsApi = createApi({
     // Get volunteer chart data
     getVolunteerChart: builder.query<VolunteerChart, { dateRange: DateRangeEnum }>({
       query: ({ dateRange }) => ({
-        url: '/charts/volunteers',
+        url: '/api/v1/analytics/charts/volunteers',
         params: { date_range: dateRange },
       }),
       providesTags: ['Charts'],
@@ -76,7 +68,7 @@ export const analyticsApi = createApi({
     // Get event chart data
     getEventChart: builder.query<EventChart, { dateRange: DateRangeEnum }>({
       query: ({ dateRange }) => ({
-        url: '/charts/events',
+        url: '/api/v1/analytics/charts/events',
         params: { date_range: dateRange },
       }),
       providesTags: ['Charts'],
@@ -85,7 +77,7 @@ export const analyticsApi = createApi({
     // Get donation chart data
     getDonationChart: builder.query<DonationChart, { dateRange: DateRangeEnum }>({
       query: ({ dateRange }) => ({
-        url: '/charts/donations',
+        url: '/api/v1/analytics/charts/donations',
         params: { date_range: dateRange },
       }),
       providesTags: ['Charts'],
@@ -94,7 +86,7 @@ export const analyticsApi = createApi({
     // Get geographic data
     getGeographicData: builder.query<GeographicData, { dateRange: DateRangeEnum }>({
       query: ({ dateRange }) => ({
-        url: '/geographic',
+        url: '/api/v1/analytics/geographic',
         params: { date_range: dateRange },
       }),
       providesTags: ['Analytics'],
@@ -103,7 +95,7 @@ export const analyticsApi = createApi({
     // Export analytics data
     exportAnalytics: builder.mutation<ExportJobResponse, ExportJobRequest>({
       query: (exportRequest) => ({
-        url: '/export',
+        url: '/api/v1/analytics/export',
         method: 'POST',
         body: exportRequest,
       }),
@@ -112,7 +104,7 @@ export const analyticsApi = createApi({
 
     // Get export job status
     getExportStatus: builder.query<ExportJobResponse, string>({
-      query: (jobId) => `/export/${jobId}`,
+      query: (jobId) => `/api/v1/analytics/export/${jobId}`,
       providesTags: (result, error, jobId) => [{ type: 'Export', id: jobId }],
       // Use keepUnusedDataFor for cache control
       keepUnusedDataFor: 60, // 1 minute

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal React Test</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module">
+        console.log('[TEST] Starting minimal React test...');
+        
+        // Test if React has useSyncExternalStore
+        try {
+            import('react').then(React => {
+                console.log('[TEST] React imported successfully');
+                console.log('[TEST] React version:', React.version);
+                console.log('[TEST] useSyncExternalStore available:', typeof React.useSyncExternalStore);
+                
+                if (typeof React.useSyncExternalStore === 'undefined') {
+                    console.error('[TEST] CRITICAL: useSyncExternalStore is missing from React!');
+                }
+                
+                // Test use-sync-external-store shim
+                import('use-sync-external-store/shim').then(shim => {
+                    console.log('[TEST] use-sync-external-store shim loaded');
+                    console.log('[TEST] useSyncExternalStore after shim:', typeof React.useSyncExternalStore);
+                }).catch(error => {
+                    console.error('[TEST] Failed to load shim:', error);
+                });
+                
+            }).catch(error => {
+                console.error('[TEST] Failed to import React:', error);
+            });
+        } catch (error) {
+            console.error('[TEST] Failed to test React:', error);
+        }
+    </script>
+</body>
+</html>

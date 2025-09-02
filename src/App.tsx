@@ -3,7 +3,7 @@
  * Builder.io structure + V2Dashboard + Theme System
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // Core Pages - Builder Export
@@ -41,10 +41,48 @@ import { BackgroundThemeProvider } from './contexts/BackgroundThemeContext';
 import './warroom.css';
 
 function App() {
+  console.log('%c[DIAGNOSTIC] 5. App.tsx component function is executing.', 'color: yellow;');
+  
   // Apply saved theme on app load
   React.useEffect(() => {
     const savedTheme = localStorage.getItem('war-room-background-theme') || 'tactical-camo';
     document.body.classList.add(`war-room-${savedTheme}`);
+  }, []);
+
+  // CRITICAL: Health check on load to prevent zombie frontend
+  React.useEffect(() => {
+    const checkBackendHealth = async () => {
+      // Browser-compatible timeout using AbortController
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
+      
+      try {
+        const response = await fetch('/api/v1/health', {
+          method: 'GET',
+          headers: { 'Accept': 'application/json' },
+          signal: controller.signal
+        });
+        
+        if (!response.ok || response.headers.get('content-type')?.includes('text/html')) {
+          console.error('⚠️ Backend health check failed - serving HTML instead of JSON');
+          // TODO: Show maintenance page or error boundary
+        } else {
+          const data = await response.json();
+          console.log('✅ Backend health check passed:', data);
+        }
+      } catch (error) {
+        console.error('❌ Backend unreachable:', error);
+        // TODO: Show "Unable to Connect" page
+      } finally {
+        clearTimeout(timeoutId);
+      }
+    };
+    
+    checkBackendHealth();
+  }, []);
+  
+  useEffect(() => {
+    console.log('%c[DIAGNOSTIC] 6. App.tsx component has successfully mounted (useEffect).', 'color: green; font-weight: bold;');
   }, []);
   return (
     <>

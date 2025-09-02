@@ -4,6 +4,7 @@
  */
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { API_BASE_URL } from '../config/constants';
 
 export interface PlatformMetrics {
   totalOrganizations: number;
@@ -20,7 +21,7 @@ export interface PlatformMetrics {
 export const platformAdminApi = createApi({
   reducerPath: 'platformAdminApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: '/api/platform-admin',
+    baseUrl: `${API_BASE_URL}/api/platform-admin`,
     prepareHeaders: (headers) => {
       const token = localStorage.getItem('access_token');
       if (token) {
