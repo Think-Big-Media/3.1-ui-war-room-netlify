@@ -1,0 +1,61 @@
+.vercel
+
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build outputs
+dist/
+*/dist/
+build/
+*/build/
+
+# Test coverage
+coverage/
+*/coverage/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files - ALL PRODUCTION SECRETS MUST BE EXCLUDED
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.production
+.env.staging
+.env.mcp
+.env.*
+
+# Cache directories
+.next/
+.nuxt/
+.cache/
+.vercel/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large backup files
+backups/*.zip
+backups/*.tar.gz
+backups/*.sql
+warroom-backups/
+**/warroom-backups/
+**/*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Local Netlify folder
+.netlify

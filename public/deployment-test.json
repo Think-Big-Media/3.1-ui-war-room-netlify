@@ -1,0 +1,10 @@
+{
+  "version": "2.0-integrations",
+  "deployed": "2025-08-08T17:30:00Z",
+  "features": {
+    "meta_integration": true,
+    "google_ads_integration": true,
+    "admin_system": true
+  },
+  "message": "If you can see this file, the deployment is working"
+}

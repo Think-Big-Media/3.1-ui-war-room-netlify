@@ -1,0 +1,67 @@
+import { type ContentCard, type TimeSlot } from '../types/calendar';
+
+export const timeSlots: TimeSlot[] = [
+  { hour: 6, label: '6 AM' },
+  { hour: 7, label: '7 AM' },
+  { hour: 8, label: '8 AM' },
+  { hour: 9, label: '9 AM' },
+  { hour: 10, label: '10 AM' },
+  { hour: 11, label: '11 AM' },
+  { hour: 12, label: '12 PM' },
+  { hour: 13, label: '1 PM' },
+  { hour: 14, label: '2 PM' },
+  { hour: 15, label: '3 PM' },
+  { hour: 16, label: '4 PM' },
+  { hour: 17, label: '5 PM' },
+  { hour: 18, label: '6 PM' },
+  { hour: 19, label: '7 PM' },
+  { hour: 20, label: '8 PM' },
+  { hour: 21, label: '9 PM' },
+  { hour: 22, label: '10 PM' },
+  { hour: 23, label: '11 PM' },
+];
+
+export const sampleContent: ContentCard[] = [
+  {
+    id: '1',
+    platform: 'instagram',
+    content: 'AI Productivity Tips #1',
+    time: '9:00',
+    status: 'published',
+    type: 'post',
+    engagement: 85,
+  },
+  {
+    id: '2',
+    platform: 'twitter',
+    content: 'Thread: 5 AI Tools for Content',
+    time: '14:30',
+    status: 'scheduled',
+    type: 'post',
+  },
+  {
+    id: '3',
+    platform: 'linkedin',
+    content: 'Professional AI Insights',
+    time: '16:00',
+    status: 'draft',
+    type: 'post',
+  },
+  {
+    id: '4',
+    platform: 'youtube',
+    content: 'AI Tutorial Video',
+    time: '18:00',
+    status: 'scheduled',
+    type: 'video',
+  },
+  {
+    id: '5',
+    platform: 'facebook',
+    content: 'Community Update',
+    time: '20:00',
+    status: 'published',
+    type: 'post',
+    engagement: 92,
+  },
+];

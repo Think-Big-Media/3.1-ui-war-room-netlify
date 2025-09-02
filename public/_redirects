@@ -1,0 +1,5 @@
+# API proxy to Encore backend (must come first)
+/api/*  https://war-room-3-backend-d2msjrk82vjjq794glog.lp.dev/api/:splat  200
+
+# SPA redirect - serve index.html for all routes (catch-all, must be last)
+/*    /index.html   200
