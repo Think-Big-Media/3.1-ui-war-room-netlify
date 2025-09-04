@@ -62,8 +62,6 @@ export default defineConfig(({ mode }) => {
       sourcemap: false,
       // CSS optimization
       cssMinify: true,
-      // CSS optimization
-      cssMinify: true,
     },
     server: {
       port: env.VITE_PORT ? parseInt(env.VITE_PORT) : 5173,
