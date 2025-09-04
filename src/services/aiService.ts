@@ -139,11 +139,10 @@ Could you clarify what specific campaign aspect you'd like me to analyze?`
     const dashboardContext = await pineconeService.getDashboardContext(message);
     console.log('📊 [AI Service] Dashboard context length:', dashboardContext.length);
     
-    // Determine API endpoint based on key type
-    const isOpenRouter = this.apiKey?.startsWith('sk-or-v1');
-    const apiUrl = isOpenRouter 
-      ? 'https://openrouter.ai/api/v1/chat/completions'
-      : 'https://api.openai.com/v1/chat/completions';
+    // FORCE OpenRouter for browser compatibility (OpenAI blocks browser requests)
+    // OpenAI keys don't work from browsers due to CORS/security restrictions
+    const isOpenRouter = true; // Force OpenRouter for all browser requests
+    const apiUrl = 'https://openrouter.ai/api/v1/chat/completions';
     
     console.log('🌐 [AI Service] Using API:', isOpenRouter ? 'OpenRouter' : 'OpenAI', 'at', apiUrl);
     
@@ -152,10 +151,8 @@ Could you clarify what specific campaign aspect you'd like me to analyze?`
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.apiKey}`,
-        ...(isOpenRouter && {
-          'HTTP-Referer': 'http://localhost:5175',
-          'X-Title': 'War Room Campaign Platform'
-        })
+        'HTTP-Referer': 'https://leafy-haupia-bf303b.netlify.app',
+        'X-Title': 'War Room Campaign Platform'
       },
       body: JSON.stringify({
         model: isOpenRouter ? 'openai/gpt-4o' : 'gpt-4o',
