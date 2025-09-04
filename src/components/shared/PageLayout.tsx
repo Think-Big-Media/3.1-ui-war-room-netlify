@@ -2,7 +2,7 @@ import { type ReactNode } from 'react';
 import type React from 'react';
 import { useLocation } from 'react-router-dom';
 import TopNavigation from '../generated/SidebarNavigation';
-import FloatingChatBar from '../FloatingChatBar';
+import EnhancedFloatingChatBar from '../chat/EnhancedFloatingChatBar';
 import GlobalFooter from './GlobalFooter';
 import { createLogger } from '../../utils/logger';
 import { getRouteAccent } from '../../tokens/colors';
@@ -62,7 +62,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, pageTitle, placeholde
 
         {/* Fixed Bottom Elements */}
         <div className="fixed bottom-16 left-0 right-0 z-50 px-4 lg:px-6">
-          <FloatingChatBar onSendMessage={handleSendMessage} placeholder={placeholder} />
+          <EnhancedFloatingChatBar onSendMessage={handleSendMessage} placeholder={placeholder} />
         </div>
       </div>
     </div>

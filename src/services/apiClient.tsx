@@ -58,7 +58,7 @@ export const tokenManager = new TokenManager();
  * Base query with automatic token attachment
  */
 const baseQuery = fetchBaseQuery({
-  baseUrl: import.meta.env.VITE_API_URL || '',
+  baseUrl: import.meta.env.VITE_ENCORE_API_URL || '',
   prepareHeaders: (headers) => {
     const token = tokenManager.getAccessToken();
     if (token) {

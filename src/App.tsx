@@ -32,6 +32,7 @@ import NotFound from './pages/NotFound';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import TickerTape from './components/TickerTape';
 import { NotificationProvider } from './components/shared/NotificationSystem';
+import FloatingChatBar from './components/FloatingChatBar';
 
 // Context Providers
 import { SupabaseAuthProvider } from './contexts/SupabaseAuthContext';
@@ -52,12 +53,18 @@ function App() {
   // CRITICAL: Health check on load to prevent zombie frontend
   React.useEffect(() => {
     const checkBackendHealth = async () => {
+      const backendUrl = import.meta.env.VITE_ENCORE_API_URL;
+      if (!backendUrl) {
+        console.warn('⚠️ No backend URL configured - skipping health check');
+        return;
+      }
+      
       // Browser-compatible timeout using AbortController
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000);
       
       try {
-        const response = await fetch('/api/v1/health', {
+        const response = await fetch(`${backendUrl}/api/v1/health`, {
           method: 'GET',
           headers: { 'Accept': 'application/json' },
           signal: controller.signal
