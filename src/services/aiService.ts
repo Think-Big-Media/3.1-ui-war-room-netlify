@@ -22,7 +22,13 @@ class AIService {
    * Check if AI service is properly configured
    */
   isConfigured(): boolean {
-    return !!this.apiKey && this.apiKey.startsWith('sk-');
+    const isConfigured = !!this.apiKey && (this.apiKey.startsWith('sk-') || this.apiKey.startsWith('sk-or-'));
+    console.log('🔑 [AI Service] Configuration check:', {
+      hasApiKey: !!this.apiKey,
+      apiKeyPreview: this.apiKey ? `${this.apiKey.substring(0, 8)}...` : 'none',
+      isConfigured
+    });
+    return isConfigured;
   }
 
   /**
@@ -42,14 +48,15 @@ class AIService {
     
     // Try real OpenAI first if configured, fallback to demo mode
     if (this.isConfigured()) {
+      console.log('✅ [AI Service] OpenAI is configured, making real API call...');
       try {
         return await this.getOpenAIResponse(message, context);
       } catch (error) {
-        console.warn('OpenAI API failed, falling back to demo mode:', error);
+        console.warn('❌ [AI Service] OpenAI API failed, falling back to demo mode:', error);
         return this.getDemoResponse(message);
       }
     } else {
-      console.log('No OpenAI API key configured, using demo mode');
+      console.log('❌ [AI Service] No OpenAI API key configured, using demo mode');
       return this.getDemoResponse(message);
     }
   }
@@ -120,17 +127,32 @@ Could you clarify what specific campaign aspect you'd like me to analyze?`
    * Get real response from OpenAI API
    */
   private async getOpenAIResponse(message: string, context?: any): Promise<AIResponse> {
+    console.log('🚀 [AI Service] Making OpenAI API call for:', message);
+    
     // Get real dashboard context from Pinecone (with fallback to dashboard state)
     const dashboardContext = await pineconeService.getDashboardContext(message);
+    console.log('📊 [AI Service] Dashboard context length:', dashboardContext.length);
     
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    // Determine API endpoint based on key type
+    const isOpenRouter = this.apiKey?.startsWith('sk-or-v1');
+    const apiUrl = isOpenRouter 
+      ? 'https://openrouter.ai/api/v1/chat/completions'
+      : 'https://api.openai.com/v1/chat/completions';
+    
+    console.log('🌐 [AI Service] Using API:', isOpenRouter ? 'OpenRouter' : 'OpenAI', 'at', apiUrl);
+    
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.apiKey}`,
+        ...(isOpenRouter && {
+          'HTTP-Referer': 'http://localhost:5175',
+          'X-Title': 'War Room Campaign Platform'
+        })
       },
       body: JSON.stringify({
-        model: 'gpt-4o',
+        model: isOpenRouter ? 'openai/gpt-4o' : 'gpt-4o',
         messages: [
           {
             role: 'system',
