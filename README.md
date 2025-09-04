@@ -2,6 +2,13 @@
 
 Political campaign management platform built with React, TypeScript, and Vite.
 
+## 🌐 PRODUCTION DEPLOYMENT
+
+**✅ PRIMARY SITE**: https://leafy-haupia-bf303b.netlify.app  
+**❌ DEPRECATED**: ~~https://war-room-3-1-ui.netlify.app~~ (DO NOT USE)
+
+> ⚠️ **IMPORTANT**: Always use the primary site for testing, demos, and production access.
+
 ## Quick Start
 
 ```bash
