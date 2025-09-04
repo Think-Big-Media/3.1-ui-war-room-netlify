@@ -1,0 +1,124 @@
+# Linear Configuration for War Room
+
+project: War Room
+team: Engineering
+
+defaults:
+  priority: 3  # Medium
+  estimate: 3  # 3 points
+  state: Backlog
+  
+issue_templates:
+  bug:
+    title: "[Bug] {description}"
+    labels: ["bug"]
+    priority: 2  # High
+    template: |
+      ## Description
+      {description}
+      
+      ## Steps to Reproduce
+      1. 
+      
+      ## Expected Behavior
+      
+      ## Actual Behavior
+      
+      ## Environment
+      - Browser:
+      - OS:
+    
+  feature:
+    title: "[Feature] {description}"
+    labels: ["feature"]
+    priority: 3  # Medium
+    template: |
+      ## Description
+      {description}
+      
+      ## User Story
+      As a [user type]
+      I want [feature]
+      So that [benefit]
+      
+      ## Acceptance Criteria
+      - [ ] 
+      
+  security:
+    title: "[Security] {description}"
+    labels: ["security", "critical"]
+    priority: 1  # Urgent
+    template: |
+      ## Security Issue
+      {description}
+      
+      ## Impact
+      
+      ## Remediation
+      
+  performance:
+    title: "[Performance] {description}"
+    labels: ["performance"]
+    priority: 2  # High
+    
+  deployment:
+    title: "[Deploy] {description}"
+    labels: ["deployment"]
+    priority: 2  # High
+
+# Automatic synchronization settings
+auto_sync:
+  enabled: true
+  frequency: "on_change"
+  
+# GitHub integration
+github_sync:
+  enabled: true
+  auto_create_from_pr: true
+  auto_close_on_merge: true
+  branch_format: "{issue_id}-{issue_title_slug}"
+  
+# Status mapping
+status_mapping:
+  github_to_linear:
+    opened: "Todo"
+    in_progress: "In Progress"
+    review: "In Review"
+    merged: "Done"
+    closed: "Cancelled"
+    
+  linear_to_github:
+    "Backlog": "draft"
+    "Todo": "ready"
+    "In Progress": "in_progress"
+    "In Review": "review"
+    "Done": "merged"
+    
+# Automation rules
+automations:
+  - trigger: "pr_opened"
+    conditions:
+      - has_linear_id: true
+    actions:
+      - update_status: "In Progress"
+      - add_comment: "PR opened: {pr_url}"
+      
+  - trigger: "pr_merged"
+    conditions:
+      - has_linear_id: true
+    actions:
+      - update_status: "Done"
+      - add_comment: "PR merged: {pr_url}"
+      
+  - trigger: "comment_added"
+    conditions:
+      - contains: "@linear"
+    actions:
+      - create_issue_from_comment
+      
+# Cycle (Sprint) settings
+cycles:
+  enabled: true
+  duration: 2  # weeks
+  start_day: "monday"
+  auto_archive_completed: true

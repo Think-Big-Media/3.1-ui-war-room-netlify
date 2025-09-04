@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-07-22T07:09:19Z",
+  "services": {
+    "github": {
+      "status": "configured",
+      "url": "https://github.com/Think-Big-Media/1.0-war-room"
+    },
+    "render": {
+      "status": "live",
+      "url": "https://war-room-oa9t.onrender.com",
+      "health_check": "200"
+    },
+    "coderabbit": {
+      "status": "configured",
+      "config": ".github/.coderabbit.yaml"
+    },
+    "testsprite": {
+      "status": "configured",
+      "config": ".testsprite.yml",
+      "workflow": ".github/workflows/testsprite.yml"
+    },
+    "sourcegraph": {
+      "status": "configured",
+      "note": "Requires Claude Desktop restart"
+    },
+    "linear": {
+      "status": "configured",
+      "note": "Requires Claude Desktop restart"
+    }
+  }
+}

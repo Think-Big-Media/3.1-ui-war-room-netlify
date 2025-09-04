@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-07-22T07:12:13Z",
+  "todos": 2047,
+  "fixmes": 190,
+  "recent_commits": [
+    "be73647f Clean up repository: Remove unnecessary MDE documentation files",
+    "8cb54c19 Create simplified separate MDEs for Sourcegraph and Linear setup",
+    "cc222e24 Add comprehensive MDE for Sourcegraph AMP and Linear setup",
+    "fa6dfb8f Configure Linear MCP integration for automatic task management",
+    "4ac4daec Add MDE browser automation instructions for TestSprite setup"
+  ],
+  "pending_files": [
+    "D 1.0-war-room-front-end.zip",
+    "M 1.0-war-room/context-engineering-intro",
+    "M 1.0-war-room/sourcegraph-react-prop-mcp",
+    "D "WR Back-up/1.0-war-room 10.07.2025.zip"",
+    "D "WR Back-up/1.0-war-room-front-end"",
+    "M mcp-server-typescript",
+    "M notion-mcp-server",
+    "?? 1.0-war-room/.github/workflows/continuous-integration.yml",
+    "?? 1.0-war-room/logs/",
+    "?? 1.0-war-room/scripts/monitor-integrations.sh",
+    "?? 1.0-war-room/scripts/sync-linear-tasks.sh",
+    "?? 1.0-war-room/scripts/war-room-automation.sh",
+    "?? "21.07 warroom_langgraph_plan.md"",
+    "?? render-frontend.yaml",
+    "?? warroom-backups/"
+  ]
+}

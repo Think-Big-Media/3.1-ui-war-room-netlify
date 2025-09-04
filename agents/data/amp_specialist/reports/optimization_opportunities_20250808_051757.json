@@ -1,0 +1,1262 @@
+{
+  "timestamp": "2025-08-08T03:17:57.163577+00:00",
+  "total_opportunities": 157,
+  "opportunities": [
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/FloatingChatBar.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/TickerTape.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/generated/CommandCenter.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/generated/SidebarNavigation.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/generated/FloatingChatBar.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/generated/SettingsPage.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/generated/IntelligenceHub.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/generated/InformationCenter.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/generated/TickerTape.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/test/SupabaseMigrationTest.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/auth/ForgotPasswordForm.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/auth/LoginForm.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/auth/RegisterForm.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/auth/ResetPasswordForm.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/auth/ProtectedRoute.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/auth/SupabaseForgotPasswordForm.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/auth/EmailVerificationPage.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/auth/SupabaseEmailVerificationPage.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/auth/SupabaseLoginForm.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/auth/SupabaseResetPasswordForm.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/auth/SupabaseRegisterForm.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/layout/MainLayout.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/dashboard/AlertCenter.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/dashboard/SentimentGauge.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/dashboard/MetricsDisplay.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/dashboard/MetricCard.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/dashboard/CampaignHealth.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/dashboard/AnalyticsOverview.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/dashboard/ActivityFeed.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/SEO/StructuredData.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/analytics/DateRangeFilter.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/analytics/DashboardChart.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/analytics/MetricCard.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/analytics/DashboardLayout.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/analytics/ActivityFeed.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "lazy_loading",
+      "file_path": "src/components/debug/WebSocketTester.tsx",
+      "description": "Large component could benefit from lazy loading",
+      "priority_score": 9,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement React.lazy for code splitting"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/FloatingChatBar.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/TickerTape.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/CommandCenter.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/CampaignControl.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/SidebarNavigation.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/AlertCenter.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/FloatingChatBar.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/SettingsPage.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/IntelligenceHub.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/InformationCenter.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/TickerTape.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/ContentEnginePage.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/QuickActions.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/generated/RealTimeMonitoring.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/test/SupabaseMigrationTest.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/auth/RegisterForm.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/auth/ResetPasswordForm.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/auth/ProtectedRoute.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/auth/LoginBypass.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/auth/SupabaseResetPasswordForm.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/auth/SupabaseRegisterForm.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/auth/SupabaseDebug.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/layout/MainLayout.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/shared/CustomDropdown.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/dashboard/AlertCenter.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/dashboard/MetricCard.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/dashboard/ActivityFeed.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/content-calendar/DayView.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/content-calendar/MonthView.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/content-calendar/CalendarControls.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/content-calendar/CalendarStats.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/content-calendar/WeekView.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/content-calendar/utils.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/content-engine/ContentFormatGrid.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/content-engine/GHLPublisher.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/content-engine/ScheduledPosts.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/campaign-control/KanbanBoard.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/campaign-control/ProjectCard.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/campaign-control/CampaignTabs.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/campaign-control/AssetCard.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/campaign-control/AssetGrid.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/campaign-control/utils.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/campaign-control/ActivityFeed.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/monitoring/TrendingTopics.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/monitoring/InfluencerTracker.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/monitoring/MentionsStream.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/monitoring/PlatformPerformance.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/SEO/StructuredData.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/SEO/Head.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/alert-center/AssignedAlertsTracker.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/alert-center/AlertSummary.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/alert-center/AlertCard.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/alert-center/CollaborationModal.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/alert-center/InformationStreamsTab.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/analytics/DateRangeFilter.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/analytics/DashboardChart.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/analytics/GeographicMap.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/analytics/VolunteerGrowthChart.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/analytics/MetricCard.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/analytics/DashboardLayout.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/analytics/ActivityFeed.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/analytics/DonationChart.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/analytics/EventAttendanceChart.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "use_memo",
+      "file_path": "src/components/debug/WebSocketTester.tsx",
+      "description": "Expensive calculations could be memoized",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Use useMemo for expensive calculations"
+    },
+    {
+      "type": "add_caching",
+      "file_path": "src/services/googleAdsService.ts",
+      "description": "API calls could benefit from caching",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement response caching for API calls"
+    },
+    {
+      "type": "add_caching",
+      "file_path": "src/services/adInsightsApi.ts",
+      "description": "API calls could benefit from caching",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement response caching for API calls"
+    },
+    {
+      "type": "add_caching",
+      "file_path": "src/services/tickerService.ts",
+      "description": "API calls could benefit from caching",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement response caching for API calls"
+    },
+    {
+      "type": "add_caching",
+      "file_path": "src/services/activityApi.ts",
+      "description": "API calls could benefit from caching",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement response caching for API calls"
+    },
+    {
+      "type": "add_caching",
+      "file_path": "src/services/ghlService.ts",
+      "description": "API calls could benefit from caching",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement response caching for API calls"
+    },
+    {
+      "type": "add_caching",
+      "file_path": "src/services/monitoring-service.js",
+      "description": "API calls could benefit from caching",
+      "priority_score": 8,
+      "estimated_impact": "High",
+      "refactoring_suggestion": "Implement response caching for API calls"
+    },
+    {
+      "type": "react_memo",
+      "file_path": "src/components/ErrorBoundary.tsx",
+      "description": "Component could benefit from React.memo",
+      "priority_score": 7,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Wrap component with React.memo to prevent unnecessary re-renders"
+    },
+    {
+      "type": "react_memo",
+      "file_path": "src/components/generated/ErrorBoundary.tsx",
+      "description": "Component could benefit from React.memo",
+      "priority_score": 7,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Wrap component with React.memo to prevent unnecessary re-renders"
+    },
+    {
+      "type": "react_memo",
+      "file_path": "src/components/ui/card.tsx",
+      "description": "Component could benefit from React.memo",
+      "priority_score": 7,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Wrap component with React.memo to prevent unnecessary re-renders"
+    },
+    {
+      "type": "react_memo",
+      "file_path": "src/components/ui/alert.tsx",
+      "description": "Component could benefit from React.memo",
+      "priority_score": 7,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Wrap component with React.memo to prevent unnecessary re-renders"
+    },
+    {
+      "type": "react_memo",
+      "file_path": "src/components/ui/badge.tsx",
+      "description": "Component could benefit from React.memo",
+      "priority_score": 7,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Wrap component with React.memo to prevent unnecessary re-renders"
+    },
+    {
+      "type": "react_memo",
+      "file_path": "src/components/ui/button.tsx",
+      "description": "Component could benefit from React.memo",
+      "priority_score": 7,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Wrap component with React.memo to prevent unnecessary re-renders"
+    },
+    {
+      "type": "react_memo",
+      "file_path": "src/components/ui/input.tsx",
+      "description": "Component could benefit from React.memo",
+      "priority_score": 7,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Wrap component with React.memo to prevent unnecessary re-renders"
+    },
+    {
+      "type": "react_memo",
+      "file_path": "src/components/shared/Card.tsx",
+      "description": "Component could benefit from React.memo",
+      "priority_score": 7,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Wrap component with React.memo to prevent unnecessary re-renders"
+    },
+    {
+      "type": "react_memo",
+      "file_path": "src/components/SEO/Head.tsx",
+      "description": "Component could benefit from React.memo",
+      "priority_score": 7,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Wrap component with React.memo to prevent unnecessary re-renders"
+    },
+    {
+      "type": "react_memo",
+      "file_path": "src/components/analytics/DonationChart.tsx",
+      "description": "Component could benefit from React.memo",
+      "priority_score": 7,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Wrap component with React.memo to prevent unnecessary re-renders"
+    },
+    {
+      "type": "react_memo",
+      "file_path": "src/components/analytics/EventAttendanceChart.tsx",
+      "description": "Component could benefit from React.memo",
+      "priority_score": 7,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Wrap component with React.memo to prevent unnecessary re-renders"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/FloatingChatBar.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/TickerTape.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/generated/CommandCenter.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/generated/SidebarNavigation.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/generated/AlertCenter.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/generated/FloatingChatBar.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/generated/SettingsPage.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/generated/IntelligenceHub.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/generated/InformationCenter.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/generated/TickerTape.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/generated/ContentEnginePage.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/auth/ForgotPasswordForm.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/auth/LoginForm.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/auth/RegisterForm.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/auth/ResetPasswordForm.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/auth/ProtectedRoute.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/auth/EmailVerificationPage.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/auth/SupabaseLoginForm.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/auth/SupabaseResetPasswordForm.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/auth/SupabaseRegisterForm.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/layout/MainLayout.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/shared/CustomDropdown.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/dashboard/ActivityFeed.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/content-calendar/ContentCardComponent.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/content-calendar/CalendarControls.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/content-engine/GHLPublisher.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/content-engine/ContentFormatCard.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/content-engine/ContentClusterHeader.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/campaign-control/ProjectCard.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/campaign-control/CampaignTabs.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/campaign-control/AssetCard.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/monitoring/TrendingTopics.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/monitoring/InfluencerTracker.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/monitoring/MentionsStream.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/alert-center/InformationStreamCard.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/alert-center/AlertCard.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/alert-center/CollaborationModal.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/analytics/DateRangeFilter.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/analytics/DashboardChart.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    },
+    {
+      "type": "use_callback",
+      "file_path": "src/components/analytics/ActivityFeed.tsx",
+      "description": "Inline functions passed as props could be wrapped with useCallback",
+      "priority_score": 6,
+      "estimated_impact": "Medium",
+      "refactoring_suggestion": "Use useCallback for functions passed as props"
+    }
+  ]
+}

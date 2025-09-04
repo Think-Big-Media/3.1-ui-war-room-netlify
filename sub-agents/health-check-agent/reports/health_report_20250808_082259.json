@@ -1,0 +1,96 @@
+{
+  "war_room_health_report": {
+    "metadata": {
+      "agent": "SUB-AGENT 1 - HEALTH_CHECK_AGENT",
+      "version": "1.0.0",
+      "target_url": "https://war-room-oa9t.onrender.com",
+      "timestamp": "2025-08-08T06:22:59.676422+00:00",
+      "check_duration_seconds": 1.0874083042144775
+    },
+    "summary": {
+      "overall_status": "CRITICAL",
+      "health_score": 0,
+      "migration_ready": false,
+      "total_checks": 2,
+      "passed_checks": 0,
+      "warning_checks": 1,
+      "failed_checks": 1
+    },
+    "migration_assessment": {
+      "ready_for_migration": false,
+      "critical_blockers": [
+        "Health check system failure: division by zero"
+      ],
+      "recommendations": [
+        "Investigate health check system issues"
+      ],
+      "go_no_go_decision": "NO-GO"
+    },
+    "detailed_results": [
+      {
+        "name": "Site Availability",
+        "status": "fail",
+        "response_time_ms": 83.5418701171875,
+        "details": {
+          "error_type": "ClientConnectorCertificateError"
+        },
+        "error": "Cannot connect to host war-room-oa9t.onrender.com:443 ssl:True [SSLCertVerificationError: (1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)')]",
+        "timestamp": "2025-08-08T06:22:58.672586+00:00"
+      },
+      {
+        "name": "System Resources",
+        "status": "warning",
+        "response_time_ms": 1003.1461715698242,
+        "details": {
+          "memory": {
+            "total_gb": 16.0,
+            "available_gb": 2.66,
+            "used_percent": 83.4,
+            "process_rss_mb": 33.92,
+            "process_vms_mb": 400995.58
+          },
+          "cpu": {
+            "cores": 10,
+            "usage_percent": 30.6,
+            "load_1min": 3.9208984375,
+            "load_5min": 4.77978515625,
+            "load_15min": 5.3798828125,
+            "load_ratio": 0.39208984375
+          },
+          "disk": {
+            "total_gb": 228.27,
+            "free_gb": 9.49,
+            "used_percent": 59.5
+          }
+        },
+        "error": "High memory usage: 83.4%",
+        "timestamp": "2025-08-08T06:22:59.675914+00:00"
+      }
+    ],
+    "performance_metrics": {
+      "response_times_ms": {
+        "Site Availability": 83.5418701171875,
+        "System Resources": 1003.1461715698242
+      },
+      "sla_compliance": {
+        "threshold_ms": 3000,
+        "compliant_checks": 2,
+        "total_checks": 2
+      }
+    },
+    "system_health": {
+      "overall_status": "CRITICAL",
+      "health_score": 0,
+      "migration_ready": false,
+      "critical_issues": [
+        "Health check system failure: division by zero"
+      ],
+      "warnings": [],
+      "recommendations": [
+        "Investigate health check system issues"
+      ],
+      "timestamp": "2025-08-08T06:22:59.676422+00:00",
+      "check_duration_seconds": 1.0874083042144775
+    }
+  }
+}

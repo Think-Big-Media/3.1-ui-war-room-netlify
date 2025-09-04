@@ -1,0 +1,68 @@
+{
+  "pieces_api_key": null,
+  "pieces_base_url": "https://api.pieces.app",
+  "hub_port": 8765,
+  "mode": "standalone",
+  "output_dir": "outputs",
+  "enable_communication": true,
+  "enable_reporting": true,
+  "enable_scheduled_reports": false,
+  "log_level": "INFO",
+  "email_config": {
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "your_email@gmail.com",
+    "password": "your_app_password",
+    "use_tls": true,
+    "sender": "warroom-knowledge@yourcompany.com"
+  },
+  "knowledge_manager_config": {
+    "semantic_similarity_threshold": 0.75,
+    "recommendation_limit": 10,
+    "auto_clustering_enabled": true,
+    "real_time_analysis_enabled": true,
+    "min_recommendation_score": 0.3
+  },
+  "communication_config": {
+    "heartbeat_interval": 30,
+    "message_retention_hours": 24,
+    "max_queue_size": 1000
+  },
+  "reporting_config": {
+    "default_recipients": [
+      "team@warroom.dev",
+      "dev-leads@warroom.dev"
+    ],
+    "chart_style": "whitegrid",
+    "color_palette": [
+      "#2E86AB",
+      "#A23B72", 
+      "#F18F01",
+      "#C73E1D",
+      "#7209B7"
+    ]
+  },
+  "snippet_generator_config": {
+    "supported_languages": [
+      "python",
+      "javascript",
+      "typescript",
+      "java",
+      "go"
+    ],
+    "auto_formatting_enabled": true,
+    "generate_tests": true,
+    "generate_documentation": true
+  },
+  "recommendation_engine_config": {
+    "strategy_weights": {
+      "similarity_based": 0.25,
+      "success_rate_based": 0.20,
+      "collaborative_filtering": 0.15,
+      "content_based": 0.20,
+      "contextual": 0.20
+    },
+    "enable_learning": true,
+    "enable_explanation": true
+  }
+}

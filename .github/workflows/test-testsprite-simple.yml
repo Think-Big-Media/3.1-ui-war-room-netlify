@@ -1,0 +1,36 @@
+name: Test TestSprite Integration
+
+on:
+  workflow_dispatch:  # Manual trigger for testing
+
+jobs:
+  test-api:
+    runs-on: ubuntu-latest
+    name: Test TestSprite API
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Test TestSprite Connection
+        env:
+          TESTSPRITE_API_KEY: ${{ secrets.TESTSPRITE_API_KEY }}
+        run: |
+          echo "Testing TestSprite API..."
+          
+          # Test API connection
+          response=$(curl -s -X GET https://api.testsprite.com/v1/projects \
+            -H "Authorization: Bearer $TESTSPRITE_API_KEY" \
+            -H "Content-Type: application/json")
+          
+          echo "API Response:"
+          echo "$response" | jq '.' || echo "$response"
+          
+          # Try to run a simple test
+          echo "Attempting to trigger test..."
+          curl -X POST https://api.testsprite.com/v1/tests/run \
+            -H "Authorization: Bearer $TESTSPRITE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "url": "https://war-room-oa9t.onrender.com",
+              "type": "performance",
+              "project": "War Room"
+            }'

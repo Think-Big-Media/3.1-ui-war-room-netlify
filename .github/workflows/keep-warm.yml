@@ -1,0 +1,42 @@
+name: Keep War Room Warm
+
+on:
+  schedule:
+    # Run every 30 minutes
+    - cron: '0,30 * * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  keep-warm:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Ping health and record metrics
+      shell: bash
+      run: |
+        echo "🔥 Keeping War Room warm at $(date)"
+
+        HEALTH_CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://war-room-oa9t.onrender.com/health" || true)
+        HEALTH_TIME=$(curl -s -o /dev/null -w "%{time_total}" "https://war-room-oa9t.onrender.com/health" || true)
+
+        SETTINGS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://war-room-oa9t.onrender.com/settings" || true)
+        SETTINGS_TIME=$(curl -s -o /dev/null -w "%{time_total}" "https://war-room-oa9t.onrender.com/settings" || true)
+
+        API_CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://war-room-oa9t.onrender.com/api/v1/health" || true)
+        API_TIME=$(curl -s -o /dev/null -w "%{time_total}" "https://war-room-oa9t.onrender.com/api/v1/health" || true)
+
+        echo "Health Response: ${HEALTH_CODE} - Time: ${HEALTH_TIME}s"
+        echo "Settings Response: ${SETTINGS_CODE} - Time: ${SETTINGS_TIME}s"
+        echo "API Response: ${API_CODE} - Time: ${API_TIME}s"
+
+        {
+          echo "## Keep-Warm Metrics ($(date -u +'%Y-%m-%d %H:%M:%S UTC'))";
+          echo "";
+          echo "| Endpoint | Status | Response Time |";
+          echo "|---|---:|---:|";
+          echo "| /health | ${HEALTH_CODE} | ${HEALTH_TIME}s |";
+          echo "| /settings | ${SETTINGS_CODE} | ${SETTINGS_TIME}s |";
+          echo "| /api/v1/health | ${API_CODE} | ${API_TIME}s |";
+        } >> "$GITHUB_STEP_SUMMARY"
+
+        echo "✅ Keep-warm ping complete"

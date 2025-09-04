@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running pre-commit health check..."
+
+# Run the health check system
+if npm run health:check; then
+  echo "✅ All pre-commit checks passed!"
+else
+  echo "❌ Health check failed. Please fix the issues before committing."
+  echo "💡 Run 'npm run format' to fix formatting issues"
+  echo "💡 Run 'npm run build' to check for build errors"
+  exit 1
+fi

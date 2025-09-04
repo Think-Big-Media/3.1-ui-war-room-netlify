@@ -1,0 +1,76 @@
+name: TestSprite Automated Testing
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours for monitoring
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    name: Security Scanning
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: TestSprite Security Scan
+        uses: testsprite/security-action@v1
+        with:
+          api_key: ${{ secrets.TESTSPRITE_API_KEY }}
+          project_id: ${{ secrets.TESTSPRITE_PROJECT_ID || 'auto' }}
+          scan_type: full
+          
+  visual-regression:
+    runs-on: ubuntu-latest
+    name: Visual Regression Tests
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          
+      - name: Install and Build
+        run: |
+          cd src/frontend
+          npm ci
+          npm run build
+          
+      - name: TestSprite Visual Tests
+        uses: testsprite/visual-action@v1
+        with:
+          api_key: ${{ secrets.TESTSPRITE_API_KEY }}
+          project_id: ${{ secrets.TESTSPRITE_PROJECT_ID || 'auto' }}
+          
+  performance-test:
+    runs-on: ubuntu-latest
+    name: Performance Testing
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: TestSprite Performance Test
+        uses: testsprite/performance-action@v1
+        with:
+          api_key: ${{ secrets.TESTSPRITE_API_KEY }}
+          project_id: ${{ secrets.TESTSPRITE_PROJECT_ID || 'auto' }}
+          target_url: ${{ github.event_name == 'pull_request' && 'preview' || 'https://war-room-oa9t.onrender.com' }}
+          
+  monitoring:
+    runs-on: ubuntu-latest
+    name: Production Monitoring
+    if: github.event_name == 'schedule' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    steps:
+      - name: TestSprite Uptime Check
+        uses: testsprite/monitor-action@v1
+        with:
+          api_key: ${{ secrets.TESTSPRITE_API_KEY }}
+          project_id: ${{ secrets.TESTSPRITE_PROJECT_ID || 'auto' }}
+          checks:
+            - uptime
+            - ssl_certificate
+            - response_time
+            - console_errors

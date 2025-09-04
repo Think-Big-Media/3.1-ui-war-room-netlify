@@ -1,0 +1,110 @@
+{
+  "timestamp": "2025-08-08T07:13:04Z",
+  "report_id": "WR-HC-20250808-071304",
+  "platform_version": "1.0.0",
+  "overall_health_score": 89,
+  "status": "operational",
+  "services": {
+    "api": {
+      "status": "healthy",
+      "endpoints": {
+        "/health": {
+          "status": 200,
+          "response_time": 0.25,
+          "last_check": "2025-08-08T07:13:04Z"
+        },
+        "/api/v1/test": {
+          "status": 200,
+          "response_time": 0.22,
+          "last_check": "2025-08-08T07:13:04Z"
+        },
+        "/api/v1/status": {
+          "status": 200,
+          "response_time": 0.59,
+          "last_check": "2025-08-08T07:13:04Z"
+        }
+      }
+    },
+    "frontend": {
+      "status": "healthy",
+      "build_status": "success",
+      "assets_available": true,
+      "spa_routing": "functional"
+    },
+    "websockets": {
+      "status": "configured",
+      "connection_manager": "active",
+      "redis_integration": "available"
+    },
+    "external_services": {
+      "supabase": {
+        "status": "configured",
+        "requires_setup": true
+      },
+      "posthog": {
+        "status": "configured", 
+        "requires_setup": true
+      },
+      "sentry": {
+        "status": "configured",
+        "requires_setup": true
+      }
+    }
+  },
+  "performance_metrics": {
+    "average_response_time": 0.35,
+    "frontend_load_time": 0.22,
+    "health_check_time": 0.25,
+    "asset_load_time": 0.3
+  },
+  "critical_issues": [
+    {
+      "severity": "critical",
+      "component": "database",
+      "issue": "Complex CTE queries without proper indexing",
+      "location": "src/backend/db/analytics_queries.py:89",
+      "impact": "2-5s query times for large datasets"
+    },
+    {
+      "severity": "critical", 
+      "component": "memory_management",
+      "issue": "Unbounded data structures in ad monitor",
+      "location": "src/backend/services/real_time_ad_monitor.py:48-49",
+      "impact": "10-50MB daily memory growth"
+    },
+    {
+      "severity": "critical",
+      "component": "websocket",
+      "issue": "Race conditions in connection cleanup", 
+      "location": "src/backend/core/websocket.py:104-113",
+      "impact": "Connection leaks, memory growth"
+    }
+  ],
+  "recommendations": {
+    "immediate": [
+      "Add database indexes for analytics queries",
+      "Implement TTL cache for ad monitor data",
+      "Fix WebSocket cleanup race conditions"
+    ],
+    "short_term": [
+      "Add security headers middleware",
+      "Split large Dashboard component", 
+      "Optimize React hooks with memoization"
+    ],
+    "long_term": [
+      "Complete external service setup",
+      "Implement comprehensive monitoring",
+      "Add performance dashboards"
+    ]
+  },
+  "migration_readiness": {
+    "score": 85,
+    "status": "ready",
+    "blockers": [],
+    "requirements": [
+      "External service API key configuration",
+      "Performance optimization implementation",
+      "Security headers setup"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "status": "init",
+  "scope": "codebase",
+  "type": "frontend",
+  "localEndpoint": "http://localhost:5173",
+  "serverPort": 64332,
+  "executionArgs": {
+    "projectName": "1.0-war-room",
+    "projectPath": "/Users/rodericandrews/WarRoom_Development/1.0-war-room",
+    "testIds": [],
+    "additionalInstruction": "Test the War Room application frontend components including Command Center dashboard, Real-Time Monitoring, Campaign Control, Intelligence Hub, Alert Center with Information Streams, and Settings. Focus on UI functionality, navigation, and data loading.",
+    "envs": {}
+  }
+}

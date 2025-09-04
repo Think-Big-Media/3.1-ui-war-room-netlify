@@ -1,0 +1,562 @@
+name: Continuous Monitoring & Alerting
+
+on:
+  schedule:
+    # Monitor every 5 minutes during business hours (UTC)
+    - cron: '*/5 8-18 * * 1-5'
+    # Monitor every 15 minutes outside business hours
+    - cron: '*/15 0-7,19-23 * * *'
+    - cron: '*/15 * * * 0,6'  # Weekends
+  
+  workflow_dispatch:
+    inputs:
+      check_type:
+        description: 'Type of monitoring check'
+        required: true
+        type: choice
+        options:
+        - all
+        - health
+        - performance
+        - security
+        - api
+      environment:
+        description: 'Environment to monitor'
+        required: true
+        type: choice
+        options:
+        - both
+        - production
+        - staging
+      create_issue:
+        description: 'Create GitHub issue on failure'
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+env:
+  PRODUCTION_URL: 'https://war-room-3-backend-d2msjrk82vjjq794glog.lp.dev'
+  STAGING_URL: 'http://localhost:5174'
+  MAX_RESPONSE_TIME: 5000  # 5 seconds
+  ALERT_THRESHOLD: 3       # Number of failures before alerting
+
+jobs:
+  health-monitoring:
+    name: Health Check Monitoring
+    runs-on: ubuntu-latest
+    if: github.event.inputs.check_type == 'health' || github.event.inputs.check_type == 'all' || github.event_name == 'schedule'
+    
+    strategy:
+      matrix:
+        environment: 
+          - ${{ (github.event.inputs.environment == 'both' || github.event.inputs.environment == 'production' || github.event_name == 'schedule') && 'production' || '' }}
+          - ${{ (github.event.inputs.environment == 'both' || github.event.inputs.environment == 'staging') && 'staging' || '' }}
+        exclude:
+          - environment: ''
+    
+    steps:
+    - name: Health Check - ${{ matrix.environment }}
+      id: health_check
+      run: |
+        env_name="${{ matrix.environment }}"
+        if [ "$env_name" = "production" ]; then
+          url="$PRODUCTION_URL"
+        else
+          url="$STAGING_URL"
+        fi
+        
+        echo "🏥 Checking health of $env_name environment: $url"
+        
+        # Track metrics
+        start_time=$(date +%s%3N)
+        
+        # Perform health check with detailed logging
+        health_response=$(curl -s -w "%{http_code}|%{time_total}|%{time_connect}" \
+          --max-time 10 "$url/health" || echo "000|0|0")
+        
+        end_time=$(date +%s%3N)
+        response_time=$((end_time - start_time))
+        
+        # Parse response
+        http_code=$(echo "$health_response" | cut -d'|' -f1)
+        total_time=$(echo "$health_response" | cut -d'|' -f2)
+        connect_time=$(echo "$health_response" | cut -d'|' -f3)
+        
+        echo "📊 Health check results:"
+        echo "- HTTP Status: $http_code"
+        echo "- Response Time: ${response_time}ms"
+        echo "- Total Time: ${total_time}s"
+        echo "- Connect Time: ${connect_time}s"
+        
+        # Determine health status
+        if [ "$http_code" = "200" ] && [ "$response_time" -lt "$MAX_RESPONSE_TIME" ]; then
+          health_status="healthy"
+          echo "✅ $env_name is healthy"
+        else
+          health_status="unhealthy"
+          echo "❌ $env_name is unhealthy"
+        fi
+        
+        # Output results for next steps
+        echo "health_status=$health_status" >> $GITHUB_OUTPUT
+        echo "http_code=$http_code" >> $GITHUB_OUTPUT
+        echo "response_time=$response_time" >> $GITHUB_OUTPUT
+        echo "environment=$env_name" >> $GITHUB_OUTPUT
+        
+        # Store metrics for artifact
+        cat > "health_metrics_${env_name}.json" << EOF
+        {
+          "environment": "$env_name",
+          "url": "$url",
+          "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+          "http_code": $http_code,
+          "response_time_ms": $response_time,
+          "total_time_s": $total_time,
+          "connect_time_s": $connect_time,
+          "health_status": "$health_status",
+          "within_sla": $([ "$response_time" -lt "$MAX_RESPONSE_TIME" ] && echo "true" || echo "false")
+        }
+        EOF
+    
+    - name: Test API endpoints - ${{ matrix.environment }}
+      if: steps.health_check.outputs.health_status == 'healthy'
+      run: |
+        env_name="${{ matrix.environment }}"
+        if [ "$env_name" = "production" ]; then
+          url="$PRODUCTION_URL"
+        else
+          url="$STAGING_URL"
+        fi
+        
+        echo "🔍 Testing critical API endpoints..."
+        
+        # Test endpoints that should be publicly accessible
+        endpoints=(
+          "/health"
+          "/api/health"
+          "/api/v1/health"
+        )
+        
+        api_results=()
+        
+        for endpoint in "${endpoints[@]}"; do
+          echo "Testing: $url$endpoint"
+          
+          response=$(curl -s -w "%{http_code}" --max-time 5 "$url$endpoint" || echo "000")
+          http_code=${response: -3}
+          
+          if [ "$http_code" = "200" ]; then
+            echo "✅ $endpoint: OK ($http_code)"
+            api_results+=("$endpoint:healthy")
+          else
+            echo "❌ $endpoint: Failed ($http_code)"
+            api_results+=("$endpoint:unhealthy")
+          fi
+        done
+        
+        # Store API test results
+        printf '%s\n' "${api_results[@]}" > "api_results_${env_name}.txt"
+    
+    - name: Upload monitoring data
+      uses: actions/upload-artifact@v4
+      with:
+        name: health-monitoring-${{ matrix.environment }}-${{ github.run_number }}
+        path: |
+          health_metrics_${{ matrix.environment }}.json
+          api_results_${{ matrix.environment }}.txt
+        retention-days: 30
+
+  performance-monitoring:
+    name: Performance Monitoring
+    runs-on: ubuntu-latest
+    if: github.event.inputs.check_type == 'performance' || github.event.inputs.check_type == 'all' || github.event_name == 'schedule'
+    
+    steps:
+    - name: Install performance testing tools
+      run: |
+        # Install k6 for load testing
+        sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+        echo "deb https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+        sudo apt-get update
+        sudo apt-get install k6
+    
+    - name: Run performance tests
+      run: |
+        echo "⚡ Running performance monitoring tests..."
+        
+        # Create k6 test script
+        cat > performance_test.js << 'EOF'
+        import http from 'k6/http';
+        import { check, sleep } from 'k6';
+        
+        export let options = {
+          stages: [
+            { duration: '30s', target: 5 },   // Ramp up
+            { duration: '1m', target: 5 },    // Stay at 5 users
+            { duration: '30s', target: 0 },   // Ramp down
+          ],
+          thresholds: {
+            http_req_duration: ['p(95)<2000'], // 95% of requests must complete below 2s
+            http_req_failed: ['rate<0.1'],     // Error rate must be below 10%
+          },
+        };
+        
+        export default function() {
+          let response = http.get(__ENV.TARGET_URL + '/health');
+          
+          check(response, {
+            'status is 200': (r) => r.status === 200,
+            'response time < 2s': (r) => r.timings.duration < 2000,
+          });
+          
+          sleep(1);
+        }
+        EOF
+        
+        # Test production
+        echo "🎯 Testing production performance..."
+        TARGET_URL="$PRODUCTION_URL" k6 run --quiet --out json=prod_performance.json performance_test.js
+        
+        # Test staging if available
+        if curl -s --max-time 5 "$STAGING_URL/health" > /dev/null 2>&1; then
+          echo "🎯 Testing staging performance..."
+          TARGET_URL="$STAGING_URL" k6 run --quiet --out json=staging_performance.json performance_test.js
+        fi
+        
+        echo "✅ Performance tests completed"
+    
+    - name: Analyze performance results
+      run: |
+        echo "📊 Analyzing performance results..."
+        
+        for file in *_performance.json; do
+          if [ -f "$file" ]; then
+            env_name=$(echo "$file" | sed 's/_performance.json//')
+            echo "Analyzing $env_name..."
+            
+            # Extract key metrics (simplified - in real scenario you'd use jq more extensively)
+            avg_response_time=$(jq -r 'select(.type=="Point" and .metric=="http_req_duration") | .data.value' "$file" | head -10 | jq -s 'add/length // 0')
+            error_rate=$(jq -r 'select(.type=="Point" and .metric=="http_req_failed") | .data.value' "$file" | head -10 | jq -s 'add/length // 0')
+            
+            echo "$env_name Performance Summary:"
+            echo "- Average Response Time: ${avg_response_time}ms"
+            echo "- Error Rate: ${error_rate}%"
+            
+            # Create summary
+            cat > "${env_name}_performance_summary.json" << EOF
+            {
+              "environment": "$env_name",
+              "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+              "avg_response_time_ms": $avg_response_time,
+              "error_rate_percent": $error_rate,
+              "within_sla": $([ $(echo "$avg_response_time < 2000" | bc -l) -eq 1 ] && echo "true" || echo "false")
+            }
+            EOF
+          fi
+        done
+    
+    - name: Upload performance data
+      uses: actions/upload-artifact@v4
+      with:
+        name: performance-monitoring-${{ github.run_number }}
+        path: |
+          *_performance.json
+          *_performance_summary.json
+        retention-days: 30
+
+  security-monitoring:
+    name: Security Monitoring
+    runs-on: ubuntu-latest
+    if: github.event.inputs.check_type == 'security' || github.event.inputs.check_type == 'all' || github.event_name == 'schedule'
+    
+    steps:
+    - name: Security headers check
+      run: |
+        echo "🔒 Checking security headers..."
+        
+        for env_name in production staging; do
+          if [ "$env_name" = "production" ]; then
+            url="$PRODUCTION_URL"
+          else
+            url="$STAGING_URL"
+          fi
+          
+          echo "Checking $env_name ($url)..."
+          
+          # Check security headers
+          headers_response=$(curl -sI --max-time 10 "$url" 2>/dev/null || echo "CURL_ERROR")
+          
+          if [ "$headers_response" != "CURL_ERROR" ]; then
+            security_score=0
+            max_score=6
+            
+            # Check for important security headers
+            [ "$(echo "$headers_response" | grep -i "strict-transport-security")" ] && security_score=$((security_score + 1)) && echo "✅ HSTS header present"
+            [ "$(echo "$headers_response" | grep -i "x-content-type-options")" ] && security_score=$((security_score + 1)) && echo "✅ X-Content-Type-Options header present"
+            [ "$(echo "$headers_response" | grep -i "x-frame-options")" ] && security_score=$((security_score + 1)) && echo "✅ X-Frame-Options header present"
+            [ "$(echo "$headers_response" | grep -i "x-xss-protection")" ] && security_score=$((security_score + 1)) && echo "✅ X-XSS-Protection header present"
+            [ "$(echo "$headers_response" | grep -i "content-security-policy")" ] && security_score=$((security_score + 1)) && echo "✅ CSP header present"
+            [ "$(echo "$headers_response" | grep -i "referrer-policy")" ] && security_score=$((security_score + 1)) && echo "✅ Referrer-Policy header present"
+            
+            security_percentage=$((security_score * 100 / max_score))
+            
+            cat > "${env_name}_security_report.json" << EOF
+            {
+              "environment": "$env_name",
+              "url": "$url",
+              "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+              "security_score": $security_score,
+              "max_score": $max_score,
+              "security_percentage": $security_percentage,
+              "headers_checked": true
+            }
+            EOF
+            
+            echo "$env_name Security Score: $security_score/$max_score ($security_percentage%)"
+          else
+            echo "❌ Could not check security headers for $env_name"
+          fi
+        done
+    
+    - name: SSL certificate check
+      run: |
+        echo "🔐 Checking SSL certificates..."
+        
+        for env_name in production staging; do
+          if [ "$env_name" = "production" ]; then
+            domain="war-room-3-backend-d2msjrk82vjjq794glog.lp.dev"
+          else
+            domain="localhost"
+          fi
+          
+          echo "Checking SSL for $env_name ($domain)..."
+          
+          # Check SSL certificate expiration
+          cert_info=$(echo | openssl s_client -servername "$domain" -connect "$domain:443" 2>/dev/null | openssl x509 -noout -dates 2>/dev/null)
+          
+          if [ $? -eq 0 ]; then
+            not_after=$(echo "$cert_info" | grep "notAfter" | cut -d= -f2)
+            expiry_epoch=$(date -d "$not_after" +%s 2>/dev/null || echo "0")
+            current_epoch=$(date +%s)
+            days_until_expiry=$(( (expiry_epoch - current_epoch) / 86400 ))
+            
+            echo "SSL certificate for $env_name expires in $days_until_expiry days"
+            
+            if [ $days_until_expiry -lt 30 ]; then
+              echo "⚠️ SSL certificate expires soon!"
+            else
+              echo "✅ SSL certificate is valid"
+            fi
+          else
+            echo "❌ Could not check SSL certificate for $env_name"
+          fi
+        done
+    
+    - name: Upload security data
+      uses: actions/upload-artifact@v4
+      with:
+        name: security-monitoring-${{ github.run_number }}
+        path: |
+          *_security_report.json
+        retention-days: 30
+
+  analyze-results:
+    name: Analyze Monitoring Results
+    runs-on: ubuntu-latest
+    needs: [health-monitoring, performance-monitoring, security-monitoring]
+    if: always()
+    
+    steps:
+    - name: Download all monitoring data
+      uses: actions/download-artifact@v4
+      with:
+        path: monitoring-results
+    
+    - name: Analyze overall system health
+      id: analysis
+      run: |
+        echo "📊 Analyzing overall system health..."
+        
+        # Initialize counters
+        total_checks=0
+        failed_checks=0
+        issues=()
+        
+        # Analyze health monitoring results
+        if find monitoring-results -name "health_metrics_*.json" -type f | head -1 > /dev/null 2>&1; then
+          for health_file in monitoring-results/*/health_metrics_*.json; do
+            if [ -f "$health_file" ]; then
+              total_checks=$((total_checks + 1))
+              
+              health_status=$(jq -r '.health_status' "$health_file")
+              environment=$(jq -r '.environment' "$health_file")
+              response_time=$(jq -r '.response_time_ms' "$health_file")
+              
+              if [ "$health_status" != "healthy" ]; then
+                failed_checks=$((failed_checks + 1))
+                issues+=("$environment health check failed")
+              elif [ "$response_time" -gt "$MAX_RESPONSE_TIME" ]; then
+                issues+=("$environment response time high: ${response_time}ms")
+              fi
+            fi
+          done
+        fi
+        
+        # Analyze performance results
+        if find monitoring-results -name "*_performance_summary.json" -type f | head -1 > /dev/null 2>&1; then
+          for perf_file in monitoring-results/*/*_performance_summary.json; do
+            if [ -f "$perf_file" ]; then
+              total_checks=$((total_checks + 1))
+              
+              within_sla=$(jq -r '.within_sla' "$perf_file")
+              environment=$(jq -r '.environment' "$perf_file")
+              
+              if [ "$within_sla" != "true" ]; then
+                failed_checks=$((failed_checks + 1))
+                issues+=("$environment performance below SLA")
+              fi
+            fi
+          done
+        fi
+        
+        # Calculate health percentage
+        if [ $total_checks -gt 0 ]; then
+          health_percentage=$(( (total_checks - failed_checks) * 100 / total_checks ))
+        else
+          health_percentage=100
+        fi
+        
+        echo "Overall System Health: $health_percentage% ($((total_checks - failed_checks))/$total_checks checks passed)"
+        
+        # Output results
+        echo "health_percentage=$health_percentage" >> $GITHUB_OUTPUT
+        echo "failed_checks=$failed_checks" >> $GITHUB_OUTPUT
+        echo "total_checks=$total_checks" >> $GITHUB_OUTPUT
+        
+        # Create summary report
+        cat > monitoring_summary.json << EOF
+        {
+          "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+          "health_percentage": $health_percentage,
+          "total_checks": $total_checks,
+          "failed_checks": $failed_checks,
+          "issues": $(printf '%s\n' "${issues[@]}" | jq -R . | jq -s .),
+          "trigger": "${{ github.event_name }}",
+          "workflow_run": "${{ github.run_id }}"
+        }
+        EOF
+        
+        if [ ${#issues[@]} -gt 0 ]; then
+          echo "🚨 Issues detected:"
+          printf '%s\n' "${issues[@]}"
+        else
+          echo "✅ No issues detected"
+        fi
+    
+    - name: Create issue on critical failure
+      if: |
+        steps.analysis.outputs.failed_checks > 0 && 
+        steps.analysis.outputs.health_percentage < 80 &&
+        (github.event.inputs.create_issue != 'false' || github.event_name == 'schedule')
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const summary = JSON.parse(fs.readFileSync('monitoring_summary.json', 'utf8'));
+          
+          const title = `🚨 System Health Alert - ${summary.health_percentage}% Health - ${new Date().toISOString().split('T')[0]}`;
+          
+          const body = `## System Health Alert
+          
+          Continuous monitoring has detected system health issues.
+          
+          **Overall Health**: ${summary.health_percentage}% (${summary.total_checks - summary.failed_checks}/${summary.total_checks} checks passed)
+          
+          **Issues Detected**:
+          ${summary.issues.map(issue => `- ❌ ${issue}`).join('\n')}
+          
+          **Monitoring Details**:
+          - **Trigger**: ${summary.trigger}
+          - **Timestamp**: ${summary.timestamp}
+          - **Workflow Run**: [View Details](https://github.com/${{ github.repository }}/actions/runs/${summary.workflow_run})
+          
+          **Immediate Actions Required**:
+          1. Investigate failing health checks
+          2. Review application logs on Render
+          3. Check for any ongoing incidents
+          4. Verify database connectivity
+          5. Monitor response times
+          
+          **Monitoring Data**:
+          Full monitoring data is available in the workflow artifacts.
+          
+          *This issue was automatically created by the monitoring system.*`;
+          
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: title,
+            body: body,
+            labels: ['monitoring', 'alert', 'health', 'priority:high']
+          });
+    
+    - name: Upload analysis summary
+      uses: actions/upload-artifact@v4
+      with:
+        name: monitoring-analysis-${{ github.run_number }}
+        path: monitoring_summary.json
+        retention-days: 90
+
+  notify-alerts:
+    name: Send Alerts
+    runs-on: ubuntu-latest
+    needs: analyze-results
+    if: needs.analyze-results.outputs.failed_checks > 0
+    
+    steps:
+    - name: Send alert notifications
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        HEALTH_PERCENTAGE: ${{ needs.analyze-results.outputs.health_percentage }}
+        FAILED_CHECKS: ${{ needs.analyze-results.outputs.failed_checks }}
+        TOTAL_CHECKS: ${{ needs.analyze-results.outputs.total_checks }}
+      run: |
+        echo "📢 Sending alert notifications..."
+        
+        if [ "$HEALTH_PERCENTAGE" -lt 50 ]; then
+          urgency="🚨 CRITICAL"
+          color="danger"
+        elif [ "$HEALTH_PERCENTAGE" -lt 80 ]; then
+          urgency="⚠️ WARNING"
+          color="warning"
+        else
+          urgency="ℹ️ NOTICE"
+          color="good"
+        fi
+        
+        message="$urgency System Health: $HEALTH_PERCENTAGE% ($FAILED_CHECKS/$TOTAL_CHECKS checks failed)"
+        
+        # Send Slack notification
+        if [ -n "$SLACK_WEBHOOK_URL" ]; then
+          curl -X POST -H 'Content-type: application/json' \
+            --data "{
+              \"text\":\"$message\",
+              \"attachments\":[{
+                \"color\":\"$color\",
+                \"fields\":[
+                  {\"title\":\"Health Percentage\",\"value\":\"$HEALTH_PERCENTAGE%\",\"short\":true},
+                  {\"title\":\"Failed Checks\",\"value\":\"$FAILED_CHECKS/$TOTAL_CHECKS\",\"short\":true},
+                  {\"title\":\"Workflow\",\"value\":\"[View Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\",\"short\":false}
+                ]
+              }]
+            }" \
+            "$SLACK_WEBHOOK_URL"
+        fi
+        
+        echo "✅ Alert notifications sent"

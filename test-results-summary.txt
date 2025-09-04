@@ -1,0 +1,4 @@
+
+> war-room-frontend@1.0.1 test
+> jest --watchAll=false --passWithNoTests
+

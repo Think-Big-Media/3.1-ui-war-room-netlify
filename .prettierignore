@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+coverage/
+*.log
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Environment files
+.env*
+!.env.example
+
+# Generated files
+*.generated.*
+*.min.js
+*.min.css
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+
+# Documentation that shouldn't be formatted
+*.md
+docs/
+
+# Config files that may have specific formatting
+tsconfig.json
+.eslintrc*
+.prettierrc*
+
+# Mock data files
+mock-data/
+fixtures/
+
+# Bundle analysis
+stats.html
+analyze/

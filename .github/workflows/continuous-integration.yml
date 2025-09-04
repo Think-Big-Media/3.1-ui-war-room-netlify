@@ -1,0 +1,78 @@
+name: Continuous Integration & Monitoring
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+
+jobs:
+  # CodeRabbit will automatically review PRs
+  
+  # TestSprite runs via its own workflow
+  
+  # AMP/Sourcegraph Integration Check
+  sourcegraph-check:
+    runs-on: ubuntu-latest
+    name: Verify Sourcegraph Integration
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Check Sourcegraph Config
+        run: |
+          if [ -f ".sourcegraph/sourcegraph.yaml" ]; then
+            echo "✓ Sourcegraph configuration found"
+          else
+            echo "⚠ Sourcegraph configuration missing"
+            exit 1
+          fi
+          
+  # Linear Sync Check
+  linear-sync:
+    runs-on: ubuntu-latest
+    name: Linear Task Sync
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Scan for Tasks
+        run: |
+          echo "Scanning for TODOs and FIXMEs..."
+          TODO_COUNT=$(grep -r "TODO:" src/ --include="*.ts" --include="*.tsx" --include="*.py" 2>/dev/null | wc -l || echo "0")
+          FIXME_COUNT=$(grep -r "FIXME:" src/ --include="*.ts" --include="*.tsx" --include="*.py" 2>/dev/null | wc -l || echo "0")
+          
+          echo "Found $TODO_COUNT TODOs"
+          echo "Found $FIXME_COUNT FIXMEs"
+          
+          # Create summary
+          echo "## Task Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- TODOs: $TODO_COUNT" >> $GITHUB_STEP_SUMMARY
+          echo "- FIXMEs: $FIXME_COUNT" >> $GITHUB_STEP_SUMMARY
+          
+  # Service Health Check
+  health-check:
+    runs-on: ubuntu-latest
+    name: Service Health Check
+    if: github.event_name == 'schedule' || github.event_name == 'push'
+    steps:
+      - name: Check Production Site
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://war-room-oa9t.onrender.com/health)
+          if [ "$response" = "200" ]; then
+            echo "✓ Production site is healthy"
+          else
+            echo "✗ Production site returned $response"
+            exit 1
+          fi
+          
+      - name: Check API Health
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://war-room-oa9t.onrender.com/api/v1/test)
+          if [ "$response" = "200" ]; then
+            echo "✓ API is healthy"
+          else
+            echo "⚠ API returned $response"
+          fi

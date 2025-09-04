@@ -1,0 +1,203 @@
+/**
+ * Luxurious Page Transitions
+ * Premium crossfade and special War Room transitions
+ */
+
+/* Page transition container */
+.page-transition-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Elegant crossfade transition - smoother and less harsh */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px) scale(0.99);
+  filter: blur(3px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+  transition: all 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-5px) scale(1.01);
+  filter: blur(2px);
+  transition: all 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* War Room special entrance - dramatic reveal */
+.war-room-enter {
+  opacity: 0;
+  transform: translateX(100px) scale(0.95);
+  filter: blur(12px) brightness(0.8);
+}
+
+.war-room-enter-active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  filter: blur(0px) brightness(1);
+  transition: all 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.war-room-exit {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  filter: blur(0px) brightness(1);
+}
+
+.war-room-exit-active {
+  opacity: 0;
+  transform: translateX(-100px) scale(0.95);
+  filter: blur(8px) brightness(0.6);
+  transition: all 800ms cubic-bezier(0.7, 0, 0.84, 0);
+}
+
+/* Background gradient transitions */
+.background-transition {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  transition: all 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Dashboard background */
+.bg-dashboard {
+  background: linear-gradient(
+    135deg,
+    hsl(210, 20%, 25%) 0%,
+    hsl(215, 25%, 27%) 25%,
+    hsl(220, 20%, 30%) 50%,
+    hsl(215, 25%, 27%) 75%,
+    hsl(210, 20%, 25%) 100%
+  );
+}
+
+/* Live Monitoring background */
+.bg-live-monitoring {
+  background: linear-gradient(
+    135deg,
+    hsl(210, 20%, 25%) 0%,
+    hsl(215, 25%, 27%) 30%,
+    hsl(180, 15%, 28%) 60%,
+    hsl(215, 25%, 27%) 100%
+  );
+}
+
+/* War Room background - special gradient */
+.bg-war-room {
+  background: linear-gradient(
+    135deg,
+    hsl(270, 30%, 15%) 0%,
+    hsl(280, 25%, 18%) 20%,
+    hsl(260, 35%, 20%) 40%,
+    hsl(250, 30%, 22%) 60%,
+    hsl(270, 25%, 18%) 80%,
+    hsl(280, 30%, 15%) 100%
+  );
+}
+
+/* Intelligence background */
+.bg-intelligence {
+  background: linear-gradient(
+    135deg,
+    hsl(210, 20%, 25%) 0%,
+    hsl(220, 25%, 27%) 25%,
+    hsl(230, 20%, 30%) 50%,
+    hsl(220, 25%, 27%) 75%,
+    hsl(210, 20%, 25%) 100%
+  );
+}
+
+/* Alert Center background */
+.bg-alert-center {
+  background: linear-gradient(
+    135deg,
+    hsl(210, 20%, 25%) 0%,
+    hsl(45, 15%, 28%) 30%,
+    hsl(50, 20%, 30%) 60%,
+    hsl(210, 20%, 25%) 100%
+  );
+}
+
+/* Settings background */
+.bg-settings {
+  background: linear-gradient(
+    135deg,
+    hsl(210, 20%, 25%) 0%,
+    hsl(250, 15%, 27%) 30%,
+    hsl(260, 20%, 29%) 60%,
+    hsl(210, 20%, 25%) 100%
+  );
+}
+
+/* Luxurious navigation hover effects - smoother and more elegant */
+.nav-item {
+  transition: all 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.nav-item:hover {
+  transform: translateY(-0.5px);
+  filter: brightness(1.05);
+  box-shadow: 0 2px 15px rgba(255, 255, 255, 0.08);
+}
+
+/* Card animations with stagger */
+.cards-stagger {
+  animation-delay: 0ms;
+}
+
+.cards-stagger:nth-child(1) {
+  animation-delay: 0ms;
+}
+.cards-stagger:nth-child(2) {
+  animation-delay: 100ms;
+}
+.cards-stagger:nth-child(3) {
+  animation-delay: 200ms;
+}
+.cards-stagger:nth-child(4) {
+  animation-delay: 300ms;
+}
+.cards-stagger:nth-child(5) {
+  animation-delay: 400ms;
+}
+.cards-stagger:nth-child(6) {
+  animation-delay: 500ms;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .page-enter-active,
+  .page-exit,
+  .page-exit-active,
+  .war-room-enter,
+  .war-room-enter-active,
+  .war-room-exit,
+  .war-room-exit-active,
+  .background-transition,
+  .nav-item {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

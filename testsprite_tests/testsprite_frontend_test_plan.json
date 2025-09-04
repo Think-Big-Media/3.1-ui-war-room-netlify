@@ -1,0 +1,139 @@
+{
+  "project": "War Room",
+  "type": "frontend",
+  "baseUrl": "http://localhost:5173",
+  "needLogin": true,
+  "testCases": [
+    {
+      "id": "tc-001",
+      "name": "Homepage Load Test",
+      "description": "Verify that the homepage loads successfully",
+      "priority": "high",
+      "steps": [
+        "Navigate to homepage",
+        "Verify page title",
+        "Check main elements are visible"
+      ]
+    },
+    {
+      "id": "tc-002",
+      "name": "Login Flow Test",
+      "description": "Test user authentication flow",
+      "priority": "critical",
+      "steps": [
+        "Navigate to login page",
+        "Enter valid credentials",
+        "Submit login form",
+        "Verify successful redirect to dashboard"
+      ]
+    },
+    {
+      "id": "tc-003",
+      "name": "Command Center Dashboard Test",
+      "description": "Test Command Center dashboard functionality",
+      "priority": "high",
+      "steps": [
+        "Navigate to Command Center",
+        "Verify dashboard loads",
+        "Check all widgets are present",
+        "Verify data displays correctly"
+      ]
+    },
+    {
+      "id": "tc-004",
+      "name": "Campaign Control Test",
+      "description": "Test Campaign Control module",
+      "priority": "high",
+      "steps": [
+        "Navigate to Campaign Control",
+        "Verify campaign list loads",
+        "Test campaign creation",
+        "Verify campaign management features"
+      ]
+    },
+    {
+      "id": "tc-005",
+      "name": "Real-Time Monitoring Test",
+      "description": "Test Real-Time Monitoring features",
+      "priority": "medium",
+      "steps": [
+        "Navigate to Real-Time Monitoring",
+        "Verify real-time data updates",
+        "Check monitoring widgets",
+        "Test filter functionality"
+      ]
+    },
+    {
+      "id": "tc-006",
+      "name": "Intelligence Hub Test",
+      "description": "Test Intelligence Hub functionality",
+      "priority": "medium",
+      "steps": [
+        "Navigate to Intelligence Hub",
+        "Verify document list loads",
+        "Test document upload",
+        "Check analysis features"
+      ]
+    },
+    {
+      "id": "tc-007",
+      "name": "Alert Center Test",
+      "description": "Test Alert Center and Information Streams",
+      "priority": "high",
+      "steps": [
+        "Navigate to Alert Center",
+        "Verify alert list loads",
+        "Check Information Streams tab",
+        "Test alert creation and management"
+      ]
+    },
+    {
+      "id": "tc-008",
+      "name": "Settings Test",
+      "description": "Test Settings configuration",
+      "priority": "low",
+      "steps": [
+        "Navigate to Settings",
+        "Verify settings sections load",
+        "Test profile update",
+        "Check preference changes"
+      ]
+    },
+    {
+      "id": "tc-009",
+      "name": "Navigation Test",
+      "description": "Test overall navigation flow",
+      "priority": "high",
+      "steps": [
+        "Test sidebar navigation",
+        "Verify all menu items work",
+        "Check breadcrumb navigation",
+        "Test responsive menu on mobile"
+      ]
+    },
+    {
+      "id": "tc-010",
+      "name": "Error Handling Test",
+      "description": "Test error states and handling",
+      "priority": "medium",
+      "steps": [
+        "Test 404 page",
+        "Verify error messages display",
+        "Check form validation",
+        "Test network error handling"
+      ]
+    }
+  ],
+  "environment": {
+    "browser": "chromium",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "timeout": 30000
+  },
+  "credentials": {
+    "username": "test@example.com",
+    "password": "testpassword123"
+  }
+}

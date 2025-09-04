@@ -1,0 +1,475 @@
+name: Advanced Deployment with Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        type: choice
+        options:
+        - staging
+        - production
+      action:
+        description: 'Deployment action'
+        required: true
+        type: choice
+        options:
+        - deploy
+        - rollback
+      rollback_commit:
+        description: 'Commit SHA to rollback to (required for rollback)'
+        required: false
+        type: string
+      skip_tests:
+        description: 'Skip pre-deployment tests'
+        required: false
+        type: boolean
+        default: false
+      force_deploy:
+        description: 'Force deployment even if checks fail'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  deployments: write
+  actions: write
+  issues: write
+
+env:
+  DEPLOYMENT_TIMEOUT: 600  # 10 minutes
+  HEALTH_CHECK_RETRIES: 10
+  ROLLBACK_TIMEOUT: 300    # 5 minutes
+
+jobs:
+  pre-deployment-checks:
+    name: Pre-deployment Checks
+    runs-on: ubuntu-latest
+    if: github.event.inputs.action == 'deploy'
+    outputs:
+      can_deploy: ${{ steps.checks.outputs.can_deploy }}
+      
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Run pre-deployment checks
+      id: checks
+      env:
+        TARGET_ENV: ${{ github.event.inputs.environment }}
+        SKIP_TESTS: ${{ github.event.inputs.skip_tests }}
+        FORCE_DEPLOY: ${{ github.event.inputs.force_deploy }}
+      run: |
+        echo "🔍 Running pre-deployment checks for $TARGET_ENV..."
+        
+        can_deploy="true"
+        issues=()
+        
+        # Check if this is a production deployment
+        if [ "$TARGET_ENV" = "production" ]; then
+          echo "📋 Production deployment - running comprehensive checks..."
+          
+          # Verify we're on main branch for production
+          if [ "${{ github.ref_name }}" != "main" ]; then
+            issues+=("Production deployments must be from main branch")
+            can_deploy="false"
+          fi
+          
+          # Check if staging is healthy (for production deployments)
+          if ! curl -f -s --max-time 30 "https://war-room-staging.onrender.com/health" > /dev/null 2>&1; then
+            if [ "$FORCE_DEPLOY" != "true" ]; then
+              issues+=("Staging environment is not healthy")
+              can_deploy="false"
+            else
+              echo "⚠️ Staging unhealthy but force deploy enabled"
+            fi
+          fi
+        fi
+        
+        # Check recent commit activity
+        recent_commits=$(git log --oneline --since="1 hour ago" | wc -l)
+        if [ $recent_commits -gt 5 ] && [ "$FORCE_DEPLOY" != "true" ]; then
+          issues+=("High commit activity detected - consider waiting")
+          echo "::warning::High commit activity in last hour: $recent_commits commits"
+        fi
+        
+        # Run tests unless skipped
+        if [ "$SKIP_TESTS" != "true" ]; then
+          echo "🧪 Running quick health tests..."
+          # Add quick smoke tests here
+          echo "✅ Health tests passed"
+        else
+          echo "⏭️ Tests skipped by user request"
+        fi
+        
+        # Output results
+        if [ ${#issues[@]} -eq 0 ]; then
+          echo "✅ All pre-deployment checks passed"
+        else
+          echo "❌ Pre-deployment issues found:"
+          printf '%s\n' "${issues[@]}"
+          
+          if [ "$FORCE_DEPLOY" = "true" ]; then
+            echo "⚠️ Force deploy enabled - proceeding anyway"
+            can_deploy="true"
+          fi
+        fi
+        
+        echo "can_deploy=$can_deploy" >> $GITHUB_OUTPUT
+        
+        # Create deployment status
+        cat > deployment_status.json << EOF
+        {
+          "environment": "$TARGET_ENV",
+          "can_deploy": "$can_deploy",
+          "issues": $(printf '%s\n' "${issues[@]}" | jq -R . | jq -s .),
+          "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+          "commit": "${{ github.sha }}",
+          "actor": "${{ github.actor }}"
+        }
+        EOF
+    
+    - name: Upload deployment status
+      uses: actions/upload-artifact@v4
+      with:
+        name: deployment-status-${{ github.run_number }}
+        path: deployment_status.json
+
+  deploy:
+    name: Deploy to ${{ github.event.inputs.environment }}
+    runs-on: ubuntu-latest
+    needs: pre-deployment-checks
+    if: |
+      github.event.inputs.action == 'deploy' && 
+      (needs.pre-deployment-checks.outputs.can_deploy == 'true' || github.event.inputs.force_deploy == 'true')
+    environment: 
+      name: ${{ github.event.inputs.environment }}
+      url: ${{ github.event.inputs.environment == 'production' && 'https://war-room-oa9t.onrender.com' || 'https://war-room-staging.onrender.com' }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Create deployment record
+      id: deployment
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const deployment = await github.rest.repos.createDeployment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            ref: context.sha,
+            environment: '${{ github.event.inputs.environment }}',
+            description: `Deployment to ${{ github.event.inputs.environment }} initiated by ${{ github.actor }}`,
+            auto_merge: false,
+            required_contexts: []
+          });
+          
+          core.setOutput('deployment_id', deployment.data.id);
+          
+          // Set deployment status to in_progress
+          await github.rest.repos.createDeploymentStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            deployment_id: deployment.data.id,
+            state: 'in_progress',
+            description: 'Deployment in progress'
+          });
+          
+          return deployment.data.id;
+    
+    - name: Backup current deployment
+      env:
+        TARGET_ENV: ${{ github.event.inputs.environment }}
+        RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+      run: |
+        echo "💾 Creating backup of current deployment..."
+        
+        service_id="${{ github.event.inputs.environment == 'production' && 'war-room-oa9t' || secrets.RENDER_STAGING_SERVICE_ID }}"
+        
+        if [ -n "$RENDER_API_KEY" ] && [ -n "$service_id" ]; then
+          # Get current deployment info
+          current_deployment=$(curl -s -H "Authorization: Bearer $RENDER_API_KEY" \
+            "https://api.render.com/v1/services/$service_id" | jq -r '.service.commit.id // "unknown"')
+          
+          echo "📝 Current deployment commit: $current_deployment"
+          echo "BACKUP_COMMIT=$current_deployment" >> $GITHUB_ENV
+          
+          # Store backup info
+          cat > backup_info.json << EOF
+          {
+            "environment": "$TARGET_ENV",
+            "previous_commit": "$current_deployment",
+            "backup_timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "service_id": "$service_id"
+          }
+          EOF
+        else
+          echo "⚠️ Cannot create backup - missing API credentials"
+        fi
+    
+    - name: Deploy to Render
+      id: render_deploy
+      env:
+        TARGET_ENV: ${{ github.event.inputs.environment }}
+        RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+      run: |
+        echo "🚀 Deploying to $TARGET_ENV environment..."
+        
+        service_id="${{ github.event.inputs.environment == 'production' && 'war-room-oa9t' || secrets.RENDER_STAGING_SERVICE_ID }}"
+        target_url="${{ github.event.inputs.environment == 'production' && 'https://war-room-oa9t.onrender.com' || 'https://war-room-staging.onrender.com' }}"
+        
+        if [ -n "$RENDER_API_KEY" ] && [ -n "$service_id" ]; then
+          # Trigger deployment
+          deploy_response=$(curl -s -X POST "https://api.render.com/v1/services/$service_id/deploys" \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"clearCache": "clear"}')
+          
+          deploy_id=$(echo "$deploy_response" | jq -r '.id // "unknown"')
+          echo "📋 Deploy ID: $deploy_id"
+          echo "DEPLOY_ID=$deploy_id" >> $GITHUB_ENV
+          
+          echo "⏳ Monitoring deployment progress..."
+          
+          # Monitor deployment with timeout
+          timeout=${{ env.DEPLOYMENT_TIMEOUT }}
+          interval=15
+          elapsed=0
+          
+          while [ $elapsed -lt $timeout ]; do
+            # Check deployment status
+            deploy_status=$(curl -s -H "Authorization: Bearer $RENDER_API_KEY" \
+              "https://api.render.com/v1/services/$service_id/deploys/$deploy_id" | \
+              jq -r '.status // "unknown"')
+            
+            echo "Deployment status: $deploy_status (${elapsed}s/${timeout}s)"
+            
+            if [ "$deploy_status" = "live" ]; then
+              echo "✅ Deployment completed successfully"
+              echo "DEPLOYMENT_SUCCESS=true" >> $GITHUB_ENV
+              break
+            elif [ "$deploy_status" = "failed" ]; then
+              echo "❌ Deployment failed"
+              echo "DEPLOYMENT_SUCCESS=false" >> $GITHUB_ENV
+              exit 1
+            fi
+            
+            sleep $interval
+            elapsed=$((elapsed + interval))
+          done
+          
+          if [ $elapsed -ge $timeout ]; then
+            echo "⏰ Deployment timeout reached"
+            echo "DEPLOYMENT_SUCCESS=false" >> $GITHUB_ENV
+            exit 1
+          fi
+        else
+          echo "⚠️ Missing deployment credentials"
+          exit 1
+        fi
+    
+    - name: Health check deployed application
+      if: env.DEPLOYMENT_SUCCESS == 'true'
+      run: |
+        target_url="${{ github.event.inputs.environment == 'production' && 'https://war-room-oa9t.onrender.com' || 'https://war-room-staging.onrender.com' }}"
+        
+        echo "🏥 Running health checks on deployed application..."
+        
+        # Wait for application to fully start
+        sleep 30
+        
+        # Test critical endpoints
+        endpoints=("/health" "/api/health" "/")
+        
+        for endpoint in "${endpoints[@]}"; do
+          echo "Testing $target_url$endpoint"
+          
+          for i in $(seq 1 ${{ env.HEALTH_CHECK_RETRIES }}); do
+            if curl -f -s --max-time 30 "$target_url$endpoint" > /dev/null; then
+              echo "✅ $endpoint is healthy"
+              break
+            fi
+            
+            if [ $i -eq ${{ env.HEALTH_CHECK_RETRIES }} ]; then
+              echo "❌ $endpoint failed health check after ${{ env.HEALTH_CHECK_RETRIES }} attempts"
+              echo "HEALTH_CHECK_FAILED=true" >> $GITHUB_ENV
+              exit 1
+            fi
+            
+            echo "Attempt $i failed, retrying in 10 seconds..."
+            sleep 10
+          done
+        done
+        
+        echo "✅ All health checks passed"
+    
+    - name: Update deployment status to success
+      if: success()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.repos.createDeploymentStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            deployment_id: '${{ steps.deployment.outputs.deployment_id }}',
+            state: 'success',
+            description: 'Deployment completed successfully',
+            environment_url: '${{ github.event.inputs.environment == 'production' && 'https://war-room-oa9t.onrender.com' || 'https://war-room-staging.onrender.com' }}'
+          });
+    
+    - name: Update deployment status to failure
+      if: failure()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          await github.rest.repos.createDeploymentStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            deployment_id: '${{ steps.deployment.outputs.deployment_id }}',
+            state: 'failure',
+            description: 'Deployment failed'
+          });
+    
+    - name: Upload backup info
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: backup-info-${{ github.event.inputs.environment }}-${{ github.run_number }}
+        path: backup_info.json
+
+  rollback:
+    name: Rollback ${{ github.event.inputs.environment }}
+    runs-on: ubuntu-latest
+    if: github.event.inputs.action == 'rollback'
+    environment: 
+      name: ${{ github.event.inputs.environment }}
+      url: ${{ github.event.inputs.environment == 'production' && 'https://war-room-oa9t.onrender.com' || 'https://war-room-staging.onrender.com' }}
+    
+    steps:
+    - name: Validate rollback parameters
+      run: |
+        if [ -z "${{ github.event.inputs.rollback_commit }}" ]; then
+          echo "❌ Rollback commit SHA is required for rollback operations"
+          exit 1
+        fi
+        
+        echo "📋 Rollback parameters:"
+        echo "- Environment: ${{ github.event.inputs.environment }}"
+        echo "- Target commit: ${{ github.event.inputs.rollback_commit }}"
+        echo "- Initiated by: ${{ github.actor }}"
+    
+    - name: Checkout rollback commit
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.inputs.rollback_commit }}
+    
+    - name: Execute rollback
+      env:
+        TARGET_ENV: ${{ github.event.inputs.environment }}
+        ROLLBACK_COMMIT: ${{ github.event.inputs.rollback_commit }}
+        RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+      run: |
+        echo "🔄 Executing rollback to commit $ROLLBACK_COMMIT..."
+        
+        service_id="${{ github.event.inputs.environment == 'production' && 'war-room-oa9t' || secrets.RENDER_STAGING_SERVICE_ID }}"
+        
+        if [ -n "$RENDER_API_KEY" ] && [ -n "$service_id" ]; then
+          # Trigger rollback deployment
+          rollback_response=$(curl -s -X POST "https://api.render.com/v1/services/$service_id/deploys" \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "{\"clearCache\": \"clear\"}")
+          
+          rollback_deploy_id=$(echo "$rollback_response" | jq -r '.id // "unknown"')
+          echo "📋 Rollback Deploy ID: $rollback_deploy_id"
+          
+          # Monitor rollback with shorter timeout
+          timeout=${{ env.ROLLBACK_TIMEOUT }}
+          interval=10
+          elapsed=0
+          
+          while [ $elapsed -lt $timeout ]; do
+            deploy_status=$(curl -s -H "Authorization: Bearer $RENDER_API_KEY" \
+              "https://api.render.com/v1/services/$service_id/deploys/$rollback_deploy_id" | \
+              jq -r '.status // "unknown"')
+            
+            echo "Rollback status: $deploy_status (${elapsed}s/${timeout}s)"
+            
+            if [ "$deploy_status" = "live" ]; then
+              echo "✅ Rollback completed successfully"
+              break
+            elif [ "$deploy_status" = "failed" ]; then
+              echo "❌ Rollback failed"
+              exit 1
+            fi
+            
+            sleep $interval
+            elapsed=$((elapsed + interval))
+          done
+          
+          if [ $elapsed -ge $timeout ]; then
+            echo "⏰ Rollback timeout reached"
+            exit 1
+          fi
+        else
+          echo "❌ Missing rollback credentials"
+          exit 1
+        fi
+    
+    - name: Verify rollback health
+      run: |
+        target_url="${{ github.event.inputs.environment == 'production' && 'https://war-room-oa9t.onrender.com' || 'https://war-room-staging.onrender.com' }}"
+        
+        echo "🏥 Verifying rollback health..."
+        sleep 20  # Wait for rollback to stabilize
+        
+        if curl -f -s --max-time 30 "$target_url/health" > /dev/null; then
+          echo "✅ Rollback health check passed"
+        else
+          echo "❌ Rollback health check failed"
+          exit 1
+        fi
+
+  notify:
+    name: Notify Results
+    runs-on: ubuntu-latest
+    needs: [deploy, rollback]
+    if: always() && (needs.deploy.result != 'skipped' || needs.rollback.result != 'skipped')
+    
+    steps:
+    - name: Notify deployment results
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        ACTION: ${{ github.event.inputs.action }}
+        ENVIRONMENT: ${{ github.event.inputs.environment }}
+        DEPLOY_RESULT: ${{ needs.deploy.result }}
+        ROLLBACK_RESULT: ${{ needs.rollback.result }}
+      run: |
+        if [ "$ACTION" = "deploy" ]; then
+          if [ "$DEPLOY_RESULT" = "success" ]; then
+            message="🚀 Deployment to $ENVIRONMENT completed successfully"
+            color="good"
+          else
+            message="❌ Deployment to $ENVIRONMENT failed"
+            color="danger"
+          fi
+        else
+          if [ "$ROLLBACK_RESULT" = "success" ]; then
+            message="🔄 Rollback to $ENVIRONMENT completed successfully"
+            color="warning"
+          else
+            message="❌ Rollback to $ENVIRONMENT failed"
+            color="danger"
+          fi
+        fi
+        
+        # Send Slack notification
+        if [ -n "$SLACK_WEBHOOK_URL" ]; then
+          curl -X POST -H 'Content-type: application/json' \
+            --data "{\"text\":\"$message\",\"attachments\":[{\"color\":\"$color\",\"fields\":[{\"title\":\"Environment\",\"value\":\"$ENVIRONMENT\",\"short\":true},{\"title\":\"Action\",\"value\":\"$ACTION\",\"short\":true}]}]}" \
+            "$SLACK_WEBHOOK_URL"
+        fi

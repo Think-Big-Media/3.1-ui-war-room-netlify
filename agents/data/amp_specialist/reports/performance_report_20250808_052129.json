@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-08-08T03:21:29.647516+00:00",
+  "baseline_comparison": {},
+  "optimization_summary": {
+    "total_optimizations": 0,
+    "by_type": {},
+    "success_rate": 0,
+    "recent_optimizations": []
+  },
+  "recommendations": [
+    {
+      "type": "optimization_opportunity",
+      "priority": 9,
+      "description": "Large component could benefit from lazy loading",
+      "file": "src/components/FloatingChatBar.tsx",
+      "action": "Implement React.lazy for code splitting",
+      "estimated_impact": "High"
+    },
+    {
+      "type": "optimization_opportunity",
+      "priority": 9,
+      "description": "Large component could benefit from lazy loading",
+      "file": "src/components/TickerTape.tsx",
+      "action": "Implement React.lazy for code splitting",
+      "estimated_impact": "High"
+    },
+    {
+      "type": "optimization_opportunity",
+      "priority": 9,
+      "description": "Large component could benefit from lazy loading",
+      "file": "src/components/generated/CommandCenter.tsx",
+      "action": "Implement React.lazy for code splitting",
+      "estimated_impact": "High"
+    },
+    {
+      "type": "optimization_opportunity",
+      "priority": 9,
+      "description": "Large component could benefit from lazy loading",
+      "file": "src/components/generated/SidebarNavigation.tsx",
+      "action": "Implement React.lazy for code splitting",
+      "estimated_impact": "High"
+    },
+    {
+      "type": "optimization_opportunity",
+      "priority": 9,
+      "description": "Large component could benefit from lazy loading",
+      "file": "src/components/generated/FloatingChatBar.tsx",
+      "action": "Implement React.lazy for code splitting",
+      "estimated_impact": "High"
+    }
+  ],
+  "next_steps": []
+}

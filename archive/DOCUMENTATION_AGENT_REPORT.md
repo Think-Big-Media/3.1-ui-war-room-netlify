@@ -1,0 +1,9744 @@
+
+# DOCUMENTATION_AGENT Report
+Generated: 2025-08-08 06:13:13 UTC
+
+## Executive Summary
+The Documentation Agent has analyzed the War Room project and identified comprehensive documentation requirements for render.com deployment readiness.
+
+## Current State Analysis
+- **Existing Documentation Files**: 5
+- **Missing Documentation Files**: 0
+- **API Endpoints Discovered**: 184
+- **Environment Variables Discovered**: 529
+
+## Documentation Tasks
+
+### Update README.md
+- **Priority**: HIGH
+- **Estimated Time**: 2 hours
+- **Dependencies**: project_analysis, feature_inventory
+
+### Create comprehensive DEPLOYMENT.md
+- **Priority**: HIGH
+- **Estimated Time**: 3 hours
+- **Dependencies**: environment_analysis, render_requirements
+
+### Update API_DOCS.md
+- **Priority**: HIGH
+- **Estimated Time**: 4 hours
+- **Dependencies**: endpoint_discovery, authentication_flow
+
+### Create ENVIRONMENT_VARIABLES.md
+- **Priority**: MEDIUM
+- **Estimated Time**: 2 hours
+- **Dependencies**: env_var_discovery
+
+### Update ARCHITECTURE.md
+- **Priority**: MEDIUM
+- **Estimated Time**: 3 hours
+- **Dependencies**: system_analysis, sub_agent_documentation
+
+### Create MIGRATION_CHECKLIST.md
+- **Priority**: HIGH
+- **Estimated Time**: 2 hours
+- **Dependencies**: deployment_requirements
+
+### Create TROUBLESHOOTING.md
+- **Priority**: MEDIUM
+- **Estimated Time**: 3 hours
+- **Dependencies**: issue_analysis, solution_research
+
+## Link Validation Results
+- **Valid Internal Links**: 211
+- **Broken Internal Links**: 9655
+- **External Links Found**: 47393
+
+### Broken Links to Fix:
+- TROUBLESHOOTING.md: `Quick Diagnostics` -> `#quick-diagnostics`
+- TROUBLESHOOTING.md: `Deployment Issues` -> `#deployment-issues`
+- TROUBLESHOOTING.md: `Runtime Issues` -> `#runtime-issues`
+- TROUBLESHOOTING.md: `Database Issues` -> `#database-issues`
+- TROUBLESHOOTING.md: `Authentication Issues` -> `#authentication-issues`
+- TROUBLESHOOTING.md: `API Issues` -> `#api-issues`
+- TROUBLESHOOTING.md: `Frontend Issues` -> `#frontend-issues`
+- TROUBLESHOOTING.md: `Performance Issues` -> `#performance-issues`
+- TROUBLESHOOTING.md: `External Integration Issues` -> `#external-integration-issues`
+- TROUBLESHOOTING.md: `Monitoring & Alerting Issues` -> `#monitoring--alerting-issues`
+- TROUBLESHOOTING.md: `Sub-Agent Issues` -> `#sub-agent-issues`
+- TROUBLESHOOTING.md: `Emergency Procedures` -> `#emergency-procedures`
+- INTEGRATIONS.md: `Pinecone Vector Database` -> `#pinecone-vector-database`
+- INTEGRATIONS.md: `OpenAI Integration` -> `#openai-integration`
+- INTEGRATIONS.md: `Supabase` -> `#supabase`
+- INTEGRATIONS.md: `PostHog Analytics` -> `#posthog-analytics`
+- INTEGRATIONS.md: `Meta Business API` -> `#meta-business-api`
+- INTEGRATIONS.md: `Google Ads API` -> `#google-ads-api`
+- README.md: `Security Guide` -> `./SECURITY.md`
+- README.md: `Contributing Guide` -> `./CONTRIBUTING.md`
+- README.md: `Contributing Guide` -> `./CONTRIBUTING.md`
+- README.md: `LICENSE` -> `./LICENSE`
+- DEPLOYMENT.md: `Overview` -> `#overview`
+- DEPLOYMENT.md: `Prerequisites` -> `#prerequisites`
+- DEPLOYMENT.md: `Pre-Deployment Checklist` -> `#pre-deployment-checklist`
+- DEPLOYMENT.md: `Render.com Setup` -> `#rendercom-setup`
+- DEPLOYMENT.md: `Environment Configuration` -> `#environment-configuration`
+- DEPLOYMENT.md: `Service Configuration` -> `#service-configuration`
+- DEPLOYMENT.md: `Database Setup` -> `#database-setup`
+- DEPLOYMENT.md: `Deployment Process` -> `#deployment-process`
+- DEPLOYMENT.md: `Post-Deployment Validation` -> `#post-deployment-validation`
+- DEPLOYMENT.md: `Monitoring & Maintenance` -> `#monitoring--maintenance`
+- DEPLOYMENT.md: `Troubleshooting` -> `#troubleshooting`
+- DEPLOYMENT.md: `Rollback Procedures` -> `#rollback-procedures`
+- DEPLOYMENT.md: `Performance Optimization` -> `#performance-optimization`
+- TIMEOUT_AND_SECURITY_GUIDE.md: `Timeout Hierarchy` -> `#timeout-hierarchy`
+- TIMEOUT_AND_SECURITY_GUIDE.md: `Security Improvements` -> `#security-improvements`
+- TIMEOUT_AND_SECURITY_GUIDE.md: `Implementation Details` -> `#implementation-details`
+- TIMEOUT_AND_SECURITY_GUIDE.md: `Monitoring and Diagnostics` -> `#monitoring-and-diagnostics`
+- TIMEOUT_AND_SECURITY_GUIDE.md: `Best Practices` -> `#best-practices`
+- ENVIRONMENT_VARIABLES.md: `Configuration Principles` -> `#configuration-principles`
+- ENVIRONMENT_VARIABLES.md: `Environment Files` -> `#environment-files`
+- ENVIRONMENT_VARIABLES.md: `Core Application Variables` -> `#core-application-variables`
+- ENVIRONMENT_VARIABLES.md: `Database Configuration` -> `#database-configuration`
+- ENVIRONMENT_VARIABLES.md: `Authentication & Security` -> `#authentication--security`
+- ENVIRONMENT_VARIABLES.md: `External API Integrations` -> `#external-api-integrations`
+- ENVIRONMENT_VARIABLES.md: `Monitoring & Analytics` -> `#monitoring--analytics`
+- ENVIRONMENT_VARIABLES.md: `Feature Flags` -> `#feature-flags`
+- ENVIRONMENT_VARIABLES.md: `Performance Configuration` -> `#performance-configuration`
+- ENVIRONMENT_VARIABLES.md: `Development Variables` -> `#development-variables`
+- ENVIRONMENT_VARIABLES.md: `Deployment-Specific Variables` -> `#deployment-specific-variables`
+- ENVIRONMENT_VARIABLES.md: `Validation & Testing` -> `#validation--testing`
+- ENVIRONMENT_VARIABLES.md: `Security Considerations` -> `#security-considerations`
+- node_modules/yoctocolors-cjs/readme.md: `benchmark.js` -> `benchmark.js`
+- node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- node_modules/d3-format/README.md: `d3.formatSpecifier` -> `#formatSpecifier`
+- node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- node_modules/d3-format/README.md: `default locale` -> `#formatDefaultLocale`
+- node_modules/d3-format/README.md: `*locale*.formatPrefix` -> `#locale_formatPrefix`
+- node_modules/d3-format/README.md: `default locale` -> `#formatDefaultLocale`
+- node_modules/d3-format/README.md: `precisionFixed` -> `#precisionFixed`
+- node_modules/d3-format/README.md: `precisionRound` -> `#precisionRound`
+- node_modules/d3-format/README.md: `SI prefix` -> `#locale_formatPrefix`
+- node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- node_modules/d3-format/README.md: `precisionPrefix` -> `#precisionPrefix`
+- node_modules/d3-format/README.md: `format specification mini-language` -> `#locale_format`
+- node_modules/d3-format/README.md: `precisionFixed` -> `#precisionFixed`
+- node_modules/d3-format/README.md: `format specification mini-language` -> `#locale_format`
+- node_modules/d3-format/README.md: `*locale*.formatPrefix` -> `#locale_formatPrefix`
+- node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- node_modules/d3-format/README.md: `*locale*.formatPrefix` -> `#locale_formatPrefix`
+- node_modules/d3-format/README.md: `d3.formatLocale` -> `#formatLocale`
+- node_modules/d3-format/README.md: `d3.format` -> `#format`
+- node_modules/d3-format/README.md: `d3.formatPrefix` -> `#formatPrefix`
+- node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- node_modules/d3-format/README.md: `*locale*.formatPrefix` -> `#locale_formatPrefix`
+- node_modules/zod/README.md: `refinements` -> `#refine`
+- node_modules/zod/README.md: `transforms` -> `#transform`
+- node_modules/zod/README.md: `refinements` -> `#refine`
+- node_modules/zod/README.md: `transforms` -> `#transform`
+- node_modules/@pkgjs/parseargs/README.md: `parseArgs tokens` -> `#parseargs-tokens`
+- node_modules/@pkgjs/parseargs/README.md: `Scope` -> `#scope`
+- node_modules/@pkgjs/parseargs/README.md: `Version Matchups` -> `#version-matchups`
+- node_modules/@pkgjs/parseargs/README.md: `🚀 Getting Started` -> `#-getting-started`
+- node_modules/@pkgjs/parseargs/README.md: `🙌 Contributing` -> `#-contributing`
+- node_modules/@pkgjs/parseargs/README.md: `💡 `process.mainArgs` Proposal` -> `#-processmainargs-proposal`
+- node_modules/@pkgjs/parseargs/README.md: `Implementation:` -> `#implementation`
+- node_modules/@pkgjs/parseargs/README.md: `📃 Examples` -> `#-examples`
+- node_modules/@pkgjs/parseargs/README.md: `F.A.Qs` -> `#faqs`
+- node_modules/@pkgjs/parseargs/README.md: `Links & Resources` -> `#links--resources`
+- node_modules/@pkgjs/parseargs/README.md: `Contributing Guide` -> `CONTRIBUTING.md`
+- node_modules/@pkgjs/parseargs/README.md: ``Examples w/ Output`` -> `#-examples-w-output`
+- node_modules/jsesc/README.md: `by default` -> `#json`
+- node_modules/jsesc/README.md: `many options` -> `#api`
+- node_modules/jsesc/README.md: `by default` -> `#minimal`
+- node_modules/jsesc/README.md: `the `quotes` option` -> `#quotes`
+- node_modules/jsesc/README.md: `the `indent` option` -> `#indent`
+- node_modules/jsesc/README.md: `the `numbers` option` -> `#numbers`
+- node_modules/@types/react-redux/node_modules/redux/README.md: `Redux workshops through Workshop.me` -> `#redux-workshops`
+- node_modules/@types/react-redux/node_modules/redux/README.md: `See the full list of Redux patrons` -> `PATRONS.md`
+- node_modules/@types/react-redux/node_modules/redux/README.md: `MIT` -> `LICENSE.md`
+- node_modules/@types/jest/node_modules/ci-info/README.md: `MIT` -> `LICENSE`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `advanced globbing` -> `#advanced-globbing`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `library comparison` -> `#library-comparisons`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Install` -> `#install`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Usage` -> `#usage`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `API` -> `#api`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `picomatch` -> `#picomatch`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.test` -> `#test`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.matchBase` -> `#matchbase`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.isMatch` -> `#ismatch`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.parse` -> `#parse`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.compileRe` -> `#compilere`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.makeRe` -> `#makere`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.toRegex` -> `#toregex`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Options` -> `#options`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Picomatch options` -> `#picomatch-options`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Scan Options` -> `#scan-options`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Options Examples` -> `#options-examples`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Globbing features` -> `#globbing-features`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Braces` -> `#braces`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Matching special characters as literals` -> `#matching-special-characters-as-literals`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Library Comparisons` -> `#library-comparisons`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Benchmarks` -> `#benchmarks`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Philosophies` -> `#philosophies`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `About` -> `#about`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Author` -> `#author`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `License` -> `#license`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `picomatch` -> `lib/picomatch.js#L31`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.test` -> `lib/picomatch.js#L116`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.matchBase` -> `lib/picomatch.js#L160`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.makeRe` -> `#makeRe`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.isMatch` -> `lib/picomatch.js#L182`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `options` -> `#options`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.parse` -> `lib/picomatch.js#L198`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.scan` -> `lib/picomatch.js#L230`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.compileRe` -> `lib/picomatch.js#L244`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `parse()` -> `#parse`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.makeRe` -> `lib/picomatch.js#L285`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.toRegex` -> `lib/picomatch.js#L320`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `format` -> `#optionsformat`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `onIgnore` -> `#optionsonIgnore`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `onMatch` -> `#optionsonMatch`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `onResult` -> `#optionsonResult`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `picomatch options` -> `#picomatch-options`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `extglobs` -> `#extglobs`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `POSIX brackets` -> `#posix-brackets`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `Braces` -> `#brace-expansion`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `contributing guide` -> `.github/contributing.md`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `.verb.md` -> `.verb.md`
+- node_modules/@types/jest/node_modules/picomatch/README.md: `MIT License` -> `LICENSE`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Install` -> `#install`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Overview` -> `#overview`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Usage` -> `#usage`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Types` -> `#types`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Json` -> `#types-json`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `JavaScript` -> `#types-javascript`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Options` -> `#types-options`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Properties` -> `#types-properties`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Generics` -> `#types-generics`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Recursive` -> `#types-recursive`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Modules` -> `#types-modules`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Template Literal` -> `#types-template-literal`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Indexed` -> `#types-indexed`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Mapped` -> `#types-mapped`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Conditional` -> `#types-conditional`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Transform` -> `#types-transform`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Guard` -> `#types-guard`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Unsafe` -> `#types-unsafe`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Values` -> `#values`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Assert` -> `#values-assert`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Create` -> `#values-create`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Clone` -> `#values-clone`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Check` -> `#values-check`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Convert` -> `#values-convert`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Default` -> `#values-default`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Clean` -> `#values-clean`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Cast` -> `#values-cast`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Decode` -> `#values-decode`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Encode` -> `#values-decode`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Parse` -> `#values-parse`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Equal` -> `#values-equal`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Hash` -> `#values-hash`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Diff` -> `#values-diff`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Patch` -> `#values-patch`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Errors` -> `#values-errors`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Mutate` -> `#values-mutate`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Pointer` -> `#values-pointer`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Syntax` -> `#syntax`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Create` -> `#syntax-create`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Parameters` -> `#syntax-parameters`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Generics` -> `#syntax-generics`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Options` -> `#syntax-options`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `NoInfer` -> `#syntax-no-infer`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `TypeRegistry` -> `#typeregistry`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Type` -> `#typeregistry-type`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Format` -> `#typeregistry-format`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `TypeCheck` -> `#typecheck`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Ajv` -> `#typecheck-ajv`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `TypeCompiler` -> `#typecheck-typecompiler`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `TypeMap` -> `#typemap`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Usage` -> `#typemap-usage`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `TypeSystem` -> `#typesystem`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Policies` -> `#typesystem-policies`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Error Function` -> `#error-function`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Workbench` -> `#workbench`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Codegen` -> `#codegen`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Ecosystem` -> `#ecosystem`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Benchmark` -> `#benchmark`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Compile` -> `#benchmark-compile`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Validate` -> `#benchmark-validate`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Compression` -> `#benchmark-compression`
+- node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Contribute` -> `#contribute`
+- node_modules/globals/readme.md: `JSON file` -> `globals.json`
+- node_modules/d3-shape/README.md: `symbols` -> `#symbols`
+- node_modules/d3-shape/README.md: `arcs` -> `#arcs`
+- node_modules/d3-shape/README.md: `lines` -> `#lines`
+- node_modules/d3-shape/README.md: `areas` -> `#areas`
+- node_modules/d3-shape/README.md: `Arcs` -> `#arcs`
+- node_modules/d3-shape/README.md: `Pies` -> `#pies`
+- node_modules/d3-shape/README.md: `Lines` -> `#lines`
+- node_modules/d3-shape/README.md: `Areas` -> `#areas`
+- node_modules/d3-shape/README.md: `Curves` -> `#curves`
+- node_modules/d3-shape/README.md: `Custom Curves` -> `#custom-curves`
+- node_modules/d3-shape/README.md: `Links` -> `#links`
+- node_modules/d3-shape/README.md: `Symbols` -> `#symbols`
+- node_modules/d3-shape/README.md: `Custom Symbol Types` -> `#custom-symbol-types`
+- node_modules/d3-shape/README.md: `Stacks` -> `#stacks`
+- node_modules/d3-shape/README.md: `start` -> `#arc_startAngle`
+- node_modules/d3-shape/README.md: `end` -> `#arc_endAngle`
+- node_modules/d3-shape/README.md: `rounded corners` -> `#arc_cornerRadius`
+- node_modules/d3-shape/README.md: `angular padding` -> `#arc_padAngle`
+- node_modules/d3-shape/README.md: `pie generator` -> `#pies`
+- node_modules/d3-shape/README.md: `context` -> `#arc_context`
+- node_modules/d3-shape/README.md: `generated` -> `#_arc`
+- node_modules/d3-shape/README.md: `startAngle` -> `#arc_startAngle`
+- node_modules/d3-shape/README.md: `endAngle` -> `#arc_endAngle`
+- node_modules/d3-shape/README.md: `innerRadius` -> `#arc_innerRadius`
+- node_modules/d3-shape/README.md: `outerRadius` -> `#arc_outerRadius`
+- node_modules/d3-shape/README.md: `outerRadius` -> `#arc_outerRadius`
+- node_modules/d3-shape/README.md: `innerRadius` -> `#arc_innerRadius`
+- node_modules/d3-shape/README.md: `padRadius` -> `#arc_padRadius`
+- node_modules/d3-shape/README.md: `start` -> `#arc_startAngle`
+- node_modules/d3-shape/README.md: `end` -> `#arc_endAngle`
+- node_modules/d3-shape/README.md: `inner radius` -> `#arc_innerRadius`
+- node_modules/d3-shape/README.md: `pie generator` -> `#pies`
+- node_modules/d3-shape/README.md: `*pie*.padAngle` -> `#pie_padAngle`
+- node_modules/d3-shape/README.md: `innerRadius` -> `#arc_innerRadius`
+- node_modules/d3-shape/README.md: `outerRadius` -> `#arc_outerRadius`
+- node_modules/d3-shape/README.md: `padAngle` -> `#arc_padAngle`
+- node_modules/d3-shape/README.md: `generated arc` -> `#_arc`
+- node_modules/d3-shape/README.md: `*context*` -> `#arc_context`
+- node_modules/d3-shape/README.md: `arc generator` -> `#arcs`
+- node_modules/d3-shape/README.md: `value` -> `#pie_value`
+- node_modules/d3-shape/README.md: `sorted index` -> `#pie_sort`
+- node_modules/d3-shape/README.md: `start angle` -> `#pie_startAngle`
+- node_modules/d3-shape/README.md: `end angle` -> `#pie_endAngle`
+- node_modules/d3-shape/README.md: `pad angle` -> `#pie_padAngle`
+- node_modules/d3-shape/README.md: `startAngle` -> `#arc_startAngle`
+- node_modules/d3-shape/README.md: `endAngle` -> `#arc_endAngle`
+- node_modules/d3-shape/README.md: `padAngle` -> `#arc_padAngle`
+- node_modules/d3-shape/README.md: `arc generator` -> `#arcs`
+- node_modules/d3-shape/README.md: `constructs` -> `#pie`
+- node_modules/d3-shape/README.md: `invokes` -> `#_pie`
+- node_modules/d3-shape/README.md: `sorted` -> `#pie_sortValues`
+- node_modules/d3-shape/README.md: `generated` -> `#_pie`
+- node_modules/d3-shape/README.md: `value comparator` -> `#pie_sortValues`
+- node_modules/d3-shape/README.md: `generated arc array` -> `#_pie`
+- node_modules/d3-shape/README.md: `start angle` -> `#pie_startAngle`
+- node_modules/d3-shape/README.md: `end angle` -> `#pie_endAngle`
+- node_modules/d3-shape/README.md: `data comparator` -> `#pie_sort`
+- node_modules/d3-shape/README.md: `data comparator` -> `#pie_sort`
+- node_modules/d3-shape/README.md: `value accessor` -> `#pie_value`
+- node_modules/d3-shape/README.md: `generated arc array` -> `#_pie`
+- node_modules/d3-shape/README.md: `start angle` -> `#pie_startAngle`
+- node_modules/d3-shape/README.md: `end angle` -> `#pie_endAngle`
+- node_modules/d3-shape/README.md: `pie generator` -> `#_pie`
+- node_modules/d3-shape/README.md: `arc generator` -> `#arcs`
+- node_modules/d3-shape/README.md: `pie generator` -> `#_pie`
+- node_modules/d3-shape/README.md: `arc generator` -> `#arcs`
+- node_modules/d3-shape/README.md: `startAngle` -> `#pie_startAngle`
+- node_modules/d3-shape/README.md: `value` -> `#pie_value`
+- node_modules/d3-shape/README.md: `pie generator` -> `#_pie`
+- node_modules/d3-shape/README.md: `arc generator` -> `#arcs`
+- node_modules/d3-shape/README.md: `curve` -> `#line_curve`
+- node_modules/d3-shape/README.md: `context` -> `#line_context`
+- node_modules/d3-shape/README.md: `generated` -> `#_line`
+- node_modules/d3-shape/README.md: `defined` -> `#line_defined`
+- node_modules/d3-shape/README.md: `generated` -> `#_line`
+- node_modules/d3-shape/README.md: `defined` -> `#line_defined`
+- node_modules/d3-shape/README.md: `*line*.x` -> `#line_x`
+- node_modules/d3-shape/README.md: `generated` -> `#_line`
+- node_modules/d3-shape/README.md: `x` -> `#line_x`
+- node_modules/d3-shape/README.md: `y` -> `#line_y`
+- node_modules/d3-shape/README.md: `curveCardinalOpen` -> `#curveCardinalOpen`
+- node_modules/d3-shape/README.md: `curve factory` -> `#curves`
+- node_modules/d3-shape/README.md: `curveLinear` -> `#curveLinear`
+- node_modules/d3-shape/README.md: `generated line` -> `#_line`
+- node_modules/d3-shape/README.md: `*context*` -> `#line_context`
+- node_modules/d3-shape/README.md: `line generator` -> `#line`
+- node_modules/d3-shape/README.md: `x` -> `#line_x`
+- node_modules/d3-shape/README.md: `y` -> `#line_y`
+- node_modules/d3-shape/README.md: `angle` -> `#lineRadial_angle`
+- node_modules/d3-shape/README.md: `radius` -> `#lineRadial_radius`
+- node_modules/d3-shape/README.md: `*line*` -> `#_line`
+- node_modules/d3-shape/README.md: `*line*.x` -> `#line_x`
+- node_modules/d3-shape/README.md: `*line*.y` -> `#line_y`
+- node_modules/d3-shape/README.md: `*line*.defined` -> `#line_defined`
+- node_modules/d3-shape/README.md: `*line*.curve` -> `#line_curve`
+- node_modules/d3-shape/README.md: `curveMonotoneX` -> `#curveMonotoneX`
+- node_modules/d3-shape/README.md: `curveMonotoneY` -> `#curveMonotoneY`
+- node_modules/d3-shape/README.md: `*line*.context` -> `#line_context`
+- node_modules/d3-shape/README.md: `lines` -> `#lines`
+- node_modules/d3-shape/README.md: `*x*-values` -> `#area_x`
+- node_modules/d3-shape/README.md: `x0` -> `#area_x0`
+- node_modules/d3-shape/README.md: `x1` -> `#area_x1`
+- node_modules/d3-shape/README.md: `y0` -> `#area_y0`
+- node_modules/d3-shape/README.md: `y1` -> `#area_y1`
+- node_modules/d3-shape/README.md: `curveLinear` -> `#curveLinear`
+- node_modules/d3-shape/README.md: `curve` -> `#area_curve`
+- node_modules/d3-shape/README.md: `curve` -> `#area_curve`
+- node_modules/d3-shape/README.md: `context` -> `#line_context`
+- node_modules/d3-shape/README.md: `x0` -> `#area_x0`
+- node_modules/d3-shape/README.md: `x1` -> `#area_x1`
+- node_modules/d3-shape/README.md: `generated` -> `#_area`
+- node_modules/d3-shape/README.md: `defined` -> `#area_defined`
+- node_modules/d3-shape/README.md: `x0` -> `#area_x0`
+- node_modules/d3-shape/README.md: `generated` -> `#_area`
+- node_modules/d3-shape/README.md: `defined` -> `#area_defined`
+- node_modules/d3-shape/README.md: `*area*.x0` -> `#area_x0`
+- node_modules/d3-shape/README.md: `y0` -> `#area_y0`
+- node_modules/d3-shape/README.md: `y1` -> `#area_y1`
+- node_modules/d3-shape/README.md: `generated` -> `#_area`
+- node_modules/d3-shape/README.md: `defined` -> `#area_defined`
+- node_modules/d3-shape/README.md: `*area*.x0` -> `#area_x0`
+- node_modules/d3-shape/README.md: `y0` -> `#area_y0`
+- node_modules/d3-shape/README.md: `generated` -> `#_area`
+- node_modules/d3-shape/README.md: `defined` -> `#area_defined`
+- node_modules/d3-shape/README.md: `*area*.x0` -> `#area_x0`
+- node_modules/d3-shape/README.md: `generated` -> `#_area`
+- node_modules/d3-shape/README.md: `x0` -> `#area_x0`
+- node_modules/d3-shape/README.md: `x1` -> `#area_x1`
+- node_modules/d3-shape/README.md: `y0` -> `#area_y0`
+- node_modules/d3-shape/README.md: `y1` -> `#area_y1`
+- node_modules/d3-shape/README.md: `curveCardinalOpen` -> `#curveCardinalOpen`
+- node_modules/d3-shape/README.md: `curve factory` -> `#curves`
+- node_modules/d3-shape/README.md: `curveLinear` -> `#curveLinear`
+- node_modules/d3-shape/README.md: `generated area` -> `#_area`
+- node_modules/d3-shape/README.md: `*context*` -> `#area_context`
+- node_modules/d3-shape/README.md: `line generator` -> `#lines`
+- node_modules/d3-shape/README.md: `defined accessor` -> `#area_defined`
+- node_modules/d3-shape/README.md: `curve` -> `#area_curve`
+- node_modules/d3-shape/README.md: `context` -> `#area_context`
+- node_modules/d3-shape/README.md: `*x*-accessor` -> `#line_x`
+- node_modules/d3-shape/README.md: `*x0*-accessor` -> `#area_x0`
+- node_modules/d3-shape/README.md: `*y*-accessor` -> `#line_y`
+- node_modules/d3-shape/README.md: `*y0*-accessor` -> `#area_y0`
+- node_modules/d3-shape/README.md: `line generator` -> `#lines`
+- node_modules/d3-shape/README.md: `defined accessor` -> `#area_defined`
+- node_modules/d3-shape/README.md: `curve` -> `#area_curve`
+- node_modules/d3-shape/README.md: `context` -> `#area_context`
+- node_modules/d3-shape/README.md: `*x*-accessor` -> `#line_x`
+- node_modules/d3-shape/README.md: `*x1*-accessor` -> `#area_x1`
+- node_modules/d3-shape/README.md: `*y*-accessor` -> `#line_y`
+- node_modules/d3-shape/README.md: `*y0*-accessor` -> `#area_y0`
+- node_modules/d3-shape/README.md: `line generator` -> `#lines`
+- node_modules/d3-shape/README.md: `defined accessor` -> `#area_defined`
+- node_modules/d3-shape/README.md: `curve` -> `#area_curve`
+- node_modules/d3-shape/README.md: `context` -> `#area_context`
+- node_modules/d3-shape/README.md: `*x*-accessor` -> `#line_x`
+- node_modules/d3-shape/README.md: `*x0*-accessor` -> `#area_x0`
+- node_modules/d3-shape/README.md: `*y*-accessor` -> `#line_y`
+- node_modules/d3-shape/README.md: `*y1*-accessor` -> `#area_y1`
+- node_modules/d3-shape/README.md: `area generator` -> `#area`
+- node_modules/d3-shape/README.md: `x` -> `#area_x`
+- node_modules/d3-shape/README.md: `y` -> `#area_y`
+- node_modules/d3-shape/README.md: `angle` -> `#areaRadial_angle`
+- node_modules/d3-shape/README.md: `radius` -> `#areaRadial_radius`
+- node_modules/d3-shape/README.md: `*area*` -> `#_area`
+- node_modules/d3-shape/README.md: `*area*.x` -> `#area_x`
+- node_modules/d3-shape/README.md: `*area*.x0` -> `#area_x0`
+- node_modules/d3-shape/README.md: `angle` -> `#areaRadial_angle`
+- node_modules/d3-shape/README.md: `*area*.x1` -> `#area_x1`
+- node_modules/d3-shape/README.md: `angle` -> `#areaRadial_angle`
+- node_modules/d3-shape/README.md: `*area*.y` -> `#area_y`
+- node_modules/d3-shape/README.md: `*area*.y0` -> `#area_y0`
+- node_modules/d3-shape/README.md: `*area*.y1` -> `#area_y1`
+- node_modules/d3-shape/README.md: `*area*.defined` -> `#area_defined`
+- node_modules/d3-shape/README.md: `*area*.curve` -> `#area_curve`
+- node_modules/d3-shape/README.md: `curveMonotoneX` -> `#curveMonotoneX`
+- node_modules/d3-shape/README.md: `curveMonotoneY` -> `#curveMonotoneY`
+- node_modules/d3-shape/README.md: `*line*.context` -> `#line_context`
+- node_modules/d3-shape/README.md: `radial line generator` -> `#lineRadial`
+- node_modules/d3-shape/README.md: `defined accessor` -> `#areaRadial_defined`
+- node_modules/d3-shape/README.md: `curve` -> `#areaRadial_curve`
+- node_modules/d3-shape/README.md: `context` -> `#areaRadial_context`
+- node_modules/d3-shape/README.md: `angle accessor` -> `#lineRadial_angle`
+- node_modules/d3-shape/README.md: `start angle accessor` -> `#areaRadial_startAngle`
+- node_modules/d3-shape/README.md: `radius accessor` -> `#lineRadial_radius`
+- node_modules/d3-shape/README.md: `inner radius accessor` -> `#areaRadial_innerRadius`
+- node_modules/d3-shape/README.md: `radial line generator` -> `#lineRadial`
+- node_modules/d3-shape/README.md: `defined accessor` -> `#areaRadial_defined`
+- node_modules/d3-shape/README.md: `curve` -> `#areaRadial_curve`
+- node_modules/d3-shape/README.md: `context` -> `#areaRadial_context`
+- node_modules/d3-shape/README.md: `angle accessor` -> `#lineRadial_angle`
+- node_modules/d3-shape/README.md: `end angle accessor` -> `#areaRadial_endAngle`
+- node_modules/d3-shape/README.md: `radius accessor` -> `#lineRadial_radius`
+- node_modules/d3-shape/README.md: `inner radius accessor` -> `#areaRadial_innerRadius`
+- node_modules/d3-shape/README.md: `radial line generator` -> `#lineRadial`
+- node_modules/d3-shape/README.md: `defined accessor` -> `#areaRadial_defined`
+- node_modules/d3-shape/README.md: `curve` -> `#areaRadial_curve`
+- node_modules/d3-shape/README.md: `context` -> `#areaRadial_context`
+- node_modules/d3-shape/README.md: `angle accessor` -> `#lineRadial_angle`
+- node_modules/d3-shape/README.md: `start angle accessor` -> `#areaRadial_startAngle`
+- node_modules/d3-shape/README.md: `radius accessor` -> `#lineRadial_radius`
+- node_modules/d3-shape/README.md: `outer radius accessor` -> `#areaRadial_outerRadius`
+- node_modules/d3-shape/README.md: `lines` -> `#lines`
+- node_modules/d3-shape/README.md: `areas` -> `#areas`
+- node_modules/d3-shape/README.md: `*line*.curve` -> `#line_curve`
+- node_modules/d3-shape/README.md: `*area*.curve` -> `#area_curve`
+- node_modules/d3-shape/README.md: `basis` -> `#basis`
+- node_modules/d3-shape/README.md: `*beta*` -> `#curveBundle_beta`
+- node_modules/d3-shape/README.md: `*curve*.areaStart` -> `#curve_areaStart`
+- node_modules/d3-shape/README.md: `*curve*.areaEnd` -> `#curve_areaEnd`
+- node_modules/d3-shape/README.md: `d3.line` -> `#lines`
+- node_modules/d3-shape/README.md: `d3.area` -> `#areas`
+- node_modules/d3-shape/README.md: `basis` -> `#basis`
+- node_modules/d3-shape/README.md: `tension` -> `#curveCardinal_tension`
+- node_modules/d3-shape/README.md: `tension` -> `#curveCardinal_tension`
+- node_modules/d3-shape/README.md: `curveCardinal` -> `#curveCardinal`
+- node_modules/d3-shape/README.md: `tension` -> `#curveCardinal_tension`
+- node_modules/d3-shape/README.md: `curveLinear` -> `#curveLinear`
+- node_modules/d3-shape/README.md: `Catmull–Rom` -> `#curveCatmullRom`
+- node_modules/d3-shape/README.md: `*alpha*` -> `#curveCatmullRom_alpha`
+- node_modules/d3-shape/README.md: `*alpha*` -> `#curveCatmullRom_alpha`
+- node_modules/d3-shape/README.md: `*alpha*` -> `#curveCatmullRom_alpha`
+- node_modules/d3-shape/README.md: `curveCatmullRom` -> `#curveCatmullRom`
+- node_modules/d3-shape/README.md: `curveCardinal` -> `#curveCardinal`
+- node_modules/d3-shape/README.md: `*line*.curve` -> `#line_curve`
+- node_modules/d3-shape/README.md: `*area*.curve` -> `#area_curve`
+- node_modules/d3-shape/README.md: `line segments` -> `#curve_lineStart`
+- node_modules/d3-shape/README.md: `points` -> `#curve_point`
+- node_modules/d3-shape/README.md: `vertical` -> `#linkVertical`
+- node_modules/d3-shape/README.md: `horizontal` -> `#linkHorizontal`
+- node_modules/d3-shape/README.md: `radial` -> `#linkRadial`
+- node_modules/d3-shape/README.md: `link generator` -> `#_link`
+- node_modules/d3-shape/README.md: `d3.link` -> `#link`
+- node_modules/d3-shape/README.md: `d3.curveBumpY` -> `#curveBumpY`
+- node_modules/d3-shape/README.md: `d3.link` -> `#link`
+- node_modules/d3-shape/README.md: `d3.curveBumpX` -> `#curveBumpX`
+- node_modules/d3-shape/README.md: `generated link` -> `#_link`
+- node_modules/d3-shape/README.md: `*context*` -> `#link_context`
+- node_modules/d3-shape/README.md: `link generator` -> `#_link`
+- node_modules/d3-shape/README.md: `*link*.x` -> `#link_x`
+- node_modules/d3-shape/README.md: `*link*.y` -> `#link_y`
+- node_modules/d3-shape/README.md: `type` -> `#symbol_type`
+- node_modules/d3-shape/README.md: `size` -> `#symbol_size`
+- node_modules/d3-shape/README.md: `context` -> `#symbol_context`
+- node_modules/d3-shape/README.md: `symbolsFill` -> `#symbolsFill`
+- node_modules/d3-shape/README.md: `symbolsStroke` -> `#symbolsStroke`
+- node_modules/d3-shape/README.md: `*symbolType*.draw` -> `#symbolType_draw`
+- node_modules/d3-shape/README.md: `generated symbol` -> `#_symbol`
+- node_modules/d3-shape/README.md: `*context*` -> `#symbol_context`
+- node_modules/d3-shape/README.md: `circle` -> `#symbolCircle`
+- node_modules/d3-shape/README.md: `cross` -> `#symbolCross`
+- node_modules/d3-shape/README.md: `diamond` -> `#symbolDiamond`
+- node_modules/d3-shape/README.md: `square` -> `#symbolSquare`
+- node_modules/d3-shape/README.md: `star` -> `#symbolStar`
+- node_modules/d3-shape/README.md: `triangle` -> `#symbolTriangle`
+- node_modules/d3-shape/README.md: `wye` -> `#symbolWye`
+- node_modules/d3-shape/README.md: `circle` -> `#symbolCircle`
+- node_modules/d3-shape/README.md: `plus` -> `#symbolPlus`
+- node_modules/d3-shape/README.md: `times` -> `#symbolTimes`
+- node_modules/d3-shape/README.md: `triangle2` -> `#symbolTriangle2`
+- node_modules/d3-shape/README.md: `asterisk` -> `#symbolAsterisk`
+- node_modules/d3-shape/README.md: `square2` -> `#symbolSquare2`
+- node_modules/d3-shape/README.md: `diamond2` -> `#symbolDiamond2`
+- node_modules/d3-shape/README.md: `*symbol*.type` -> `#symbol_type`
+- node_modules/d3-shape/README.md: `stack order` -> `#stack_order`
+- node_modules/d3-shape/README.md: `streamgraph` -> `#stackOffsetWiggle`
+- node_modules/d3-shape/README.md: `pie generator` -> `#pies`
+- node_modules/d3-shape/README.md: `area generator` -> `#areas`
+- node_modules/d3-shape/README.md: `keys accessor` -> `#stack_keys`
+- node_modules/d3-shape/README.md: `value` -> `#stack_value`
+- node_modules/d3-shape/README.md: `index` -> `#stack_order`
+- node_modules/d3-shape/README.md: `area generator` -> `#areas`
+- node_modules/d3-shape/README.md: `generated` -> `#_stack`
+- node_modules/d3-shape/README.md: `value accessor` -> `#stack_value`
+- node_modules/d3-shape/README.md: `*stack*` -> `#_stack`
+- node_modules/d3-shape/README.md: `stackOrderNone` -> `#stackOrderNone`
+- node_modules/d3-shape/README.md: `key accessor` -> `#stack_key`
+- node_modules/d3-shape/README.md: `stack orders` -> `#stack-orders`
+- node_modules/d3-shape/README.md: `offset` -> `#stack_offset`
+- node_modules/d3-shape/README.md: `stackOffsetNone` -> `#stackOffsetNone`
+- node_modules/d3-shape/README.md: `stack offsets` -> `#stack-offsets`
+- node_modules/d3-shape/README.md: `*stack*.order` -> `#stack_order`
+- node_modules/d3-shape/README.md: `wiggle offset` -> `#stackOffsetWiggle`
+- node_modules/d3-shape/README.md: `key accessor` -> `#stack_keys`
+- node_modules/d3-shape/README.md: `key accessor` -> `#stack_keys`
+- node_modules/d3-shape/README.md: `*stack*.offset` -> `#stack_offset`
+- node_modules/d3-shape/README.md: `inside-out order` -> `#stackOrderInsideOut`
+- node_modules/json-parse-even-better-errors/README.md: `Example` -> `#example`
+- node_modules/json-parse-even-better-errors/README.md: `Features` -> `#features`
+- node_modules/json-parse-even-better-errors/README.md: `Contributing` -> `#contributing`
+- node_modules/json-parse-even-better-errors/README.md: `API` -> `#api`
+- node_modules/json-parse-even-better-errors/README.md: ``parse`` -> `#parse`
+- node_modules/@playwright/test/README.md: `Contribution guide` -> `CONTRIBUTING.md`
+- node_modules/jiti/README.md: `src/babel` -> `./src/babel.ts`
+- node_modules/csstype/README.md: `Style types` -> `#style-types`
+- node_modules/csstype/README.md: `At-rule types` -> `#at-rule-types`
+- node_modules/csstype/README.md: `Pseudo types` -> `#pseudo-types`
+- node_modules/csstype/README.md: `Generics` -> `#generics`
+- node_modules/csstype/README.md: `Usage` -> `#usage`
+- node_modules/csstype/README.md: `What should I do when I get type errors?` -> `#what-should-i-do-when-i-get-type-errors`
+- node_modules/csstype/README.md: `Version 3.0` -> `#version-30`
+- node_modules/csstype/README.md: `Contributing` -> `#contributing`
+- node_modules/csstype/README.md: `"Generics"` -> `#generics`
+- node_modules/ts-api-utils/README.md: ``.github/CONTRIBUTING.md`` -> `./.github/CONTRIBUTING.md`
+- node_modules/make-dir/readme.md: `overridden` -> `#fs`
+- node_modules/react-transition-group/README.md: `Migration guide from v1` -> `/Migration.md`
+- node_modules/react-redux/README.md: `MIT` -> `LICENSE.md`
+- node_modules/flatted/README.md: `snow flake` -> `./flatted.jpg`
+- node_modules/sucrase/README.md: `Project Vision` -> `./docs/PROJECT_VISION.md`
+- node_modules/sucrase/README.md: `Contributing Guide` -> `./CONTRIBUTING.md`
+- node_modules/sucrase/node_modules/minimatch/README.md: `the caveat about Windows
+paths` -> `#windows`
+- node_modules/sucrase/node_modules/glob/README.md: `the caveat below about Windows
+  paths` -> `#windows`
+- node_modules/sucrase/node_modules/glob/README.md: `1` -> `#fn-webscale`
+- node_modules/web-vitals/README.md: `Overview` -> `#overview`
+- node_modules/web-vitals/README.md: `Install and load the library` -> `#installation`
+- node_modules/web-vitals/README.md: `From npm` -> `#import-web-vitals-from-npm`
+- node_modules/web-vitals/README.md: `From a CDN` -> `#load-web-vitals-from-a-cdn`
+- node_modules/web-vitals/README.md: `Usage` -> `#usage`
+- node_modules/web-vitals/README.md: `Basic usage` -> `#basic-usage`
+- node_modules/web-vitals/README.md: `Report the value on every change` -> `#report-the-value-on-every-change`
+- node_modules/web-vitals/README.md: `Report only the delta of changes` -> `#report-only-the-delta-of-changes`
+- node_modules/web-vitals/README.md: `Send the results to an analytics endpoint` -> `#send-the-results-to-an-analytics-endpoint`
+- node_modules/web-vitals/README.md: `Send the results to Google Analytics` -> `#send-the-results-to-google-analytics`
+- node_modules/web-vitals/README.md: `Send the results to Google Tag Manager` -> `#send-the-results-to-google-tag-manager`
+- node_modules/web-vitals/README.md: `Send attribution data` -> `#send-attribution-data`
+- node_modules/web-vitals/README.md: `Batch multiple reports together` -> `#batch-multiple-reports-together`
+- node_modules/web-vitals/README.md: `Build options` -> `#build-options`
+- node_modules/web-vitals/README.md: `Which build is right for you?` -> `#which-build-is-right-for-you`
+- node_modules/web-vitals/README.md: `API` -> `#api`
+- node_modules/web-vitals/README.md: `Types` -> `#types`
+- node_modules/web-vitals/README.md: `Functions` -> `#functions`
+- node_modules/web-vitals/README.md: `Rating Thresholds` -> `#rating-thresholds`
+- node_modules/web-vitals/README.md: `Attribution` -> `#attribution`
+- node_modules/web-vitals/README.md: `Browser Support` -> `#browser-support`
+- node_modules/web-vitals/README.md: `Limitations` -> `#limitations`
+- node_modules/web-vitals/README.md: `Development` -> `#development`
+- node_modules/web-vitals/README.md: `Integrations` -> `#integrations`
+- node_modules/web-vitals/README.md: `License` -> `#license`
+- node_modules/web-vitals/README.md: `load `web-vitals` from a CDN` -> `#load-web-vitals-from-a-cdn`
+- node_modules/web-vitals/README.md: `metric` -> `#metric`
+- node_modules/web-vitals/README.md: ``attribution`` -> `#attribution`
+- node_modules/web-vitals/README.md: `Send attribution data` -> `#send-attribution-data`
+- node_modules/web-vitals/README.md: ``attribution` reference` -> `#attribution`
+- node_modules/web-vitals/README.md: `configuration object` -> `#reportopts`
+- node_modules/web-vitals/README.md: `attribution build` -> `#attribution-build`
+- node_modules/web-vitals/README.md: `"attribution" build` -> `#attribution-build`
+- node_modules/web-vitals/README.md: `Rating Thresholds` -> `#rating-thresholds`
+- node_modules/web-vitals/README.md: `attribution objects` -> `#attribution`
+- node_modules/web-vitals/README.md: `configuration option` -> `#reportopts`
+- node_modules/web-vitals/README.md: `not necessarily for every layout shift` -> `#report-the-value-on-every-change`
+- node_modules/web-vitals/README.md: `Reporting only the delta of changes` -> `#report-only-the-delta-of-changes`
+- node_modules/web-vitals/README.md: `configuration option` -> `#reportopts`
+- node_modules/web-vitals/README.md: `configuration option` -> `#reportopts`
+- node_modules/web-vitals/README.md: `not necessarily for every interaction` -> `#report-the-value-on-every-change`
+- node_modules/web-vitals/README.md: `Reporting only the delta of changes` -> `#report-only-the-delta-of-changes`
+- node_modules/web-vitals/README.md: `configuration option` -> `#reportopts`
+- node_modules/web-vitals/README.md: ``MetricRatingThresholds`` -> `#metricratingthresholds`
+- node_modules/web-vitals/README.md: `attribution build` -> `#attribution-build`
+- node_modules/web-vitals/README.md: `/test/views/` -> `/test/views/`
+- node_modules/web-vitals/README.md: `Apache 2.0` -> `/LICENSE`
+- node_modules/d3-array/README.md: `Statistics` -> `#statistics`
+- node_modules/d3-array/README.md: `Search` -> `#search`
+- node_modules/d3-array/README.md: `Transformations` -> `#transformations`
+- node_modules/d3-array/README.md: `Iterables` -> `#iterables`
+- node_modules/d3-array/README.md: `Sets` -> `#sets`
+- node_modules/d3-array/README.md: `Bins` -> `#bins`
+- node_modules/d3-array/README.md: `Interning` -> `#interning`
+- node_modules/d3-array/README.md: `extent` -> `#extent`
+- node_modules/d3-array/README.md: `extent` -> `#extent`
+- node_modules/d3-array/README.md: `minimum` -> `#min`
+- node_modules/d3-array/README.md: `maximum` -> `#max`
+- node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- node_modules/d3-array/README.md: `bias-corrected variance` -> `#variance`
+- node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- node_modules/d3-array/README.md: `min` -> `#min`
+- node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- node_modules/d3-array/README.md: `minIndex` -> `#minIndex`
+- node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- node_modules/d3-array/README.md: `max` -> `#max`
+- node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- node_modules/d3-array/README.md: `maxIndex` -> `#maxIndex`
+- node_modules/d3-array/README.md: `bisectLeft` -> `#bisectLeft`
+- node_modules/d3-array/README.md: `*bisector*.center` -> `#bisector_center`
+- node_modules/d3-array/README.md: `bisectLeft` -> `#bisectLeft`
+- node_modules/d3-array/README.md: `bisectRight` -> `#bisectRight`
+- node_modules/d3-array/README.md: `InternMap` -> `#InternMap`
+- node_modules/d3-array/README.md: `group` -> `#group`
+- node_modules/d3-array/README.md: `group` -> `#group`
+- node_modules/d3-array/README.md: `group` -> `#group`
+- node_modules/d3-array/README.md: `index` -> `#index`
+- node_modules/d3-array/README.md: `Groups` -> `#group`
+- node_modules/d3-array/README.md: `d3.group` -> `#group`
+- node_modules/d3-array/README.md: `rollup` -> `#rollup`
+- node_modules/d3-array/README.md: `rollup` -> `#rollup`
+- node_modules/d3-array/README.md: `shuffle function` -> `#shuffle`
+- node_modules/d3-array/README.md: `d3.tickIncrement` -> `#tickIncrement`
+- node_modules/d3-array/README.md: `d3.tickStep` -> `#tickStep`
+- node_modules/d3-array/README.md: `step` -> `#tickStep`
+- node_modules/d3-array/README.md: `d3.tickStep` -> `#tickStep`
+- node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- node_modules/d3-array/README.md: `tick step` -> `#tickStep`
+- node_modules/d3-array/README.md: `d3.tickIncrement` -> `#tickIncrement`
+- node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- node_modules/d3-array/README.md: `zip` -> `#zip`
+- node_modules/d3-array/README.md: `d3.ascending` -> `#ascending`
+- node_modules/d3-array/README.md: `natural order` -> `#ascending`
+- node_modules/d3-array/README.md: `domain` -> `#bin_domain`
+- node_modules/d3-array/README.md: `generated` -> `#_bin`
+- node_modules/d3-array/README.md: `extent` -> `#extent`
+- node_modules/d3-array/README.md: `generated` -> `#_bin`
+- node_modules/d3-array/README.md: `extent` -> `#extent`
+- node_modules/d3-array/README.md: `thresholds` -> `#bin_thresholds`
+- node_modules/d3-array/README.md: `niced` -> `#nice`
+- node_modules/d3-array/README.md: `values` -> `#bin_value`
+- node_modules/d3-array/README.md: `threshold generator` -> `#bin-thresholds`
+- node_modules/d3-array/README.md: `Sturges’ formula` -> `#thresholdSturges`
+- node_modules/d3-array/README.md: `generated bins` -> `#_bin`
+- node_modules/d3-array/README.md: `bin thresholds` -> `#bin-thresholds`
+- node_modules/d3-array/README.md: `domain` -> `#bin_domain`
+- node_modules/d3-array/README.md: `domain` -> `#bin_domain`
+- node_modules/d3-array/README.md: `ticks` -> `#ticks`
+- node_modules/d3-array/README.md: `*bin*.thresholds` -> `#bin_thresholds`
+- node_modules/d3-array/README.md: `*values*` -> `#bin_value`
+- node_modules/d3-array/README.md: `observable domain` -> `#bin_domain`
+- node_modules/d3-array/README.md: `ticks` -> `#ticks`
+- node_modules/type-fest/readme.md: `contributing guidelines` -> `.github/contributing.md`
+- node_modules/type-fest/readme.md: ``Primitive`` -> `source/basic.d.ts`
+- node_modules/type-fest/readme.md: ``Class`` -> `source/basic.d.ts`
+- node_modules/type-fest/readme.md: ``TypedArray`` -> `source/basic.d.ts`
+- node_modules/type-fest/readme.md: ``JsonObject`` -> `source/basic.d.ts`
+- node_modules/type-fest/readme.md: ``JsonArray`` -> `source/basic.d.ts`
+- node_modules/type-fest/readme.md: ``JsonValue`` -> `source/basic.d.ts`
+- node_modules/type-fest/readme.md: ``ObservableLike`` -> `source/basic.d.ts`
+- node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- node_modules/type-fest/readme.md: ``Mutable`` -> `source/mutable.d.ts`
+- node_modules/type-fest/readme.md: ``Merge`` -> `source/merge.d.ts`
+- node_modules/type-fest/readme.md: ``MergeExclusive`` -> `source/merge-exclusive.d.ts`
+- node_modules/type-fest/readme.md: ``RequireAtLeastOne`` -> `source/require-at-least-one.d.ts`
+- node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- node_modules/type-fest/readme.md: ``PartialDeep`` -> `source/partial-deep.d.ts`
+- node_modules/type-fest/readme.md: ``ReadonlyDeep`` -> `source/readonly-deep.d.ts`
+- node_modules/type-fest/readme.md: ``LiteralUnion`` -> `source/literal-union.d.ts`
+- node_modules/type-fest/readme.md: ``Promisable`` -> `source/promisable.d.ts`
+- node_modules/type-fest/readme.md: ``Opaque`` -> `source/opaque.d.ts`
+- node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- node_modules/type-fest/readme.md: ``SetRequired`` -> `source/set-required.d.ts`
+- node_modules/type-fest/readme.md: ``ValueOf`` -> `source/value-of.d.ts`
+- node_modules/type-fest/readme.md: ``PromiseValue`` -> `source/promise-value.d.ts`
+- node_modules/type-fest/readme.md: ``AsyncReturnType`` -> `source/async-return-type.d.ts`
+- node_modules/type-fest/readme.md: ``ConditionalKeys`` -> `source/conditional-keys.d.ts`
+- node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- node_modules/type-fest/readme.md: ``ConditionalExcept`` -> `source/conditional-except.d.ts`
+- node_modules/type-fest/readme.md: ``UnionToIntersection`` -> `source/union-to-intersection.d.ts`
+- node_modules/type-fest/readme.md: ``Stringified`` -> `source/stringified.d.ts`
+- node_modules/type-fest/readme.md: ``FixedLengthArray`` -> `source/fixed-length-array.d.ts`
+- node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- node_modules/type-fest/readme.md: ``Entry`` -> `source/entry.d.ts`
+- node_modules/type-fest/readme.md: ``Entries`` -> `source/entries.d.ts`
+- node_modules/type-fest/readme.md: ``SetReturnType`` -> `source/set-return-type.d.ts`
+- node_modules/type-fest/readme.md: ``Asyncify`` -> `source/asyncify.d.ts`
+- node_modules/type-fest/readme.md: ``CamelCase`` -> `ts41/camel-case.d.ts`
+- node_modules/type-fest/readme.md: ``KebabCase`` -> `ts41/kebab-case.d.ts`
+- node_modules/type-fest/readme.md: ``PascalCase`` -> `ts41/pascal-case.d.ts`
+- node_modules/type-fest/readme.md: ``SnakeCase`` -> `ts41/snake-case.d.ts`
+- node_modules/type-fest/readme.md: ``DelimiterCase`` -> `ts41/delimiter-case.d.ts`
+- node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- node_modules/type-fest/readme.md: ``TsConfigJson`` -> `source/tsconfig-json.d.ts`
+- node_modules/commander/CHANGELOG.md: `1.x` -> `./changelogs/CHANGELOG-1.md`
+- node_modules/commander/CHANGELOG.md: `0.x` -> `./changelogs/CHANGELOG-0.md`
+- node_modules/commander/Readme.md: `简体中文` -> `./Readme_zh-CN.md`
+- node_modules/commander/Readme.md: `Commander.js` -> `#commanderjs`
+- node_modules/commander/Readme.md: `Installation` -> `#installation`
+- node_modules/commander/Readme.md: `Declaring program variable` -> `#declaring-program-variable`
+- node_modules/commander/Readme.md: `Options` -> `#options`
+- node_modules/commander/Readme.md: `Common option types, boolean and value` -> `#common-option-types-boolean-and-value`
+- node_modules/commander/Readme.md: `Default option value` -> `#default-option-value`
+- node_modules/commander/Readme.md: `Other option types, negatable boolean and flag|value` -> `#other-option-types-negatable-boolean-and-flagvalue`
+- node_modules/commander/Readme.md: `Custom option processing` -> `#custom-option-processing`
+- node_modules/commander/Readme.md: `Required option` -> `#required-option`
+- node_modules/commander/Readme.md: `Version option` -> `#version-option`
+- node_modules/commander/Readme.md: `Commands` -> `#commands`
+- node_modules/commander/Readme.md: `Specify the argument syntax` -> `#specify-the-argument-syntax`
+- node_modules/commander/Readme.md: `Action handler (sub)commands` -> `#action-handler-subcommands`
+- node_modules/commander/Readme.md: `Git-style executable (sub)commands` -> `#git-style-executable-subcommands`
+- node_modules/commander/Readme.md: `Automated --help` -> `#automated---help`
+- node_modules/commander/Readme.md: `Custom help` -> `#custom-help`
+- node_modules/commander/Readme.md: `.usage and .name` -> `#usage-and-name`
+- node_modules/commander/Readme.md: `.outputHelp(cb)` -> `#outputhelpcb`
+- node_modules/commander/Readme.md: `.helpOption(flags, description)` -> `#helpoptionflags-description`
+- node_modules/commander/Readme.md: `.help(cb)` -> `#helpcb`
+- node_modules/commander/Readme.md: `Custom event listeners` -> `#custom-event-listeners`
+- node_modules/commander/Readme.md: `Bits and pieces` -> `#bits-and-pieces`
+- node_modules/commander/Readme.md: `Avoiding option name clashes` -> `#avoiding-option-name-clashes`
+- node_modules/commander/Readme.md: `TypeScript` -> `#typescript`
+- node_modules/commander/Readme.md: `Node options such as --harmony` -> `#node-options-such-as---harmony`
+- node_modules/commander/Readme.md: `Node debugging` -> `#node-debugging`
+- node_modules/commander/Readme.md: `Override exit handling` -> `#override-exit-handling`
+- node_modules/commander/Readme.md: `Examples` -> `#examples`
+- node_modules/commander/Readme.md: `License` -> `#license`
+- node_modules/commander/Readme.md: `Support` -> `#support`
+- node_modules/commander/Readme.md: `Commander for enterprise` -> `#commander-for-enterprise`
+- node_modules/commander/Readme.md: `avoid name clashes` -> `#avoiding-option-name-clashes`
+- node_modules/string.prototype.trim/CHANGELOG.md: `es-shim API` -> `es-shims/api`
+- node_modules/ci-info/README.md: `MIT` -> `LICENSE`
+- node_modules/escalade/readme.md: `fast` -> `#benchmarks`
+- node_modules/escalade/readme.md: `Deno Usage` -> `#deno`
+- node_modules/escalade/readme.md: `API` -> `#api`
+- node_modules/escalade/readme.md: `two modes` -> `#modes`
+- node_modules/postcss-load-config/README.md: `**`to`**` -> `#to`
+- node_modules/postcss-load-config/README.md: `**`map`**` -> `#map`
+- node_modules/postcss-load-config/README.md: `**`from`**` -> `#from`
+- node_modules/postcss-load-config/README.md: `**`parser`**` -> `#parser`
+- node_modules/postcss-load-config/README.md: `**`syntax`**` -> `#syntax`
+- node_modules/postcss-load-config/README.md: `**`stringifier`**` -> `#stringifier`
+- node_modules/@hookform/resolvers/README.md: `Install` -> `#install`
+- node_modules/@hookform/resolvers/README.md: `Links` -> `#links`
+- node_modules/@hookform/resolvers/README.md: `Supported resolvers` -> `#supported-resolvers`
+- node_modules/@hookform/resolvers/README.md: `API` -> `#api`
+- node_modules/@hookform/resolvers/README.md: `Quickstart` -> `#quickstart`
+- node_modules/@hookform/resolvers/README.md: `Yup` -> `#yup`
+- node_modules/@hookform/resolvers/README.md: `Zod` -> `#zod`
+- node_modules/@hookform/resolvers/README.md: `Superstruct` -> `#superstruct`
+- node_modules/@hookform/resolvers/README.md: `Joi` -> `#joi`
+- node_modules/@hookform/resolvers/README.md: `Vest` -> `#vest`
+- node_modules/@hookform/resolvers/README.md: `Class Validator` -> `#class-validator`
+- node_modules/@hookform/resolvers/README.md: `io-ts` -> `#io-ts`
+- node_modules/@hookform/resolvers/README.md: `Nope` -> `#nope`
+- node_modules/@hookform/resolvers/README.md: `computed-types` -> `#computed-types`
+- node_modules/@hookform/resolvers/README.md: `typanion` -> `#typanion`
+- node_modules/@hookform/resolvers/README.md: `Ajv` -> `#ajv`
+- node_modules/@hookform/resolvers/README.md: `TypeBox` -> `#typebox`
+- node_modules/@hookform/resolvers/README.md: `With `ValueCheck`` -> `#with-valuecheck`
+- node_modules/@hookform/resolvers/README.md: `With `TypeCompiler`` -> `#with-typecompiler`
+- node_modules/@hookform/resolvers/README.md: `ArkType` -> `#arktype`
+- node_modules/@hookform/resolvers/README.md: `Valibot` -> `#valibot`
+- node_modules/@hookform/resolvers/README.md: `TypeSchema` -> `#typeschema`
+- node_modules/@hookform/resolvers/README.md: `effect-ts` -> `#effect-ts`
+- node_modules/@hookform/resolvers/README.md: `VineJS` -> `#vinejs`
+- node_modules/@hookform/resolvers/README.md: `fluentvalidation-ts` -> `#fluentvalidation-ts`
+- node_modules/@hookform/resolvers/README.md: `Backers` -> `#backers`
+- node_modules/@hookform/resolvers/README.md: `Sponsors` -> `#sponsors`
+- node_modules/@hookform/resolvers/README.md: `Contributors` -> `#contributors`
+- node_modules/@hookform/resolvers/README.md: `[Become a contributor` -> `CONTRIBUTING.md`
+- node_modules/error-ex/README.md: `LICENSE` -> `LICENSE`
+- node_modules/@eslint/eslintrc/node_modules/globals/readme.md: `JSON file` -> `globals.json`
+- node_modules/decimal.js/README.md: `The MIT Licence` -> `LICENCE.md`
+- node_modules/nanoid/README.md: `Русский` -> `./README.ru.md`
+- node_modules/nanoid/README.md: `简体中文` -> `./README.zh-CN.md`
+- node_modules/nanoid/README.md: `Bahasa Indonesia` -> `./README.id-ID.md`
+- node_modules/nanoid/README.md: `20 programming languages` -> `#other-programming-languages`
+- node_modules/cjs-module-lexer/README.md: `very fast` -> `#benchmarks`
+- node_modules/cjs-module-lexer/README.md: `see benchmarks` -> `#benchmarks`
+- node_modules/file-entry-cache/changelog.md: `abcf0f9` -> ` https://github.com/royriojas/file-entry-cache/commit/abcf0f9 `
+- node_modules/file-entry-cache/changelog.md: `92e4d4a` -> ` https://github.com/royriojas/file-entry-cache/commit/92e4d4a `
+- node_modules/file-entry-cache/changelog.md: `4c6f1fb` -> ` https://github.com/royriojas/file-entry-cache/commit/4c6f1fb `
+- node_modules/file-entry-cache/changelog.md: `8ab3257` -> ` https://github.com/royriojas/file-entry-cache/commit/8ab3257 `
+- node_modules/file-entry-cache/changelog.md: `3dd4231` -> ` https://github.com/royriojas/file-entry-cache/commit/3dd4231 `
+- node_modules/file-entry-cache/changelog.md: `d7c60ef` -> ` https://github.com/royriojas/file-entry-cache/commit/d7c60ef `
+- node_modules/file-entry-cache/changelog.md: `e858aa9` -> ` https://github.com/royriojas/file-entry-cache/commit/e858aa9 `
+- node_modules/file-entry-cache/changelog.md: `b0f9ae0` -> ` https://github.com/royriojas/file-entry-cache/commit/b0f9ae0 `
+- node_modules/file-entry-cache/changelog.md: `563cfee` -> ` https://github.com/royriojas/file-entry-cache/commit/563cfee `
+- node_modules/file-entry-cache/changelog.md: `d0f598e` -> ` https://github.com/royriojas/file-entry-cache/commit/d0f598e `
+- node_modules/file-entry-cache/changelog.md: `078b0df` -> ` https://github.com/royriojas/file-entry-cache/commit/078b0df `
+- node_modules/file-entry-cache/changelog.md: `245fe62` -> ` https://github.com/royriojas/file-entry-cache/commit/245fe62 `
+- node_modules/file-entry-cache/changelog.md: `6dd32d8` -> ` https://github.com/royriojas/file-entry-cache/commit/6dd32d8 `
+- node_modules/file-entry-cache/changelog.md: `ea05441` -> ` https://github.com/royriojas/file-entry-cache/commit/ea05441 `
+- node_modules/file-entry-cache/changelog.md: `7f60e0a` -> ` https://github.com/royriojas/file-entry-cache/commit/7f60e0a `
+- node_modules/file-entry-cache/changelog.md: `f9e5c69` -> ` https://github.com/royriojas/file-entry-cache/commit/f9e5c69 `
+- node_modules/file-entry-cache/changelog.md: `4edc2dc` -> ` https://github.com/royriojas/file-entry-cache/commit/4edc2dc `
+- node_modules/file-entry-cache/changelog.md: `09d9ec5` -> ` https://github.com/royriojas/file-entry-cache/commit/09d9ec5 `
+- node_modules/file-entry-cache/changelog.md: `343b340` -> ` https://github.com/royriojas/file-entry-cache/commit/343b340 `
+- node_modules/file-entry-cache/changelog.md: `4b4e54a` -> ` https://github.com/royriojas/file-entry-cache/commit/4b4e54a `
+- node_modules/file-entry-cache/changelog.md: `408374d` -> ` https://github.com/royriojas/file-entry-cache/commit/408374d `
+- node_modules/file-entry-cache/changelog.md: `0a26ac4` -> ` https://github.com/royriojas/file-entry-cache/commit/0a26ac4 `
+- node_modules/file-entry-cache/changelog.md: `b1a64db` -> ` https://github.com/royriojas/file-entry-cache/commit/b1a64db `
+- node_modules/file-entry-cache/changelog.md: `f34c557` -> ` https://github.com/royriojas/file-entry-cache/commit/f34c557 `
+- node_modules/file-entry-cache/changelog.md: `cc7b9ce` -> ` https://github.com/royriojas/file-entry-cache/commit/cc7b9ce `
+- node_modules/file-entry-cache/changelog.md: `a3916ff` -> ` https://github.com/royriojas/file-entry-cache/commit/a3916ff `
+- node_modules/file-entry-cache/changelog.md: `e49b0d4` -> ` https://github.com/royriojas/file-entry-cache/commit/e49b0d4 `
+- node_modules/file-entry-cache/changelog.md: `0ad3000` -> ` https://github.com/royriojas/file-entry-cache/commit/0ad3000 `
+- node_modules/file-entry-cache/changelog.md: `6ac2431` -> ` https://github.com/royriojas/file-entry-cache/commit/6ac2431 `
+- node_modules/file-entry-cache/changelog.md: `3640e2b` -> ` https://github.com/royriojas/file-entry-cache/commit/3640e2b `
+- node_modules/file-entry-cache/changelog.md: `a23de61` -> ` https://github.com/royriojas/file-entry-cache/commit/a23de61 `
+- node_modules/file-entry-cache/changelog.md: `7af29fc` -> ` https://github.com/royriojas/file-entry-cache/commit/7af29fc `
+- node_modules/file-entry-cache/changelog.md: `1f95544` -> ` https://github.com/royriojas/file-entry-cache/commit/1f95544 `
+- node_modules/file-entry-cache/changelog.md: `7472eaa` -> ` https://github.com/royriojas/file-entry-cache/commit/7472eaa `
+- node_modules/file-entry-cache/changelog.md: `557358f` -> ` https://github.com/royriojas/file-entry-cache/commit/557358f `
+- node_modules/file-entry-cache/changelog.md: `3d5f42b` -> ` https://github.com/royriojas/file-entry-cache/commit/3d5f42b `
+- node_modules/d3-scale/README.md: `continuous` -> `#continuous-scales`
+- node_modules/d3-scale/README.md: `linear scale` -> `#linear-scales`
+- node_modules/d3-scale/README.md: `time scale` -> `#time-scales`
+- node_modules/d3-scale/README.md: `power` -> `#power-scales`
+- node_modules/d3-scale/README.md: `log` -> `#log-scales`
+- node_modules/d3-scale/README.md: `quantize scale` -> `#quantize-scales`
+- node_modules/d3-scale/README.md: `quantile scale` -> `#quantile-scales`
+- node_modules/d3-scale/README.md: `threshold scale` -> `#threshold-scales`
+- node_modules/d3-scale/README.md: `ordinal scale` -> `#ordinal-scales`
+- node_modules/d3-scale/README.md: `band` -> `#band-scales`
+- node_modules/d3-scale/README.md: `point` -> `#point-scales`
+- node_modules/d3-scale/README.md: `generate` -> `#continuous_ticks`
+- node_modules/d3-scale/README.md: `format` -> `#continuous_tickFormat`
+- node_modules/d3-scale/README.md: `d3.scaleTime` -> `#scaleTime`
+- node_modules/d3-scale/README.md: `d3.scaleUtc` -> `#scaleUtc`
+- node_modules/d3-scale/README.md: `Continuous` -> `#continuous-scales`
+- node_modules/d3-scale/README.md: `Linear` -> `#linear-scales`
+- node_modules/d3-scale/README.md: `Power` -> `#power-scales`
+- node_modules/d3-scale/README.md: `Log` -> `#log-scales`
+- node_modules/d3-scale/README.md: `Identity` -> `#identity-scales`
+- node_modules/d3-scale/README.md: `Time` -> `#time-scales`
+- node_modules/d3-scale/README.md: `Radial` -> `#radial-scales`
+- node_modules/d3-scale/README.md: `Sequential` -> `#sequential-scales`
+- node_modules/d3-scale/README.md: `Diverging` -> `#diverging-scales`
+- node_modules/d3-scale/README.md: `Quantize` -> `#quantize-scales`
+- node_modules/d3-scale/README.md: `Quantile` -> `#quantile-scales`
+- node_modules/d3-scale/README.md: `Threshold` -> `#threshold-scales`
+- node_modules/d3-scale/README.md: `Ordinal` -> `#ordinal-scales`
+- node_modules/d3-scale/README.md: `Band` -> `#band-scales`
+- node_modules/d3-scale/README.md: `Point` -> `#point-scales`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `inverted` -> `#continuous_invert`
+- node_modules/d3-scale/README.md: `linear` -> `#linear-scales`
+- node_modules/d3-scale/README.md: `power` -> `#power-scales`
+- node_modules/d3-scale/README.md: `log` -> `#log-scales`
+- node_modules/d3-scale/README.md: `identity` -> `#identity-scales`
+- node_modules/d3-scale/README.md: `radial` -> `#radial-scales`
+- node_modules/d3-scale/README.md: `time` -> `#time-scales`
+- node_modules/d3-scale/README.md: `sequential color` -> `#sequential-scales`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `diverging color scale` -> `#diverging-scales`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `invert` -> `#continuous_invert`
+- node_modules/d3-scale/README.md: `*continuous*.interpolate` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `*range*` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `*continuous*.invert` -> `#continuous_invert`
+- node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `tick values` -> `#continuous_ticks`
+- node_modules/d3-scale/README.md: `d3.tickFormat` -> `#tickFormat`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `ticks` -> `#continuous_ticks`
+- node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `continuous scale` -> `#continuous-scales`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- node_modules/d3-scale/README.md: `exponent` -> `#pow_exponent`
+- node_modules/d3-scale/README.md: `continuous scale` -> `#continuous-scales`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `exponent` -> `#pow_exponent`
+- node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `linear` -> `#linear-scales`
+- node_modules/d3-scale/README.md: `*continuous*` -> `#_continuous`
+- node_modules/d3-scale/README.md: `*continuous*.invert` -> `#continuous_invert`
+- node_modules/d3-scale/README.md: `linear` -> `#linear-scales`
+- node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `*continuous*.rangeRound` -> `#continuous_rangeRound`
+- node_modules/d3-scale/README.md: `*continuous*.clamp` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `*continuous*.interpolate` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `*continuous*.ticks` -> `#continuous_ticks`
+- node_modules/d3-scale/README.md: `*continuous*.tickFormat` -> `#continuous_tickFormat`
+- node_modules/d3-scale/README.md: `*continuous*.nice` -> `#continuous_nice`
+- node_modules/d3-scale/README.md: `*continuous*.copy` -> `#continuous_copy`
+- node_modules/d3-scale/README.md: `continuous` -> `#continuous-scales`
+- node_modules/d3-scale/README.md: `power scale` -> `#power-scales`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `exponent` -> `#pow_exponent`
+- node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- node_modules/d3-scale/README.md: `continuous scale` -> `#continuous-scales`
+- node_modules/d3-scale/README.md: `domain` -> `#log_domain`
+- node_modules/d3-scale/README.md: `range` -> `#log_range`
+- node_modules/d3-scale/README.md: `base` -> `#log_base`
+- node_modules/d3-scale/README.md: `interpolator` -> `#log_interpolate`
+- node_modules/d3-scale/README.md: `clamping` -> `#log_clamp`
+- node_modules/d3-scale/README.md: `*continuous*` -> `#_continuous`
+- node_modules/d3-scale/README.md: `*continuous*.invert` -> `#continuous_invert`
+- node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `*continuous*.rangeRound` -> `#continuous_rangeRound`
+- node_modules/d3-scale/README.md: `*continuous*.clamp` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `*continuous*.interpolate` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `*continuous*.ticks` -> `#continuous_ticks`
+- node_modules/d3-scale/README.md: `base` -> `#log_base`
+- node_modules/d3-scale/README.md: `domain` -> `#log_domain`
+- node_modules/d3-scale/README.md: `*log*.tickFormat` -> `#log_tickFormat`
+- node_modules/d3-scale/README.md: `*continuous*.tickFormat` -> `#continuous_tickFormat`
+- node_modules/d3-scale/README.md: `tick values` -> `#continuous_ticks`
+- node_modules/d3-scale/README.md: `*continuous*.nice` -> `#continuous_nice`
+- node_modules/d3-scale/README.md: `base` -> `#log_base`
+- node_modules/d3-scale/README.md: `*continuous*.copy` -> `#continuous_copy`
+- node_modules/d3-scale/README.md: `continuous scale` -> `#continuous-scales`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `constant` -> `#symlog_constant`
+- node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- node_modules/d3-scale/README.md: `rangeRound` -> `#continuous_rangeRound`
+- node_modules/d3-scale/README.md: `clamp` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `interpolate` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- node_modules/d3-scale/README.md: `interpolate` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- node_modules/d3-scale/README.md: `invert` -> `#continuous_invert`
+- node_modules/d3-scale/README.md: `ticks` -> `#time_ticks`
+- node_modules/d3-scale/README.md: `domain` -> `#time_domain`
+- node_modules/d3-scale/README.md: `range` -> `#time_range`
+- node_modules/d3-scale/README.md: `interpolator` -> `#time_interpolate`
+- node_modules/d3-scale/README.md: `clamping` -> `#time_clamp`
+- node_modules/d3-scale/README.md: `*continuous*` -> `#_continuous`
+- node_modules/d3-scale/README.md: `*continuous*.invert` -> `#continuous_invert`
+- node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `*continuous*.rangeRound` -> `#continuous_rangeRound`
+- node_modules/d3-scale/README.md: `*continuous*.clamp` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `*continuous*.interpolate` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `domain` -> `#time_domain`
+- node_modules/d3-scale/README.md: `tick` -> `#time_ticks`
+- node_modules/d3-scale/README.md: `*continuous*.tickFormat` -> `#continuous_tickFormat`
+- node_modules/d3-scale/README.md: `domain` -> `#time_domain`
+- node_modules/d3-scale/README.md: `*continuous*.nice` -> `#continuous_nice`
+- node_modules/d3-scale/README.md: `ticks` -> `#time_ticks`
+- node_modules/d3-scale/README.md: `*time*.ticks` -> `#time_ticks`
+- node_modules/d3-scale/README.md: `*continuous*.copy` -> `#continuous_copy`
+- node_modules/d3-scale/README.md: `scaleTime` -> `#scaleTime`
+- node_modules/d3-scale/README.md: `diverging scales` -> `#diverging-scales`
+- node_modules/d3-scale/README.md: `continuous scales` -> `#continuous-scales`
+- node_modules/d3-scale/README.md: `invert` -> `#continuous_invert`
+- node_modules/d3-scale/README.md: `interpolate` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `*domain*` -> `#sequential_domain`
+- node_modules/d3-scale/README.md: `*interpolator*` -> `#sequential_interpolator`
+- node_modules/d3-scale/README.md: `applied` -> `#_sequential`
+- node_modules/d3-scale/README.md: `*continuous*` -> `#_continuous`
+- node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `*continuous*.clamp` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `*continuous*.rangeRound` -> `#continuous_rangeRound`
+- node_modules/d3-scale/README.md: `*continuous*.copy` -> `#continuous_copy`
+- node_modules/d3-scale/README.md: `sequential scale` -> `#sequential-scales`
+- node_modules/d3-scale/README.md: `log scale` -> `#log-scales`
+- node_modules/d3-scale/README.md: `sequential scale` -> `#sequential-scales`
+- node_modules/d3-scale/README.md: `power scale` -> `#pow-scales`
+- node_modules/d3-scale/README.md: `sequential scale` -> `#sequential-scales`
+- node_modules/d3-scale/README.md: `d3.scaleSqrt` -> `#scaleSqrt`
+- node_modules/d3-scale/README.md: `sequential scale` -> `#sequential-scales`
+- node_modules/d3-scale/README.md: `symlog scale` -> `#symlog-scales`
+- node_modules/d3-scale/README.md: `sequential scale` -> `#sequential-scales`
+- node_modules/d3-scale/README.md: `quantile scale` -> `#quantile-scales`
+- node_modules/d3-scale/README.md: `sequential scales` -> `#sequential-scales`
+- node_modules/d3-scale/README.md: `continuous scales` -> `#continuous-scales`
+- node_modules/d3-scale/README.md: `invert` -> `#continuous_invert`
+- node_modules/d3-scale/README.md: `interpolate` -> `#continuous_interpolate`
+- node_modules/d3-scale/README.md: `*domain*` -> `#diverging_domain`
+- node_modules/d3-scale/README.md: `*interpolator*` -> `#diverging_interpolator`
+- node_modules/d3-scale/README.md: `applied` -> `#_diverging`
+- node_modules/d3-scale/README.md: `*continuous*` -> `#_continuous`
+- node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- node_modules/d3-scale/README.md: `*continuous*.clamp` -> `#continuous_clamp`
+- node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_range`
+- node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_rangeRound`
+- node_modules/d3-scale/README.md: `*continuous*.copy` -> `#continuous_copy`
+- node_modules/d3-scale/README.md: `*continuous*.unknown` -> `#continuous_unknown`
+- node_modules/d3-scale/README.md: `diverging scale` -> `#diverging-scales`
+- node_modules/d3-scale/README.md: `log scale` -> `#log-scales`
+- node_modules/d3-scale/README.md: `diverging scale` -> `#diverging-scales`
+- node_modules/d3-scale/README.md: `power scale` -> `#pow-scales`
+- node_modules/d3-scale/README.md: `diverging scale` -> `#diverging-scales`
+- node_modules/d3-scale/README.md: `d3.scaleSqrt` -> `#scaleSqrt`
+- node_modules/d3-scale/README.md: `diverging scale` -> `#diverging-scales`
+- node_modules/d3-scale/README.md: `symlog scale` -> `#symlog-scales`
+- node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- node_modules/d3-scale/README.md: `*domain*` -> `#quantize_domain`
+- node_modules/d3-scale/README.md: `*range*` -> `#quantize_range`
+- node_modules/d3-scale/README.md: `domain` -> `#quantize_domain`
+- node_modules/d3-scale/README.md: `range` -> `#quantize_range`
+- node_modules/d3-scale/README.md: `domain` -> `#quantize_domain`
+- node_modules/d3-scale/README.md: `range` -> `#quantize_range`
+- node_modules/d3-scale/README.md: `*quantize*` -> `#_quantize`
+- node_modules/d3-scale/README.md: `*continuous*.ticks` -> `#continuous_ticks`
+- node_modules/d3-scale/README.md: `*continuous*.tickFormat` -> `#continuous_tickFormat`
+- node_modules/d3-scale/README.md: `*continuous*.nice` -> `#continuous_nice`
+- node_modules/d3-scale/README.md: `domain` -> `#quantize_domain`
+- node_modules/d3-scale/README.md: `*domain*` -> `#quantile_domain`
+- node_modules/d3-scale/README.md: `*range*` -> `#quantile_range`
+- node_modules/d3-scale/README.md: `domain` -> `#quantile_domain`
+- node_modules/d3-scale/README.md: `range` -> `#quantile_range`
+- node_modules/d3-scale/README.md: `domain` -> `#quantile_domain`
+- node_modules/d3-scale/README.md: `range` -> `#quantile_range`
+- node_modules/d3-scale/README.md: `*quantile*` -> `#_quantile`
+- node_modules/d3-scale/README.md: `range` -> `#quantile_range`
+- node_modules/d3-scale/README.md: `quantize scales` -> `#quantize-scales`
+- node_modules/d3-scale/README.md: `*domain*` -> `#threshold_domain`
+- node_modules/d3-scale/README.md: `*range*` -> `#threshold_range`
+- node_modules/d3-scale/README.md: `domain` -> `#threshold_domain`
+- node_modules/d3-scale/README.md: `range` -> `#threshold_range`
+- node_modules/d3-scale/README.md: `domain` -> `#threshold_domain`
+- node_modules/d3-scale/README.md: `range` -> `#threshold_range`
+- node_modules/d3-scale/README.md: `continuous scales` -> `#continuous-scales`
+- node_modules/d3-scale/README.md: `*domain*` -> `#ordinal_domain`
+- node_modules/d3-scale/README.md: `*range*` -> `#ordinal_range`
+- node_modules/d3-scale/README.md: `domain` -> `#ordinal_domain`
+- node_modules/d3-scale/README.md: `range` -> `#ordinal_range`
+- node_modules/d3-scale/README.md: `domain` -> `#ordinal_domain`
+- node_modules/d3-scale/README.md: `unknown` -> `#ordinal_unknown`
+- node_modules/d3-scale/README.md: `implicit` -> `#scaleImplicit`
+- node_modules/d3-scale/README.md: `unknown value` -> `#ordinal_unknown`
+- node_modules/d3-scale/README.md: `implicit` -> `#scaleImplicit`
+- node_modules/d3-scale/README.md: `implicit` -> `#scaleImplicit`
+- node_modules/d3-scale/README.md: `*ordinal*.domain` -> `#ordinal_domain`
+- node_modules/d3-scale/README.md: `*ordinal*.unknown` -> `#ordinal_unknown`
+- node_modules/d3-scale/README.md: `ordinal scales` -> `#ordinal-scales`
+- node_modules/d3-scale/README.md: `unknown value` -> `#ordinal_unknown`
+- node_modules/d3-scale/README.md: `*domain*` -> `#band_domain`
+- node_modules/d3-scale/README.md: `*range*` -> `#band_range`
+- node_modules/d3-scale/README.md: `padding` -> `#band_padding`
+- node_modules/d3-scale/README.md: `rounding` -> `#band_round`
+- node_modules/d3-scale/README.md: `alignment` -> `#band_align`
+- node_modules/d3-scale/README.md: `domain` -> `#band_domain`
+- node_modules/d3-scale/README.md: `range` -> `#band_range`
+- node_modules/d3-scale/README.md: `*range*` -> `#band_range`
+- node_modules/d3-scale/README.md: `rounding` -> `#band_round`
+- node_modules/d3-scale/README.md: `*band*.align` -> `#band_align`
+- node_modules/d3-scale/README.md: `bandwidth` -> `#band_bandwidth`
+- node_modules/d3-scale/README.md: `step` -> `#band_step`
+- node_modules/d3-scale/README.md: `inner` -> `#band_paddingInner`
+- node_modules/d3-scale/README.md: `outer` -> `#band_paddingOuter`
+- node_modules/d3-scale/README.md: `band scales` -> `#band-scales`
+- node_modules/d3-scale/README.md: `unknown value` -> `#ordinal_unknown`
+- node_modules/d3-scale/README.md: `*domain*` -> `#point_domain`
+- node_modules/d3-scale/README.md: `*range*` -> `#point_range`
+- node_modules/d3-scale/README.md: `padding` -> `#point_padding`
+- node_modules/d3-scale/README.md: `rounding` -> `#point_round`
+- node_modules/d3-scale/README.md: `alignment` -> `#point_align`
+- node_modules/d3-scale/README.md: `domain` -> `#point_domain`
+- node_modules/d3-scale/README.md: `range` -> `#point_range`
+- node_modules/d3-scale/README.md: `*range*` -> `#point_range`
+- node_modules/d3-scale/README.md: `rounding` -> `#point_round`
+- node_modules/d3-scale/README.md: `*point*.align` -> `#point_align`
+- node_modules/d3-scale/README.md: `step` -> `#band_step`
+- node_modules/d3-scale/README.md: `*band*.paddingOuter` -> `#band_paddingOuter`
+- node_modules/@nodelib/fs.walk/README.md: ``Options`` -> `#options`
+- node_modules/@nodelib/fs.walk/README.md: ``Settings`` -> `#settings`
+- node_modules/@nodelib/fs.walk/README.md: ``fs.Dirent`` -> `./src/types/index.ts`
+- node_modules/@nodelib/fs.walk/README.md: ``DeepFilterFunction`` -> `./src/settings.ts`
+- node_modules/@nodelib/fs.walk/README.md: ``EntryFilterFunction`` -> `./src/settings.ts`
+- node_modules/@nodelib/fs.walk/README.md: ``ErrorFilterFunction`` -> `./src/settings.ts`
+- node_modules/@nodelib/fs.walk/README.md: ``Entry`` -> `#entry`
+- node_modules/@nodelib/fs.stat/README.md: ``Options`` -> `#options`
+- node_modules/@nodelib/fs.stat/README.md: ``Settings`` -> `#settings`
+- node_modules/@nodelib/fs.stat/README.md: ``FileSystemAdapter`` -> `./src/adapters/fs.ts`
+- node_modules/@nodelib/fs.scandir/README.md: ``old` and `modern` mode` -> `#old-and-modern-mode`
+- node_modules/@nodelib/fs.scandir/README.md: ``Entry`` -> `#entry`
+- node_modules/@nodelib/fs.scandir/README.md: ``Entry`` -> `#entry`
+- node_modules/@nodelib/fs.scandir/README.md: ``Options`` -> `#options`
+- node_modules/@nodelib/fs.scandir/README.md: ``Settings`` -> `#settingsoptions`
+- node_modules/@nodelib/fs.scandir/README.md: ``fs.Dirent`` -> `./src/types/index.ts`
+- node_modules/@nodelib/fs.scandir/README.md: ``DirentFromStats`` -> `./src/utils/fs.ts`
+- node_modules/@nodelib/fs.scandir/README.md: ``Entry`` -> `#entry`
+- node_modules/@nodelib/fs.scandir/README.md: ``FileSystemAdapter`` -> `./src/adapters/fs.ts`
+- node_modules/babel-plugin-istanbul/README.md: `Integrations` -> `#integrations`
+- node_modules/babel-plugin-istanbul/node_modules/istanbul-lib-instrument/README.md: `v0-changes.md` -> `v0-changes.md`
+- node_modules/typescript-eslint/node_modules/ts-api-utils/README.md: ``.github/CONTRIBUTING.md`` -> `./.github/CONTRIBUTING.md`
+- node_modules/typescript-eslint/node_modules/ignore/README.md: `Usage` -> `#usage`
+- node_modules/typescript-eslint/node_modules/ignore/README.md: ``Pathname` Conventions` -> `#pathname-conventions`
+- node_modules/typescript-eslint/node_modules/ignore/README.md: `Upgrade Guide` -> `#upgrade-guide`
+- node_modules/typescript-eslint/node_modules/ignore/README.md: `Pathname` -> `#pathname-conventions`
+- node_modules/typescript-eslint/node_modules/ignore/README.md: `convention` -> `#1-pathname-should-be-a-pathrelatived-pathname`
+- node_modules/typescript-eslint/node_modules/ignore/README.md: ``path.relative()`d` -> `#pathname-conventions`
+- node_modules/typescript-eslint/node_modules/ignore/README.md: `here` -> `#1-pathname-should-be-a-pathrelatived-pathname`
+- node_modules/typescript-eslint/node_modules/ignore/README.md: ``EventEmitter`` -> `nodejs.org/api/events.html`
+- node_modules/typescript-eslint/node_modules/ignore/README.md: `.addIgnoreFile` -> `#addignorefilepath`
+- node_modules/typescript-eslint/node_modules/minimatch/README.md: `the caveat about Windows
+paths` -> `#windows`
+- node_modules/d3-color/README.md: `RGB` -> `#rgb`
+- node_modules/d3-color/README.md: `HSL` -> `#hsl`
+- node_modules/d3-color/README.md: `CIELAB` -> `#lab`
+- node_modules/d3-color/README.md: `CIELCh<sub>ab</sub>` -> `#lch`
+- node_modules/d3-color/README.md: `Cubehelix` -> `#cubehelix`
+- node_modules/d3-color/README.md: `RGB` -> `#rgb`
+- node_modules/d3-color/README.md: `HSL` -> `#hsl`
+- node_modules/d3-color/README.md: `RGB equivalent` -> `#rgb`
+- node_modules/d3-color/README.md: `*color*.formatRgb` -> `#color_formatRgb`
+- node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-color/README.md: `CIELAB` -> `#lab`
+- node_modules/d3-color/README.md: `d3.lch` -> `#lch`
+- node_modules/d3-color/README.md: `0, 360).
+
+If *l*, *c*, and *h* are specified, these represent the channel values of the returned color; an *opacity* may also be specified. If a CSS Color Module Level 3 *specifier* string is specified, it is parsed and then converted to CIELCh<sub>ab</sub> color space. See [color` -> `#color`
+- node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/ignore/README.md: `Usage` -> `#usage`
+- node_modules/ignore/README.md: ``Pathname` Conventions` -> `#pathname-conventions`
+- node_modules/ignore/README.md: `Upgrade Guide` -> `#upgrade-guide`
+- node_modules/ignore/README.md: `convention` -> `#1-pathname-should-be-a-pathrelatived-pathname`
+- node_modules/ignore/README.md: ``path.relative()`d` -> `#pathname-conventions`
+- node_modules/ignore/README.md: `here` -> `#1-pathname-should-be-a-pathrelatived-pathname`
+- node_modules/ignore/README.md: ``EventEmitter`` -> `nodejs.org/api/events.html`
+- node_modules/ignore/README.md: `.addIgnoreFile` -> `#addignorefilepath`
+- node_modules/d3-dispatch/README.md: `*dispatch*.on` -> `#dispatch_on`
+- node_modules/d3-dispatch/README.md: `*dispatch*.call` -> `#dispatch_call`
+- node_modules/d3-dispatch/README.md: `*dispatch*.apply` -> `#dispatch_apply`
+- node_modules/d3-dispatch/README.md: `*dispatch*.apply` -> `#dispatch_apply`
+- node_modules/emittery/readme.md: `API` -> `#api`
+- node_modules/tslib/SECURITY.md: `secure@microsoft.com` -> `mailto:secure@microsoft.com`
+- node_modules/ts-jest/README.md: `CONTRIBUTING.md` -> `CONTRIBUTING.md`
+- node_modules/ts-jest/README.md: `LICENSE.md` -> `LICENSE.md`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: `contributing guidelines` -> `.github/contributing.md`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Primitive`` -> `source/primitive.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Class`` -> `source/basic.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Constructor`` -> `source/basic.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``AbstractClass`` -> `source/basic.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``AbstractConstructor`` -> `source/basic.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``TypedArray`` -> `source/typed-array.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ObservableLike`` -> `source/observable-like.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``EmptyObject`` -> `source/empty-object.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``NonEmptyObject`` -> `source/non-empty-object.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnknownRecord`` -> `source/unknown-record.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnknownArray`` -> `source/unknown-array.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnknownMap`` -> `source/unknown-map.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnknownSet`` -> `source/unknown-set.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Writable`` -> `source/writable.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``WritableDeep`` -> `source/writable-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Merge`` -> `source/merge.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``MergeDeep`` -> `source/merge-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``MergeExclusive`` -> `source/merge-exclusive.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``OverrideProperties`` -> `source/override-properties.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireAtLeastOne`` -> `source/require-at-least-one.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireAllOrNone`` -> `source/require-all-or-none.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireOneOrNone`` -> `source/require-one-or-none.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SingleKeyObject`` -> `source/single-key-object.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequiredDeep`` -> `source/required-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``PickDeep`` -> `source/pick-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``OmitDeep`` -> `source/omit-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``OmitIndexSignature`` -> `source/omit-index-signature.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``PickIndexSignature`` -> `source/pick-index-signature.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``PartialDeep`` -> `source/partial-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``PartialOnUndefinedDeep`` -> `source/partial-on-undefined-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``UndefinedOnPartialDeep`` -> `source/undefined-on-partial-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ReadonlyDeep`` -> `source/readonly-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``LiteralUnion`` -> `source/literal-union.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Opaque`` -> `source/tagged.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnwrapTagged`` -> `source/tagged.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnwrapOpaque`` -> `source/tagged.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``InvariantOf`` -> `source/invariant-of.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetReadonly`` -> `source/set-readonly.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetRequired`` -> `source/set-required.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetRequiredDeep`` -> `source/set-required-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetNonNullable`` -> `source/set-non-nullable.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetNonNullableDeep`` -> `source/set-non-nullable-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ValueOf`` -> `source/value-of.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ConditionalKeys`` -> `source/conditional-keys.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ConditionalPickDeep`` -> `source/conditional-pick-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ConditionalExcept`` -> `source/conditional-except.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnionToIntersection`` -> `source/union-to-intersection.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``LiteralToPrimitive`` -> `source/literal-to-primitive.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: `primitive type` -> `source/primitive.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``LiteralToPrimitiveDeep`` -> `source/literal-to-primitive-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Stringified`` -> `source/stringified.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Entry`` -> `source/entry.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Entries`` -> `source/entries.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetReturnType`` -> `source/set-return-type.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetParameterType`` -> `source/set-parameter-type.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SimplifyDeep`` -> `source/simplify-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Get`` -> `source/get.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``StringKeyOf`` -> `source/string-key-of.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Schema`` -> `source/schema.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Exact`` -> `source/exact.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``OptionalKeysOf`` -> `source/optional-keys-of.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``KeysOfUnion`` -> `source/keys-of-union.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``HasOptionalKeys`` -> `source/has-optional-keys.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequiredKeysOf`` -> `source/required-keys-of.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``HasRequiredKeys`` -> `source/has-required-keys.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ReadonlyKeysOf`` -> `source/readonly-keys-of.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``HasReadonlyKeys`` -> `source/has-readonly-keys.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``WritableKeysOf`` -> `source/writable-keys-of.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``HasWritableKeys`` -> `source/has-writable-keys.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Spread`` -> `source/spread.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsEqual`` -> `source/is-equal.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``TaggedUnion`` -> `source/tagged-union.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IntRange`` -> `source/int-range.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IntClosedRange`` -> `source/int-closed-range.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ArrayIndices`` -> `source/array-indices.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ArrayValues`` -> `source/array-values.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ArraySplice`` -> `source/array-splice.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ArrayTail`` -> `source/array-tail.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetFieldType`` -> `source/set-field-type.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Paths`` -> `source/paths.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SharedUnionFields`` -> `source/shared-union-fields.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SharedUnionFieldsDeep`` -> `source/shared-union-fields-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``AllUnionFields`` -> `source/all-union-fields.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``DistributedOmit`` -> `source/distributed-omit.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``DistributedPick`` -> `source/distributed-pick.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``And`` -> `source/and.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Or`` -> `source/or.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``NonEmptyTuple`` -> `source/non-empty-tuple.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``NonEmptyString`` -> `source/non-empty-string.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``FindGlobalType`` -> `source/find-global-type.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``FindGlobalInstanceType`` -> `source/find-global-type.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsLiteral`` -> `source/is-literal.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsStringLiteral`` -> `source/is-literal.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsNumericLiteral`` -> `source/is-literal.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsBooleanLiteral`` -> `source/is-literal.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsSymbolLiteral`` -> `source/is-literal.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsAny`` -> `source/is-any.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IfAny`` -> `source/if-any.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsNever`` -> `source/is-never.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IfNever`` -> `source/if-never.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsUnknown`` -> `source/is-unknown.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IfUnknown`` -> `source/if-unknown.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsEmptyObject`` -> `source/empty-object.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IfEmptyObject`` -> `source/if-empty-object.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsNull`` -> `source/is-null.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IfNull`` -> `source/if-null.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsTuple`` -> `source/is-tuple.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Jsonify`` -> `source/jsonify.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Jsonifiable`` -> `source/jsonifiable.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``JsonPrimitive`` -> `source/basic.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``JsonObject`` -> `source/basic.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``JsonArray`` -> `source/basic.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``JsonValue`` -> `source/basic.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``StructuredCloneable`` -> `source/structured-cloneable.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Promisable`` -> `source/promisable.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``AsyncReturnType`` -> `source/async-return-type.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Asyncify`` -> `source/asyncify.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Trim`` -> `source/trim.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Split`` -> `source/split.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Words`` -> `source/words.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Replace`` -> `source/replace.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``StringSlice`` -> `source/string-slice.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``StringRepeat`` -> `source/string-repeat.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Arrayable`` -> `source/arrayable.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Includes`` -> `source/includes.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Join`` -> `source/join.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ArraySlice`` -> `source/array-slice.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``LastArrayElement`` -> `source/last-array-element.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``FixedLengthArray`` -> `source/fixed-length-array.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``MultidimensionalArray`` -> `source/multidimensional-array.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``MultidimensionalReadonlyArray`` -> `source/multidimensional-readonly-array.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ReadonlyTuple`` -> `source/readonly-tuple.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``TupleToUnion`` -> `source/tuple-to-union.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnionToTuple`` -> `source/union-to-tuple.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``TupleToObject`` -> `source/tuple-to-object.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``PositiveInfinity`` -> `source/numeric.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``NegativeInfinity`` -> `source/numeric.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Finite`` -> `source/numeric.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Integer`` -> `source/numeric.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Float`` -> `source/numeric.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``NegativeFloat`` -> `source/numeric.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Negative`` -> `source/numeric.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``NonNegative`` -> `source/numeric.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``NegativeInteger`` -> `source/numeric.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``NonNegativeInteger`` -> `source/numeric.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsNegative`` -> `source/numeric.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsFloat`` -> `source/is-float.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsInteger`` -> `source/is-integer.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``GreaterThan`` -> `source/greater-than.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``GreaterThanOrEqual`` -> `source/greater-than-or-equal.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``LessThan`` -> `source/less-than.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``LessThanOrEqual`` -> `source/less-than-or-equal.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Sum`` -> `source/sum.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Subtract`` -> `source/subtract.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``CamelCase`` -> `source/camel-case.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``CamelCasedProperties`` -> `source/camel-cased-properties.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``CamelCasedPropertiesDeep`` -> `source/camel-cased-properties-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``KebabCase`` -> `source/kebab-case.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``KebabCasedProperties`` -> `source/kebab-cased-properties.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``KebabCasedPropertiesDeep`` -> `source/kebab-cased-properties-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``PascalCase`` -> `source/pascal-case.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``PascalCasedProperties`` -> `source/pascal-cased-properties.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``PascalCasedPropertiesDeep`` -> `source/pascal-cased-properties-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SnakeCase`` -> `source/snake-case.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SnakeCasedProperties`` -> `source/snake-cased-properties.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SnakeCasedPropertiesDeep`` -> `source/snake-cased-properties-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ScreamingSnakeCase`` -> `source/screaming-snake-case.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``DelimiterCase`` -> `source/delimiter-case.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``DelimiterCasedProperties`` -> `source/delimiter-cased-properties.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``DelimiterCasedPropertiesDeep`` -> `source/delimiter-cased-properties-deep.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``GlobalThis`` -> `source/global-this.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``TsConfigJson`` -> `source/tsconfig-json.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Schema`` -> `source/schema.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Writable`` -> `source/writable.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireOneOrNone`` -> `source/require-one-or-none.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``KeysOfUnion`` -> `source/keys-of-union.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: `MIT` -> `license-mit`
+- node_modules/ts-jest/node_modules/type-fest/readme.md: `CC0-1.0` -> `license-cc0`
+- node_modules/reselect/README.md: `**Introduction**` -> `#https://reselect.js.org/introduction/getting-started`
+- node_modules/reselect/README.md: `**How Does Reselect Work?**` -> `#https://reselect.js.org/introduction/how-does-reselect-work`
+- node_modules/reselect/README.md: `**Development-Only Stability Checks**` -> `#https://reselect.js.org/api/development-only-stability-checks`
+- node_modules/reselect/README.md: `**FAQ**` -> `#https://reselect.js.org/FAQ`
+- node_modules/reselect/README.md: `**Selector Function**` -> `#selector-function`
+- node_modules/reselect/README.md: `**input selectors**` -> `#input-selectors`
+- node_modules/reselect/README.md: `**Output Selector**` -> `#output-selector`
+- node_modules/reselect/README.md: `**Result Function**` -> `#result-function`
+- node_modules/reselect/README.md: `**`Dependencies`**` -> `#dependencies`
+- node_modules/argparse/CHANGELOG.md: `doc` -> `./doc`
+- node_modules/argparse/README.md: `doc` -> `./doc`
+- node_modules/argparse/README.md: `Difference with python` -> `./doc`
+- node_modules/picomatch/README.md: `advanced globbing` -> `#advanced-globbing`
+- node_modules/picomatch/README.md: `library comparison` -> `#library-comparisons`
+- node_modules/picomatch/README.md: `Install` -> `#install`
+- node_modules/picomatch/README.md: `Usage` -> `#usage`
+- node_modules/picomatch/README.md: `API` -> `#api`
+- node_modules/picomatch/README.md: `picomatch` -> `#picomatch`
+- node_modules/picomatch/README.md: `.test` -> `#test`
+- node_modules/picomatch/README.md: `.matchBase` -> `#matchbase`
+- node_modules/picomatch/README.md: `.isMatch` -> `#ismatch`
+- node_modules/picomatch/README.md: `.parse` -> `#parse`
+- node_modules/picomatch/README.md: `.scan` -> `#scan`
+- node_modules/picomatch/README.md: `.compileRe` -> `#compilere`
+- node_modules/picomatch/README.md: `.makeRe` -> `#makere`
+- node_modules/picomatch/README.md: `.toRegex` -> `#toregex`
+- node_modules/picomatch/README.md: `Options` -> `#options`
+- node_modules/picomatch/README.md: `Picomatch options` -> `#picomatch-options`
+- node_modules/picomatch/README.md: `Scan Options` -> `#scan-options`
+- node_modules/picomatch/README.md: `Options Examples` -> `#options-examples`
+- node_modules/picomatch/README.md: `Globbing features` -> `#globbing-features`
+- node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- node_modules/picomatch/README.md: `Braces` -> `#braces`
+- node_modules/picomatch/README.md: `Matching special characters as literals` -> `#matching-special-characters-as-literals`
+- node_modules/picomatch/README.md: `Library Comparisons` -> `#library-comparisons`
+- node_modules/picomatch/README.md: `Benchmarks` -> `#benchmarks`
+- node_modules/picomatch/README.md: `Philosophies` -> `#philosophies`
+- node_modules/picomatch/README.md: `About` -> `#about`
+- node_modules/picomatch/README.md: `Author` -> `#author`
+- node_modules/picomatch/README.md: `License` -> `#license`
+- node_modules/picomatch/README.md: `picomatch` -> `lib/picomatch.js#L32`
+- node_modules/picomatch/README.md: `.test` -> `lib/picomatch.js#L117`
+- node_modules/picomatch/README.md: `.matchBase` -> `lib/picomatch.js#L161`
+- node_modules/picomatch/README.md: `.makeRe` -> `#makeRe`
+- node_modules/picomatch/README.md: `.isMatch` -> `lib/picomatch.js#L183`
+- node_modules/picomatch/README.md: `options` -> `#options`
+- node_modules/picomatch/README.md: `.parse` -> `lib/picomatch.js#L199`
+- node_modules/picomatch/README.md: `.scan` -> `lib/picomatch.js#L231`
+- node_modules/picomatch/README.md: `.compileRe` -> `lib/picomatch.js#L245`
+- node_modules/picomatch/README.md: `parse()` -> `#parse`
+- node_modules/picomatch/README.md: `.makeRe` -> `lib/picomatch.js#L286`
+- node_modules/picomatch/README.md: `.toRegex` -> `lib/picomatch.js#L321`
+- node_modules/picomatch/README.md: `format` -> `#optionsformat`
+- node_modules/picomatch/README.md: `onIgnore` -> `#optionsonIgnore`
+- node_modules/picomatch/README.md: `onMatch` -> `#optionsonMatch`
+- node_modules/picomatch/README.md: `onResult` -> `#optionsonResult`
+- node_modules/picomatch/README.md: `picomatch options` -> `#picomatch-options`
+- node_modules/picomatch/README.md: `.scan` -> `#scan`
+- node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- node_modules/picomatch/README.md: `extglobs` -> `#extglobs`
+- node_modules/picomatch/README.md: `POSIX brackets` -> `#posix-brackets`
+- node_modules/picomatch/README.md: `Braces` -> `#brace-expansion`
+- node_modules/picomatch/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/picomatch/README.md: `contributing guide` -> `.github/contributing.md`
+- node_modules/picomatch/README.md: `.verb.md` -> `.verb.md`
+- node_modules/picomatch/README.md: `MIT License` -> `LICENSE`
+- node_modules/d3-geo/README.md: `gnomonic` -> `#geoGnomonic`
+- node_modules/d3-geo/README.md: `Paths` -> `#paths`
+- node_modules/d3-geo/README.md: `Projections` -> `#projections`
+- node_modules/d3-geo/README.md: `Azimuthal` -> `#azimuthal-projections`
+- node_modules/d3-geo/README.md: `Composite` -> `#composite-projections`
+- node_modules/d3-geo/README.md: `Conic` -> `#conic-projections`
+- node_modules/d3-geo/README.md: `Cylindrical` -> `#cylindrical-projections`
+- node_modules/d3-geo/README.md: `Raw Projections` -> `#raw-projections`
+- node_modules/d3-geo/README.md: `Spherical Math` -> `#spherical-math`
+- node_modules/d3-geo/README.md: `Spherical Shapes` -> `#spherical-shapes`
+- node_modules/d3-geo/README.md: `Streams` -> `#streams`
+- node_modules/d3-geo/README.md: `Transforms` -> `#transforms`
+- node_modules/d3-geo/README.md: `Clipping` -> `#clipping`
+- node_modules/d3-geo/README.md: `d3.geoPath` -> `#geoPath`
+- node_modules/d3-geo/README.md: `projections` -> `#projections`
+- node_modules/d3-geo/README.md: `transforms` -> `#transforms`
+- node_modules/d3-geo/README.md: `current projection` -> `#path_projection`
+- node_modules/d3-geo/README.md: `current context` -> `#path_context`
+- node_modules/d3-geo/README.md: `pointRadius` -> `#path_pointRadius`
+- node_modules/d3-geo/README.md: `*path*.context` -> `#path_context`
+- node_modules/d3-geo/README.md: `projection` -> `#path_projection`
+- node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- node_modules/d3-geo/README.md: `d3.geoArea` -> `#geoArea`
+- node_modules/d3-geo/README.md: `projection` -> `#path_projection`
+- node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- node_modules/d3-geo/README.md: `d3.geoBounds` -> `#geoBounds`
+- node_modules/d3-geo/README.md: `projection` -> `#path_projection`
+- node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- node_modules/d3-geo/README.md: `d3.geoCentroid` -> `#geoCentroid`
+- node_modules/d3-geo/README.md: `projection` -> `#path_projection`
+- node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- node_modules/d3-geo/README.md: `d3.geoLength` -> `#geoLength`
+- node_modules/d3-geo/README.md: `geographic projections` -> `#projections`
+- node_modules/d3-geo/README.md: `*projection*.stream` -> `#projection_stream`
+- node_modules/d3-geo/README.md: `transforms` -> `#transforms`
+- node_modules/d3-geo/README.md: `path generator` -> `#_path`
+- node_modules/d3-geo/README.md: `path generator` -> `#_path`
+- node_modules/d3-geo/README.md: `projection` -> `#geoProjection`
+- node_modules/d3-geo/README.md: `Azimuthal` -> `#azimuthal-projections`
+- node_modules/d3-geo/README.md: `Composite` -> `#composite-projections`
+- node_modules/d3-geo/README.md: `Conic` -> `#conic-projections`
+- node_modules/d3-geo/README.md: `Cylindrical` -> `#cylindrical-projections`
+- node_modules/d3-geo/README.md: `custom projections` -> `#raw-projections`
+- node_modules/d3-geo/README.md: `d3.geoProjection` -> `#geoProjection`
+- node_modules/d3-geo/README.md: `d3.geoProjectionMutator` -> `#geoProjectionMutator`
+- node_modules/d3-geo/README.md: `projection stream` -> `#streams`
+- node_modules/d3-geo/README.md: `preclip` -> `#preclip`
+- node_modules/d3-geo/README.md: `postclip` -> `#postclip`
+- node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- node_modules/d3-geo/README.md: `*projection*.preclip` -> `#projection_preclip`
+- node_modules/d3-geo/README.md: `d3.geoClipAntimeridian` -> `#geoClipAntimeridian`
+- node_modules/d3-geo/README.md: `d3.geoClipCircle` -> `#geoClipCircle`
+- node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- node_modules/d3-geo/README.md: `*projection*.postclip` -> `#projection_postclip`
+- node_modules/d3-geo/README.md: `d3.geoClipRectangle` -> `#geoClipRectangle`
+- node_modules/d3-geo/README.md: `center` -> `#projection_center`
+- node_modules/d3-geo/README.md: `d3.geoRotation` -> `#geoRotation`
+- node_modules/d3-geo/README.md: `scale` -> `#projection_scale`
+- node_modules/d3-geo/README.md: `translate` -> `#projection_translate`
+- node_modules/d3-geo/README.md: `clip extent` -> `#projection_clipExtent`
+- node_modules/d3-geo/README.md: `precision` -> `#projection_precision`
+- node_modules/d3-geo/README.md: `*projection*.fitExtent` -> `#projection_fitExtent`
+- node_modules/d3-geo/README.md: `*projection*.fitSize` -> `#projection_fitSize`
+- node_modules/d3-geo/README.md: `*projection*.fitSize` -> `#projection_fitSize`
+- node_modules/d3-geo/README.md: `*projection*.center` -> `#projection_center`
+- node_modules/d3-geo/README.md: `*projection*.rotate` -> `#projection_rotate`
+- node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- node_modules/d3-geo/README.md: `d3.geoConicEqualArea` -> `#geoConicEqualArea`
+- node_modules/d3-geo/README.md: `d3.geoAlbers` -> `#geoAlbers`
+- node_modules/d3-geo/README.md: `two standard parallels` -> `#conic_parallels`
+- node_modules/d3-geo/README.md: `d3.geoConicEqualArea` -> `#geoConicEqualArea`
+- node_modules/d3-geo/README.md: `*conic*.parallels` -> `#conic_parallels`
+- node_modules/d3-geo/README.md: `*conic*.parallels` -> `#conic_parallels`
+- node_modules/d3-geo/README.md: `*conic*.parallels` -> `#conic_parallels`
+- node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- node_modules/d3-geo/README.md: `d3.geoProjection` -> `#geoProjection`
+- node_modules/d3-geo/README.md: `d3.geoProjectionMutator` -> `#geoProjectionMutator`
+- node_modules/d3-geo/README.md: `*project*` -> `#_project`
+- node_modules/d3-geo/README.md: `raw projection` -> `#_project`
+- node_modules/d3-geo/README.md: `*projection*.scale` -> `#projection_scale`
+- node_modules/d3-geo/README.md: `*projection*.translate` -> `#projection_translate`
+- node_modules/d3-geo/README.md: `*projection*.center` -> `#projection_center`
+- node_modules/d3-geo/README.md: `*projection*.rotate` -> `#projection_rotate`
+- node_modules/d3-geo/README.md: `*projection*.invert` -> `#projection_invert`
+- node_modules/d3-geo/README.md: `raw projection` -> `#_project`
+- node_modules/d3-geo/README.md: `d3.geoConicEqualAreaRaw` -> `#geoConicEqualAreaRaw`
+- node_modules/d3-geo/README.md: `d3.geoProjection` -> `#geoProjection`
+- node_modules/d3-geo/README.md: `*path*.area` -> `#path_area`
+- node_modules/d3-geo/README.md: `*path*.bounds` -> `#path_bounds`
+- node_modules/d3-geo/README.md: `*path*.centroid` -> `#path_centroid`
+- node_modules/d3-geo/README.md: `*path*.measure` -> `#path_measure`
+- node_modules/d3-geo/README.md: `*path*.measure` -> `#path_measure`
+- node_modules/d3-geo/README.md: `rotation function` -> `#_rotation`
+- node_modules/d3-geo/README.md: `*projection*.rotate` -> `#projection_rotate`
+- node_modules/d3-geo/README.md: `*rotation*` -> `#_rotation`
+- node_modules/d3-geo/README.md: `d3.geoPath` -> `#geoPath`
+- node_modules/d3-geo/README.md: `center` -> `#circle_center`
+- node_modules/d3-geo/README.md: `radius` -> `#circle_radius`
+- node_modules/d3-geo/README.md: `precision` -> `#circle_precision`
+- node_modules/d3-geo/README.md: `generated` -> `#_circle`
+- node_modules/d3-geo/README.md: `generated` -> `#_circle`
+- node_modules/d3-geo/README.md: `generated` -> `#_circle`
+- node_modules/d3-geo/README.md: `point` -> `#point`
+- node_modules/d3-geo/README.md: `line` -> `#lineStart`
+- node_modules/d3-geo/README.md: `polygon` -> `#polygonStart`
+- node_modules/d3-geo/README.md: `projection *stream*` -> `#projection-streams`
+- node_modules/d3-geo/README.md: `point` -> `#point`
+- node_modules/d3-geo/README.md: `*projection*.stream` -> `#projection_stream`
+- node_modules/d3-geo/README.md: `*path*.projection` -> `#path_projection`
+- node_modules/d3-geo/README.md: `*identity*.reflectY` -> `#identity_reflectY`
+- node_modules/d3-geo/README.md: `*projection*.scale` -> `#projection_scale`
+- node_modules/d3-geo/README.md: `*projection*.translate` -> `#projection_translate`
+- node_modules/d3-geo/README.md: `*projection*.fitExtent` -> `#projection_fitExtent`
+- node_modules/d3-geo/README.md: `*projection*.fitSize` -> `#projection_fitSize`
+- node_modules/d3-geo/README.md: `*projection*.fitWidth` -> `#projection_fitWidth`
+- node_modules/d3-geo/README.md: `*projection*.fitHeight` -> `#projection_fitHeight`
+- node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- node_modules/d3-geo/README.md: `*projection*.angle` -> `#projection_angle`
+- node_modules/d3-geo/README.md: `*projection*.reflectX` -> `#projection_reflectX`
+- node_modules/d3-geo/README.md: `*projection*.reflectY` -> `#projection_reflectY`
+- node_modules/d3-geo/README.md: `*projection*.preclip` -> `#projection_preclip`
+- node_modules/d3-geo/README.md: `*projection*.postclip` -> `#projection_postclip`
+- node_modules/d3-geo/README.md: `projection stream` -> `#streams`
+- node_modules/d3-geo/README.md: `center` -> `#projection_center`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `Statistics` -> `#statistics`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `Search` -> `#search`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `Transformations` -> `#transformations`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `Iterables` -> `#iterables`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `Sets` -> `#sets`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `Bins` -> `#bins`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `Interning` -> `#interning`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `extent` -> `#extent`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `extent` -> `#extent`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `minimum` -> `#min`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `maximum` -> `#max`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `bias-corrected variance` -> `#variance`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `min` -> `#min`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `minIndex` -> `#minIndex`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `max` -> `#max`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `maxIndex` -> `#maxIndex`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `bisectLeft` -> `#bisectLeft`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `*bisector*.center` -> `#bisector_center`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `bisectLeft` -> `#bisectLeft`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `bisectRight` -> `#bisectRight`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `InternMap` -> `#InternMap`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `group` -> `#group`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `group` -> `#group`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `index` -> `#index`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `Groups` -> `#group`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `d3.group` -> `#group`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `rollup` -> `#rollup`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `shuffle function` -> `#shuffle`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `d3.tickIncrement` -> `#tickIncrement`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `d3.tickStep` -> `#tickStep`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `step` -> `#tickStep`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `d3.tickStep` -> `#tickStep`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `tick step` -> `#tickStep`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `d3.tickIncrement` -> `#tickIncrement`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `zip` -> `#zip`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `d3.ascending` -> `#ascending`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `natural order` -> `#ascending`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `generated` -> `#_bin`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `extent` -> `#extent`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `generated` -> `#_bin`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `extent` -> `#extent`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `thresholds` -> `#bin_thresholds`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `niced` -> `#nice`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `values` -> `#bin_value`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `threshold generator` -> `#bin-thresholds`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `Sturges’ formula` -> `#thresholdSturges`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `generated bins` -> `#_bin`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `bin thresholds` -> `#bin-thresholds`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `domain` -> `#bin_domain`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `domain` -> `#bin_domain`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `ticks` -> `#ticks`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `*bin*.thresholds` -> `#bin_thresholds`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `*values*` -> `#bin_value`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `observable domain` -> `#bin_domain`
+- node_modules/d3-geo/node_modules/d3-array/README.md: `ticks` -> `#ticks`
+- node_modules/d3-timer/README.md: `stopped` -> `#timer_stop`
+- node_modules/d3-timer/README.md: `now` -> `#now`
+- node_modules/d3-timer/README.md: `timer` -> `#timer`
+- node_modules/d3-timer/README.md: `timer` -> `#timer`
+- node_modules/d3-timer/README.md: `stops` -> `#timer_stop`
+- node_modules/d3-timer/README.md: `timer` -> `#timer`
+- node_modules/d3-timer/README.md: `timer` -> `#timer`
+- node_modules/is-glob/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/is-glob/README.md: `.verb.md` -> `.verb.md`
+- node_modules/is-glob/README.md: `MIT License` -> `LICENSE`
+- node_modules/npm-run-path/readme.md: ``cwd` option` -> `#cwd`
+- node_modules/npm-run-path/readme.md: ``cwd` option` -> `#cwd`
+- node_modules/axe-core/README.md: `doc/rule-descriptions.md` -> `./doc/rule-descriptions.md`
+- node_modules/axe-core/README.md: `axe-core API` -> `doc/API.md`
+- node_modules/axe-core/README.md: `axe-core API` -> `doc/API.md`
+- node_modules/axe-core/README.md: `Check Message Template` -> `/doc/check-message-template.md`
+- node_modules/axe-core/README.md: `release and support` -> `doc/release-and-support.md`
+- node_modules/axe-core/README.md: `backward compatibility` -> `doc/backwards-compatibility-doc.md`
+- node_modules/axe-core/README.md: `axe-core ARIA support` -> `./doc/aria-supported.md`
+- node_modules/axe-core/README.md: `Proposing Axe-core Rules guide` -> `./doc/rule-proposal.md`
+- node_modules/axe-core/README.md: `documentation on the architecture` -> `./doc/developer-guide.md`
+- node_modules/axe-core/README.md: `documentation on contributing` -> `CONTRIBUTING.md`
+- node_modules/axe-core/README.md: `List of projects using axe-core` -> `doc/projects.md`
+- node_modules/axe-core/README.md: `Mozilla Public License, version 2.0` -> `LICENSE`
+- node_modules/axe-core/README.md: `LICENSE-3RD-PARTY.txt` -> `LICENSE-3RD-PARTY.txt`
+- node_modules/axe-core/locales/README.md: `Contributing section` -> `../README.md#contributing`
+- node_modules/axe-core/locales/README.md: `Check Message Template` -> `../doc/check-message-template.md`
+- node_modules/axe-core/locales/README.md: `rule` -> `../lib/rules`
+- node_modules/axe-core/locales/README.md: `check` -> `../lib/checks`
+- node_modules/typescript/README.md: `opencode@microsoft.com` -> `mailto:opencode@microsoft.com`
+- node_modules/typescript/SECURITY.md: `secure@microsoft.com` -> `mailto:secure@microsoft.com`
+- node_modules/flat-cache/changelog.md: `89a2698` -> ` https://github.com/royriojas/flat-cache/commit/89a2698 `
+- node_modules/flat-cache/changelog.md: `f268e42` -> ` https://github.com/royriojas/flat-cache/commit/f268e42 `
+- node_modules/flat-cache/changelog.md: `6983a80` -> ` https://github.com/royriojas/flat-cache/commit/6983a80 `
+- node_modules/flat-cache/changelog.md: `18ed6e8` -> ` https://github.com/royriojas/flat-cache/commit/18ed6e8 `
+- node_modules/flat-cache/changelog.md: `beed74c` -> ` https://github.com/royriojas/flat-cache/commit/beed74c `
+- node_modules/flat-cache/changelog.md: `8c6d9dc` -> ` https://github.com/royriojas/flat-cache/commit/8c6d9dc `
+- node_modules/flat-cache/changelog.md: `52b824c` -> ` https://github.com/royriojas/flat-cache/commit/52b824c `
+- node_modules/flat-cache/changelog.md: `ef48276` -> ` https://github.com/royriojas/flat-cache/commit/ef48276 `
+- node_modules/flat-cache/changelog.md: `45b51ca` -> ` https://github.com/royriojas/flat-cache/commit/45b51ca `
+- node_modules/flat-cache/changelog.md: `a5c482c` -> ` https://github.com/royriojas/flat-cache/commit/a5c482c `
+- node_modules/flat-cache/changelog.md: `29fe40b` -> ` https://github.com/royriojas/flat-cache/commit/29fe40b `
+- node_modules/flat-cache/changelog.md: `e9db1b2` -> ` https://github.com/royriojas/flat-cache/commit/e9db1b2 `
+- node_modules/flat-cache/changelog.md: `b58d196` -> ` https://github.com/royriojas/flat-cache/commit/b58d196 `
+- node_modules/flat-cache/changelog.md: `03b1db7` -> ` https://github.com/royriojas/flat-cache/commit/03b1db7 `
+- node_modules/flat-cache/changelog.md: `c2f048d` -> ` https://github.com/royriojas/flat-cache/commit/c2f048d `
+- node_modules/flat-cache/changelog.md: `a0e56da` -> ` https://github.com/royriojas/flat-cache/commit/a0e56da `
+- node_modules/flat-cache/changelog.md: `beba691` -> ` https://github.com/royriojas/flat-cache/commit/beba691 `
+- node_modules/flat-cache/changelog.md: `ce166cb` -> ` https://github.com/royriojas/flat-cache/commit/ce166cb `
+- node_modules/flat-cache/changelog.md: `9f2d1b6` -> ` https://github.com/royriojas/flat-cache/commit/9f2d1b6 `
+- node_modules/flat-cache/changelog.md: `07343b5` -> ` https://github.com/royriojas/flat-cache/commit/07343b5 `
+- node_modules/flat-cache/changelog.md: `92aca1c` -> ` https://github.com/royriojas/flat-cache/commit/92aca1c `
+- node_modules/flat-cache/changelog.md: `73fbed2` -> ` https://github.com/royriojas/flat-cache/commit/73fbed2 `
+- node_modules/flat-cache/changelog.md: `6402ed3` -> ` https://github.com/royriojas/flat-cache/commit/6402ed3 `
+- node_modules/flat-cache/changelog.md: `8d21c7b` -> ` https://github.com/royriojas/flat-cache/commit/8d21c7b `
+- node_modules/flat-cache/changelog.md: `8d23379` -> ` https://github.com/royriojas/flat-cache/commit/8d23379 `
+- node_modules/flat-cache/changelog.md: `b93aced` -> ` https://github.com/royriojas/flat-cache/commit/b93aced `
+- node_modules/flat-cache/changelog.md: `745e65a` -> ` https://github.com/royriojas/flat-cache/commit/745e65a `
+- node_modules/flat-cache/changelog.md: `9d0ca9b` -> ` https://github.com/royriojas/flat-cache/commit/9d0ca9b `
+- node_modules/flat-cache/changelog.md: `a7d2598` -> ` https://github.com/royriojas/flat-cache/commit/a7d2598 `
+- node_modules/flat-cache/changelog.md: `c429012` -> ` https://github.com/royriojas/flat-cache/commit/c429012 `
+- node_modules/flat-cache/changelog.md: `704c6c4` -> ` https://github.com/royriojas/flat-cache/commit/704c6c4 `
+- node_modules/flat-cache/changelog.md: `db12d74` -> ` https://github.com/royriojas/flat-cache/commit/db12d74 `
+- node_modules/flat-cache/changelog.md: `f405719` -> ` https://github.com/royriojas/flat-cache/commit/f405719 `
+- node_modules/flat-cache/changelog.md: `00f6892` -> ` https://github.com/royriojas/flat-cache/commit/00f6892 `
+- node_modules/flat-cache/changelog.md: `d42883f` -> ` https://github.com/royriojas/flat-cache/commit/d42883f `
+- node_modules/flat-cache/changelog.md: `12293be` -> ` https://github.com/royriojas/flat-cache/commit/12293be `
+- node_modules/flat-cache/changelog.md: `af8338a` -> ` https://github.com/royriojas/flat-cache/commit/af8338a `
+- node_modules/flat-cache/changelog.md: `87beaa6` -> ` https://github.com/royriojas/flat-cache/commit/87beaa6 `
+- node_modules/flat-cache/changelog.md: `1c2b1f7` -> ` https://github.com/royriojas/flat-cache/commit/1c2b1f7 `
+- node_modules/flat-cache/changelog.md: `4d5e861` -> ` https://github.com/royriojas/flat-cache/commit/4d5e861 `
+- node_modules/flat-cache/changelog.md: `ec10cf2` -> ` https://github.com/royriojas/flat-cache/commit/ec10cf2 `
+- node_modules/flat-cache/changelog.md: `23e11f9` -> ` https://github.com/royriojas/flat-cache/commit/23e11f9 `
+- node_modules/flat-cache/changelog.md: `2c8016a` -> ` https://github.com/royriojas/flat-cache/commit/2c8016a `
+- node_modules/flat-cache/changelog.md: `c31081e` -> ` https://github.com/royriojas/flat-cache/commit/c31081e `
+- node_modules/flat-cache/changelog.md: `4a41e22` -> ` https://github.com/royriojas/flat-cache/commit/4a41e22 `
+- node_modules/flat-cache/changelog.md: `cd7aeed` -> ` https://github.com/royriojas/flat-cache/commit/cd7aeed `
+- node_modules/flat-cache/changelog.md: `d6fa3c3` -> ` https://github.com/royriojas/flat-cache/commit/d6fa3c3 `
+- node_modules/flat-cache/changelog.md: `07d2ddd` -> ` https://github.com/royriojas/flat-cache/commit/07d2ddd `
+- node_modules/flat-cache/changelog.md: `2be1c24` -> ` https://github.com/royriojas/flat-cache/commit/2be1c24 `
+- node_modules/flat-cache/changelog.md: `3a613fd` -> ` https://github.com/royriojas/flat-cache/commit/3a613fd `
+- node_modules/flat-cache/changelog.md: `fd29e52` -> ` https://github.com/royriojas/flat-cache/commit/fd29e52 `
+- node_modules/flat-cache/changelog.md: `e94e176` -> ` https://github.com/royriojas/flat-cache/commit/e94e176 `
+- node_modules/flat-cache/changelog.md: `97383d9` -> ` https://github.com/royriojas/flat-cache/commit/97383d9 `
+- node_modules/flat-cache/changelog.md: `7bb52d1` -> ` https://github.com/royriojas/flat-cache/commit/7bb52d1 `
+- node_modules/flat-cache/changelog.md: `c395b66` -> ` https://github.com/royriojas/flat-cache/commit/c395b66 `
+- node_modules/flat-cache/changelog.md: `7e47099` -> ` https://github.com/royriojas/flat-cache/commit/7e47099 `
+- node_modules/flat-cache/changelog.md: `f51197a` -> ` https://github.com/royriojas/flat-cache/commit/f51197a `
+- node_modules/flat-cache/changelog.md: `bdb82f3` -> ` https://github.com/royriojas/flat-cache/commit/bdb82f3 `
+- node_modules/flat-cache/changelog.md: `436817f` -> ` https://github.com/royriojas/flat-cache/commit/436817f `
+- node_modules/flat-cache/changelog.md: `be88aa3` -> ` https://github.com/royriojas/flat-cache/commit/be88aa3 `
+- node_modules/flat-cache/changelog.md: `b8f68c2` -> ` https://github.com/royriojas/flat-cache/commit/b8f68c2 `
+- node_modules/flat-cache/changelog.md: `13947c1` -> ` https://github.com/royriojas/flat-cache/commit/13947c1 `
+- node_modules/flat-cache/changelog.md: `af40443` -> ` https://github.com/royriojas/flat-cache/commit/af40443 `
+- node_modules/flat-cache/changelog.md: `c2b6805` -> ` https://github.com/royriojas/flat-cache/commit/c2b6805 `
+- node_modules/flat-cache/changelog.md: `c984274` -> ` https://github.com/royriojas/flat-cache/commit/c984274 `
+- node_modules/flat-cache/changelog.md: `d43cccf` -> ` https://github.com/royriojas/flat-cache/commit/d43cccf `
+- node_modules/yargs-parser/README.md: `configuration` -> `#configuration`
+- node_modules/d3-time-format/README.md: `formatter` -> `#locale_format`
+- node_modules/d3-time-format/README.md: `parser` -> `#locale_parse`
+- node_modules/d3-time-format/README.md: `*locale*.format` -> `#locale_format`
+- node_modules/d3-time-format/README.md: `default locale` -> `#timeFormatDefaultLocale`
+- node_modules/d3-time-format/README.md: `*locale*.parse` -> `#locale_parse`
+- node_modules/d3-time-format/README.md: `default locale` -> `#timeFormatDefaultLocale`
+- node_modules/d3-time-format/README.md: `*locale*.utcFormat` -> `#locale_utcFormat`
+- node_modules/d3-time-format/README.md: `default locale` -> `#timeFormatDefaultLocale`
+- node_modules/d3-time-format/README.md: `*locale*.utcParse` -> `#locale_utcParse`
+- node_modules/d3-time-format/README.md: `default locale` -> `#timeFormatDefaultLocale`
+- node_modules/d3-time-format/README.md: `UTC parser function` -> `#utcParse`
+- node_modules/d3-time-format/README.md: `locale definition` -> `#locales`
+- node_modules/d3-time-format/README.md: `*locale*.format` -> `#locale_format`
+- node_modules/d3-time-format/README.md: `*locale*.format` -> `#locale_format`
+- node_modules/d3-time-format/README.md: `*locale*.parse` -> `#locale_parse`
+- node_modules/d3-time-format/README.md: `*locale*.format` -> `#locale_format`
+- node_modules/d3-time-format/README.md: `*locale*.parse` -> `#locale_parse`
+- node_modules/d3-time-format/README.md: `*locale*.utcFormat` -> `#locale_utcFormat`
+- node_modules/d3-time-format/README.md: `*locale*.utcParse` -> `#locale_utcParse`
+- node_modules/d3-time-format/README.md: `d3.timeFormatLocale` -> `#timeFormatLocale`
+- node_modules/d3-time-format/README.md: `d3.timeFormat` -> `#timeFormat`
+- node_modules/d3-time-format/README.md: `d3.timeParse` -> `#timeParse`
+- node_modules/d3-time-format/README.md: `d3.utcFormat` -> `#utcFormat`
+- node_modules/d3-time-format/README.md: `d3.utcParse` -> `#utcParse`
+- node_modules/d3-time-format/README.md: `*locale*.format` -> `#locale_format`
+- node_modules/d3-time-format/README.md: `*locale*.parse` -> `#locale_parse`
+- node_modules/d3-time-format/README.md: `*locale*.utcFormat` -> `#locale_utcFormat`
+- node_modules/d3-time-format/README.md: `*locale*.utcParse` -> `#locale_utcParse`
+- node_modules/psl/README.md: ``.github/workflows/node.js.yml`` -> `.github/workflows/node.js.yml`
+- node_modules/react-hook-form/README.md: `[Become a contributor` -> `CONTRIBUTING.md`
+- node_modules/array-includes/CHANGELOG.md: `es-shim API` -> `es-shims/api`
+- node_modules/date-fns/CHANGELOG.md: `@amatzon` -> `@https://github.com/amatzon`
+- node_modules/date-fns/docs/i18n.md: `Usage` -> `#usage`
+- node_modules/date-fns/docs/i18n.md: `Adding New Language` -> `#adding-new-language`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `Adding a new locale` -> `#adding-a-new-locale`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `Choosing a directory name for a locale` -> `#choosing-a-directory-name-for-a-locale`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `index.js` -> `#index.js`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `localize` -> `#localize`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `localize.ordinalNumber` -> `#localize.ordinalnumber`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `localize.era and using buildLocalizeFn function` -> `#localize.era-and-using-buildlocalizefn-function`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `Formatting localizers` -> `#formatting-localizers`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `localize.quarter` -> `#localize.quarter`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `localize.month` -> `#localize.month`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `localize.day` -> `#localize.day`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `localize.dayPeriod` -> `#localize.dayperiod`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `formatLong` -> `#formatlong`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `formatLong.dateFormats` -> `#formatlong.dateformats`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `formatLong.timeFormats` -> `#formatlong.timeformats`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `formatLong.dateTimeFormats` -> `#formatlong.datetimeformats`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `formatRelative` -> `#formatrelative`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `match` -> `#match`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `formatDistance` -> `#formatdistance`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `Tests` -> `#tests`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `Creating a locale with the same language as another locale` -> `#creating-a-locale-with-the-same-language-as-another-locale`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `Choose a directory name for it` -> `#choosing-a-directory-name-for-a-locale`
+- node_modules/date-fns/docs/i18nContributionGuide.md: ``formatDistance`` -> `#formatdistance`
+- node_modules/date-fns/docs/i18nContributionGuide.md: ``formatLong`` -> `#formatlong`
+- node_modules/date-fns/docs/i18nContributionGuide.md: ``formatRelative`` -> `#formatrelative`
+- node_modules/date-fns/docs/i18nContributionGuide.md: ``localize`` -> `#localize`
+- node_modules/date-fns/docs/i18nContributionGuide.md: ``match`` -> `#match`
+- node_modules/date-fns/docs/i18nContributionGuide.md: ``options`` -> `#indexjs`
+- node_modules/date-fns/docs/i18nContributionGuide.md: `1234` -> `th|st|nd|rd`
+- node_modules/date-fns/docs/timeZones.md: `Overview` -> `#overview`
+- node_modules/date-fns/docs/timeZones.md: ``date-fns-tz`` -> `#date-fns-tz`
+- node_modules/date-fns/docs/gettingStarted.md: `Introduction` -> `#introduction`
+- node_modules/date-fns/docs/gettingStarted.md: `Submodules` -> `#submodules`
+- node_modules/date-fns/docs/gettingStarted.md: `Installation` -> `#installation`
+- node_modules/date-fns/docs/gettingStarted.md: `install the npm package` -> `#npm`
+- node_modules/date-fns/docs/fp.md: `Usage` -> `#usage`
+- node_modules/date-fns/docs/fp.md: `Using Function Composition` -> `#using-function-composition`
+- node_modules/date-fns/docs/webpack.md: `/\\\\` -> `${supportedLocales.join('|'`
+- node_modules/async/CHANGELOG.md: `**@Kikobeats**` -> `github.com/Kikobeats`
+- node_modules/async/CHANGELOG.md: `**@aearly**` -> `github.com/aearly`
+- node_modules/async/CHANGELOG.md: `**@megawac**` -> `github.com/megawac`
+- node_modules/async/CHANGELOG.md: `**@jdalton**` -> `github.com/jdalton`
+- node_modules/async/CHANGELOG.md: `**@Rich-Harris**` -> `github.com/Rich-Harris`
+- node_modules/async/CHANGELOG.md: `**@aearly**` -> `github.com/aearly`
+- node_modules/async/CHANGELOG.md: `**@megawac**` -> `github.com/megawac`
+- node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- node_modules/d3-interpolate/README.md: `color interpolation` -> `#color-spaces`
+- node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-interpolate/README.md: `interpolateRgb` -> `#interpolateRgb`
+- node_modules/d3-interpolate/README.md: `interpolateDate` -> `#interpolateDate`
+- node_modules/d3-interpolate/README.md: `interpolateString` -> `#interpolateString`
+- node_modules/d3-interpolate/README.md: `interpolateNumberArray` -> `#interpolateNumberArray`
+- node_modules/d3-interpolate/README.md: `interpolateArray` -> `#interpolateArray`
+- node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-interpolate/README.md: `interpolateObject` -> `#interpolateObject`
+- node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-interpolate/README.md: `interpolateNumberArray` -> `#interpolateNumberArray`
+- node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- node_modules/d3-interpolate/README.md: `zoom interpolator` -> `#interpolateZoom`
+- node_modules/d3-interpolate/README.md: `d3.interpolateArray` -> `#interpolateArray`
+- node_modules/d3-interpolate/README.md: `d3.interpolateDate` -> `#interpolateDate`
+- node_modules/d3-interpolate/README.md: `d3.interpolateObject` -> `#interpolateObject`
+- node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-interpolate/README.md: `d3.interpolateBasis` -> `#interpolateBasis`
+- node_modules/d3-interpolate/README.md: `d3.interpolateBasisClosed` -> `#interpolateBasisClosed`
+- node_modules/d3-interpolate/README.md: `interpolateHsl` -> `#interpolateHsl`
+- node_modules/d3-interpolate/README.md: `interpolateHcl` -> `#interpolateHcl`
+- node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-interpolate/README.md: `interpolateCubehelix` -> `#interpolateCubehelix`
+- node_modules/d3-interpolate/README.md: `interpolateRgb` -> `#interpolateRgb`
+- node_modules/d3-interpolate/README.md: `interpolateCubehelix` -> `#interpolateCubehelix`
+- node_modules/d3-interpolate/README.md: `interpolateCubehelixLong` -> `#interpolateCubehelixLong`
+- node_modules/d3-interpolate/README.md: `d3.interpolate` -> `#interpolate`
+- node_modules/chokidar/README.md: ``full_changelog.md`` -> `.github/full_changelog.md`
+- node_modules/chokidar/README.md: `LICENSE` -> `LICENSE`
+- node_modules/d3-zoom/README.md: `input events` -> `#api-reference`
+- node_modules/d3-zoom/README.md: `*transform*.rescaleX` -> `#transform_rescaleX`
+- node_modules/d3-zoom/README.md: `*transform*.rescaleY` -> `#transform_rescaleY`
+- node_modules/d3-zoom/README.md: `*zoom*.scaleExtent` -> `#zoom_scaleExtent`
+- node_modules/d3-zoom/README.md: `*zoom*.translateExtent` -> `#zoom_translateExtent`
+- node_modules/d3-zoom/README.md: `*zoom*.transform` -> `#zoom_transform`
+- node_modules/d3-zoom/README.md: `*zoom*.clickDistance` -> `#zoom_clickDistance`
+- node_modules/d3-zoom/README.md: `*zoom*.tapDistance` -> `#zoom_tapDistance`
+- node_modules/d3-zoom/README.md: `scale extent` -> `#zoom_scaleExtent`
+- node_modules/d3-zoom/README.md: `*zoom*` -> `#_drag`
+- node_modules/d3-zoom/README.md: `zoom transform` -> `#zoom-transforms`
+- node_modules/d3-zoom/README.md: `*zoom*.filter` -> `#zoom_filter`
+- node_modules/d3-zoom/README.md: `current zoom transform` -> `#zoomTransform`
+- node_modules/d3-zoom/README.md: `events` -> `#zoom-events`
+- node_modules/d3-zoom/README.md: `extent` -> `#zoom_extent`
+- node_modules/d3-zoom/README.md: `zoom transform` -> `#zoom-transforms`
+- node_modules/d3-zoom/README.md: `identity transform` -> `#zoomIdentity`
+- node_modules/d3-zoom/README.md: `scale extent` -> `#zoom_scaleExtent`
+- node_modules/d3-zoom/README.md: `translate extent` -> `#zoom_translateExtent`
+- node_modules/d3-zoom/README.md: `*zoom*.translateBy` -> `#zoom_translateBy`
+- node_modules/d3-zoom/README.md: `*zoom*.scaleBy` -> `#zoom_scaleBy`
+- node_modules/d3-zoom/README.md: `*zoom*.scaleTo` -> `#zoom_scaleTo`
+- node_modules/d3-zoom/README.md: `translates` -> `#transform_translate`
+- node_modules/d3-zoom/README.md: `current zoom transform` -> `#zoomTransform`
+- node_modules/d3-zoom/README.md: `*zoom*.transform` -> `#zoom_transform`
+- node_modules/d3-zoom/README.md: `translates` -> `#transform_translate`
+- node_modules/d3-zoom/README.md: `current zoom transform` -> `#zoomTransform`
+- node_modules/d3-zoom/README.md: `extent` -> `#zoom_extent`
+- node_modules/d3-zoom/README.md: `*zoom*.transform` -> `#zoom_transform`
+- node_modules/d3-zoom/README.md: `scales` -> `#transform_scale`
+- node_modules/d3-zoom/README.md: `current zoom transform` -> `#zoomTransform`
+- node_modules/d3-zoom/README.md: `extent` -> `#zoom_extent`
+- node_modules/d3-zoom/README.md: `*zoom*.transform` -> `#zoom_transform`
+- node_modules/d3-zoom/README.md: `scales` -> `#transform_scale`
+- node_modules/d3-zoom/README.md: `current zoom transform` -> `#zoomTransform`
+- node_modules/d3-zoom/README.md: `extent` -> `#zoom_extent`
+- node_modules/d3-zoom/README.md: `*zoom*.transform` -> `#zoom_transform`
+- node_modules/d3-zoom/README.md: `*transform*` -> `#zoom-transforms`
+- node_modules/d3-zoom/README.md: `viewport extent` -> `#zoom_extent`
+- node_modules/d3-zoom/README.md: `translate extent` -> `#zoom_translateExtent`
+- node_modules/d3-zoom/README.md: `applied` -> `#_zoom`
+- node_modules/d3-zoom/README.md: `*transform*.k` -> `#zoomTransform`
+- node_modules/d3-zoom/README.md: `*zoom*.scaleBy` -> `#zoom_scaleBy`
+- node_modules/d3-zoom/README.md: `*zoom*.scaleTo` -> `#zoom_scaleTo`
+- node_modules/d3-zoom/README.md: `translate extent` -> `#zoom_translateExtent`
+- node_modules/d3-zoom/README.md: `*zoom*.scaleBy` -> `#zoom_scaleBy`
+- node_modules/d3-zoom/README.md: `*zoom*.scaleTo` -> `#zoom_scaleTo`
+- node_modules/d3-zoom/README.md: `*zoom*.translateBy` -> `#zoom_translateBy`
+- node_modules/d3-zoom/README.md: `*zoom*.transform` -> `#zoom_transform`
+- node_modules/d3-zoom/README.md: `*zoom*.scaleBy` -> `#zoom_scaleBy`
+- node_modules/d3-zoom/README.md: `*zoom*.scaleTo` -> `#zoom_scaleTo`
+- node_modules/d3-zoom/README.md: `*zoom*.translateBy` -> `#zoom_translateBy`
+- node_modules/d3-zoom/README.md: `*zoom*.transform` -> `#zoom_transform`
+- node_modules/d3-zoom/README.md: `zoom event listener` -> `#zoom_on`
+- node_modules/d3-zoom/README.md: `zoom behavior` -> `#zoom`
+- node_modules/d3-zoom/README.md: `*zoom*.on` -> `#zoom_on`
+- node_modules/d3-zoom/README.md: `zoom transform` -> `#zoom-transforms`
+- node_modules/d3-zoom/README.md: `applied` -> `#_zoom`
+- node_modules/d3-zoom/README.md: `*zoom*.transform` -> `#zoom_transform`
+- node_modules/d3-zoom/README.md: `zoom event` -> `#zoom-events`
+- node_modules/d3-zoom/README.md: `*zoom*.on` -> `#zoom_on`
+- node_modules/d3-zoom/README.md: `d3.zoomTransform` -> `#zoomTransform`
+- node_modules/d3-zoom/README.md: `*event*.transform` -> `#zoom-events`
+- node_modules/d3-zoom/README.md: `identity transformation` -> `#zoomIdentity`
+- node_modules/d3-zoom/README.md: `*transform*.scale` -> `#transform_scale`
+- node_modules/d3-zoom/README.md: `*transform*.translate` -> `#transform_translate`
+- node_modules/d3-zoom/README.md: `*zoom*.scaleBy` -> `#zoom_scaleBy`
+- node_modules/d3-zoom/README.md: `*zoom*.scaleTo` -> `#zoom_scaleTo`
+- node_modules/d3-zoom/README.md: `*zoom*.translateBy` -> `#zoom_translateBy`
+- node_modules/d3-zoom/README.md: `*transform*.toString` -> `#transform_toString`
+- node_modules/d3-zoom/README.md: `inverse *x*-transform` -> `#transform_invertX`
+- node_modules/d3-zoom/README.md: `inverse *y*-transform` -> `#transform_invertY`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `RGB` -> `#rgb`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `HSL` -> `#hsl`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `CIELAB` -> `#lab`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `CIELCh<sub>ab</sub>` -> `#lch`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `Cubehelix` -> `#cubehelix`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `RGB` -> `#rgb`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `HSL` -> `#hsl`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `RGB equivalent` -> `#rgb`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*.formatRgb` -> `#color_formatRgb`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `CIELAB` -> `#lab`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `d3.lch` -> `#lch`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `0, 360).
+
+If *l*, *c*, and *h* are specified, these represent the channel values of the returned color; an *opacity* may also be specified. If a CSS Color Module Level 3 *specifier* string is specified, it is parsed and then converted to CIELCh<sub>ab</sub> color space. See [color` -> `#color`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-zoom/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `color interpolation` -> `#color-spaces`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateRgb` -> `#interpolateRgb`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateDate` -> `#interpolateDate`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateString` -> `#interpolateString`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateNumberArray` -> `#interpolateNumberArray`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateArray` -> `#interpolateArray`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateObject` -> `#interpolateObject`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateNumberArray` -> `#interpolateNumberArray`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `zoom interpolator` -> `#interpolateZoom`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `d3.interpolateArray` -> `#interpolateArray`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `d3.interpolateDate` -> `#interpolateDate`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `d3.interpolateObject` -> `#interpolateObject`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `d3.interpolateBasis` -> `#interpolateBasis`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `d3.interpolateBasisClosed` -> `#interpolateBasisClosed`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateHsl` -> `#interpolateHsl`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateHcl` -> `#interpolateHcl`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateCubehelix` -> `#interpolateCubehelix`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateRgb` -> `#interpolateRgb`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateCubehelix` -> `#interpolateCubehelix`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `interpolateCubehelixLong` -> `#interpolateCubehelixLong`
+- node_modules/d3-zoom/node_modules/d3-interpolate/README.md: `d3.interpolate` -> `#interpolate`
+- node_modules/keyv/README.md: `Easily embeddable` -> `#add-cache-support-to-your-module`
+- node_modules/keyv/README.md: `**efficient, well tested**` -> `#official-storage-adapters`
+- node_modules/keyv/README.md: `Compression` -> `#compression`
+- node_modules/arg/README.md: `MIT License` -> `LICENSE.md`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/member-ordering.md: `Default Configuration` -> `#default-configuration`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/member-ordering.md: `Default Configuration` -> `#default-configuration`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/semi.md: ``@typescript-eslint/member-delimiter-style`` -> `member-delimiter-style.md`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `"How does the rule evaluate a name's format?"` -> `#how-does-the-rule-evaluate-a-names-format`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `documented above` -> `#format-options`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `Allowed Selectors, Modifiers and Types` -> `#allowed-selectors-modifiers-and-types`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `"How does the rule automatically order selectors?"` -> `#how-does-the-rule-automatically-order-selectors`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `"How does the rule evaluate a name's format?"` -> `#how-does-the-rule-evaluate-a-names-format`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `documented above` -> `#format-options`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/class-literal-property-style.md: ``@typescript-eslint/prefer-readonly`` -> `prefer-readonly.md`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `our pre-defined configs` -> `/linting/configs`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `pre-defined config` -> `/linting/configs`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `typed linting` -> `/linting/typed-linting`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `Extension Rules` -> `#extension-rules`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `strongly recommend against using ESLint for formatting` -> `/linting/troubleshooting/formatting`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `Search for `🧱 extension rule`s` -> `?=extension#rules`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/consistent-type-exports.md: `Blog > Consistent Type Exports and Imports: Why and How` -> `/blog/consistent-type-imports-and-exports-why-and-how`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/no-type-alias.md: `Troubleshooting & FAQs` -> `/linting/troubleshooting#how-can-i-ban-specific-language-feature`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/consistent-type-imports.md: `Blog > Consistent Type Exports and Imports: Why and How` -> `/blog/consistent-type-imports-and-exports-why-and-how`
+- node_modules/@typescript-eslint/eslint-plugin/docs/rules/no-extra-semi.md: `use a formatter` -> `/linting/troubleshooting/formatting`
+- node_modules/abab/README.md: `checklists in CONTRIBUTING.md` -> `CONTRIBUTING.md#checklists`
+- node_modules/es-abstract/CHANGELOG.md: `next.3` -> `./CHANGELOG.md#1180-next3--2021-03-01`
+- node_modules/es-abstract/CHANGELOG.md: `next.2` -> `./CHANGELOG.md#1180-next2--2021-01-17`
+- node_modules/es-abstract/CHANGELOG.md: `next.1` -> `./CHANGELOG.md#1180-next1--2020-09-30`
+- node_modules/es-abstract/CHANGELOG.md: `next.0` -> `./CHANGELOG.md#1180-next0--2020-08-14`
+- node_modules/@ungap/structured-clone/README.md: `100% test coverage` -> `./test/index.js`
+- node_modules/js-yaml/CHANGELOG.md: `migration guide` -> `migrate_v3_to_v4.md`
+- node_modules/whatwg-url/node_modules/webidl-conversions/README.md: `"boolean"` -> `x`
+- node_modules/whatwg-url/node_modules/webidl-conversions/README.md: `"unsigned long"` -> `y`
+- node_modules/whatwg-url/node_modules/webidl-conversions/README.md: `"float"` -> `NaN`
+- node_modules/whatwg-url/node_modules/webidl-conversions/README.md: `"unsigned long"` -> `x, { clamp: true }`
+- node_modules/jackspeak/LICENSE.md: `Notices` -> `#notices`
+- node_modules/ts-node/README.md: `![TypeScript Node` -> `logo.svg?sanitize=true`
+- node_modules/ts-node/README.md: `Overview` -> `#overview`
+- node_modules/ts-node/README.md: `Features` -> `#features`
+- node_modules/ts-node/README.md: `Installation` -> `#installation`
+- node_modules/ts-node/README.md: `Usage` -> `#usage`
+- node_modules/ts-node/README.md: `Command Line` -> `#command-line`
+- node_modules/ts-node/README.md: `Shebang` -> `#shebang`
+- node_modules/ts-node/README.md: `node flags and other tools` -> `#node-flags-and-other-tools`
+- node_modules/ts-node/README.md: `Programmatic` -> `#programmatic`
+- node_modules/ts-node/README.md: `Configuration` -> `#configuration`
+- node_modules/ts-node/README.md: `CLI flags` -> `#cli-flags`
+- node_modules/ts-node/README.md: `Via tsconfig.json (recommended)` -> `#via-tsconfigjson-recommended`
+- node_modules/ts-node/README.md: `@tsconfig/bases` -> `#tsconfigbases`
+- node_modules/ts-node/README.md: `Default config` -> `#default-config`
+- node_modules/ts-node/README.md: ``node` flags` -> `#node-flags`
+- node_modules/ts-node/README.md: `Options` -> `#options`
+- node_modules/ts-node/README.md: `CLI Options` -> `#cli-options`
+- node_modules/ts-node/README.md: `help` -> `#help`
+- node_modules/ts-node/README.md: `version` -> `#version`
+- node_modules/ts-node/README.md: `eval` -> `#eval`
+- node_modules/ts-node/README.md: `print` -> `#print`
+- node_modules/ts-node/README.md: `interactive` -> `#interactive`
+- node_modules/ts-node/README.md: `esm` -> `#esm`
+- node_modules/ts-node/README.md: `TSConfig Options` -> `#tsconfig-options`
+- node_modules/ts-node/README.md: `project` -> `#project`
+- node_modules/ts-node/README.md: `skipProject` -> `#skipproject`
+- node_modules/ts-node/README.md: `cwdMode` -> `#cwdmode`
+- node_modules/ts-node/README.md: `compilerOptions` -> `#compileroptions`
+- node_modules/ts-node/README.md: `showConfig` -> `#showconfig`
+- node_modules/ts-node/README.md: `Typechecking` -> `#typechecking`
+- node_modules/ts-node/README.md: `transpileOnly` -> `#transpileonly`
+- node_modules/ts-node/README.md: `typeCheck` -> `#typecheck`
+- node_modules/ts-node/README.md: `compilerHost` -> `#compilerhost`
+- node_modules/ts-node/README.md: `files` -> `#files`
+- node_modules/ts-node/README.md: `ignoreDiagnostics` -> `#ignorediagnostics`
+- node_modules/ts-node/README.md: `Transpilation Options` -> `#transpilation-options`
+- node_modules/ts-node/README.md: `ignore` -> `#ignore`
+- node_modules/ts-node/README.md: `skipIgnore` -> `#skipignore`
+- node_modules/ts-node/README.md: `compiler` -> `#compiler`
+- node_modules/ts-node/README.md: `swc` -> `#swc`
+- node_modules/ts-node/README.md: `transpiler` -> `#transpiler`
+- node_modules/ts-node/README.md: `preferTsExts` -> `#prefertsexts`
+- node_modules/ts-node/README.md: `Diagnostic Options` -> `#diagnostic-options`
+- node_modules/ts-node/README.md: `logError` -> `#logerror`
+- node_modules/ts-node/README.md: `pretty` -> `#pretty`
+- node_modules/ts-node/README.md: `TS_NODE_DEBUG` -> `#ts_node_debug`
+- node_modules/ts-node/README.md: `Advanced Options` -> `#advanced-options`
+- node_modules/ts-node/README.md: `require` -> `#require`
+- node_modules/ts-node/README.md: `cwd` -> `#cwd`
+- node_modules/ts-node/README.md: `emit` -> `#emit`
+- node_modules/ts-node/README.md: `scope` -> `#scope`
+- node_modules/ts-node/README.md: `scopeDir` -> `#scopedir`
+- node_modules/ts-node/README.md: `moduleTypes` -> `#moduletypes`
+- node_modules/ts-node/README.md: `TS_NODE_HISTORY` -> `#ts_node_history`
+- node_modules/ts-node/README.md: `noExperimentalReplAwait` -> `#noexperimentalreplawait`
+- node_modules/ts-node/README.md: `experimentalResolver` -> `#experimentalresolver`
+- node_modules/ts-node/README.md: `experimentalSpecifierResolution` -> `#experimentalspecifierresolution`
+- node_modules/ts-node/README.md: `API Options` -> `#api-options`
+- node_modules/ts-node/README.md: `SWC` -> `#swc-1`
+- node_modules/ts-node/README.md: `CommonJS vs native ECMAScript modules` -> `#commonjs-vs-native-ecmascript-modules`
+- node_modules/ts-node/README.md: `CommonJS` -> `#commonjs`
+- node_modules/ts-node/README.md: `Native ECMAScript modules` -> `#native-ecmascript-modules`
+- node_modules/ts-node/README.md: `Troubleshooting` -> `#troubleshooting`
+- node_modules/ts-node/README.md: `Configuration` -> `#configuration-1`
+- node_modules/ts-node/README.md: `Common errors` -> `#common-errors`
+- node_modules/ts-node/README.md: ``TSError`` -> `#tserror`
+- node_modules/ts-node/README.md: ``SyntaxError`` -> `#syntaxerror`
+- node_modules/ts-node/README.md: `Unsupported JavaScript syntax` -> `#unsupported-javascript-syntax`
+- node_modules/ts-node/README.md: ``ERR_REQUIRE_ESM`` -> `#err_require_esm`
+- node_modules/ts-node/README.md: ``ERR_UNKNOWN_FILE_EXTENSION`` -> `#err_unknown_file_extension`
+- node_modules/ts-node/README.md: `Missing Types` -> `#missing-types`
+- node_modules/ts-node/README.md: `npx, yarn dlx, and node_modules` -> `#npx-yarn-dlx-and-node_modules`
+- node_modules/ts-node/README.md: `Performance` -> `#performance`
+- node_modules/ts-node/README.md: `Skip typechecking` -> `#skip-typechecking`
+- node_modules/ts-node/README.md: `With typechecking` -> `#with-typechecking`
+- node_modules/ts-node/README.md: `Advanced` -> `#advanced`
+- node_modules/ts-node/README.md: `How it works` -> `#how-it-works`
+- node_modules/ts-node/README.md: `Ignored files` -> `#ignored-files`
+- node_modules/ts-node/README.md: `File extensions` -> `#file-extensions`
+- node_modules/ts-node/README.md: `Skipping `node_modules`` -> `#skipping-node_modules`
+- node_modules/ts-node/README.md: `Skipping pre-compiled TypeScript` -> `#skipping-pre-compiled-typescript`
+- node_modules/ts-node/README.md: `Scope by directory` -> `#scope-by-directory`
+- node_modules/ts-node/README.md: `Ignore by regexp` -> `#ignore-by-regexp`
+- node_modules/ts-node/README.md: `paths and baseUrl
+        ` -> `#paths-and-baseurl`
+- node_modules/ts-node/README.md: `Why is this not built-in to ts-node?` -> `#why-is-this-not-built-in-to-ts-node`
+- node_modules/ts-node/README.md: `Third-party compilers` -> `#third-party-compilers`
+- node_modules/ts-node/README.md: `Transpilers` -> `#transpilers`
+- node_modules/ts-node/README.md: `Third-party plugins` -> `#third-party-plugins`
+- node_modules/ts-node/README.md: `Write your own plugin` -> `#write-your-own-plugin`
+- node_modules/ts-node/README.md: `Module type overrides` -> `#module-type-overrides`
+- node_modules/ts-node/README.md: `Caveats` -> `#caveats`
+- node_modules/ts-node/README.md: `API` -> `#api`
+- node_modules/ts-node/README.md: `Recipes` -> `#recipes`
+- node_modules/ts-node/README.md: `Watching and restarting` -> `#watching-and-restarting`
+- node_modules/ts-node/README.md: `AVA` -> `#ava`
+- node_modules/ts-node/README.md: `CommonJS` -> `#commonjs-1`
+- node_modules/ts-node/README.md: `Native ECMAScript modules` -> `#native-ecmascript-modules-1`
+- node_modules/ts-node/README.md: `Gulp` -> `#gulp`
+- node_modules/ts-node/README.md: `IntelliJ and Webstorm` -> `#intellij-and-webstorm`
+- node_modules/ts-node/README.md: `Mocha` -> `#mocha`
+- node_modules/ts-node/README.md: `Mocha 7 and newer` -> `#mocha-7-and-newer`
+- node_modules/ts-node/README.md: `Mocha <=6` -> `#mocha-6`
+- node_modules/ts-node/README.md: `Tape` -> `#tape`
+- node_modules/ts-node/README.md: `Visual Studio Code` -> `#visual-studio-code`
+- node_modules/ts-node/README.md: `Other` -> `#other`
+- node_modules/ts-node/README.md: `License` -> `#license`
+- node_modules/ts-node/README.md: `TypeScript REPL` -> `website/static/img/screenshot.png`
+- node_modules/ts-node/README.md: `specify options in your `tsconfig.json`` -> `#via-tsconfigjson-recommended`
+- node_modules/ts-node/README.md: `API` -> `#api`
+- node_modules/ts-node/README.md: `Options` -> `#options`
+- node_modules/ts-node/README.md: `Configuration via tsconfig.json` -> `#via-tsconfigjson-recommended`
+- node_modules/ts-node/README.md: `Missing types` -> `#missing-types`
+- node_modules/ts-node/README.md: `swc` -> `#swc`
+- node_modules/ts-node/README.md: `Module type overrides` -> `#module-type-overrides`
+- node_modules/ts-node/README.md: ``esm`` -> `#esm`
+- node_modules/ts-node/README.md: `Docs` -> `#native-ecmascript-modules`
+- node_modules/ts-node/README.md: `Docs` -> `#module-type-overrides`
+- node_modules/ts-node/README.md: `Docs` -> `#commonjs-vs-native-ecmascript-modules`
+- node_modules/ts-node/README.md: `Docs` -> `#native-ecmascript-modules`
+- node_modules/ts-node/README.md: `Docs` -> `#module-type-overrides`
+- node_modules/ts-node/README.md: ``files`` -> `#files`
+- node_modules/ts-node/README.md: ``skipIgnore`` -> `#skipignore`
+- node_modules/ts-node/README.md: `npx and yarn dlx` -> `./recipes/npx-and-yarn-dlx.md`
+- node_modules/ts-node/README.md: `swc` -> `#swc`
+- node_modules/ts-node/README.md: ``transpileOnly`` -> `#transpileonly`
+- node_modules/ts-node/README.md: ``--skipIgnore`` -> `#skipignore`
+- node_modules/ts-node/README.md: ``TS_NODE_SKIP_IGNORE`` -> `#skipignore`
+- node_modules/ts-node/README.md: ``--preferTsExts`` -> `#prefertsexts`
+- node_modules/ts-node/README.md: ``scope`` -> `#scope`
+- node_modules/ts-node/README.md: ``scopeDir`` -> `#scopedir`
+- node_modules/ts-node/README.md: ``ignore`` -> `#ignore`
+- node_modules/ts-node/README.md: `Configuration Options` -> `#configuration`
+- node_modules/ts-node/README.md: `Configuration Options` -> `#configuration`
+- node_modules/ts-node/node_modules/arg/README.md: `MIT License` -> `LICENSE.md`
+- node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `count` -> `#interval_count`
+- node_modules/d3-time/README.md: `day` -> `#day`
+- node_modules/d3-time/README.md: `interval` -> `#api-reference`
+- node_modules/d3-time/README.md: `hours` -> `#timeHour`
+- node_modules/d3-time/README.md: `weeks` -> `#timeWeek`
+- node_modules/d3-time/README.md: `months` -> `#timeMonth`
+- node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `rounding` -> `#interval_round`
+- node_modules/d3-time/README.md: `counting` -> `#interval_count`
+- node_modules/d3-time/README.md: `*interval*.floor` -> `#interval_floor`
+- node_modules/d3-time/README.md: `d3.timeYear` -> `#timeYear`
+- node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `offset` -> `#interval_offset`
+- node_modules/d3-time/README.md: `floored` -> `#interval_floor`
+- node_modules/d3-time/README.md: `*interval*.every` -> `#interval_every`
+- node_modules/d3-time/README.md: `*interval*.count` -> `#interval_count`
+- node_modules/d3-time/README.md: `*interval*.every` -> `#interval_every`
+- node_modules/d3-time/README.md: `filtered` -> `#interval_filter`
+- node_modules/d3-time/README.md: `d3.timeMinute` -> `#timeMinute`
+- node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `d3.timeMonth` -> `#timeMonth`
+- node_modules/d3-time/README.md: `*interval*.range` -> `#interval_range`
+- node_modules/d3-time/README.md: `*interval*.count` -> `#interval_count`
+- node_modules/d3-time/README.md: `*interval*.filter` -> `#interval_filter`
+- node_modules/d3-time/README.md: `*interval*.range` -> `#interval_range`
+- node_modules/d3-time/README.md: `*interval*.count` -> `#interval_count`
+- node_modules/d3-time/README.md: `*interval*.every` -> `#interval_every`
+- node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `*interval*.every` -> `#interval_every`
+- node_modules/d3-time/README.md: `d3.utcDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `d3.timeSunday` -> `#timeSunday`
+- node_modules/d3-time/README.md: `*interval*.range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeMillisecond` -> `#timeMillisecond`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcMillisecond` -> `#timeMillisecond`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeSecond` -> `#timeSecond`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcSecond` -> `#timeSecond`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeMinute` -> `#timeMinute`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcMinute` -> `#timeMinute`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeHour` -> `#timeHour`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcHour` -> `#timeHour`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.unixDay` -> `#timeDay`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeWeek` -> `#timeWeek`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcWeek` -> `#timeWeek`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeSunday` -> `#timeSunday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcSunday` -> `#timeSunday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeMonday` -> `#timeMonday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcMonday` -> `#timeMonday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeTuesday` -> `#timeTuesday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcTuesday` -> `#timeTuesday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeWednesday` -> `#timeWednesday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcWednesday` -> `#timeWednesday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeThursday` -> `#timeThursday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcThursday` -> `#timeThursday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeFriday` -> `#timeFriday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcFriday` -> `#timeFriday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeSaturday` -> `#timeSaturday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcSaturday` -> `#timeSaturday`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeMonth` -> `#timeMonth`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcMonth` -> `#timeMonth`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.timeYear` -> `#timeYear`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcYear` -> `#timeYear`
+- node_modules/d3-time/README.md: `range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcTicks` -> `#utcTicks`
+- node_modules/d3-time/README.md: `d3.timeTicks` -> `#timeTicks`
+- node_modules/d3-time/README.md: `*interval*.range` -> `#interval_range`
+- node_modules/d3-time/README.md: `d3.utcTicks` -> `#utcTicks`
+- node_modules/path-to-regexp/Readme.md: `optional` -> `#optional`
+- node_modules/safer-buffer/Porting-Buffer.md: `Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x.` -> `#variant-1`
+- node_modules/safer-buffer/Porting-Buffer.md: `Variant 2: Use a polyfill` -> `#variant-2`
+- node_modules/safer-buffer/Porting-Buffer.md: `Variant 3: manual detection, with safeguards` -> `#variant-3`
+- node_modules/safer-buffer/Porting-Buffer.md: `^a-zA-Z` -> `Slow`
+- node_modules/safer-buffer/Porting-Buffer.md: `Variant 2` -> `#variant-2`
+- node_modules/safer-buffer/Porting-Buffer.md: `Variant 3` -> `#variant-3`
+- node_modules/safer-buffer/Porting-Buffer.md: `Variant 1` -> `#variant-1`
+- node_modules/d3-selection/README.md: `attributes` -> `#selection_attr`
+- node_modules/d3-selection/README.md: `styles` -> `#selection_style`
+- node_modules/d3-selection/README.md: `properties` -> `#selection_property`
+- node_modules/d3-selection/README.md: `HTML` -> `#selection_html`
+- node_modules/d3-selection/README.md: `text` -> `#selection_text`
+- node_modules/d3-selection/README.md: `data join` -> `#joining-data`
+- node_modules/d3-selection/README.md: `enter` -> `#selection_enter`
+- node_modules/d3-selection/README.md: `exit` -> `#selection_enter`
+- node_modules/d3-selection/README.md: `add` -> `#selection_append`
+- node_modules/d3-selection/README.md: `remove` -> `#selection_remove`
+- node_modules/d3-selection/README.md: `Selecting Elements` -> `#selecting-elements`
+- node_modules/d3-selection/README.md: `Modifying Elements` -> `#modifying-elements`
+- node_modules/d3-selection/README.md: `Joining Data` -> `#joining-data`
+- node_modules/d3-selection/README.md: `Handling Events` -> `#handling-events`
+- node_modules/d3-selection/README.md: `Control Flow` -> `#control-flow`
+- node_modules/d3-selection/README.md: `Local Variables` -> `#local-variables`
+- node_modules/d3-selection/README.md: `Namespaces` -> `#namespaces`
+- node_modules/d3-selection/README.md: `d3.select` -> `#select`
+- node_modules/d3-selection/README.md: `d3.selectAll` -> `#selectAll`
+- node_modules/d3-selection/README.md: `*selection*.select` -> `#selection_select`
+- node_modules/d3-selection/README.md: `*selection*.selectAll` -> `#selection_selectAll`
+- node_modules/d3-selection/README.md: `Selects` -> `#select`
+- node_modules/d3-selection/README.md: `*selection*.selectAll` -> `#selection_selectAll`
+- node_modules/d3-selection/README.md: `data join` -> `#joining-data`
+- node_modules/d3-selection/README.md: `*selection*.data` -> `#selection_data`
+- node_modules/d3-selection/README.md: `*selection*.select` -> `#selection_select`
+- node_modules/d3-selection/README.md: `data join` -> `#joining-data`
+- node_modules/d3-selection/README.md: `d3.selectAll` -> `#selectAll`
+- node_modules/d3-selection/README.md: `*selection*.select` -> `#selection_select`
+- node_modules/d3-selection/README.md: `*selection*.select` -> `#selection_select`
+- node_modules/d3-selection/README.md: `*selection*.join` -> `#selection_join`
+- node_modules/d3-selection/README.md: `enter` -> `#selection_enter`
+- node_modules/d3-selection/README.md: `update` -> `#selection_data`
+- node_modules/d3-selection/README.md: `binding data` -> `#joining-data`
+- node_modules/d3-selection/README.md: `*selection*.select` -> `#selection_select`
+- node_modules/d3-selection/README.md: `*selection*.filter` -> `#selection_filter`
+- node_modules/d3-selection/README.md: `*selection*.data` -> `#selection_data`
+- node_modules/d3-selection/README.md: `*selection*.filter` -> `#selection_filter`
+- node_modules/d3-selection/README.md: `*selection*.select` -> `#selection_select`
+- node_modules/d3-selection/README.md: `*selection*.selectAll` -> `#selection_selectAll`
+- node_modules/d3-selection/README.md: `*selection*.style` -> `#selection_style`
+- node_modules/d3-selection/README.md: `namespaces` -> `#namespaces`
+- node_modules/d3-selection/README.md: `*selection*.append` -> `#selection_append`
+- node_modules/d3-selection/README.md: `*selection*.insert` -> `#selection_insert`
+- node_modules/d3-selection/README.md: `enter selection` -> `#selection_enter`
+- node_modules/d3-selection/README.md: `*selection*.order` -> `#selection_order`
+- node_modules/d3-selection/README.md: `*selection*.select` -> `#selection_select`
+- node_modules/d3-selection/README.md: `namespaces` -> `#namespaces`
+- node_modules/d3-selection/README.md: `bound data` -> `#joining-data`
+- node_modules/d3-selection/README.md: `*selection*.append` -> `#selection_append`
+- node_modules/d3-selection/README.md: `*selection*.select` -> `#selection_select`
+- node_modules/d3-selection/README.md: `namespaces` -> `#namespaces`
+- node_modules/d3-selection/README.md: `*selection*.append` -> `#selection_append`
+- node_modules/d3-selection/README.md: `*selection*.insert` -> `#selection_insert`
+- node_modules/d3-selection/README.md: `*selection*.order` -> `#selection_order`
+- node_modules/d3-selection/README.md: `*selection*.sort` -> `#selection_sort`
+- node_modules/d3-selection/README.md: `namespace` -> `#namespace`
+- node_modules/d3-selection/README.md: `*selection*.append` -> `#selection_append`
+- node_modules/d3-selection/README.md: `*selection*.insert` -> `#selection_insert`
+- node_modules/d3-selection/README.md: `namespace` -> `#namespace`
+- node_modules/d3-selection/README.md: `enter` -> `#selection_enter`
+- node_modules/d3-selection/README.md: `exit` -> `#selection_exit`
+- node_modules/d3-selection/README.md: `d3.selectAll` -> `#selectAll`
+- node_modules/d3-selection/README.md: `*selection*.selectAll` -> `#selection_selectAll`
+- node_modules/d3-selection/README.md: `*selection*.join` -> `#selection_join`
+- node_modules/d3-selection/README.md: `*selection*.enter` -> `#selection_enter`
+- node_modules/d3-selection/README.md: `*selection*.exit` -> `#selection_exit`
+- node_modules/d3-selection/README.md: `*selection*.append` -> `#selection_append`
+- node_modules/d3-selection/README.md: `*selection*.remove` -> `#selection_remove`
+- node_modules/d3-selection/README.md: `*selection*.order` -> `#selection_order`
+- node_modules/d3-selection/README.md: `*selection*.sort` -> `#selection_sort`
+- node_modules/d3-selection/README.md: `*selection*.datum` -> `#selection_datum`
+- node_modules/d3-selection/README.md: `*selection*.data` -> `#selection_data`
+- node_modules/d3-selection/README.md: `merged` -> `#selection_merge`
+- node_modules/d3-selection/README.md: `*selection*.enter` -> `#selection_enter`
+- node_modules/d3-selection/README.md: `*selection*.exit` -> `#selection_exit`
+- node_modules/d3-selection/README.md: `*selection*.append` -> `#selection_append`
+- node_modules/d3-selection/README.md: `*selection*.remove` -> `#selection_remove`
+- node_modules/d3-selection/README.md: `*selection*.order` -> `#selection_order`
+- node_modules/d3-selection/README.md: `*selection*.append` -> `#selection_append`
+- node_modules/d3-selection/README.md: `*selection*.remove` -> `#selection_remove`
+- node_modules/d3-selection/README.md: `*selection*.data` -> `#selection_data`
+- node_modules/d3-selection/README.md: `*selection*.data` -> `#selection_data`
+- node_modules/d3-selection/README.md: `merged` -> `#selection_merge`
+- node_modules/d3-selection/README.md: `*selection*.data` -> `#selection_data`
+- node_modules/d3-selection/README.md: `*selection*.order` -> `#selection_order`
+- node_modules/d3-selection/README.md: `*selection*.data` -> `#selection_data`
+- node_modules/d3-selection/README.md: `d3.pointer` -> `#pointer`
+- node_modules/d3-selection/README.md: `pointers` -> `#pointers`
+- node_modules/d3-selection/README.md: `*selection*.each` -> `#selection_each`
+- node_modules/d3-selection/README.md: `*selection*.property` -> `#selection_property`
+- node_modules/d3-selection/README.md: `*local*.get` -> `#local_get`
+- node_modules/d3-selection/README.md: `*selection*.property` -> `#selection_property`
+- node_modules/d3-selection/README.md: `d3.namespaces` -> `#namespaces`
+- node_modules/mime-types/README.md: `MIT` -> `LICENSE`
+- node_modules/webidl-conversions/README.md: `"boolean"` -> `x`
+- node_modules/webidl-conversions/README.md: `"unsigned long"` -> `y`
+- node_modules/webidl-conversions/README.md: `"float"` -> `NaN`
+- node_modules/webidl-conversions/README.md: `"float"` -> `NaN, { context: "Argument 1 of Interface's operation" }`
+- node_modules/fraction.js/README.md: `fmod()` -> `#fmod-impreciseness-circumvented`
+- node_modules/fraction.js/README.md: `here` -> `#mathematical-correct-modulo`
+- node_modules/regexp.prototype.flags/CHANGELOG.md: `es-shim API` -> `es-shims/api`
+- node_modules/playwright/README.md: `Contribution guide` -> `CONTRIBUTING.md`
+- node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `heading-has-content` -> `docs/rules/heading-has-content.md`
+- node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `html-has-lang` -> `docs/rules/html-has-lang.md`
+- node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `lang` -> `docs/rules/lang.md`
+- node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `no-marquee` -> `docs/rules/no-marquee.md`
+- node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `scope` -> `docs/rules/scope.md`
+- node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `no-hash-href` -> `docs/rules/no-hash-href.md`
+- node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `redunant-alt` -> `docs/rules/redundant-alt.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `accessible-emoji` -> `docs/rules/accessible-emoji.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `alt-text` -> `docs/rules/alt-text.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `anchor-ambiguous-text` -> `docs/rules/anchor-ambiguous-text.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `anchor-has-content` -> `docs/rules/anchor-has-content.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `anchor-is-valid` -> `docs/rules/anchor-is-valid.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `aria-activedescendant-has-tabindex` -> `docs/rules/aria-activedescendant-has-tabindex.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `aria-props` -> `docs/rules/aria-props.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `aria-proptypes` -> `docs/rules/aria-proptypes.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `aria-role` -> `docs/rules/aria-role.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `aria-unsupported-elements` -> `docs/rules/aria-unsupported-elements.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `autocomplete-valid` -> `docs/rules/autocomplete-valid.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `click-events-have-key-events` -> `docs/rules/click-events-have-key-events.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `control-has-associated-label` -> `docs/rules/control-has-associated-label.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `heading-has-content` -> `docs/rules/heading-has-content.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `html-has-lang` -> `docs/rules/html-has-lang.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `iframe-has-title` -> `docs/rules/iframe-has-title.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `img-redundant-alt` -> `docs/rules/img-redundant-alt.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `interactive-supports-focus` -> `docs/rules/interactive-supports-focus.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `label-has-associated-control` -> `docs/rules/label-has-associated-control.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `label-has-for` -> `docs/rules/label-has-for.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `lang` -> `docs/rules/lang.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `media-has-caption` -> `docs/rules/media-has-caption.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `mouse-events-have-key-events` -> `docs/rules/mouse-events-have-key-events.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `no-access-key` -> `docs/rules/no-access-key.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `no-aria-hidden-on-focusable` -> `docs/rules/no-aria-hidden-on-focusable.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `no-autofocus` -> `docs/rules/no-autofocus.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `no-distracting-elements` -> `docs/rules/no-distracting-elements.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `no-interactive-element-to-noninteractive-role` -> `docs/rules/no-interactive-element-to-noninteractive-role.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `no-noninteractive-element-interactions` -> `docs/rules/no-noninteractive-element-interactions.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `no-noninteractive-element-to-interactive-role` -> `docs/rules/no-noninteractive-element-to-interactive-role.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `no-noninteractive-tabindex` -> `docs/rules/no-noninteractive-tabindex.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `no-onchange` -> `docs/rules/no-onchange.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `no-redundant-roles` -> `docs/rules/no-redundant-roles.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `no-static-element-interactions` -> `docs/rules/no-static-element-interactions.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `prefer-tag-over-role` -> `docs/rules/prefer-tag-over-role.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `role-has-required-aria-props` -> `docs/rules/role-has-required-aria-props.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `role-supports-aria-props` -> `docs/rules/role-supports-aria-props.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `scope` -> `docs/rules/scope.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `tabindex-no-positive` -> `docs/rules/tabindex-no-positive.md`
+- node_modules/eslint-plugin-jsx-a11y/README.md: `MIT License` -> `LICENSE.md`
+- node_modules/eslint-plugin-jsx-a11y/docs/rules/label-has-for.md: ``jsx-a11y/label-has-associated-control`` -> `label-has-associated-control.md`
+- node_modules/eslint-plugin-jsx-a11y/docs/rules/anchor-is-valid.md: `no-noninteractive-tabindex` -> `no-noninteractive-tabindex.md`
+- node_modules/chalk/readme.md: `256/Truecolor color support` -> `#256-and-truecolor-color-support`
+- node_modules/chalk/readme.md: `.<style>...` -> `string, [string...]`
+- node_modules/chalk/readme.md: `styles` -> `#styles`
+- node_modules/bs-logger/README.md: `LICENSE` -> `LICENSE`
+- node_modules/@mswjs/interceptors/README.md: `WebSocket` -> `#websocket-interception`
+- node_modules/@mswjs/interceptors/README.md: `pre-defined presets` -> `#presets`
+- node_modules/@mswjs/interceptors/README.md: ``BatchInterceptor`` -> `#batchinterceptor`
+- node_modules/@mswjs/interceptors/README.md: `a mocked response` -> `#mocking-responses`
+- node_modules/@mswjs/interceptors/README.md: ``server.connect()`` -> `#connect`
+- node_modules/@mswjs/interceptors/README.md: ``WebSocketClientConnection`` -> `#websocketclientconnection`
+- node_modules/@mswjs/interceptors/README.md: ``WebSocketServerConnection`` -> `#websocketserverconnection`
+- node_modules/@mswjs/interceptors/README.md: `interceptors` -> `#interceptors`
+- node_modules/core-js/README.md: `some cross-platform WHATWG / W3C features and proposals` -> `#web-standards`
+- node_modules/color-convert/README.md: `conversions.js` -> `conversions.js`
+- node_modules/color-convert/README.md: `conversions.js` -> `conversions.js`
+- node_modules/color-convert/README.md: `MIT License` -> `LICENSE`
+- node_modules/eventemitter3/README.md: `MIT` -> `LICENSE`
+- node_modules/readdirp/README.md: `entry infos` -> `#entryinfo`
+- node_modules/readdirp/README.md: `entry info` -> `#entryinfo`
+- node_modules/readdirp/README.md: `entry infos` -> `#entryinfo`
+- node_modules/readdirp/README.md: `LICENSE` -> `LICENSE`
+- node_modules/fill-range/README.md: `step` -> `#optionsstep`
+- node_modules/fill-range/README.md: `options` -> `#options`
+- node_modules/fill-range/README.md: `string` -> `#optionstoRegex`
+- node_modules/fill-range/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/fill-range/README.md: `.verb.md` -> `.verb.md`
+- node_modules/fill-range/README.md: `MIT License` -> `LICENSE`
+- node_modules/jsdom/README.md: `binary data processing` -> `#encoding-sniffing`
+- node_modules/jsdom/README.md: `as described below` -> `#loading-subresources`
+- node_modules/jsdom/README.md: `does not do any layout or rendering` -> `#unimplemented-parts-of-the-web-platform`
+- node_modules/jsdom/README.md: `Canvas Support` -> `#canvas-support`
+- node_modules/jsdom/README.md: `convenience APIs` -> `#convenience-apis`
+- node_modules/jsdom/README.md: `using jsdom in a web browser` -> `#running-jsdom-inside-a-web-browser`
+- node_modules/jsdom/node_modules/tr46/README.md: ``checkBidi`` -> `#checkBidi`
+- node_modules/jsdom/node_modules/tr46/README.md: ``checkHyphens`` -> `#checkHyphens`
+- node_modules/jsdom/node_modules/tr46/README.md: ``checkJoiners`` -> `#checkJoiners`
+- node_modules/jsdom/node_modules/tr46/README.md: ``processingOption`` -> `#processingOption`
+- node_modules/jsdom/node_modules/tr46/README.md: ``useSTD3ASCIIRules`` -> `#useSTD3ASCIIRules`
+- node_modules/jsdom/node_modules/tr46/README.md: ``verifyDNSLength`` -> `#verifyDNSLength`
+- node_modules/jsdom/node_modules/tr46/README.md: ``checkBidi`` -> `#checkBidi`
+- node_modules/jsdom/node_modules/tr46/README.md: ``checkHyphens`` -> `#checkHyphens`
+- node_modules/jsdom/node_modules/tr46/README.md: ``checkJoiners`` -> `#checkJoiners`
+- node_modules/jsdom/node_modules/tr46/README.md: ``processingOption`` -> `#processingOption`
+- node_modules/jsdom/node_modules/tr46/README.md: ``useSTD3ASCIIRules`` -> `#useSTD3ASCIIRules`
+- node_modules/yup/README.md: `Schema basics` -> `#schema-basics`
+- node_modules/yup/README.md: `Parsing: Transforms` -> `#parsing-transforms`
+- node_modules/yup/README.md: `Validation: Tests` -> `#validation-tests`
+- node_modules/yup/README.md: `Customizing errors` -> `#customizing-errors`
+- node_modules/yup/README.md: `Composition and Reuse` -> `#composition-and-reuse`
+- node_modules/yup/README.md: `TypeScript integration` -> `#typescript-integration`
+- node_modules/yup/README.md: `Schema defaults` -> `#schema-defaults`
+- node_modules/yup/README.md: `Ensuring a schema matches an existing type` -> `#ensuring-a-schema-matches-an-existing-type`
+- node_modules/yup/README.md: `Extending built-in schema with new methods` -> `#extending-built-in-schema-with-new-methods`
+- node_modules/yup/README.md: `TypeScript configuration` -> `#typescript-configuration`
+- node_modules/yup/README.md: `Error message customization` -> `#error-message-customization`
+- node_modules/yup/README.md: `localization and i18n` -> `#localization-and-i18n`
+- node_modules/yup/README.md: `API` -> `#api`
+- node_modules/yup/README.md: ``yup`` -> `#yup`
+- node_modules/yup/README.md: ``reach(schema: Schema, path: string, value?: object, context?: object): Schema`` -> `#reachschema-schema-path-string-value-object-context-object-schema`
+- node_modules/yup/README.md: ``addMethod(schemaType: Schema, name: string, method: ()=> Schema): void`` -> `#addmethodschematype-schema-name-string-method--schema-void`
+- node_modules/yup/README.md: ``ref(path: string, options: { contextPrefix: string }): Ref`` -> `#refpath-string-options--contextprefix-string--ref`
+- node_modules/yup/README.md: ``lazy((value: any) => Schema): Lazy`` -> `#lazyvalue-any--schema-lazy`
+- node_modules/yup/README.md: ``ValidationError(errors: string | Array<string>, value: any, path: string)`` -> `#validationerrorerrors-string--arraystring-value-any-path-string`
+- node_modules/yup/README.md: ``Schema`` -> `#schema`
+- node_modules/yup/README.md: ``Schema.clone(): Schema`` -> `#schemaclone-schema`
+- node_modules/yup/README.md: ``Schema.label(label: string): Schema`` -> `#schemalabellabel-string-schema`
+- node_modules/yup/README.md: ``Schema.meta(metadata: SchemaMetadata): Schema`` -> `#schemametametadata-schemametadata-schema`
+- node_modules/yup/README.md: ``Schema.describe(options?: ResolveOptions): SchemaDescription`` -> `#schemadescribeoptions-resolveoptions-schemadescription`
+- node_modules/yup/README.md: ``Schema.concat(schema: Schema): Schema`` -> `#schemaconcatschema-schema-schema`
+- node_modules/yup/README.md: ``Schema.validate(value: any, options?: object): Promise<InferType<Schema>, ValidationError>`` -> `#schemavalidatevalue-any-options-object-promiseinfertypeschema-validationerror`
+- node_modules/yup/README.md: ``Schema.validateSync(value: any, options?: object): InferType<Schema>`` -> `#schemavalidatesyncvalue-any-options-object-infertypeschema`
+- node_modules/yup/README.md: ``Schema.validateAt(path: string, value: any, options?: object): Promise<InferType<Schema>, ValidationError>`` -> `#schemavalidateatpath-string-value-any-options-object-promiseinfertypeschema-validationerror`
+- node_modules/yup/README.md: ``Schema.validateSyncAt(path: string, value: any, options?: object): InferType<Schema>`` -> `#schemavalidatesyncatpath-string-value-any-options-object-infertypeschema`
+- node_modules/yup/README.md: ``Schema.isValid(value: any, options?: object): Promise<boolean>`` -> `#schemaisvalidvalue-any-options-object-promiseboolean`
+- node_modules/yup/README.md: ``Schema.isValidSync(value: any, options?: object): boolean`` -> `#schemaisvalidsyncvalue-any-options-object-boolean`
+- node_modules/yup/README.md: ``Schema.cast(value: any, options = {}): InferType<Schema>`` -> `#schemacastvalue-any-options---infertypeschema`
+- node_modules/yup/README.md: ``Schema.isType(value: any): value is InferType<Schema>`` -> `#schemaistypevalue-any-value-is-infertypeschema`
+- node_modules/yup/README.md: ``Schema.strict(enabled: boolean = false): Schema`` -> `#schemastrictenabled-boolean--false-schema`
+- node_modules/yup/README.md: ``Schema.strip(enabled: boolean = true): Schema`` -> `#schemastripenabled-boolean--true-schema`
+- node_modules/yup/README.md: ``Schema.withMutation(builder: (current: Schema) => void): void`` -> `#schemawithmutationbuilder-current-schema--void-void`
+- node_modules/yup/README.md: ``Schema.default(value: any): Schema`` -> `#schemadefaultvalue-any-schema`
+- node_modules/yup/README.md: ``Schema.getDefault(options?: object): Any`` -> `#schemagetdefaultoptions-object-any`
+- node_modules/yup/README.md: ``Schema.nullable(message?: string | function): Schema`` -> `#schemanullablemessage-string--function-schema`
+- node_modules/yup/README.md: ``Schema.nonNullable(message?: string | function): Schema`` -> `#schemanonnullablemessage-string--function-schema`
+- node_modules/yup/README.md: ``Schema.defined(): Schema`` -> `#schemadefined-schema`
+- node_modules/yup/README.md: ``Schema.optional(): Schema`` -> `#schemaoptional-schema`
+- node_modules/yup/README.md: ``Schema.required(message?: string | function): Schema`` -> `#schemarequiredmessage-string--function-schema`
+- node_modules/yup/README.md: ``Schema.notRequired(): Schema`` -> `#schemanotrequired-schema`
+- node_modules/yup/README.md: ``Schema.typeError(message: string): Schema`` -> `#schematypeerrormessage-string-schema`
+- node_modules/yup/README.md: ``Schema.oneOf(arrayOfValues: Array<any>, message?: string | function): Schema` Alias: `equals`` -> `#schemaoneofarrayofvalues-arrayany-message-string--function-schema-alias-equals`
+- node_modules/yup/README.md: ``Schema.notOneOf(arrayOfValues: Array<any>, message?: string | function)`` -> `#schemanotoneofarrayofvalues-arrayany-message-string--function`
+- node_modules/yup/README.md: ``Schema.test(name: string, message: string | function | any, test: function): Schema`` -> `#schematestname-string-message-string--function--any-test-function-schema`
+- node_modules/yup/README.md: ``Schema.test(options: object): Schema`` -> `#schematestoptions-object-schema`
+- node_modules/yup/README.md: ``Schema.transform((currentValue: any, originalValue: any) => any): Schema`` -> `#schematransformcurrentvalue-any-originalvalue-any--any-schema`
+- node_modules/yup/README.md: `mixed` -> `#mixed`
+- node_modules/yup/README.md: `string` -> `#string`
+- node_modules/yup/README.md: ``string.required(message?: string | function): Schema`` -> `#stringrequiredmessage-string--function-schema`
+- node_modules/yup/README.md: ``string.length(limit: number | Ref, message?: string | function): Schema`` -> `#stringlengthlimit-number--ref-message-string--function-schema`
+- node_modules/yup/README.md: ``string.min(limit: number | Ref, message?: string | function): Schema`` -> `#stringminlimit-number--ref-message-string--function-schema`
+- node_modules/yup/README.md: ``string.max(limit: number | Ref, message?: string | function): Schema`` -> `#stringmaxlimit-number--ref-message-string--function-schema`
+- node_modules/yup/README.md: ``string.matches(regex: Regex, message?: string | function): Schema`` -> `#stringmatchesregex-regex-message-string--function-schema`
+- node_modules/yup/README.md: ``string.matches(regex: Regex, options: { message: string, excludeEmptyString: bool }): Schema`` -> `#stringmatchesregex-regex-options--message-string-excludeemptystring-bool--schema`
+- node_modules/yup/README.md: ``string.email(message?: string | function): Schema`` -> `#stringemailmessage-string--function-schema`
+- node_modules/yup/README.md: ``string.url(message?: string | function): Schema`` -> `#stringurlmessage-string--function-schema`
+- node_modules/yup/README.md: ``string.uuid(message?: string | function): Schema`` -> `#stringuuidmessage-string--function-schema`
+- node_modules/yup/README.md: ``string.datetime(options?: {message?: string | function, allowOffset?: boolean, precision?: number})`` -> `#stringdatetimeoptions-message-string--function-allowoffset-boolean-precision-number`
+- node_modules/yup/README.md: ``string.datetime(message?: string | function)`` -> `#stringdatetimemessage-string--function`
+- node_modules/yup/README.md: ``string.ensure(): Schema`` -> `#stringensure-schema`
+- node_modules/yup/README.md: ``string.trim(message?: string | function): Schema`` -> `#stringtrimmessage-string--function-schema`
+- node_modules/yup/README.md: ``string.lowercase(message?: string | function): Schema`` -> `#stringlowercasemessage-string--function-schema`
+- node_modules/yup/README.md: ``string.uppercase(message?: string | function): Schema`` -> `#stringuppercasemessage-string--function-schema`
+- node_modules/yup/README.md: `number` -> `#number`
+- node_modules/yup/README.md: ``number.min(limit: number | Ref, message?: string | function): Schema`` -> `#numberminlimit-number--ref-message-string--function-schema`
+- node_modules/yup/README.md: ``number.max(limit: number | Ref, message?: string | function): Schema`` -> `#numbermaxlimit-number--ref-message-string--function-schema`
+- node_modules/yup/README.md: ``number.lessThan(max: number | Ref, message?: string | function): Schema`` -> `#numberlessthanmax-number--ref-message-string--function-schema`
+- node_modules/yup/README.md: ``number.moreThan(min: number | Ref, message?: string | function): Schema`` -> `#numbermorethanmin-number--ref-message-string--function-schema`
+- node_modules/yup/README.md: ``number.positive(message?: string | function): Schema`` -> `#numberpositivemessage-string--function-schema`
+- node_modules/yup/README.md: ``number.negative(message?: string | function): Schema`` -> `#numbernegativemessage-string--function-schema`
+- node_modules/yup/README.md: ``number.integer(message?: string | function): Schema`` -> `#numberintegermessage-string--function-schema`
+- node_modules/yup/README.md: ``number.truncate(): Schema`` -> `#numbertruncate-schema`
+- node_modules/yup/README.md: ``number.round(type: 'floor' | 'ceil' | 'trunc' | 'round' = 'round'): Schema`` -> `#numberroundtype-floor--ceil--trunc--round--round-schema`
+- node_modules/yup/README.md: `boolean` -> `#boolean`
+- node_modules/yup/README.md: `date` -> `#date`
+- node_modules/yup/README.md: ``date.min(limit: Date | string | Ref, message?: string | function): Schema`` -> `#dateminlimit-date--string--ref-message-string--function-schema`
+- node_modules/yup/README.md: ``date.max(limit: Date | string | Ref, message?: string | function): Schema`` -> `#datemaxlimit-date--string--ref-message-string--function-schema`
+- node_modules/yup/README.md: `array` -> `#array`
+- node_modules/yup/README.md: ``array.of(type: Schema): this`` -> `#arrayoftype-schema-this`
+- node_modules/yup/README.md: ``array.json(): this`` -> `#arrayjson-this`
+- node_modules/yup/README.md: ``array.length(length: number | Ref, message?: string | function): this`` -> `#arraylengthlength-number--ref-message-string--function-this`
+- node_modules/yup/README.md: ``array.min(limit: number | Ref, message?: string | function): this`` -> `#arrayminlimit-number--ref-message-string--function-this`
+- node_modules/yup/README.md: ``array.max(limit: number | Ref, message?: string | function): this`` -> `#arraymaxlimit-number--ref-message-string--function-this`
+- node_modules/yup/README.md: ``array.ensure(): this`` -> `#arrayensure-this`
+- node_modules/yup/README.md: ``array.compact(rejector: (value) => boolean): Schema`` -> `#arraycompactrejector-value--boolean-schema`
+- node_modules/yup/README.md: `tuple` -> `#tuple`
+- node_modules/yup/README.md: `object` -> `#object`
+- node_modules/yup/README.md: `Object schema defaults` -> `#object-schema-defaults`
+- node_modules/yup/README.md: ``object.json(): this`` -> `#objectjson-this`
+- node_modules/yup/README.md: ``object.concat(schemaB: ObjectSchema): ObjectSchema`` -> `#objectconcatschemab-objectschema-objectschema`
+- node_modules/yup/README.md: ``object.from(fromKey: string, toKey: string, alias: boolean = false): this`` -> `#objectfromfromkey-string-tokey-string-alias-boolean--false-this`
+- node_modules/yup/README.md: ``object.exact(message?: string | function): Schema`` -> `#objectexactmessage-string--function-schema`
+- node_modules/yup/README.md: ``object.stripUnknown(): Schema`` -> `#objectstripunknown-schema`
+- node_modules/yup/README.md: ``object.noUnknown(onlyKnownKeys: boolean = true, message?: string | function): Schema`` -> `#objectnounknownonlyknownkeys-boolean--true-message-string--function-schema`
+- node_modules/yup/README.md: ``object.camelCase(): Schema`` -> `#objectcamelcase-schema`
+- node_modules/yup/README.md: ``object.constantCase(): Schema`` -> `#objectconstantcase-schema`
+- node_modules/yup/README.md: ``ValidationError`` -> `#validationerrorerrors-string--arraystring-value-any-path-string`
+- node_modules/yup/README.md: ``mixed()`` -> `#mixed`
+- node_modules/yup/README.md: ``when()`` -> `#schemawhenkeys-string--string-builder-object--values-any-schema--schema-schema`
+- node_modules/yup/README.md: ``string().required`` -> `#stringrequiredmessage-string--function-schema`
+- node_modules/yup/README.md: ``isType()`` -> `#schemaistypevalue-any-value-is-infertypeschema`
+- node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- node_modules/yup/node_modules/type-fest/readme.md: `contributing guidelines` -> `.github/contributing.md`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Primitive`` -> `source/primitive.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Class`` -> `source/basic.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Constructor`` -> `source/basic.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``TypedArray`` -> `source/typed-array.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``ObservableLike`` -> `source/observable-like.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Writable`` -> `source/writable.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Merge`` -> `source/merge.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``MergeExclusive`` -> `source/merge-exclusive.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``RequireAtLeastOne`` -> `source/require-at-least-one.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``RequireAllOrNone`` -> `source/require-all-or-none.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``RemoveIndexSignature`` -> `source/remove-index-signature.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``PartialDeep`` -> `source/partial-deep.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``PartialOnUndefinedDeep`` -> `source/partial-on-undefined-deep.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``ReadonlyDeep`` -> `source/readonly-deep.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``LiteralUnion`` -> `source/literal-union.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Opaque`` -> `source/opaque.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``UnwrapOpaque`` -> `source/opaque.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``InvariantOf`` -> `source/invariant-of.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``SetRequired`` -> `source/set-required.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``SetNonNullable`` -> `source/set-non-nullable.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``ValueOf`` -> `source/value-of.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``ConditionalKeys`` -> `source/conditional-keys.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``ConditionalExcept`` -> `source/conditional-except.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``UnionToIntersection`` -> `source/union-to-intersection.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``LiteralToPrimitive`` -> `source/literal-to-primitive.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: `primitive type` -> `source/primitive.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Stringified`` -> `source/stringified.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Entry`` -> `source/entry.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Entries`` -> `source/entries.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``SetReturnType`` -> `source/set-return-type.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Get`` -> `source/get.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``StringKeyOf`` -> `source/string-key-of.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Schema`` -> `source/schema.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Exact`` -> `source/exact.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``OptionalKeysOf`` -> `source/optional-keys-of.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``HasOptionalKeys`` -> `source/has-optional-keys.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``RequiredKeysOf`` -> `source/required-keys-of.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``HasRequiredKeys`` -> `source/has-required-keys.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Spread`` -> `source/spread.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Jsonify`` -> `source/jsonify.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``JsonPrimitive`` -> `source/basic.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``JsonObject`` -> `source/basic.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``JsonArray`` -> `source/basic.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``JsonValue`` -> `source/basic.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Promisable`` -> `source/promisable.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``AsyncReturnType`` -> `source/async-return-type.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Asyncify`` -> `source/asyncify.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Trim`` -> `source/trim.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Split`` -> `source/split.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Replace`` -> `source/replace.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Includes`` -> `source/includes.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Join`` -> `source/join.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``LastArrayElement`` -> `source/last-array-element.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``FixedLengthArray`` -> `source/fixed-length-array.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``MultidimensionalArray`` -> `source/multidimensional-array.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``MultidimensionalReadonlyArray`` -> `source/multidimensional-readonly-array.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``ReadonlyTuple`` -> `source/readonly-tuple.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``PositiveInfinity`` -> `source/numeric.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``NegativeInfinity`` -> `source/numeric.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Finite`` -> `source/numeric.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Integer`` -> `source/numeric.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Float`` -> `source/numeric.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``NegativeFloat`` -> `source/numeric.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``Negative`` -> `source/numeric.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``NonNegative`` -> `source/numeric.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``NegativeInteger`` -> `source/numeric.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``NonNegativeInteger`` -> `source/numeric.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``CamelCase`` -> `source/camel-case.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``CamelCasedProperties`` -> `source/camel-cased-properties.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``CamelCasedPropertiesDeep`` -> `source/camel-cased-properties-deep.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``KebabCase`` -> `source/kebab-case.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``KebabCasedProperties`` -> `source/kebab-cased-properties.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``KebabCasedPropertiesDeep`` -> `source/kebab-cased-properties-deep.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``PascalCase`` -> `source/pascal-case.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``PascalCasedProperties`` -> `source/pascal-cased-properties.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``PascalCasedPropertiesDeep`` -> `source/pascal-cased-properties-deep.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``SnakeCase`` -> `source/snake-case.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``SnakeCasedProperties`` -> `source/snake-cased-properties-deep.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``SnakeCasedPropertiesDeep`` -> `source/snake-cased-properties-deep.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``ScreamingSnakeCase`` -> `source/screaming-snake-case.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``DelimiterCase`` -> `source/delimiter-case.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``DelimiterCasedProperties`` -> `source/delimiter-cased-properties.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``DelimiterCasedPropertiesDeep`` -> `source/delimiter-cased-properties-deep.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``TsConfigJson`` -> `source/tsconfig-json.d.ts`
+- node_modules/yup/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- node_modules/binary-extensions/readme.md: `JSON file` -> `binary-extensions.json`
+- node_modules/word-wrap/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/word-wrap/README.md: `.verb.md` -> `.verb.md`
+- node_modules/word-wrap/README.md: `MIT License` -> `LICENSE`
+- node_modules/clsx/readme.md: `faster` -> `bench`
+- node_modules/clsx/readme.md: `API` -> `#API`
+- node_modules/clsx/readme.md: ``bench`` -> `bench`
+- node_modules/clsx/readme.md: ``clsx/lite`` -> `#clsxlite`
+- node_modules/d3-drag/README.md: `drag behavior` -> `#api-reference`
+- node_modules/d3-drag/README.md: `*drag*.filter` -> `#drag_filter`
+- node_modules/d3-drag/README.md: `*drag*.clickDistance` -> `#drag_clickDistance`
+- node_modules/d3-drag/README.md: `*drag*` -> `#_drag`
+- node_modules/d3-drag/README.md: `drag events` -> `#drag-events`
+- node_modules/d3-drag/README.md: `*drag*` -> `#_drag`
+- node_modules/d3-drag/README.md: `applied` -> `#_drag`
+- node_modules/d3-drag/README.md: `drag events` -> `#drag-events`
+- node_modules/d3-drag/README.md: `*drag*` -> `#_drag`
+- node_modules/d3-drag/README.md: `*drag*.filter` -> `#drag_filter`
+- node_modules/d3-drag/README.md: `drag event` -> `#drag-events`
+- node_modules/d3-drag/README.md: `container` -> `#drag_container`
+- node_modules/d3-drag/README.md: `*event*.on` -> `#event_on`
+- node_modules/d3-drag/README.md: `Drag Events` -> `#drag-events`
+- node_modules/d3-drag/README.md: `d3.dragEnable` -> `#dragEnable`
+- node_modules/d3-drag/README.md: `d3.dragDisable` -> `#dragDisable`
+- node_modules/d3-drag/README.md: `d3.dragDisable` -> `#dragDisable`
+- node_modules/d3-drag/README.md: `drag event listener` -> `#drag_on`
+- node_modules/d3-drag/README.md: `drag behavior` -> `#drag`
+- node_modules/d3-drag/README.md: `*drag*.on` -> `#drag_on`
+- node_modules/d3-drag/README.md: `*drag*.subject` -> `#drag_subject`
+- node_modules/d3-drag/README.md: `*drag*.container` -> `#drag_container`
+- node_modules/d3-drag/README.md: `*drag*.container` -> `#drag_container`
+- node_modules/d3-drag/README.md: `*event*.on` -> `#event_on`
+- node_modules/d3-drag/README.md: `*drag*.on` -> `#drag_on`
+- node_modules/d3-drag/README.md: `event listeners` -> `#drag_on`
+- node_modules/topojson-client/README.md: `merge shapes` -> `#merge`
+- node_modules/topojson-client/README.md: `quantize coordinates` -> `#quantize`
+- node_modules/topojson-client/README.md: `GeoJSON` -> `#feature`
+- node_modules/topojson-client/README.md: `topojson.merge` -> `#merge`
+- node_modules/topojson-client/README.md: `topojson.feature` -> `#feature`
+- node_modules/topojson-client/README.md: `topojson.mesh` -> `#mesh`
+- node_modules/topojson-client/README.md: `topoquantize` -> `#topoquantize`
+- node_modules/topojson-client/README.md: `topojson.bbox` -> `#bbox`
+- node_modules/topojson-client/README.md: `point *transform* function` -> `#_transform`
+- node_modules/topojson-client/README.md: `point *transform* function` -> `#_transform`
+- node_modules/topojson-client/README.md: `topojson.quantize` -> `#quantize`
+- node_modules/topojson-client/README.md: `--list` -> `#topo2geo_list`
+- node_modules/topojson-client/README.md: `topojson.mergeArcs` -> `#mergeArcs`
+- node_modules/topojson-client/README.md: `topojson.meshArcs` -> `#meshArcs`
+- node_modules/topojson-client/README.md: `--mesh` -> `#topomerge_mesh`
+- node_modules/topojson-client/README.md: `topojson.meshArcs` -> `#meshArcs`
+- node_modules/topojson-client/README.md: `topojson.mergeArcs` -> `#mergeArcs`
+- node_modules/topojson-client/README.md: `bbox` -> `#bbox`
+- node_modules/topojson-client/README.md: `topojson.quantize` -> `#quantize`
+- node_modules/vite/LICENSE.md: `Notices` -> `#notices`
+- node_modules/minimatch/README.md: `the caveat about Windows
+paths` -> `#windows`
+- node_modules/postcss-value-parser/README.md: `Bogdan Chadkin` -> `mailto:trysound@yandex.ru`
+- node_modules/@open-draft/logger/README.md: `logger filtering` -> `#logger-filtering`
+- node_modules/@open-draft/logger/README.md: ``new Logger(name)`` -> `#new-loggername`
+- node_modules/@open-draft/logger/README.md: ``logger.debug(message, ...positionals)`` -> `#loggerdebugmessage-positionals`
+- node_modules/@open-draft/logger/README.md: ``logger.info(message, ...positionals)`` -> `#loggerinfomessage-positionals`
+- node_modules/@open-draft/logger/README.md: ``logger.success(message, ...positionals)`` -> `#loggersuccessmessage-positionals`
+- node_modules/@open-draft/logger/README.md: ``logger.warning(message, ...positionals)`` -> `#loggerwarningmessage-positionals`
+- node_modules/@open-draft/logger/README.md: ``logger.error(message, ...positionals)`` -> `#loggererrormessage-positionals`
+- node_modules/@open-draft/logger/README.md: ``logger.extend(name)`` -> `#loggerextendprefix`
+- node_modules/@open-draft/logger/README.md: ``logger.only(callback)`` -> `#loggeronlycallback`
+- node_modules/@open-draft/logger/README.md: ``logger.extend()`` -> `#loggerextendprefix`
+- node_modules/@open-draft/deferred-promise/README.md: `**`createDeferredExecutor()`**` -> `#createdeferredexecutor`
+- node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.state`` -> `#deferredexecutorstate`
+- node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.resolve()`` -> `#deferredexecutorresolve`
+- node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.reject()`` -> `#deferredexecutorreject`
+- node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.rejectionReason`` -> `#deferredexecutorrejectionreason`
+- node_modules/@open-draft/deferred-promise/README.md: `**Class: `DeferredPromise`**` -> `#class-deferredpromise`
+- node_modules/@open-draft/deferred-promise/README.md: ``new DeferredPromise()`` -> `#new-defferedpromise`
+- node_modules/@open-draft/deferred-promise/README.md: ``deferredPromise.state`` -> `#deferredpromisestate`
+- node_modules/@open-draft/deferred-promise/README.md: ``deferredPromise.resolve()`` -> `#deferredpromiseresolve`
+- node_modules/@open-draft/deferred-promise/README.md: ``deferredPromise.reject()`` -> `#deferredpromisereject`
+- node_modules/@open-draft/deferred-promise/README.md: ``deferredPromise.rejectionReason`` -> `#deferredpromiserejectionreason`
+- node_modules/@open-draft/deferred-promise/README.md: ``DeferredPromise`` -> `#class-deferredpromise`
+- node_modules/@open-draft/deferred-promise/README.md: ``resolve()`` -> `#deferredexecutorresolve`
+- node_modules/@open-draft/deferred-promise/README.md: ``reject()`` -> `#deferredexecutorreject`
+- node_modules/@open-draft/deferred-promise/README.md: ``rejectionReason`` -> `#deferredexecutorrejectionreason`
+- node_modules/@open-draft/deferred-promise/README.md: `deferred executor` -> `#createdeferredexecutor`
+- node_modules/@open-draft/deferred-promise/README.md: ``resolve()`` -> `#deferredpromiseresolve`
+- node_modules/@open-draft/deferred-promise/README.md: ``reject()`` -> `#deferredpromisereject`
+- node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.state`` -> `#deferredexecutorstate`
+- node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.resolve()`` -> `#deferredexecutorresolve`
+- node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.reject()`` -> `#deferredexecutorreject`
+- node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.rejectionReason`` -> `#deferredexecutorrejectionreason`
+- node_modules/graphemer/README.md: `Contribution Guide` -> `./CONTRIBUTING.md`
+- node_modules/eslint-plugin-react-refresh/README.md: `Options` -> `#options`
+- node_modules/js-tokens/README.md: `ES2018` -> `#es2018`
+- node_modules/js-tokens/README.md: `ES2018` -> `#es2018`
+- node_modules/js-tokens/README.md: `MIT` -> `LICENSE`
+- node_modules/@sinclair/typebox/readme.md: `Install` -> `#install`
+- node_modules/@sinclair/typebox/readme.md: `Overview` -> `#overview`
+- node_modules/@sinclair/typebox/readme.md: `Usage` -> `#usage`
+- node_modules/@sinclair/typebox/readme.md: `Types` -> `#types`
+- node_modules/@sinclair/typebox/readme.md: `Standard` -> `#types-standard`
+- node_modules/@sinclair/typebox/readme.md: `Extended` -> `#types-extended`
+- node_modules/@sinclair/typebox/readme.md: `Modifiers` -> `#types-modifiers`
+- node_modules/@sinclair/typebox/readme.md: `Options` -> `#types-options`
+- node_modules/@sinclair/typebox/readme.md: `Generics` -> `#types-generics`
+- node_modules/@sinclair/typebox/readme.md: `References` -> `#types-references`
+- node_modules/@sinclair/typebox/readme.md: `Recursive` -> `#types-recursive`
+- node_modules/@sinclair/typebox/readme.md: `Conditional` -> `#types-conditional`
+- node_modules/@sinclair/typebox/readme.md: `Template Literal` -> `#types-template-literal`
+- node_modules/@sinclair/typebox/readme.md: `Guards` -> `#types-guards`
+- node_modules/@sinclair/typebox/readme.md: `Unsafe` -> `#types-unsafe`
+- node_modules/@sinclair/typebox/readme.md: `Strict` -> `#types-strict`
+- node_modules/@sinclair/typebox/readme.md: `Values` -> `#values`
+- node_modules/@sinclair/typebox/readme.md: `Create` -> `#values-create`
+- node_modules/@sinclair/typebox/readme.md: `Clone` -> `#values-clone`
+- node_modules/@sinclair/typebox/readme.md: `Check` -> `#values-check`
+- node_modules/@sinclair/typebox/readme.md: `Convert` -> `#values-convert`
+- node_modules/@sinclair/typebox/readme.md: `Cast` -> `#values-cast`
+- node_modules/@sinclair/typebox/readme.md: `Equal` -> `#values-equal`
+- node_modules/@sinclair/typebox/readme.md: `Hash` -> `#values-hash`
+- node_modules/@sinclair/typebox/readme.md: `Diff` -> `#values-diff`
+- node_modules/@sinclair/typebox/readme.md: `Patch` -> `#values-patch`
+- node_modules/@sinclair/typebox/readme.md: `Errors` -> `#values-errors`
+- node_modules/@sinclair/typebox/readme.md: `Mutate` -> `#values-mutate`
+- node_modules/@sinclair/typebox/readme.md: `Pointer` -> `#values-pointer`
+- node_modules/@sinclair/typebox/readme.md: `TypeCheck` -> `#typecheck`
+- node_modules/@sinclair/typebox/readme.md: `Ajv` -> `#typecheck-ajv`
+- node_modules/@sinclair/typebox/readme.md: `TypeCompiler` -> `#typecheck-typecompiler`
+- node_modules/@sinclair/typebox/readme.md: `TypeSystem` -> `#typesystem`
+- node_modules/@sinclair/typebox/readme.md: `Types` -> `#typesystem-types`
+- node_modules/@sinclair/typebox/readme.md: `Formats` -> `#typesystem-formats`
+- node_modules/@sinclair/typebox/readme.md: `Policies` -> `#typesystem-policies`
+- node_modules/@sinclair/typebox/readme.md: `Benchmark` -> `#benchmark`
+- node_modules/@sinclair/typebox/readme.md: `Compile` -> `#benchmark-compile`
+- node_modules/@sinclair/typebox/readme.md: `Validate` -> `#benchmark-validate`
+- node_modules/@sinclair/typebox/readme.md: `Compression` -> `#benchmark-compression`
+- node_modules/@sinclair/typebox/readme.md: `Contribute` -> `#contribute`
+- node_modules/graphql/README.md: `![GraphQLConf 2025 Banner: September 08-10, Amsterdam. Hosted by the GraphQL Foundation` -> `./assets/graphql-conf-2025.png`
+- node_modules/graphql/README.md: `contribute` -> `./.github/CONTRIBUTING.md`
+- node_modules/graphql/README.md: `operations@graphql.org` -> `mailto:operations@graphql.org`
+- node_modules/resolve.exports/readme.md: ``/test/`` -> `/test`
+- node_modules/resolve.exports/readme.md: ``resolve()`` -> `#resolvepkg-entry-options`
+- node_modules/resolve.exports/readme.md: ``exports()`` -> `#exportspkg-entry-options`
+- node_modules/resolve.exports/readme.md: ``imports()`` -> `#importspkg-target-options`
+- node_modules/resolve.exports/readme.md: `Options` -> `#options`
+- node_modules/resolve.exports/readme.md: `Legacy Resolver API` -> `#legacy-resolver`
+- node_modules/resolve.exports/readme.md: ``exports()`` -> `#exportspkg-entry-options`
+- node_modules/resolve.exports/readme.md: ``imports()`` -> `#importspkg-target-options`
+- node_modules/resolve.exports/readme.md: ``options.conditions`` -> `#optionsconditions`
+- node_modules/resolve.exports/readme.md: ``options.conditions`` -> `#optionsconditions`
+- node_modules/resolve.exports/readme.md: ``resolve()`` -> `#resolvepkg-entry-options`
+- node_modules/resolve.exports/readme.md: ``imports()`` -> `#importspkg-target-options`
+- node_modules/resolve.exports/readme.md: ``exports()`` -> `#exportspkg-entry-options`
+- node_modules/resolve.exports/readme.md: ``options.conditions`` -> `#optionsconditions`
+- node_modules/resolve.exports/readme.md: ``options.fields`` -> `#optionsfields`
+- node_modules/resolve.exports/readme.md: ``options.fields`` -> `#optionsfields`
+- node_modules/@adobe/css-tools/Readme.md: ``stylesheet`` -> `#stylesheet`
+- node_modules/data-urls/node_modules/tr46/README.md: ``checkBidi`` -> `#checkBidi`
+- node_modules/data-urls/node_modules/tr46/README.md: ``checkHyphens`` -> `#checkHyphens`
+- node_modules/data-urls/node_modules/tr46/README.md: ``checkJoiners`` -> `#checkJoiners`
+- node_modules/data-urls/node_modules/tr46/README.md: ``processingOption`` -> `#processingOption`
+- node_modules/data-urls/node_modules/tr46/README.md: ``useSTD3ASCIIRules`` -> `#useSTD3ASCIIRules`
+- node_modules/data-urls/node_modules/tr46/README.md: ``verifyDNSLength`` -> `#verifyDNSLength`
+- node_modules/data-urls/node_modules/tr46/README.md: ``checkBidi`` -> `#checkBidi`
+- node_modules/data-urls/node_modules/tr46/README.md: ``checkHyphens`` -> `#checkHyphens`
+- node_modules/data-urls/node_modules/tr46/README.md: ``checkJoiners`` -> `#checkJoiners`
+- node_modules/data-urls/node_modules/tr46/README.md: ``processingOption`` -> `#processingOption`
+- node_modules/data-urls/node_modules/tr46/README.md: ``useSTD3ASCIIRules`` -> `#useSTD3ASCIIRules`
+- node_modules/is-number/README.md: `tests` -> `./test.js`
+- node_modules/is-number/README.md: `benchmarks` -> `./benchmark/index.js`
+- node_modules/is-number/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/is-number/README.md: `.verb.md` -> `.verb.md`
+- node_modules/is-number/README.md: `MIT License` -> `LICENSE`
+- node_modules/levn/README.md: `levn format` -> `#levn-format`
+- node_modules/levn/README.md: `options` -> `#options`
+- node_modules/levn/README.md: `levn format` -> `#levn-format`
+- node_modules/levn/README.md: `options` -> `#options`
+- node_modules/levn/README.md: `options` -> `#options`
+- node_modules/levn/README.md: `levn format` -> `#levn-format`
+- node_modules/postcss-import/README.md: `tests` -> `test`
+- node_modules/postcss-import/README.md: `Changelog` -> `CHANGELOG.md`
+- node_modules/postcss-import/README.md: `License` -> `LICENSE`
+- node_modules/url-parse/README.md: `MIT` -> `LICENSE`
+- node_modules/msw/node_modules/type-fest/readme.md: `contributing guidelines` -> `.github/contributing.md`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Primitive`` -> `source/primitive.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Class`` -> `source/basic.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Constructor`` -> `source/basic.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``AbstractClass`` -> `source/basic.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``AbstractConstructor`` -> `source/basic.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``TypedArray`` -> `source/typed-array.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ObservableLike`` -> `source/observable-like.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``EmptyObject`` -> `source/empty-object.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``NonEmptyObject`` -> `source/non-empty-object.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``UnknownRecord`` -> `source/unknown-record.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``UnknownArray`` -> `source/unknown-array.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``UnknownMap`` -> `source/unknown-map.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``UnknownSet`` -> `source/unknown-set.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Writable`` -> `source/writable.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``WritableDeep`` -> `source/writable-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Merge`` -> `source/merge.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``MergeDeep`` -> `source/merge-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``MergeExclusive`` -> `source/merge-exclusive.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``OverrideProperties`` -> `source/override-properties.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``RequireAtLeastOne`` -> `source/require-at-least-one.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``RequireAllOrNone`` -> `source/require-all-or-none.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``RequireOneOrNone`` -> `source/require-one-or-none.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SingleKeyObject`` -> `source/single-key-object.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``RequiredDeep`` -> `source/required-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``PickDeep`` -> `source/pick-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``OmitDeep`` -> `source/omit-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``OmitIndexSignature`` -> `source/omit-index-signature.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``PickIndexSignature`` -> `source/pick-index-signature.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``PartialDeep`` -> `source/partial-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``PartialOnUndefinedDeep`` -> `source/partial-on-undefined-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``UndefinedOnPartialDeep`` -> `source/undefined-on-partial-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ReadonlyDeep`` -> `source/readonly-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``LiteralUnion`` -> `source/literal-union.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Opaque`` -> `source/tagged.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``UnwrapTagged`` -> `source/tagged.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``UnwrapOpaque`` -> `source/tagged.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``InvariantOf`` -> `source/invariant-of.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SetReadonly`` -> `source/set-readonly.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SetRequired`` -> `source/set-required.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SetRequiredDeep`` -> `source/set-required-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SetNonNullable`` -> `source/set-non-nullable.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SetNonNullableDeep`` -> `source/set-non-nullable-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ValueOf`` -> `source/value-of.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ConditionalKeys`` -> `source/conditional-keys.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ConditionalPickDeep`` -> `source/conditional-pick-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ConditionalExcept`` -> `source/conditional-except.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``UnionToIntersection`` -> `source/union-to-intersection.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``LiteralToPrimitive`` -> `source/literal-to-primitive.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: `primitive type` -> `source/primitive.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``LiteralToPrimitiveDeep`` -> `source/literal-to-primitive-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Stringified`` -> `source/stringified.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Entry`` -> `source/entry.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Entries`` -> `source/entries.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SetReturnType`` -> `source/set-return-type.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SetParameterType`` -> `source/set-parameter-type.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SimplifyDeep`` -> `source/simplify-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Get`` -> `source/get.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``StringKeyOf`` -> `source/string-key-of.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Schema`` -> `source/schema.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Exact`` -> `source/exact.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``OptionalKeysOf`` -> `source/optional-keys-of.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``KeysOfUnion`` -> `source/keys-of-union.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``HasOptionalKeys`` -> `source/has-optional-keys.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``RequiredKeysOf`` -> `source/required-keys-of.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``HasRequiredKeys`` -> `source/has-required-keys.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ReadonlyKeysOf`` -> `source/readonly-keys-of.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``HasReadonlyKeys`` -> `source/has-readonly-keys.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``WritableKeysOf`` -> `source/writable-keys-of.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``HasWritableKeys`` -> `source/has-writable-keys.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Spread`` -> `source/spread.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsEqual`` -> `source/is-equal.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``TaggedUnion`` -> `source/tagged-union.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IntRange`` -> `source/int-range.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IntClosedRange`` -> `source/int-closed-range.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ArrayIndices`` -> `source/array-indices.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ArrayValues`` -> `source/array-values.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ArraySplice`` -> `source/array-splice.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ArrayTail`` -> `source/array-tail.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SetFieldType`` -> `source/set-field-type.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Paths`` -> `source/paths.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SharedUnionFields`` -> `source/shared-union-fields.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SharedUnionFieldsDeep`` -> `source/shared-union-fields-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``AllUnionFields`` -> `source/all-union-fields.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``DistributedOmit`` -> `source/distributed-omit.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``DistributedPick`` -> `source/distributed-pick.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``And`` -> `source/and.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Or`` -> `source/or.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``NonEmptyTuple`` -> `source/non-empty-tuple.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``NonEmptyString`` -> `source/non-empty-string.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``FindGlobalType`` -> `source/find-global-type.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``FindGlobalInstanceType`` -> `source/find-global-type.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsLiteral`` -> `source/is-literal.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsStringLiteral`` -> `source/is-literal.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsNumericLiteral`` -> `source/is-literal.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsBooleanLiteral`` -> `source/is-literal.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsSymbolLiteral`` -> `source/is-literal.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsAny`` -> `source/is-any.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IfAny`` -> `source/if-any.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsNever`` -> `source/is-never.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IfNever`` -> `source/if-never.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsUnknown`` -> `source/is-unknown.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IfUnknown`` -> `source/if-unknown.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsEmptyObject`` -> `source/empty-object.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IfEmptyObject`` -> `source/if-empty-object.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsNull`` -> `source/is-null.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IfNull`` -> `source/if-null.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsTuple`` -> `source/is-tuple.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Jsonify`` -> `source/jsonify.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Jsonifiable`` -> `source/jsonifiable.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``JsonPrimitive`` -> `source/basic.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``JsonObject`` -> `source/basic.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``JsonArray`` -> `source/basic.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``JsonValue`` -> `source/basic.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``StructuredCloneable`` -> `source/structured-cloneable.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Promisable`` -> `source/promisable.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``AsyncReturnType`` -> `source/async-return-type.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Asyncify`` -> `source/asyncify.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Trim`` -> `source/trim.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Split`` -> `source/split.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Words`` -> `source/words.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Replace`` -> `source/replace.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``StringSlice`` -> `source/string-slice.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``StringRepeat`` -> `source/string-repeat.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Arrayable`` -> `source/arrayable.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Includes`` -> `source/includes.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Join`` -> `source/join.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ArraySlice`` -> `source/array-slice.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``LastArrayElement`` -> `source/last-array-element.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``FixedLengthArray`` -> `source/fixed-length-array.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``MultidimensionalArray`` -> `source/multidimensional-array.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``MultidimensionalReadonlyArray`` -> `source/multidimensional-readonly-array.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ReadonlyTuple`` -> `source/readonly-tuple.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``TupleToUnion`` -> `source/tuple-to-union.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``UnionToTuple`` -> `source/union-to-tuple.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``TupleToObject`` -> `source/tuple-to-object.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``PositiveInfinity`` -> `source/numeric.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``NegativeInfinity`` -> `source/numeric.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Finite`` -> `source/numeric.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Integer`` -> `source/numeric.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Float`` -> `source/numeric.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``NegativeFloat`` -> `source/numeric.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Negative`` -> `source/numeric.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``NonNegative`` -> `source/numeric.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``NegativeInteger`` -> `source/numeric.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``NonNegativeInteger`` -> `source/numeric.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsNegative`` -> `source/numeric.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsFloat`` -> `source/is-float.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IsInteger`` -> `source/is-integer.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``GreaterThan`` -> `source/greater-than.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``GreaterThanOrEqual`` -> `source/greater-than-or-equal.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``LessThan`` -> `source/less-than.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``LessThanOrEqual`` -> `source/less-than-or-equal.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Sum`` -> `source/sum.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Subtract`` -> `source/subtract.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``CamelCase`` -> `source/camel-case.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``CamelCasedProperties`` -> `source/camel-cased-properties.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``CamelCasedPropertiesDeep`` -> `source/camel-cased-properties-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``KebabCase`` -> `source/kebab-case.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``KebabCasedProperties`` -> `source/kebab-cased-properties.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``KebabCasedPropertiesDeep`` -> `source/kebab-cased-properties-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``PascalCase`` -> `source/pascal-case.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``PascalCasedProperties`` -> `source/pascal-cased-properties.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``PascalCasedPropertiesDeep`` -> `source/pascal-cased-properties-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SnakeCase`` -> `source/snake-case.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SnakeCasedProperties`` -> `source/snake-cased-properties.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SnakeCasedPropertiesDeep`` -> `source/snake-cased-properties-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ScreamingSnakeCase`` -> `source/screaming-snake-case.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``DelimiterCase`` -> `source/delimiter-case.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``DelimiterCasedProperties`` -> `source/delimiter-cased-properties.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``DelimiterCasedPropertiesDeep`` -> `source/delimiter-cased-properties-deep.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``GlobalThis`` -> `source/global-this.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``TsConfigJson`` -> `source/tsconfig-json.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Schema`` -> `source/schema.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Writable`` -> `source/writable.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``RequireOneOrNone`` -> `source/require-one-or-none.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``KeysOfUnion`` -> `source/keys-of-union.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- node_modules/msw/node_modules/type-fest/readme.md: `MIT` -> `license-mit`
+- node_modules/msw/node_modules/type-fest/readme.md: `CC0-1.0` -> `license-cc0`
+- node_modules/postcss-selector-parser/API.md: `See processor documentation` -> `#processor`
+- node_modules/postcss-selector-parser/README.md: `API.md` -> `API.md`
+- node_modules/rollup/README.md: `[Contribute` -> `CONTRIBUTING.md`
+- node_modules/rollup/README.md: `contribution guidelines` -> `CONTRIBUTING.md`
+- node_modules/react-beautiful-dnd/README.md: `natural movement` -> `/docs/about/animations.md`
+- node_modules/react-beautiful-dnd/README.md: `Accessible` -> `/docs/about/accessibility.md`
+- node_modules/react-beautiful-dnd/README.md: `Extremely performant` -> `/docs/support/media.md`
+- node_modules/react-beautiful-dnd/README.md: `Unopinionated styling` -> `/docs/guides/preset-styles.md`
+- node_modules/react-beautiful-dnd/README.md: `Virtual list support 👾` -> `/docs/patterns/virtual-lists.md`
+- node_modules/react-beautiful-dnd/README.md: `Combining items` -> `/docs/guides/combining.md`
+- node_modules/react-beautiful-dnd/README.md: `Multi drag support` -> `/docs/patterns/multi-drag.md`
+- node_modules/react-beautiful-dnd/README.md: `Conditional dragging` -> `/docs/api/draggable.md#optional-props`
+- node_modules/react-beautiful-dnd/README.md: `conditional dropping` -> `/docs/api/droppable.md#conditionally-dropping`
+- node_modules/react-beautiful-dnd/README.md: `Add and remove items during a drag` -> `/docs/guides/changes-while-dragging.md`
+- node_modules/react-beautiful-dnd/README.md: `table pattern` -> `/docs/patterns/tables.md`
+- node_modules/react-beautiful-dnd/README.md: `Auto scrolling` -> `/docs/guides/auto-scrolling.md`
+- node_modules/react-beautiful-dnd/README.md: `Reparenting your `<Draggable />`` -> `/docs/guides/reparenting.md`
+- node_modules/react-beautiful-dnd/README.md: `Create scripted drag and drop experiences 🎮` -> `/docs/sensors/sensor-api.md`
+- node_modules/react-beautiful-dnd/README.md: `any input type you like 🕹` -> `/docs/sensors/sensor-api.md`
+- node_modules/react-beautiful-dnd/README.md: `resetServerContext()` -> `/docs/api/reset-server-context.md`
+- node_modules/react-beautiful-dnd/README.md: `nested interactive elements` -> `/docs/api/draggable.md#interactive-child-elements-within-a-draggable-`
+- node_modules/react-beautiful-dnd/README.md: `Installation` -> `/docs/about/installation.md`
+- node_modules/react-beautiful-dnd/README.md: `Examples and samples` -> `/docs/about/examples.md`
+- node_modules/react-beautiful-dnd/README.md: `Design principles` -> `/docs/about/design-principles.md`
+- node_modules/react-beautiful-dnd/README.md: `Animations` -> `/docs/about/animations.md`
+- node_modules/react-beautiful-dnd/README.md: `Accessibility` -> `/docs/about/accessibility.md`
+- node_modules/react-beautiful-dnd/README.md: `Browser support` -> `/docs/about/browser-support.md`
+- node_modules/react-beautiful-dnd/README.md: `Mouse dragging 🐭` -> `/docs/sensors/mouse.md`
+- node_modules/react-beautiful-dnd/README.md: `Touch dragging 👉📱` -> `/docs/sensors/touch.md`
+- node_modules/react-beautiful-dnd/README.md: `Keyboard dragging 🎹♿️` -> `/docs/sensors/keyboard.md`
+- node_modules/react-beautiful-dnd/README.md: `Create your own sensor` -> `/docs/sensors/sensor-api.md`
+- node_modules/react-beautiful-dnd/README.md: ``<DragDropContext />`` -> `/docs/api/drag-drop-context.md`
+- node_modules/react-beautiful-dnd/README.md: ``<Droppable />`` -> `/docs/api/droppable.md`
+- node_modules/react-beautiful-dnd/README.md: ``<Draggable />`` -> `/docs/api/draggable.md`
+- node_modules/react-beautiful-dnd/README.md: ``resetServerContext()`` -> `/docs/api/reset-server-context.md`
+- node_modules/react-beautiful-dnd/README.md: ``<DragDropContext />` responders` -> `/docs/guides/responders.md`
+- node_modules/react-beautiful-dnd/README.md: `Combining `<Draggable />`s` -> `/docs/guides/combining.md`
+- node_modules/react-beautiful-dnd/README.md: `Common setup issues` -> `/docs/guides/common-setup-issues.md`
+- node_modules/react-beautiful-dnd/README.md: `Using `innerRef`` -> `/docs/guides/using-inner-ref.md`
+- node_modules/react-beautiful-dnd/README.md: `Setup problem detection and error recovery` -> `/docs/guides/setup-problem-detection-and-error-recovery.md`
+- node_modules/react-beautiful-dnd/README.md: `Rules for `draggableId` and `droppableId`s` -> `/docs/guides/identifiers.md`
+- node_modules/react-beautiful-dnd/README.md: `Browser focus retention` -> `/docs/guides/browser-focus.md`
+- node_modules/react-beautiful-dnd/README.md: `Customising or skipping the drop animation` -> `/docs/guides/drop-animation.md`
+- node_modules/react-beautiful-dnd/README.md: `Auto scrolling` -> `/docs/guides/auto-scrolling.md`
+- node_modules/react-beautiful-dnd/README.md: `Controlling the screen reader` -> `/docs/guides/screen-reader.md`
+- node_modules/react-beautiful-dnd/README.md: `Use the html5 `doctype`` -> `/docs/guides/doctype.md`
+- node_modules/react-beautiful-dnd/README.md: ``TypeScript` and `flow`: type information` -> `/docs/guides/types.md`
+- node_modules/react-beautiful-dnd/README.md: `Dragging `<svg>`s` -> `/docs/guides/dragging-svgs.md`
+- node_modules/react-beautiful-dnd/README.md: `Avoiding image flickering` -> `/docs/guides/avoiding-image-flickering.md`
+- node_modules/react-beautiful-dnd/README.md: `Non-visible preset styles` -> `/docs/guides/preset-styles.md`
+- node_modules/react-beautiful-dnd/README.md: `How we detect scroll containers` -> `/docs/guides/how-we-detect-scroll-containers.md`
+- node_modules/react-beautiful-dnd/README.md: `How we use dom events` -> `/docs/guides/how-we-use-dom-events.md`
+- node_modules/react-beautiful-dnd/README.md: `Adding `<Draggable />`s during a drag (11.x behaviour)` -> `/docs/guides/changes-while-dragging.md`
+- node_modules/react-beautiful-dnd/README.md: `Setting up Content Security Policy` -> `/docs/guides/content-security-policy.md`
+- node_modules/react-beautiful-dnd/README.md: `Virtual lists 👾` -> `/docs/patterns/virtual-lists.md`
+- node_modules/react-beautiful-dnd/README.md: `Multi drag` -> `/docs/patterns/multi-drag.md`
+- node_modules/react-beautiful-dnd/README.md: `Tables` -> `/docs/patterns/tables.md`
+- node_modules/react-beautiful-dnd/README.md: `Reparenting a `<Draggable />`` -> `/docs/guides/reparenting.md`
+- node_modules/react-beautiful-dnd/README.md: `Engineering health` -> `/docs/support/engineering-health.md`
+- node_modules/react-beautiful-dnd/README.md: `Community and addons` -> `/docs/support/community-and-addons.md`
+- node_modules/react-beautiful-dnd/README.md: `Upgrading` -> `/docs/support/upgrading.md`
+- node_modules/react-beautiful-dnd/README.md: `Media` -> `/docs/support/media.md`
+- node_modules/react-beautiful-dnd/node_modules/react-redux/README.md: `MIT` -> `LICENSE.md`
+- node_modules/react-beautiful-dnd/node_modules/redux/README.md: `Redux workshops through Workshop.me` -> `#redux-workshops`
+- node_modules/react-beautiful-dnd/node_modules/redux/README.md: `See the full list of Redux patrons` -> `PATRONS.md`
+- node_modules/react-beautiful-dnd/node_modules/redux/README.md: `MIT` -> `LICENSE.md`
+- node_modules/json5/README.md: `security policy` -> `./SECURITY.md`
+- node_modules/@supabase/node-fetch/README.md: `Motivation` -> `#motivation`
+- node_modules/@supabase/node-fetch/README.md: `Features` -> `#features`
+- node_modules/@supabase/node-fetch/README.md: `Difference from client-side fetch` -> `#difference-from-client-side-fetch`
+- node_modules/@supabase/node-fetch/README.md: `Installation` -> `#installation`
+- node_modules/@supabase/node-fetch/README.md: `Loading and configuring the module` -> `#loading-and-configuring-the-module`
+- node_modules/@supabase/node-fetch/README.md: `Common Usage` -> `#common-usage`
+- node_modules/@supabase/node-fetch/README.md: `Plain text or HTML` -> `#plain-text-or-html`
+- node_modules/@supabase/node-fetch/README.md: `JSON` -> `#json`
+- node_modules/@supabase/node-fetch/README.md: `Simple Post` -> `#simple-post`
+- node_modules/@supabase/node-fetch/README.md: `Post with JSON` -> `#post-with-json`
+- node_modules/@supabase/node-fetch/README.md: `Post with form parameters` -> `#post-with-form-parameters`
+- node_modules/@supabase/node-fetch/README.md: `Handling exceptions` -> `#handling-exceptions`
+- node_modules/@supabase/node-fetch/README.md: `Handling client and server errors` -> `#handling-client-and-server-errors`
+- node_modules/@supabase/node-fetch/README.md: `Advanced Usage` -> `#advanced-usage`
+- node_modules/@supabase/node-fetch/README.md: `Streams` -> `#streams`
+- node_modules/@supabase/node-fetch/README.md: `Buffer` -> `#buffer`
+- node_modules/@supabase/node-fetch/README.md: `Accessing Headers and other Meta data` -> `#accessing-headers-and-other-meta-data`
+- node_modules/@supabase/node-fetch/README.md: `Extract Set-Cookie Header` -> `#extract-set-cookie-header`
+- node_modules/@supabase/node-fetch/README.md: `Post data using a file stream` -> `#post-data-using-a-file-stream`
+- node_modules/@supabase/node-fetch/README.md: `Post with form-data (detect multipart)` -> `#post-with-form-data-detect-multipart`
+- node_modules/@supabase/node-fetch/README.md: `Request cancellation with AbortSignal` -> `#request-cancellation-with-abortsignal`
+- node_modules/@supabase/node-fetch/README.md: `API` -> `#api`
+- node_modules/@supabase/node-fetch/README.md: `Options` -> `#options`
+- node_modules/@supabase/node-fetch/README.md: `Class: Request` -> `#class-request`
+- node_modules/@supabase/node-fetch/README.md: `Class: Response` -> `#class-response`
+- node_modules/@supabase/node-fetch/README.md: `Class: Headers` -> `#class-headers`
+- node_modules/@supabase/node-fetch/README.md: `Interface: Body` -> `#interface-body`
+- node_modules/@supabase/node-fetch/README.md: `Class: FetchError` -> `#class-fetcherror`
+- node_modules/@supabase/node-fetch/README.md: `License` -> `#license`
+- node_modules/@supabase/node-fetch/README.md: `Acknowledgement` -> `#acknowledgement`
+- node_modules/@supabase/node-fetch/README.md: `explicit errors` -> `ERROR-HANDLING.md`
+- node_modules/@supabase/node-fetch/README.md: `Known Differences` -> `LIMITS.md`
+- node_modules/@supabase/node-fetch/README.md: `2.x upgrade guide` -> `UPGRADE-GUIDE.md`
+- node_modules/@supabase/node-fetch/README.md: `error handling document` -> `ERROR-HANDLING.md`
+- node_modules/@supabase/node-fetch/README.md: `Options` -> `#fetch-options`
+- node_modules/@supabase/node-fetch/README.md: `Response` -> `#class-response`
+- node_modules/@supabase/node-fetch/README.md: `Body` -> `#iface-body`
+- node_modules/@supabase/node-fetch/README.md: `options` -> `#fetch-options`
+- node_modules/@supabase/node-fetch/README.md: `Body` -> `#iface-body`
+- node_modules/lilconfig/readme.md: `example` -> `#yaml-loader`
+- node_modules/optionator/README.md: `About` -> `#about`
+- node_modules/optionator/README.md: `Usage` -> `#usage`
+- node_modules/optionator/README.md: `Settings Format` -> `#settings-format`
+- node_modules/optionator/README.md: `Argument Format` -> `#argument-format`
+- node_modules/optionator/README.md: `settings format section` -> `#settings-format`
+- node_modules/@standard-schema/spec/README.md: `full list of compatible libraries` -> `#what-schema-libraries-implement-the-spec`
+- node_modules/@standard-schema/spec/README.md: `associated FAQ` -> `#can-i-add-it-as-a-dev-dependency`
+- node_modules/is-arrayish/README.md: `LICENSE` -> `LICENSE`
+- node_modules/prompts/readme.md: `prompts` -> `#-types`
+- node_modules/prompts/readme.md: `prompt objects` -> `#-prompt-objects`
+- node_modules/prompts/readme.md: `prompt objects` -> `#-prompt-objects`
+- node_modules/prompts/readme.md: `prompt types here` -> `#-types`
+- node_modules/prompts/readme.md: `type of prompt` -> `#-types`
+- node_modules/prompts/readme.md: `prompt types` -> `#-types`
+- node_modules/prompts/readme.md: `text` -> `#textmessage-initial-style`
+- node_modules/prompts/readme.md: `password` -> `#passwordmessage-initial`
+- node_modules/prompts/readme.md: `invisible` -> `#invisiblemessage-initial`
+- node_modules/prompts/readme.md: `number` -> `#numbermessage-initial-max-min-style`
+- node_modules/prompts/readme.md: `confirm` -> `#confirmmessage-initial`
+- node_modules/prompts/readme.md: `list` -> `#listmessage-initial`
+- node_modules/prompts/readme.md: `toggle` -> `#togglemessage-initial-active-inactive`
+- node_modules/prompts/readme.md: `select` -> `#selectmessage-choices-initial-hint-warn`
+- node_modules/prompts/readme.md: `multiselect` -> `#multiselectmessage-choices-initial-max-hint-warn`
+- node_modules/prompts/readme.md: `autocompleteMultiselect` -> `#multiselectmessage-choices-initial-max-hint-warn`
+- node_modules/prompts/readme.md: `autocomplete` -> `#autocompletemessage-choices-initial-suggest-limit-style`
+- node_modules/prompts/readme.md: `date` -> `#datemessage-initial-warn`
+- node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- node_modules/d3-path/README.md: `serializing` -> `#path_toString`
+- node_modules/d3-path/README.md: `d3.path` -> `#path`
+- node_modules/filelist/node_modules/minimatch/README.md: `the caveat about Windows
+paths` -> `#windows`
+- node_modules/@reduxjs/toolkit/README.md: `contributing guide` -> `/CONTRIBUTING.md`
+- node_modules/form-data/README.md: `MIT` -> `License`
+- node_modules/package-json-from-dist/LICENSE.md: `Notices` -> `#notices`
+- node_modules/d3-transition/README.md: `*selection*.transition` -> `#selection_transition`
+- node_modules/d3-transition/README.md: `*transition*.attr` -> `#transition_attr`
+- node_modules/d3-transition/README.md: `*transition*.style` -> `#transition_style`
+- node_modules/d3-transition/README.md: `*transition*.remove` -> `#transition_remove`
+- node_modules/d3-transition/README.md: `*transition*.attrTween` -> `#transition_attrTween`
+- node_modules/d3-transition/README.md: `*transition*.styleTween` -> `#transition_styleTween`
+- node_modules/d3-transition/README.md: `*transition*.tween` -> `#transition_tween`
+- node_modules/d3-transition/README.md: `Selecting Elements` -> `#selecting-elements`
+- node_modules/d3-transition/README.md: `Modifying Elements` -> `#modifying-elements`
+- node_modules/d3-transition/README.md: `Timing` -> `#timing`
+- node_modules/d3-transition/README.md: `Control Flow` -> `#control-flow`
+- node_modules/d3-transition/README.md: `The Life of a Transition` -> `#the-life-of-a-transition`
+- node_modules/d3-transition/README.md: `*selection*.transition` -> `#selection_transition`
+- node_modules/d3-transition/README.md: `d3.transition` -> `#transition`
+- node_modules/d3-transition/README.md: `transition` -> `#transition`
+- node_modules/d3-transition/README.md: `already ended` -> `#the-life-of-a-transition`
+- node_modules/d3-transition/README.md: `*selection*.interrupt` -> `#selection_interrupt`
+- node_modules/d3-transition/README.md: `transition` -> `#transition`
+- node_modules/d3-transition/README.md: `*selection*.transition` -> `#selection_transition`
+- node_modules/d3-transition/README.md: `*transition*.selection` -> `#transition_selection`
+- node_modules/d3-transition/README.md: `*selection*.transition` -> `#selection_transition`
+- node_modules/d3-transition/README.md: `*transition*.selection` -> `#transition_selection`
+- node_modules/d3-transition/README.md: `*selection*.transition` -> `#selection_transition`
+- node_modules/d3-transition/README.md: `*transition*.selection` -> `#transition_selection`
+- node_modules/d3-transition/README.md: `*selection*.transition` -> `#selection_transition`
+- node_modules/d3-transition/README.md: `*transition*.selection` -> `#transition_selection`
+- node_modules/d3-transition/README.md: `*selection*.transition` -> `#selection_transition`
+- node_modules/d3-transition/README.md: `delay` -> `#transition_delay`
+- node_modules/d3-transition/README.md: `duration` -> `#transition_duration`
+- node_modules/d3-transition/README.md: `easing` -> `#transition_ease`
+- node_modules/d3-transition/README.md: `*selection*.transition` -> `#selection_transition`
+- node_modules/d3-transition/README.md: `attribute tween` -> `#transition_attrTween`
+- node_modules/d3-transition/README.md: `*transition*.attrTween` -> `#transition_attrTween`
+- node_modules/d3-transition/README.md: `tween` -> `#transition_tween`
+- node_modules/d3-transition/README.md: `eased` -> `#transition_ease`
+- node_modules/d3-transition/README.md: `*transition*.attr` -> `#transition_attr`
+- node_modules/d3-transition/README.md: `*transition*.on` -> `#transition_on`
+- node_modules/d3-transition/README.md: `*transition*.attr` -> `#transition_attr`
+- node_modules/d3-transition/README.md: `style tween` -> `#transition_styleTween`
+- node_modules/d3-transition/README.md: `*transition*.styleTween` -> `#transition_styleTween`
+- node_modules/d3-transition/README.md: `tween` -> `#transition_tween`
+- node_modules/d3-transition/README.md: `eased` -> `#transition_ease`
+- node_modules/d3-transition/README.md: `*transition*.style` -> `#transition_style`
+- node_modules/d3-transition/README.md: `*transition*.on` -> `#transition_on`
+- node_modules/d3-transition/README.md: `*transition*.style` -> `#transition_style`
+- node_modules/d3-transition/README.md: `*transition*.textTween` -> `#transition_textTween`
+- node_modules/d3-transition/README.md: `tween` -> `#transition_tween`
+- node_modules/d3-transition/README.md: `eased` -> `#transition_ease`
+- node_modules/d3-transition/README.md: `eased` -> `#transition_ease`
+- node_modules/d3-transition/README.md: `*transition*.attr` -> `#transition_attr`
+- node_modules/d3-transition/README.md: `easing` -> `#transition_ease`
+- node_modules/d3-transition/README.md: `delay` -> `#transition_delay`
+- node_modules/d3-transition/README.md: `duration` -> `#transition_duration`
+- node_modules/d3-transition/README.md: `The Life of a Transition` -> `#the-life-of-a-transition`
+- node_modules/d3-transition/README.md: `*selection*.transition` -> `#selection_transition`
+- node_modules/d3-transition/README.md: `*transition*.transition` -> `#transition_transition`
+- node_modules/d3-transition/README.md: `*transition*.delay` -> `#transition_delay`
+- node_modules/d3-transition/README.md: `*transition*.duration` -> `#transition_duration`
+- node_modules/d3-transition/README.md: `*transition*.attr` -> `#transition_attr`
+- node_modules/d3-transition/README.md: `*transition*.style` -> `#transition_style`
+- node_modules/d3-transition/README.md: `*transition*.attrTween` -> `#transition_attrTween`
+- node_modules/d3-transition/README.md: `*transition*.styleTween` -> `#transition_styleTween`
+- node_modules/d3-transition/README.md: `*selection*.interrupt` -> `#selection_interrupt`
+- node_modules/d3-transition/README.md: `eased` -> `#transition_ease`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `RGB` -> `#rgb`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `HSL` -> `#hsl`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `CIELAB` -> `#lab`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `CIELCh<sub>ab</sub>` -> `#lch`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `Cubehelix` -> `#cubehelix`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `RGB` -> `#rgb`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `HSL` -> `#hsl`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `RGB equivalent` -> `#rgb`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*.formatRgb` -> `#color_formatRgb`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `CIELAB` -> `#lab`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `d3.lch` -> `#lch`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `0, 360).
+
+If *l*, *c*, and *h* are specified, these represent the channel values of the returned color; an *opacity* may also be specified. If a CSS Color Module Level 3 *specifier* string is specified, it is parsed and then converted to CIELCh<sub>ab</sub> color space. See [color` -> `#color`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `color` -> `#color`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*` -> `#color`
+- node_modules/d3-transition/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- node_modules/d3-transition/node_modules/d3-timer/README.md: `stopped` -> `#timer_stop`
+- node_modules/d3-transition/node_modules/d3-timer/README.md: `now` -> `#now`
+- node_modules/d3-transition/node_modules/d3-timer/README.md: `timer` -> `#timer`
+- node_modules/d3-transition/node_modules/d3-timer/README.md: `timer` -> `#timer`
+- node_modules/d3-transition/node_modules/d3-timer/README.md: `stops` -> `#timer_stop`
+- node_modules/d3-transition/node_modules/d3-timer/README.md: `timer` -> `#timer`
+- node_modules/d3-transition/node_modules/d3-timer/README.md: `timer` -> `#timer`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `color interpolation` -> `#color-spaces`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateRgb` -> `#interpolateRgb`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateDate` -> `#interpolateDate`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateString` -> `#interpolateString`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateNumberArray` -> `#interpolateNumberArray`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateArray` -> `#interpolateArray`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateObject` -> `#interpolateObject`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateNumberArray` -> `#interpolateNumberArray`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `zoom interpolator` -> `#interpolateZoom`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `d3.interpolateArray` -> `#interpolateArray`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `d3.interpolateDate` -> `#interpolateDate`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `d3.interpolateObject` -> `#interpolateObject`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `d3.interpolateBasis` -> `#interpolateBasis`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `d3.interpolateBasisClosed` -> `#interpolateBasisClosed`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateHsl` -> `#interpolateHsl`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateHcl` -> `#interpolateHcl`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateCubehelix` -> `#interpolateCubehelix`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateRgb` -> `#interpolateRgb`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateCubehelix` -> `#interpolateCubehelix`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `interpolateCubehelixLong` -> `#interpolateCubehelixLong`
+- node_modules/d3-transition/node_modules/d3-interpolate/README.md: `d3.interpolate` -> `#interpolate`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `ease method` -> `#ease_ease`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `elastic` -> `#easeElastic`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `cubic` -> `#easeCubic`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `elastic` -> `#easeElastic`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `cubicIn` -> `#easeCubicIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `cubicOut` -> `#easeCubicOut`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `polyOut` -> `#easePolyOut`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `cubic` -> `#easeCubic`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `linear` -> `#easeLinear`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `quad` -> `#easeQuad`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `cubic` -> `#easeCubic`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `quadIn` -> `#easeQuadIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `polyOut` -> `#easePolyOut`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `quadIn` -> `#easeQuadIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `quadOut` -> `#easeQuadOut`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `poly` -> `#easePoly`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `cubicIn` -> `#easeCubicIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `polyOut` -> `#easePolyOut`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `cubicIn` -> `#easeCubicIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `cubicOut` -> `#easeCubicOut`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `poly` -> `#easePoly`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `sinIn` -> `#easeSinIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `sinIn` -> `#easeSinIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `sinOut` -> `#easeSinOut`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `expIn` -> `#easeExpIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `expIn` -> `#easeExpIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `expOut` -> `#easeExpOut`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `circleIn` -> `#easeCircleIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `circleIn` -> `#easeCircleIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `circleOut` -> `#easeCircleOut`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `amplitude` -> `#elastic_amplitude`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `period` -> `#elastic_period`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `elasticIn` -> `#easeElasticIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `elasticIn` -> `#easeElasticIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `elasticOut` -> `#easeElasticOut`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `overshoot` -> `#back_overshoot`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `backIn` -> `#easeBackIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `backIn` -> `#easeBackIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `backOut` -> `#easeBackOut`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `bounceIn` -> `#easeBounceIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `bounceIn` -> `#easeBounceIn`
+- node_modules/d3-transition/node_modules/d3-ease/README.md: `bounceOut` -> `#easeBounceOut`
+- node_modules/exit/README.md: `log.js` -> `test/fixtures/log.js`
+- node_modules/exit/README.md: `log-broken.js` -> `test/fixtures/log-broken.js`
+- node_modules/cross-spawn/README.md: `Why` -> `#why`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: `contributing guidelines` -> `.github/contributing.md`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Primitive`` -> `source/basic.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Class`` -> `source/basic.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``TypedArray`` -> `source/typed-array.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``JsonObject`` -> `source/basic.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``JsonArray`` -> `source/basic.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``JsonValue`` -> `source/basic.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ObservableLike`` -> `source/basic.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Mutable`` -> `source/mutable.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Merge`` -> `source/merge.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``MergeExclusive`` -> `source/merge-exclusive.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``RequireAtLeastOne`` -> `source/require-at-least-one.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``PartialDeep`` -> `source/partial-deep.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ReadonlyDeep`` -> `source/readonly-deep.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``LiteralUnion`` -> `source/literal-union.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Promisable`` -> `source/promisable.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Opaque`` -> `source/opaque.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``SetRequired`` -> `source/set-required.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ValueOf`` -> `source/value-of.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``PromiseValue`` -> `source/promise-value.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``AsyncReturnType`` -> `source/async-return-type.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ConditionalKeys`` -> `source/conditional-keys.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ConditionalExcept`` -> `source/conditional-except.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``UnionToIntersection`` -> `source/union-to-intersection.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Stringified`` -> `source/stringified.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``FixedLengthArray`` -> `source/fixed-length-array.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Entry`` -> `source/entry.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Entries`` -> `source/entries.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``SetReturnType`` -> `source/set-return-type.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Asyncify`` -> `source/asyncify.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``CamelCase`` -> `ts41/camel-case.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``KebabCase`` -> `ts41/kebab-case.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``PascalCase`` -> `ts41/pascal-case.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``SnakeCase`` -> `ts41/snake-case.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``DelimiterCase`` -> `ts41/delimiter-case.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Get`` -> `ts41/get.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``TsConfigJson`` -> `source/tsconfig-json.d.ts`
+- node_modules/istanbul-lib-instrument/README.md: `v0-changes.md` -> `v0-changes.md`
+- node_modules/prop-types/README.md: `above section` -> `#compatibility`
+- node_modules/prop-types/README.md: `above section about compatibility` -> `#compatibility`
+- node_modules/yargs/README.md: `tons more` -> `/docs/api.md`
+- node_modules/yargs/README.md: `docs` -> `/docs/typescript.md`
+- node_modules/yargs/README.md: `docs` -> `/docs/browser.md`
+- node_modules/yargs/README.md: `Yargs' API` -> `/docs/api.md`
+- node_modules/yargs/README.md: `Examples` -> `/docs/examples.md`
+- node_modules/yargs/README.md: `Parsing Tricks` -> `/docs/tricks.md`
+- node_modules/yargs/README.md: `Stop the Parser` -> `/docs/tricks.md#stop`
+- node_modules/yargs/README.md: `Negating Boolean Arguments` -> `/docs/tricks.md#negate`
+- node_modules/yargs/README.md: `Numbers` -> `/docs/tricks.md#numbers`
+- node_modules/yargs/README.md: `Arrays` -> `/docs/tricks.md#arrays`
+- node_modules/yargs/README.md: `Objects` -> `/docs/tricks.md#objects`
+- node_modules/yargs/README.md: `Quotes` -> `/docs/tricks.md#quotes`
+- node_modules/yargs/README.md: `Advanced Topics` -> `/docs/advanced.md`
+- node_modules/yargs/README.md: `Composing Your App Using Commands` -> `/docs/advanced.md#commands`
+- node_modules/yargs/README.md: `Building Configurable CLI Apps` -> `/docs/advanced.md#configuration`
+- node_modules/yargs/README.md: `Customizing Yargs' Parser` -> `/docs/advanced.md#customizing`
+- node_modules/yargs/README.md: `Bundling yargs` -> `/docs/bundling.md`
+- node_modules/yargs/README.md: `Contributing` -> `/contributing.md`
+- node_modules/asynckit/README.md: `test/test-parallel-array.js` -> `test/test-parallel-array.js`
+- node_modules/asynckit/README.md: `test/test-parallel-object.js` -> `test/test-parallel-object.js`
+- node_modules/asynckit/README.md: `test/test-serial-array.js` -> `test/test-serial-array.js`
+- node_modules/asynckit/README.md: `test/test-serial-object.js` -> `test/test-serial-object.js`
+- node_modules/asynckit/README.md: `compare-property` -> `compare-property`
+- node_modules/asynckit/README.md: `test folder` -> `test/`
+- node_modules/espree/README.md: `here` -> `#options`
+- node_modules/espree/README.md: `here` -> `#options`
+- node_modules/eslint/README.md: `Installation and Usage` -> `#installation-and-usage`
+- node_modules/eslint/README.md: `Configuration` -> `#configuration`
+- node_modules/eslint/README.md: `Code of Conduct` -> `#code-of-conduct`
+- node_modules/eslint/README.md: `Filing Issues` -> `#filing-issues`
+- node_modules/eslint/README.md: `Frequently Asked Questions` -> `#frequently-asked-questions`
+- node_modules/eslint/README.md: `Releases` -> `#releases`
+- node_modules/eslint/README.md: `Security Policy` -> `#security-policy`
+- node_modules/eslint/README.md: `Semantic Versioning Policy` -> `#semantic-versioning-policy`
+- node_modules/eslint/README.md: `Stylistic Rule Updates` -> `#stylistic-rule-updates`
+- node_modules/eslint/README.md: `License` -> `#license`
+- node_modules/eslint/README.md: `Team` -> `#team`
+- node_modules/eslint/README.md: `Sponsors` -> `#sponsors`
+- node_modules/eslint/README.md: `Technology Sponsors` -> `#technology-sponsors`
+- node_modules/eslint/node_modules/globals/readme.md: `JSON file` -> `globals.json`
+- node_modules/glob/README.md: `a fun cartoon logo made of glob characters` -> `logo/glob.png`
+- node_modules/cookie/README.md: ``Partitioned` `Set-Cookie`` -> `rfc-cutler-httpbis-partitioned-cookies`
+- node_modules/cookie/README.md: `MIT` -> `LICENSE`
+- node_modules/to-regex-range/README.md: `>1m test assertions` -> `./test/test.js`
+- node_modules/to-regex-range/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/to-regex-range/README.md: `.verb.md` -> `.verb.md`
+- node_modules/to-regex-range/README.md: `MIT License` -> `LICENSE`
+- node_modules/@sinonjs/fake-timers/README.md: ``clock.tick`` -> `#clockticktime--await-clocktickasynctime`
+- node_modules/zustand/README.md: `TypeScript Usage section` -> `#typescript-usage`
+- node_modules/zustand/README.md: `merges state` -> `./docs/guides/immutable-state-and-merging.md`
+- node_modules/zustand/README.md: `Can inform components transiently (without causing render)` -> `#transient-updates-for-often-occurring-state-changes`
+- node_modules/zustand/README.md: `useShallow` -> `./docs/guides/prevent-rerenders-with-use-shallow.md`
+- node_modules/zustand/README.md: ``createWithEqualityFn`` -> `./docs/migrations/migrating-to-v5.md#using-custom-equality-functions-such-as-shallow`
+- node_modules/zustand/README.md: `Alternatively, there are some other solutions.` -> `./docs/guides/updating-state.md#with-immer`
+- node_modules/zustand/README.md: `See the full documentation for this middleware.` -> `./docs/integrations/persisting-store-data.md`
+- node_modules/zustand/README.md: `here` -> `docs/guides/typescript.md`
+- node_modules/zustand/README.md: `Splitting the store into separate slices` -> `./docs/guides/slices-pattern.md`
+- node_modules/zustand/README.md: `Flux inspired practice` -> `./docs/guides/flux-inspired-practice.md`
+- node_modules/zustand/README.md: `Calling actions outside a React event handler in pre-React 18` -> `./docs/guides/event-handler-in-pre-react-18.md`
+- node_modules/zustand/README.md: `Testing` -> `./docs/guides/testing.md`
+- node_modules/zustand/README.md: `in the docs folder` -> `./docs/`
+- node_modules/zustand/README.md: `the doc` -> `./docs/integrations/third-party-libraries.md`
+- node_modules/source-map/CHANGELOG.md: `Bug 1090768` -> `bugzil.la/1090768`
+- node_modules/source-map/README.md: `Examples` -> `#examples`
+- node_modules/source-map/README.md: `Consuming a source map` -> `#consuming-a-source-map`
+- node_modules/source-map/README.md: `Generating a source map` -> `#generating-a-source-map`
+- node_modules/source-map/README.md: `With SourceNode (high level API)` -> `#with-sourcenode-high-level-api`
+- node_modules/source-map/README.md: `With SourceMapGenerator (low level API)` -> `#with-sourcemapgenerator-low-level-api`
+- node_modules/source-map/README.md: `API` -> `#api`
+- node_modules/source-map/README.md: `SourceMapConsumer` -> `#sourcemapconsumer`
+- node_modules/source-map/README.md: `new SourceMapConsumer(rawSourceMap)` -> `#new-sourcemapconsumerrawsourcemap`
+- node_modules/source-map/README.md: `SourceMapConsumer.prototype.computeColumnSpans()` -> `#sourcemapconsumerprototypecomputecolumnspans`
+- node_modules/source-map/README.md: `SourceMapConsumer.prototype.originalPositionFor(generatedPosition)` -> `#sourcemapconsumerprototypeoriginalpositionforgeneratedposition`
+- node_modules/source-map/README.md: `SourceMapConsumer.prototype.generatedPositionFor(originalPosition)` -> `#sourcemapconsumerprototypegeneratedpositionfororiginalposition`
+- node_modules/source-map/README.md: `SourceMapConsumer.prototype.allGeneratedPositionsFor(originalPosition)` -> `#sourcemapconsumerprototypeallgeneratedpositionsfororiginalposition`
+- node_modules/source-map/README.md: `SourceMapConsumer.prototype.hasContentsOfAllSources()` -> `#sourcemapconsumerprototypehascontentsofallsources`
+- node_modules/source-map/README.md: `SourceMapConsumer.prototype.eachMapping(callback, context, order)` -> `#sourcemapconsumerprototypeeachmappingcallback-context-order`
+- node_modules/source-map/README.md: `SourceMapGenerator` -> `#sourcemapgenerator`
+- node_modules/source-map/README.md: `SourceMapGenerator.fromSourceMap(sourceMapConsumer)` -> `#sourcemapgeneratorfromsourcemapsourcemapconsumer`
+- node_modules/source-map/README.md: `SourceMapGenerator.prototype.addMapping(mapping)` -> `#sourcemapgeneratorprototypeaddmappingmapping`
+- node_modules/source-map/README.md: `SourceMapGenerator.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcemapgeneratorprototypesetsourcecontentsourcefile-sourcecontent`
+- node_modules/source-map/README.md: `SourceMapGenerator.prototype.toString()` -> `#sourcemapgeneratorprototypetostring`
+- node_modules/source-map/README.md: `SourceNode` -> `#sourcenode`
+- node_modules/source-map/README.md: `SourceNode.prototype.add(chunk)` -> `#sourcenodeprototypeaddchunk`
+- node_modules/source-map/README.md: `SourceNode.prototype.prepend(chunk)` -> `#sourcenodeprototypeprependchunk`
+- node_modules/source-map/README.md: `SourceNode.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcenodeprototypesetsourcecontentsourcefile-sourcecontent`
+- node_modules/source-map/README.md: `SourceNode.prototype.walk(fn)` -> `#sourcenodeprototypewalkfn`
+- node_modules/source-map/README.md: `SourceNode.prototype.walkSourceContents(fn)` -> `#sourcenodeprototypewalksourcecontentsfn`
+- node_modules/source-map/README.md: `SourceNode.prototype.join(sep)` -> `#sourcenodeprototypejoinsep`
+- node_modules/source-map/README.md: `SourceNode.prototype.replaceRight(pattern, replacement)` -> `#sourcenodeprototypereplacerightpattern-replacement`
+- node_modules/source-map/README.md: `SourceNode.prototype.toString()` -> `#sourcenodeprototypetostring`
+- node_modules/jest-each/README.md: `Tagged Template Literals` -> `#tagged-template-literal-of-rows`
+- node_modules/jest-each/README.md: `Demo` -> `#demo`
+- node_modules/jest-each/README.md: `Installation` -> `#installation`
+- node_modules/jest-each/README.md: `Importing` -> `#importing`
+- node_modules/jest-each/README.md: `Array of Rows` -> `#array-of-rows`
+- node_modules/jest-each/README.md: `Usage` -> `#usage`
+- node_modules/jest-each/README.md: `Tagged Template Literal of rows` -> `#tagged-template-literal-of-rows`
+- node_modules/jest-each/README.md: `Usage` -> `#usage-1`
+- node_modules/jest-each/README.md: `Current jest tests` -> `assets/default-demo.gif`
+- node_modules/jest-each/README.md: `Current jest tests` -> `assets/test-demo.gif`
+- node_modules/jest-each/README.md: `Current jest tests` -> `assets/tagged-template-literal.gif`
+- node_modules/jest-each/README.md: `Current jest tests` -> `assets/describe-demo.gif`
+- node_modules/fast-equals/CHANGELOG.md: `README documentation` -> `./README.md#createcustomequal`
+- node_modules/fast-equals/CHANGELOG.md: `the build resolution has improved` -> `#better-build-system-resolution`
+- node_modules/fast-equals/CHANGELOG.md: ``createCustomEqual`` -> `./README.md#createcustomequal`
+- node_modules/fast-equals/CHANGELOG.md: ``createCustomCircularEqual`` -> `./README.md#createcustomcircularequal`
+- node_modules/fast-equals/CHANGELOG.md: `the documentation` -> `./README.md#createcustomequal`
+- node_modules/fast-equals/CHANGELOG.md: `the documentation` -> `./README.md#createcustomcircularequal`
+- node_modules/fast-equals/CHANGELOG.md: ``circularDeepEqual`` -> `README.md#circulardeepequal`
+- node_modules/fast-equals/CHANGELOG.md: ``circularShallowEqual`` -> `README.md#circularshallowequal`
+- node_modules/fast-equals/CHANGELOG.md: ``sameValueZeroEqual`` -> `#samevaluezeroequal`
+- node_modules/fast-equals/README.md: `blazing fast` -> `#benchmarks`
+- node_modules/fast-equals/README.md: `fast-equals` -> `#fast-equals`
+- node_modules/fast-equals/README.md: `Table of contents` -> `#table-of-contents`
+- node_modules/fast-equals/README.md: `Usage` -> `#usage`
+- node_modules/fast-equals/README.md: `Specific builds` -> `#specific-builds`
+- node_modules/fast-equals/README.md: `Available methods` -> `#available-methods`
+- node_modules/fast-equals/README.md: `deepEqual` -> `#deepequal`
+- node_modules/fast-equals/README.md: `Comparing `Map`s` -> `#comparing-maps`
+- node_modules/fast-equals/README.md: `shallowEqual` -> `#shallowequal`
+- node_modules/fast-equals/README.md: `sameValueZeroEqual` -> `#samevaluezeroequal`
+- node_modules/fast-equals/README.md: `circularDeepEqual` -> `#circulardeepequal`
+- node_modules/fast-equals/README.md: `circularShallowEqual` -> `#circularshallowequal`
+- node_modules/fast-equals/README.md: `strictDeepEqual` -> `#strictdeepequal`
+- node_modules/fast-equals/README.md: `strictShallowEqual` -> `#strictshallowequal`
+- node_modules/fast-equals/README.md: `strictCircularDeepEqual` -> `#strictcirculardeepequal`
+- node_modules/fast-equals/README.md: `strictCircularShallowEqual` -> `#strictcircularshallowequal`
+- node_modules/fast-equals/README.md: `createCustomEqual` -> `#createcustomequal`
+- node_modules/fast-equals/README.md: `Recipes` -> `#recipes`
+- node_modules/fast-equals/README.md: `Benchmarks` -> `#benchmarks`
+- node_modules/fast-equals/README.md: `Development` -> `#development`
+- node_modules/fast-equals/README.md: `both keys and values are compared for deep equality` -> `#comparing-maps`
+- node_modules/fast-equals/README.md: `recipes` -> `#recipes`
+- node_modules/fast-equals/README.md: `Strict property descriptor comparison` -> `./recipes/strict-property-descriptor-check.md`
+- node_modules/hoist-non-react-statics/README.md: `package.json file` -> ` https://github.com/mridgway/hoist-non-react-statics/blob/master/package.json`
+- node_modules/statuses/README.md: `MIT` -> `LICENSE`
+- node_modules/symbol-tree/README.md: `api.md` -> `api.md`
+- node_modules/symbol-tree/README.md: `symbol-tree` -> `#module_symbol-tree`
+- node_modules/symbol-tree/README.md: `SymbolTree` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `.initialize(object)` -> `#module_symbol-tree--SymbolTree+initialize`
+- node_modules/symbol-tree/README.md: `.hasChildren(object)` -> `#module_symbol-tree--SymbolTree+hasChildren`
+- node_modules/symbol-tree/README.md: `.firstChild(object)` -> `#module_symbol-tree--SymbolTree+firstChild`
+- node_modules/symbol-tree/README.md: `.lastChild(object)` -> `#module_symbol-tree--SymbolTree+lastChild`
+- node_modules/symbol-tree/README.md: `.previousSibling(object)` -> `#module_symbol-tree--SymbolTree+previousSibling`
+- node_modules/symbol-tree/README.md: `.nextSibling(object)` -> `#module_symbol-tree--SymbolTree+nextSibling`
+- node_modules/symbol-tree/README.md: `.parent(object)` -> `#module_symbol-tree--SymbolTree+parent`
+- node_modules/symbol-tree/README.md: `.lastInclusiveDescendant(object)` -> `#module_symbol-tree--SymbolTree+lastInclusiveDescendant`
+- node_modules/symbol-tree/README.md: `.previousSiblingsIterator(object)` -> `#module_symbol-tree--SymbolTree+previousSiblingsIterator`
+- node_modules/symbol-tree/README.md: `.nextSiblingsIterator(object)` -> `#module_symbol-tree--SymbolTree+nextSiblingsIterator`
+- node_modules/symbol-tree/README.md: `.ancestorsIterator(object)` -> `#module_symbol-tree--SymbolTree+ancestorsIterator`
+- node_modules/symbol-tree/README.md: `.treeIterator(root, options)` -> `#module_symbol-tree--SymbolTree+treeIterator`
+- node_modules/symbol-tree/README.md: `.index(child)` -> `#module_symbol-tree--SymbolTree+index`
+- node_modules/symbol-tree/README.md: `.childrenCount(parent)` -> `#module_symbol-tree--SymbolTree+childrenCount`
+- node_modules/symbol-tree/README.md: `.compareTreePosition(left, right)` -> `#module_symbol-tree--SymbolTree+compareTreePosition`
+- node_modules/symbol-tree/README.md: `.remove(removeObject)` -> `#module_symbol-tree--SymbolTree+remove`
+- node_modules/symbol-tree/README.md: `.insertBefore(referenceObject, newObject)` -> `#module_symbol-tree--SymbolTree+insertBefore`
+- node_modules/symbol-tree/README.md: `.insertAfter(referenceObject, newObject)` -> `#module_symbol-tree--SymbolTree+insertAfter`
+- node_modules/symbol-tree/README.md: `.prependChild(referenceObject, newObject)` -> `#module_symbol-tree--SymbolTree+prependChild`
+- node_modules/symbol-tree/README.md: `.appendChild(referenceObject, newObject)` -> `#module_symbol-tree--SymbolTree+appendChild`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- node_modules/minipass/README.md: `Timing` -> `#timing`
+- node_modules/@testing-library/dom/README.md: `The Problem` -> `#the-problem`
+- node_modules/@testing-library/dom/README.md: `This Solution` -> `#this-solution`
+- node_modules/@testing-library/dom/README.md: `Installation` -> `#installation`
+- node_modules/@testing-library/dom/README.md: `Documentation` -> `#documentation`
+- node_modules/@testing-library/dom/README.md: `Guiding Principles` -> `#guiding-principles`
+- node_modules/@testing-library/dom/README.md: `Contributors` -> `#contributors`
+- node_modules/@testing-library/dom/README.md: `LICENSE` -> `#license`
+- node_modules/@testing-library/dom/README.md: `MIT` -> `LICENSE`
+- node_modules/@testing-library/user-event/README.md: `MIT` -> `LICENSE`
+- node_modules/@testing-library/react/CHANGELOG.md: `releases page` -> `../../releases`
+- node_modules/@testing-library/react/README.md: `The problem` -> `#the-problem`
+- node_modules/@testing-library/react/README.md: `The solution` -> `#the-solution`
+- node_modules/@testing-library/react/README.md: `Installation` -> `#installation`
+- node_modules/@testing-library/react/README.md: `Suppressing unnecessary warnings on React DOM 16.8` -> `#suppressing-unnecessary-warnings-on-react-dom-168`
+- node_modules/@testing-library/react/README.md: `Examples` -> `#examples`
+- node_modules/@testing-library/react/README.md: `Basic Example` -> `#basic-example`
+- node_modules/@testing-library/react/README.md: `Complex Example` -> `#complex-example`
+- node_modules/@testing-library/react/README.md: `More Examples` -> `#more-examples`
+- node_modules/@testing-library/react/README.md: `Hooks` -> `#hooks`
+- node_modules/@testing-library/react/README.md: `Guiding Principles` -> `#guiding-principles`
+- node_modules/@testing-library/react/README.md: `Docs` -> `#docs`
+- node_modules/@testing-library/react/README.md: `Issues` -> `#issues`
+- node_modules/@testing-library/react/README.md: `🐛 Bugs` -> `#-bugs`
+- node_modules/@testing-library/react/README.md: `💡 Feature Requests` -> `#-feature-requests`
+- node_modules/@testing-library/react/README.md: `❓ Questions` -> `#-questions`
+- node_modules/@testing-library/react/README.md: `Contributors` -> `#contributors`
+- node_modules/@testing-library/react/README.md: `LICENSE` -> `#license`
+- node_modules/@testing-library/react/README.md: `MIT` -> `LICENSE`
+- node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `The Problem` -> `#the-problem`
+- node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `This Solution` -> `#this-solution`
+- node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `Installation` -> `#installation`
+- node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `Documentation` -> `#documentation`
+- node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `Guiding Principles` -> `#guiding-principles`
+- node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `Contributors` -> `#contributors`
+- node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `LICENSE` -> `#license`
+- node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `MIT` -> `LICENSE`
+- node_modules/@testing-library/jest-dom/CHANGELOG.md: `releases page` -> `../../releases`
+- node_modules/@testing-library/jest-dom/README.md: `Installation` -> `#installation`
+- node_modules/@testing-library/jest-dom/README.md: `Usage` -> `#usage`
+- node_modules/@testing-library/jest-dom/README.md: `With `@jest/globals`` -> `#with-jestglobals`
+- node_modules/@testing-library/jest-dom/README.md: `With Vitest` -> `#with-vitest`
+- node_modules/@testing-library/jest-dom/README.md: `With TypeScript` -> `#with-typescript`
+- node_modules/@testing-library/jest-dom/README.md: `With another Jest-compatible `expect`` -> `#with-another-jest-compatible-expect`
+- node_modules/@testing-library/jest-dom/README.md: `Custom matchers` -> `#custom-matchers`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeDisabled`` -> `#tobedisabled`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeEnabled`` -> `#tobeenabled`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeEmptyDOMElement`` -> `#tobeemptydomelement`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeInTheDocument`` -> `#tobeinthedocument`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeInvalid`` -> `#tobeinvalid`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeRequired`` -> `#toberequired`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeValid`` -> `#tobevalid`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeVisible`` -> `#tobevisible`
+- node_modules/@testing-library/jest-dom/README.md: ``toContainElement`` -> `#tocontainelement`
+- node_modules/@testing-library/jest-dom/README.md: ``toContainHTML`` -> `#tocontainhtml`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveAccessibleDescription`` -> `#tohaveaccessibledescription`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveAccessibleErrorMessage`` -> `#tohaveaccessibleerrormessage`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveAccessibleName`` -> `#tohaveaccessiblename`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveAttribute`` -> `#tohaveattribute`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveClass`` -> `#tohaveclass`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveFocus`` -> `#tohavefocus`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveFormValues`` -> `#tohaveformvalues`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveStyle`` -> `#tohavestyle`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveTextContent`` -> `#tohavetextcontent`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveValue`` -> `#tohavevalue`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveDisplayValue`` -> `#tohavedisplayvalue`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeChecked`` -> `#tobechecked`
+- node_modules/@testing-library/jest-dom/README.md: ``toBePartiallyChecked`` -> `#tobepartiallychecked`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveRole`` -> `#tohaverole`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveErrorMessage`` -> `#tohaveerrormessage`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveSelection`` -> `#tohaveselection`
+- node_modules/@testing-library/jest-dom/README.md: `Deprecated matchers` -> `#deprecated-matchers`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeEmpty`` -> `#tobeempty`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeInTheDOM`` -> `#tobeinthedom`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveDescription`` -> `#tohavedescription`
+- node_modules/@testing-library/jest-dom/README.md: `Inspiration` -> `#inspiration`
+- node_modules/@testing-library/jest-dom/README.md: `Other Solutions` -> `#other-solutions`
+- node_modules/@testing-library/jest-dom/README.md: `Guiding Principles` -> `#guiding-principles`
+- node_modules/@testing-library/jest-dom/README.md: `Contributors` -> `#contributors`
+- node_modules/@testing-library/jest-dom/README.md: `LICENSE` -> `#license`
+- node_modules/@testing-library/jest-dom/README.md: ``toContainElement`` -> `#tocontainelement`
+- node_modules/@testing-library/jest-dom/README.md: ``toContainElement`` -> `#tocontainelement`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeChecked`` -> `#tobechecked`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveFormValues`` -> `#tohaveformvalues`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveFormValues`` -> `#tohaveformvalues`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeChecked`` -> `#tobechecked`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveFormValues`` -> `#tohaveformvalues`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveAccessibleErrorMessage`` -> `#tohaveaccessibleerrormessage`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeEmptyDOMElement`` -> `#toBeEmptyDOMElement`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeInTheDocument`` -> `#tobeinthedocument`
+- node_modules/@testing-library/jest-dom/README.md: ``toBeInTheDocument`` -> `#tobeinthedocument`
+- node_modules/@testing-library/jest-dom/README.md: ``toContainElement`` -> `#tocontainelement`
+- node_modules/@testing-library/jest-dom/README.md: ``toHaveAccessibleDescription`` -> `#tohaveaccessibledescription`
+- node_modules/@testing-library/jest-dom/node_modules/chalk/readme.md: `256/Truecolor color support` -> `#256-and-truecolor-color-support`
+- node_modules/@testing-library/jest-dom/node_modules/chalk/readme.md: `.<style>...` -> `string, [string...]`
+- node_modules/@testing-library/jest-dom/node_modules/chalk/readme.md: `styles` -> `#styles`
+- node_modules/@testing-library/jest-dom/node_modules/dom-accessibility-api/README.md: `the test readme` -> `/tests/README.md`
+- node_modules/execa/readme.md: `Strips the final newline` -> `#stripfinalnewline`
+- node_modules/execa/readme.md: `Executes locally installed binaries by name.` -> `#preferlocal`
+- node_modules/execa/readme.md: `Cleans up spawned processes when the parent process dies.` -> `#cleanup`
+- node_modules/execa/readme.md: `Get interleaved output` -> `#all`
+- node_modules/execa/readme.md: `*(Async only)*` -> `#execasyncfile-arguments-options`
+- node_modules/execa/readme.md: `Can specify file and arguments as a single string without a shell` -> `#execacommandcommand-options`
+- node_modules/execa/readme.md: ``shell`` -> `#shell`
+- node_modules/execa/readme.md: ``childProcessResult`` -> `#childProcessResult`
+- node_modules/execa/readme.md: ``childProcessResult.isCanceled`` -> `#iscanceled`
+- node_modules/execa/readme.md: ``all` option` -> `#all-2`
+- node_modules/execa/readme.md: ``stdout`` -> `#stdout-1`
+- node_modules/execa/readme.md: ``stderr`` -> `#stderr-1`
+- node_modules/execa/readme.md: ``childProcessResult`` -> `#childProcessResult`
+- node_modules/execa/readme.md: ``execa()`` -> `#execafile-arguments-options`
+- node_modules/execa/readme.md: ``shell` option` -> `#shell`
+- node_modules/execa/readme.md: ``execa.command()`` -> `#execacommand-command-options`
+- node_modules/execa/readme.md: ``childProcessResult`` -> `#childProcessResult`
+- node_modules/execa/readme.md: ``nodePath`` -> `#nodepath-for-node-only`
+- node_modules/execa/readme.md: ``nodeOptions`` -> `#nodeoptions-for-node-only`
+- node_modules/execa/readme.md: ``shell`` -> `#shell`
+- node_modules/execa/readme.md: ``stdio`` -> `#stdio`
+- node_modules/execa/readme.md: `fails` -> `#failed`
+- node_modules/execa/readme.md: `exit code` -> `#exitcode`
+- node_modules/execa/readme.md: `killed` -> `#killed`
+- node_modules/execa/readme.md: `signal` -> `#signal`
+- node_modules/execa/readme.md: `timing out` -> `#timedout`
+- node_modules/execa/readme.md: `being canceled` -> `#iscanceled`
+- node_modules/execa/readme.md: ``execa()`` -> `#execafile-arguments-options`
+- node_modules/execa/readme.md: ``execa.command()`` -> `#execacommandcommand-options`
+- node_modules/execa/readme.md: ``command`` -> `#command`
+- node_modules/execa/readme.md: ``execa()`` -> `#execafile-arguments-options`
+- node_modules/execa/readme.md: ``execa.command()`` -> `#execacommandcommand-options`
+- node_modules/execa/readme.md: ``all` option` -> `#all-2`
+- node_modules/execa/readme.md: `underlying error message` -> `#originalMessage`
+- node_modules/execa/readme.md: `stderr` -> `#stderr`
+- node_modules/execa/readme.md: `stdout` -> `#stdout`
+- node_modules/execa/readme.md: ``message` property` -> `#message`
+- node_modules/execa/readme.md: ``cwd` option` -> `#cwd`
+- node_modules/execa/readme.md: ``preferLocal`` -> `#preferlocal`
+- node_modules/execa/readme.md: ``stdout`` -> `#stdout-1`
+- node_modules/execa/readme.md: ``stderr`` -> `#stderr-1`
+- node_modules/execa/readme.md: ``all`` -> `#all`
+- node_modules/execa/readme.md: ``all`` -> `#all-2`
+- node_modules/execa/readme.md: ``error.stdout`` -> `#stdout`
+- node_modules/execa/readme.md: ``error.stderr`` -> `#stderr`
+- node_modules/execa/readme.md: ``error.all`` -> `#all`
+- node_modules/execa/readme.md: `promise` -> `#all`
+- node_modules/execa/readme.md: `resolved value` -> `#all-1`
+- node_modules/execa/readme.md: ``extendEnv`` -> `#extendenv`
+- node_modules/execa/readme.md: ``stdio: 'ipc'`` -> `#stdio`
+- node_modules/execa/readme.md: ``execa.node()`` -> `#execanodescriptpath-arguments-options`
+- node_modules/react-helmet-async/README.md: `constants.ts` -> `./src/constants.ts`
+- node_modules/follow-redirects/README.md: `Olivier Lalonde` -> `mailto:olalonde@gmail.com`
+- node_modules/follow-redirects/README.md: `James Talmage` -> `mailto:james@talmage.io`
+- node_modules/micromatch/README.md: `Install` -> `#install`
+- node_modules/micromatch/README.md: `Sponsors` -> `#sponsors`
+- node_modules/micromatch/README.md: `Gold Sponsors` -> `#gold-sponsors`
+- node_modules/micromatch/README.md: `Quickstart` -> `#quickstart`
+- node_modules/micromatch/README.md: `Why use micromatch?` -> `#why-use-micromatch`
+- node_modules/micromatch/README.md: `Matching features` -> `#matching-features`
+- node_modules/micromatch/README.md: `Switching to micromatch` -> `#switching-to-micromatch`
+- node_modules/micromatch/README.md: `From minimatch` -> `#from-minimatch`
+- node_modules/micromatch/README.md: `From multimatch` -> `#from-multimatch`
+- node_modules/micromatch/README.md: `API` -> `#api`
+- node_modules/micromatch/README.md: `Options` -> `#options`
+- node_modules/micromatch/README.md: `Options Examples` -> `#options-examples`
+- node_modules/micromatch/README.md: `options.basename` -> `#optionsbasename`
+- node_modules/micromatch/README.md: `options.bash` -> `#optionsbash`
+- node_modules/micromatch/README.md: `options.expandRange` -> `#optionsexpandrange`
+- node_modules/micromatch/README.md: `options.format` -> `#optionsformat`
+- node_modules/micromatch/README.md: `options.ignore` -> `#optionsignore`
+- node_modules/micromatch/README.md: `options.matchBase` -> `#optionsmatchbase`
+- node_modules/micromatch/README.md: `options.noextglob` -> `#optionsnoextglob`
+- node_modules/micromatch/README.md: `options.nonegate` -> `#optionsnonegate`
+- node_modules/micromatch/README.md: `options.noglobstar` -> `#optionsnoglobstar`
+- node_modules/micromatch/README.md: `options.nonull` -> `#optionsnonull`
+- node_modules/micromatch/README.md: `options.nullglob` -> `#optionsnullglob`
+- node_modules/micromatch/README.md: `options.onIgnore` -> `#optionsonignore`
+- node_modules/micromatch/README.md: `options.onMatch` -> `#optionsonmatch`
+- node_modules/micromatch/README.md: `options.onResult` -> `#optionsonresult`
+- node_modules/micromatch/README.md: `options.posixSlashes` -> `#optionsposixslashes`
+- node_modules/micromatch/README.md: `options.unescape` -> `#optionsunescape`
+- node_modules/micromatch/README.md: `Extended globbing` -> `#extended-globbing`
+- node_modules/micromatch/README.md: `Extglobs` -> `#extglobs`
+- node_modules/micromatch/README.md: `Braces` -> `#braces`
+- node_modules/micromatch/README.md: `Regex character classes` -> `#regex-character-classes`
+- node_modules/micromatch/README.md: `Regex groups` -> `#regex-groups`
+- node_modules/micromatch/README.md: `POSIX bracket expressions` -> `#posix-bracket-expressions`
+- node_modules/micromatch/README.md: `Notes` -> `#notes`
+- node_modules/micromatch/README.md: `Bash 4.3 parity` -> `#bash-43-parity`
+- node_modules/micromatch/README.md: `Backslashes` -> `#backslashes`
+- node_modules/micromatch/README.md: `Benchmarks` -> `#benchmarks`
+- node_modules/micromatch/README.md: `Running benchmarks` -> `#running-benchmarks`
+- node_modules/micromatch/README.md: `Latest results` -> `#latest-results`
+- node_modules/micromatch/README.md: `Contributing` -> `#contributing`
+- node_modules/micromatch/README.md: `About` -> `#about`
+- node_modules/micromatch/README.md: `main export` -> `#micromatch`
+- node_modules/micromatch/README.md: `.isMatch()` -> `#ismatch`
+- node_modules/micromatch/README.md: `Switching` -> `#switching-to-micromatch`
+- node_modules/micromatch/README.md: `replacement` -> `#switching-to-micromatch`
+- node_modules/micromatch/README.md: `fast matches` -> `#benchmarks`
+- node_modules/micromatch/README.md: `Advanced globbing` -> `#extended-globbing`
+- node_modules/micromatch/README.md: `extglobs` -> `#extglobs`
+- node_modules/micromatch/README.md: `braces` -> `#braces-1`
+- node_modules/micromatch/README.md: `POSIX brackets` -> `#posix-bracket-expressions`
+- node_modules/micromatch/README.md: `test assertions` -> `./test`
+- node_modules/micromatch/README.md: `extglobs` -> `#extglobs`
+- node_modules/micromatch/README.md: `POSIX character classes` -> `#posix-bracket-expressions`
+- node_modules/micromatch/README.md: `the notes about backslashes` -> `#backslashes`
+- node_modules/micromatch/README.md: `micromatch.isMatch()` -> `#ismatch`
+- node_modules/micromatch/README.md: `micromatch.match()` -> `#match`
+- node_modules/micromatch/README.md: `options` -> `#options`
+- node_modules/micromatch/README.md: `.matcher` -> `index.js#L109`
+- node_modules/micromatch/README.md: `.isMatch` -> `index.js#L128`
+- node_modules/micromatch/README.md: `options` -> `#options`
+- node_modules/micromatch/README.md: `.not` -> `index.js#L153`
+- node_modules/micromatch/README.md: `options` -> `#options`
+- node_modules/micromatch/README.md: `.contains` -> `index.js#L193`
+- node_modules/micromatch/README.md: `.isMatch` -> `#isMatch`
+- node_modules/micromatch/README.md: `options` -> `#options`
+- node_modules/micromatch/README.md: `.matchKeys` -> `index.js#L235`
+- node_modules/micromatch/README.md: `options` -> `#options`
+- node_modules/micromatch/README.md: `.some` -> `index.js#L264`
+- node_modules/micromatch/README.md: `options` -> `#options`
+- node_modules/micromatch/README.md: `.every` -> `index.js#L300`
+- node_modules/micromatch/README.md: `options` -> `#options`
+- node_modules/micromatch/README.md: `.all` -> `index.js#L339`
+- node_modules/micromatch/README.md: `options` -> `#options`
+- node_modules/micromatch/README.md: `.capture` -> `index.js#L366`
+- node_modules/micromatch/README.md: `options` -> `#options`
+- node_modules/micromatch/README.md: `.makeRe` -> `index.js#L392`
+- node_modules/micromatch/README.md: `.scan` -> `index.js#L408`
+- node_modules/micromatch/README.md: `split` -> `#split`
+- node_modules/micromatch/README.md: `.parse` -> `index.js#L424`
+- node_modules/micromatch/README.md: `.braces` -> `index.js#L451`
+- node_modules/micromatch/README.md: `options` -> `#options`
+- node_modules/micromatch/README.md: `format` -> `#optionsformat`
+- node_modules/micromatch/README.md: `extglobs` -> `#extglobs`
+- node_modules/micromatch/README.md: `onIgnore` -> `#optionsonIgnore`
+- node_modules/micromatch/README.md: `onMatch` -> `#optionsonMatch`
+- node_modules/micromatch/README.md: `onResult` -> `#optionsonResult`
+- node_modules/micromatch/README.md: `POSIX character classes` -> `#posix-bracket-expressions`
+- node_modules/micromatch/README.md: `options.basename` -> `#options-basename`
+- node_modules/micromatch/README.md: `extglobs` -> `#extglobs`
+- node_modules/micromatch/README.md: `options.nullglob` -> `#options-nullglob`
+- node_modules/micromatch/README.md: `the contributing guide` -> `.github/contributing.md`
+- node_modules/micromatch/README.md: `research existing issues first` -> `../../issues`
+- node_modules/micromatch/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/micromatch/README.md: `contributing guide` -> `.github/contributing.md`
+- node_modules/micromatch/README.md: `.verb.md` -> `.verb.md`
+- node_modules/micromatch/README.md: `MIT License` -> `LICENSE`
+- node_modules/eslint-plugin-react/README.md: `our preset` -> `#recommended`
+- node_modules/eslint-plugin-react/README.md: `boolean-prop-naming` -> `docs/rules/boolean-prop-naming.md`
+- node_modules/eslint-plugin-react/README.md: `button-has-type` -> `docs/rules/button-has-type.md`
+- node_modules/eslint-plugin-react/README.md: `checked-requires-onchange-or-readonly` -> `docs/rules/checked-requires-onchange-or-readonly.md`
+- node_modules/eslint-plugin-react/README.md: `default-props-match-prop-types` -> `docs/rules/default-props-match-prop-types.md`
+- node_modules/eslint-plugin-react/README.md: `destructuring-assignment` -> `docs/rules/destructuring-assignment.md`
+- node_modules/eslint-plugin-react/README.md: `display-name` -> `docs/rules/display-name.md`
+- node_modules/eslint-plugin-react/README.md: `forbid-component-props` -> `docs/rules/forbid-component-props.md`
+- node_modules/eslint-plugin-react/README.md: `forbid-dom-props` -> `docs/rules/forbid-dom-props.md`
+- node_modules/eslint-plugin-react/README.md: `forbid-elements` -> `docs/rules/forbid-elements.md`
+- node_modules/eslint-plugin-react/README.md: `forbid-foreign-prop-types` -> `docs/rules/forbid-foreign-prop-types.md`
+- node_modules/eslint-plugin-react/README.md: `forbid-prop-types` -> `docs/rules/forbid-prop-types.md`
+- node_modules/eslint-plugin-react/README.md: `forward-ref-uses-ref` -> `docs/rules/forward-ref-uses-ref.md`
+- node_modules/eslint-plugin-react/README.md: `function-component-definition` -> `docs/rules/function-component-definition.md`
+- node_modules/eslint-plugin-react/README.md: `hook-use-state` -> `docs/rules/hook-use-state.md`
+- node_modules/eslint-plugin-react/README.md: `iframe-missing-sandbox` -> `docs/rules/iframe-missing-sandbox.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-boolean-value` -> `docs/rules/jsx-boolean-value.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-child-element-spacing` -> `docs/rules/jsx-child-element-spacing.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-closing-bracket-location` -> `docs/rules/jsx-closing-bracket-location.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-closing-tag-location` -> `docs/rules/jsx-closing-tag-location.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-curly-brace-presence` -> `docs/rules/jsx-curly-brace-presence.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-curly-newline` -> `docs/rules/jsx-curly-newline.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-curly-spacing` -> `docs/rules/jsx-curly-spacing.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-equals-spacing` -> `docs/rules/jsx-equals-spacing.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-filename-extension` -> `docs/rules/jsx-filename-extension.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-first-prop-new-line` -> `docs/rules/jsx-first-prop-new-line.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-fragments` -> `docs/rules/jsx-fragments.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-handler-names` -> `docs/rules/jsx-handler-names.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-indent` -> `docs/rules/jsx-indent.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-indent-props` -> `docs/rules/jsx-indent-props.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-key` -> `docs/rules/jsx-key.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-max-depth` -> `docs/rules/jsx-max-depth.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-max-props-per-line` -> `docs/rules/jsx-max-props-per-line.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-newline` -> `docs/rules/jsx-newline.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-no-bind` -> `docs/rules/jsx-no-bind.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-no-comment-textnodes` -> `docs/rules/jsx-no-comment-textnodes.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-no-constructed-context-values` -> `docs/rules/jsx-no-constructed-context-values.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-no-duplicate-props` -> `docs/rules/jsx-no-duplicate-props.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-no-leaked-render` -> `docs/rules/jsx-no-leaked-render.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-no-literals` -> `docs/rules/jsx-no-literals.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-no-script-url` -> `docs/rules/jsx-no-script-url.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-no-target-blank` -> `docs/rules/jsx-no-target-blank.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-no-undef` -> `docs/rules/jsx-no-undef.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-no-useless-fragment` -> `docs/rules/jsx-no-useless-fragment.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-one-expression-per-line` -> `docs/rules/jsx-one-expression-per-line.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-pascal-case` -> `docs/rules/jsx-pascal-case.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-props-no-multi-spaces` -> `docs/rules/jsx-props-no-multi-spaces.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-props-no-spread-multi` -> `docs/rules/jsx-props-no-spread-multi.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-props-no-spreading` -> `docs/rules/jsx-props-no-spreading.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-sort-default-props` -> `docs/rules/jsx-sort-default-props.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-sort-props` -> `docs/rules/jsx-sort-props.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-space-before-closing` -> `docs/rules/jsx-space-before-closing.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-tag-spacing` -> `docs/rules/jsx-tag-spacing.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-uses-react` -> `docs/rules/jsx-uses-react.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-uses-vars` -> `docs/rules/jsx-uses-vars.md`
+- node_modules/eslint-plugin-react/README.md: `jsx-wrap-multilines` -> `docs/rules/jsx-wrap-multilines.md`
+- node_modules/eslint-plugin-react/README.md: `no-access-state-in-setstate` -> `docs/rules/no-access-state-in-setstate.md`
+- node_modules/eslint-plugin-react/README.md: `no-adjacent-inline-elements` -> `docs/rules/no-adjacent-inline-elements.md`
+- node_modules/eslint-plugin-react/README.md: `no-array-index-key` -> `docs/rules/no-array-index-key.md`
+- node_modules/eslint-plugin-react/README.md: `no-arrow-function-lifecycle` -> `docs/rules/no-arrow-function-lifecycle.md`
+- node_modules/eslint-plugin-react/README.md: `no-children-prop` -> `docs/rules/no-children-prop.md`
+- node_modules/eslint-plugin-react/README.md: `no-danger` -> `docs/rules/no-danger.md`
+- node_modules/eslint-plugin-react/README.md: `no-danger-with-children` -> `docs/rules/no-danger-with-children.md`
+- node_modules/eslint-plugin-react/README.md: `no-deprecated` -> `docs/rules/no-deprecated.md`
+- node_modules/eslint-plugin-react/README.md: `no-did-mount-set-state` -> `docs/rules/no-did-mount-set-state.md`
+- node_modules/eslint-plugin-react/README.md: `no-did-update-set-state` -> `docs/rules/no-did-update-set-state.md`
+- node_modules/eslint-plugin-react/README.md: `no-direct-mutation-state` -> `docs/rules/no-direct-mutation-state.md`
+- node_modules/eslint-plugin-react/README.md: `no-find-dom-node` -> `docs/rules/no-find-dom-node.md`
+- node_modules/eslint-plugin-react/README.md: `no-invalid-html-attribute` -> `docs/rules/no-invalid-html-attribute.md`
+- node_modules/eslint-plugin-react/README.md: `no-is-mounted` -> `docs/rules/no-is-mounted.md`
+- node_modules/eslint-plugin-react/README.md: `no-multi-comp` -> `docs/rules/no-multi-comp.md`
+- node_modules/eslint-plugin-react/README.md: `no-namespace` -> `docs/rules/no-namespace.md`
+- node_modules/eslint-plugin-react/README.md: `no-object-type-as-default-prop` -> `docs/rules/no-object-type-as-default-prop.md`
+- node_modules/eslint-plugin-react/README.md: `no-redundant-should-component-update` -> `docs/rules/no-redundant-should-component-update.md`
+- node_modules/eslint-plugin-react/README.md: `no-render-return-value` -> `docs/rules/no-render-return-value.md`
+- node_modules/eslint-plugin-react/README.md: `no-set-state` -> `docs/rules/no-set-state.md`
+- node_modules/eslint-plugin-react/README.md: `no-string-refs` -> `docs/rules/no-string-refs.md`
+- node_modules/eslint-plugin-react/README.md: `no-this-in-sfc` -> `docs/rules/no-this-in-sfc.md`
+- node_modules/eslint-plugin-react/README.md: `no-typos` -> `docs/rules/no-typos.md`
+- node_modules/eslint-plugin-react/README.md: `no-unescaped-entities` -> `docs/rules/no-unescaped-entities.md`
+- node_modules/eslint-plugin-react/README.md: `no-unknown-property` -> `docs/rules/no-unknown-property.md`
+- node_modules/eslint-plugin-react/README.md: `no-unsafe` -> `docs/rules/no-unsafe.md`
+- node_modules/eslint-plugin-react/README.md: `no-unstable-nested-components` -> `docs/rules/no-unstable-nested-components.md`
+- node_modules/eslint-plugin-react/README.md: `no-unused-class-component-methods` -> `docs/rules/no-unused-class-component-methods.md`
+- node_modules/eslint-plugin-react/README.md: `no-unused-prop-types` -> `docs/rules/no-unused-prop-types.md`
+- node_modules/eslint-plugin-react/README.md: `no-unused-state` -> `docs/rules/no-unused-state.md`
+- node_modules/eslint-plugin-react/README.md: `no-will-update-set-state` -> `docs/rules/no-will-update-set-state.md`
+- node_modules/eslint-plugin-react/README.md: `prefer-es6-class` -> `docs/rules/prefer-es6-class.md`
+- node_modules/eslint-plugin-react/README.md: `prefer-exact-props` -> `docs/rules/prefer-exact-props.md`
+- node_modules/eslint-plugin-react/README.md: `prefer-read-only-props` -> `docs/rules/prefer-read-only-props.md`
+- node_modules/eslint-plugin-react/README.md: `prefer-stateless-function` -> `docs/rules/prefer-stateless-function.md`
+- node_modules/eslint-plugin-react/README.md: `prop-types` -> `docs/rules/prop-types.md`
+- node_modules/eslint-plugin-react/README.md: `react-in-jsx-scope` -> `docs/rules/react-in-jsx-scope.md`
+- node_modules/eslint-plugin-react/README.md: `require-default-props` -> `docs/rules/require-default-props.md`
+- node_modules/eslint-plugin-react/README.md: `require-optimization` -> `docs/rules/require-optimization.md`
+- node_modules/eslint-plugin-react/README.md: `require-render-return` -> `docs/rules/require-render-return.md`
+- node_modules/eslint-plugin-react/README.md: `self-closing-comp` -> `docs/rules/self-closing-comp.md`
+- node_modules/eslint-plugin-react/README.md: `sort-comp` -> `docs/rules/sort-comp.md`
+- node_modules/eslint-plugin-react/README.md: `sort-default-props` -> `docs/rules/sort-default-props.md`
+- node_modules/eslint-plugin-react/README.md: `sort-prop-types` -> `docs/rules/sort-prop-types.md`
+- node_modules/eslint-plugin-react/README.md: `state-in-constructor` -> `docs/rules/state-in-constructor.md`
+- node_modules/eslint-plugin-react/README.md: `static-property-placement` -> `docs/rules/static-property-placement.md`
+- node_modules/eslint-plugin-react/README.md: `style-prop-object` -> `docs/rules/style-prop-object.md`
+- node_modules/eslint-plugin-react/README.md: `void-dom-elements-no-children` -> `docs/rules/void-dom-elements-no-children.md`
+- node_modules/fast-glob/README.md: `Highlights` -> `#highlights`
+- node_modules/fast-glob/README.md: `Old and modern mode` -> `#old-and-modern-mode`
+- node_modules/fast-glob/README.md: `Pattern syntax` -> `#pattern-syntax`
+- node_modules/fast-glob/README.md: `Basic syntax` -> `#basic-syntax`
+- node_modules/fast-glob/README.md: `Advanced syntax` -> `#advanced-syntax`
+- node_modules/fast-glob/README.md: `Installation` -> `#installation`
+- node_modules/fast-glob/README.md: `API` -> `#api`
+- node_modules/fast-glob/README.md: `Asynchronous` -> `#asynchronous`
+- node_modules/fast-glob/README.md: `Synchronous` -> `#synchronous`
+- node_modules/fast-glob/README.md: `Stream` -> `#stream`
+- node_modules/fast-glob/README.md: `patterns` -> `#patterns`
+- node_modules/fast-glob/README.md: `Helpers` -> `#helpers`
+- node_modules/fast-glob/README.md: `generateTasks` -> `#generatetaskspatterns-options`
+- node_modules/fast-glob/README.md: `isDynamicPattern` -> `#isdynamicpatternpattern-options`
+- node_modules/fast-glob/README.md: `escapePath` -> `#escapepathpath`
+- node_modules/fast-glob/README.md: `convertPathToPattern` -> `#convertpathtopatternpath`
+- node_modules/fast-glob/README.md: `Options` -> `#options-3`
+- node_modules/fast-glob/README.md: `Common` -> `#common`
+- node_modules/fast-glob/README.md: `concurrency` -> `#concurrency`
+- node_modules/fast-glob/README.md: `cwd` -> `#cwd`
+- node_modules/fast-glob/README.md: `deep` -> `#deep`
+- node_modules/fast-glob/README.md: `followSymbolicLinks` -> `#followsymboliclinks`
+- node_modules/fast-glob/README.md: `fs` -> `#fs`
+- node_modules/fast-glob/README.md: `ignore` -> `#ignore`
+- node_modules/fast-glob/README.md: `suppressErrors` -> `#suppresserrors`
+- node_modules/fast-glob/README.md: `throwErrorOnBrokenSymbolicLink` -> `#throwerroronbrokensymboliclink`
+- node_modules/fast-glob/README.md: `Output control` -> `#output-control`
+- node_modules/fast-glob/README.md: `absolute` -> `#absolute`
+- node_modules/fast-glob/README.md: `markDirectories` -> `#markdirectories`
+- node_modules/fast-glob/README.md: `objectMode` -> `#objectmode`
+- node_modules/fast-glob/README.md: `onlyDirectories` -> `#onlydirectories`
+- node_modules/fast-glob/README.md: `onlyFiles` -> `#onlyfiles`
+- node_modules/fast-glob/README.md: `stats` -> `#stats`
+- node_modules/fast-glob/README.md: `unique` -> `#unique`
+- node_modules/fast-glob/README.md: `Matching control` -> `#matching-control`
+- node_modules/fast-glob/README.md: `braceExpansion` -> `#braceexpansion`
+- node_modules/fast-glob/README.md: `caseSensitiveMatch` -> `#casesensitivematch`
+- node_modules/fast-glob/README.md: `dot` -> `#dot`
+- node_modules/fast-glob/README.md: `extglob` -> `#extglob`
+- node_modules/fast-glob/README.md: `globstar` -> `#globstar`
+- node_modules/fast-glob/README.md: `baseNameMatch` -> `#basenamematch`
+- node_modules/fast-glob/README.md: `FAQ` -> `#faq`
+- node_modules/fast-glob/README.md: `What is a static or dynamic pattern?` -> `#what-is-a-static-or-dynamic-pattern`
+- node_modules/fast-glob/README.md: `How to write patterns on Windows?` -> `#how-to-write-patterns-on-windows`
+- node_modules/fast-glob/README.md: `Why are parentheses match wrong?` -> `#why-are-parentheses-match-wrong`
+- node_modules/fast-glob/README.md: `How to exclude directory from reading?` -> `#how-to-exclude-directory-from-reading`
+- node_modules/fast-glob/README.md: `How to use UNC path?` -> `#how-to-use-unc-path`
+- node_modules/fast-glob/README.md: `Compatible with `node-glob`?` -> `#compatible-with-node-glob`
+- node_modules/fast-glob/README.md: `Benchmarks` -> `#benchmarks`
+- node_modules/fast-glob/README.md: `Server` -> `#server`
+- node_modules/fast-glob/README.md: `Nettop` -> `#nettop`
+- node_modules/fast-glob/README.md: `Changelog` -> `#changelog`
+- node_modules/fast-glob/README.md: `License` -> `#license`
+- node_modules/fast-glob/README.md: ``stats`` -> `#stats`
+- node_modules/fast-glob/README.md: ``stats`` -> `#stats`
+- node_modules/fast-glob/README.md: ``ignore`` -> `#ignore`
+- node_modules/fast-glob/README.md: `FAQ` -> `#faq`
+- node_modules/fast-glob/README.md: `Pattern syntax` -> `#pattern-syntax`
+- node_modules/fast-glob/README.md: ``Options`` -> `#options-3`
+- node_modules/fast-glob/README.md: `Options` -> `#options-3`
+- node_modules/fast-glob/README.md: ``Task`` -> `./src/managers/tasks.ts`
+- node_modules/fast-glob/README.md: ``Options`` -> `#options-3`
+- node_modules/fast-glob/README.md: `Options` -> `#options-3`
+- node_modules/fast-glob/README.md: `What is a static or dynamic pattern?` -> `#what-is-a-static-or-dynamic-pattern`
+- node_modules/fast-glob/README.md: ``Options`` -> `#options-3`
+- node_modules/fast-glob/README.md: `Options` -> `#options-3`
+- node_modules/fast-glob/README.md: ``cwd`` -> `#cwd`
+- node_modules/fast-glob/README.md: ``stats`` -> `#stats`
+- node_modules/fast-glob/README.md: ``onlyFiles`` -> `#onlyfiles`
+- node_modules/fast-glob/README.md: `object mode` -> `#objectmode`
+- node_modules/fast-glob/README.md: ``followSymbolicLinks`` -> `#followsymboliclinks`
+- node_modules/fast-glob/README.md: `object mode` -> `#objectmode`
+- node_modules/fast-glob/README.md: `old and modern mode` -> `#old-and-modern-mode`
+- node_modules/fast-glob/README.md: ``caseSensitiveMatch`` -> `#casesensitivematch`
+- node_modules/fast-glob/README.md: ``extglob`` -> `#extglob`
+- node_modules/fast-glob/README.md: ``braceExpansion`` -> `#braceexpansion`
+- node_modules/fast-glob/README.md: ``ignore`` -> `#ignore`
+- node_modules/fast-glob/README.md: ``cwd`` -> `#cwd`
+- node_modules/fast-glob/README.md: ``.convertPathToPattern`` -> `#convertpathtopatternpath`
+- node_modules/fast-glob/README.md: ``.escapePath`` -> `#escapepathpath`
+- node_modules/fast-glob/README.md: ``ignore`` -> `#ignore`
+- node_modules/fast-glob/README.md: ``cwd`` -> `#cwd`
+- node_modules/fast-glob/README.md: ``cwd`` -> `#cwd`
+- node_modules/fast-glob/README.md: ``dot`` -> `#dot`
+- node_modules/fast-glob/README.md: ``markDirectories`` -> `#markdirectories`
+- node_modules/fast-glob/README.md: ``unique`` -> `#unique`
+- node_modules/fast-glob/README.md: ``braceExpansion`` -> `#braceexpansion`
+- node_modules/fast-glob/README.md: ``globstar`` -> `#globstar`
+- node_modules/fast-glob/README.md: ``extglob`` -> `#extglob`
+- node_modules/fast-glob/README.md: ``caseSensitiveMatch`` -> `#casesensitivematch`
+- node_modules/fast-glob/README.md: ``baseNameMatch`` -> `#basenamematch`
+- node_modules/fast-glob/README.md: ``onlyFiles`` -> `#onlyfiles`
+- node_modules/fast-glob/README.md: ``ignore`` -> `#ignore`
+- node_modules/fast-glob/README.md: ``followSymbolicLinks`` -> `#followsymboliclinks`
+- node_modules/fast-glob/README.md: ``absolute`` -> `#absolute`
+- node_modules/is-extglob/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/is-extglob/README.md: `.verb.md` -> `.verb.md`
+- node_modules/fastq/README.md: ``fastqueue`` -> `#fastqueue`
+- node_modules/fastq/README.md: ``push`` -> `#pushPromise`
+- node_modules/fastq/README.md: ``unshift`` -> `#unshiftPromise`
+- node_modules/recharts/CONTRIBUTING.md: `Issues and Bugs` -> `#issues`
+- node_modules/recharts/CONTRIBUTING.md: `Testing` -> `#testing`
+- node_modules/recharts/CONTRIBUTING.md: `Pull Requests` -> `#pr`
+- node_modules/recharts/CONTRIBUTING.md: `Code Guide` -> `#code`
+- node_modules/recharts/CONTRIBUTING.md: `License` -> `#license`
+- node_modules/redux/README.md: `MIT` -> `LICENSE.md`
+- node_modules/read-cache/README.md: `Bogdan Chadkin` -> `mailto:trysound@yandex.ru`
+- node_modules/tough-cookie/README.md: ``Cookie.fromJSON(string)`` -> `#cookiefromjsonstrorobj`
+- node_modules/tough-cookie/README.md: `RFC 6265bis` -> `#rfc-6265bis`
+- node_modules/tough-cookie/README.md: ``MemoryCookieStore`` -> `#memorycookiestore`
+- node_modules/tough-cookie/README.md: `Cookie Prefixes` -> `#cookie-prefixes`
+- node_modules/tough-cookie/README.md: `SameSite Cookies` -> `#samesite-cookies`
+- node_modules/tough-cookie/README.md: ``setCookie`` -> `#setcookiecookieorstring-currenturl-options-callbackerr-cookie`
+- node_modules/tough-cookie/README.md: ``cookieCompare`` -> `#cookiecomparea-b`
+- node_modules/tough-cookie/README.md: `SameSite Cookies` -> `#samesite-cookies`
+- node_modules/tough-cookie/README.md: ``getCookies`` -> `#getcookiescurrenturl-options-callbackerr-cookies`
+- node_modules/tough-cookie/README.md: ``.getCookies()`` -> `#getcookiescurrenturl-options-callbackerr-cookies`
+- node_modules/tough-cookie/README.md: ``getCookieString`` -> `#getcookiestring`
+- node_modules/tough-cookie/README.md: ``.getCookies()`` -> `#getcookiescurrenturl-options-callbackerr-cookies`
+- node_modules/tough-cookie/README.md: ``getSetCookieStrings`` -> `#getsetcookiestrings`
+- node_modules/tough-cookie/README.md: `Serialization Format` -> `#serialization-format`
+- node_modules/tough-cookie/README.md: ``serialize`` -> `#serializecallbackerr-serializedobject`
+- node_modules/tough-cookie/README.md: ``.serializeSync()`` -> `#serializesync`
+- node_modules/tough-cookie/README.md: ``.deserialize`` -> `#cookiejardeserializeserialized-store-callbackerr-object`
+- node_modules/tough-cookie/README.md: ``.deserializeSync`` -> `#cookiejardeserializesyncserialized-store`
+- node_modules/tough-cookie/README.md: ``Cookie.fromJSON()`` -> `#cookiefromjsonstrorobj`
+- node_modules/tough-cookie/README.md: ``.clone`` -> `#clonestore-callbackerr-cloned`
+- node_modules/tough-cookie/README.md: ``.removeAllCookies()`` -> `#removeallcookiescallbackerr`
+- node_modules/tough-cookie/README.md: ``cookiejar.getCookies()`` -> `#getcookiescurrenturl-options-callbackerr-cookies`
+- node_modules/tough-cookie/README.md: ``putCookie`` -> `#storeputcookiecookie-callbackerr`
+- node_modules/tough-cookie/README.md: ``findCookie`` -> `#storefindcookiedomain-path-key-callbackerr-cookie`
+- node_modules/tough-cookie/README.md: ``jar.serialize()`` -> `#serializecallbackerr-serializedobject`
+- node_modules/tough-cookie/README.md: `Serialization Format` -> `#serialization-format`
+- node_modules/tough-cookie/README.md: ``compareCookie()`` -> `#cookiecomparea-b`
+- node_modules/kleur/readme.md: `lightweight` -> `#load-time`
+- node_modules/kleur/readme.md: `performant` -> `#performance`
+- node_modules/kleur/readme.md: `nested` -> `#nested-methods`
+- node_modules/kleur/readme.md: `chained` -> `#chained-methods`
+- node_modules/kleur/readme.md: `color support` -> `#conditional-support`
+- node_modules/kleur/readme.md: `API` -> `#api`
+- node_modules/kleur/readme.md: `chained` -> `#chained-methods`
+- node_modules/kleur/readme.md: `nested` -> `#nested-methods`
+- node_modules/dequal/readme.md: ``/bench`` -> `/bench`
+- node_modules/d3-ease/README.md: `ease method` -> `#ease_ease`
+- node_modules/d3-ease/README.md: `elastic` -> `#easeElastic`
+- node_modules/d3-ease/README.md: `cubic` -> `#easeCubic`
+- node_modules/d3-ease/README.md: `elastic` -> `#easeElastic`
+- node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-ease/README.md: `cubicIn` -> `#easeCubicIn`
+- node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-ease/README.md: `cubicOut` -> `#easeCubicOut`
+- node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- node_modules/d3-ease/README.md: `polyOut` -> `#easePolyOut`
+- node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-ease/README.md: `cubic` -> `#easeCubic`
+- node_modules/d3-ease/README.md: `linear` -> `#easeLinear`
+- node_modules/d3-ease/README.md: `quad` -> `#easeQuad`
+- node_modules/d3-ease/README.md: `cubic` -> `#easeCubic`
+- node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-ease/README.md: `quadIn` -> `#easeQuadIn`
+- node_modules/d3-ease/README.md: `polyOut` -> `#easePolyOut`
+- node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-ease/README.md: `quadIn` -> `#easeQuadIn`
+- node_modules/d3-ease/README.md: `quadOut` -> `#easeQuadOut`
+- node_modules/d3-ease/README.md: `poly` -> `#easePoly`
+- node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-ease/README.md: `cubicIn` -> `#easeCubicIn`
+- node_modules/d3-ease/README.md: `polyOut` -> `#easePolyOut`
+- node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-ease/README.md: `cubicIn` -> `#easeCubicIn`
+- node_modules/d3-ease/README.md: `cubicOut` -> `#easeCubicOut`
+- node_modules/d3-ease/README.md: `poly` -> `#easePoly`
+- node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- node_modules/d3-ease/README.md: `sinIn` -> `#easeSinIn`
+- node_modules/d3-ease/README.md: `sinIn` -> `#easeSinIn`
+- node_modules/d3-ease/README.md: `sinOut` -> `#easeSinOut`
+- node_modules/d3-ease/README.md: `expIn` -> `#easeExpIn`
+- node_modules/d3-ease/README.md: `expIn` -> `#easeExpIn`
+- node_modules/d3-ease/README.md: `expOut` -> `#easeExpOut`
+- node_modules/d3-ease/README.md: `circleIn` -> `#easeCircleIn`
+- node_modules/d3-ease/README.md: `circleIn` -> `#easeCircleIn`
+- node_modules/d3-ease/README.md: `circleOut` -> `#easeCircleOut`
+- node_modules/d3-ease/README.md: `amplitude` -> `#elastic_amplitude`
+- node_modules/d3-ease/README.md: `period` -> `#elastic_period`
+- node_modules/d3-ease/README.md: `elasticIn` -> `#easeElasticIn`
+- node_modules/d3-ease/README.md: `elasticIn` -> `#easeElasticIn`
+- node_modules/d3-ease/README.md: `elasticOut` -> `#easeElasticOut`
+- node_modules/d3-ease/README.md: `overshoot` -> `#back_overshoot`
+- node_modules/d3-ease/README.md: `backIn` -> `#easeBackIn`
+- node_modules/d3-ease/README.md: `backIn` -> `#easeBackIn`
+- node_modules/d3-ease/README.md: `backOut` -> `#easeBackOut`
+- node_modules/d3-ease/README.md: `bounceIn` -> `#easeBounceIn`
+- node_modules/d3-ease/README.md: `bounceIn` -> `#easeBounceIn`
+- node_modules/d3-ease/README.md: `bounceOut` -> `#easeBounceOut`
+- node_modules/axios/README.md: `Features` -> `#features`
+- node_modules/axios/README.md: `Browser Support` -> `#browser-support`
+- node_modules/axios/README.md: `Installing` -> `#installing`
+- node_modules/axios/README.md: `Package manager` -> `#package-manager`
+- node_modules/axios/README.md: `CDN` -> `#cdn`
+- node_modules/axios/README.md: `Example` -> `#example`
+- node_modules/axios/README.md: `Axios API` -> `#axios-api`
+- node_modules/axios/README.md: `Request method aliases` -> `#request-method-aliases`
+- node_modules/axios/README.md: `Concurrency 👎` -> `#concurrency-deprecated`
+- node_modules/axios/README.md: `Creating an instance` -> `#creating-an-instance`
+- node_modules/axios/README.md: `Instance methods` -> `#instance-methods`
+- node_modules/axios/README.md: `Request Config` -> `#request-config`
+- node_modules/axios/README.md: `Response Schema` -> `#response-schema`
+- node_modules/axios/README.md: `Config Defaults` -> `#config-defaults`
+- node_modules/axios/README.md: `Global axios defaults` -> `#global-axios-defaults`
+- node_modules/axios/README.md: `Custom instance defaults` -> `#custom-instance-defaults`
+- node_modules/axios/README.md: `Config order of precedence` -> `#config-order-of-precedence`
+- node_modules/axios/README.md: `Interceptors` -> `#interceptors`
+- node_modules/axios/README.md: `Multiple Interceptors` -> `#multiple-interceptors`
+- node_modules/axios/README.md: `Handling Errors` -> `#handling-errors`
+- node_modules/axios/README.md: `Cancellation` -> `#cancellation`
+- node_modules/axios/README.md: `AbortController` -> `#abortcontroller`
+- node_modules/axios/README.md: `CancelToken 👎` -> `#canceltoken-deprecated`
+- node_modules/axios/README.md: `Using application/x-www-form-urlencoded format` -> `#using-applicationx-www-form-urlencoded-format`
+- node_modules/axios/README.md: `URLSearchParams` -> `#urlsearchparams`
+- node_modules/axios/README.md: `Query string` -> `#query-string-older-browsers`
+- node_modules/axios/README.md: `🆕 Automatic serialization` -> `#-automatic-serialization-to-urlsearchparams`
+- node_modules/axios/README.md: `Using multipart/form-data format` -> `#using-multipartform-data-format`
+- node_modules/axios/README.md: `FormData` -> `#formdata`
+- node_modules/axios/README.md: `🆕 Automatic serialization` -> `#-automatic-serialization-to-formdata`
+- node_modules/axios/README.md: `Files Posting` -> `#files-posting`
+- node_modules/axios/README.md: `HTML Form Posting` -> `#-html-form-posting-browser`
+- node_modules/axios/README.md: `🆕 Progress capturing` -> `#-progress-capturing`
+- node_modules/axios/README.md: `🆕 Rate limiting` -> `#-progress-capturing`
+- node_modules/axios/README.md: `🆕 AxiosHeaders` -> `#-axiosheaders`
+- node_modules/axios/README.md: `🔥 Fetch adapter` -> `#-fetch-adapter`
+- node_modules/axios/README.md: `Semver` -> `#semver`
+- node_modules/axios/README.md: `Promises` -> `#promises`
+- node_modules/axios/README.md: `TypeScript` -> `#typescript`
+- node_modules/axios/README.md: `Resources` -> `#resources`
+- node_modules/axios/README.md: `Credits` -> `#credits`
+- node_modules/axios/README.md: `License` -> `#license`
+- node_modules/axios/README.md: `Handling Errors` -> `#handling-errors`
+- node_modules/axios/README.md: `the interceptor tests` -> `./test/specs/interceptors.spec.js`
+- node_modules/axios/README.md: `MIT` -> `LICENSE`
+- node_modules/braces/README.md: `changelog` -> `CHANGELOG.md`
+- node_modules/braces/README.md: `Bash 4.3 Brace Expansion` -> `www.gnu.org/software/bash/`
+- node_modules/braces/README.md: `fast and performant` -> `#benchmarks`
+- node_modules/braces/README.md: `scales well` -> `#performance`
+- node_modules/braces/README.md: `Supports lists` -> `#lists`
+- node_modules/braces/README.md: `Supports sequences` -> `#sequences`
+- node_modules/braces/README.md: `Supports steps` -> `#steps`
+- node_modules/braces/README.md: `Supports escaping` -> `#escaping`
+- node_modules/braces/README.md: `braces.expand()` -> `#expand`
+- node_modules/braces/README.md: `.optimize` -> `#optimize`
+- node_modules/braces/README.md: `options.optimize` -> `#optionsoptimize`
+- node_modules/braces/README.md: `Bash lists` -> `#lists`
+- node_modules/braces/README.md: `brace expansion` -> `#brace-expansion`
+- node_modules/braces/README.md: `brace matching` -> `#brace-matching`
+- node_modules/braces/README.md: `geometric complexity` -> `#geometric-complexity`
+- node_modules/braces/README.md: `performance section` -> `#performance`
+- node_modules/braces/README.md: `"brace bomb" problem` -> `#brace-matching-pitfalls`
+- node_modules/braces/README.md: `test/support/generate.js` -> `test/support/generate.js`
+- node_modules/braces/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/braces/README.md: `.verb.md` -> `.verb.md`
+- node_modules/braces/README.md: `MIT License` -> `LICENSE`
+- node_modules/harmony-reflect/README.md: `Read more` -> ` https://github.com/tvcutsem/harmony-reflect/issues/13#issuecomment-17249465`
+- node_modules/dom-accessibility-api/README.md: `the test readme` -> `/tests/README.md`
+- node_modules/ajv/README.md: `strict mode` -> `./docs/strict-mode.md`
+- node_modules/ajv/README.md: `code generation` -> `./docs/codegen.md`
+- node_modules/ajv/README.md: `Performance` -> `#performance`
+- node_modules/ajv/README.md: `Features` -> `#features`
+- node_modules/ajv/README.md: `Getting started` -> `#getting-started`
+- node_modules/ajv/README.md: `Using in browser` -> `#using-in-browser`
+- node_modules/ajv/README.md: `Ajv and Content Security Policies (CSP)` -> `#ajv-and-content-security-policies-csp`
+- node_modules/ajv/README.md: `Command line interface` -> `#command-line-interface`
+- node_modules/ajv/README.md: `Keywords` -> `#validation-keywords`
+- node_modules/ajv/README.md: `Annotation keywords` -> `#annotation-keywords`
+- node_modules/ajv/README.md: `Formats` -> `#formats`
+- node_modules/ajv/README.md: `Combining schemas with $ref` -> `#ref`
+- node_modules/ajv/README.md: `$data reference` -> `#data-reference`
+- node_modules/ajv/README.md: `$merge and $patch keywords` -> `#merge-and-patch-keywords`
+- node_modules/ajv/README.md: `Defining custom keywords` -> `#defining-custom-keywords`
+- node_modules/ajv/README.md: `Asynchronous schema compilation` -> `#asynchronous-schema-compilation`
+- node_modules/ajv/README.md: `Asynchronous validation` -> `#asynchronous-validation`
+- node_modules/ajv/README.md: `Security considerations` -> `#security-considerations`
+- node_modules/ajv/README.md: `Security contact` -> `#security-contact`
+- node_modules/ajv/README.md: `Untrusted schemas` -> `#untrusted-schemas`
+- node_modules/ajv/README.md: `Circular references in objects` -> `#circular-references-in-javascript-objects`
+- node_modules/ajv/README.md: `Trusted schemas` -> `#security-risks-of-trusted-schemas`
+- node_modules/ajv/README.md: `ReDoS attack` -> `#redos-attack`
+- node_modules/ajv/README.md: `Filtering data` -> `#filtering-data`
+- node_modules/ajv/README.md: `Assigning defaults` -> `#assigning-defaults`
+- node_modules/ajv/README.md: `Coercing data types` -> `#coercing-data-types`
+- node_modules/ajv/README.md: `Methods` -> `#api`
+- node_modules/ajv/README.md: `Options` -> `#options`
+- node_modules/ajv/README.md: `Validation errors` -> `#validation-errors`
+- node_modules/ajv/README.md: `Plugins` -> `#plugins`
+- node_modules/ajv/README.md: `Related packages` -> `#related-packages`
+- node_modules/ajv/README.md: `Some packages using Ajv` -> `#some-packages-using-ajv`
+- node_modules/ajv/README.md: `Tests, Contributing, Changes history` -> `#tests`
+- node_modules/ajv/README.md: `Support, Code of conduct, License` -> `#open-source-software-support`
+- node_modules/ajv/README.md: `formats` -> `#formats`
+- node_modules/ajv/README.md: `validates schemas against meta-schema` -> `#api-validateschema`
+- node_modules/ajv/README.md: `browsers` -> `#using-in-browser`
+- node_modules/ajv/README.md: `asynchronous loading` -> `#asynchronous-schema-compilation`
+- node_modules/ajv/README.md: `option allErrors` -> `#options`
+- node_modules/ajv/README.md: `error messages with parameters` -> `#validation-errors`
+- node_modules/ajv/README.md: `filtering data` -> `#filtering-data`
+- node_modules/ajv/README.md: `assigning defaults` -> `#assigning-defaults`
+- node_modules/ajv/README.md: `coercing data` -> `#coercing-data-types`
+- node_modules/ajv/README.md: `custom keywords` -> `#defining-custom-keywords`
+- node_modules/ajv/README.md: `$data reference` -> `#data-reference`
+- node_modules/ajv/README.md: `asynchronous validation` -> `#asynchronous-validation`
+- node_modules/ajv/README.md: `API` -> `#api`
+- node_modules/ajv/README.md: `Options` -> `#options`
+- node_modules/ajv/README.md: `Validation errors` -> `#validation-errors`
+- node_modules/ajv/README.md: `Options` -> `#options`
+- node_modules/ajv/README.md: `Assigning defaults` -> `#assigning-defaults`
+- node_modules/ajv/README.md: `ReDoS attack` -> `#redos-attack`
+- node_modules/ajv/README.md: `options` -> `#options`
+- node_modules/ajv/README.md: `Options` -> `#options`
+- node_modules/ajv/README.md: `addFormat` -> `#api-addformat`
+- node_modules/ajv/README.md: `Options` -> `#options`
+- node_modules/ajv/README.md: `Options` -> `#options`
+- node_modules/ajv/README.md: `addSchema` -> `#api`
+- node_modules/ajv/README.md: `Asynchronous schema compilation` -> `#asynchronous-schema-compilation`
+- node_modules/ajv/README.md: `addKeyword` -> `#api-addkeyword`
+- node_modules/ajv/README.md: `method` -> `#api-compileAsync`
+- node_modules/ajv/README.md: `option` -> `#options`
+- node_modules/ajv/README.md: `Option` -> `#options`
+- node_modules/ajv/README.md: `addFormat` -> `#api-addformat`
+- node_modules/ajv/README.md: `addKeyword` -> `#api-addkeyword`
+- node_modules/ajv/README.md: `Defining custom keywords` -> `#defining-custom-keywords`
+- node_modules/ajv/README.md: `Options` -> `#options`
+- node_modules/ajv/README.md: `Options` -> `#options`
+- node_modules/ajv/README.md: `ReDoS attack` -> `#redos-attack`
+- node_modules/ajv/README.md: `Ajv and Content Security Policies (CSP)` -> `#ajv-and-content-security-policies-csp`
+- node_modules/ajv/README.md: `addFormat` -> `#api-addformat`
+- node_modules/ajv/README.md: `option `removeAdditional`` -> `#options`
+- node_modules/ajv/README.md: `option `useDefaults`` -> `#options`
+- node_modules/ajv/README.md: ``strictDefaults` option` -> `#options`
+- node_modules/ajv/README.md: `options` -> `#options`
+- node_modules/ajv/README.md: `Asynchronous compilation` -> `#asynchronous-schema-compilation`
+- node_modules/ajv/README.md: `Asynchronous validation` -> `#asynchronous-validation`
+- node_modules/ajv/README.md: `$data reference` -> `#data-reference`
+- node_modules/ajv/README.md: `Defining custom keywords` -> `#defining-custom-keywords`
+- node_modules/ajv/README.md: `$data references` -> `#data-reference`
+- node_modules/ajv/README.md: `API` -> `#api`
+- node_modules/ajv/README.md: `Formats` -> `#formats`
+- node_modules/ajv/README.md: `$data reference` -> `#data-reference`
+- node_modules/ajv/README.md: `$data reference` -> `#data-reference`
+- node_modules/ajv/README.md: `Error logging` -> `#error-logging`
+- node_modules/ajv/README.md: `method` -> `#api-compileAsync`
+- node_modules/ajv/README.md: `Asynchronous compilation` -> `#asynchronous-schema-compilation`
+- node_modules/ajv/README.md: `Filtering data` -> `#filtering-data`
+- node_modules/ajv/README.md: `Assigning defaults` -> `#assigning-defaults`
+- node_modules/ajv/README.md: `Coercing data types` -> `#coercing-data-types`
+- node_modules/ajv/README.md: `Asynchronous validation` -> `#asynchronous-validation`
+- node_modules/ajv/README.md: `asynchronous validation` -> `#asynchronous-validation`
+- node_modules/ajv/README.md: `Options` -> `#options`
+- node_modules/open/readme.md: ``open.apps`` -> `#openapps`
+- node_modules/open/readme.md: `cross-platform differences` -> `#app`
+- node_modules/open/readme.md: ``open.apps`` -> `#openapps`
+- node_modules/open/readme.md: ``open`` -> `#options`
+- node_modules/type-check/README.md: `type syntax format` -> `#syntax`
+- node_modules/type-check/README.md: `guide` -> `#guide`
+- node_modules/type-check/README.md: `type format` -> `#type-format`
+- node_modules/type-check/README.md: `type format` -> `#type-format`
+- node_modules/type-check/README.md: `custom types` -> `#custom-types`
+- node_modules/type-check/README.md: `type format` -> `#type-format`
+- node_modules/type-check/README.md: `type format` -> `#type-format`
+- node_modules/type-check/README.md: `custom types` -> `#custom-types`
+- node_modules/resolve-pkg-maps/README.md: `against Node.js` -> `/tests/`
+- node_modules/resolve-pkg-maps/README.md: `this test` -> `/tests/exports/compare-resolve.exports.ts`
+- node_modules/object.assign/CHANGELOG.md: `es-shim API` -> `es-shims/api`
+- node_modules/entities/readme.md: `performance` -> `#performance`
+- node_modules/human-signals/CHANGELOG.md: `TypeScript definitions` -> `src/main.d.ts`
+- node_modules/human-signals/README.md: `descriptions` -> `#description`
+- node_modules/human-signals/README.md: `default actions` -> `#action`
+- node_modules/human-signals/README.md: `can be prevented` -> `#forced`
+- node_modules/human-signals/README.md: `supported` -> `#supported`
+- node_modules/human-signals/README.md: `names` -> `#name`
+- node_modules/human-signals/README.md: `signal objects` -> `#signal`
+- node_modules/human-signals/README.md: `numbers` -> `#number`
+- node_modules/human-signals/README.md: `signal objects` -> `#signal`
+- node_modules/human-signals/README.md: `submit an issue on GitHub` -> `../../issues`
+- node_modules/human-signals/README.md: `Code of conduct` -> `CODE_OF_CONDUCT.md`
+- node_modules/human-signals/README.md: `guidelines` -> `CONTRIBUTING.md`
+- node_modules/normalize-path/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/normalize-path/README.md: `.verb.md` -> `.verb.md`
+- node_modules/normalize-path/README.md: `MIT License` -> `LICENSE`
+- node_modules/ws/README.md: `Protocol support` -> `#protocol-support`
+- node_modules/ws/README.md: `Installing` -> `#installing`
+- node_modules/ws/README.md: `Opt-in for performance` -> `#opt-in-for-performance`
+- node_modules/ws/README.md: `Legacy opt-in for performance` -> `#legacy-opt-in-for-performance`
+- node_modules/ws/README.md: `API docs` -> `#api-docs`
+- node_modules/ws/README.md: `WebSocket compression` -> `#websocket-compression`
+- node_modules/ws/README.md: `Usage examples` -> `#usage-examples`
+- node_modules/ws/README.md: `Sending and receiving text data` -> `#sending-and-receiving-text-data`
+- node_modules/ws/README.md: `Sending binary data` -> `#sending-binary-data`
+- node_modules/ws/README.md: `Simple server` -> `#simple-server`
+- node_modules/ws/README.md: `External HTTP/S server` -> `#external-https-server`
+- node_modules/ws/README.md: `Multiple servers sharing a single HTTP/S server` -> `#multiple-servers-sharing-a-single-https-server`
+- node_modules/ws/README.md: `Client authentication` -> `#client-authentication`
+- node_modules/ws/README.md: `Server broadcast` -> `#server-broadcast`
+- node_modules/ws/README.md: `Round-trip time` -> `#round-trip-time`
+- node_modules/ws/README.md: `Use the Node.js streams API` -> `#use-the-nodejs-streams-api`
+- node_modules/ws/README.md: `Other examples` -> `#other-examples`
+- node_modules/ws/README.md: `FAQ` -> `#faq`
+- node_modules/ws/README.md: `How to get the IP address of the client?` -> `#how-to-get-the-ip-address-of-the-client`
+- node_modules/ws/README.md: `How to detect and close broken connections?` -> `#how-to-detect-and-close-broken-connections`
+- node_modules/ws/README.md: `How to connect via a proxy?` -> `#how-to-connect-via-a-proxy`
+- node_modules/ws/README.md: `Changelog` -> `#changelog`
+- node_modules/ws/README.md: `License` -> `#license`
+- node_modules/ws/README.md: ``WS_NO_BUFFER_UTIL`` -> `./doc/ws.md#ws_no_buffer_util`
+- node_modules/ws/README.md: ``WS_NO_UTF_8_VALIDATE`` -> `./doc/ws.md#ws_no_utf_8_validate`
+- node_modules/ws/README.md: ``/doc/ws.md`` -> `./doc/ws.md`
+- node_modules/ws/README.md: `MIT` -> `LICENSE`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `advanced globbing` -> `#advanced-globbing`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `library comparison` -> `#library-comparisons`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Install` -> `#install`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Usage` -> `#usage`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `API` -> `#api`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `picomatch` -> `#picomatch`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.test` -> `#test`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.matchBase` -> `#matchbase`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.isMatch` -> `#ismatch`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.parse` -> `#parse`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.compileRe` -> `#compilere`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.makeRe` -> `#makere`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.toRegex` -> `#toregex`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Options` -> `#options`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Picomatch options` -> `#picomatch-options`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Scan Options` -> `#scan-options`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Options Examples` -> `#options-examples`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Globbing features` -> `#globbing-features`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Braces` -> `#braces`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Matching special characters as literals` -> `#matching-special-characters-as-literals`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Library Comparisons` -> `#library-comparisons`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Benchmarks` -> `#benchmarks`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Philosophies` -> `#philosophies`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `About` -> `#about`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Author` -> `#author`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `License` -> `#license`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `picomatch` -> `lib/picomatch.js#L31`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.test` -> `lib/picomatch.js#L116`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.matchBase` -> `lib/picomatch.js#L160`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.makeRe` -> `#makeRe`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.isMatch` -> `lib/picomatch.js#L182`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `options` -> `#options`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.parse` -> `lib/picomatch.js#L198`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.scan` -> `lib/picomatch.js#L230`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.compileRe` -> `lib/picomatch.js#L244`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `parse()` -> `#parse`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.makeRe` -> `lib/picomatch.js#L285`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.toRegex` -> `lib/picomatch.js#L320`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `format` -> `#optionsformat`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `onIgnore` -> `#optionsonIgnore`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `onMatch` -> `#optionsonMatch`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `onResult` -> `#optionsonResult`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `picomatch options` -> `#picomatch-options`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `extglobs` -> `#extglobs`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `POSIX brackets` -> `#posix-brackets`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Braces` -> `#brace-expansion`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `please create an issue` -> `../../issues/new`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `contributing guide` -> `.github/contributing.md`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.verb.md` -> `.verb.md`
+- node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `MIT License` -> `LICENSE`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `Examples` -> `#examples`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `Consuming a source map` -> `#consuming-a-source-map`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `Generating a source map` -> `#generating-a-source-map`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `With SourceNode (high level API)` -> `#with-sourcenode-high-level-api`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `With SourceMapGenerator (low level API)` -> `#with-sourcemapgenerator-low-level-api`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `API` -> `#api`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer` -> `#sourcemapconsumer`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.initialize(options)` -> `#sourcemapconsumerinitializeoptions`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `new SourceMapConsumer(rawSourceMap)` -> `#new-sourcemapconsumerrawsourcemap`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.with` -> `#sourcemapconsumerwith`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.destroy()` -> `#sourcemapconsumerprototypedestroy`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.computeColumnSpans()` -> `#sourcemapconsumerprototypecomputecolumnspans`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.originalPositionFor(generatedPosition)` -> `#sourcemapconsumerprototypeoriginalpositionforgeneratedposition`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.generatedPositionFor(originalPosition)` -> `#sourcemapconsumerprototypegeneratedpositionfororiginalposition`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.allGeneratedPositionsFor(originalPosition)` -> `#sourcemapconsumerprototypeallgeneratedpositionsfororiginalposition`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.hasContentsOfAllSources()` -> `#sourcemapconsumerprototypehascontentsofallsources`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.eachMapping(callback, context, order)` -> `#sourcemapconsumerprototypeeachmappingcallback-context-order`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapGenerator` -> `#sourcemapgenerator`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapGenerator.fromSourceMap(sourceMapConsumer)` -> `#sourcemapgeneratorfromsourcemapsourcemapconsumer`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapGenerator.prototype.addMapping(mapping)` -> `#sourcemapgeneratorprototypeaddmappingmapping`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapGenerator.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcemapgeneratorprototypesetsourcecontentsourcefile-sourcecontent`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapGenerator.prototype.toString()` -> `#sourcemapgeneratorprototypetostring`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode` -> `#sourcenode`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.add(chunk)` -> `#sourcenodeprototypeaddchunk`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.prepend(chunk)` -> `#sourcenodeprototypeprependchunk`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcenodeprototypesetsourcecontentsourcefile-sourcecontent`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.walk(fn)` -> `#sourcenodeprototypewalkfn`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.walkSourceContents(fn)` -> `#sourcenodeprototypewalksourcecontentsfn`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.join(sep)` -> `#sourcenodeprototypejoinsep`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.replaceRight(pattern, replacement)` -> `#sourcenodeprototypereplacerightpattern-replacement`
+- node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.toString()` -> `#sourcenodeprototypetostring`
+- node_modules/isows/README.md: `MIT` -> `/LICENSE`
+- node_modules/react-fast-compare/README.md: `benchmarking details` -> `#benchmarking-this-library`
+- node_modules/react-fast-compare/README.md: `contributions guide` -> `./CONTRIBUTING.md`
+- node_modules/debug/README.md: `_app.js_` -> `./examples/node/app.js`
+- node_modules/debug/README.md: `_worker.js_` -> `./examples/node/worker.js`
+- node_modules/debug/README.md: `_stdout.js_` -> `./examples/node/stdout.js`
+- node_modules/source-map-js/README.md: `Downloads count` -> `media/downloads.png`
+- node_modules/source-map-js/README.md: `Examples` -> `#examples`
+- node_modules/source-map-js/README.md: `Consuming a source map` -> `#consuming-a-source-map`
+- node_modules/source-map-js/README.md: `Generating a source map` -> `#generating-a-source-map`
+- node_modules/source-map-js/README.md: `With SourceNode (high level API)` -> `#with-sourcenode-high-level-api`
+- node_modules/source-map-js/README.md: `With SourceMapGenerator (low level API)` -> `#with-sourcemapgenerator-low-level-api`
+- node_modules/source-map-js/README.md: `API` -> `#api`
+- node_modules/source-map-js/README.md: `SourceMapConsumer` -> `#sourcemapconsumer`
+- node_modules/source-map-js/README.md: `new SourceMapConsumer(rawSourceMap)` -> `#new-sourcemapconsumerrawsourcemap`
+- node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.computeColumnSpans()` -> `#sourcemapconsumerprototypecomputecolumnspans`
+- node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.originalPositionFor(generatedPosition)` -> `#sourcemapconsumerprototypeoriginalpositionforgeneratedposition`
+- node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.generatedPositionFor(originalPosition)` -> `#sourcemapconsumerprototypegeneratedpositionfororiginalposition`
+- node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.allGeneratedPositionsFor(originalPosition)` -> `#sourcemapconsumerprototypeallgeneratedpositionsfororiginalposition`
+- node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.hasContentsOfAllSources()` -> `#sourcemapconsumerprototypehascontentsofallsources`
+- node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.eachMapping(callback, context, order)` -> `#sourcemapconsumerprototypeeachmappingcallback-context-order`
+- node_modules/source-map-js/README.md: `SourceMapGenerator` -> `#sourcemapgenerator`
+- node_modules/source-map-js/README.md: `SourceMapGenerator.fromSourceMap(sourceMapConsumer)` -> `#sourcemapgeneratorfromsourcemapsourcemapconsumer`
+- node_modules/source-map-js/README.md: `SourceMapGenerator.prototype.addMapping(mapping)` -> `#sourcemapgeneratorprototypeaddmappingmapping`
+- node_modules/source-map-js/README.md: `SourceMapGenerator.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcemapgeneratorprototypesetsourcecontentsourcefile-sourcecontent`
+- node_modules/source-map-js/README.md: `SourceMapGenerator.prototype.toString()` -> `#sourcemapgeneratorprototypetostring`
+- node_modules/source-map-js/README.md: `SourceNode` -> `#sourcenode`
+- node_modules/source-map-js/README.md: `SourceNode.prototype.add(chunk)` -> `#sourcenodeprototypeaddchunk`
+- node_modules/source-map-js/README.md: `SourceNode.prototype.prepend(chunk)` -> `#sourcenodeprototypeprependchunk`
+- node_modules/source-map-js/README.md: `SourceNode.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcenodeprototypesetsourcecontentsourcefile-sourcecontent`
+- node_modules/source-map-js/README.md: `SourceNode.prototype.walk(fn)` -> `#sourcenodeprototypewalkfn`
+- node_modules/source-map-js/README.md: `SourceNode.prototype.walkSourceContents(fn)` -> `#sourcenodeprototypewalksourcecontentsfn`
+- node_modules/source-map-js/README.md: `SourceNode.prototype.join(sep)` -> `#sourcenodeprototypejoinsep`
+- node_modules/source-map-js/README.md: `SourceNode.prototype.replaceRight(pattern, replacement)` -> `#sourcenodeprototypereplacerightpattern-replacement`
+- node_modules/source-map-js/README.md: `SourceNode.prototype.toString()` -> `#sourcenodeprototypetostring`
+- node_modules/@inquirer/confirm/README.md: `See Theming` -> `#Theming`
+- node_modules/get-tsconfig/README.md: ``parseTsconfig`` -> `#parsetsconfigtsconfigpath-cache`
+- node_modules/fb-watchman/README.md: `install Watchman` -> `
+https://facebook.github.io/watchman/docs/install.html`
+- node_modules/path-scurry/LICENSE.md: `Notices` -> `#notices`
+- node_modules/path-scurry/node_modules/lru-cache/README.md: `change log` -> `CHANGELOG.md`
+- context-engineering-intro/README.md: `What is Context Engineering?` -> `#what-is-context-engineering`
+- context-engineering-intro/README.md: `Template Structure` -> `#template-structure`
+- context-engineering-intro/README.md: `Step-by-Step Guide` -> `#step-by-step-guide`
+- context-engineering-intro/README.md: `Writing Effective INITIAL.md Files` -> `#writing-effective-initialmd-files`
+- context-engineering-intro/README.md: `The PRP Workflow` -> `#the-prp-workflow`
+- context-engineering-intro/README.md: `Using Examples Effectively` -> `#using-examples-effectively`
+- context-engineering-intro/README.md: `Best Practices` -> `#best-practices`
+- DOCS/GOOGLE_ADS_SECURITY_PATTERNS.md: `Secure Configuration Management` -> `#secure-configuration-management`
+- DOCS/GOOGLE_ADS_SECURITY_PATTERNS.md: `Input Validation & Sanitization` -> `#input-validation--sanitization`
+- DOCS/GOOGLE_ADS_SECURITY_PATTERNS.md: `Authentication & Authorization` -> `#authentication--authorization`
+- DOCS/GOOGLE_ADS_SECURITY_PATTERNS.md: `Data Protection` -> `#data-protection`
+- DOCS/GOOGLE_ADS_SECURITY_PATTERNS.md: `Security Testing Patterns` -> `#security-testing-patterns`
+- DOCS/GOOGLE_ADS_SECURITY_PATTERNS.md: `Production Security Checklist` -> `#production-security-checklist`
+- DOCS/GOOGLE_ADS_SECURITY_PATTERNS.md: `Implementation Examples` -> `#implementation-examples`
+- DOCS/ADMINISTRATOR_GUIDE.md: `System Overview` -> `#system-overview`
+- DOCS/ADMINISTRATOR_GUIDE.md: `Production Deployment` -> `#production-deployment`
+- DOCS/ADMINISTRATOR_GUIDE.md: `Environment Configuration` -> `#environment-configuration`
+- DOCS/ADMINISTRATOR_GUIDE.md: `Database Management` -> `#database-management`
+- DOCS/ADMINISTRATOR_GUIDE.md: `Security & Hardening` -> `#security--hardening`
+- DOCS/ADMINISTRATOR_GUIDE.md: `Monitoring & Alerting` -> `#monitoring--alerting`
+- DOCS/ADMINISTRATOR_GUIDE.md: `Backup & Recovery` -> `#backup--recovery`
+- DOCS/ADMINISTRATOR_GUIDE.md: `Troubleshooting` -> `#troubleshooting`
+- DOCS/ADMINISTRATOR_GUIDE.md: `Maintenance Procedures` -> `#maintenance-procedures`
+- DOCS/ADMINISTRATOR_GUIDE.md: `Scaling & Performance` -> `#scaling--performance`
+- DOCS/FAQ.md: `General Questions` -> `#general-questions`
+- DOCS/FAQ.md: `Getting Started` -> `#getting-started`
+- DOCS/FAQ.md: `Features & Functionality` -> `#features--functionality`
+- DOCS/FAQ.md: `Pricing & Plans` -> `#pricing--plans`
+- DOCS/FAQ.md: `Security & Privacy` -> `#security--privacy`
+- DOCS/FAQ.md: `Technical Support` -> `#technical-support`
+- DOCS/FAQ.md: `Integrations` -> `#integrations`
+- DOCS/FAQ.md: `Troubleshooting` -> `#troubleshooting`
+- DOCS/README.md: `PROMPT_HYGIENE_PROTOCOL.md` -> `PROMPT_HYGIENE_PROTOCOL.md`
+- DOCS/README.md: `PROMPT_HYGIENE_QUICK_REFERENCE.md` -> `PROMPT_HYGIENE_QUICK_REFERENCE.md`
+- DOCS/README.md: `CLAUDE_CODE_PROMPT_EXAMPLES.md` -> `CLAUDE_CODE_PROMPT_EXAMPLES.md`
+- DOCS/README.md: `CONTRIBUTOR_CHECKLIST.md` -> `CONTRIBUTOR_CHECKLIST.md`
+- DOCS/README.md: `ONBOARDING_GUIDE.md` -> `ONBOARDING_GUIDE.md`
+- DOCS/README.md: `PROMPT_HYGIENE_PROTOCOL.md` -> `PROMPT_HYGIENE_PROTOCOL.md`
+- DOCS/README.md: `ONBOARDING_GUIDE.md` -> `ONBOARDING_GUIDE.md`
+- DOCS/README.md: `CLAUDE_CODE_PROMPT_EXAMPLES.md` -> `CLAUDE_CODE_PROMPT_EXAMPLES.md`
+- DOCS/README.md: `CONTRIBUTOR_CHECKLIST.md` -> `CONTRIBUTOR_CHECKLIST.md`
+- DOCS/README.md: `META_API_INTEGRATION.md` -> `META_API_INTEGRATION.md`
+- DOCS/README.md: `GOOGLE_ADS_SECURITY_PATTERNS.md` -> `GOOGLE_ADS_SECURITY_PATTERNS.md`
+- DOCS/README.md: `SECURITY_ASSESSMENT.md` -> `SECURITY_ASSESSMENT.md`
+- DOCS/README.md: `IMPORTANT-SECURITY-NOTE.md` -> `IMPORTANT-SECURITY-NOTE.md`
+- DOCS/README.md: `CLOUD-BACKUP-GUIDE.md` -> `CLOUD-BACKUP-GUIDE.md`
+- DOCS/README.md: `SOURCEGRAPH-SETUP.md` -> `SOURCEGRAPH-SETUP.md`
+- DOCS/README.md: `LINEAR-MCP-SETUP.md` -> `LINEAR-MCP-SETUP.md`
+- DOCS/README.md: `CODERABBIT-SETUP.md` -> `CODERABBIT-SETUP.md`
+- DOCS/README.md: `PREMIUM-SERVICES-SETUP.md` -> `PREMIUM-SERVICES-SETUP.md`
+- DOCS/README.md: `CONTRIBUTOR_CHECKLIST.md` -> `CONTRIBUTOR_CHECKLIST.md`
+- DOCS/ONBOARDING_GUIDE.md: `PROMPT_HYGIENE_PROTOCOL.md` -> `PROMPT_HYGIENE_PROTOCOL.md`
+- DOCS/PROMPT_HYGIENE_QUICK_REFERENCE.md: `PROMPT_HYGIENE_PROTOCOL.md` -> `PROMPT_HYGIENE_PROTOCOL.md`
+- DOCS/INDEX.md: `Quick Start Guide` -> `QUICK_START_GUIDE.md`
+- DOCS/INDEX.md: `FAQ` -> `FAQ.md`
+- DOCS/INDEX.md: `Feature Showcase` -> `FEATURE_SHOWCASE.md`
+- DOCS/INDEX.md: `Client User Manual` -> `CLIENT_USER_MANUAL.md`
+- DOCS/INDEX.md: `Administrator Guide` -> `ADMINISTRATOR_GUIDE.md`
+- DOCS/INDEX.md: `Demo Preparation Kit` -> `DEMO_PREPARATION_KIT.md`
+- DOCS/INDEX.md: `Feature Showcase` -> `FEATURE_SHOWCASE.md`
+- DOCS/INDEX.md: `Documentation Gap Analysis` -> `DOCUMENTATION_GAP_ANALYSIS_REPORT.md`
+- DOCS/INDEX.md: `Quick Start Guide` -> `QUICK_START_GUIDE.md`
+- DOCS/INDEX.md: `Client User Manual` -> `CLIENT_USER_MANUAL.md`
+- DOCS/INDEX.md: `FAQ` -> `FAQ.md`
+- DOCS/INDEX.md: `Administrator Guide` -> `ADMINISTRATOR_GUIDE.md`
+- DOCS/INDEX.md: `Feature Showcase` -> `FEATURE_SHOWCASE.md`
+- DOCS/INDEX.md: `Demo Preparation Kit` -> `DEMO_PREPARATION_KIT.md`
+- DOCS/INDEX.md: `FAQ` -> `FAQ.md`
+- DOCS/INDEX.md: `Quick Start Guide` -> `QUICK_START_GUIDE.md`
+- DOCS/INDEX.md: `Feature Showcase` -> `FEATURE_SHOWCASE.md`
+- DOCS/INDEX.md: `FAQ` -> `FAQ.md`
+- DOCS/INDEX.md: `Client User Manual` -> `CLIENT_USER_MANUAL.md`
+- DOCS/INDEX.md: `FAQ` -> `FAQ.md`
+- DOCS/INDEX.md: `Administrator Guide` -> `ADMINISTRATOR_GUIDE.md`
+- DOCS/INDEX.md: `Demo Preparation Kit` -> `DEMO_PREPARATION_KIT.md`
+- DOCS/INDEX.md: `Feature Showcase` -> `FEATURE_SHOWCASE.md`
+- DOCS/INDEX.md: `FAQ` -> `FAQ.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Development Mock Data System` -> `DEVELOPMENT_MOCK_DATA_SYSTEM.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Meta Environment Setup` -> `META_ENVIRONMENT_SETUP.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Business Verification Guide` -> `META_BUSINESS_VERIFICATION_GUIDE.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Business Verification Templates` -> `BUSINESS_VERIFICATION_TEMPLATES.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Privacy Policy` -> `PRIVACY_POLICY.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Terms of Service` -> `TERMS_OF_SERVICE.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `META App Review Checklist` -> `META_APP_REVIEW_CHECKLIST.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `META API Technical Spec` -> `META_API_TECHNICAL_SPEC.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Production Deployment Checklist` -> `PRODUCTION_DEPLOYMENT_CHECKLIST.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Meta Integration Test Suite` -> `META_INTEGRATION_TEST_SUITE.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Development Mock Data System` -> `DEVELOPMENT_MOCK_DATA_SYSTEM.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Meta Environment Setup` -> `META_ENVIRONMENT_SETUP.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Business Verification Guide` -> `META_BUSINESS_VERIFICATION_GUIDE.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Business Verification Templates` -> `BUSINESS_VERIFICATION_TEMPLATES.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Privacy Policy` -> `PRIVACY_POLICY.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Terms of Service` -> `TERMS_OF_SERVICE.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `META API Technical Spec` -> `META_API_TECHNICAL_SPEC.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Meta Integration Test Suite` -> `META_INTEGRATION_TEST_SUITE.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `META App Review Checklist` -> `META_APP_REVIEW_CHECKLIST.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `Production Deployment Checklist` -> `PRODUCTION_DEPLOYMENT_CHECKLIST.md`
+- DOCS/META_APP_REVIEW_MASTER_GUIDE.md: `📞 Support Contact` -> `mailto:dev@wethinkbig.io`
+- DOCS/CLIENT_USER_MANUAL.md: `Getting Started` -> `#getting-started`
+- DOCS/CLIENT_USER_MANUAL.md: `Dashboard Overview` -> `#dashboard-overview`
+- DOCS/CLIENT_USER_MANUAL.md: `Campaign Management` -> `#campaign-management`
+- DOCS/CLIENT_USER_MANUAL.md: `Analytics & Reporting` -> `#analytics--reporting`
+- DOCS/CLIENT_USER_MANUAL.md: `Crisis Monitoring` -> `#crisis-monitoring`
+- DOCS/CLIENT_USER_MANUAL.md: `Document Intelligence` -> `#document-intelligence`
+- DOCS/CLIENT_USER_MANUAL.md: `Volunteer Management` -> `#volunteer-management`
+- DOCS/CLIENT_USER_MANUAL.md: `Settings & Configuration` -> `#settings--configuration`
+- DOCS/CLIENT_USER_MANUAL.md: `Troubleshooting` -> `#troubleshooting`
+- DOCS/CONTRIBUTOR_CHECKLIST.md: `CLAUDE_CODE_PROMPT_EXAMPLES.md` -> `CLAUDE_CODE_PROMPT_EXAMPLES.md`
+- DOCS/project-management/linear-workflow.md: `War Room Linear Templates` -> `/templates/linear`
+- DOCS/project-management/linear-integration.md: `War Room Linear Integration` -> `/api/v1/integrations/linear`
+- DOCS/technical/07-Security & Compliance Requirements.md: `security@thinkbigmedia.com` -> `mailto:security@thinkbigmedia.com`
+- security-reports/api-security-audit-20250802_103217.md: `\-:` -> `[a-z]`
+- security-reports/api-security-audit-20250802_103217.md: `".js"` -> `m,filename`
+- security-reports/api-security-audit-20250802_103217.md: `a` -> `c`
+- security-reports/api-security-audit-20250802_103217.md: `a` -> `c`
+- security-reports/api-security-audit-20250802_103217.md: `e` -> `c`
+- security-reports/api-security-audit-20250802_103217.md: `o` -> `c`
+- security-reports/api-security-audit-20250802_103217.md: `o` -> `c`
+- security-reports/api-security-audit-20250802_103217.md: `\-:` -> `[a-z]`
+- security-reports/api-security-audit-20250802_103217.md: `"_"+(null===(e=o.replacer?o.replacer(e):e)?"null":typeof e)` -> `e`
+- security-reports/api-security-audit-20250802_103217.md: `"_"+r` -> `t`
+- security-reports/api-security-audit-20250802_103217.md: `Ga` -> `t`
+- security-reports/api-security-audit-20250802_103217.md: `e` -> `t`
+- security-reports/api-security-audit-20250802_103217.md: `\u261D\u270C\u270D` -> `?:\uD83C[\uDFFB-\uDFFF]|\uFE0F`
+- security-reports/api-security-audit-20250802_103217.md: `\u270A\u270B` -> `?:\uD83C[\uDFFB-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uDF85\uDFC2\uDFC7` -> `?:\uD83C[\uDFFB-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uDFC4\uDFCA` -> `?:\uD83C[\uDFFB-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uDFCB\uDFCC` -> `?:\uD83C[\uDFFB-\uDFFF]|\uFE0F`
+- security-reports/api-security-audit-20250802_103217.md: `\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDC8F\uDC91\uDCAA\uDD7A\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC` -> `?:\uD83C[\uDFFB-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uDC6E\uDC70\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4\uDEB5` -> `?:\uD83C[\uDFFB-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uDD74\uDD90` -> `?:\uD83C[\uDFFB-\uDFFF]|\uFE0F`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDD0C\uDD0F\uDD18-\uDD1F\uDD30-\uDD34\uDD36\uDD77\uDDB5\uDDB6\uDDBB\uDDD2\uDDD3\uDDD5\uDEC3-\uDEC5\uDEF0\uDEF2-\uDEF8` -> `?:\uD83C[\uDFFB-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uDD26\uDD35\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD\uDDCF\uDDD4\uDDD6-\uDDDD` -> `?:\uD83C[\uDFFB-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDDE\uDDDF` -> `?:\u200D[\u2640\u2642]\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `\uDDAF\uDDBC\uDDBD` -> `?:\u200D\u27A1\uFE0F?`
+- security-reports/api-security-audit-20250802_103217.md: `n?"unshift":"push"` -> `t`
+- security-reports/api-security-audit-20250802_103217.md: `n` -> `e,t,i`
+- security-reports/api-security-audit-20250802_103217.md: `n` -> `e,t,o`
+- security-reports/api-security-audit-20250802_103217.md: `r` -> `o`
+- security-reports/api-security-audit-20250802_103217.md: `"hard-light"` -> `t,e`
+- security-reports/api-security-audit-20250802_103217.md: `r` -> `t,n`
+- security-reports/api-security-audit-20250802_103217.md: `r` -> `t[e],n[e]`
+- security-reports/api-security-audit-20250802_103217.md: `t` -> `e`
+- security-reports/api-security-audit-20250802_103217.md: `.!?:;` -> `?![.!?:;]`
+- security-reports/api-security-audit-20250802_103217.md: `n` -> `e[r]`
+- security-reports/api-security-audit-20250802_103217.md: `e.command` -> `e,n`
+- security-reports/api-security-audit-20250802_103217.md: `n` -> `i,i.exports,r`
+- security-reports/api-security-audit-20250802_103217.md: `r` -> `t`
+- security-reports/api-security-audit-20250802_103217.md: `r` -> `t`
+- security-reports/api-security-audit-20250802_103217.md: `n` -> `t-n`
+- security-reports/api-security-audit-20250802_103217.md: `r` -> `t`
+- security-reports/api-security-audit-20250802_103217.md: `r` -> `t`
+- security-reports/api-security-audit-20250802_103217.md: `n` -> `t-n`
+- security-reports/api-security-audit-20250802_103217.md: `e.type+!0` -> `t.event?t.event(e`
+- security-reports/api-security-audit-20250802_103217.md: `a` -> `o,[n]`
+- security-reports/api-security-audit-20250802_103217.md: `Dr(null==(i=e.conditions)?void 0:i.deviceTypesMatchType)` -> `e.conditions.deviceTypes,[n]`
+- security-reports/api-security-audit-20250802_103217.md: `o` -> `a`
+- security-reports/api-security-audit-20250802_103217.md: `e.type+!0` -> `di.event?di.event(e`
+- security-reports/api-security-audit-20250802_103217.md: `a` -> `o,[i]`
+- security-reports/api-security-audit-20250802_103217.md: `Na(null==(n=e.conditions)?void 0:n.deviceTypesMatchType)` -> `e.conditions.deviceTypes,[i]`
+- security-reports/api-security-audit-20250802_103217.md: `e.type+!0` -> `t.event?t.event(e`
+- security-reports/api-security-audit-20250802_103217.md: `a` -> `n,[i]`
+- security-reports/api-security-audit-20250802_103217.md: `n` -> `e`
+- security-reports/api-security-audit-20250802_103217.md: `Oi` -> `r`
+- security-reports/api-security-audit-20250802_103217.md: `h` -> `b`
+- security-reports/api-security-audit-20250802_103217.md: `n` -> `e`
+- security-reports/api-security-audit-20250802_103217.md: `r` -> `t`
+- security-reports/api-security-audit-20250802_103217.md: `r` -> `t`
+- security-reports/api-security-audit-20250802_103217.md: `n` -> `t-n`
+- security-reports/api-security-audit-20250802_103217.md: `a-z0-9` -> `?:[a-z0-9-]{0,61}[a-z0-9]`
+- security-reports/api-security-audit-20250802_103217.md: `a-z0-9` -> `?:[-0-9a-z]{0,61}[0-9a-z]`
+- security-reports/api-security-audit-20250802_103217.md: `\uD800-\uDBFF` -> `?![\uDC00-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uD800-\uDBFF` -> `?![\uDC00-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uD800-\uDBFF` -> `?![\uDC00-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uD800-\uDBFF` -> `?![\uDC00-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uD800-\uDBFF` -> `?![\uDC00-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uD800-\uDBFF` -> `?![\uDC00-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uD800-\uDBFF` -> `?![\uDC00-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `\uD800-\uDBFF` -> `?![\uDC00-\uDFFF]`
+- security-reports/api-security-audit-20250802_103217.md: `t\s` -> `?:[0-2]\d:[0-5]\d:[0-5]\d|23:59:60`
+- security-reports/api-security-audit-20250802_103217.md: `a-z0-9` -> `?:[a-z0-9-]{0,61}[a-z0-9]`
+- security-reports/api-security-audit-20250802_103217.md: `a-z0-9` -> `?:[a-z0-9-]{0,61}[a-z0-9]`
+- security-reports/api-security-audit-20250802_103217.md: `a-z0-9` -> `?:[a-z0-9-]*[a-z0-9]`
+- security-reports/api-security-audit-20250802_103217.md: `a-z0-9` -> `?:[a-z0-9-]*[a-z0-9]`
+- security-reports/api-security-audit-20250802_103217.md: `P?"min":"max"` -> `w,d`
+- security-reports/api-security-audit-20250802_103217.md: `"checkDataType"+(a?"s":"")` -> `t,"item",e.opts.strictNumbers,!0`
+- security-reports/api-security-audit-20250802_103217.md: `b?"checkDataTypes":"checkDataType"` -> `w,f,a.opts.strictNumbers,!0`
+- monitoring/node_modules/toidentifier/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/content-type/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/content-disposition/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/methods/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/proxy-addr/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/depd/Readme.md: `message` -> `files/message.png`
+- monitoring/node_modules/depd/Readme.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/range-parser/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/bytes/Readme.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/cardinal/README.md: `Installation` -> `#installation`
+- monitoring/node_modules/cardinal/README.md: `As library` -> `#as-library`
+- monitoring/node_modules/cardinal/README.md: `As Commandline Tool` -> `#as-commandline-tool`
+- monitoring/node_modules/cardinal/README.md: `Commandline` -> `#commandline`
+- monitoring/node_modules/cardinal/README.md: `Highlight a file` -> `#highlight-a-file`
+- monitoring/node_modules/cardinal/README.md: `As part of a UNIX pipe` -> `#as-part-of-a-unix-pipe`
+- monitoring/node_modules/cardinal/README.md: `Theme` -> `#theme`
+- monitoring/node_modules/cardinal/README.md: `API` -> `#api`
+- monitoring/node_modules/cardinal/README.md: `opts` -> `#opts`
+- monitoring/node_modules/express/Readme.md: `Installation` -> `#Installation`
+- monitoring/node_modules/express/Readme.md: `Features` -> `#Features`
+- monitoring/node_modules/express/Readme.md: `Docs & Community` -> `#docs--community`
+- monitoring/node_modules/express/Readme.md: `Quick Start` -> `#Quick-Start`
+- monitoring/node_modules/express/Readme.md: `Running Tests` -> `#Running-Tests`
+- monitoring/node_modules/express/Readme.md: `Philosophy` -> `#Philosophy`
+- monitoring/node_modules/express/Readme.md: `Examples` -> `#Examples`
+- monitoring/node_modules/express/Readme.md: `Contributing to Express` -> `#Contributing`
+- monitoring/node_modules/express/Readme.md: `TC (Technical Committee)` -> `#tc-technical-committee`
+- monitoring/node_modules/express/Readme.md: `Triagers` -> `#triagers`
+- monitoring/node_modules/express/Readme.md: `License` -> `#license`
+- monitoring/node_modules/express/Readme.md: `Contributing Guide` -> `Contributing.md`
+- monitoring/node_modules/express/Readme.md: `Security Policies and Procedures` -> `Security.md`
+- monitoring/node_modules/express/Readme.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/encodeurl/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/merge-descriptors/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/socket.io-adapter/node_modules/debug/README.md: `_app.js_` -> `./examples/node/app.js`
+- monitoring/node_modules/socket.io-adapter/node_modules/debug/README.md: `_worker.js_` -> `./examples/node/worker.js`
+- monitoring/node_modules/socket.io-adapter/node_modules/debug/README.md: `_stdout.js_` -> `./examples/node/stdout.js`
+- monitoring/node_modules/picomatch/README.md: `advanced globbing` -> `#advanced-globbing`
+- monitoring/node_modules/picomatch/README.md: `library comparison` -> `#library-comparisons`
+- monitoring/node_modules/picomatch/README.md: `Install` -> `#install`
+- monitoring/node_modules/picomatch/README.md: `Usage` -> `#usage`
+- monitoring/node_modules/picomatch/README.md: `API` -> `#api`
+- monitoring/node_modules/picomatch/README.md: `picomatch` -> `#picomatch`
+- monitoring/node_modules/picomatch/README.md: `.test` -> `#test`
+- monitoring/node_modules/picomatch/README.md: `.matchBase` -> `#matchbase`
+- monitoring/node_modules/picomatch/README.md: `.isMatch` -> `#ismatch`
+- monitoring/node_modules/picomatch/README.md: `.parse` -> `#parse`
+- monitoring/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- monitoring/node_modules/picomatch/README.md: `.compileRe` -> `#compilere`
+- monitoring/node_modules/picomatch/README.md: `.makeRe` -> `#makere`
+- monitoring/node_modules/picomatch/README.md: `.toRegex` -> `#toregex`
+- monitoring/node_modules/picomatch/README.md: `Options` -> `#options`
+- monitoring/node_modules/picomatch/README.md: `Picomatch options` -> `#picomatch-options`
+- monitoring/node_modules/picomatch/README.md: `Scan Options` -> `#scan-options`
+- monitoring/node_modules/picomatch/README.md: `Options Examples` -> `#options-examples`
+- monitoring/node_modules/picomatch/README.md: `Globbing features` -> `#globbing-features`
+- monitoring/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- monitoring/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- monitoring/node_modules/picomatch/README.md: `Braces` -> `#braces`
+- monitoring/node_modules/picomatch/README.md: `Matching special characters as literals` -> `#matching-special-characters-as-literals`
+- monitoring/node_modules/picomatch/README.md: `Library Comparisons` -> `#library-comparisons`
+- monitoring/node_modules/picomatch/README.md: `Benchmarks` -> `#benchmarks`
+- monitoring/node_modules/picomatch/README.md: `Philosophies` -> `#philosophies`
+- monitoring/node_modules/picomatch/README.md: `About` -> `#about`
+- monitoring/node_modules/picomatch/README.md: `Author` -> `#author`
+- monitoring/node_modules/picomatch/README.md: `License` -> `#license`
+- monitoring/node_modules/picomatch/README.md: `picomatch` -> `lib/picomatch.js#L32`
+- monitoring/node_modules/picomatch/README.md: `.test` -> `lib/picomatch.js#L117`
+- monitoring/node_modules/picomatch/README.md: `.matchBase` -> `lib/picomatch.js#L161`
+- monitoring/node_modules/picomatch/README.md: `.makeRe` -> `#makeRe`
+- monitoring/node_modules/picomatch/README.md: `.isMatch` -> `lib/picomatch.js#L183`
+- monitoring/node_modules/picomatch/README.md: `options` -> `#options`
+- monitoring/node_modules/picomatch/README.md: `.parse` -> `lib/picomatch.js#L199`
+- monitoring/node_modules/picomatch/README.md: `.scan` -> `lib/picomatch.js#L231`
+- monitoring/node_modules/picomatch/README.md: `.compileRe` -> `lib/picomatch.js#L245`
+- monitoring/node_modules/picomatch/README.md: `parse()` -> `#parse`
+- monitoring/node_modules/picomatch/README.md: `.makeRe` -> `lib/picomatch.js#L286`
+- monitoring/node_modules/picomatch/README.md: `.toRegex` -> `lib/picomatch.js#L321`
+- monitoring/node_modules/picomatch/README.md: `format` -> `#optionsformat`
+- monitoring/node_modules/picomatch/README.md: `onIgnore` -> `#optionsonIgnore`
+- monitoring/node_modules/picomatch/README.md: `onMatch` -> `#optionsonMatch`
+- monitoring/node_modules/picomatch/README.md: `onResult` -> `#optionsonResult`
+- monitoring/node_modules/picomatch/README.md: `picomatch options` -> `#picomatch-options`
+- monitoring/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- monitoring/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- monitoring/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- monitoring/node_modules/picomatch/README.md: `extglobs` -> `#extglobs`
+- monitoring/node_modules/picomatch/README.md: `POSIX brackets` -> `#posix-brackets`
+- monitoring/node_modules/picomatch/README.md: `Braces` -> `#brace-expansion`
+- monitoring/node_modules/picomatch/README.md: `please create an issue` -> `../../issues/new`
+- monitoring/node_modules/picomatch/README.md: `contributing guide` -> `.github/contributing.md`
+- monitoring/node_modules/picomatch/README.md: `.verb.md` -> `.verb.md`
+- monitoring/node_modules/picomatch/README.md: `MIT License` -> `LICENSE`
+- monitoring/node_modules/is-glob/README.md: `please create an issue` -> `../../issues/new`
+- monitoring/node_modules/is-glob/README.md: `.verb.md` -> `.verb.md`
+- monitoring/node_modules/is-glob/README.md: `MIT License` -> `LICENSE`
+- monitoring/node_modules/cli-table3/README.md: `Word wrapping options` -> `./basic-usage.md#set-wordwrap-to-true-to-wrap-text-on-word-boundaries`
+- monitoring/node_modules/chokidar/README.md: ``full_changelog.md`` -> `.github/full_changelog.md`
+- monitoring/node_modules/chokidar/README.md: `LICENSE` -> `LICENSE`
+- monitoring/node_modules/fresh/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/@colors/colors/README.md: `roadmap` -> `ROADMAP.md`
+- monitoring/node_modules/safer-buffer/Porting-Buffer.md: `Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x.` -> `#variant-1`
+- monitoring/node_modules/safer-buffer/Porting-Buffer.md: `Variant 2: Use a polyfill` -> `#variant-2`
+- monitoring/node_modules/safer-buffer/Porting-Buffer.md: `Variant 3: manual detection, with safeguards` -> `#variant-3`
+- monitoring/node_modules/safer-buffer/Porting-Buffer.md: `^a-zA-Z` -> `Slow`
+- monitoring/node_modules/safer-buffer/Porting-Buffer.md: `Variant 2` -> `#variant-2`
+- monitoring/node_modules/safer-buffer/Porting-Buffer.md: `Variant 3` -> `#variant-3`
+- monitoring/node_modules/safer-buffer/Porting-Buffer.md: `Variant 1` -> `#variant-1`
+- monitoring/node_modules/mime-types/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/type-is/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/chalk/readme.md: `256/Truecolor color support` -> `#256-and-truecolor-color-support`
+- monitoring/node_modules/chalk/readme.md: `.<style>...` -> `string, [string...]`
+- monitoring/node_modules/chalk/readme.md: `styles` -> `#styles`
+- monitoring/node_modules/vary/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/color-convert/README.md: `conversions.js` -> `conversions.js`
+- monitoring/node_modules/color-convert/README.md: `conversions.js` -> `conversions.js`
+- monitoring/node_modules/color-convert/README.md: `MIT License` -> `LICENSE`
+- monitoring/node_modules/readdirp/README.md: `entry infos` -> `#entryinfo`
+- monitoring/node_modules/readdirp/README.md: `entry info` -> `#entryinfo`
+- monitoring/node_modules/readdirp/README.md: `entry infos` -> `#entryinfo`
+- monitoring/node_modules/readdirp/README.md: `LICENSE` -> `LICENSE`
+- monitoring/node_modules/unpipe/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/fill-range/README.md: `step` -> `#optionsstep`
+- monitoring/node_modules/fill-range/README.md: `options` -> `#options`
+- monitoring/node_modules/fill-range/README.md: `string` -> `#optionstoRegex`
+- monitoring/node_modules/fill-range/README.md: `please create an issue` -> `../../issues/new`
+- monitoring/node_modules/fill-range/README.md: `.verb.md` -> `.verb.md`
+- monitoring/node_modules/fill-range/README.md: `MIT License` -> `LICENSE`
+- monitoring/node_modules/binary-extensions/readme.md: `JSON file` -> `binary-extensions.json`
+- monitoring/node_modules/drawille-canvas-blessed-contrib/README.md: `anim` -> `anim.gif`
+- monitoring/node_modules/drawille-canvas-blessed-contrib/README.md: `example` -> `example.js`
+- monitoring/node_modules/raw-body/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/http-errors/README.md: `code || name\` -> `\[msg]\`
+- monitoring/node_modules/http-errors/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/accepts/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/socket.io/Readme.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/socket.io/node_modules/debug/README.md: `_app.js_` -> `./examples/node/app.js`
+- monitoring/node_modules/socket.io/node_modules/debug/README.md: `_worker.js_` -> `./examples/node/worker.js`
+- monitoring/node_modules/socket.io/node_modules/debug/README.md: `_stdout.js_` -> `./examples/node/stdout.js`
+- monitoring/node_modules/forwarded/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/negotiator/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/body-parser/README.md: `JSON body parser` -> `#bodyparserjsonoptions`
+- monitoring/node_modules/body-parser/README.md: `Raw body parser` -> `#bodyparserrawoptions`
+- monitoring/node_modules/body-parser/README.md: `Text body parser` -> `#bodyparsertextoptions`
+- monitoring/node_modules/body-parser/README.md: `URL-encoded form body parser` -> `#bodyparserurlencodedoptions`
+- monitoring/node_modules/body-parser/README.md: `errors section` -> `#errors`
+- monitoring/node_modules/body-parser/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/is-number/README.md: `tests` -> `./test.js`
+- monitoring/node_modules/is-number/README.md: `benchmarks` -> `./benchmark/index.js`
+- monitoring/node_modules/is-number/README.md: `please create an issue` -> `../../issues/new`
+- monitoring/node_modules/is-number/README.md: `.verb.md` -> `.verb.md`
+- monitoring/node_modules/is-number/README.md: `MIT License` -> `LICENSE`
+- monitoring/node_modules/cors/README.md: `Installation` -> `#installation`
+- monitoring/node_modules/cors/README.md: `Usage` -> `#usage`
+- monitoring/node_modules/cors/README.md: `Simple Usage` -> `#simple-usage-enable-all-cors-requests`
+- monitoring/node_modules/cors/README.md: `Enable CORS for a Single Route` -> `#enable-cors-for-a-single-route`
+- monitoring/node_modules/cors/README.md: `Configuring CORS` -> `#configuring-cors`
+- monitoring/node_modules/cors/README.md: `Configuring CORS Asynchronously` -> `#configuring-cors-asynchronously`
+- monitoring/node_modules/cors/README.md: `Enabling CORS Pre-Flight` -> `#enabling-cors-pre-flight`
+- monitoring/node_modules/cors/README.md: `Configuration Options` -> `#configuration-options`
+- monitoring/node_modules/cors/README.md: `Demo` -> `#demo`
+- monitoring/node_modules/cors/README.md: `License` -> `#license`
+- monitoring/node_modules/cors/README.md: `Author` -> `#author`
+- monitoring/node_modules/cors/README.md: `troygoode@gmail.com` -> `mailto:troygoode@gmail.com`
+- monitoring/node_modules/serve-static/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/blessed/README.md: `Base Nodes` -> `#base-nodes`
+- monitoring/node_modules/blessed/README.md: `Node` -> `#node-from-eventemitter`
+- monitoring/node_modules/blessed/README.md: `Screen` -> `#screen-from-node`
+- monitoring/node_modules/blessed/README.md: `Element` -> `#element-from-node`
+- monitoring/node_modules/blessed/README.md: `Boxes` -> `#boxes`
+- monitoring/node_modules/blessed/README.md: `Box` -> `#box-from-element`
+- monitoring/node_modules/blessed/README.md: `Text` -> `#text-from-element`
+- monitoring/node_modules/blessed/README.md: `Line` -> `#line-from-box`
+- monitoring/node_modules/blessed/README.md: `ScrollableBox` -> `#scrollablebox-from-box`
+- monitoring/node_modules/blessed/README.md: `ScrollableText` -> `#scrollabletext-from-scrollablebox`
+- monitoring/node_modules/blessed/README.md: `BigText` -> `#bigtext-from-box`
+- monitoring/node_modules/blessed/README.md: `Lists` -> `#lists`
+- monitoring/node_modules/blessed/README.md: `List` -> `#list-from-box`
+- monitoring/node_modules/blessed/README.md: `FileManager` -> `#filemanager-from-list`
+- monitoring/node_modules/blessed/README.md: `ListTable` -> `#listtable-from-list`
+- monitoring/node_modules/blessed/README.md: `Listbar` -> `#listbar-from-box`
+- monitoring/node_modules/blessed/README.md: `Forms` -> `#forms`
+- monitoring/node_modules/blessed/README.md: `Form` -> `#form-from-box`
+- monitoring/node_modules/blessed/README.md: `Input` -> `#input-from-box`
+- monitoring/node_modules/blessed/README.md: `Textarea` -> `#textarea-from-input`
+- monitoring/node_modules/blessed/README.md: `Textbox` -> `#textbox-from-textarea`
+- monitoring/node_modules/blessed/README.md: `Button` -> `#button-from-input`
+- monitoring/node_modules/blessed/README.md: `Checkbox` -> `#checkbox-from-input`
+- monitoring/node_modules/blessed/README.md: `RadioSet` -> `#radioset-from-box`
+- monitoring/node_modules/blessed/README.md: `RadioButton` -> `#radiobutton-from-checkbox`
+- monitoring/node_modules/blessed/README.md: `Prompts` -> `#prompts`
+- monitoring/node_modules/blessed/README.md: `Prompt` -> `#prompt-from-box`
+- monitoring/node_modules/blessed/README.md: `Question` -> `#question-from-box`
+- monitoring/node_modules/blessed/README.md: `Message` -> `#message-from-box`
+- monitoring/node_modules/blessed/README.md: `Loading` -> `#loading-from-box`
+- monitoring/node_modules/blessed/README.md: `Data Display` -> `#data-display`
+- monitoring/node_modules/blessed/README.md: `ProgressBar` -> `#progressbar-from-input`
+- monitoring/node_modules/blessed/README.md: `Log` -> `#log-from-scrollabletext`
+- monitoring/node_modules/blessed/README.md: `Table` -> `#table-from-box`
+- monitoring/node_modules/blessed/README.md: `Special Elements` -> `#special-elements`
+- monitoring/node_modules/blessed/README.md: `Terminal` -> `#terminal-from-box`
+- monitoring/node_modules/blessed/README.md: `Image` -> `#image-from-box`
+- monitoring/node_modules/blessed/README.md: `ANSIImage` -> `#ansiimage-from-box`
+- monitoring/node_modules/blessed/README.md: `OverlayImage` -> `#overlayimage-from-box`
+- monitoring/node_modules/blessed/README.md: `Video` -> `#video-from-box`
+- monitoring/node_modules/blessed/README.md: `Layout` -> `#layout-from-element`
+- monitoring/node_modules/blessed/README.md: `Helpers` -> `#helpers`
+- monitoring/node_modules/blessed/README.md: `Content & Tags` -> `#content--tags`
+- monitoring/node_modules/blessed/README.md: `Colors` -> `#colors`
+- monitoring/node_modules/blessed/README.md: `Attributes` -> `#attributes`
+- monitoring/node_modules/blessed/README.md: `Alignment` -> `#alignment`
+- monitoring/node_modules/blessed/README.md: `Escaping` -> `#escaping`
+- monitoring/node_modules/blessed/README.md: `SGR Sequences` -> `#sgr-sequences`
+- monitoring/node_modules/blessed/README.md: `Style` -> `#style`
+- monitoring/node_modules/blessed/README.md: `Colors` -> `#colors-1`
+- monitoring/node_modules/blessed/README.md: `Attributes` -> `#attributes-1`
+- monitoring/node_modules/blessed/README.md: `Transparency` -> `#transparency`
+- monitoring/node_modules/blessed/README.md: `Shadow` -> `#shadow`
+- monitoring/node_modules/blessed/README.md: `Effects` -> `#effects`
+- monitoring/node_modules/blessed/README.md: `Events` -> `#events`
+- monitoring/node_modules/blessed/README.md: `Event Bubbling` -> `#event-bubbling`
+- monitoring/node_modules/blessed/README.md: `Poisitioning` -> `#positioning`
+- monitoring/node_modules/blessed/README.md: `Rendering` -> `#rendering`
+- monitoring/node_modules/blessed/README.md: `Artificial Cursors` -> `#artificial-cursors`
+- monitoring/node_modules/blessed/README.md: `Multiple Screens` -> `#multiple-screens`
+- monitoring/node_modules/blessed/README.md: `Server Side Usage` -> `#server-side-usage`
+- monitoring/node_modules/blessed/README.md: `Windows Compatibility` -> `#windows-compatibility`
+- monitoring/node_modules/blessed/README.md: `Low-level Usage` -> `#low-level-usage`
+- monitoring/node_modules/blessed/README.md: `Testing` -> `#testing`
+- monitoring/node_modules/blessed/README.md: `Examples` -> `#examples`
+- monitoring/node_modules/blessed/README.md: `FAQ` -> `#faq`
+- monitoring/node_modules/blessed/README.md: `ANSIImage element` -> `#ansiimage-from-box`
+- monitoring/node_modules/blessed/README.md: `OverlayImage element` -> `#overlayimage-from-box`
+- monitoring/node_modules/blessed/README.md: `ANSIImage element` -> `#ansiimage-from-box`
+- monitoring/node_modules/blessed/README.md: `ANSIImage element` -> `#ansiimage-from-box`
+- monitoring/node_modules/blessed/README.md: `OverlayImage element` -> `#overlayimage-from-box`
+- monitoring/node_modules/blessed/README.md: `ANSIImage element` -> `#ansiimage-from-box`
+- monitoring/node_modules/blessed/README.md: `OverlayImage element` -> `#overlayimage-from-box`
+- monitoring/node_modules/blessed/README.md: `ANSIImage element` -> `#ansiimage-from-box`
+- monitoring/node_modules/blessed/README.md: `OverlayImage element` -> `#overlayimage-from-box`
+- monitoring/node_modules/blessed/README.md: `ANSIImage element` -> `#ansiimage-from-box`
+- monitoring/node_modules/form-data/README.md: `MIT` -> `License`
+- monitoring/node_modules/ignore-by-default/README.md: `Please contribute!` -> `./CONTRIBUTING.md`
+- monitoring/node_modules/asynckit/README.md: `test/test-parallel-array.js` -> `test/test-parallel-array.js`
+- monitoring/node_modules/asynckit/README.md: `test/test-parallel-object.js` -> `test/test-parallel-object.js`
+- monitoring/node_modules/asynckit/README.md: `test/test-serial-array.js` -> `test/test-serial-array.js`
+- monitoring/node_modules/asynckit/README.md: `test/test-serial-object.js` -> `test/test-serial-object.js`
+- monitoring/node_modules/asynckit/README.md: `compare-property` -> `compare-property`
+- monitoring/node_modules/asynckit/README.md: `test folder` -> `test/`
+- monitoring/node_modules/marked-terminal/README.md: `Screenshot of marked-terminal` -> `./screenshot.png`
+- monitoring/node_modules/marked-terminal/README.md: `Screenshot of marked-terminal` -> `./screenshot2.png`
+- monitoring/node_modules/marked-terminal/README.md: `more examples` -> `./example/`
+- monitoring/node_modules/marked-terminal/node_modules/chalk/readme.md: `256/Truecolor color support` -> `#256-and-truecolor-color-support`
+- monitoring/node_modules/marked-terminal/node_modules/chalk/readme.md: `.<style>...` -> `string, [string...]`
+- monitoring/node_modules/marked-terminal/node_modules/chalk/readme.md: `styles` -> `#styles`
+- monitoring/node_modules/cookie/README.md: ``Partitioned` `Set-Cookie`` -> `rfc-cutler-httpbis-partitioned-cookies`
+- monitoring/node_modules/cookie/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/to-regex-range/README.md: `>1m test assertions` -> `./test/test.js`
+- monitoring/node_modules/to-regex-range/README.md: `please create an issue` -> `../../issues/new`
+- monitoring/node_modules/to-regex-range/README.md: `.verb.md` -> `.verb.md`
+- monitoring/node_modules/to-regex-range/README.md: `MIT License` -> `LICENSE`
+- monitoring/node_modules/socket.io-parser/node_modules/debug/README.md: `_app.js_` -> `./examples/node/app.js`
+- monitoring/node_modules/socket.io-parser/node_modules/debug/README.md: `_worker.js_` -> `./examples/node/worker.js`
+- monitoring/node_modules/socket.io-parser/node_modules/debug/README.md: `_stdout.js_` -> `./examples/node/stdout.js`
+- monitoring/node_modules/node-emoji/README.md: `me@omnidan.net` -> `mailto:me@omnidan.net`
+- monitoring/node_modules/node-emoji/README.md: `1J5eKsrAcPPLv5gPxSjSUkXnbJpkhndFgA` -> `bitcoin:1J5eKsrAcPPLv5gPxSjSUkXnbJpkhndFgA`
+- monitoring/node_modules/engine.io/node_modules/cookie/README.md: ``Partitioned` `Set-Cookie`` -> `rfc-cutler-httpbis-partitioned-cookies`
+- monitoring/node_modules/engine.io/node_modules/cookie/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/engine.io/node_modules/debug/README.md: `_app.js_` -> `./examples/node/app.js`
+- monitoring/node_modules/engine.io/node_modules/debug/README.md: `_worker.js_` -> `./examples/node/worker.js`
+- monitoring/node_modules/engine.io/node_modules/debug/README.md: `_stdout.js_` -> `./examples/node/stdout.js`
+- monitoring/node_modules/statuses/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/redeyed/README.md: `browser` -> `#browser-support`
+- monitoring/node_modules/parseurl/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/etag/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/follow-redirects/README.md: `Olivier Lalonde` -> `mailto:olalonde@gmail.com`
+- monitoring/node_modules/follow-redirects/README.md: `James Talmage` -> `mailto:james@talmage.io`
+- monitoring/node_modules/nodemon/README.md: `doc/requireable.md` -> `doc/requireable.md`
+- monitoring/node_modules/nodemon/README.md: `doc/events.md` -> `doc/events.md#Using_nodemon_as_child_process`
+- monitoring/node_modules/nodemon/node_modules/debug/README.md: `_app.js_` -> `./examples/node/app.js`
+- monitoring/node_modules/nodemon/node_modules/debug/README.md: `_worker.js_` -> `./examples/node/worker.js`
+- monitoring/node_modules/nodemon/node_modules/debug/README.md: `_stdout.js_` -> `./examples/node/stdout.js`
+- monitoring/node_modules/send/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/send/node_modules/encodeurl/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/is-extglob/README.md: `please create an issue` -> `../../issues/new`
+- monitoring/node_modules/is-extglob/README.md: `.verb.md` -> `.verb.md`
+- monitoring/node_modules/uuid/README.md: `ECMAScript Modules` -> `#ecmascript-modules`
+- monitoring/node_modules/uuid/README.md: `CDN builds` -> `#cdn-builds`
+- monitoring/node_modules/uuid/README.md: `React Native / Expo` -> `#react-native--expo`
+- monitoring/node_modules/uuid/README.md: ``uuid` command line` -> `#command-line`
+- monitoring/node_modules/uuid/README.md: `Upgrading From `uuid@3.x`` -> `#upgrading-from-uuid3x`
+- monitoring/node_modules/uuid/README.md: ``uuid.NIL`` -> `#uuidnil`
+- monitoring/node_modules/uuid/README.md: ``uuid.parse()`` -> `#uuidparsestr`
+- monitoring/node_modules/uuid/README.md: ``uuid.stringify()`` -> `#uuidstringifyarr-offset`
+- monitoring/node_modules/uuid/README.md: ``uuid.v1()`` -> `#uuidv1options-buffer-offset`
+- monitoring/node_modules/uuid/README.md: ``uuid.v3()`` -> `#uuidv3name-namespace-buffer-offset`
+- monitoring/node_modules/uuid/README.md: ``uuid.v4()`` -> `#uuidv4options-buffer-offset`
+- monitoring/node_modules/uuid/README.md: ``uuid.v5()`` -> `#uuidv5name-namespace-buffer-offset`
+- monitoring/node_modules/uuid/README.md: ``uuid.validate()`` -> `#uuidvalidatestr`
+- monitoring/node_modules/uuid/README.md: ``uuid.version()`` -> `#uuidversionstr`
+- monitoring/node_modules/uuid/README.md: `example` -> `./examples/node-esmodules/`
+- monitoring/node_modules/uuid/README.md: `example` -> `./examples/browser-rollup/`
+- monitoring/node_modules/uuid/README.md: `example` -> `./examples/browser-webpack/`
+- monitoring/node_modules/uuid/README.md: ``uuidv4()`` -> `#uuidv4options-buffer-offset`
+- monitoring/node_modules/uuid/README.md: ``uuidv1()`` -> `#uuidv1options-buffer-offset`
+- monitoring/node_modules/uuid/README.md: ``uuidv3()`` -> `#uuidv3name-namespace-buffer-offset`
+- monitoring/node_modules/uuid/README.md: ``uuidv5()`` -> `#uuidv5name-namespace-buffer-offset`
+- monitoring/node_modules/uuid/README.md: `which have been deprecated in `uuid@7.x`` -> `#deep-requires-now-deprecated`
+- monitoring/node_modules/uuid/README.md: `version 4` -> `#uuidv4options-buffer-offset`
+- monitoring/node_modules/uuid/README.md: `version 5` -> `#uuidv5name-namespace-buffer-offset`
+- monitoring/node_modules/uuid/README.md: `README_js.md` -> `README_js.md`
+- monitoring/node_modules/finalhandler/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/axios/README.md: `Features` -> `#features`
+- monitoring/node_modules/axios/README.md: `Browser Support` -> `#browser-support`
+- monitoring/node_modules/axios/README.md: `Installing` -> `#installing`
+- monitoring/node_modules/axios/README.md: `Package manager` -> `#package-manager`
+- monitoring/node_modules/axios/README.md: `CDN` -> `#cdn`
+- monitoring/node_modules/axios/README.md: `Example` -> `#example`
+- monitoring/node_modules/axios/README.md: `Axios API` -> `#axios-api`
+- monitoring/node_modules/axios/README.md: `Request method aliases` -> `#request-method-aliases`
+- monitoring/node_modules/axios/README.md: `Concurrency 👎` -> `#concurrency-deprecated`
+- monitoring/node_modules/axios/README.md: `Creating an instance` -> `#creating-an-instance`
+- monitoring/node_modules/axios/README.md: `Instance methods` -> `#instance-methods`
+- monitoring/node_modules/axios/README.md: `Request Config` -> `#request-config`
+- monitoring/node_modules/axios/README.md: `Response Schema` -> `#response-schema`
+- monitoring/node_modules/axios/README.md: `Config Defaults` -> `#config-defaults`
+- monitoring/node_modules/axios/README.md: `Global axios defaults` -> `#global-axios-defaults`
+- monitoring/node_modules/axios/README.md: `Custom instance defaults` -> `#custom-instance-defaults`
+- monitoring/node_modules/axios/README.md: `Config order of precedence` -> `#config-order-of-precedence`
+- monitoring/node_modules/axios/README.md: `Interceptors` -> `#interceptors`
+- monitoring/node_modules/axios/README.md: `Multiple Interceptors` -> `#multiple-interceptors`
+- monitoring/node_modules/axios/README.md: `Handling Errors` -> `#handling-errors`
+- monitoring/node_modules/axios/README.md: `Cancellation` -> `#cancellation`
+- monitoring/node_modules/axios/README.md: `AbortController` -> `#abortcontroller`
+- monitoring/node_modules/axios/README.md: `CancelToken 👎` -> `#canceltoken-deprecated`
+- monitoring/node_modules/axios/README.md: `Using application/x-www-form-urlencoded format` -> `#using-applicationx-www-form-urlencoded-format`
+- monitoring/node_modules/axios/README.md: `URLSearchParams` -> `#urlsearchparams`
+- monitoring/node_modules/axios/README.md: `Query string` -> `#query-string-older-browsers`
+- monitoring/node_modules/axios/README.md: `🆕 Automatic serialization` -> `#-automatic-serialization-to-urlsearchparams`
+- monitoring/node_modules/axios/README.md: `Using multipart/form-data format` -> `#using-multipartform-data-format`
+- monitoring/node_modules/axios/README.md: `FormData` -> `#formdata`
+- monitoring/node_modules/axios/README.md: `🆕 Automatic serialization` -> `#-automatic-serialization-to-formdata`
+- monitoring/node_modules/axios/README.md: `Files Posting` -> `#files-posting`
+- monitoring/node_modules/axios/README.md: `HTML Form Posting` -> `#-html-form-posting-browser`
+- monitoring/node_modules/axios/README.md: `🆕 Progress capturing` -> `#-progress-capturing`
+- monitoring/node_modules/axios/README.md: `🆕 Rate limiting` -> `#-progress-capturing`
+- monitoring/node_modules/axios/README.md: `🆕 AxiosHeaders` -> `#-axiosheaders`
+- monitoring/node_modules/axios/README.md: `🔥 Fetch adapter` -> `#-fetch-adapter`
+- monitoring/node_modules/axios/README.md: `Semver` -> `#semver`
+- monitoring/node_modules/axios/README.md: `Promises` -> `#promises`
+- monitoring/node_modules/axios/README.md: `TypeScript` -> `#typescript`
+- monitoring/node_modules/axios/README.md: `Resources` -> `#resources`
+- monitoring/node_modules/axios/README.md: `Credits` -> `#credits`
+- monitoring/node_modules/axios/README.md: `License` -> `#license`
+- monitoring/node_modules/axios/README.md: `Handling Errors` -> `#handling-errors`
+- monitoring/node_modules/axios/README.md: `the interceptor tests` -> `./test/specs/interceptors.spec.js`
+- monitoring/node_modules/axios/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/braces/README.md: `changelog` -> `CHANGELOG.md`
+- monitoring/node_modules/braces/README.md: `Bash 4.3 Brace Expansion` -> `www.gnu.org/software/bash/`
+- monitoring/node_modules/braces/README.md: `fast and performant` -> `#benchmarks`
+- monitoring/node_modules/braces/README.md: `scales well` -> `#performance`
+- monitoring/node_modules/braces/README.md: `Supports lists` -> `#lists`
+- monitoring/node_modules/braces/README.md: `Supports sequences` -> `#sequences`
+- monitoring/node_modules/braces/README.md: `Supports steps` -> `#steps`
+- monitoring/node_modules/braces/README.md: `Supports escaping` -> `#escaping`
+- monitoring/node_modules/braces/README.md: `braces.expand()` -> `#expand`
+- monitoring/node_modules/braces/README.md: `.optimize` -> `#optimize`
+- monitoring/node_modules/braces/README.md: `options.optimize` -> `#optionsoptimize`
+- monitoring/node_modules/braces/README.md: `Bash lists` -> `#lists`
+- monitoring/node_modules/braces/README.md: `brace expansion` -> `#brace-expansion`
+- monitoring/node_modules/braces/README.md: `brace matching` -> `#brace-matching`
+- monitoring/node_modules/braces/README.md: `geometric complexity` -> `#geometric-complexity`
+- monitoring/node_modules/braces/README.md: `performance section` -> `#performance`
+- monitoring/node_modules/braces/README.md: `"brace bomb" problem` -> `#brace-matching-pitfalls`
+- monitoring/node_modules/braces/README.md: `test/support/generate.js` -> `test/support/generate.js`
+- monitoring/node_modules/braces/README.md: `please create an issue` -> `../../issues/new`
+- monitoring/node_modules/braces/README.md: `.verb.md` -> `.verb.md`
+- monitoring/node_modules/braces/README.md: `MIT License` -> `LICENSE`
+- monitoring/node_modules/blessed-contrib/README.md: `source code` -> `./examples/dashboard.js`
+- monitoring/node_modules/blessed-contrib/README.md: `layout` -> `#layouts`
+- monitoring/node_modules/blessed-contrib/README.md: `Line Chart` -> `#line-chart`
+- monitoring/node_modules/blessed-contrib/README.md: `Bar Chart` -> `#bar-chart`
+- monitoring/node_modules/blessed-contrib/README.md: `Stacked Bar Chart` -> `#stacked-bar-chart`
+- monitoring/node_modules/blessed-contrib/README.md: `Map` -> `#map`
+- monitoring/node_modules/blessed-contrib/README.md: `Gauge` -> `#gauge`
+- monitoring/node_modules/blessed-contrib/README.md: `Stacked Gauge` -> `#stacked-gauge`
+- monitoring/node_modules/blessed-contrib/README.md: `Donut` -> `#donut`
+- monitoring/node_modules/blessed-contrib/README.md: `LCD Display` -> `#lcd-display`
+- monitoring/node_modules/blessed-contrib/README.md: `Rolling Log` -> `#rolling-log`
+- monitoring/node_modules/blessed-contrib/README.md: `Picture` -> `#picture`
+- monitoring/node_modules/blessed-contrib/README.md: `Sparkline` -> `#sparkline`
+- monitoring/node_modules/blessed-contrib/README.md: `Table` -> `#table`
+- monitoring/node_modules/blessed-contrib/README.md: `Tree` -> `#tree`
+- monitoring/node_modules/blessed-contrib/README.md: `Markdown` -> `#markdown`
+- monitoring/node_modules/blessed-contrib/README.md: `simple line chart` -> `./examples/line-fraction.js`
+- monitoring/node_modules/blessed-contrib/README.md: `multiple lines` -> `./examples/multi-line-chart.js`
+- monitoring/node_modules/blessed-contrib/README.md: `256 colors` -> `./examples/line-random-colors.js`
+- monitoring/node_modules/blessed-contrib/README.md: `source` -> `./examples/line-random-colors.js`
+- monitoring/node_modules/blessed-contrib/README.md: `Grid` -> `#grid`
+- monitoring/node_modules/blessed-contrib/README.md: `Carousel` -> `#carousel`
+- monitoring/node_modules/blessed-contrib/README.md: `source code` -> `./examples/dashboard.js`
+- monitoring/node_modules/blessed-contrib/node_modules/chalk/readme.md: `.<style>...` -> `string, [string...]`
+- monitoring/node_modules/blessed-contrib/node_modules/chalk/readme.md: `styles` -> `#styles`
+- monitoring/node_modules/nodemailer/CHANGELOG.md: `exception declaration` -> `FLOSS_EXCEPTIONS.md`
+- monitoring/node_modules/nodemailer/CHANGELOG.md: `here` -> `examples/ical-event.js`
+- monitoring/node_modules/on-finished/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/drawille-blessed-contrib/README.md: `cube` -> `cube.gif`
+- monitoring/node_modules/normalize-path/README.md: `please create an issue` -> `../../issues/new`
+- monitoring/node_modules/normalize-path/README.md: `.verb.md` -> `.verb.md`
+- monitoring/node_modules/normalize-path/README.md: `MIT License` -> `LICENSE`
+- monitoring/node_modules/ws/README.md: `Protocol support` -> `#protocol-support`
+- monitoring/node_modules/ws/README.md: `Installing` -> `#installing`
+- monitoring/node_modules/ws/README.md: `Opt-in for performance` -> `#opt-in-for-performance`
+- monitoring/node_modules/ws/README.md: `Legacy opt-in for performance` -> `#legacy-opt-in-for-performance`
+- monitoring/node_modules/ws/README.md: `API docs` -> `#api-docs`
+- monitoring/node_modules/ws/README.md: `WebSocket compression` -> `#websocket-compression`
+- monitoring/node_modules/ws/README.md: `Usage examples` -> `#usage-examples`
+- monitoring/node_modules/ws/README.md: `Sending and receiving text data` -> `#sending-and-receiving-text-data`
+- monitoring/node_modules/ws/README.md: `Sending binary data` -> `#sending-binary-data`
+- monitoring/node_modules/ws/README.md: `Simple server` -> `#simple-server`
+- monitoring/node_modules/ws/README.md: `External HTTP/S server` -> `#external-https-server`
+- monitoring/node_modules/ws/README.md: `Multiple servers sharing a single HTTP/S server` -> `#multiple-servers-sharing-a-single-https-server`
+- monitoring/node_modules/ws/README.md: `Client authentication` -> `#client-authentication`
+- monitoring/node_modules/ws/README.md: `Server broadcast` -> `#server-broadcast`
+- monitoring/node_modules/ws/README.md: `Round-trip time` -> `#round-trip-time`
+- monitoring/node_modules/ws/README.md: `Use the Node.js streams API` -> `#use-the-nodejs-streams-api`
+- monitoring/node_modules/ws/README.md: `Other examples` -> `#other-examples`
+- monitoring/node_modules/ws/README.md: `FAQ` -> `#faq`
+- monitoring/node_modules/ws/README.md: `How to get the IP address of the client?` -> `#how-to-get-the-ip-address-of-the-client`
+- monitoring/node_modules/ws/README.md: `How to detect and close broken connections?` -> `#how-to-detect-and-close-broken-connections`
+- monitoring/node_modules/ws/README.md: `How to connect via a proxy?` -> `#how-to-connect-via-a-proxy`
+- monitoring/node_modules/ws/README.md: `Changelog` -> `#changelog`
+- monitoring/node_modules/ws/README.md: `License` -> `#license`
+- monitoring/node_modules/ws/README.md: ``WS_NO_BUFFER_UTIL`` -> `./doc/ws.md#ws_no_buffer_util`
+- monitoring/node_modules/ws/README.md: ``WS_NO_UTF_8_VALIDATE`` -> `./doc/ws.md#ws_no_utf_8_validate`
+- monitoring/node_modules/ws/README.md: ``/doc/ws.md`` -> `./doc/ws.md`
+- monitoring/node_modules/ws/README.md: `MIT` -> `LICENSE`
+- monitoring/node_modules/media-typer/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Chinese` -> `./README_ZH.md`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Korean` -> `./README_KO.md`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Table of contents` -> `#table-of-contents`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Introduction` -> `#introduction`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Sponsors` -> `#sponsors`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Platinum` -> `#platinum`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Gold` -> `#gold`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Silver` -> `#silver`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Bronze` -> `#bronze`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Copper` -> `#copper`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Ecosystem` -> `#ecosystem`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Resources` -> `#resources`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `API libraries` -> `#api-libraries`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Form integrations` -> `#form-integrations`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Zod to X` -> `#zod-to-x`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `X to Zod` -> `#x-to-zod`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Mocking` -> `#mocking`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Powered by Zod` -> `#powered-by-zod`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Utilities for Zod` -> `#utilities-for-zod`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Installation` -> `#installation`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Requirements` -> `#requirements`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `From `npm`` -> `#from-npm`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Basic usage` -> `#basic-usage`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Primitives` -> `#primitives`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Coercion for primitives` -> `#coercion-for-primitives`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Literals` -> `#literals`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Strings` -> `#strings`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Datetimes` -> `#datetimes`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Dates` -> `#dates`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Times` -> `#times`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `IP addresses` -> `#ip-addresses`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `IP ranges` -> `#ip-ranges-cidr`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Numbers` -> `#numbers`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `BigInts` -> `#bigints`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `NaNs` -> `#nans`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Booleans` -> `#booleans`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Dates` -> `#dates-1`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Zod enums` -> `#zod-enums`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Native enums` -> `#native-enums`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Optionals` -> `#optionals`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Nullables` -> `#nullables`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Objects` -> `#objects`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.shape`` -> `#shape`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.keyof`` -> `#keyof`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.extend`` -> `#extend`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.merge`` -> `#merge`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.pick/.omit`` -> `#pickomit`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.partial`` -> `#partial`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.deepPartial`` -> `#deeppartial`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.required`` -> `#required`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.passthrough`` -> `#passthrough`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.strict`` -> `#strict`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.strip`` -> `#strip`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.catchall`` -> `#catchall`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Arrays` -> `#arrays`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.element`` -> `#element`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.nonempty`` -> `#nonempty`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.min/.max/.length`` -> `#minmaxlength`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Tuples` -> `#tuples`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Unions` -> `#unions`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Discriminated unions` -> `#discriminated-unions`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Records` -> `#records`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Record key type` -> `#record-key-type`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Maps` -> `#maps`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Sets` -> `#sets`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Intersections` -> `#intersections`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Recursive types` -> `#recursive-types`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `ZodType with ZodEffects` -> `#zodtype-with-zodeffects`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `JSON type` -> `#json-type`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Cyclical objects` -> `#cyclical-objects`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Promises` -> `#promises`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Instanceof` -> `#instanceof`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Functions` -> `#functions`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Preprocess` -> `#preprocess`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Custom schemas` -> `#custom-schemas`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Schema methods` -> `#schema-methods`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.parse`` -> `#parse`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.parseAsync`` -> `#parseasync`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.safeParse`` -> `#safeparse`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.safeParseAsync`` -> `#safeparseasync`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.refine`` -> `#refine`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Arguments` -> `#arguments`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Customize error path` -> `#customize-error-path`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Asynchronous refinements` -> `#asynchronous-refinements`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Relationship to transforms` -> `#relationship-to-transforms`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.superRefine`` -> `#superrefine`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Abort early` -> `#abort-early`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Type refinements` -> `#type-refinements`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.transform`` -> `#transform`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Chaining order` -> `#chaining-order`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Validating during transform` -> `#validating-during-transform`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Relationship to refinements` -> `#relationship-to-refinements`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Async transforms` -> `#async-transforms`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.default`` -> `#default`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.describe`` -> `#describe`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.catch`` -> `#catch`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.optional`` -> `#optional`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.nullable`` -> `#nullable`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.nullish`` -> `#nullish`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.array`` -> `#array`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.promise`` -> `#promise`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.or`` -> `#or`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.and`` -> `#and`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.brand`` -> `#brand`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.readonly`` -> `#readonly`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.pipe`` -> `#pipe`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `You can use `.pipe()` to fix common issues with `z.coerce`.` -> `#you-can-use-pipe-to-fix-common-issues-with-zcoerce`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Guides and concepts` -> `#guides-and-concepts`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Type inference` -> `#type-inference`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Writing generic functions` -> `#writing-generic-functions`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Constraining allowable inputs` -> `#constraining-allowable-inputs`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Error handling` -> `#error-handling`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Error formatting` -> `#error-formatting`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Comparison` -> `#comparison`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Joi` -> `#joi`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Yup` -> `#yup`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `io-ts` -> `#io-ts`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Runtypes` -> `#runtypes`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Ow` -> `#ow`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Changelog` -> `#changelog`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``z.preprocess`` -> `#preprocess`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``z.pipe()`` -> `#pipe`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `Refinements` -> `#refine`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``z.coerce.date()`` -> `#coercion-for-primitives`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``z.preprocess`` -> `#preprocess`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.or` method` -> `#or`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `literal` -> `#literals`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `valid URL` -> `#strings`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `coercion docs` -> `#coercion-for-primitives`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `.transform docs` -> `#transform`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.refine`` -> `#refine`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `refinements` -> `#refine`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `transforms` -> `#transform`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: ``.superRefine`` -> `#superrefine`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `ERROR_HANDLING.md` -> `ERROR_HANDLING.md`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `union types` -> `#unions`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `ERROR_HANDLING.md` -> `ERROR_HANDLING.md`
+- sourcegraph-react-prop-mcp/node_modules/zod/README.md: `CHANGELOG.md` -> `CHANGELOG.md`
+- sourcegraph-react-prop-mcp/node_modules/@sourcegraph/src/README.md: `Sourcegraph CLI for Windows` -> `WINDOWS.md`
+- sourcegraph-react-prop-mcp/node_modules/@sourcegraph/src/README.md: `auth proxy configuration` -> `./AUTH_PROXY.md`
+- sourcegraph-react-prop-mcp/node_modules/@sourcegraph/src/README.md: `DEVELOPMENT.md` -> `DEVELOPMENT.md`
+- sourcegraph-react-prop-mcp/node_modules/eventsource/README.md: `MIGRATION.md` -> `MIGRATION.md#v2-to-v3`
+- sourcegraph-react-prop-mcp/node_modules/eventsource/README.md: `LICENSE` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/toidentifier/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/content-type/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/eventsource-parser/README.md: `TransformStream variant` -> `#stream-usage`
+- sourcegraph-react-prop-mcp/node_modules/eventsource-parser/README.md: `migration guide` -> `./MIGRATE-v3.md`
+- sourcegraph-react-prop-mcp/node_modules/content-disposition/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README.md: `🌱 Install` -> `#-install`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README.md: `🏗️ Usage (.env)` -> `#%EF%B8%8F-usage`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README.md: `🌴 Multiple Environments 🆕` -> `#-manage-multiple-environments`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README.md: `🚀 Deploying (encryption) 🆕` -> `#-deploying`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README.md: `📚 Examples` -> `#-examples`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README.md: `📖 Docs` -> `#-documentation`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README.md: `❓ FAQ` -> `#-faq`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README.md: `or using ES6?` -> `#how-do-i-use-dotenv-with-import`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README.md: `CONTRIBUTING.md` -> `CONTRIBUTING.md`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README.md: `CHANGELOG.md` -> `CHANGELOG.md`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README-es.md: `CONTRIBUTING.md` -> `CONTRIBUTING.md`
+- sourcegraph-react-prop-mcp/node_modules/dotenv/README-es.md: `CHANGELOG.md` -> `CHANGELOG.md`
+- sourcegraph-react-prop-mcp/node_modules/chownr/LICENSE.md: `Notices` -> `#notices`
+- sourcegraph-react-prop-mcp/node_modules/proxy-addr/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/depd/Readme.md: `message` -> `files/message.png`
+- sourcegraph-react-prop-mcp/node_modules/depd/Readme.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/range-parser/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/bytes/Readme.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `Installation` -> `#Installation`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `Features` -> `#Features`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `Docs & Community` -> `#docs--community`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `Quick Start` -> `#Quick-Start`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `Running Tests` -> `#Running-Tests`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `Philosophy` -> `#Philosophy`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `Examples` -> `#Examples`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `Contributing to Express` -> `#Contributing`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `TC (Technical Committee)` -> `#tc-technical-committee`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `Triagers` -> `#triagers`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `License` -> `#license`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `Contributing Guide` -> `Contributing.md`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `Security Policies and Procedures` -> `Security.md`
+- sourcegraph-react-prop-mcp/node_modules/express/Readme.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/encodeurl/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/prettier/README.md: `CONTRIBUTING.md` -> `CONTRIBUTING.md`
+- sourcegraph-react-prop-mcp/node_modules/typescript/README.md: `opencode@microsoft.com` -> `mailto:opencode@microsoft.com`
+- sourcegraph-react-prop-mcp/node_modules/typescript/SECURITY.md: `secure@microsoft.com` -> `mailto:secure@microsoft.com`
+- sourcegraph-react-prop-mcp/node_modules/fresh/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/path-to-regexp/Readme.md: `pathToRegexp` -> `#pathToRegexp`
+- sourcegraph-react-prop-mcp/node_modules/path-to-regexp/Readme.md: `parse` -> `#parse`
+- sourcegraph-react-prop-mcp/node_modules/path-to-regexp/Readme.md: `parse` -> `#parse`
+- sourcegraph-react-prop-mcp/node_modules/safer-buffer/Porting-Buffer.md: `Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x.` -> `#variant-1`
+- sourcegraph-react-prop-mcp/node_modules/safer-buffer/Porting-Buffer.md: `Variant 2: Use a polyfill` -> `#variant-2`
+- sourcegraph-react-prop-mcp/node_modules/safer-buffer/Porting-Buffer.md: `Variant 3: manual detection, with safeguards` -> `#variant-3`
+- sourcegraph-react-prop-mcp/node_modules/safer-buffer/Porting-Buffer.md: `^a-zA-Z` -> `Slow`
+- sourcegraph-react-prop-mcp/node_modules/safer-buffer/Porting-Buffer.md: `Variant 2` -> `#variant-2`
+- sourcegraph-react-prop-mcp/node_modules/safer-buffer/Porting-Buffer.md: `Variant 3` -> `#variant-3`
+- sourcegraph-react-prop-mcp/node_modules/safer-buffer/Porting-Buffer.md: `Variant 1` -> `#variant-1`
+- sourcegraph-react-prop-mcp/node_modules/mime-types/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/type-is/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/vary/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/unpipe/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/raw-body/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/http-errors/README.md: `code || name\` -> `\[msg]\`
+- sourcegraph-react-prop-mcp/node_modules/http-errors/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Overview` -> `#overview`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Installation` -> `#installation`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Quickstart` -> `#quickstart`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `What is MCP?` -> `#what-is-mcp`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Core Concepts` -> `#core-concepts`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Server` -> `#server`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Resources` -> `#resources`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Tools` -> `#tools`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Prompts` -> `#prompts`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Running Your Server` -> `#running-your-server`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `stdio` -> `#stdio`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `HTTP with SSE` -> `#http-with-sse`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Testing and Debugging` -> `#testing-and-debugging`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Examples` -> `#examples`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Echo Server` -> `#echo-server`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `SQLite Explorer` -> `#sqlite-explorer`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Advanced Usage` -> `#advanced-usage`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Low-Level Server` -> `#low-level-server`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Writing MCP Clients` -> `#writing-mcp-clients`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `Server Capabilities` -> `#server-capabilities`
+- sourcegraph-react-prop-mcp/node_modules/@modelcontextprotocol/sdk/README.md: `LICENSE` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/accepts/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/forwarded/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/negotiator/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/body-parser/README.md: `JSON body parser` -> `#bodyparserjsonoptions`
+- sourcegraph-react-prop-mcp/node_modules/body-parser/README.md: `Raw body parser` -> `#bodyparserrawoptions`
+- sourcegraph-react-prop-mcp/node_modules/body-parser/README.md: `Text body parser` -> `#bodyparsertextoptions`
+- sourcegraph-react-prop-mcp/node_modules/body-parser/README.md: `URL-encoded form body parser` -> `#bodyparserurlencodedoptions`
+- sourcegraph-react-prop-mcp/node_modules/body-parser/README.md: `errors section` -> `#errors`
+- sourcegraph-react-prop-mcp/node_modules/body-parser/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `Installation` -> `#installation`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `Usage` -> `#usage`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `Simple Usage` -> `#simple-usage-enable-all-cors-requests`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `Enable CORS for a Single Route` -> `#enable-cors-for-a-single-route`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `Configuring CORS` -> `#configuring-cors`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `Configuring CORS Asynchronously` -> `#configuring-cors-asynchronously`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `Enabling CORS Pre-Flight` -> `#enabling-cors-pre-flight`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `Configuration Options` -> `#configuration-options`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `Demo` -> `#demo`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `License` -> `#license`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `Author` -> `#author`
+- sourcegraph-react-prop-mcp/node_modules/cors/README.md: `troygoode@gmail.com` -> `mailto:troygoode@gmail.com`
+- sourcegraph-react-prop-mcp/node_modules/serve-static/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/cross-spawn/README.md: `Why` -> `#why`
+- sourcegraph-react-prop-mcp/node_modules/cookie/README.md: ``Partitioned` `Set-Cookie`` -> `rfc-cutler-httpbis-partitioned-cookies`
+- sourcegraph-react-prop-mcp/node_modules/cookie/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/statuses/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/minipass/README.md: `Timing` -> `#timing`
+- sourcegraph-react-prop-mcp/node_modules/yallist/LICENSE.md: `Notices` -> `#notices`
+- sourcegraph-react-prop-mcp/node_modules/parseurl/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/etag/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/send/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/finalhandler/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/on-finished/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/debug/README.md: `_app.js_` -> `./examples/node/app.js`
+- sourcegraph-react-prop-mcp/node_modules/debug/README.md: `_worker.js_` -> `./examples/node/worker.js`
+- sourcegraph-react-prop-mcp/node_modules/debug/README.md: `_stdout.js_` -> `./examples/node/stdout.js`
+- sourcegraph-react-prop-mcp/node_modules/media-typer/README.md: `MIT` -> `LICENSE`
+- sourcegraph-react-prop-mcp/node_modules/router/README.md: `example` -> `#example-using-mergeparams`
+- sourcegraph-react-prop-mcp/node_modules/router/README.md: `middleware function` -> `#middleware`
+- sourcegraph-react-prop-mcp/node_modules/router/README.md: `Middleware` -> `#middleware`
+- sourcegraph-react-prop-mcp/node_modules/router/README.md: `method` -> `path, ...[middleware], handler`
+- sourcegraph-react-prop-mcp/node_modules/router/README.md: `middleware` -> `#middleware`
+- sourcegraph-react-prop-mcp/node_modules/router/README.md: `Middleware` -> `#middleware`
+- sourcegraph-react-prop-mcp/node_modules/router/README.md: `method` -> `handler`
+- sourcegraph-react-prop-mcp/node_modules/router/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/yoctocolors-cjs/readme.md: `benchmark.js` -> `benchmark.js`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `library comparison` -> `#library-comparisons`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Install` -> `#install`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `API` -> `#api`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `picomatch` -> `#picomatch`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.test` -> `#test`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.matchBase` -> `#matchbase`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.isMatch` -> `#ismatch`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.parse` -> `#parse`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.compileRe` -> `#compilere`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.makeRe` -> `#makere`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.toRegex` -> `#toregex`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Options` -> `#options`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Picomatch options` -> `#picomatch-options`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Scan Options` -> `#scan-options`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Options Examples` -> `#options-examples`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Globbing features` -> `#globbing-features`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Braces` -> `#braces`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Matching special characters as literals` -> `#matching-special-characters-as-literals`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Library Comparisons` -> `#library-comparisons`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Benchmarks` -> `#benchmarks`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Philosophies` -> `#philosophies`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `About` -> `#about`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Author` -> `#author`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `License` -> `#license`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `picomatch` -> `lib/picomatch.js#L31`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.test` -> `lib/picomatch.js#L116`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.matchBase` -> `lib/picomatch.js#L160`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.makeRe` -> `#makeRe`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.isMatch` -> `lib/picomatch.js#L182`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.parse` -> `lib/picomatch.js#L198`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.scan` -> `lib/picomatch.js#L230`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.compileRe` -> `lib/picomatch.js#L244`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `parse()` -> `#parse`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.makeRe` -> `lib/picomatch.js#L285`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.toRegex` -> `lib/picomatch.js#L320`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `format` -> `#optionsformat`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `onIgnore` -> `#optionsonIgnore`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `onMatch` -> `#optionsonMatch`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `onResult` -> `#optionsonResult`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `picomatch options` -> `#picomatch-options`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `extglobs` -> `#extglobs`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `POSIX brackets` -> `#posix-brackets`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `Braces` -> `#brace-expansion`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `contributing guide` -> `.github/contributing.md`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/tinyglobby/node_modules/picomatch/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/tinyglobby/node_modules/fdir/README.md: `here` -> `/documentation.md`
+- src/frontend/node_modules/tinyglobby/node_modules/fdir/README.md: `here` -> `/BENCHMARKS.md`
+- src/frontend/node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- src/frontend/node_modules/d3-format/README.md: `d3.formatSpecifier` -> `#formatSpecifier`
+- src/frontend/node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- src/frontend/node_modules/d3-format/README.md: `default locale` -> `#formatDefaultLocale`
+- src/frontend/node_modules/d3-format/README.md: `*locale*.formatPrefix` -> `#locale_formatPrefix`
+- src/frontend/node_modules/d3-format/README.md: `default locale` -> `#formatDefaultLocale`
+- src/frontend/node_modules/d3-format/README.md: `precisionFixed` -> `#precisionFixed`
+- src/frontend/node_modules/d3-format/README.md: `precisionRound` -> `#precisionRound`
+- src/frontend/node_modules/d3-format/README.md: `SI prefix` -> `#locale_formatPrefix`
+- src/frontend/node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- src/frontend/node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- src/frontend/node_modules/d3-format/README.md: `precisionPrefix` -> `#precisionPrefix`
+- src/frontend/node_modules/d3-format/README.md: `format specification mini-language` -> `#locale_format`
+- src/frontend/node_modules/d3-format/README.md: `precisionFixed` -> `#precisionFixed`
+- src/frontend/node_modules/d3-format/README.md: `format specification mini-language` -> `#locale_format`
+- src/frontend/node_modules/d3-format/README.md: `*locale*.formatPrefix` -> `#locale_formatPrefix`
+- src/frontend/node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- src/frontend/node_modules/d3-format/README.md: `*locale*.formatPrefix` -> `#locale_formatPrefix`
+- src/frontend/node_modules/d3-format/README.md: `d3.formatLocale` -> `#formatLocale`
+- src/frontend/node_modules/d3-format/README.md: `d3.format` -> `#format`
+- src/frontend/node_modules/d3-format/README.md: `d3.formatPrefix` -> `#formatPrefix`
+- src/frontend/node_modules/d3-format/README.md: `*locale*.format` -> `#locale_format`
+- src/frontend/node_modules/d3-format/README.md: `*locale*.formatPrefix` -> `#locale_formatPrefix`
+- src/frontend/node_modules/zod/README.md: `refinements` -> `#refine`
+- src/frontend/node_modules/zod/README.md: `transforms` -> `#transform`
+- src/frontend/node_modules/zod/README.md: `refinements` -> `#refine`
+- src/frontend/node_modules/zod/README.md: `transforms` -> `#transform`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: `parseArgs tokens` -> `#parseargs-tokens`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: `Scope` -> `#scope`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: `Version Matchups` -> `#version-matchups`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: `🚀 Getting Started` -> `#-getting-started`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: `🙌 Contributing` -> `#-contributing`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: `💡 `process.mainArgs` Proposal` -> `#-processmainargs-proposal`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: `Implementation:` -> `#implementation`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: `📃 Examples` -> `#-examples`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: `F.A.Qs` -> `#faqs`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: `Links & Resources` -> `#links--resources`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: `Contributing Guide` -> `CONTRIBUTING.md`
+- src/frontend/node_modules/@pkgjs/parseargs/README.md: ``Examples w/ Output`` -> `#-examples-w-output`
+- src/frontend/node_modules/jsesc/README.md: `by default` -> `#json`
+- src/frontend/node_modules/jsesc/README.md: `many options` -> `#api`
+- src/frontend/node_modules/jsesc/README.md: `by default` -> `#minimal`
+- src/frontend/node_modules/jsesc/README.md: `the `quotes` option` -> `#quotes`
+- src/frontend/node_modules/jsesc/README.md: `the `indent` option` -> `#indent`
+- src/frontend/node_modules/jsesc/README.md: `the `numbers` option` -> `#numbers`
+- src/frontend/node_modules/@types/react-redux/node_modules/redux/README.md: `Redux workshops through Workshop.me` -> `#redux-workshops`
+- src/frontend/node_modules/@types/react-redux/node_modules/redux/README.md: `See the full list of Redux patrons` -> `PATRONS.md`
+- src/frontend/node_modules/@types/react-redux/node_modules/redux/README.md: `MIT` -> `LICENSE.md`
+- src/frontend/node_modules/@types/jest/node_modules/ci-info/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `library comparison` -> `#library-comparisons`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Install` -> `#install`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `API` -> `#api`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `picomatch` -> `#picomatch`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.test` -> `#test`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.matchBase` -> `#matchbase`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.isMatch` -> `#ismatch`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.parse` -> `#parse`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.compileRe` -> `#compilere`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.makeRe` -> `#makere`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.toRegex` -> `#toregex`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Options` -> `#options`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Picomatch options` -> `#picomatch-options`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Scan Options` -> `#scan-options`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Options Examples` -> `#options-examples`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Globbing features` -> `#globbing-features`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Braces` -> `#braces`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Matching special characters as literals` -> `#matching-special-characters-as-literals`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Library Comparisons` -> `#library-comparisons`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Benchmarks` -> `#benchmarks`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Philosophies` -> `#philosophies`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `About` -> `#about`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Author` -> `#author`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `License` -> `#license`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `picomatch` -> `lib/picomatch.js#L31`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.test` -> `lib/picomatch.js#L116`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.matchBase` -> `lib/picomatch.js#L160`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.makeRe` -> `#makeRe`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.isMatch` -> `lib/picomatch.js#L182`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.parse` -> `lib/picomatch.js#L198`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.scan` -> `lib/picomatch.js#L230`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.compileRe` -> `lib/picomatch.js#L244`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `parse()` -> `#parse`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.makeRe` -> `lib/picomatch.js#L285`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.toRegex` -> `lib/picomatch.js#L320`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `format` -> `#optionsformat`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `onIgnore` -> `#optionsonIgnore`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `onMatch` -> `#optionsonMatch`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `onResult` -> `#optionsonResult`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `picomatch options` -> `#picomatch-options`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `extglobs` -> `#extglobs`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `POSIX brackets` -> `#posix-brackets`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `Braces` -> `#brace-expansion`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `contributing guide` -> `.github/contributing.md`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/@types/jest/node_modules/picomatch/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Install` -> `#install`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Overview` -> `#overview`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Usage` -> `#usage`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Types` -> `#types`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Json` -> `#types-json`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `JavaScript` -> `#types-javascript`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Options` -> `#types-options`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Properties` -> `#types-properties`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Generics` -> `#types-generics`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Recursive` -> `#types-recursive`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Modules` -> `#types-modules`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Template Literal` -> `#types-template-literal`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Indexed` -> `#types-indexed`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Mapped` -> `#types-mapped`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Conditional` -> `#types-conditional`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Transform` -> `#types-transform`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Guard` -> `#types-guard`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Unsafe` -> `#types-unsafe`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Values` -> `#values`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Assert` -> `#values-assert`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Create` -> `#values-create`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Clone` -> `#values-clone`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Check` -> `#values-check`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Convert` -> `#values-convert`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Default` -> `#values-default`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Clean` -> `#values-clean`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Cast` -> `#values-cast`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Decode` -> `#values-decode`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Encode` -> `#values-decode`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Parse` -> `#values-parse`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Equal` -> `#values-equal`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Hash` -> `#values-hash`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Diff` -> `#values-diff`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Patch` -> `#values-patch`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Errors` -> `#values-errors`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Mutate` -> `#values-mutate`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Pointer` -> `#values-pointer`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Syntax` -> `#syntax`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Create` -> `#syntax-create`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Parameters` -> `#syntax-parameters`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Generics` -> `#syntax-generics`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Options` -> `#syntax-options`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `NoInfer` -> `#syntax-no-infer`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `TypeRegistry` -> `#typeregistry`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Type` -> `#typeregistry-type`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Format` -> `#typeregistry-format`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `TypeCheck` -> `#typecheck`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Ajv` -> `#typecheck-ajv`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `TypeCompiler` -> `#typecheck-typecompiler`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `TypeMap` -> `#typemap`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Usage` -> `#typemap-usage`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `TypeSystem` -> `#typesystem`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Policies` -> `#typesystem-policies`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Error Function` -> `#error-function`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Workbench` -> `#workbench`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Codegen` -> `#codegen`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Ecosystem` -> `#ecosystem`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Benchmark` -> `#benchmark`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Compile` -> `#benchmark-compile`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Validate` -> `#benchmark-validate`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Compression` -> `#benchmark-compression`
+- src/frontend/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md: `Contribute` -> `#contribute`
+- src/frontend/node_modules/globals/readme.md: `JSON file` -> `globals.json`
+- src/frontend/node_modules/d3-shape/README.md: `symbols` -> `#symbols`
+- src/frontend/node_modules/d3-shape/README.md: `arcs` -> `#arcs`
+- src/frontend/node_modules/d3-shape/README.md: `lines` -> `#lines`
+- src/frontend/node_modules/d3-shape/README.md: `areas` -> `#areas`
+- src/frontend/node_modules/d3-shape/README.md: `Arcs` -> `#arcs`
+- src/frontend/node_modules/d3-shape/README.md: `Pies` -> `#pies`
+- src/frontend/node_modules/d3-shape/README.md: `Lines` -> `#lines`
+- src/frontend/node_modules/d3-shape/README.md: `Areas` -> `#areas`
+- src/frontend/node_modules/d3-shape/README.md: `Curves` -> `#curves`
+- src/frontend/node_modules/d3-shape/README.md: `Custom Curves` -> `#custom-curves`
+- src/frontend/node_modules/d3-shape/README.md: `Links` -> `#links`
+- src/frontend/node_modules/d3-shape/README.md: `Symbols` -> `#symbols`
+- src/frontend/node_modules/d3-shape/README.md: `Custom Symbol Types` -> `#custom-symbol-types`
+- src/frontend/node_modules/d3-shape/README.md: `Stacks` -> `#stacks`
+- src/frontend/node_modules/d3-shape/README.md: `start` -> `#arc_startAngle`
+- src/frontend/node_modules/d3-shape/README.md: `end` -> `#arc_endAngle`
+- src/frontend/node_modules/d3-shape/README.md: `rounded corners` -> `#arc_cornerRadius`
+- src/frontend/node_modules/d3-shape/README.md: `angular padding` -> `#arc_padAngle`
+- src/frontend/node_modules/d3-shape/README.md: `pie generator` -> `#pies`
+- src/frontend/node_modules/d3-shape/README.md: `context` -> `#arc_context`
+- src/frontend/node_modules/d3-shape/README.md: `generated` -> `#_arc`
+- src/frontend/node_modules/d3-shape/README.md: `startAngle` -> `#arc_startAngle`
+- src/frontend/node_modules/d3-shape/README.md: `endAngle` -> `#arc_endAngle`
+- src/frontend/node_modules/d3-shape/README.md: `innerRadius` -> `#arc_innerRadius`
+- src/frontend/node_modules/d3-shape/README.md: `outerRadius` -> `#arc_outerRadius`
+- src/frontend/node_modules/d3-shape/README.md: `outerRadius` -> `#arc_outerRadius`
+- src/frontend/node_modules/d3-shape/README.md: `innerRadius` -> `#arc_innerRadius`
+- src/frontend/node_modules/d3-shape/README.md: `padRadius` -> `#arc_padRadius`
+- src/frontend/node_modules/d3-shape/README.md: `start` -> `#arc_startAngle`
+- src/frontend/node_modules/d3-shape/README.md: `end` -> `#arc_endAngle`
+- src/frontend/node_modules/d3-shape/README.md: `inner radius` -> `#arc_innerRadius`
+- src/frontend/node_modules/d3-shape/README.md: `pie generator` -> `#pies`
+- src/frontend/node_modules/d3-shape/README.md: `*pie*.padAngle` -> `#pie_padAngle`
+- src/frontend/node_modules/d3-shape/README.md: `innerRadius` -> `#arc_innerRadius`
+- src/frontend/node_modules/d3-shape/README.md: `outerRadius` -> `#arc_outerRadius`
+- src/frontend/node_modules/d3-shape/README.md: `padAngle` -> `#arc_padAngle`
+- src/frontend/node_modules/d3-shape/README.md: `generated arc` -> `#_arc`
+- src/frontend/node_modules/d3-shape/README.md: `*context*` -> `#arc_context`
+- src/frontend/node_modules/d3-shape/README.md: `arc generator` -> `#arcs`
+- src/frontend/node_modules/d3-shape/README.md: `value` -> `#pie_value`
+- src/frontend/node_modules/d3-shape/README.md: `sorted index` -> `#pie_sort`
+- src/frontend/node_modules/d3-shape/README.md: `start angle` -> `#pie_startAngle`
+- src/frontend/node_modules/d3-shape/README.md: `end angle` -> `#pie_endAngle`
+- src/frontend/node_modules/d3-shape/README.md: `pad angle` -> `#pie_padAngle`
+- src/frontend/node_modules/d3-shape/README.md: `startAngle` -> `#arc_startAngle`
+- src/frontend/node_modules/d3-shape/README.md: `endAngle` -> `#arc_endAngle`
+- src/frontend/node_modules/d3-shape/README.md: `padAngle` -> `#arc_padAngle`
+- src/frontend/node_modules/d3-shape/README.md: `arc generator` -> `#arcs`
+- src/frontend/node_modules/d3-shape/README.md: `constructs` -> `#pie`
+- src/frontend/node_modules/d3-shape/README.md: `invokes` -> `#_pie`
+- src/frontend/node_modules/d3-shape/README.md: `sorted` -> `#pie_sortValues`
+- src/frontend/node_modules/d3-shape/README.md: `generated` -> `#_pie`
+- src/frontend/node_modules/d3-shape/README.md: `value comparator` -> `#pie_sortValues`
+- src/frontend/node_modules/d3-shape/README.md: `generated arc array` -> `#_pie`
+- src/frontend/node_modules/d3-shape/README.md: `start angle` -> `#pie_startAngle`
+- src/frontend/node_modules/d3-shape/README.md: `end angle` -> `#pie_endAngle`
+- src/frontend/node_modules/d3-shape/README.md: `data comparator` -> `#pie_sort`
+- src/frontend/node_modules/d3-shape/README.md: `data comparator` -> `#pie_sort`
+- src/frontend/node_modules/d3-shape/README.md: `value accessor` -> `#pie_value`
+- src/frontend/node_modules/d3-shape/README.md: `generated arc array` -> `#_pie`
+- src/frontend/node_modules/d3-shape/README.md: `start angle` -> `#pie_startAngle`
+- src/frontend/node_modules/d3-shape/README.md: `end angle` -> `#pie_endAngle`
+- src/frontend/node_modules/d3-shape/README.md: `pie generator` -> `#_pie`
+- src/frontend/node_modules/d3-shape/README.md: `arc generator` -> `#arcs`
+- src/frontend/node_modules/d3-shape/README.md: `pie generator` -> `#_pie`
+- src/frontend/node_modules/d3-shape/README.md: `arc generator` -> `#arcs`
+- src/frontend/node_modules/d3-shape/README.md: `startAngle` -> `#pie_startAngle`
+- src/frontend/node_modules/d3-shape/README.md: `value` -> `#pie_value`
+- src/frontend/node_modules/d3-shape/README.md: `pie generator` -> `#_pie`
+- src/frontend/node_modules/d3-shape/README.md: `arc generator` -> `#arcs`
+- src/frontend/node_modules/d3-shape/README.md: `curve` -> `#line_curve`
+- src/frontend/node_modules/d3-shape/README.md: `context` -> `#line_context`
+- src/frontend/node_modules/d3-shape/README.md: `generated` -> `#_line`
+- src/frontend/node_modules/d3-shape/README.md: `defined` -> `#line_defined`
+- src/frontend/node_modules/d3-shape/README.md: `generated` -> `#_line`
+- src/frontend/node_modules/d3-shape/README.md: `defined` -> `#line_defined`
+- src/frontend/node_modules/d3-shape/README.md: `*line*.x` -> `#line_x`
+- src/frontend/node_modules/d3-shape/README.md: `generated` -> `#_line`
+- src/frontend/node_modules/d3-shape/README.md: `x` -> `#line_x`
+- src/frontend/node_modules/d3-shape/README.md: `y` -> `#line_y`
+- src/frontend/node_modules/d3-shape/README.md: `curveCardinalOpen` -> `#curveCardinalOpen`
+- src/frontend/node_modules/d3-shape/README.md: `curve factory` -> `#curves`
+- src/frontend/node_modules/d3-shape/README.md: `curveLinear` -> `#curveLinear`
+- src/frontend/node_modules/d3-shape/README.md: `generated line` -> `#_line`
+- src/frontend/node_modules/d3-shape/README.md: `*context*` -> `#line_context`
+- src/frontend/node_modules/d3-shape/README.md: `line generator` -> `#line`
+- src/frontend/node_modules/d3-shape/README.md: `x` -> `#line_x`
+- src/frontend/node_modules/d3-shape/README.md: `y` -> `#line_y`
+- src/frontend/node_modules/d3-shape/README.md: `angle` -> `#lineRadial_angle`
+- src/frontend/node_modules/d3-shape/README.md: `radius` -> `#lineRadial_radius`
+- src/frontend/node_modules/d3-shape/README.md: `*line*` -> `#_line`
+- src/frontend/node_modules/d3-shape/README.md: `*line*.x` -> `#line_x`
+- src/frontend/node_modules/d3-shape/README.md: `*line*.y` -> `#line_y`
+- src/frontend/node_modules/d3-shape/README.md: `*line*.defined` -> `#line_defined`
+- src/frontend/node_modules/d3-shape/README.md: `*line*.curve` -> `#line_curve`
+- src/frontend/node_modules/d3-shape/README.md: `curveMonotoneX` -> `#curveMonotoneX`
+- src/frontend/node_modules/d3-shape/README.md: `curveMonotoneY` -> `#curveMonotoneY`
+- src/frontend/node_modules/d3-shape/README.md: `*line*.context` -> `#line_context`
+- src/frontend/node_modules/d3-shape/README.md: `lines` -> `#lines`
+- src/frontend/node_modules/d3-shape/README.md: `*x*-values` -> `#area_x`
+- src/frontend/node_modules/d3-shape/README.md: `x0` -> `#area_x0`
+- src/frontend/node_modules/d3-shape/README.md: `x1` -> `#area_x1`
+- src/frontend/node_modules/d3-shape/README.md: `y0` -> `#area_y0`
+- src/frontend/node_modules/d3-shape/README.md: `y1` -> `#area_y1`
+- src/frontend/node_modules/d3-shape/README.md: `curveLinear` -> `#curveLinear`
+- src/frontend/node_modules/d3-shape/README.md: `curve` -> `#area_curve`
+- src/frontend/node_modules/d3-shape/README.md: `curve` -> `#area_curve`
+- src/frontend/node_modules/d3-shape/README.md: `context` -> `#line_context`
+- src/frontend/node_modules/d3-shape/README.md: `x0` -> `#area_x0`
+- src/frontend/node_modules/d3-shape/README.md: `x1` -> `#area_x1`
+- src/frontend/node_modules/d3-shape/README.md: `generated` -> `#_area`
+- src/frontend/node_modules/d3-shape/README.md: `defined` -> `#area_defined`
+- src/frontend/node_modules/d3-shape/README.md: `x0` -> `#area_x0`
+- src/frontend/node_modules/d3-shape/README.md: `generated` -> `#_area`
+- src/frontend/node_modules/d3-shape/README.md: `defined` -> `#area_defined`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.x0` -> `#area_x0`
+- src/frontend/node_modules/d3-shape/README.md: `y0` -> `#area_y0`
+- src/frontend/node_modules/d3-shape/README.md: `y1` -> `#area_y1`
+- src/frontend/node_modules/d3-shape/README.md: `generated` -> `#_area`
+- src/frontend/node_modules/d3-shape/README.md: `defined` -> `#area_defined`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.x0` -> `#area_x0`
+- src/frontend/node_modules/d3-shape/README.md: `y0` -> `#area_y0`
+- src/frontend/node_modules/d3-shape/README.md: `generated` -> `#_area`
+- src/frontend/node_modules/d3-shape/README.md: `defined` -> `#area_defined`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.x0` -> `#area_x0`
+- src/frontend/node_modules/d3-shape/README.md: `generated` -> `#_area`
+- src/frontend/node_modules/d3-shape/README.md: `x0` -> `#area_x0`
+- src/frontend/node_modules/d3-shape/README.md: `x1` -> `#area_x1`
+- src/frontend/node_modules/d3-shape/README.md: `y0` -> `#area_y0`
+- src/frontend/node_modules/d3-shape/README.md: `y1` -> `#area_y1`
+- src/frontend/node_modules/d3-shape/README.md: `curveCardinalOpen` -> `#curveCardinalOpen`
+- src/frontend/node_modules/d3-shape/README.md: `curve factory` -> `#curves`
+- src/frontend/node_modules/d3-shape/README.md: `curveLinear` -> `#curveLinear`
+- src/frontend/node_modules/d3-shape/README.md: `generated area` -> `#_area`
+- src/frontend/node_modules/d3-shape/README.md: `*context*` -> `#area_context`
+- src/frontend/node_modules/d3-shape/README.md: `line generator` -> `#lines`
+- src/frontend/node_modules/d3-shape/README.md: `defined accessor` -> `#area_defined`
+- src/frontend/node_modules/d3-shape/README.md: `curve` -> `#area_curve`
+- src/frontend/node_modules/d3-shape/README.md: `context` -> `#area_context`
+- src/frontend/node_modules/d3-shape/README.md: `*x*-accessor` -> `#line_x`
+- src/frontend/node_modules/d3-shape/README.md: `*x0*-accessor` -> `#area_x0`
+- src/frontend/node_modules/d3-shape/README.md: `*y*-accessor` -> `#line_y`
+- src/frontend/node_modules/d3-shape/README.md: `*y0*-accessor` -> `#area_y0`
+- src/frontend/node_modules/d3-shape/README.md: `line generator` -> `#lines`
+- src/frontend/node_modules/d3-shape/README.md: `defined accessor` -> `#area_defined`
+- src/frontend/node_modules/d3-shape/README.md: `curve` -> `#area_curve`
+- src/frontend/node_modules/d3-shape/README.md: `context` -> `#area_context`
+- src/frontend/node_modules/d3-shape/README.md: `*x*-accessor` -> `#line_x`
+- src/frontend/node_modules/d3-shape/README.md: `*x1*-accessor` -> `#area_x1`
+- src/frontend/node_modules/d3-shape/README.md: `*y*-accessor` -> `#line_y`
+- src/frontend/node_modules/d3-shape/README.md: `*y0*-accessor` -> `#area_y0`
+- src/frontend/node_modules/d3-shape/README.md: `line generator` -> `#lines`
+- src/frontend/node_modules/d3-shape/README.md: `defined accessor` -> `#area_defined`
+- src/frontend/node_modules/d3-shape/README.md: `curve` -> `#area_curve`
+- src/frontend/node_modules/d3-shape/README.md: `context` -> `#area_context`
+- src/frontend/node_modules/d3-shape/README.md: `*x*-accessor` -> `#line_x`
+- src/frontend/node_modules/d3-shape/README.md: `*x0*-accessor` -> `#area_x0`
+- src/frontend/node_modules/d3-shape/README.md: `*y*-accessor` -> `#line_y`
+- src/frontend/node_modules/d3-shape/README.md: `*y1*-accessor` -> `#area_y1`
+- src/frontend/node_modules/d3-shape/README.md: `area generator` -> `#area`
+- src/frontend/node_modules/d3-shape/README.md: `x` -> `#area_x`
+- src/frontend/node_modules/d3-shape/README.md: `y` -> `#area_y`
+- src/frontend/node_modules/d3-shape/README.md: `angle` -> `#areaRadial_angle`
+- src/frontend/node_modules/d3-shape/README.md: `radius` -> `#areaRadial_radius`
+- src/frontend/node_modules/d3-shape/README.md: `*area*` -> `#_area`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.x` -> `#area_x`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.x0` -> `#area_x0`
+- src/frontend/node_modules/d3-shape/README.md: `angle` -> `#areaRadial_angle`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.x1` -> `#area_x1`
+- src/frontend/node_modules/d3-shape/README.md: `angle` -> `#areaRadial_angle`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.y` -> `#area_y`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.y0` -> `#area_y0`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.y1` -> `#area_y1`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.defined` -> `#area_defined`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.curve` -> `#area_curve`
+- src/frontend/node_modules/d3-shape/README.md: `curveMonotoneX` -> `#curveMonotoneX`
+- src/frontend/node_modules/d3-shape/README.md: `curveMonotoneY` -> `#curveMonotoneY`
+- src/frontend/node_modules/d3-shape/README.md: `*line*.context` -> `#line_context`
+- src/frontend/node_modules/d3-shape/README.md: `radial line generator` -> `#lineRadial`
+- src/frontend/node_modules/d3-shape/README.md: `defined accessor` -> `#areaRadial_defined`
+- src/frontend/node_modules/d3-shape/README.md: `curve` -> `#areaRadial_curve`
+- src/frontend/node_modules/d3-shape/README.md: `context` -> `#areaRadial_context`
+- src/frontend/node_modules/d3-shape/README.md: `angle accessor` -> `#lineRadial_angle`
+- src/frontend/node_modules/d3-shape/README.md: `start angle accessor` -> `#areaRadial_startAngle`
+- src/frontend/node_modules/d3-shape/README.md: `radius accessor` -> `#lineRadial_radius`
+- src/frontend/node_modules/d3-shape/README.md: `inner radius accessor` -> `#areaRadial_innerRadius`
+- src/frontend/node_modules/d3-shape/README.md: `radial line generator` -> `#lineRadial`
+- src/frontend/node_modules/d3-shape/README.md: `defined accessor` -> `#areaRadial_defined`
+- src/frontend/node_modules/d3-shape/README.md: `curve` -> `#areaRadial_curve`
+- src/frontend/node_modules/d3-shape/README.md: `context` -> `#areaRadial_context`
+- src/frontend/node_modules/d3-shape/README.md: `angle accessor` -> `#lineRadial_angle`
+- src/frontend/node_modules/d3-shape/README.md: `end angle accessor` -> `#areaRadial_endAngle`
+- src/frontend/node_modules/d3-shape/README.md: `radius accessor` -> `#lineRadial_radius`
+- src/frontend/node_modules/d3-shape/README.md: `inner radius accessor` -> `#areaRadial_innerRadius`
+- src/frontend/node_modules/d3-shape/README.md: `radial line generator` -> `#lineRadial`
+- src/frontend/node_modules/d3-shape/README.md: `defined accessor` -> `#areaRadial_defined`
+- src/frontend/node_modules/d3-shape/README.md: `curve` -> `#areaRadial_curve`
+- src/frontend/node_modules/d3-shape/README.md: `context` -> `#areaRadial_context`
+- src/frontend/node_modules/d3-shape/README.md: `angle accessor` -> `#lineRadial_angle`
+- src/frontend/node_modules/d3-shape/README.md: `start angle accessor` -> `#areaRadial_startAngle`
+- src/frontend/node_modules/d3-shape/README.md: `radius accessor` -> `#lineRadial_radius`
+- src/frontend/node_modules/d3-shape/README.md: `outer radius accessor` -> `#areaRadial_outerRadius`
+- src/frontend/node_modules/d3-shape/README.md: `lines` -> `#lines`
+- src/frontend/node_modules/d3-shape/README.md: `areas` -> `#areas`
+- src/frontend/node_modules/d3-shape/README.md: `*line*.curve` -> `#line_curve`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.curve` -> `#area_curve`
+- src/frontend/node_modules/d3-shape/README.md: `basis` -> `#basis`
+- src/frontend/node_modules/d3-shape/README.md: `*beta*` -> `#curveBundle_beta`
+- src/frontend/node_modules/d3-shape/README.md: `*curve*.areaStart` -> `#curve_areaStart`
+- src/frontend/node_modules/d3-shape/README.md: `*curve*.areaEnd` -> `#curve_areaEnd`
+- src/frontend/node_modules/d3-shape/README.md: `d3.line` -> `#lines`
+- src/frontend/node_modules/d3-shape/README.md: `d3.area` -> `#areas`
+- src/frontend/node_modules/d3-shape/README.md: `basis` -> `#basis`
+- src/frontend/node_modules/d3-shape/README.md: `tension` -> `#curveCardinal_tension`
+- src/frontend/node_modules/d3-shape/README.md: `tension` -> `#curveCardinal_tension`
+- src/frontend/node_modules/d3-shape/README.md: `curveCardinal` -> `#curveCardinal`
+- src/frontend/node_modules/d3-shape/README.md: `tension` -> `#curveCardinal_tension`
+- src/frontend/node_modules/d3-shape/README.md: `curveLinear` -> `#curveLinear`
+- src/frontend/node_modules/d3-shape/README.md: `Catmull–Rom` -> `#curveCatmullRom`
+- src/frontend/node_modules/d3-shape/README.md: `*alpha*` -> `#curveCatmullRom_alpha`
+- src/frontend/node_modules/d3-shape/README.md: `*alpha*` -> `#curveCatmullRom_alpha`
+- src/frontend/node_modules/d3-shape/README.md: `*alpha*` -> `#curveCatmullRom_alpha`
+- src/frontend/node_modules/d3-shape/README.md: `curveCatmullRom` -> `#curveCatmullRom`
+- src/frontend/node_modules/d3-shape/README.md: `curveCardinal` -> `#curveCardinal`
+- src/frontend/node_modules/d3-shape/README.md: `*line*.curve` -> `#line_curve`
+- src/frontend/node_modules/d3-shape/README.md: `*area*.curve` -> `#area_curve`
+- src/frontend/node_modules/d3-shape/README.md: `line segments` -> `#curve_lineStart`
+- src/frontend/node_modules/d3-shape/README.md: `points` -> `#curve_point`
+- src/frontend/node_modules/d3-shape/README.md: `vertical` -> `#linkVertical`
+- src/frontend/node_modules/d3-shape/README.md: `horizontal` -> `#linkHorizontal`
+- src/frontend/node_modules/d3-shape/README.md: `radial` -> `#linkRadial`
+- src/frontend/node_modules/d3-shape/README.md: `link generator` -> `#_link`
+- src/frontend/node_modules/d3-shape/README.md: `d3.link` -> `#link`
+- src/frontend/node_modules/d3-shape/README.md: `d3.curveBumpY` -> `#curveBumpY`
+- src/frontend/node_modules/d3-shape/README.md: `d3.link` -> `#link`
+- src/frontend/node_modules/d3-shape/README.md: `d3.curveBumpX` -> `#curveBumpX`
+- src/frontend/node_modules/d3-shape/README.md: `generated link` -> `#_link`
+- src/frontend/node_modules/d3-shape/README.md: `*context*` -> `#link_context`
+- src/frontend/node_modules/d3-shape/README.md: `link generator` -> `#_link`
+- src/frontend/node_modules/d3-shape/README.md: `*link*.x` -> `#link_x`
+- src/frontend/node_modules/d3-shape/README.md: `*link*.y` -> `#link_y`
+- src/frontend/node_modules/d3-shape/README.md: `type` -> `#symbol_type`
+- src/frontend/node_modules/d3-shape/README.md: `size` -> `#symbol_size`
+- src/frontend/node_modules/d3-shape/README.md: `context` -> `#symbol_context`
+- src/frontend/node_modules/d3-shape/README.md: `symbolsFill` -> `#symbolsFill`
+- src/frontend/node_modules/d3-shape/README.md: `symbolsStroke` -> `#symbolsStroke`
+- src/frontend/node_modules/d3-shape/README.md: `*symbolType*.draw` -> `#symbolType_draw`
+- src/frontend/node_modules/d3-shape/README.md: `generated symbol` -> `#_symbol`
+- src/frontend/node_modules/d3-shape/README.md: `*context*` -> `#symbol_context`
+- src/frontend/node_modules/d3-shape/README.md: `circle` -> `#symbolCircle`
+- src/frontend/node_modules/d3-shape/README.md: `cross` -> `#symbolCross`
+- src/frontend/node_modules/d3-shape/README.md: `diamond` -> `#symbolDiamond`
+- src/frontend/node_modules/d3-shape/README.md: `square` -> `#symbolSquare`
+- src/frontend/node_modules/d3-shape/README.md: `star` -> `#symbolStar`
+- src/frontend/node_modules/d3-shape/README.md: `triangle` -> `#symbolTriangle`
+- src/frontend/node_modules/d3-shape/README.md: `wye` -> `#symbolWye`
+- src/frontend/node_modules/d3-shape/README.md: `circle` -> `#symbolCircle`
+- src/frontend/node_modules/d3-shape/README.md: `plus` -> `#symbolPlus`
+- src/frontend/node_modules/d3-shape/README.md: `times` -> `#symbolTimes`
+- src/frontend/node_modules/d3-shape/README.md: `triangle2` -> `#symbolTriangle2`
+- src/frontend/node_modules/d3-shape/README.md: `asterisk` -> `#symbolAsterisk`
+- src/frontend/node_modules/d3-shape/README.md: `square2` -> `#symbolSquare2`
+- src/frontend/node_modules/d3-shape/README.md: `diamond2` -> `#symbolDiamond2`
+- src/frontend/node_modules/d3-shape/README.md: `*symbol*.type` -> `#symbol_type`
+- src/frontend/node_modules/d3-shape/README.md: `stack order` -> `#stack_order`
+- src/frontend/node_modules/d3-shape/README.md: `streamgraph` -> `#stackOffsetWiggle`
+- src/frontend/node_modules/d3-shape/README.md: `pie generator` -> `#pies`
+- src/frontend/node_modules/d3-shape/README.md: `area generator` -> `#areas`
+- src/frontend/node_modules/d3-shape/README.md: `keys accessor` -> `#stack_keys`
+- src/frontend/node_modules/d3-shape/README.md: `value` -> `#stack_value`
+- src/frontend/node_modules/d3-shape/README.md: `index` -> `#stack_order`
+- src/frontend/node_modules/d3-shape/README.md: `area generator` -> `#areas`
+- src/frontend/node_modules/d3-shape/README.md: `generated` -> `#_stack`
+- src/frontend/node_modules/d3-shape/README.md: `value accessor` -> `#stack_value`
+- src/frontend/node_modules/d3-shape/README.md: `*stack*` -> `#_stack`
+- src/frontend/node_modules/d3-shape/README.md: `stackOrderNone` -> `#stackOrderNone`
+- src/frontend/node_modules/d3-shape/README.md: `key accessor` -> `#stack_key`
+- src/frontend/node_modules/d3-shape/README.md: `stack orders` -> `#stack-orders`
+- src/frontend/node_modules/d3-shape/README.md: `offset` -> `#stack_offset`
+- src/frontend/node_modules/d3-shape/README.md: `stackOffsetNone` -> `#stackOffsetNone`
+- src/frontend/node_modules/d3-shape/README.md: `stack offsets` -> `#stack-offsets`
+- src/frontend/node_modules/d3-shape/README.md: `*stack*.order` -> `#stack_order`
+- src/frontend/node_modules/d3-shape/README.md: `wiggle offset` -> `#stackOffsetWiggle`
+- src/frontend/node_modules/d3-shape/README.md: `key accessor` -> `#stack_keys`
+- src/frontend/node_modules/d3-shape/README.md: `key accessor` -> `#stack_keys`
+- src/frontend/node_modules/d3-shape/README.md: `*stack*.offset` -> `#stack_offset`
+- src/frontend/node_modules/d3-shape/README.md: `inside-out order` -> `#stackOrderInsideOut`
+- src/frontend/node_modules/json-parse-even-better-errors/README.md: `Example` -> `#example`
+- src/frontend/node_modules/json-parse-even-better-errors/README.md: `Features` -> `#features`
+- src/frontend/node_modules/json-parse-even-better-errors/README.md: `Contributing` -> `#contributing`
+- src/frontend/node_modules/json-parse-even-better-errors/README.md: `API` -> `#api`
+- src/frontend/node_modules/json-parse-even-better-errors/README.md: ``parse`` -> `#parse`
+- src/frontend/node_modules/jiti/README.md: `src/babel` -> `./src/babel.ts`
+- src/frontend/node_modules/csstype/README.md: `Style types` -> `#style-types`
+- src/frontend/node_modules/csstype/README.md: `At-rule types` -> `#at-rule-types`
+- src/frontend/node_modules/csstype/README.md: `Pseudo types` -> `#pseudo-types`
+- src/frontend/node_modules/csstype/README.md: `Generics` -> `#generics`
+- src/frontend/node_modules/csstype/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/csstype/README.md: `What should I do when I get type errors?` -> `#what-should-i-do-when-i-get-type-errors`
+- src/frontend/node_modules/csstype/README.md: `Version 3.0` -> `#version-30`
+- src/frontend/node_modules/csstype/README.md: `Contributing` -> `#contributing`
+- src/frontend/node_modules/csstype/README.md: `"Generics"` -> `#generics`
+- src/frontend/node_modules/ts-api-utils/README.md: ``.github/CONTRIBUTING.md`` -> `./.github/CONTRIBUTING.md`
+- src/frontend/node_modules/make-dir/readme.md: `overridden` -> `#fs`
+- src/frontend/node_modules/react-transition-group/README.md: `Migration guide from v1` -> `/Migration.md`
+- src/frontend/node_modules/react-redux/README.md: `MIT` -> `LICENSE.md`
+- src/frontend/node_modules/flatted/README.md: `snow flake` -> `./flatted.jpg`
+- src/frontend/node_modules/sucrase/README.md: `Project Vision` -> `./docs/PROJECT_VISION.md`
+- src/frontend/node_modules/sucrase/README.md: `Contributing Guide` -> `./CONTRIBUTING.md`
+- src/frontend/node_modules/sucrase/node_modules/minimatch/README.md: `the caveat about Windows
+paths` -> `#windows`
+- src/frontend/node_modules/sucrase/node_modules/glob/README.md: `the caveat below about Windows
+  paths` -> `#windows`
+- src/frontend/node_modules/sucrase/node_modules/glob/README.md: `1` -> `#fn-webscale`
+- src/frontend/node_modules/web-vitals/README.md: `Overview` -> `#overview`
+- src/frontend/node_modules/web-vitals/README.md: `Install and load the library` -> `#installation`
+- src/frontend/node_modules/web-vitals/README.md: `From npm` -> `#import-web-vitals-from-npm`
+- src/frontend/node_modules/web-vitals/README.md: `From a CDN` -> `#load-web-vitals-from-a-cdn`
+- src/frontend/node_modules/web-vitals/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/web-vitals/README.md: `Basic usage` -> `#basic-usage`
+- src/frontend/node_modules/web-vitals/README.md: `Report the value on every change` -> `#report-the-value-on-every-change`
+- src/frontend/node_modules/web-vitals/README.md: `Report only the delta of changes` -> `#report-only-the-delta-of-changes`
+- src/frontend/node_modules/web-vitals/README.md: `Send the results to an analytics endpoint` -> `#send-the-results-to-an-analytics-endpoint`
+- src/frontend/node_modules/web-vitals/README.md: `Send the results to Google Analytics` -> `#send-the-results-to-google-analytics`
+- src/frontend/node_modules/web-vitals/README.md: `Send the results to Google Tag Manager` -> `#send-the-results-to-google-tag-manager`
+- src/frontend/node_modules/web-vitals/README.md: `Send attribution data` -> `#send-attribution-data`
+- src/frontend/node_modules/web-vitals/README.md: `Batch multiple reports together` -> `#batch-multiple-reports-together`
+- src/frontend/node_modules/web-vitals/README.md: `Build options` -> `#build-options`
+- src/frontend/node_modules/web-vitals/README.md: `Which build is right for you?` -> `#which-build-is-right-for-you`
+- src/frontend/node_modules/web-vitals/README.md: `API` -> `#api`
+- src/frontend/node_modules/web-vitals/README.md: `Types` -> `#types`
+- src/frontend/node_modules/web-vitals/README.md: `Functions` -> `#functions`
+- src/frontend/node_modules/web-vitals/README.md: `Rating Thresholds` -> `#rating-thresholds`
+- src/frontend/node_modules/web-vitals/README.md: `Attribution` -> `#attribution`
+- src/frontend/node_modules/web-vitals/README.md: `Browser Support` -> `#browser-support`
+- src/frontend/node_modules/web-vitals/README.md: `Limitations` -> `#limitations`
+- src/frontend/node_modules/web-vitals/README.md: `Development` -> `#development`
+- src/frontend/node_modules/web-vitals/README.md: `Integrations` -> `#integrations`
+- src/frontend/node_modules/web-vitals/README.md: `License` -> `#license`
+- src/frontend/node_modules/web-vitals/README.md: `load `web-vitals` from a CDN` -> `#load-web-vitals-from-a-cdn`
+- src/frontend/node_modules/web-vitals/README.md: `metric` -> `#metric`
+- src/frontend/node_modules/web-vitals/README.md: ``attribution`` -> `#attribution`
+- src/frontend/node_modules/web-vitals/README.md: `Send attribution data` -> `#send-attribution-data`
+- src/frontend/node_modules/web-vitals/README.md: ``attribution` reference` -> `#attribution`
+- src/frontend/node_modules/web-vitals/README.md: `configuration object` -> `#reportopts`
+- src/frontend/node_modules/web-vitals/README.md: `attribution build` -> `#attribution-build`
+- src/frontend/node_modules/web-vitals/README.md: `"attribution" build` -> `#attribution-build`
+- src/frontend/node_modules/web-vitals/README.md: `Rating Thresholds` -> `#rating-thresholds`
+- src/frontend/node_modules/web-vitals/README.md: `attribution objects` -> `#attribution`
+- src/frontend/node_modules/web-vitals/README.md: `configuration option` -> `#reportopts`
+- src/frontend/node_modules/web-vitals/README.md: `not necessarily for every layout shift` -> `#report-the-value-on-every-change`
+- src/frontend/node_modules/web-vitals/README.md: `Reporting only the delta of changes` -> `#report-only-the-delta-of-changes`
+- src/frontend/node_modules/web-vitals/README.md: `configuration option` -> `#reportopts`
+- src/frontend/node_modules/web-vitals/README.md: `configuration option` -> `#reportopts`
+- src/frontend/node_modules/web-vitals/README.md: `not necessarily for every interaction` -> `#report-the-value-on-every-change`
+- src/frontend/node_modules/web-vitals/README.md: `Reporting only the delta of changes` -> `#report-only-the-delta-of-changes`
+- src/frontend/node_modules/web-vitals/README.md: `configuration option` -> `#reportopts`
+- src/frontend/node_modules/web-vitals/README.md: ``MetricRatingThresholds`` -> `#metricratingthresholds`
+- src/frontend/node_modules/web-vitals/README.md: `attribution build` -> `#attribution-build`
+- src/frontend/node_modules/web-vitals/README.md: `/test/views/` -> `/test/views/`
+- src/frontend/node_modules/web-vitals/README.md: `Apache 2.0` -> `/LICENSE`
+- src/frontend/node_modules/htmlparser2/README.md: `the fastest HTML parser` -> `#performance`
+- src/frontend/node_modules/htmlparser2/README.md: `Getting a DOM` -> `#getting-a-dom`
+- src/frontend/node_modules/d3-array/README.md: `Statistics` -> `#statistics`
+- src/frontend/node_modules/d3-array/README.md: `Search` -> `#search`
+- src/frontend/node_modules/d3-array/README.md: `Transformations` -> `#transformations`
+- src/frontend/node_modules/d3-array/README.md: `Iterables` -> `#iterables`
+- src/frontend/node_modules/d3-array/README.md: `Sets` -> `#sets`
+- src/frontend/node_modules/d3-array/README.md: `Bins` -> `#bins`
+- src/frontend/node_modules/d3-array/README.md: `Interning` -> `#interning`
+- src/frontend/node_modules/d3-array/README.md: `extent` -> `#extent`
+- src/frontend/node_modules/d3-array/README.md: `extent` -> `#extent`
+- src/frontend/node_modules/d3-array/README.md: `minimum` -> `#min`
+- src/frontend/node_modules/d3-array/README.md: `maximum` -> `#max`
+- src/frontend/node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- src/frontend/node_modules/d3-array/README.md: `bias-corrected variance` -> `#variance`
+- src/frontend/node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- src/frontend/node_modules/d3-array/README.md: `min` -> `#min`
+- src/frontend/node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- src/frontend/node_modules/d3-array/README.md: `minIndex` -> `#minIndex`
+- src/frontend/node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- src/frontend/node_modules/d3-array/README.md: `max` -> `#max`
+- src/frontend/node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- src/frontend/node_modules/d3-array/README.md: `maxIndex` -> `#maxIndex`
+- src/frontend/node_modules/d3-array/README.md: `bisectLeft` -> `#bisectLeft`
+- src/frontend/node_modules/d3-array/README.md: `*bisector*.center` -> `#bisector_center`
+- src/frontend/node_modules/d3-array/README.md: `bisectLeft` -> `#bisectLeft`
+- src/frontend/node_modules/d3-array/README.md: `bisectRight` -> `#bisectRight`
+- src/frontend/node_modules/d3-array/README.md: `InternMap` -> `#InternMap`
+- src/frontend/node_modules/d3-array/README.md: `group` -> `#group`
+- src/frontend/node_modules/d3-array/README.md: `group` -> `#group`
+- src/frontend/node_modules/d3-array/README.md: `group` -> `#group`
+- src/frontend/node_modules/d3-array/README.md: `index` -> `#index`
+- src/frontend/node_modules/d3-array/README.md: `Groups` -> `#group`
+- src/frontend/node_modules/d3-array/README.md: `d3.group` -> `#group`
+- src/frontend/node_modules/d3-array/README.md: `rollup` -> `#rollup`
+- src/frontend/node_modules/d3-array/README.md: `rollup` -> `#rollup`
+- src/frontend/node_modules/d3-array/README.md: `shuffle function` -> `#shuffle`
+- src/frontend/node_modules/d3-array/README.md: `d3.tickIncrement` -> `#tickIncrement`
+- src/frontend/node_modules/d3-array/README.md: `d3.tickStep` -> `#tickStep`
+- src/frontend/node_modules/d3-array/README.md: `step` -> `#tickStep`
+- src/frontend/node_modules/d3-array/README.md: `d3.tickStep` -> `#tickStep`
+- src/frontend/node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- src/frontend/node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- src/frontend/node_modules/d3-array/README.md: `tick step` -> `#tickStep`
+- src/frontend/node_modules/d3-array/README.md: `d3.tickIncrement` -> `#tickIncrement`
+- src/frontend/node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- src/frontend/node_modules/d3-array/README.md: `zip` -> `#zip`
+- src/frontend/node_modules/d3-array/README.md: `d3.ascending` -> `#ascending`
+- src/frontend/node_modules/d3-array/README.md: `natural order` -> `#ascending`
+- src/frontend/node_modules/d3-array/README.md: `domain` -> `#bin_domain`
+- src/frontend/node_modules/d3-array/README.md: `generated` -> `#_bin`
+- src/frontend/node_modules/d3-array/README.md: `extent` -> `#extent`
+- src/frontend/node_modules/d3-array/README.md: `generated` -> `#_bin`
+- src/frontend/node_modules/d3-array/README.md: `extent` -> `#extent`
+- src/frontend/node_modules/d3-array/README.md: `thresholds` -> `#bin_thresholds`
+- src/frontend/node_modules/d3-array/README.md: `niced` -> `#nice`
+- src/frontend/node_modules/d3-array/README.md: `values` -> `#bin_value`
+- src/frontend/node_modules/d3-array/README.md: `threshold generator` -> `#bin-thresholds`
+- src/frontend/node_modules/d3-array/README.md: `Sturges’ formula` -> `#thresholdSturges`
+- src/frontend/node_modules/d3-array/README.md: `generated bins` -> `#_bin`
+- src/frontend/node_modules/d3-array/README.md: `bin thresholds` -> `#bin-thresholds`
+- src/frontend/node_modules/d3-array/README.md: `domain` -> `#bin_domain`
+- src/frontend/node_modules/d3-array/README.md: `domain` -> `#bin_domain`
+- src/frontend/node_modules/d3-array/README.md: `ticks` -> `#ticks`
+- src/frontend/node_modules/d3-array/README.md: `*bin*.thresholds` -> `#bin_thresholds`
+- src/frontend/node_modules/d3-array/README.md: `*values*` -> `#bin_value`
+- src/frontend/node_modules/d3-array/README.md: `observable domain` -> `#bin_domain`
+- src/frontend/node_modules/d3-array/README.md: `ticks` -> `#ticks`
+- src/frontend/node_modules/type-fest/readme.md: `contributing guidelines` -> `.github/contributing.md`
+- src/frontend/node_modules/type-fest/readme.md: ``Primitive`` -> `source/basic.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``Class`` -> `source/basic.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``TypedArray`` -> `source/basic.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``JsonObject`` -> `source/basic.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``JsonArray`` -> `source/basic.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``JsonValue`` -> `source/basic.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``ObservableLike`` -> `source/basic.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``Mutable`` -> `source/mutable.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``Merge`` -> `source/merge.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``MergeExclusive`` -> `source/merge-exclusive.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``RequireAtLeastOne`` -> `source/require-at-least-one.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``PartialDeep`` -> `source/partial-deep.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``ReadonlyDeep`` -> `source/readonly-deep.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``LiteralUnion`` -> `source/literal-union.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``Promisable`` -> `source/promisable.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``Opaque`` -> `source/opaque.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``SetRequired`` -> `source/set-required.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``ValueOf`` -> `source/value-of.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``PromiseValue`` -> `source/promise-value.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``AsyncReturnType`` -> `source/async-return-type.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``ConditionalKeys`` -> `source/conditional-keys.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``ConditionalExcept`` -> `source/conditional-except.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``UnionToIntersection`` -> `source/union-to-intersection.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``Stringified`` -> `source/stringified.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``FixedLengthArray`` -> `source/fixed-length-array.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``Entry`` -> `source/entry.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``Entries`` -> `source/entries.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``SetReturnType`` -> `source/set-return-type.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``Asyncify`` -> `source/asyncify.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``CamelCase`` -> `ts41/camel-case.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``KebabCase`` -> `ts41/kebab-case.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``PascalCase`` -> `ts41/pascal-case.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``SnakeCase`` -> `ts41/snake-case.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``DelimiterCase`` -> `ts41/delimiter-case.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- src/frontend/node_modules/type-fest/readme.md: ``TsConfigJson`` -> `source/tsconfig-json.d.ts`
+- src/frontend/node_modules/commander/CHANGELOG.md: `1.x` -> `./changelogs/CHANGELOG-1.md`
+- src/frontend/node_modules/commander/CHANGELOG.md: `0.x` -> `./changelogs/CHANGELOG-0.md`
+- src/frontend/node_modules/commander/Readme.md: `简体中文` -> `./Readme_zh-CN.md`
+- src/frontend/node_modules/commander/Readme.md: `Commander.js` -> `#commanderjs`
+- src/frontend/node_modules/commander/Readme.md: `Installation` -> `#installation`
+- src/frontend/node_modules/commander/Readme.md: `Declaring program variable` -> `#declaring-program-variable`
+- src/frontend/node_modules/commander/Readme.md: `Options` -> `#options`
+- src/frontend/node_modules/commander/Readme.md: `Common option types, boolean and value` -> `#common-option-types-boolean-and-value`
+- src/frontend/node_modules/commander/Readme.md: `Default option value` -> `#default-option-value`
+- src/frontend/node_modules/commander/Readme.md: `Other option types, negatable boolean and flag|value` -> `#other-option-types-negatable-boolean-and-flagvalue`
+- src/frontend/node_modules/commander/Readme.md: `Custom option processing` -> `#custom-option-processing`
+- src/frontend/node_modules/commander/Readme.md: `Required option` -> `#required-option`
+- src/frontend/node_modules/commander/Readme.md: `Version option` -> `#version-option`
+- src/frontend/node_modules/commander/Readme.md: `Commands` -> `#commands`
+- src/frontend/node_modules/commander/Readme.md: `Specify the argument syntax` -> `#specify-the-argument-syntax`
+- src/frontend/node_modules/commander/Readme.md: `Action handler (sub)commands` -> `#action-handler-subcommands`
+- src/frontend/node_modules/commander/Readme.md: `Git-style executable (sub)commands` -> `#git-style-executable-subcommands`
+- src/frontend/node_modules/commander/Readme.md: `Automated --help` -> `#automated---help`
+- src/frontend/node_modules/commander/Readme.md: `Custom help` -> `#custom-help`
+- src/frontend/node_modules/commander/Readme.md: `.usage and .name` -> `#usage-and-name`
+- src/frontend/node_modules/commander/Readme.md: `.outputHelp(cb)` -> `#outputhelpcb`
+- src/frontend/node_modules/commander/Readme.md: `.helpOption(flags, description)` -> `#helpoptionflags-description`
+- src/frontend/node_modules/commander/Readme.md: `.help(cb)` -> `#helpcb`
+- src/frontend/node_modules/commander/Readme.md: `Custom event listeners` -> `#custom-event-listeners`
+- src/frontend/node_modules/commander/Readme.md: `Bits and pieces` -> `#bits-and-pieces`
+- src/frontend/node_modules/commander/Readme.md: `Avoiding option name clashes` -> `#avoiding-option-name-clashes`
+- src/frontend/node_modules/commander/Readme.md: `TypeScript` -> `#typescript`
+- src/frontend/node_modules/commander/Readme.md: `Node options such as --harmony` -> `#node-options-such-as---harmony`
+- src/frontend/node_modules/commander/Readme.md: `Node debugging` -> `#node-debugging`
+- src/frontend/node_modules/commander/Readme.md: `Override exit handling` -> `#override-exit-handling`
+- src/frontend/node_modules/commander/Readme.md: `Examples` -> `#examples`
+- src/frontend/node_modules/commander/Readme.md: `License` -> `#license`
+- src/frontend/node_modules/commander/Readme.md: `Support` -> `#support`
+- src/frontend/node_modules/commander/Readme.md: `Commander for enterprise` -> `#commander-for-enterprise`
+- src/frontend/node_modules/commander/Readme.md: `avoid name clashes` -> `#avoiding-option-name-clashes`
+- src/frontend/node_modules/string.prototype.trim/CHANGELOG.md: `es-shim API` -> `es-shims/api`
+- src/frontend/node_modules/ci-info/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/escalade/readme.md: `fast` -> `#benchmarks`
+- src/frontend/node_modules/escalade/readme.md: `Deno Usage` -> `#deno`
+- src/frontend/node_modules/escalade/readme.md: `API` -> `#api`
+- src/frontend/node_modules/escalade/readme.md: `two modes` -> `#modes`
+- src/frontend/node_modules/postcss-load-config/README.md: `**`to`**` -> `#to`
+- src/frontend/node_modules/postcss-load-config/README.md: `**`map`**` -> `#map`
+- src/frontend/node_modules/postcss-load-config/README.md: `**`from`**` -> `#from`
+- src/frontend/node_modules/postcss-load-config/README.md: `**`parser`**` -> `#parser`
+- src/frontend/node_modules/postcss-load-config/README.md: `**`syntax`**` -> `#syntax`
+- src/frontend/node_modules/postcss-load-config/README.md: `**`stringifier`**` -> `#stringifier`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Install` -> `#install`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Links` -> `#links`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Supported resolvers` -> `#supported-resolvers`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `API` -> `#api`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Quickstart` -> `#quickstart`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Yup` -> `#yup`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Zod` -> `#zod`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Superstruct` -> `#superstruct`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Joi` -> `#joi`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Vest` -> `#vest`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Class Validator` -> `#class-validator`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `io-ts` -> `#io-ts`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Nope` -> `#nope`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `computed-types` -> `#computed-types`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `typanion` -> `#typanion`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Ajv` -> `#ajv`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `TypeBox` -> `#typebox`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `With `ValueCheck`` -> `#with-valuecheck`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `With `TypeCompiler`` -> `#with-typecompiler`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `ArkType` -> `#arktype`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Valibot` -> `#valibot`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `TypeSchema` -> `#typeschema`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `effect-ts` -> `#effect-ts`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `VineJS` -> `#vinejs`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `fluentvalidation-ts` -> `#fluentvalidation-ts`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Backers` -> `#backers`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Sponsors` -> `#sponsors`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `Contributors` -> `#contributors`
+- src/frontend/node_modules/@hookform/resolvers/README.md: `[Become a contributor` -> `CONTRIBUTING.md`
+- src/frontend/node_modules/error-ex/README.md: `LICENSE` -> `LICENSE`
+- src/frontend/node_modules/@eslint/eslintrc/node_modules/globals/readme.md: `JSON file` -> `globals.json`
+- src/frontend/node_modules/decimal.js/README.md: `The MIT Licence` -> `LICENCE.md`
+- src/frontend/node_modules/nanoid/README.md: `Русский` -> `./README.ru.md`
+- src/frontend/node_modules/nanoid/README.md: `简体中文` -> `./README.zh-CN.md`
+- src/frontend/node_modules/nanoid/README.md: `Bahasa Indonesia` -> `./README.id-ID.md`
+- src/frontend/node_modules/nanoid/README.md: `20 programming languages` -> `#other-programming-languages`
+- src/frontend/node_modules/cjs-module-lexer/README.md: `very fast` -> `#benchmarks`
+- src/frontend/node_modules/cjs-module-lexer/README.md: `see benchmarks` -> `#benchmarks`
+- src/frontend/node_modules/file-entry-cache/changelog.md: `abcf0f9` -> ` https://github.com/royriojas/file-entry-cache/commit/abcf0f9 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `92e4d4a` -> ` https://github.com/royriojas/file-entry-cache/commit/92e4d4a `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `4c6f1fb` -> ` https://github.com/royriojas/file-entry-cache/commit/4c6f1fb `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `8ab3257` -> ` https://github.com/royriojas/file-entry-cache/commit/8ab3257 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `3dd4231` -> ` https://github.com/royriojas/file-entry-cache/commit/3dd4231 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `d7c60ef` -> ` https://github.com/royriojas/file-entry-cache/commit/d7c60ef `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `e858aa9` -> ` https://github.com/royriojas/file-entry-cache/commit/e858aa9 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `b0f9ae0` -> ` https://github.com/royriojas/file-entry-cache/commit/b0f9ae0 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `563cfee` -> ` https://github.com/royriojas/file-entry-cache/commit/563cfee `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `d0f598e` -> ` https://github.com/royriojas/file-entry-cache/commit/d0f598e `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `078b0df` -> ` https://github.com/royriojas/file-entry-cache/commit/078b0df `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `245fe62` -> ` https://github.com/royriojas/file-entry-cache/commit/245fe62 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `6dd32d8` -> ` https://github.com/royriojas/file-entry-cache/commit/6dd32d8 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `ea05441` -> ` https://github.com/royriojas/file-entry-cache/commit/ea05441 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `7f60e0a` -> ` https://github.com/royriojas/file-entry-cache/commit/7f60e0a `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `f9e5c69` -> ` https://github.com/royriojas/file-entry-cache/commit/f9e5c69 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `4edc2dc` -> ` https://github.com/royriojas/file-entry-cache/commit/4edc2dc `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `09d9ec5` -> ` https://github.com/royriojas/file-entry-cache/commit/09d9ec5 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `343b340` -> ` https://github.com/royriojas/file-entry-cache/commit/343b340 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `4b4e54a` -> ` https://github.com/royriojas/file-entry-cache/commit/4b4e54a `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `408374d` -> ` https://github.com/royriojas/file-entry-cache/commit/408374d `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `0a26ac4` -> ` https://github.com/royriojas/file-entry-cache/commit/0a26ac4 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `b1a64db` -> ` https://github.com/royriojas/file-entry-cache/commit/b1a64db `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `f34c557` -> ` https://github.com/royriojas/file-entry-cache/commit/f34c557 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `cc7b9ce` -> ` https://github.com/royriojas/file-entry-cache/commit/cc7b9ce `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `a3916ff` -> ` https://github.com/royriojas/file-entry-cache/commit/a3916ff `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `e49b0d4` -> ` https://github.com/royriojas/file-entry-cache/commit/e49b0d4 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `0ad3000` -> ` https://github.com/royriojas/file-entry-cache/commit/0ad3000 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `6ac2431` -> ` https://github.com/royriojas/file-entry-cache/commit/6ac2431 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `3640e2b` -> ` https://github.com/royriojas/file-entry-cache/commit/3640e2b `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `a23de61` -> ` https://github.com/royriojas/file-entry-cache/commit/a23de61 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `7af29fc` -> ` https://github.com/royriojas/file-entry-cache/commit/7af29fc `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `1f95544` -> ` https://github.com/royriojas/file-entry-cache/commit/1f95544 `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `7472eaa` -> ` https://github.com/royriojas/file-entry-cache/commit/7472eaa `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `557358f` -> ` https://github.com/royriojas/file-entry-cache/commit/557358f `
+- src/frontend/node_modules/file-entry-cache/changelog.md: `3d5f42b` -> ` https://github.com/royriojas/file-entry-cache/commit/3d5f42b `
+- src/frontend/node_modules/d3-scale/README.md: `continuous` -> `#continuous-scales`
+- src/frontend/node_modules/d3-scale/README.md: `linear scale` -> `#linear-scales`
+- src/frontend/node_modules/d3-scale/README.md: `time scale` -> `#time-scales`
+- src/frontend/node_modules/d3-scale/README.md: `power` -> `#power-scales`
+- src/frontend/node_modules/d3-scale/README.md: `log` -> `#log-scales`
+- src/frontend/node_modules/d3-scale/README.md: `quantize scale` -> `#quantize-scales`
+- src/frontend/node_modules/d3-scale/README.md: `quantile scale` -> `#quantile-scales`
+- src/frontend/node_modules/d3-scale/README.md: `threshold scale` -> `#threshold-scales`
+- src/frontend/node_modules/d3-scale/README.md: `ordinal scale` -> `#ordinal-scales`
+- src/frontend/node_modules/d3-scale/README.md: `band` -> `#band-scales`
+- src/frontend/node_modules/d3-scale/README.md: `point` -> `#point-scales`
+- src/frontend/node_modules/d3-scale/README.md: `generate` -> `#continuous_ticks`
+- src/frontend/node_modules/d3-scale/README.md: `format` -> `#continuous_tickFormat`
+- src/frontend/node_modules/d3-scale/README.md: `d3.scaleTime` -> `#scaleTime`
+- src/frontend/node_modules/d3-scale/README.md: `d3.scaleUtc` -> `#scaleUtc`
+- src/frontend/node_modules/d3-scale/README.md: `Continuous` -> `#continuous-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Linear` -> `#linear-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Power` -> `#power-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Log` -> `#log-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Identity` -> `#identity-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Time` -> `#time-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Radial` -> `#radial-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Sequential` -> `#sequential-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Diverging` -> `#diverging-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Quantize` -> `#quantize-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Quantile` -> `#quantile-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Threshold` -> `#threshold-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Ordinal` -> `#ordinal-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Band` -> `#band-scales`
+- src/frontend/node_modules/d3-scale/README.md: `Point` -> `#point-scales`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `inverted` -> `#continuous_invert`
+- src/frontend/node_modules/d3-scale/README.md: `linear` -> `#linear-scales`
+- src/frontend/node_modules/d3-scale/README.md: `power` -> `#power-scales`
+- src/frontend/node_modules/d3-scale/README.md: `log` -> `#log-scales`
+- src/frontend/node_modules/d3-scale/README.md: `identity` -> `#identity-scales`
+- src/frontend/node_modules/d3-scale/README.md: `radial` -> `#radial-scales`
+- src/frontend/node_modules/d3-scale/README.md: `time` -> `#time-scales`
+- src/frontend/node_modules/d3-scale/README.md: `sequential color` -> `#sequential-scales`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `diverging color scale` -> `#diverging-scales`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `invert` -> `#continuous_invert`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.interpolate` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `*range*` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.invert` -> `#continuous_invert`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `tick values` -> `#continuous_ticks`
+- src/frontend/node_modules/d3-scale/README.md: `d3.tickFormat` -> `#tickFormat`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `ticks` -> `#continuous_ticks`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `continuous scale` -> `#continuous-scales`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- src/frontend/node_modules/d3-scale/README.md: `exponent` -> `#pow_exponent`
+- src/frontend/node_modules/d3-scale/README.md: `continuous scale` -> `#continuous-scales`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `exponent` -> `#pow_exponent`
+- src/frontend/node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `linear` -> `#linear-scales`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*` -> `#_continuous`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.invert` -> `#continuous_invert`
+- src/frontend/node_modules/d3-scale/README.md: `linear` -> `#linear-scales`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.rangeRound` -> `#continuous_rangeRound`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.clamp` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.interpolate` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.ticks` -> `#continuous_ticks`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.tickFormat` -> `#continuous_tickFormat`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.nice` -> `#continuous_nice`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.copy` -> `#continuous_copy`
+- src/frontend/node_modules/d3-scale/README.md: `continuous` -> `#continuous-scales`
+- src/frontend/node_modules/d3-scale/README.md: `power scale` -> `#power-scales`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `exponent` -> `#pow_exponent`
+- src/frontend/node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- src/frontend/node_modules/d3-scale/README.md: `continuous scale` -> `#continuous-scales`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#log_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#log_range`
+- src/frontend/node_modules/d3-scale/README.md: `base` -> `#log_base`
+- src/frontend/node_modules/d3-scale/README.md: `interpolator` -> `#log_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `clamping` -> `#log_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*` -> `#_continuous`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.invert` -> `#continuous_invert`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.rangeRound` -> `#continuous_rangeRound`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.clamp` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.interpolate` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.ticks` -> `#continuous_ticks`
+- src/frontend/node_modules/d3-scale/README.md: `base` -> `#log_base`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#log_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*log*.tickFormat` -> `#log_tickFormat`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.tickFormat` -> `#continuous_tickFormat`
+- src/frontend/node_modules/d3-scale/README.md: `tick values` -> `#continuous_ticks`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.nice` -> `#continuous_nice`
+- src/frontend/node_modules/d3-scale/README.md: `base` -> `#log_base`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.copy` -> `#continuous_copy`
+- src/frontend/node_modules/d3-scale/README.md: `continuous scale` -> `#continuous-scales`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `constant` -> `#symlog_constant`
+- src/frontend/node_modules/d3-scale/README.md: `interpolator` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `clamping` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- src/frontend/node_modules/d3-scale/README.md: `rangeRound` -> `#continuous_rangeRound`
+- src/frontend/node_modules/d3-scale/README.md: `clamp` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `interpolate` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- src/frontend/node_modules/d3-scale/README.md: `interpolate` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- src/frontend/node_modules/d3-scale/README.md: `invert` -> `#continuous_invert`
+- src/frontend/node_modules/d3-scale/README.md: `ticks` -> `#time_ticks`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#time_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#time_range`
+- src/frontend/node_modules/d3-scale/README.md: `interpolator` -> `#time_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `clamping` -> `#time_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*` -> `#_continuous`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.invert` -> `#continuous_invert`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.rangeRound` -> `#continuous_rangeRound`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.clamp` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.interpolate` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#time_domain`
+- src/frontend/node_modules/d3-scale/README.md: `tick` -> `#time_ticks`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.tickFormat` -> `#continuous_tickFormat`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#time_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.nice` -> `#continuous_nice`
+- src/frontend/node_modules/d3-scale/README.md: `ticks` -> `#time_ticks`
+- src/frontend/node_modules/d3-scale/README.md: `*time*.ticks` -> `#time_ticks`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.copy` -> `#continuous_copy`
+- src/frontend/node_modules/d3-scale/README.md: `scaleTime` -> `#scaleTime`
+- src/frontend/node_modules/d3-scale/README.md: `diverging scales` -> `#diverging-scales`
+- src/frontend/node_modules/d3-scale/README.md: `continuous scales` -> `#continuous-scales`
+- src/frontend/node_modules/d3-scale/README.md: `invert` -> `#continuous_invert`
+- src/frontend/node_modules/d3-scale/README.md: `interpolate` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `*domain*` -> `#sequential_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*interpolator*` -> `#sequential_interpolator`
+- src/frontend/node_modules/d3-scale/README.md: `applied` -> `#_sequential`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*` -> `#_continuous`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.clamp` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.rangeRound` -> `#continuous_rangeRound`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.copy` -> `#continuous_copy`
+- src/frontend/node_modules/d3-scale/README.md: `sequential scale` -> `#sequential-scales`
+- src/frontend/node_modules/d3-scale/README.md: `log scale` -> `#log-scales`
+- src/frontend/node_modules/d3-scale/README.md: `sequential scale` -> `#sequential-scales`
+- src/frontend/node_modules/d3-scale/README.md: `power scale` -> `#pow-scales`
+- src/frontend/node_modules/d3-scale/README.md: `sequential scale` -> `#sequential-scales`
+- src/frontend/node_modules/d3-scale/README.md: `d3.scaleSqrt` -> `#scaleSqrt`
+- src/frontend/node_modules/d3-scale/README.md: `sequential scale` -> `#sequential-scales`
+- src/frontend/node_modules/d3-scale/README.md: `symlog scale` -> `#symlog-scales`
+- src/frontend/node_modules/d3-scale/README.md: `sequential scale` -> `#sequential-scales`
+- src/frontend/node_modules/d3-scale/README.md: `quantile scale` -> `#quantile-scales`
+- src/frontend/node_modules/d3-scale/README.md: `sequential scales` -> `#sequential-scales`
+- src/frontend/node_modules/d3-scale/README.md: `continuous scales` -> `#continuous-scales`
+- src/frontend/node_modules/d3-scale/README.md: `invert` -> `#continuous_invert`
+- src/frontend/node_modules/d3-scale/README.md: `interpolate` -> `#continuous_interpolate`
+- src/frontend/node_modules/d3-scale/README.md: `*domain*` -> `#diverging_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*interpolator*` -> `#diverging_interpolator`
+- src/frontend/node_modules/d3-scale/README.md: `applied` -> `#_diverging`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*` -> `#_continuous`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.domain` -> `#continuous_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.clamp` -> `#continuous_clamp`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_range`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.range` -> `#continuous_rangeRound`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.copy` -> `#continuous_copy`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.unknown` -> `#continuous_unknown`
+- src/frontend/node_modules/d3-scale/README.md: `diverging scale` -> `#diverging-scales`
+- src/frontend/node_modules/d3-scale/README.md: `log scale` -> `#log-scales`
+- src/frontend/node_modules/d3-scale/README.md: `diverging scale` -> `#diverging-scales`
+- src/frontend/node_modules/d3-scale/README.md: `power scale` -> `#pow-scales`
+- src/frontend/node_modules/d3-scale/README.md: `diverging scale` -> `#diverging-scales`
+- src/frontend/node_modules/d3-scale/README.md: `d3.scaleSqrt` -> `#scaleSqrt`
+- src/frontend/node_modules/d3-scale/README.md: `diverging scale` -> `#diverging-scales`
+- src/frontend/node_modules/d3-scale/README.md: `symlog scale` -> `#symlog-scales`
+- src/frontend/node_modules/d3-scale/README.md: `linear scales` -> `#linear-scales`
+- src/frontend/node_modules/d3-scale/README.md: `*domain*` -> `#quantize_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*range*` -> `#quantize_range`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#quantize_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#quantize_range`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#quantize_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#quantize_range`
+- src/frontend/node_modules/d3-scale/README.md: `*quantize*` -> `#_quantize`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.ticks` -> `#continuous_ticks`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.tickFormat` -> `#continuous_tickFormat`
+- src/frontend/node_modules/d3-scale/README.md: `*continuous*.nice` -> `#continuous_nice`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#quantize_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*domain*` -> `#quantile_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*range*` -> `#quantile_range`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#quantile_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#quantile_range`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#quantile_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#quantile_range`
+- src/frontend/node_modules/d3-scale/README.md: `*quantile*` -> `#_quantile`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#quantile_range`
+- src/frontend/node_modules/d3-scale/README.md: `quantize scales` -> `#quantize-scales`
+- src/frontend/node_modules/d3-scale/README.md: `*domain*` -> `#threshold_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*range*` -> `#threshold_range`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#threshold_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#threshold_range`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#threshold_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#threshold_range`
+- src/frontend/node_modules/d3-scale/README.md: `continuous scales` -> `#continuous-scales`
+- src/frontend/node_modules/d3-scale/README.md: `*domain*` -> `#ordinal_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*range*` -> `#ordinal_range`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#ordinal_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#ordinal_range`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#ordinal_domain`
+- src/frontend/node_modules/d3-scale/README.md: `unknown` -> `#ordinal_unknown`
+- src/frontend/node_modules/d3-scale/README.md: `implicit` -> `#scaleImplicit`
+- src/frontend/node_modules/d3-scale/README.md: `unknown value` -> `#ordinal_unknown`
+- src/frontend/node_modules/d3-scale/README.md: `implicit` -> `#scaleImplicit`
+- src/frontend/node_modules/d3-scale/README.md: `implicit` -> `#scaleImplicit`
+- src/frontend/node_modules/d3-scale/README.md: `*ordinal*.domain` -> `#ordinal_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*ordinal*.unknown` -> `#ordinal_unknown`
+- src/frontend/node_modules/d3-scale/README.md: `ordinal scales` -> `#ordinal-scales`
+- src/frontend/node_modules/d3-scale/README.md: `unknown value` -> `#ordinal_unknown`
+- src/frontend/node_modules/d3-scale/README.md: `*domain*` -> `#band_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*range*` -> `#band_range`
+- src/frontend/node_modules/d3-scale/README.md: `padding` -> `#band_padding`
+- src/frontend/node_modules/d3-scale/README.md: `rounding` -> `#band_round`
+- src/frontend/node_modules/d3-scale/README.md: `alignment` -> `#band_align`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#band_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#band_range`
+- src/frontend/node_modules/d3-scale/README.md: `*range*` -> `#band_range`
+- src/frontend/node_modules/d3-scale/README.md: `rounding` -> `#band_round`
+- src/frontend/node_modules/d3-scale/README.md: `*band*.align` -> `#band_align`
+- src/frontend/node_modules/d3-scale/README.md: `bandwidth` -> `#band_bandwidth`
+- src/frontend/node_modules/d3-scale/README.md: `step` -> `#band_step`
+- src/frontend/node_modules/d3-scale/README.md: `inner` -> `#band_paddingInner`
+- src/frontend/node_modules/d3-scale/README.md: `outer` -> `#band_paddingOuter`
+- src/frontend/node_modules/d3-scale/README.md: `band scales` -> `#band-scales`
+- src/frontend/node_modules/d3-scale/README.md: `unknown value` -> `#ordinal_unknown`
+- src/frontend/node_modules/d3-scale/README.md: `*domain*` -> `#point_domain`
+- src/frontend/node_modules/d3-scale/README.md: `*range*` -> `#point_range`
+- src/frontend/node_modules/d3-scale/README.md: `padding` -> `#point_padding`
+- src/frontend/node_modules/d3-scale/README.md: `rounding` -> `#point_round`
+- src/frontend/node_modules/d3-scale/README.md: `alignment` -> `#point_align`
+- src/frontend/node_modules/d3-scale/README.md: `domain` -> `#point_domain`
+- src/frontend/node_modules/d3-scale/README.md: `range` -> `#point_range`
+- src/frontend/node_modules/d3-scale/README.md: `*range*` -> `#point_range`
+- src/frontend/node_modules/d3-scale/README.md: `rounding` -> `#point_round`
+- src/frontend/node_modules/d3-scale/README.md: `*point*.align` -> `#point_align`
+- src/frontend/node_modules/d3-scale/README.md: `step` -> `#band_step`
+- src/frontend/node_modules/d3-scale/README.md: `*band*.paddingOuter` -> `#band_paddingOuter`
+- src/frontend/node_modules/@nodelib/fs.walk/README.md: ``Options`` -> `#options`
+- src/frontend/node_modules/@nodelib/fs.walk/README.md: ``Settings`` -> `#settings`
+- src/frontend/node_modules/@nodelib/fs.walk/README.md: ``fs.Dirent`` -> `./src/types/index.ts`
+- src/frontend/node_modules/@nodelib/fs.walk/README.md: ``DeepFilterFunction`` -> `./src/settings.ts`
+- src/frontend/node_modules/@nodelib/fs.walk/README.md: ``EntryFilterFunction`` -> `./src/settings.ts`
+- src/frontend/node_modules/@nodelib/fs.walk/README.md: ``ErrorFilterFunction`` -> `./src/settings.ts`
+- src/frontend/node_modules/@nodelib/fs.walk/README.md: ``Entry`` -> `#entry`
+- src/frontend/node_modules/@nodelib/fs.stat/README.md: ``Options`` -> `#options`
+- src/frontend/node_modules/@nodelib/fs.stat/README.md: ``Settings`` -> `#settings`
+- src/frontend/node_modules/@nodelib/fs.stat/README.md: ``FileSystemAdapter`` -> `./src/adapters/fs.ts`
+- src/frontend/node_modules/@nodelib/fs.scandir/README.md: ``old` and `modern` mode` -> `#old-and-modern-mode`
+- src/frontend/node_modules/@nodelib/fs.scandir/README.md: ``Entry`` -> `#entry`
+- src/frontend/node_modules/@nodelib/fs.scandir/README.md: ``Entry`` -> `#entry`
+- src/frontend/node_modules/@nodelib/fs.scandir/README.md: ``Options`` -> `#options`
+- src/frontend/node_modules/@nodelib/fs.scandir/README.md: ``Settings`` -> `#settingsoptions`
+- src/frontend/node_modules/@nodelib/fs.scandir/README.md: ``fs.Dirent`` -> `./src/types/index.ts`
+- src/frontend/node_modules/@nodelib/fs.scandir/README.md: ``DirentFromStats`` -> `./src/utils/fs.ts`
+- src/frontend/node_modules/@nodelib/fs.scandir/README.md: ``Entry`` -> `#entry`
+- src/frontend/node_modules/@nodelib/fs.scandir/README.md: ``FileSystemAdapter`` -> `./src/adapters/fs.ts`
+- src/frontend/node_modules/babel-plugin-istanbul/README.md: `Integrations` -> `#integrations`
+- src/frontend/node_modules/babel-plugin-istanbul/node_modules/istanbul-lib-instrument/README.md: `v0-changes.md` -> `v0-changes.md`
+- src/frontend/node_modules/typescript-eslint/node_modules/ts-api-utils/README.md: ``.github/CONTRIBUTING.md`` -> `./.github/CONTRIBUTING.md`
+- src/frontend/node_modules/typescript-eslint/node_modules/ignore/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/typescript-eslint/node_modules/ignore/README.md: ``Pathname` Conventions` -> `#pathname-conventions`
+- src/frontend/node_modules/typescript-eslint/node_modules/ignore/README.md: `Upgrade Guide` -> `#upgrade-guide`
+- src/frontend/node_modules/typescript-eslint/node_modules/ignore/README.md: `Pathname` -> `#pathname-conventions`
+- src/frontend/node_modules/typescript-eslint/node_modules/ignore/README.md: `convention` -> `#1-pathname-should-be-a-pathrelatived-pathname`
+- src/frontend/node_modules/typescript-eslint/node_modules/ignore/README.md: ``path.relative()`d` -> `#pathname-conventions`
+- src/frontend/node_modules/typescript-eslint/node_modules/ignore/README.md: `here` -> `#1-pathname-should-be-a-pathrelatived-pathname`
+- src/frontend/node_modules/typescript-eslint/node_modules/ignore/README.md: ``EventEmitter`` -> `nodejs.org/api/events.html`
+- src/frontend/node_modules/typescript-eslint/node_modules/ignore/README.md: `.addIgnoreFile` -> `#addignorefilepath`
+- src/frontend/node_modules/typescript-eslint/node_modules/minimatch/README.md: `the caveat about Windows
+paths` -> `#windows`
+- src/frontend/node_modules/d3-color/README.md: `RGB` -> `#rgb`
+- src/frontend/node_modules/d3-color/README.md: `HSL` -> `#hsl`
+- src/frontend/node_modules/d3-color/README.md: `CIELAB` -> `#lab`
+- src/frontend/node_modules/d3-color/README.md: `CIELCh<sub>ab</sub>` -> `#lch`
+- src/frontend/node_modules/d3-color/README.md: `Cubehelix` -> `#cubehelix`
+- src/frontend/node_modules/d3-color/README.md: `RGB` -> `#rgb`
+- src/frontend/node_modules/d3-color/README.md: `HSL` -> `#hsl`
+- src/frontend/node_modules/d3-color/README.md: `RGB equivalent` -> `#rgb`
+- src/frontend/node_modules/d3-color/README.md: `*color*.formatRgb` -> `#color_formatRgb`
+- src/frontend/node_modules/d3-color/README.md: `color` -> `#color`
+- src/frontend/node_modules/d3-color/README.md: `*color*` -> `#color`
+- src/frontend/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- src/frontend/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- src/frontend/node_modules/d3-color/README.md: `color` -> `#color`
+- src/frontend/node_modules/d3-color/README.md: `*color*` -> `#color`
+- src/frontend/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- src/frontend/node_modules/d3-color/README.md: `color` -> `#color`
+- src/frontend/node_modules/d3-color/README.md: `*color*` -> `#color`
+- src/frontend/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- src/frontend/node_modules/d3-color/README.md: `CIELAB` -> `#lab`
+- src/frontend/node_modules/d3-color/README.md: `d3.lch` -> `#lch`
+- src/frontend/node_modules/d3-color/README.md: `0, 360).
+
+If *l*, *c*, and *h* are specified, these represent the channel values of the returned color; an *opacity* may also be specified. If a CSS Color Module Level 3 *specifier* string is specified, it is parsed and then converted to CIELCh<sub>ab</sub> color space. See [color` -> `#color`
+- src/frontend/node_modules/d3-color/README.md: `*color*` -> `#color`
+- src/frontend/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- src/frontend/node_modules/d3-color/README.md: `color` -> `#color`
+- src/frontend/node_modules/d3-color/README.md: `*color*` -> `#color`
+- src/frontend/node_modules/d3-color/README.md: `*color*.rgb` -> `#color_rgb`
+- src/frontend/node_modules/ignore/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/ignore/README.md: ``Pathname` Conventions` -> `#pathname-conventions`
+- src/frontend/node_modules/ignore/README.md: `Upgrade Guide` -> `#upgrade-guide`
+- src/frontend/node_modules/ignore/README.md: `convention` -> `#1-pathname-should-be-a-pathrelatived-pathname`
+- src/frontend/node_modules/ignore/README.md: ``path.relative()`d` -> `#pathname-conventions`
+- src/frontend/node_modules/ignore/README.md: `here` -> `#1-pathname-should-be-a-pathrelatived-pathname`
+- src/frontend/node_modules/ignore/README.md: ``EventEmitter`` -> `nodejs.org/api/events.html`
+- src/frontend/node_modules/ignore/README.md: `.addIgnoreFile` -> `#addignorefilepath`
+- src/frontend/node_modules/emittery/readme.md: `API` -> `#api`
+- src/frontend/node_modules/tslib/SECURITY.md: `secure@microsoft.com` -> `mailto:secure@microsoft.com`
+- src/frontend/node_modules/ts-jest/README.md: `CONTRIBUTING.md` -> `CONTRIBUTING.md`
+- src/frontend/node_modules/ts-jest/README.md: `LICENSE.md` -> `LICENSE.md`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: `contributing guidelines` -> `.github/contributing.md`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Primitive`` -> `source/primitive.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Class`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Constructor`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``AbstractClass`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``AbstractConstructor`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``TypedArray`` -> `source/typed-array.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ObservableLike`` -> `source/observable-like.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``EmptyObject`` -> `source/empty-object.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``NonEmptyObject`` -> `source/non-empty-object.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnknownRecord`` -> `source/unknown-record.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnknownArray`` -> `source/unknown-array.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnknownMap`` -> `source/unknown-map.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnknownSet`` -> `source/unknown-set.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Writable`` -> `source/writable.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``WritableDeep`` -> `source/writable-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Merge`` -> `source/merge.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``MergeDeep`` -> `source/merge-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``MergeExclusive`` -> `source/merge-exclusive.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``OverrideProperties`` -> `source/override-properties.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireAtLeastOne`` -> `source/require-at-least-one.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireAllOrNone`` -> `source/require-all-or-none.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireOneOrNone`` -> `source/require-one-or-none.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SingleKeyObject`` -> `source/single-key-object.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequiredDeep`` -> `source/required-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``PickDeep`` -> `source/pick-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``OmitDeep`` -> `source/omit-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``OmitIndexSignature`` -> `source/omit-index-signature.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``PickIndexSignature`` -> `source/pick-index-signature.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``PartialDeep`` -> `source/partial-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``PartialOnUndefinedDeep`` -> `source/partial-on-undefined-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``UndefinedOnPartialDeep`` -> `source/undefined-on-partial-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ReadonlyDeep`` -> `source/readonly-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``LiteralUnion`` -> `source/literal-union.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Opaque`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnwrapTagged`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnwrapOpaque`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``InvariantOf`` -> `source/invariant-of.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetReadonly`` -> `source/set-readonly.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetRequired`` -> `source/set-required.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetRequiredDeep`` -> `source/set-required-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetNonNullable`` -> `source/set-non-nullable.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetNonNullableDeep`` -> `source/set-non-nullable-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ValueOf`` -> `source/value-of.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ConditionalKeys`` -> `source/conditional-keys.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ConditionalPickDeep`` -> `source/conditional-pick-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ConditionalExcept`` -> `source/conditional-except.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnionToIntersection`` -> `source/union-to-intersection.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``LiteralToPrimitive`` -> `source/literal-to-primitive.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: `primitive type` -> `source/primitive.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``LiteralToPrimitiveDeep`` -> `source/literal-to-primitive-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Stringified`` -> `source/stringified.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Entry`` -> `source/entry.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Entries`` -> `source/entries.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetReturnType`` -> `source/set-return-type.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetParameterType`` -> `source/set-parameter-type.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SimplifyDeep`` -> `source/simplify-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Get`` -> `source/get.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``StringKeyOf`` -> `source/string-key-of.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Schema`` -> `source/schema.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Exact`` -> `source/exact.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``OptionalKeysOf`` -> `source/optional-keys-of.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``KeysOfUnion`` -> `source/keys-of-union.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``HasOptionalKeys`` -> `source/has-optional-keys.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequiredKeysOf`` -> `source/required-keys-of.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``HasRequiredKeys`` -> `source/has-required-keys.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ReadonlyKeysOf`` -> `source/readonly-keys-of.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``HasReadonlyKeys`` -> `source/has-readonly-keys.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``WritableKeysOf`` -> `source/writable-keys-of.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``HasWritableKeys`` -> `source/has-writable-keys.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Spread`` -> `source/spread.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsEqual`` -> `source/is-equal.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``TaggedUnion`` -> `source/tagged-union.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IntRange`` -> `source/int-range.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IntClosedRange`` -> `source/int-closed-range.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ArrayIndices`` -> `source/array-indices.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ArrayValues`` -> `source/array-values.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ArraySplice`` -> `source/array-splice.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ArrayTail`` -> `source/array-tail.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetFieldType`` -> `source/set-field-type.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Paths`` -> `source/paths.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SharedUnionFields`` -> `source/shared-union-fields.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SharedUnionFieldsDeep`` -> `source/shared-union-fields-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``AllUnionFields`` -> `source/all-union-fields.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``DistributedOmit`` -> `source/distributed-omit.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``DistributedPick`` -> `source/distributed-pick.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``And`` -> `source/and.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Or`` -> `source/or.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``NonEmptyTuple`` -> `source/non-empty-tuple.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``NonEmptyString`` -> `source/non-empty-string.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``FindGlobalType`` -> `source/find-global-type.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``FindGlobalInstanceType`` -> `source/find-global-type.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsLiteral`` -> `source/is-literal.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsStringLiteral`` -> `source/is-literal.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsNumericLiteral`` -> `source/is-literal.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsBooleanLiteral`` -> `source/is-literal.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsSymbolLiteral`` -> `source/is-literal.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsAny`` -> `source/is-any.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IfAny`` -> `source/if-any.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsNever`` -> `source/is-never.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IfNever`` -> `source/if-never.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsUnknown`` -> `source/is-unknown.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IfUnknown`` -> `source/if-unknown.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsEmptyObject`` -> `source/empty-object.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IfEmptyObject`` -> `source/if-empty-object.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsNull`` -> `source/is-null.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IfNull`` -> `source/if-null.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsTuple`` -> `source/is-tuple.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Jsonify`` -> `source/jsonify.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Jsonifiable`` -> `source/jsonifiable.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``JsonPrimitive`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``JsonObject`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``JsonArray`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``JsonValue`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``StructuredCloneable`` -> `source/structured-cloneable.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Promisable`` -> `source/promisable.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``AsyncReturnType`` -> `source/async-return-type.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Asyncify`` -> `source/asyncify.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Trim`` -> `source/trim.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Split`` -> `source/split.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Words`` -> `source/words.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Replace`` -> `source/replace.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``StringSlice`` -> `source/string-slice.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``StringRepeat`` -> `source/string-repeat.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Arrayable`` -> `source/arrayable.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Includes`` -> `source/includes.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Join`` -> `source/join.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ArraySlice`` -> `source/array-slice.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``LastArrayElement`` -> `source/last-array-element.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``FixedLengthArray`` -> `source/fixed-length-array.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``MultidimensionalArray`` -> `source/multidimensional-array.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``MultidimensionalReadonlyArray`` -> `source/multidimensional-readonly-array.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ReadonlyTuple`` -> `source/readonly-tuple.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``TupleToUnion`` -> `source/tuple-to-union.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``UnionToTuple`` -> `source/union-to-tuple.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``TupleToObject`` -> `source/tuple-to-object.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``PositiveInfinity`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``NegativeInfinity`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Finite`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Integer`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Float`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``NegativeFloat`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Negative`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``NonNegative`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``NegativeInteger`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``NonNegativeInteger`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsNegative`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsFloat`` -> `source/is-float.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IsInteger`` -> `source/is-integer.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``GreaterThan`` -> `source/greater-than.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``GreaterThanOrEqual`` -> `source/greater-than-or-equal.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``LessThan`` -> `source/less-than.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``LessThanOrEqual`` -> `source/less-than-or-equal.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Sum`` -> `source/sum.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Subtract`` -> `source/subtract.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``CamelCase`` -> `source/camel-case.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``CamelCasedProperties`` -> `source/camel-cased-properties.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``CamelCasedPropertiesDeep`` -> `source/camel-cased-properties-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``KebabCase`` -> `source/kebab-case.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``KebabCasedProperties`` -> `source/kebab-cased-properties.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``KebabCasedPropertiesDeep`` -> `source/kebab-cased-properties-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``PascalCase`` -> `source/pascal-case.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``PascalCasedProperties`` -> `source/pascal-cased-properties.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``PascalCasedPropertiesDeep`` -> `source/pascal-cased-properties-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SnakeCase`` -> `source/snake-case.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SnakeCasedProperties`` -> `source/snake-cased-properties.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SnakeCasedPropertiesDeep`` -> `source/snake-cased-properties-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ScreamingSnakeCase`` -> `source/screaming-snake-case.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``DelimiterCase`` -> `source/delimiter-case.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``DelimiterCasedProperties`` -> `source/delimiter-cased-properties.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``DelimiterCasedPropertiesDeep`` -> `source/delimiter-cased-properties-deep.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``GlobalThis`` -> `source/global-this.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``TsConfigJson`` -> `source/tsconfig-json.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Schema`` -> `source/schema.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Writable`` -> `source/writable.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``RequireOneOrNone`` -> `source/require-one-or-none.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``KeysOfUnion`` -> `source/keys-of-union.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: `MIT` -> `license-mit`
+- src/frontend/node_modules/ts-jest/node_modules/type-fest/readme.md: `CC0-1.0` -> `license-cc0`
+- src/frontend/node_modules/reselect/README.md: `**Introduction**` -> `#https://reselect.js.org/introduction/getting-started`
+- src/frontend/node_modules/reselect/README.md: `**How Does Reselect Work?**` -> `#https://reselect.js.org/introduction/how-does-reselect-work`
+- src/frontend/node_modules/reselect/README.md: `**Development-Only Stability Checks**` -> `#https://reselect.js.org/api/development-only-stability-checks`
+- src/frontend/node_modules/reselect/README.md: `**FAQ**` -> `#https://reselect.js.org/FAQ`
+- src/frontend/node_modules/reselect/README.md: `**Selector Function**` -> `#selector-function`
+- src/frontend/node_modules/reselect/README.md: `**input selectors**` -> `#input-selectors`
+- src/frontend/node_modules/reselect/README.md: `**Output Selector**` -> `#output-selector`
+- src/frontend/node_modules/reselect/README.md: `**Result Function**` -> `#result-function`
+- src/frontend/node_modules/reselect/README.md: `**`Dependencies`**` -> `#dependencies`
+- src/frontend/node_modules/argparse/CHANGELOG.md: `doc` -> `./doc`
+- src/frontend/node_modules/argparse/README.md: `doc` -> `./doc`
+- src/frontend/node_modules/argparse/README.md: `Difference with python` -> `./doc`
+- src/frontend/node_modules/picomatch/README.md: `advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/picomatch/README.md: `library comparison` -> `#library-comparisons`
+- src/frontend/node_modules/picomatch/README.md: `Install` -> `#install`
+- src/frontend/node_modules/picomatch/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/picomatch/README.md: `API` -> `#api`
+- src/frontend/node_modules/picomatch/README.md: `picomatch` -> `#picomatch`
+- src/frontend/node_modules/picomatch/README.md: `.test` -> `#test`
+- src/frontend/node_modules/picomatch/README.md: `.matchBase` -> `#matchbase`
+- src/frontend/node_modules/picomatch/README.md: `.isMatch` -> `#ismatch`
+- src/frontend/node_modules/picomatch/README.md: `.parse` -> `#parse`
+- src/frontend/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- src/frontend/node_modules/picomatch/README.md: `.compileRe` -> `#compilere`
+- src/frontend/node_modules/picomatch/README.md: `.makeRe` -> `#makere`
+- src/frontend/node_modules/picomatch/README.md: `.toRegex` -> `#toregex`
+- src/frontend/node_modules/picomatch/README.md: `Options` -> `#options`
+- src/frontend/node_modules/picomatch/README.md: `Picomatch options` -> `#picomatch-options`
+- src/frontend/node_modules/picomatch/README.md: `Scan Options` -> `#scan-options`
+- src/frontend/node_modules/picomatch/README.md: `Options Examples` -> `#options-examples`
+- src/frontend/node_modules/picomatch/README.md: `Globbing features` -> `#globbing-features`
+- src/frontend/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- src/frontend/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/picomatch/README.md: `Braces` -> `#braces`
+- src/frontend/node_modules/picomatch/README.md: `Matching special characters as literals` -> `#matching-special-characters-as-literals`
+- src/frontend/node_modules/picomatch/README.md: `Library Comparisons` -> `#library-comparisons`
+- src/frontend/node_modules/picomatch/README.md: `Benchmarks` -> `#benchmarks`
+- src/frontend/node_modules/picomatch/README.md: `Philosophies` -> `#philosophies`
+- src/frontend/node_modules/picomatch/README.md: `About` -> `#about`
+- src/frontend/node_modules/picomatch/README.md: `Author` -> `#author`
+- src/frontend/node_modules/picomatch/README.md: `License` -> `#license`
+- src/frontend/node_modules/picomatch/README.md: `picomatch` -> `lib/picomatch.js#L32`
+- src/frontend/node_modules/picomatch/README.md: `.test` -> `lib/picomatch.js#L117`
+- src/frontend/node_modules/picomatch/README.md: `.matchBase` -> `lib/picomatch.js#L161`
+- src/frontend/node_modules/picomatch/README.md: `.makeRe` -> `#makeRe`
+- src/frontend/node_modules/picomatch/README.md: `.isMatch` -> `lib/picomatch.js#L183`
+- src/frontend/node_modules/picomatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/picomatch/README.md: `.parse` -> `lib/picomatch.js#L199`
+- src/frontend/node_modules/picomatch/README.md: `.scan` -> `lib/picomatch.js#L231`
+- src/frontend/node_modules/picomatch/README.md: `.compileRe` -> `lib/picomatch.js#L245`
+- src/frontend/node_modules/picomatch/README.md: `parse()` -> `#parse`
+- src/frontend/node_modules/picomatch/README.md: `.makeRe` -> `lib/picomatch.js#L286`
+- src/frontend/node_modules/picomatch/README.md: `.toRegex` -> `lib/picomatch.js#L321`
+- src/frontend/node_modules/picomatch/README.md: `format` -> `#optionsformat`
+- src/frontend/node_modules/picomatch/README.md: `onIgnore` -> `#optionsonIgnore`
+- src/frontend/node_modules/picomatch/README.md: `onMatch` -> `#optionsonMatch`
+- src/frontend/node_modules/picomatch/README.md: `onResult` -> `#optionsonResult`
+- src/frontend/node_modules/picomatch/README.md: `picomatch options` -> `#picomatch-options`
+- src/frontend/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- src/frontend/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- src/frontend/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/picomatch/README.md: `extglobs` -> `#extglobs`
+- src/frontend/node_modules/picomatch/README.md: `POSIX brackets` -> `#posix-brackets`
+- src/frontend/node_modules/picomatch/README.md: `Braces` -> `#brace-expansion`
+- src/frontend/node_modules/picomatch/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/picomatch/README.md: `contributing guide` -> `.github/contributing.md`
+- src/frontend/node_modules/picomatch/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/picomatch/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/d3-geo/README.md: `gnomonic` -> `#geoGnomonic`
+- src/frontend/node_modules/d3-geo/README.md: `Paths` -> `#paths`
+- src/frontend/node_modules/d3-geo/README.md: `Projections` -> `#projections`
+- src/frontend/node_modules/d3-geo/README.md: `Azimuthal` -> `#azimuthal-projections`
+- src/frontend/node_modules/d3-geo/README.md: `Composite` -> `#composite-projections`
+- src/frontend/node_modules/d3-geo/README.md: `Conic` -> `#conic-projections`
+- src/frontend/node_modules/d3-geo/README.md: `Cylindrical` -> `#cylindrical-projections`
+- src/frontend/node_modules/d3-geo/README.md: `Raw Projections` -> `#raw-projections`
+- src/frontend/node_modules/d3-geo/README.md: `Spherical Math` -> `#spherical-math`
+- src/frontend/node_modules/d3-geo/README.md: `Spherical Shapes` -> `#spherical-shapes`
+- src/frontend/node_modules/d3-geo/README.md: `Streams` -> `#streams`
+- src/frontend/node_modules/d3-geo/README.md: `Transforms` -> `#transforms`
+- src/frontend/node_modules/d3-geo/README.md: `Clipping` -> `#clipping`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoPath` -> `#geoPath`
+- src/frontend/node_modules/d3-geo/README.md: `projections` -> `#projections`
+- src/frontend/node_modules/d3-geo/README.md: `transforms` -> `#transforms`
+- src/frontend/node_modules/d3-geo/README.md: `current projection` -> `#path_projection`
+- src/frontend/node_modules/d3-geo/README.md: `current context` -> `#path_context`
+- src/frontend/node_modules/d3-geo/README.md: `pointRadius` -> `#path_pointRadius`
+- src/frontend/node_modules/d3-geo/README.md: `*path*.context` -> `#path_context`
+- src/frontend/node_modules/d3-geo/README.md: `projection` -> `#path_projection`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoArea` -> `#geoArea`
+- src/frontend/node_modules/d3-geo/README.md: `projection` -> `#path_projection`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoBounds` -> `#geoBounds`
+- src/frontend/node_modules/d3-geo/README.md: `projection` -> `#path_projection`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoCentroid` -> `#geoCentroid`
+- src/frontend/node_modules/d3-geo/README.md: `projection` -> `#path_projection`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoLength` -> `#geoLength`
+- src/frontend/node_modules/d3-geo/README.md: `geographic projections` -> `#projections`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.stream` -> `#projection_stream`
+- src/frontend/node_modules/d3-geo/README.md: `transforms` -> `#transforms`
+- src/frontend/node_modules/d3-geo/README.md: `path generator` -> `#_path`
+- src/frontend/node_modules/d3-geo/README.md: `path generator` -> `#_path`
+- src/frontend/node_modules/d3-geo/README.md: `projection` -> `#geoProjection`
+- src/frontend/node_modules/d3-geo/README.md: `Azimuthal` -> `#azimuthal-projections`
+- src/frontend/node_modules/d3-geo/README.md: `Composite` -> `#composite-projections`
+- src/frontend/node_modules/d3-geo/README.md: `Conic` -> `#conic-projections`
+- src/frontend/node_modules/d3-geo/README.md: `Cylindrical` -> `#cylindrical-projections`
+- src/frontend/node_modules/d3-geo/README.md: `custom projections` -> `#raw-projections`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoProjection` -> `#geoProjection`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoProjectionMutator` -> `#geoProjectionMutator`
+- src/frontend/node_modules/d3-geo/README.md: `projection stream` -> `#streams`
+- src/frontend/node_modules/d3-geo/README.md: `preclip` -> `#preclip`
+- src/frontend/node_modules/d3-geo/README.md: `postclip` -> `#postclip`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.preclip` -> `#projection_preclip`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoClipAntimeridian` -> `#geoClipAntimeridian`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoClipCircle` -> `#geoClipCircle`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.postclip` -> `#projection_postclip`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoClipRectangle` -> `#geoClipRectangle`
+- src/frontend/node_modules/d3-geo/README.md: `center` -> `#projection_center`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoRotation` -> `#geoRotation`
+- src/frontend/node_modules/d3-geo/README.md: `scale` -> `#projection_scale`
+- src/frontend/node_modules/d3-geo/README.md: `translate` -> `#projection_translate`
+- src/frontend/node_modules/d3-geo/README.md: `clip extent` -> `#projection_clipExtent`
+- src/frontend/node_modules/d3-geo/README.md: `precision` -> `#projection_precision`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.fitExtent` -> `#projection_fitExtent`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.fitSize` -> `#projection_fitSize`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.fitSize` -> `#projection_fitSize`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.center` -> `#projection_center`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.rotate` -> `#projection_rotate`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipAngle` -> `#projection_clipAngle`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoConicEqualArea` -> `#geoConicEqualArea`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoAlbers` -> `#geoAlbers`
+- src/frontend/node_modules/d3-geo/README.md: `two standard parallels` -> `#conic_parallels`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoConicEqualArea` -> `#geoConicEqualArea`
+- src/frontend/node_modules/d3-geo/README.md: `*conic*.parallels` -> `#conic_parallels`
+- src/frontend/node_modules/d3-geo/README.md: `*conic*.parallels` -> `#conic_parallels`
+- src/frontend/node_modules/d3-geo/README.md: `*conic*.parallels` -> `#conic_parallels`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoProjection` -> `#geoProjection`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoProjectionMutator` -> `#geoProjectionMutator`
+- src/frontend/node_modules/d3-geo/README.md: `*project*` -> `#_project`
+- src/frontend/node_modules/d3-geo/README.md: `raw projection` -> `#_project`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.scale` -> `#projection_scale`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.translate` -> `#projection_translate`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.center` -> `#projection_center`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.rotate` -> `#projection_rotate`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.invert` -> `#projection_invert`
+- src/frontend/node_modules/d3-geo/README.md: `raw projection` -> `#_project`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoConicEqualAreaRaw` -> `#geoConicEqualAreaRaw`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoProjection` -> `#geoProjection`
+- src/frontend/node_modules/d3-geo/README.md: `*path*.area` -> `#path_area`
+- src/frontend/node_modules/d3-geo/README.md: `*path*.bounds` -> `#path_bounds`
+- src/frontend/node_modules/d3-geo/README.md: `*path*.centroid` -> `#path_centroid`
+- src/frontend/node_modules/d3-geo/README.md: `*path*.measure` -> `#path_measure`
+- src/frontend/node_modules/d3-geo/README.md: `*path*.measure` -> `#path_measure`
+- src/frontend/node_modules/d3-geo/README.md: `rotation function` -> `#_rotation`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.rotate` -> `#projection_rotate`
+- src/frontend/node_modules/d3-geo/README.md: `*rotation*` -> `#_rotation`
+- src/frontend/node_modules/d3-geo/README.md: `d3.geoPath` -> `#geoPath`
+- src/frontend/node_modules/d3-geo/README.md: `center` -> `#circle_center`
+- src/frontend/node_modules/d3-geo/README.md: `radius` -> `#circle_radius`
+- src/frontend/node_modules/d3-geo/README.md: `precision` -> `#circle_precision`
+- src/frontend/node_modules/d3-geo/README.md: `generated` -> `#_circle`
+- src/frontend/node_modules/d3-geo/README.md: `generated` -> `#_circle`
+- src/frontend/node_modules/d3-geo/README.md: `generated` -> `#_circle`
+- src/frontend/node_modules/d3-geo/README.md: `point` -> `#point`
+- src/frontend/node_modules/d3-geo/README.md: `line` -> `#lineStart`
+- src/frontend/node_modules/d3-geo/README.md: `polygon` -> `#polygonStart`
+- src/frontend/node_modules/d3-geo/README.md: `projection *stream*` -> `#projection-streams`
+- src/frontend/node_modules/d3-geo/README.md: `point` -> `#point`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.stream` -> `#projection_stream`
+- src/frontend/node_modules/d3-geo/README.md: `*path*.projection` -> `#path_projection`
+- src/frontend/node_modules/d3-geo/README.md: `*identity*.reflectY` -> `#identity_reflectY`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.scale` -> `#projection_scale`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.translate` -> `#projection_translate`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.fitExtent` -> `#projection_fitExtent`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.fitSize` -> `#projection_fitSize`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.fitWidth` -> `#projection_fitWidth`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.fitHeight` -> `#projection_fitHeight`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.clipExtent` -> `#projection_clipExtent`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.angle` -> `#projection_angle`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.reflectX` -> `#projection_reflectX`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.reflectY` -> `#projection_reflectY`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.preclip` -> `#projection_preclip`
+- src/frontend/node_modules/d3-geo/README.md: `*projection*.postclip` -> `#projection_postclip`
+- src/frontend/node_modules/d3-geo/README.md: `projection stream` -> `#streams`
+- src/frontend/node_modules/d3-geo/README.md: `center` -> `#projection_center`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `Statistics` -> `#statistics`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `Search` -> `#search`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `Transformations` -> `#transformations`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `Histograms` -> `#histograms`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `Histogram Thresholds` -> `#histogram-thresholds`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `scan` -> `#scan`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `extent` -> `#extent`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `scan` -> `#scan`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `extent` -> `#extent`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `minimum` -> `#min`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `maximum` -> `#max`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `bias-corrected variance` -> `#variance`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `ascending` -> `#ascending`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `min` -> `#min`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `bisect` -> `#bisect`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `bisectLeft` -> `#bisectLeft`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `bisectLeft` -> `#bisectLeft`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `bisectRight` -> `#bisectRight`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `d3.tickIncrement` -> `#tickIncrement`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `d3.tickStep` -> `#tickStep`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `step` -> `#tickStep`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `d3.tickStep` -> `#tickStep`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `d3.ticks` -> `#ticks`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `zip` -> `#zip`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `generated` -> `#_histogram`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `extent` -> `#extent`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `generated` -> `#_histogram`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `values` -> `#histogram_value`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `threshold generator` -> `#histogram-thresholds`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `Sturges’ formula` -> `#thresholdSturges`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `generated histogram` -> `#_histogram`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `histogram thresholds` -> `#histogram-thresholds`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `domain` -> `#histogram_domain`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `domain` -> `#histogram_domain`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `ticks` -> `#ticks`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `*histogram*.thresholds` -> `#histogram_thresholds`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `*values*` -> `#histogram_value`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `observable domain` -> `#histogram_domain`
+- src/frontend/node_modules/d3-geo/node_modules/d3-array/README.md: `ticks` -> `#ticks`
+- src/frontend/node_modules/d3-timer/README.md: `stopped` -> `#timer_stop`
+- src/frontend/node_modules/d3-timer/README.md: `now` -> `#now`
+- src/frontend/node_modules/d3-timer/README.md: `timer` -> `#timer`
+- src/frontend/node_modules/d3-timer/README.md: `timer` -> `#timer`
+- src/frontend/node_modules/d3-timer/README.md: `stops` -> `#timer_stop`
+- src/frontend/node_modules/d3-timer/README.md: `timer` -> `#timer`
+- src/frontend/node_modules/d3-timer/README.md: `timer` -> `#timer`
+- src/frontend/node_modules/is-glob/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/is-glob/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/is-glob/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/npm-run-path/readme.md: ``cwd` option` -> `#cwd`
+- src/frontend/node_modules/npm-run-path/readme.md: ``cwd` option` -> `#cwd`
+- src/frontend/node_modules/axe-core/README.md: `doc/rule-descriptions.md` -> `./doc/rule-descriptions.md`
+- src/frontend/node_modules/axe-core/README.md: `axe-core API` -> `doc/API.md`
+- src/frontend/node_modules/axe-core/README.md: `axe-core API` -> `doc/API.md`
+- src/frontend/node_modules/axe-core/README.md: `Check Message Template` -> `/doc/check-message-template.md`
+- src/frontend/node_modules/axe-core/README.md: `release and support` -> `doc/release-and-support.md`
+- src/frontend/node_modules/axe-core/README.md: `backward compatibility` -> `doc/backwards-compatibility-doc.md`
+- src/frontend/node_modules/axe-core/README.md: `axe-core ARIA support` -> `./doc/aria-supported.md`
+- src/frontend/node_modules/axe-core/README.md: `Proposing Axe-core Rules guide` -> `./doc/rule-proposal.md`
+- src/frontend/node_modules/axe-core/README.md: `documentation on the architecture` -> `./doc/developer-guide.md`
+- src/frontend/node_modules/axe-core/README.md: `documentation on contributing` -> `CONTRIBUTING.md`
+- src/frontend/node_modules/axe-core/README.md: `List of projects using axe-core` -> `doc/projects.md`
+- src/frontend/node_modules/axe-core/README.md: `Mozilla Public License, version 2.0` -> `LICENSE`
+- src/frontend/node_modules/axe-core/README.md: `LICENSE-3RD-PARTY.txt` -> `LICENSE-3RD-PARTY.txt`
+- src/frontend/node_modules/axe-core/locales/README.md: `Contributing section` -> `../README.md#contributing`
+- src/frontend/node_modules/axe-core/locales/README.md: `Check Message Template` -> `../doc/check-message-template.md`
+- src/frontend/node_modules/axe-core/locales/README.md: `rule` -> `../lib/rules`
+- src/frontend/node_modules/axe-core/locales/README.md: `check` -> `../lib/checks`
+- src/frontend/node_modules/typescript/README.md: `opencode@microsoft.com` -> `mailto:opencode@microsoft.com`
+- src/frontend/node_modules/typescript/SECURITY.md: `secure@microsoft.com` -> `mailto:secure@microsoft.com`
+- src/frontend/node_modules/flat-cache/changelog.md: `89a2698` -> ` https://github.com/royriojas/flat-cache/commit/89a2698 `
+- src/frontend/node_modules/flat-cache/changelog.md: `f268e42` -> ` https://github.com/royriojas/flat-cache/commit/f268e42 `
+- src/frontend/node_modules/flat-cache/changelog.md: `6983a80` -> ` https://github.com/royriojas/flat-cache/commit/6983a80 `
+- src/frontend/node_modules/flat-cache/changelog.md: `18ed6e8` -> ` https://github.com/royriojas/flat-cache/commit/18ed6e8 `
+- src/frontend/node_modules/flat-cache/changelog.md: `beed74c` -> ` https://github.com/royriojas/flat-cache/commit/beed74c `
+- src/frontend/node_modules/flat-cache/changelog.md: `8c6d9dc` -> ` https://github.com/royriojas/flat-cache/commit/8c6d9dc `
+- src/frontend/node_modules/flat-cache/changelog.md: `52b824c` -> ` https://github.com/royriojas/flat-cache/commit/52b824c `
+- src/frontend/node_modules/flat-cache/changelog.md: `ef48276` -> ` https://github.com/royriojas/flat-cache/commit/ef48276 `
+- src/frontend/node_modules/flat-cache/changelog.md: `45b51ca` -> ` https://github.com/royriojas/flat-cache/commit/45b51ca `
+- src/frontend/node_modules/flat-cache/changelog.md: `a5c482c` -> ` https://github.com/royriojas/flat-cache/commit/a5c482c `
+- src/frontend/node_modules/flat-cache/changelog.md: `29fe40b` -> ` https://github.com/royriojas/flat-cache/commit/29fe40b `
+- src/frontend/node_modules/flat-cache/changelog.md: `e9db1b2` -> ` https://github.com/royriojas/flat-cache/commit/e9db1b2 `
+- src/frontend/node_modules/flat-cache/changelog.md: `b58d196` -> ` https://github.com/royriojas/flat-cache/commit/b58d196 `
+- src/frontend/node_modules/flat-cache/changelog.md: `03b1db7` -> ` https://github.com/royriojas/flat-cache/commit/03b1db7 `
+- src/frontend/node_modules/flat-cache/changelog.md: `c2f048d` -> ` https://github.com/royriojas/flat-cache/commit/c2f048d `
+- src/frontend/node_modules/flat-cache/changelog.md: `a0e56da` -> ` https://github.com/royriojas/flat-cache/commit/a0e56da `
+- src/frontend/node_modules/flat-cache/changelog.md: `beba691` -> ` https://github.com/royriojas/flat-cache/commit/beba691 `
+- src/frontend/node_modules/flat-cache/changelog.md: `ce166cb` -> ` https://github.com/royriojas/flat-cache/commit/ce166cb `
+- src/frontend/node_modules/flat-cache/changelog.md: `9f2d1b6` -> ` https://github.com/royriojas/flat-cache/commit/9f2d1b6 `
+- src/frontend/node_modules/flat-cache/changelog.md: `07343b5` -> ` https://github.com/royriojas/flat-cache/commit/07343b5 `
+- src/frontend/node_modules/flat-cache/changelog.md: `92aca1c` -> ` https://github.com/royriojas/flat-cache/commit/92aca1c `
+- src/frontend/node_modules/flat-cache/changelog.md: `73fbed2` -> ` https://github.com/royriojas/flat-cache/commit/73fbed2 `
+- src/frontend/node_modules/flat-cache/changelog.md: `6402ed3` -> ` https://github.com/royriojas/flat-cache/commit/6402ed3 `
+- src/frontend/node_modules/flat-cache/changelog.md: `8d21c7b` -> ` https://github.com/royriojas/flat-cache/commit/8d21c7b `
+- src/frontend/node_modules/flat-cache/changelog.md: `8d23379` -> ` https://github.com/royriojas/flat-cache/commit/8d23379 `
+- src/frontend/node_modules/flat-cache/changelog.md: `b93aced` -> ` https://github.com/royriojas/flat-cache/commit/b93aced `
+- src/frontend/node_modules/flat-cache/changelog.md: `745e65a` -> ` https://github.com/royriojas/flat-cache/commit/745e65a `
+- src/frontend/node_modules/flat-cache/changelog.md: `9d0ca9b` -> ` https://github.com/royriojas/flat-cache/commit/9d0ca9b `
+- src/frontend/node_modules/flat-cache/changelog.md: `a7d2598` -> ` https://github.com/royriojas/flat-cache/commit/a7d2598 `
+- src/frontend/node_modules/flat-cache/changelog.md: `c429012` -> ` https://github.com/royriojas/flat-cache/commit/c429012 `
+- src/frontend/node_modules/flat-cache/changelog.md: `704c6c4` -> ` https://github.com/royriojas/flat-cache/commit/704c6c4 `
+- src/frontend/node_modules/flat-cache/changelog.md: `db12d74` -> ` https://github.com/royriojas/flat-cache/commit/db12d74 `
+- src/frontend/node_modules/flat-cache/changelog.md: `f405719` -> ` https://github.com/royriojas/flat-cache/commit/f405719 `
+- src/frontend/node_modules/flat-cache/changelog.md: `00f6892` -> ` https://github.com/royriojas/flat-cache/commit/00f6892 `
+- src/frontend/node_modules/flat-cache/changelog.md: `d42883f` -> ` https://github.com/royriojas/flat-cache/commit/d42883f `
+- src/frontend/node_modules/flat-cache/changelog.md: `12293be` -> ` https://github.com/royriojas/flat-cache/commit/12293be `
+- src/frontend/node_modules/flat-cache/changelog.md: `af8338a` -> ` https://github.com/royriojas/flat-cache/commit/af8338a `
+- src/frontend/node_modules/flat-cache/changelog.md: `87beaa6` -> ` https://github.com/royriojas/flat-cache/commit/87beaa6 `
+- src/frontend/node_modules/flat-cache/changelog.md: `1c2b1f7` -> ` https://github.com/royriojas/flat-cache/commit/1c2b1f7 `
+- src/frontend/node_modules/flat-cache/changelog.md: `4d5e861` -> ` https://github.com/royriojas/flat-cache/commit/4d5e861 `
+- src/frontend/node_modules/flat-cache/changelog.md: `ec10cf2` -> ` https://github.com/royriojas/flat-cache/commit/ec10cf2 `
+- src/frontend/node_modules/flat-cache/changelog.md: `23e11f9` -> ` https://github.com/royriojas/flat-cache/commit/23e11f9 `
+- src/frontend/node_modules/flat-cache/changelog.md: `2c8016a` -> ` https://github.com/royriojas/flat-cache/commit/2c8016a `
+- src/frontend/node_modules/flat-cache/changelog.md: `c31081e` -> ` https://github.com/royriojas/flat-cache/commit/c31081e `
+- src/frontend/node_modules/flat-cache/changelog.md: `4a41e22` -> ` https://github.com/royriojas/flat-cache/commit/4a41e22 `
+- src/frontend/node_modules/flat-cache/changelog.md: `cd7aeed` -> ` https://github.com/royriojas/flat-cache/commit/cd7aeed `
+- src/frontend/node_modules/flat-cache/changelog.md: `d6fa3c3` -> ` https://github.com/royriojas/flat-cache/commit/d6fa3c3 `
+- src/frontend/node_modules/flat-cache/changelog.md: `07d2ddd` -> ` https://github.com/royriojas/flat-cache/commit/07d2ddd `
+- src/frontend/node_modules/flat-cache/changelog.md: `2be1c24` -> ` https://github.com/royriojas/flat-cache/commit/2be1c24 `
+- src/frontend/node_modules/flat-cache/changelog.md: `3a613fd` -> ` https://github.com/royriojas/flat-cache/commit/3a613fd `
+- src/frontend/node_modules/flat-cache/changelog.md: `fd29e52` -> ` https://github.com/royriojas/flat-cache/commit/fd29e52 `
+- src/frontend/node_modules/flat-cache/changelog.md: `e94e176` -> ` https://github.com/royriojas/flat-cache/commit/e94e176 `
+- src/frontend/node_modules/flat-cache/changelog.md: `97383d9` -> ` https://github.com/royriojas/flat-cache/commit/97383d9 `
+- src/frontend/node_modules/flat-cache/changelog.md: `7bb52d1` -> ` https://github.com/royriojas/flat-cache/commit/7bb52d1 `
+- src/frontend/node_modules/flat-cache/changelog.md: `c395b66` -> ` https://github.com/royriojas/flat-cache/commit/c395b66 `
+- src/frontend/node_modules/flat-cache/changelog.md: `7e47099` -> ` https://github.com/royriojas/flat-cache/commit/7e47099 `
+- src/frontend/node_modules/flat-cache/changelog.md: `f51197a` -> ` https://github.com/royriojas/flat-cache/commit/f51197a `
+- src/frontend/node_modules/flat-cache/changelog.md: `bdb82f3` -> ` https://github.com/royriojas/flat-cache/commit/bdb82f3 `
+- src/frontend/node_modules/flat-cache/changelog.md: `436817f` -> ` https://github.com/royriojas/flat-cache/commit/436817f `
+- src/frontend/node_modules/flat-cache/changelog.md: `be88aa3` -> ` https://github.com/royriojas/flat-cache/commit/be88aa3 `
+- src/frontend/node_modules/flat-cache/changelog.md: `b8f68c2` -> ` https://github.com/royriojas/flat-cache/commit/b8f68c2 `
+- src/frontend/node_modules/flat-cache/changelog.md: `13947c1` -> ` https://github.com/royriojas/flat-cache/commit/13947c1 `
+- src/frontend/node_modules/flat-cache/changelog.md: `af40443` -> ` https://github.com/royriojas/flat-cache/commit/af40443 `
+- src/frontend/node_modules/flat-cache/changelog.md: `c2b6805` -> ` https://github.com/royriojas/flat-cache/commit/c2b6805 `
+- src/frontend/node_modules/flat-cache/changelog.md: `c984274` -> ` https://github.com/royriojas/flat-cache/commit/c984274 `
+- src/frontend/node_modules/flat-cache/changelog.md: `d43cccf` -> ` https://github.com/royriojas/flat-cache/commit/d43cccf `
+- src/frontend/node_modules/yargs-parser/README.md: `configuration` -> `#configuration`
+- src/frontend/node_modules/d3-time-format/README.md: `formatter` -> `#locale_format`
+- src/frontend/node_modules/d3-time-format/README.md: `parser` -> `#locale_parse`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.format` -> `#locale_format`
+- src/frontend/node_modules/d3-time-format/README.md: `default locale` -> `#timeFormatDefaultLocale`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.parse` -> `#locale_parse`
+- src/frontend/node_modules/d3-time-format/README.md: `default locale` -> `#timeFormatDefaultLocale`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.utcFormat` -> `#locale_utcFormat`
+- src/frontend/node_modules/d3-time-format/README.md: `default locale` -> `#timeFormatDefaultLocale`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.utcParse` -> `#locale_utcParse`
+- src/frontend/node_modules/d3-time-format/README.md: `default locale` -> `#timeFormatDefaultLocale`
+- src/frontend/node_modules/d3-time-format/README.md: `UTC parser function` -> `#utcParse`
+- src/frontend/node_modules/d3-time-format/README.md: `locale definition` -> `#locales`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.format` -> `#locale_format`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.format` -> `#locale_format`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.parse` -> `#locale_parse`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.format` -> `#locale_format`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.parse` -> `#locale_parse`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.utcFormat` -> `#locale_utcFormat`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.utcParse` -> `#locale_utcParse`
+- src/frontend/node_modules/d3-time-format/README.md: `d3.timeFormatLocale` -> `#timeFormatLocale`
+- src/frontend/node_modules/d3-time-format/README.md: `d3.timeFormat` -> `#timeFormat`
+- src/frontend/node_modules/d3-time-format/README.md: `d3.timeParse` -> `#timeParse`
+- src/frontend/node_modules/d3-time-format/README.md: `d3.utcFormat` -> `#utcFormat`
+- src/frontend/node_modules/d3-time-format/README.md: `d3.utcParse` -> `#utcParse`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.format` -> `#locale_format`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.parse` -> `#locale_parse`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.utcFormat` -> `#locale_utcFormat`
+- src/frontend/node_modules/d3-time-format/README.md: `*locale*.utcParse` -> `#locale_utcParse`
+- src/frontend/node_modules/psl/README.md: ``.github/workflows/node.js.yml`` -> `.github/workflows/node.js.yml`
+- src/frontend/node_modules/react-hook-form/README.md: `[Become a contributor` -> `CONTRIBUTING.md`
+- src/frontend/node_modules/array-includes/CHANGELOG.md: `es-shim API` -> `es-shims/api`
+- src/frontend/node_modules/date-fns/CHANGELOG.md: `@amatzon` -> `@https://github.com/amatzon`
+- src/frontend/node_modules/date-fns/docs/i18n.md: `Usage` -> `#usage`
+- src/frontend/node_modules/date-fns/docs/i18n.md: `Adding New Language` -> `#adding-new-language`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `Adding a new locale` -> `#adding-a-new-locale`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `Choosing a directory name for a locale` -> `#choosing-a-directory-name-for-a-locale`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `index.js` -> `#index.js`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `localize` -> `#localize`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `localize.ordinalNumber` -> `#localize.ordinalnumber`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `localize.era and using buildLocalizeFn function` -> `#localize.era-and-using-buildlocalizefn-function`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `Formatting localizers` -> `#formatting-localizers`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `localize.quarter` -> `#localize.quarter`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `localize.month` -> `#localize.month`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `localize.day` -> `#localize.day`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `localize.dayPeriod` -> `#localize.dayperiod`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `formatLong` -> `#formatlong`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `formatLong.dateFormats` -> `#formatlong.dateformats`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `formatLong.timeFormats` -> `#formatlong.timeformats`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `formatLong.dateTimeFormats` -> `#formatlong.datetimeformats`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `formatRelative` -> `#formatrelative`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `match` -> `#match`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `formatDistance` -> `#formatdistance`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `Tests` -> `#tests`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `Creating a locale with the same language as another locale` -> `#creating-a-locale-with-the-same-language-as-another-locale`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `Choose a directory name for it` -> `#choosing-a-directory-name-for-a-locale`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: ``formatDistance`` -> `#formatdistance`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: ``formatLong`` -> `#formatlong`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: ``formatRelative`` -> `#formatrelative`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: ``localize`` -> `#localize`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: ``match`` -> `#match`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: ``options`` -> `#indexjs`
+- src/frontend/node_modules/date-fns/docs/i18nContributionGuide.md: `1234` -> `th|st|nd|rd`
+- src/frontend/node_modules/date-fns/docs/timeZones.md: `Overview` -> `#overview`
+- src/frontend/node_modules/date-fns/docs/timeZones.md: ``date-fns-tz`` -> `#date-fns-tz`
+- src/frontend/node_modules/date-fns/docs/gettingStarted.md: `Introduction` -> `#introduction`
+- src/frontend/node_modules/date-fns/docs/gettingStarted.md: `Submodules` -> `#submodules`
+- src/frontend/node_modules/date-fns/docs/gettingStarted.md: `Installation` -> `#installation`
+- src/frontend/node_modules/date-fns/docs/gettingStarted.md: `install the npm package` -> `#npm`
+- src/frontend/node_modules/date-fns/docs/fp.md: `Usage` -> `#usage`
+- src/frontend/node_modules/date-fns/docs/fp.md: `Using Function Composition` -> `#using-function-composition`
+- src/frontend/node_modules/date-fns/docs/webpack.md: `/\\\\` -> `${supportedLocales.join('|'`
+- src/frontend/node_modules/async/CHANGELOG.md: `**@Kikobeats**` -> `github.com/Kikobeats`
+- src/frontend/node_modules/async/CHANGELOG.md: `**@aearly**` -> `github.com/aearly`
+- src/frontend/node_modules/async/CHANGELOG.md: `**@megawac**` -> `github.com/megawac`
+- src/frontend/node_modules/async/CHANGELOG.md: `**@jdalton**` -> `github.com/jdalton`
+- src/frontend/node_modules/async/CHANGELOG.md: `**@Rich-Harris**` -> `github.com/Rich-Harris`
+- src/frontend/node_modules/async/CHANGELOG.md: `**@aearly**` -> `github.com/aearly`
+- src/frontend/node_modules/async/CHANGELOG.md: `**@megawac**` -> `github.com/megawac`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- src/frontend/node_modules/d3-interpolate/README.md: `color interpolation` -> `#color-spaces`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateRgb` -> `#interpolateRgb`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateDate` -> `#interpolateDate`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateString` -> `#interpolateString`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateNumberArray` -> `#interpolateNumberArray`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateArray` -> `#interpolateArray`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateObject` -> `#interpolateObject`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateNumber` -> `#interpolateNumber`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateNumberArray` -> `#interpolateNumberArray`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolate` -> `#interpolate`
+- src/frontend/node_modules/d3-interpolate/README.md: `zoom interpolator` -> `#interpolateZoom`
+- src/frontend/node_modules/d3-interpolate/README.md: `d3.interpolateArray` -> `#interpolateArray`
+- src/frontend/node_modules/d3-interpolate/README.md: `d3.interpolateDate` -> `#interpolateDate`
+- src/frontend/node_modules/d3-interpolate/README.md: `d3.interpolateObject` -> `#interpolateObject`
+- src/frontend/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- src/frontend/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- src/frontend/node_modules/d3-interpolate/README.md: `d3.interpolateBasis` -> `#interpolateBasis`
+- src/frontend/node_modules/d3-interpolate/README.md: `d3.interpolateBasisClosed` -> `#interpolateBasisClosed`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateHsl` -> `#interpolateHsl`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateHcl` -> `#interpolateHcl`
+- src/frontend/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- src/frontend/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- src/frontend/node_modules/d3-interpolate/README.md: `gamma` -> `#interpolate_gamma`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateCubehelix` -> `#interpolateCubehelix`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateRgb` -> `#interpolateRgb`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateCubehelix` -> `#interpolateCubehelix`
+- src/frontend/node_modules/d3-interpolate/README.md: `interpolateCubehelixLong` -> `#interpolateCubehelixLong`
+- src/frontend/node_modules/d3-interpolate/README.md: `d3.interpolate` -> `#interpolate`
+- src/frontend/node_modules/chokidar/README.md: ``full_changelog.md`` -> `.github/full_changelog.md`
+- src/frontend/node_modules/chokidar/README.md: `LICENSE` -> `LICENSE`
+- src/frontend/node_modules/dom-serializer/README.md: `_Options_` -> `#Options`
+- src/frontend/node_modules/dom-serializer/README.md: `_DomSerializerOptions_` -> `#Options`
+- src/frontend/node_modules/dom-serializer/node_modules/entities/readme.md: `performance` -> `#performance`
+- src/frontend/node_modules/undici/README.md: `contributing guide` -> `./CONTRIBUTING.md`
+- src/frontend/node_modules/undici/README.md: ``RequestOptions`` -> `./docs/docs/api/Dispatcher.md#parameter-requestoptions`
+- src/frontend/node_modules/undici/README.md: `getGlobalDispatcher` -> `#undicigetglobaldispatcher`
+- src/frontend/node_modules/undici/README.md: `Dispatcher.request` -> `./docs/docs/api/Dispatcher.md#dispatcherrequestoptions-callback`
+- src/frontend/node_modules/undici/README.md: `request examples` -> `./docs/examples/README.md`
+- src/frontend/node_modules/undici/README.md: ``StreamOptions`` -> `./docs/docs/api/Dispatcher.md#parameter-streamoptions`
+- src/frontend/node_modules/undici/README.md: `getGlobalDispatcher` -> `#undicigetglobaldispatcher`
+- src/frontend/node_modules/undici/README.md: `Dispatcher.stream` -> `./docs/docs/api/Dispatcher.md#dispatcherstreamoptions-factory-callback`
+- src/frontend/node_modules/undici/README.md: ``PipelineOptions`` -> `./docs/docs/api/Dispatcher.md#parameter-pipelineoptions`
+- src/frontend/node_modules/undici/README.md: `getGlobalDispatcher` -> `#undicigetglobaldispatcher`
+- src/frontend/node_modules/undici/README.md: `Dispatcher.pipeline` -> `./docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler`
+- src/frontend/node_modules/undici/README.md: ``ConnectOptions`` -> `./docs/docs/api/Dispatcher.md#parameter-connectoptions`
+- src/frontend/node_modules/undici/README.md: `getGlobalDispatcher` -> `#undicigetglobaldispatcher`
+- src/frontend/node_modules/undici/README.md: `Dispatcher.connect` -> `./docs/docs/api/Dispatcher.md#dispatcherconnectoptions-callback`
+- src/frontend/node_modules/undici/README.md: ``UpgradeOptions`` -> `./docs/docs/api/Dispatcher.md#parameter-upgradeoptions`
+- src/frontend/node_modules/undici/README.md: `getGlobalDispatcher` -> `#undicigetglobaldispatcher`
+- src/frontend/node_modules/undici/README.md: `Dispatcher.upgrade` -> `./docs/docs/api/Dispatcher.md#dispatcherupgradeoptions-callback`
+- src/frontend/node_modules/undici/docs/docs/api/Agent.md: ``PoolOptions`` -> `/docs/docs/api/Pool.md#parameter-pooloptions`
+- src/frontend/node_modules/undici/docs/docs/api/Agent.md: `Client.closed` -> `/docs/docs/api/Client.md#clientclosed`
+- src/frontend/node_modules/undici/docs/docs/api/Agent.md: `Client.destroyed` -> `/docs/docs/api/Client.md#clientdestroyed`
+- src/frontend/node_modules/undici/docs/docs/api/Agent.md: ``Dispatcher.dispatch(options, handler)`` -> `/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/Agent.md: ``DispatchOptions`` -> `/docs/docs/api/Dispatcher.md#parameter-dispatchoptions`
+- src/frontend/node_modules/undici/docs/docs/api/Agent.md: ``Dispatcher.dispatch(options, handler)`` -> `/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/Agent.md: ``Dispatcher.pipeline(options, handler)`` -> `/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/Agent.md: ``PoolStats`` -> `/docs/docs/api/PoolStats.md`
+- src/frontend/node_modules/undici/docs/docs/api/Agent.md: ``ClientStats`` -> `/docs/docs/api/ClientStats.md`
+- src/frontend/node_modules/undici/docs/docs/api/EnvHttpProxyAgent.md: ``AgentOptions`` -> `/docs/docs/api/Agent.md#parameter-agentoptions`
+- src/frontend/node_modules/undici/docs/docs/api/EnvHttpProxyAgent.md: ``Dispatcher.dispatch(options, handler)`` -> `/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/EnvHttpProxyAgent.md: ``DispatchOptions`` -> `/docs/docs/api/Dispatcher.md#parameter-dispatchoptions`
+- src/frontend/node_modules/undici/docs/docs/api/EnvHttpProxyAgent.md: ``Dispatcher.dispatch(options, handler)`` -> `/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/EnvHttpProxyAgent.md: ``Dispatcher.pipeline(options, handler)`` -> `/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/ProxyAgent.md: ``AgentOptions`` -> `/docs/docs/api/Agent.md#parameter-agentoptions`
+- src/frontend/node_modules/undici/docs/docs/api/ProxyAgent.md: ``Client#ConnectOptions`` -> `/docs/docs/api/Client.md#parameter-connectoptions`
+- src/frontend/node_modules/undici/docs/docs/api/ProxyAgent.md: ``Client#ConnectOptions`` -> `/docs/docs/api/Client.md#parameter-connectoptions`
+- src/frontend/node_modules/undici/docs/docs/api/ProxyAgent.md: ``Agent.dispatch(options, handlers)`` -> `/docs/docs/api/Agent.md#parameter-agentdispatchoptions`
+- src/frontend/node_modules/undici/docs/docs/api/BalancedPool.md: `Pool` -> `/docs/docs/api/Pool.md`
+- src/frontend/node_modules/undici/docs/docs/api/BalancedPool.md: ``PoolOptions`` -> `/docs/docs/api/Pool.md#parameter-pooloptions`
+- src/frontend/node_modules/undici/docs/docs/api/BalancedPool.md: `Client.closed` -> `/docs/docs/api/Client.md#clientclosed`
+- src/frontend/node_modules/undici/docs/docs/api/BalancedPool.md: `Client.destroyed` -> `/docs/docs/api/Client.md#clientdestroyed`
+- src/frontend/node_modules/undici/docs/docs/api/BalancedPool.md: ``PoolStats`` -> `/docs/docs/api/PoolStats.md`
+- src/frontend/node_modules/undici/docs/docs/api/BalancedPool.md: ``Dispatcher.dispatch(options, handlers)`` -> `/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/BalancedPool.md: ``Dispatcher.pipeline(options, handler)`` -> `/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/BalancedPool.md: `Dispatcher Event: `'connect'`` -> `/docs/docs/api/Dispatcher.md#event-connect`
+- src/frontend/node_modules/undici/docs/docs/api/BalancedPool.md: `Dispatcher Event: `'disconnect'`` -> `/docs/docs/api/Dispatcher.md#event-disconnect`
+- src/frontend/node_modules/undici/docs/docs/api/BalancedPool.md: `Dispatcher Event: `'drain'`` -> `/docs/docs/api/Dispatcher.md#event-drain`
+- src/frontend/node_modules/undici/docs/docs/api/CacheStore.md: ``CacheStoreValue`` -> `/docs/docs/api/CacheStore.md#cachestorevalue`
+- src/frontend/node_modules/undici/docs/docs/api/H2CClient.md: ``Dispatcher.dispatch(options, handlers)`` -> `/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/H2CClient.md: ``Dispatcher.pipeline(options, handler)`` -> `/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/H2CClient.md: `Dispatcher Event: `'connect'`` -> `/docs/docs/api/Dispatcher.md#event-connect`
+- src/frontend/node_modules/undici/docs/docs/api/H2CClient.md: `Dispatcher Event: `'disconnect'`` -> `/docs/docs/api/Dispatcher.md#event-disconnect`
+- src/frontend/node_modules/undici/docs/docs/api/H2CClient.md: `Dispatcher Event: `'drain'`` -> `/docs/docs/api/Dispatcher.md#event-drain`
+- src/frontend/node_modules/undici/docs/docs/api/WebSocket.md: ``Dispatcher`` -> `/docs/docs/api/Dispatcher.md`
+- src/frontend/node_modules/undici/docs/docs/api/MockAgent.md: ``AgentOptions`` -> `/docs/docs/api/Agent.md#parameter-agentoptions`
+- src/frontend/node_modules/undici/docs/docs/api/MockAgent.md: ``Agent.dispatch(options, handlers)`` -> `/docs/docs/api/Agent.md#parameter-agentdispatchoptions`
+- src/frontend/node_modules/undici/docs/docs/api/PoolStats.md: `Pool` -> `/docs/docs/api/Pool.md`
+- src/frontend/node_modules/undici/docs/docs/api/PoolStats.md: `BalancedPool` -> `/docs/docs/api/BalancedPool.md`
+- src/frontend/node_modules/undici/docs/docs/api/Pool.md: `Client` -> `/docs/docs/api/Client.md`
+- src/frontend/node_modules/undici/docs/docs/api/Pool.md: ``ClientOptions`` -> `/docs/docs/api/Client.md#parameter-clientoptions`
+- src/frontend/node_modules/undici/docs/docs/api/Pool.md: `Client.closed` -> `/docs/docs/api/Client.md#clientclosed`
+- src/frontend/node_modules/undici/docs/docs/api/Pool.md: `Client.destroyed` -> `/docs/docs/api/Client.md#clientdestroyed`
+- src/frontend/node_modules/undici/docs/docs/api/Pool.md: ``PoolStats`` -> `PoolStats.md`
+- src/frontend/node_modules/undici/docs/docs/api/Pool.md: ``Dispatcher.dispatch(options, handler)`` -> `/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/Pool.md: ``Dispatcher.pipeline(options, handler)`` -> `/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/Pool.md: `Dispatcher Event: `'connect'`` -> `/docs/docs/api/Dispatcher.md#event-connect`
+- src/frontend/node_modules/undici/docs/docs/api/Pool.md: `Dispatcher Event: `'disconnect'`` -> `/docs/docs/api/Dispatcher.md#event-disconnect`
+- src/frontend/node_modules/undici/docs/docs/api/Pool.md: `Dispatcher Event: `'drain'`` -> `/docs/docs/api/Dispatcher.md#event-drain`
+- src/frontend/node_modules/undici/docs/docs/api/ClientStats.md: `Client` -> `/docs/docs/api/Client.md`
+- src/frontend/node_modules/undici/docs/docs/api/MockPool.md: ``Dispatcher.dispatch(options, handlers)`` -> `/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/Dispatcher.md: ``RequestOptions`` -> `/docs/docs/api/Dispatcher.md#parameter-requestoptions`
+- src/frontend/node_modules/undici/docs/docs/api/Dispatcher.md: ``DispatchOptions`` -> `/docs/docs/api/Dispatcher.md#parameter-dispatchoptions`
+- src/frontend/node_modules/undici/docs/docs/api/Dispatcher.md: `Example 1 - Basic GET stream request` -> `/docs/docs/api/Dispatcher.md#example-1-basic-get-stream-request`
+- src/frontend/node_modules/undici/docs/docs/api/Dispatcher.md: `Example 2 - Stream to Fastify Response` -> `/docs/docs/api/Dispatch.md#example-2-stream-to-fastify-response`
+- src/frontend/node_modules/undici/docs/docs/api/Dispatcher.md: ``RedirectHandler` constructor` -> `/docs/docs/api/RedirectHandler.md`
+- src/frontend/node_modules/undici/docs/docs/api/Dispatcher.md: ``RetryHandler` constructor` -> `/docs/docs/api/RetryHandler.md`
+- src/frontend/node_modules/undici/docs/docs/api/Dispatcher.md: ``CacheStore`` -> `/docs/docs/api/CacheStore.md`
+- src/frontend/node_modules/undici/docs/docs/api/Dispatcher.md: ``MemoryCacheStore`` -> `/docs/docs/api/CacheStore.md#memorycachestore`
+- src/frontend/node_modules/undici/docs/docs/api/Dispatcher.md: ``Client.dispatch`` -> `/docs/docs/api/Client.md#clientdispatchoptions-handlers`
+- src/frontend/node_modules/undici/docs/docs/api/Dispatcher.md: `Client` -> `/docs/docs/api/Client.md#class-client`
+- src/frontend/node_modules/undici/docs/docs/api/RetryHandler.md: ``Dispatch.DispatchOptions`` -> `/docs/docs/api/Dispatcher.md#parameter-dispatchoptions`
+- src/frontend/node_modules/undici/docs/docs/api/RetryHandler.md: ``Dispatch.DispatchHandler`` -> `/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/MockCallHistory.md: `here` -> `/docs/docs/api/MockCallHistory.md#filter-parameter`
+- src/frontend/node_modules/undici/docs/docs/api/MockCallHistory.md: `here` -> `/docs/docs/api/MockCallHistory.md#filter-parameter`
+- src/frontend/node_modules/undici/docs/docs/api/MockCallHistory.md: `here` -> `/docs/docs/api/MockCallHistory.md#filter-parameter`
+- src/frontend/node_modules/undici/docs/docs/api/MockCallHistory.md: `here` -> `/docs/docs/api/MockCallHistory.md#filter-parameter`
+- src/frontend/node_modules/undici/docs/docs/api/MockCallHistory.md: `here` -> `/docs/docs/api/MockCallHistory.md#filter-parameter`
+- src/frontend/node_modules/undici/docs/docs/api/MockCallHistory.md: `here` -> `/docs/docs/api/MockCallHistory.md#filter-parameter`
+- src/frontend/node_modules/undici/docs/docs/api/MockCallHistory.md: `here` -> `/docs/docs/api/MockCallHistory.md#filter-parameter`
+- src/frontend/node_modules/undici/docs/docs/api/MockCallHistory.md: `here` -> `/docs/docs/api/MockCallHistory.md#filter-parameter`
+- src/frontend/node_modules/undici/docs/docs/api/MockCallHistory.md: `see` -> `./MockCallHistoryLog.md#to-string`
+- src/frontend/node_modules/undici/docs/docs/api/MockCallHistory.md: `filter parameter` -> `/docs/docs/api/MockCallHistory.md#filter-parameter`
+- src/frontend/node_modules/undici/docs/docs/api/MockClient.md: `MockPool` -> `/docs/docs/api/MockPool.md`
+- src/frontend/node_modules/undici/docs/docs/api/MockClient.md: ``MockPool.intercept(options)`` -> `/docs/docs/api/MockPool.md#mockpoolinterceptoptions`
+- src/frontend/node_modules/undici/docs/docs/api/MockClient.md: ``MockPool.cleanMocks()`` -> `/docs/docs/api/MockPool.md#mockpoolcleanmocks`
+- src/frontend/node_modules/undici/docs/docs/api/MockClient.md: ``MockPool.close()`` -> `/docs/docs/api/MockPool.md#mockpoolclose`
+- src/frontend/node_modules/undici/docs/docs/api/MockClient.md: ``Dispatcher.dispatch(options, handlers)`` -> `/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `Client` -> `/docs/docs/api/Client.md`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.dispatch()`` -> `/docs/docs/api/Client.md#clientdispatchoptions-handlers`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.connect()`` -> `Client.md#clientconnectoptions-callback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.pipeline()`` -> `Client.md#clientpipelineoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.request()`` -> `Client.md#clientrequestoptions-callback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.stream()`` -> `Client.md#clientstreamoptions-factory-callback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.upgrade()`` -> `/docs/docs/api/Client.md#clientupgradeoptions-callback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**pending**` -> `/docs/docs/api/Client.md#pending`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**processing**` -> `/docs/docs/api/Client.md#processing`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.close()`` -> `/docs/docs/api/Client.md#clientclosecallback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.destroy()`` -> `Client.md#clientdestroyerror-callback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**destroyed**` -> `/docs/docs/api/Client.md#destroyed`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``'connect'`` -> `/docs/docs/api/Client.md#event-connect`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.close()`` -> `/docs/docs/api/Client.md#clientclosecallback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**processing**` -> `/docs/docs/api/Client.md#processing`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**destroyed**` -> `/docs/docs/api/Client.md#destroyed`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.destroy()`` -> `/docs/docs/api/Client.md#clientdestroyerror-callback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**destroyed**` -> `/docs/docs/api/Client.md#destroyed`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**processing.running**` -> `/docs/docs/api/Client.md#running`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.dispatch()`` -> `/docs/docs/api/Client.md#clientdispatchoptions-handlers`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.close()`` -> `Client.md#clientclosecallback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.destroy()`` -> `Client.md#clientdestroyerror-callback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**processing.closing**` -> `/docs/docs/api/Client.md#closing`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**destroyed**` -> `/docs/docs/api/Client.md#destroyed`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**processing.busy**` -> `/docs/docs/api/Client.md#busy`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**process.closing**` -> `/docs/docs/api/Client.md#closing`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.close()`` -> `/docs/docs/api/Client.md#clientclosecallback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.destroy()`` -> `Client.md#clientdestroyerror-callback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**processing**` -> `/docs/docs/api/Client.md#processing`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**pending**` -> `/docs/docs/api/Client.md#pending`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**idle**` -> `/docs/docs/api/Client.md#idle`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**processing.running**` -> `/docs/docs/api/Client.md#running`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: ``Client.close()`` -> `/docs/docs/api/Client.md#clientclosecallback`
+- src/frontend/node_modules/undici/docs/docs/api/api-lifecycle.md: `**destroyed**` -> `/docs/docs/api/Client.md#destroyed`
+- src/frontend/node_modules/undici/docs/docs/api/Client.md: ``Dispatcher.dispatch(options, handlers)`` -> `/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/Client.md: ``Dispatcher.pipeline(options, handler)`` -> `/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler`
+- src/frontend/node_modules/undici/docs/docs/api/Client.md: `Dispatcher Event: `'connect'`` -> `/docs/docs/api/Dispatcher.md#event-connect`
+- src/frontend/node_modules/undici/docs/docs/api/Client.md: `Dispatcher Event: `'disconnect'`` -> `/docs/docs/api/Dispatcher.md#event-disconnect`
+- src/frontend/node_modules/undici/docs/docs/api/Client.md: `Dispatcher Event: `'drain'`` -> `/docs/docs/api/Dispatcher.md#event-drain`
+- src/frontend/node_modules/undici/docs/docs/best-practices/mocking-request.md: `utility` -> `/docs/docs/api/MockAgent.md`
+- src/frontend/node_modules/undici/docs/docs/best-practices/mocking-request.md: `here` -> `/docs/docs/api/MockAgent.md`
+- src/frontend/node_modules/undici/docs/docs/best-practices/mocking-request.md: `here` -> `/docs/docs/api/MockAgent.md`
+- src/frontend/node_modules/undici/docs/docs/best-practices/mocking-request.md: `here` -> `/docs/docs/api/MockCallHistory.md`
+- src/frontend/node_modules/undici/docs/docs/best-practices/mocking-request.md: `here` -> `/docs/docs/api/MockCallHistoryLog.md`
+- src/frontend/node_modules/undici/docs/docs/best-practices/proxy.md: `ProxyAgent` -> `/docs/docs/api/ProxyAgent.md`
+- src/frontend/node_modules/keyv/README.md: `Easily embeddable` -> `#add-cache-support-to-your-module`
+- src/frontend/node_modules/keyv/README.md: `**efficient, well tested**` -> `#official-storage-adapters`
+- src/frontend/node_modules/keyv/README.md: `Compression` -> `#compression`
+- src/frontend/node_modules/arg/README.md: `MIT License` -> `LICENSE.md`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/member-ordering.md: `Default Configuration` -> `#default-configuration`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/member-ordering.md: `Default Configuration` -> `#default-configuration`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/semi.md: ``@typescript-eslint/member-delimiter-style`` -> `member-delimiter-style.md`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `"How does the rule evaluate a name's format?"` -> `#how-does-the-rule-evaluate-a-names-format`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `documented above` -> `#format-options`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `Allowed Selectors, Modifiers and Types` -> `#allowed-selectors-modifiers-and-types`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `"How does the rule automatically order selectors?"` -> `#how-does-the-rule-automatically-order-selectors`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `"How does the rule evaluate a name's format?"` -> `#how-does-the-rule-evaluate-a-names-format`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/naming-convention.md: `documented above` -> `#format-options`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/class-literal-property-style.md: ``@typescript-eslint/prefer-readonly`` -> `prefer-readonly.md`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `our pre-defined configs` -> `/linting/configs`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `pre-defined config` -> `/linting/configs`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `typed linting` -> `/linting/typed-linting`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `Extension Rules` -> `#extension-rules`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `strongly recommend against using ESLint for formatting` -> `/linting/troubleshooting/formatting`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md: `Search for `🧱 extension rule`s` -> `?=extension#rules`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/consistent-type-exports.md: `Blog > Consistent Type Exports and Imports: Why and How` -> `/blog/consistent-type-imports-and-exports-why-and-how`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/no-type-alias.md: `Troubleshooting & FAQs` -> `/linting/troubleshooting#how-can-i-ban-specific-language-feature`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/consistent-type-imports.md: `Blog > Consistent Type Exports and Imports: Why and How` -> `/blog/consistent-type-imports-and-exports-why-and-how`
+- src/frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/no-extra-semi.md: `use a formatter` -> `/linting/troubleshooting/formatting`
+- src/frontend/node_modules/abab/README.md: `checklists in CONTRIBUTING.md` -> `CONTRIBUTING.md#checklists`
+- src/frontend/node_modules/es-abstract/CHANGELOG.md: `next.3` -> `./CHANGELOG.md#1180-next3--2021-03-01`
+- src/frontend/node_modules/es-abstract/CHANGELOG.md: `next.2` -> `./CHANGELOG.md#1180-next2--2021-01-17`
+- src/frontend/node_modules/es-abstract/CHANGELOG.md: `next.1` -> `./CHANGELOG.md#1180-next1--2020-09-30`
+- src/frontend/node_modules/es-abstract/CHANGELOG.md: `next.0` -> `./CHANGELOG.md#1180-next0--2020-08-14`
+- src/frontend/node_modules/@ungap/structured-clone/README.md: `100% test coverage` -> `./test/index.js`
+- src/frontend/node_modules/js-yaml/CHANGELOG.md: `migration guide` -> `migrate_v3_to_v4.md`
+- src/frontend/node_modules/whatwg-url/node_modules/webidl-conversions/README.md: `"boolean"` -> `x`
+- src/frontend/node_modules/whatwg-url/node_modules/webidl-conversions/README.md: `"unsigned long"` -> `y`
+- src/frontend/node_modules/whatwg-url/node_modules/webidl-conversions/README.md: `"float"` -> `NaN`
+- src/frontend/node_modules/whatwg-url/node_modules/webidl-conversions/README.md: `"unsigned long"` -> `x, { clamp: true }`
+- src/frontend/node_modules/jackspeak/LICENSE.md: `Notices` -> `#notices`
+- src/frontend/node_modules/css-select/README.md: ``Options`` -> `#options`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `count` -> `#interval_count`
+- src/frontend/node_modules/d3-time/README.md: `day` -> `#day`
+- src/frontend/node_modules/d3-time/README.md: `interval` -> `#api-reference`
+- src/frontend/node_modules/d3-time/README.md: `hours` -> `#timeHour`
+- src/frontend/node_modules/d3-time/README.md: `weeks` -> `#timeWeek`
+- src/frontend/node_modules/d3-time/README.md: `months` -> `#timeMonth`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `rounding` -> `#interval_round`
+- src/frontend/node_modules/d3-time/README.md: `counting` -> `#interval_count`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.floor` -> `#interval_floor`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeYear` -> `#timeYear`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `offset` -> `#interval_offset`
+- src/frontend/node_modules/d3-time/README.md: `floored` -> `#interval_floor`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.every` -> `#interval_every`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.count` -> `#interval_count`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.every` -> `#interval_every`
+- src/frontend/node_modules/d3-time/README.md: `filtered` -> `#interval_filter`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeMinute` -> `#timeMinute`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeMonth` -> `#timeMonth`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.count` -> `#interval_count`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.filter` -> `#interval_filter`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.count` -> `#interval_count`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.every` -> `#interval_every`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.every` -> `#interval_every`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeSunday` -> `#timeSunday`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeMillisecond` -> `#timeMillisecond`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcMillisecond` -> `#timeMillisecond`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeSecond` -> `#timeSecond`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcSecond` -> `#timeSecond`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeMinute` -> `#timeMinute`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcMinute` -> `#timeMinute`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeHour` -> `#timeHour`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcHour` -> `#timeHour`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.unixDay` -> `#timeDay`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeWeek` -> `#timeWeek`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcWeek` -> `#timeWeek`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeSunday` -> `#timeSunday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcSunday` -> `#timeSunday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeMonday` -> `#timeMonday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcMonday` -> `#timeMonday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeTuesday` -> `#timeTuesday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcTuesday` -> `#timeTuesday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeWednesday` -> `#timeWednesday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcWednesday` -> `#timeWednesday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeThursday` -> `#timeThursday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcThursday` -> `#timeThursday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeFriday` -> `#timeFriday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcFriday` -> `#timeFriday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeSaturday` -> `#timeSaturday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcSaturday` -> `#timeSaturday`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeMonth` -> `#timeMonth`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcMonth` -> `#timeMonth`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeYear` -> `#timeYear`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcYear` -> `#timeYear`
+- src/frontend/node_modules/d3-time/README.md: `range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcTicks` -> `#utcTicks`
+- src/frontend/node_modules/d3-time/README.md: `d3.timeTicks` -> `#timeTicks`
+- src/frontend/node_modules/d3-time/README.md: `*interval*.range` -> `#interval_range`
+- src/frontend/node_modules/d3-time/README.md: `d3.utcTicks` -> `#utcTicks`
+- src/frontend/node_modules/path-to-regexp/Readme.md: `optional` -> `#optional`
+- src/frontend/node_modules/safer-buffer/Porting-Buffer.md: `Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x.` -> `#variant-1`
+- src/frontend/node_modules/safer-buffer/Porting-Buffer.md: `Variant 2: Use a polyfill` -> `#variant-2`
+- src/frontend/node_modules/safer-buffer/Porting-Buffer.md: `Variant 3: manual detection, with safeguards` -> `#variant-3`
+- src/frontend/node_modules/safer-buffer/Porting-Buffer.md: `^a-zA-Z` -> `Slow`
+- src/frontend/node_modules/safer-buffer/Porting-Buffer.md: `Variant 2` -> `#variant-2`
+- src/frontend/node_modules/safer-buffer/Porting-Buffer.md: `Variant 3` -> `#variant-3`
+- src/frontend/node_modules/safer-buffer/Porting-Buffer.md: `Variant 1` -> `#variant-1`
+- src/frontend/node_modules/mime-types/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/webidl-conversions/README.md: `"boolean"` -> `x`
+- src/frontend/node_modules/webidl-conversions/README.md: `"unsigned long"` -> `y`
+- src/frontend/node_modules/webidl-conversions/README.md: `"float"` -> `NaN`
+- src/frontend/node_modules/webidl-conversions/README.md: `"float"` -> `NaN, { context: "Argument 1 of Interface's operation" }`
+- src/frontend/node_modules/fraction.js/README.md: `fmod()` -> `#fmod-impreciseness-circumvented`
+- src/frontend/node_modules/fraction.js/README.md: `here` -> `#mathematical-correct-modulo`
+- src/frontend/node_modules/regexp.prototype.flags/CHANGELOG.md: `es-shim API` -> `es-shims/api`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `heading-has-content` -> `docs/rules/heading-has-content.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `html-has-lang` -> `docs/rules/html-has-lang.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `lang` -> `docs/rules/lang.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `no-marquee` -> `docs/rules/no-marquee.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `scope` -> `docs/rules/scope.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `no-hash-href` -> `docs/rules/no-hash-href.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/CHANGELOG.md: `redunant-alt` -> `docs/rules/redundant-alt.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `accessible-emoji` -> `docs/rules/accessible-emoji.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `alt-text` -> `docs/rules/alt-text.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `anchor-ambiguous-text` -> `docs/rules/anchor-ambiguous-text.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `anchor-has-content` -> `docs/rules/anchor-has-content.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `anchor-is-valid` -> `docs/rules/anchor-is-valid.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `aria-activedescendant-has-tabindex` -> `docs/rules/aria-activedescendant-has-tabindex.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `aria-props` -> `docs/rules/aria-props.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `aria-proptypes` -> `docs/rules/aria-proptypes.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `aria-role` -> `docs/rules/aria-role.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `aria-unsupported-elements` -> `docs/rules/aria-unsupported-elements.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `autocomplete-valid` -> `docs/rules/autocomplete-valid.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `click-events-have-key-events` -> `docs/rules/click-events-have-key-events.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `control-has-associated-label` -> `docs/rules/control-has-associated-label.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `heading-has-content` -> `docs/rules/heading-has-content.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `html-has-lang` -> `docs/rules/html-has-lang.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `iframe-has-title` -> `docs/rules/iframe-has-title.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `img-redundant-alt` -> `docs/rules/img-redundant-alt.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `interactive-supports-focus` -> `docs/rules/interactive-supports-focus.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `label-has-associated-control` -> `docs/rules/label-has-associated-control.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `label-has-for` -> `docs/rules/label-has-for.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `lang` -> `docs/rules/lang.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `media-has-caption` -> `docs/rules/media-has-caption.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `mouse-events-have-key-events` -> `docs/rules/mouse-events-have-key-events.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `no-access-key` -> `docs/rules/no-access-key.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `no-aria-hidden-on-focusable` -> `docs/rules/no-aria-hidden-on-focusable.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `no-autofocus` -> `docs/rules/no-autofocus.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `no-distracting-elements` -> `docs/rules/no-distracting-elements.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `no-interactive-element-to-noninteractive-role` -> `docs/rules/no-interactive-element-to-noninteractive-role.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `no-noninteractive-element-interactions` -> `docs/rules/no-noninteractive-element-interactions.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `no-noninteractive-element-to-interactive-role` -> `docs/rules/no-noninteractive-element-to-interactive-role.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `no-noninteractive-tabindex` -> `docs/rules/no-noninteractive-tabindex.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `no-onchange` -> `docs/rules/no-onchange.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `no-redundant-roles` -> `docs/rules/no-redundant-roles.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `no-static-element-interactions` -> `docs/rules/no-static-element-interactions.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `prefer-tag-over-role` -> `docs/rules/prefer-tag-over-role.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `role-has-required-aria-props` -> `docs/rules/role-has-required-aria-props.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `role-supports-aria-props` -> `docs/rules/role-supports-aria-props.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `scope` -> `docs/rules/scope.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `tabindex-no-positive` -> `docs/rules/tabindex-no-positive.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/README.md: `MIT License` -> `LICENSE.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/docs/rules/label-has-for.md: ``jsx-a11y/label-has-associated-control`` -> `label-has-associated-control.md`
+- src/frontend/node_modules/eslint-plugin-jsx-a11y/docs/rules/anchor-is-valid.md: `no-noninteractive-tabindex` -> `no-noninteractive-tabindex.md`
+- src/frontend/node_modules/chalk/readme.md: `256/Truecolor color support` -> `#256-and-truecolor-color-support`
+- src/frontend/node_modules/chalk/readme.md: `.<style>...` -> `string, [string...]`
+- src/frontend/node_modules/chalk/readme.md: `styles` -> `#styles`
+- src/frontend/node_modules/bs-logger/README.md: `LICENSE` -> `LICENSE`
+- src/frontend/node_modules/@mswjs/interceptors/README.md: `WebSocket` -> `#websocket-interception`
+- src/frontend/node_modules/@mswjs/interceptors/README.md: `pre-defined presets` -> `#presets`
+- src/frontend/node_modules/@mswjs/interceptors/README.md: ``BatchInterceptor`` -> `#batchinterceptor`
+- src/frontend/node_modules/@mswjs/interceptors/README.md: `a mocked response` -> `#mocking-responses`
+- src/frontend/node_modules/@mswjs/interceptors/README.md: ``server.connect()`` -> `#connect`
+- src/frontend/node_modules/@mswjs/interceptors/README.md: ``WebSocketClientConnection`` -> `#websocketclientconnection`
+- src/frontend/node_modules/@mswjs/interceptors/README.md: ``WebSocketServerConnection`` -> `#websocketserverconnection`
+- src/frontend/node_modules/@mswjs/interceptors/README.md: `interceptors` -> `#interceptors`
+- src/frontend/node_modules/core-js/README.md: `some cross-platform WHATWG / W3C features and proposals` -> `#web-standards`
+- src/frontend/node_modules/color-convert/README.md: `conversions.js` -> `conversions.js`
+- src/frontend/node_modules/color-convert/README.md: `conversions.js` -> `conversions.js`
+- src/frontend/node_modules/color-convert/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/eventemitter3/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/readdirp/README.md: `entry infos` -> `#entryinfo`
+- src/frontend/node_modules/readdirp/README.md: `entry info` -> `#entryinfo`
+- src/frontend/node_modules/readdirp/README.md: `entry infos` -> `#entryinfo`
+- src/frontend/node_modules/readdirp/README.md: `LICENSE` -> `LICENSE`
+- src/frontend/node_modules/fill-range/README.md: `step` -> `#optionsstep`
+- src/frontend/node_modules/fill-range/README.md: `options` -> `#options`
+- src/frontend/node_modules/fill-range/README.md: `string` -> `#optionstoRegex`
+- src/frontend/node_modules/fill-range/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/fill-range/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/fill-range/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/jsdom/README.md: `binary data processing` -> `#encoding-sniffing`
+- src/frontend/node_modules/jsdom/README.md: `as described below` -> `#loading-subresources`
+- src/frontend/node_modules/jsdom/README.md: `does not do any layout or rendering` -> `#unimplemented-parts-of-the-web-platform`
+- src/frontend/node_modules/jsdom/README.md: `Canvas Support` -> `#canvas-support`
+- src/frontend/node_modules/jsdom/README.md: `convenience APIs` -> `#convenience-apis`
+- src/frontend/node_modules/jsdom/README.md: `using jsdom in a web browser` -> `#running-jsdom-inside-a-web-browser`
+- src/frontend/node_modules/jsdom/node_modules/tr46/README.md: ``checkBidi`` -> `#checkBidi`
+- src/frontend/node_modules/jsdom/node_modules/tr46/README.md: ``checkHyphens`` -> `#checkHyphens`
+- src/frontend/node_modules/jsdom/node_modules/tr46/README.md: ``checkJoiners`` -> `#checkJoiners`
+- src/frontend/node_modules/jsdom/node_modules/tr46/README.md: ``processingOption`` -> `#processingOption`
+- src/frontend/node_modules/jsdom/node_modules/tr46/README.md: ``useSTD3ASCIIRules`` -> `#useSTD3ASCIIRules`
+- src/frontend/node_modules/jsdom/node_modules/tr46/README.md: ``verifyDNSLength`` -> `#verifyDNSLength`
+- src/frontend/node_modules/jsdom/node_modules/tr46/README.md: ``checkBidi`` -> `#checkBidi`
+- src/frontend/node_modules/jsdom/node_modules/tr46/README.md: ``checkHyphens`` -> `#checkHyphens`
+- src/frontend/node_modules/jsdom/node_modules/tr46/README.md: ``checkJoiners`` -> `#checkJoiners`
+- src/frontend/node_modules/jsdom/node_modules/tr46/README.md: ``processingOption`` -> `#processingOption`
+- src/frontend/node_modules/jsdom/node_modules/tr46/README.md: ``useSTD3ASCIIRules`` -> `#useSTD3ASCIIRules`
+- src/frontend/node_modules/yup/README.md: `Schema basics` -> `#schema-basics`
+- src/frontend/node_modules/yup/README.md: `Parsing: Transforms` -> `#parsing-transforms`
+- src/frontend/node_modules/yup/README.md: `Validation: Tests` -> `#validation-tests`
+- src/frontend/node_modules/yup/README.md: `Customizing errors` -> `#customizing-errors`
+- src/frontend/node_modules/yup/README.md: `Composition and Reuse` -> `#composition-and-reuse`
+- src/frontend/node_modules/yup/README.md: `TypeScript integration` -> `#typescript-integration`
+- src/frontend/node_modules/yup/README.md: `Schema defaults` -> `#schema-defaults`
+- src/frontend/node_modules/yup/README.md: `Ensuring a schema matches an existing type` -> `#ensuring-a-schema-matches-an-existing-type`
+- src/frontend/node_modules/yup/README.md: `Extending built-in schema with new methods` -> `#extending-built-in-schema-with-new-methods`
+- src/frontend/node_modules/yup/README.md: `TypeScript configuration` -> `#typescript-configuration`
+- src/frontend/node_modules/yup/README.md: `Error message customization` -> `#error-message-customization`
+- src/frontend/node_modules/yup/README.md: `localization and i18n` -> `#localization-and-i18n`
+- src/frontend/node_modules/yup/README.md: `API` -> `#api`
+- src/frontend/node_modules/yup/README.md: ``yup`` -> `#yup`
+- src/frontend/node_modules/yup/README.md: ``reach(schema: Schema, path: string, value?: object, context?: object): Schema`` -> `#reachschema-schema-path-string-value-object-context-object-schema`
+- src/frontend/node_modules/yup/README.md: ``addMethod(schemaType: Schema, name: string, method: ()=> Schema): void`` -> `#addmethodschematype-schema-name-string-method--schema-void`
+- src/frontend/node_modules/yup/README.md: ``ref(path: string, options: { contextPrefix: string }): Ref`` -> `#refpath-string-options--contextprefix-string--ref`
+- src/frontend/node_modules/yup/README.md: ``lazy((value: any) => Schema): Lazy`` -> `#lazyvalue-any--schema-lazy`
+- src/frontend/node_modules/yup/README.md: ``ValidationError(errors: string | Array<string>, value: any, path: string)`` -> `#validationerrorerrors-string--arraystring-value-any-path-string`
+- src/frontend/node_modules/yup/README.md: ``Schema`` -> `#schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.clone(): Schema`` -> `#schemaclone-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.label(label: string): Schema`` -> `#schemalabellabel-string-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.meta(metadata: SchemaMetadata): Schema`` -> `#schemametametadata-schemametadata-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.describe(options?: ResolveOptions): SchemaDescription`` -> `#schemadescribeoptions-resolveoptions-schemadescription`
+- src/frontend/node_modules/yup/README.md: ``Schema.concat(schema: Schema): Schema`` -> `#schemaconcatschema-schema-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.validate(value: any, options?: object): Promise<InferType<Schema>, ValidationError>`` -> `#schemavalidatevalue-any-options-object-promiseinfertypeschema-validationerror`
+- src/frontend/node_modules/yup/README.md: ``Schema.validateSync(value: any, options?: object): InferType<Schema>`` -> `#schemavalidatesyncvalue-any-options-object-infertypeschema`
+- src/frontend/node_modules/yup/README.md: ``Schema.validateAt(path: string, value: any, options?: object): Promise<InferType<Schema>, ValidationError>`` -> `#schemavalidateatpath-string-value-any-options-object-promiseinfertypeschema-validationerror`
+- src/frontend/node_modules/yup/README.md: ``Schema.validateSyncAt(path: string, value: any, options?: object): InferType<Schema>`` -> `#schemavalidatesyncatpath-string-value-any-options-object-infertypeschema`
+- src/frontend/node_modules/yup/README.md: ``Schema.isValid(value: any, options?: object): Promise<boolean>`` -> `#schemaisvalidvalue-any-options-object-promiseboolean`
+- src/frontend/node_modules/yup/README.md: ``Schema.isValidSync(value: any, options?: object): boolean`` -> `#schemaisvalidsyncvalue-any-options-object-boolean`
+- src/frontend/node_modules/yup/README.md: ``Schema.cast(value: any, options = {}): InferType<Schema>`` -> `#schemacastvalue-any-options---infertypeschema`
+- src/frontend/node_modules/yup/README.md: ``Schema.isType(value: any): value is InferType<Schema>`` -> `#schemaistypevalue-any-value-is-infertypeschema`
+- src/frontend/node_modules/yup/README.md: ``Schema.strict(enabled: boolean = false): Schema`` -> `#schemastrictenabled-boolean--false-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.strip(enabled: boolean = true): Schema`` -> `#schemastripenabled-boolean--true-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.withMutation(builder: (current: Schema) => void): void`` -> `#schemawithmutationbuilder-current-schema--void-void`
+- src/frontend/node_modules/yup/README.md: ``Schema.default(value: any): Schema`` -> `#schemadefaultvalue-any-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.getDefault(options?: object): Any`` -> `#schemagetdefaultoptions-object-any`
+- src/frontend/node_modules/yup/README.md: ``Schema.nullable(message?: string | function): Schema`` -> `#schemanullablemessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.nonNullable(message?: string | function): Schema`` -> `#schemanonnullablemessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.defined(): Schema`` -> `#schemadefined-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.optional(): Schema`` -> `#schemaoptional-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.required(message?: string | function): Schema`` -> `#schemarequiredmessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.notRequired(): Schema`` -> `#schemanotrequired-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.typeError(message: string): Schema`` -> `#schematypeerrormessage-string-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.oneOf(arrayOfValues: Array<any>, message?: string | function): Schema` Alias: `equals`` -> `#schemaoneofarrayofvalues-arrayany-message-string--function-schema-alias-equals`
+- src/frontend/node_modules/yup/README.md: ``Schema.notOneOf(arrayOfValues: Array<any>, message?: string | function)`` -> `#schemanotoneofarrayofvalues-arrayany-message-string--function`
+- src/frontend/node_modules/yup/README.md: ``Schema.test(name: string, message: string | function | any, test: function): Schema`` -> `#schematestname-string-message-string--function--any-test-function-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.test(options: object): Schema`` -> `#schematestoptions-object-schema`
+- src/frontend/node_modules/yup/README.md: ``Schema.transform((currentValue: any, originalValue: any) => any): Schema`` -> `#schematransformcurrentvalue-any-originalvalue-any--any-schema`
+- src/frontend/node_modules/yup/README.md: `mixed` -> `#mixed`
+- src/frontend/node_modules/yup/README.md: `string` -> `#string`
+- src/frontend/node_modules/yup/README.md: ``string.required(message?: string | function): Schema`` -> `#stringrequiredmessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``string.length(limit: number | Ref, message?: string | function): Schema`` -> `#stringlengthlimit-number--ref-message-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``string.min(limit: number | Ref, message?: string | function): Schema`` -> `#stringminlimit-number--ref-message-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``string.max(limit: number | Ref, message?: string | function): Schema`` -> `#stringmaxlimit-number--ref-message-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``string.matches(regex: Regex, message?: string | function): Schema`` -> `#stringmatchesregex-regex-message-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``string.matches(regex: Regex, options: { message: string, excludeEmptyString: bool }): Schema`` -> `#stringmatchesregex-regex-options--message-string-excludeemptystring-bool--schema`
+- src/frontend/node_modules/yup/README.md: ``string.email(message?: string | function): Schema`` -> `#stringemailmessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``string.url(message?: string | function): Schema`` -> `#stringurlmessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``string.uuid(message?: string | function): Schema`` -> `#stringuuidmessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``string.datetime(options?: {message?: string | function, allowOffset?: boolean, precision?: number})`` -> `#stringdatetimeoptions-message-string--function-allowoffset-boolean-precision-number`
+- src/frontend/node_modules/yup/README.md: ``string.datetime(message?: string | function)`` -> `#stringdatetimemessage-string--function`
+- src/frontend/node_modules/yup/README.md: ``string.ensure(): Schema`` -> `#stringensure-schema`
+- src/frontend/node_modules/yup/README.md: ``string.trim(message?: string | function): Schema`` -> `#stringtrimmessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``string.lowercase(message?: string | function): Schema`` -> `#stringlowercasemessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``string.uppercase(message?: string | function): Schema`` -> `#stringuppercasemessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: `number` -> `#number`
+- src/frontend/node_modules/yup/README.md: ``number.min(limit: number | Ref, message?: string | function): Schema`` -> `#numberminlimit-number--ref-message-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``number.max(limit: number | Ref, message?: string | function): Schema`` -> `#numbermaxlimit-number--ref-message-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``number.lessThan(max: number | Ref, message?: string | function): Schema`` -> `#numberlessthanmax-number--ref-message-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``number.moreThan(min: number | Ref, message?: string | function): Schema`` -> `#numbermorethanmin-number--ref-message-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``number.positive(message?: string | function): Schema`` -> `#numberpositivemessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``number.negative(message?: string | function): Schema`` -> `#numbernegativemessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``number.integer(message?: string | function): Schema`` -> `#numberintegermessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``number.truncate(): Schema`` -> `#numbertruncate-schema`
+- src/frontend/node_modules/yup/README.md: ``number.round(type: 'floor' | 'ceil' | 'trunc' | 'round' = 'round'): Schema`` -> `#numberroundtype-floor--ceil--trunc--round--round-schema`
+- src/frontend/node_modules/yup/README.md: `boolean` -> `#boolean`
+- src/frontend/node_modules/yup/README.md: `date` -> `#date`
+- src/frontend/node_modules/yup/README.md: ``date.min(limit: Date | string | Ref, message?: string | function): Schema`` -> `#dateminlimit-date--string--ref-message-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``date.max(limit: Date | string | Ref, message?: string | function): Schema`` -> `#datemaxlimit-date--string--ref-message-string--function-schema`
+- src/frontend/node_modules/yup/README.md: `array` -> `#array`
+- src/frontend/node_modules/yup/README.md: ``array.of(type: Schema): this`` -> `#arrayoftype-schema-this`
+- src/frontend/node_modules/yup/README.md: ``array.json(): this`` -> `#arrayjson-this`
+- src/frontend/node_modules/yup/README.md: ``array.length(length: number | Ref, message?: string | function): this`` -> `#arraylengthlength-number--ref-message-string--function-this`
+- src/frontend/node_modules/yup/README.md: ``array.min(limit: number | Ref, message?: string | function): this`` -> `#arrayminlimit-number--ref-message-string--function-this`
+- src/frontend/node_modules/yup/README.md: ``array.max(limit: number | Ref, message?: string | function): this`` -> `#arraymaxlimit-number--ref-message-string--function-this`
+- src/frontend/node_modules/yup/README.md: ``array.ensure(): this`` -> `#arrayensure-this`
+- src/frontend/node_modules/yup/README.md: ``array.compact(rejector: (value) => boolean): Schema`` -> `#arraycompactrejector-value--boolean-schema`
+- src/frontend/node_modules/yup/README.md: `tuple` -> `#tuple`
+- src/frontend/node_modules/yup/README.md: `object` -> `#object`
+- src/frontend/node_modules/yup/README.md: `Object schema defaults` -> `#object-schema-defaults`
+- src/frontend/node_modules/yup/README.md: ``object.json(): this`` -> `#objectjson-this`
+- src/frontend/node_modules/yup/README.md: ``object.concat(schemaB: ObjectSchema): ObjectSchema`` -> `#objectconcatschemab-objectschema-objectschema`
+- src/frontend/node_modules/yup/README.md: ``object.from(fromKey: string, toKey: string, alias: boolean = false): this`` -> `#objectfromfromkey-string-tokey-string-alias-boolean--false-this`
+- src/frontend/node_modules/yup/README.md: ``object.exact(message?: string | function): Schema`` -> `#objectexactmessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``object.stripUnknown(): Schema`` -> `#objectstripunknown-schema`
+- src/frontend/node_modules/yup/README.md: ``object.noUnknown(onlyKnownKeys: boolean = true, message?: string | function): Schema`` -> `#objectnounknownonlyknownkeys-boolean--true-message-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``object.camelCase(): Schema`` -> `#objectcamelcase-schema`
+- src/frontend/node_modules/yup/README.md: ``object.constantCase(): Schema`` -> `#objectconstantcase-schema`
+- src/frontend/node_modules/yup/README.md: ``ValidationError`` -> `#validationerrorerrors-string--arraystring-value-any-path-string`
+- src/frontend/node_modules/yup/README.md: ``mixed()`` -> `#mixed`
+- src/frontend/node_modules/yup/README.md: ``when()`` -> `#schemawhenkeys-string--string-builder-object--values-any-schema--schema-schema`
+- src/frontend/node_modules/yup/README.md: ``string().required`` -> `#stringrequiredmessage-string--function-schema`
+- src/frontend/node_modules/yup/README.md: ``isType()`` -> `#schemaistypevalue-any-value-is-infertypeschema`
+- src/frontend/node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- src/frontend/node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- src/frontend/node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- src/frontend/node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- src/frontend/node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- src/frontend/node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- src/frontend/node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- src/frontend/node_modules/yup/README.md: ``Schema`` -> `#Schema`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: `contributing guidelines` -> `.github/contributing.md`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Primitive`` -> `source/primitive.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Class`` -> `source/basic.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Constructor`` -> `source/basic.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``TypedArray`` -> `source/typed-array.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``ObservableLike`` -> `source/observable-like.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Writable`` -> `source/writable.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Merge`` -> `source/merge.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``MergeExclusive`` -> `source/merge-exclusive.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``RequireAtLeastOne`` -> `source/require-at-least-one.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``RequireAllOrNone`` -> `source/require-all-or-none.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``RemoveIndexSignature`` -> `source/remove-index-signature.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``PartialDeep`` -> `source/partial-deep.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``PartialOnUndefinedDeep`` -> `source/partial-on-undefined-deep.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``ReadonlyDeep`` -> `source/readonly-deep.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``LiteralUnion`` -> `source/literal-union.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Opaque`` -> `source/opaque.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``UnwrapOpaque`` -> `source/opaque.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``InvariantOf`` -> `source/invariant-of.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``SetRequired`` -> `source/set-required.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``SetNonNullable`` -> `source/set-non-nullable.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``ValueOf`` -> `source/value-of.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``ConditionalKeys`` -> `source/conditional-keys.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``ConditionalExcept`` -> `source/conditional-except.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``UnionToIntersection`` -> `source/union-to-intersection.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``LiteralToPrimitive`` -> `source/literal-to-primitive.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: `primitive type` -> `source/primitive.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Stringified`` -> `source/stringified.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Entry`` -> `source/entry.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Entries`` -> `source/entries.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``SetReturnType`` -> `source/set-return-type.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Get`` -> `source/get.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``StringKeyOf`` -> `source/string-key-of.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Schema`` -> `source/schema.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Exact`` -> `source/exact.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``OptionalKeysOf`` -> `source/optional-keys-of.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``HasOptionalKeys`` -> `source/has-optional-keys.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``RequiredKeysOf`` -> `source/required-keys-of.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``HasRequiredKeys`` -> `source/has-required-keys.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Spread`` -> `source/spread.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Jsonify`` -> `source/jsonify.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``JsonPrimitive`` -> `source/basic.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``JsonObject`` -> `source/basic.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``JsonArray`` -> `source/basic.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``JsonValue`` -> `source/basic.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Promisable`` -> `source/promisable.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``AsyncReturnType`` -> `source/async-return-type.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Asyncify`` -> `source/asyncify.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Trim`` -> `source/trim.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Split`` -> `source/split.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Replace`` -> `source/replace.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Includes`` -> `source/includes.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Join`` -> `source/join.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``LastArrayElement`` -> `source/last-array-element.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``FixedLengthArray`` -> `source/fixed-length-array.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``MultidimensionalArray`` -> `source/multidimensional-array.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``MultidimensionalReadonlyArray`` -> `source/multidimensional-readonly-array.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``ReadonlyTuple`` -> `source/readonly-tuple.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``PositiveInfinity`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``NegativeInfinity`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Finite`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Integer`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Float`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``NegativeFloat`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``Negative`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``NonNegative`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``NegativeInteger`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``NonNegativeInteger`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``CamelCase`` -> `source/camel-case.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``CamelCasedProperties`` -> `source/camel-cased-properties.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``CamelCasedPropertiesDeep`` -> `source/camel-cased-properties-deep.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``KebabCase`` -> `source/kebab-case.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``KebabCasedProperties`` -> `source/kebab-cased-properties.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``KebabCasedPropertiesDeep`` -> `source/kebab-cased-properties-deep.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``PascalCase`` -> `source/pascal-case.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``PascalCasedProperties`` -> `source/pascal-cased-properties.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``PascalCasedPropertiesDeep`` -> `source/pascal-cased-properties-deep.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``SnakeCase`` -> `source/snake-case.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``SnakeCasedProperties`` -> `source/snake-cased-properties-deep.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``SnakeCasedPropertiesDeep`` -> `source/snake-cased-properties-deep.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``ScreamingSnakeCase`` -> `source/screaming-snake-case.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``DelimiterCase`` -> `source/delimiter-case.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``DelimiterCasedProperties`` -> `source/delimiter-cased-properties.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``DelimiterCasedPropertiesDeep`` -> `source/delimiter-cased-properties-deep.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``TsConfigJson`` -> `source/tsconfig-json.d.ts`
+- src/frontend/node_modules/yup/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- src/frontend/node_modules/binary-extensions/readme.md: `JSON file` -> `binary-extensions.json`
+- src/frontend/node_modules/word-wrap/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/word-wrap/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/word-wrap/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/clsx/readme.md: `faster` -> `bench`
+- src/frontend/node_modules/clsx/readme.md: `API` -> `#API`
+- src/frontend/node_modules/clsx/readme.md: ``bench`` -> `bench`
+- src/frontend/node_modules/clsx/readme.md: ``clsx/lite`` -> `#clsxlite`
+- src/frontend/node_modules/topojson-client/README.md: `merge shapes` -> `#merge`
+- src/frontend/node_modules/topojson-client/README.md: `quantize coordinates` -> `#quantize`
+- src/frontend/node_modules/topojson-client/README.md: `GeoJSON` -> `#feature`
+- src/frontend/node_modules/topojson-client/README.md: `topojson.merge` -> `#merge`
+- src/frontend/node_modules/topojson-client/README.md: `topojson.feature` -> `#feature`
+- src/frontend/node_modules/topojson-client/README.md: `topojson.mesh` -> `#mesh`
+- src/frontend/node_modules/topojson-client/README.md: `topoquantize` -> `#topoquantize`
+- src/frontend/node_modules/topojson-client/README.md: `topojson.bbox` -> `#bbox`
+- src/frontend/node_modules/topojson-client/README.md: `point *transform* function` -> `#_transform`
+- src/frontend/node_modules/topojson-client/README.md: `point *transform* function` -> `#_transform`
+- src/frontend/node_modules/topojson-client/README.md: `topojson.quantize` -> `#quantize`
+- src/frontend/node_modules/topojson-client/README.md: `--list` -> `#topo2geo_list`
+- src/frontend/node_modules/topojson-client/README.md: `topojson.mergeArcs` -> `#mergeArcs`
+- src/frontend/node_modules/topojson-client/README.md: `topojson.meshArcs` -> `#meshArcs`
+- src/frontend/node_modules/topojson-client/README.md: `--mesh` -> `#topomerge_mesh`
+- src/frontend/node_modules/topojson-client/README.md: `topojson.meshArcs` -> `#meshArcs`
+- src/frontend/node_modules/topojson-client/README.md: `topojson.mergeArcs` -> `#mergeArcs`
+- src/frontend/node_modules/topojson-client/README.md: `bbox` -> `#bbox`
+- src/frontend/node_modules/topojson-client/README.md: `topojson.quantize` -> `#quantize`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `library comparison` -> `#library-comparisons`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Install` -> `#install`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `API` -> `#api`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `picomatch` -> `#picomatch`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.test` -> `#test`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.matchBase` -> `#matchbase`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.isMatch` -> `#ismatch`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.parse` -> `#parse`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.compileRe` -> `#compilere`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.makeRe` -> `#makere`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.toRegex` -> `#toregex`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Options` -> `#options`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Picomatch options` -> `#picomatch-options`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Scan Options` -> `#scan-options`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Options Examples` -> `#options-examples`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Globbing features` -> `#globbing-features`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Braces` -> `#braces`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Matching special characters as literals` -> `#matching-special-characters-as-literals`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Library Comparisons` -> `#library-comparisons`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Benchmarks` -> `#benchmarks`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Philosophies` -> `#philosophies`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `About` -> `#about`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Author` -> `#author`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `License` -> `#license`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `picomatch` -> `lib/picomatch.js#L31`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.test` -> `lib/picomatch.js#L116`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.matchBase` -> `lib/picomatch.js#L160`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.makeRe` -> `#makeRe`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.isMatch` -> `lib/picomatch.js#L182`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.parse` -> `lib/picomatch.js#L198`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.scan` -> `lib/picomatch.js#L230`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.compileRe` -> `lib/picomatch.js#L244`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `parse()` -> `#parse`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.makeRe` -> `lib/picomatch.js#L285`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.toRegex` -> `lib/picomatch.js#L320`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `format` -> `#optionsformat`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `onIgnore` -> `#optionsonIgnore`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `onMatch` -> `#optionsonMatch`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `onResult` -> `#optionsonResult`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `picomatch options` -> `#picomatch-options`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `extglobs` -> `#extglobs`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `POSIX brackets` -> `#posix-brackets`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `Braces` -> `#brace-expansion`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `contributing guide` -> `.github/contributing.md`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/vite/node_modules/picomatch/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/vite/node_modules/fdir/README.md: `here` -> `/documentation.md`
+- src/frontend/node_modules/vite/node_modules/fdir/README.md: `here` -> `/BENCHMARKS.md`
+- src/frontend/node_modules/minimatch/README.md: `the caveat about Windows
+paths` -> `#windows`
+- src/frontend/node_modules/postcss-value-parser/README.md: `Bogdan Chadkin` -> `mailto:trysound@yandex.ru`
+- src/frontend/node_modules/@open-draft/logger/README.md: `logger filtering` -> `#logger-filtering`
+- src/frontend/node_modules/@open-draft/logger/README.md: ``new Logger(name)`` -> `#new-loggername`
+- src/frontend/node_modules/@open-draft/logger/README.md: ``logger.debug(message, ...positionals)`` -> `#loggerdebugmessage-positionals`
+- src/frontend/node_modules/@open-draft/logger/README.md: ``logger.info(message, ...positionals)`` -> `#loggerinfomessage-positionals`
+- src/frontend/node_modules/@open-draft/logger/README.md: ``logger.success(message, ...positionals)`` -> `#loggersuccessmessage-positionals`
+- src/frontend/node_modules/@open-draft/logger/README.md: ``logger.warning(message, ...positionals)`` -> `#loggerwarningmessage-positionals`
+- src/frontend/node_modules/@open-draft/logger/README.md: ``logger.error(message, ...positionals)`` -> `#loggererrormessage-positionals`
+- src/frontend/node_modules/@open-draft/logger/README.md: ``logger.extend(name)`` -> `#loggerextendprefix`
+- src/frontend/node_modules/@open-draft/logger/README.md: ``logger.only(callback)`` -> `#loggeronlycallback`
+- src/frontend/node_modules/@open-draft/logger/README.md: ``logger.extend()`` -> `#loggerextendprefix`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: `**`createDeferredExecutor()`**` -> `#createdeferredexecutor`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.state`` -> `#deferredexecutorstate`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.resolve()`` -> `#deferredexecutorresolve`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.reject()`` -> `#deferredexecutorreject`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.rejectionReason`` -> `#deferredexecutorrejectionreason`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: `**Class: `DeferredPromise`**` -> `#class-deferredpromise`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``new DeferredPromise()`` -> `#new-defferedpromise`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``deferredPromise.state`` -> `#deferredpromisestate`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``deferredPromise.resolve()`` -> `#deferredpromiseresolve`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``deferredPromise.reject()`` -> `#deferredpromisereject`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``deferredPromise.rejectionReason`` -> `#deferredpromiserejectionreason`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``DeferredPromise`` -> `#class-deferredpromise`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``resolve()`` -> `#deferredexecutorresolve`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``reject()`` -> `#deferredexecutorreject`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``rejectionReason`` -> `#deferredexecutorrejectionreason`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: `deferred executor` -> `#createdeferredexecutor`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``resolve()`` -> `#deferredpromiseresolve`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``reject()`` -> `#deferredpromisereject`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.state`` -> `#deferredexecutorstate`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.resolve()`` -> `#deferredexecutorresolve`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.reject()`` -> `#deferredexecutorreject`
+- src/frontend/node_modules/@open-draft/deferred-promise/README.md: ``DeferredExecutor.rejectionReason`` -> `#deferredexecutorrejectionreason`
+- src/frontend/node_modules/graphemer/README.md: `Contribution Guide` -> `./CONTRIBUTING.md`
+- src/frontend/node_modules/eslint-plugin-react-refresh/README.md: `Options` -> `#options`
+- src/frontend/node_modules/js-tokens/README.md: `ES2018` -> `#es2018`
+- src/frontend/node_modules/js-tokens/README.md: `ES2018` -> `#es2018`
+- src/frontend/node_modules/js-tokens/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Install` -> `#install`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Overview` -> `#overview`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Usage` -> `#usage`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Types` -> `#types`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Standard` -> `#types-standard`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Extended` -> `#types-extended`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Modifiers` -> `#types-modifiers`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Options` -> `#types-options`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Generics` -> `#types-generics`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `References` -> `#types-references`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Recursive` -> `#types-recursive`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Conditional` -> `#types-conditional`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Template Literal` -> `#types-template-literal`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Guards` -> `#types-guards`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Unsafe` -> `#types-unsafe`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Strict` -> `#types-strict`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Values` -> `#values`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Create` -> `#values-create`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Clone` -> `#values-clone`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Check` -> `#values-check`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Convert` -> `#values-convert`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Cast` -> `#values-cast`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Equal` -> `#values-equal`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Hash` -> `#values-hash`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Diff` -> `#values-diff`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Patch` -> `#values-patch`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Errors` -> `#values-errors`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Mutate` -> `#values-mutate`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Pointer` -> `#values-pointer`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `TypeCheck` -> `#typecheck`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Ajv` -> `#typecheck-ajv`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `TypeCompiler` -> `#typecheck-typecompiler`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `TypeSystem` -> `#typesystem`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Types` -> `#typesystem-types`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Formats` -> `#typesystem-formats`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Policies` -> `#typesystem-policies`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Benchmark` -> `#benchmark`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Compile` -> `#benchmark-compile`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Validate` -> `#benchmark-validate`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Compression` -> `#benchmark-compression`
+- src/frontend/node_modules/@sinclair/typebox/readme.md: `Contribute` -> `#contribute`
+- src/frontend/node_modules/graphql/README.md: `![GraphQLConf 2025 Banner: September 08-10, Amsterdam. Hosted by the GraphQL Foundation` -> `./assets/graphql-conf-2025.png`
+- src/frontend/node_modules/graphql/README.md: `contribute` -> `./.github/CONTRIBUTING.md`
+- src/frontend/node_modules/graphql/README.md: `operations@graphql.org` -> `mailto:operations@graphql.org`
+- src/frontend/node_modules/resolve.exports/readme.md: ``/test/`` -> `/test`
+- src/frontend/node_modules/resolve.exports/readme.md: ``resolve()`` -> `#resolvepkg-entry-options`
+- src/frontend/node_modules/resolve.exports/readme.md: ``exports()`` -> `#exportspkg-entry-options`
+- src/frontend/node_modules/resolve.exports/readme.md: ``imports()`` -> `#importspkg-target-options`
+- src/frontend/node_modules/resolve.exports/readme.md: `Options` -> `#options`
+- src/frontend/node_modules/resolve.exports/readme.md: `Legacy Resolver API` -> `#legacy-resolver`
+- src/frontend/node_modules/resolve.exports/readme.md: ``exports()`` -> `#exportspkg-entry-options`
+- src/frontend/node_modules/resolve.exports/readme.md: ``imports()`` -> `#importspkg-target-options`
+- src/frontend/node_modules/resolve.exports/readme.md: ``options.conditions`` -> `#optionsconditions`
+- src/frontend/node_modules/resolve.exports/readme.md: ``options.conditions`` -> `#optionsconditions`
+- src/frontend/node_modules/resolve.exports/readme.md: ``resolve()`` -> `#resolvepkg-entry-options`
+- src/frontend/node_modules/resolve.exports/readme.md: ``imports()`` -> `#importspkg-target-options`
+- src/frontend/node_modules/resolve.exports/readme.md: ``exports()`` -> `#exportspkg-entry-options`
+- src/frontend/node_modules/resolve.exports/readme.md: ``options.conditions`` -> `#optionsconditions`
+- src/frontend/node_modules/resolve.exports/readme.md: ``options.fields`` -> `#optionsfields`
+- src/frontend/node_modules/resolve.exports/readme.md: ``options.fields`` -> `#optionsfields`
+- src/frontend/node_modules/@adobe/css-tools/Readme.md: ``stylesheet`` -> `#stylesheet`
+- src/frontend/node_modules/data-urls/node_modules/tr46/README.md: ``checkBidi`` -> `#checkBidi`
+- src/frontend/node_modules/data-urls/node_modules/tr46/README.md: ``checkHyphens`` -> `#checkHyphens`
+- src/frontend/node_modules/data-urls/node_modules/tr46/README.md: ``checkJoiners`` -> `#checkJoiners`
+- src/frontend/node_modules/data-urls/node_modules/tr46/README.md: ``processingOption`` -> `#processingOption`
+- src/frontend/node_modules/data-urls/node_modules/tr46/README.md: ``useSTD3ASCIIRules`` -> `#useSTD3ASCIIRules`
+- src/frontend/node_modules/data-urls/node_modules/tr46/README.md: ``verifyDNSLength`` -> `#verifyDNSLength`
+- src/frontend/node_modules/data-urls/node_modules/tr46/README.md: ``checkBidi`` -> `#checkBidi`
+- src/frontend/node_modules/data-urls/node_modules/tr46/README.md: ``checkHyphens`` -> `#checkHyphens`
+- src/frontend/node_modules/data-urls/node_modules/tr46/README.md: ``checkJoiners`` -> `#checkJoiners`
+- src/frontend/node_modules/data-urls/node_modules/tr46/README.md: ``processingOption`` -> `#processingOption`
+- src/frontend/node_modules/data-urls/node_modules/tr46/README.md: ``useSTD3ASCIIRules`` -> `#useSTD3ASCIIRules`
+- src/frontend/node_modules/is-number/README.md: `tests` -> `./test.js`
+- src/frontend/node_modules/is-number/README.md: `benchmarks` -> `./benchmark/index.js`
+- src/frontend/node_modules/is-number/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/is-number/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/is-number/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/levn/README.md: `levn format` -> `#levn-format`
+- src/frontend/node_modules/levn/README.md: `options` -> `#options`
+- src/frontend/node_modules/levn/README.md: `levn format` -> `#levn-format`
+- src/frontend/node_modules/levn/README.md: `options` -> `#options`
+- src/frontend/node_modules/levn/README.md: `options` -> `#options`
+- src/frontend/node_modules/levn/README.md: `levn format` -> `#levn-format`
+- src/frontend/node_modules/postcss-import/README.md: `tests` -> `test`
+- src/frontend/node_modules/postcss-import/README.md: `Changelog` -> `CHANGELOG.md`
+- src/frontend/node_modules/postcss-import/README.md: `License` -> `LICENSE`
+- src/frontend/node_modules/url-parse/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: `contributing guidelines` -> `.github/contributing.md`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Primitive`` -> `source/primitive.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Class`` -> `source/basic.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Constructor`` -> `source/basic.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``AbstractClass`` -> `source/basic.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``AbstractConstructor`` -> `source/basic.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``TypedArray`` -> `source/typed-array.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ObservableLike`` -> `source/observable-like.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``EmptyObject`` -> `source/empty-object.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``NonEmptyObject`` -> `source/non-empty-object.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``UnknownRecord`` -> `source/unknown-record.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``UnknownArray`` -> `source/unknown-array.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``UnknownMap`` -> `source/unknown-map.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``UnknownSet`` -> `source/unknown-set.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Writable`` -> `source/writable.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``WritableDeep`` -> `source/writable-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Merge`` -> `source/merge.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``MergeDeep`` -> `source/merge-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``MergeExclusive`` -> `source/merge-exclusive.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``OverrideProperties`` -> `source/override-properties.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``RequireAtLeastOne`` -> `source/require-at-least-one.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``RequireAllOrNone`` -> `source/require-all-or-none.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``RequireOneOrNone`` -> `source/require-one-or-none.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SingleKeyObject`` -> `source/single-key-object.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``RequiredDeep`` -> `source/required-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``PickDeep`` -> `source/pick-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``OmitDeep`` -> `source/omit-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``OmitIndexSignature`` -> `source/omit-index-signature.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``PickIndexSignature`` -> `source/pick-index-signature.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``PartialDeep`` -> `source/partial-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``PartialOnUndefinedDeep`` -> `source/partial-on-undefined-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``UndefinedOnPartialDeep`` -> `source/undefined-on-partial-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ReadonlyDeep`` -> `source/readonly-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``LiteralUnion`` -> `source/literal-union.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Opaque`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``UnwrapTagged`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``UnwrapOpaque`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``InvariantOf`` -> `source/invariant-of.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SetReadonly`` -> `source/set-readonly.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SetRequired`` -> `source/set-required.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SetRequiredDeep`` -> `source/set-required-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SetNonNullable`` -> `source/set-non-nullable.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SetNonNullableDeep`` -> `source/set-non-nullable-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ValueOf`` -> `source/value-of.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ConditionalKeys`` -> `source/conditional-keys.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ConditionalPickDeep`` -> `source/conditional-pick-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ConditionalExcept`` -> `source/conditional-except.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``UnionToIntersection`` -> `source/union-to-intersection.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``LiteralToPrimitive`` -> `source/literal-to-primitive.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: `primitive type` -> `source/primitive.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``LiteralToPrimitiveDeep`` -> `source/literal-to-primitive-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Stringified`` -> `source/stringified.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Entry`` -> `source/entry.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Entries`` -> `source/entries.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SetReturnType`` -> `source/set-return-type.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SetParameterType`` -> `source/set-parameter-type.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SimplifyDeep`` -> `source/simplify-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Get`` -> `source/get.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``StringKeyOf`` -> `source/string-key-of.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Schema`` -> `source/schema.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Exact`` -> `source/exact.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``OptionalKeysOf`` -> `source/optional-keys-of.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``KeysOfUnion`` -> `source/keys-of-union.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``HasOptionalKeys`` -> `source/has-optional-keys.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``RequiredKeysOf`` -> `source/required-keys-of.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``HasRequiredKeys`` -> `source/has-required-keys.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ReadonlyKeysOf`` -> `source/readonly-keys-of.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``HasReadonlyKeys`` -> `source/has-readonly-keys.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``WritableKeysOf`` -> `source/writable-keys-of.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``HasWritableKeys`` -> `source/has-writable-keys.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Spread`` -> `source/spread.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsEqual`` -> `source/is-equal.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``TaggedUnion`` -> `source/tagged-union.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IntRange`` -> `source/int-range.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IntClosedRange`` -> `source/int-closed-range.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ArrayIndices`` -> `source/array-indices.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ArrayValues`` -> `source/array-values.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ArraySplice`` -> `source/array-splice.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ArrayTail`` -> `source/array-tail.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SetFieldType`` -> `source/set-field-type.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Paths`` -> `source/paths.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SharedUnionFields`` -> `source/shared-union-fields.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SharedUnionFieldsDeep`` -> `source/shared-union-fields-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``AllUnionFields`` -> `source/all-union-fields.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``DistributedOmit`` -> `source/distributed-omit.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``DistributedPick`` -> `source/distributed-pick.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``And`` -> `source/and.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Or`` -> `source/or.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``NonEmptyTuple`` -> `source/non-empty-tuple.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``NonEmptyString`` -> `source/non-empty-string.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``FindGlobalType`` -> `source/find-global-type.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``FindGlobalInstanceType`` -> `source/find-global-type.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsLiteral`` -> `source/is-literal.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsStringLiteral`` -> `source/is-literal.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsNumericLiteral`` -> `source/is-literal.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsBooleanLiteral`` -> `source/is-literal.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsSymbolLiteral`` -> `source/is-literal.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsAny`` -> `source/is-any.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IfAny`` -> `source/if-any.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsNever`` -> `source/is-never.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IfNever`` -> `source/if-never.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsUnknown`` -> `source/is-unknown.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IfUnknown`` -> `source/if-unknown.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsEmptyObject`` -> `source/empty-object.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IfEmptyObject`` -> `source/if-empty-object.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsNull`` -> `source/is-null.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IfNull`` -> `source/if-null.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsTuple`` -> `source/is-tuple.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Jsonify`` -> `source/jsonify.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Jsonifiable`` -> `source/jsonifiable.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``JsonPrimitive`` -> `source/basic.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``JsonObject`` -> `source/basic.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``JsonArray`` -> `source/basic.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``JsonValue`` -> `source/basic.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``StructuredCloneable`` -> `source/structured-cloneable.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Promisable`` -> `source/promisable.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``AsyncReturnType`` -> `source/async-return-type.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Asyncify`` -> `source/asyncify.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Trim`` -> `source/trim.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Split`` -> `source/split.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Words`` -> `source/words.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Replace`` -> `source/replace.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``StringSlice`` -> `source/string-slice.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``StringRepeat`` -> `source/string-repeat.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Arrayable`` -> `source/arrayable.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Includes`` -> `source/includes.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Join`` -> `source/join.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ArraySlice`` -> `source/array-slice.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``LastArrayElement`` -> `source/last-array-element.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``FixedLengthArray`` -> `source/fixed-length-array.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``MultidimensionalArray`` -> `source/multidimensional-array.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``MultidimensionalReadonlyArray`` -> `source/multidimensional-readonly-array.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ReadonlyTuple`` -> `source/readonly-tuple.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``TupleToUnion`` -> `source/tuple-to-union.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``UnionToTuple`` -> `source/union-to-tuple.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``TupleToObject`` -> `source/tuple-to-object.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``PositiveInfinity`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``NegativeInfinity`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Finite`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Integer`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Float`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``NegativeFloat`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Negative`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``NonNegative`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``NegativeInteger`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``NonNegativeInteger`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsNegative`` -> `source/numeric.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsFloat`` -> `source/is-float.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IsInteger`` -> `source/is-integer.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``GreaterThan`` -> `source/greater-than.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``GreaterThanOrEqual`` -> `source/greater-than-or-equal.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``LessThan`` -> `source/less-than.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``LessThanOrEqual`` -> `source/less-than-or-equal.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Sum`` -> `source/sum.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Subtract`` -> `source/subtract.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``CamelCase`` -> `source/camel-case.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``CamelCasedProperties`` -> `source/camel-cased-properties.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``CamelCasedPropertiesDeep`` -> `source/camel-cased-properties-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``KebabCase`` -> `source/kebab-case.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``KebabCasedProperties`` -> `source/kebab-cased-properties.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``KebabCasedPropertiesDeep`` -> `source/kebab-cased-properties-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``PascalCase`` -> `source/pascal-case.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``PascalCasedProperties`` -> `source/pascal-cased-properties.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``PascalCasedPropertiesDeep`` -> `source/pascal-cased-properties-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SnakeCase`` -> `source/snake-case.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SnakeCasedProperties`` -> `source/snake-cased-properties.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SnakeCasedPropertiesDeep`` -> `source/snake-cased-properties-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ScreamingSnakeCase`` -> `source/screaming-snake-case.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``DelimiterCase`` -> `source/delimiter-case.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``DelimiterCasedProperties`` -> `source/delimiter-cased-properties.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``DelimiterCasedPropertiesDeep`` -> `source/delimiter-cased-properties-deep.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``GlobalThis`` -> `source/global-this.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``TsConfigJson`` -> `source/tsconfig-json.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Simplify`` -> `source/simplify.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Schema`` -> `source/schema.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Writable`` -> `source/writable.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``RequireOneOrNone`` -> `source/require-one-or-none.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``KeysOfUnion`` -> `source/keys-of-union.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Tagged`` -> `source/tagged.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: `MIT` -> `license-mit`
+- src/frontend/node_modules/msw/node_modules/type-fest/readme.md: `CC0-1.0` -> `license-cc0`
+- src/frontend/node_modules/postcss-selector-parser/API.md: `See processor documentation` -> `#processor`
+- src/frontend/node_modules/postcss-selector-parser/README.md: `API.md` -> `API.md`
+- src/frontend/node_modules/rollup/README.md: `[Contribute` -> `CONTRIBUTING.md`
+- src/frontend/node_modules/rollup/README.md: `contribution guidelines` -> `CONTRIBUTING.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `natural movement` -> `/docs/about/animations.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Accessible` -> `/docs/about/accessibility.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Extremely performant` -> `/docs/support/media.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Unopinionated styling` -> `/docs/guides/preset-styles.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Virtual list support 👾` -> `/docs/patterns/virtual-lists.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Combining items` -> `/docs/guides/combining.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Multi drag support` -> `/docs/patterns/multi-drag.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Conditional dragging` -> `/docs/api/draggable.md#optional-props`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `conditional dropping` -> `/docs/api/droppable.md#conditionally-dropping`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Add and remove items during a drag` -> `/docs/guides/changes-while-dragging.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `table pattern` -> `/docs/patterns/tables.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Auto scrolling` -> `/docs/guides/auto-scrolling.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Reparenting your `<Draggable />`` -> `/docs/guides/reparenting.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Create scripted drag and drop experiences 🎮` -> `/docs/sensors/sensor-api.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `any input type you like 🕹` -> `/docs/sensors/sensor-api.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `resetServerContext()` -> `/docs/api/reset-server-context.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `nested interactive elements` -> `/docs/api/draggable.md#interactive-child-elements-within-a-draggable-`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Installation` -> `/docs/about/installation.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Examples and samples` -> `/docs/about/examples.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Design principles` -> `/docs/about/design-principles.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Animations` -> `/docs/about/animations.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Accessibility` -> `/docs/about/accessibility.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Browser support` -> `/docs/about/browser-support.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Mouse dragging 🐭` -> `/docs/sensors/mouse.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Touch dragging 👉📱` -> `/docs/sensors/touch.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Keyboard dragging 🎹♿️` -> `/docs/sensors/keyboard.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Create your own sensor` -> `/docs/sensors/sensor-api.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: ``<DragDropContext />`` -> `/docs/api/drag-drop-context.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: ``<Droppable />`` -> `/docs/api/droppable.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: ``<Draggable />`` -> `/docs/api/draggable.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: ``resetServerContext()`` -> `/docs/api/reset-server-context.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: ``<DragDropContext />` responders` -> `/docs/guides/responders.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Combining `<Draggable />`s` -> `/docs/guides/combining.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Common setup issues` -> `/docs/guides/common-setup-issues.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Using `innerRef`` -> `/docs/guides/using-inner-ref.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Setup problem detection and error recovery` -> `/docs/guides/setup-problem-detection-and-error-recovery.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Rules for `draggableId` and `droppableId`s` -> `/docs/guides/identifiers.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Browser focus retention` -> `/docs/guides/browser-focus.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Customising or skipping the drop animation` -> `/docs/guides/drop-animation.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Auto scrolling` -> `/docs/guides/auto-scrolling.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Controlling the screen reader` -> `/docs/guides/screen-reader.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Use the html5 `doctype`` -> `/docs/guides/doctype.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: ``TypeScript` and `flow`: type information` -> `/docs/guides/types.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Dragging `<svg>`s` -> `/docs/guides/dragging-svgs.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Avoiding image flickering` -> `/docs/guides/avoiding-image-flickering.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Non-visible preset styles` -> `/docs/guides/preset-styles.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `How we detect scroll containers` -> `/docs/guides/how-we-detect-scroll-containers.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `How we use dom events` -> `/docs/guides/how-we-use-dom-events.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Adding `<Draggable />`s during a drag (11.x behaviour)` -> `/docs/guides/changes-while-dragging.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Setting up Content Security Policy` -> `/docs/guides/content-security-policy.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Virtual lists 👾` -> `/docs/patterns/virtual-lists.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Multi drag` -> `/docs/patterns/multi-drag.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Tables` -> `/docs/patterns/tables.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Reparenting a `<Draggable />`` -> `/docs/guides/reparenting.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Engineering health` -> `/docs/support/engineering-health.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Community and addons` -> `/docs/support/community-and-addons.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Upgrading` -> `/docs/support/upgrading.md`
+- src/frontend/node_modules/react-beautiful-dnd/README.md: `Media` -> `/docs/support/media.md`
+- src/frontend/node_modules/react-beautiful-dnd/node_modules/react-redux/README.md: `MIT` -> `LICENSE.md`
+- src/frontend/node_modules/react-beautiful-dnd/node_modules/redux/README.md: `Redux workshops through Workshop.me` -> `#redux-workshops`
+- src/frontend/node_modules/react-beautiful-dnd/node_modules/redux/README.md: `See the full list of Redux patrons` -> `PATRONS.md`
+- src/frontend/node_modules/react-beautiful-dnd/node_modules/redux/README.md: `MIT` -> `LICENSE.md`
+- src/frontend/node_modules/json5/README.md: `security policy` -> `./SECURITY.md`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Motivation` -> `#motivation`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Features` -> `#features`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Difference from client-side fetch` -> `#difference-from-client-side-fetch`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Installation` -> `#installation`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Loading and configuring the module` -> `#loading-and-configuring-the-module`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Common Usage` -> `#common-usage`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Plain text or HTML` -> `#plain-text-or-html`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `JSON` -> `#json`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Simple Post` -> `#simple-post`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Post with JSON` -> `#post-with-json`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Post with form parameters` -> `#post-with-form-parameters`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Handling exceptions` -> `#handling-exceptions`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Handling client and server errors` -> `#handling-client-and-server-errors`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Advanced Usage` -> `#advanced-usage`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Streams` -> `#streams`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Buffer` -> `#buffer`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Accessing Headers and other Meta data` -> `#accessing-headers-and-other-meta-data`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Extract Set-Cookie Header` -> `#extract-set-cookie-header`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Post data using a file stream` -> `#post-data-using-a-file-stream`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Post with form-data (detect multipart)` -> `#post-with-form-data-detect-multipart`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Request cancellation with AbortSignal` -> `#request-cancellation-with-abortsignal`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `API` -> `#api`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Options` -> `#options`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Class: Request` -> `#class-request`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Class: Response` -> `#class-response`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Class: Headers` -> `#class-headers`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Interface: Body` -> `#interface-body`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Class: FetchError` -> `#class-fetcherror`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `License` -> `#license`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Acknowledgement` -> `#acknowledgement`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `explicit errors` -> `ERROR-HANDLING.md`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Known Differences` -> `LIMITS.md`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `2.x upgrade guide` -> `UPGRADE-GUIDE.md`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `error handling document` -> `ERROR-HANDLING.md`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Options` -> `#fetch-options`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Response` -> `#class-response`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Body` -> `#iface-body`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `options` -> `#fetch-options`
+- src/frontend/node_modules/@supabase/node-fetch/README.md: `Body` -> `#iface-body`
+- src/frontend/node_modules/encoding-sniffer/README.md: `LICENSE` -> `/LICENSE`
+- src/frontend/node_modules/lilconfig/readme.md: `example` -> `#yaml-loader`
+- src/frontend/node_modules/optionator/README.md: `About` -> `#about`
+- src/frontend/node_modules/optionator/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/optionator/README.md: `Settings Format` -> `#settings-format`
+- src/frontend/node_modules/optionator/README.md: `Argument Format` -> `#argument-format`
+- src/frontend/node_modules/optionator/README.md: `settings format section` -> `#settings-format`
+- src/frontend/node_modules/@standard-schema/spec/README.md: `full list of compatible libraries` -> `#what-schema-libraries-implement-the-spec`
+- src/frontend/node_modules/@standard-schema/spec/README.md: `associated FAQ` -> `#can-i-add-it-as-a-dev-dependency`
+- src/frontend/node_modules/is-arrayish/README.md: `LICENSE` -> `LICENSE`
+- src/frontend/node_modules/prompts/readme.md: `prompts` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `prompt objects` -> `#-prompt-objects`
+- src/frontend/node_modules/prompts/readme.md: `prompt objects` -> `#-prompt-objects`
+- src/frontend/node_modules/prompts/readme.md: `prompt types here` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `type of prompt` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `prompt types` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `text` -> `#textmessage-initial-style`
+- src/frontend/node_modules/prompts/readme.md: `password` -> `#passwordmessage-initial`
+- src/frontend/node_modules/prompts/readme.md: `invisible` -> `#invisiblemessage-initial`
+- src/frontend/node_modules/prompts/readme.md: `number` -> `#numbermessage-initial-max-min-style`
+- src/frontend/node_modules/prompts/readme.md: `confirm` -> `#confirmmessage-initial`
+- src/frontend/node_modules/prompts/readme.md: `list` -> `#listmessage-initial`
+- src/frontend/node_modules/prompts/readme.md: `toggle` -> `#togglemessage-initial-active-inactive`
+- src/frontend/node_modules/prompts/readme.md: `select` -> `#selectmessage-choices-initial-hint-warn`
+- src/frontend/node_modules/prompts/readme.md: `multiselect` -> `#multiselectmessage-choices-initial-max-hint-warn`
+- src/frontend/node_modules/prompts/readme.md: `autocompleteMultiselect` -> `#multiselectmessage-choices-initial-max-hint-warn`
+- src/frontend/node_modules/prompts/readme.md: `autocomplete` -> `#autocompletemessage-choices-initial-suggest-limit-style`
+- src/frontend/node_modules/prompts/readme.md: `date` -> `#datemessage-initial-warn`
+- src/frontend/node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- src/frontend/node_modules/prompts/readme.md: `Prompt types` -> `#-types`
+- src/frontend/node_modules/d3-path/README.md: `serializing` -> `#path_toString`
+- src/frontend/node_modules/d3-path/README.md: `d3.path` -> `#path`
+- src/frontend/node_modules/filelist/node_modules/minimatch/README.md: `the caveat about Windows
+paths` -> `#windows`
+- src/frontend/node_modules/@reduxjs/toolkit/README.md: `contributing guide` -> `/CONTRIBUTING.md`
+- src/frontend/node_modules/form-data/README.md: `MIT` -> `License`
+- src/frontend/node_modules/package-json-from-dist/LICENSE.md: `Notices` -> `#notices`
+- src/frontend/node_modules/exit/README.md: `log.js` -> `test/fixtures/log.js`
+- src/frontend/node_modules/exit/README.md: `log-broken.js` -> `test/fixtures/log-broken.js`
+- src/frontend/node_modules/cross-spawn/README.md: `Why` -> `#why`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: `contributing guidelines` -> `.github/contributing.md`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Primitive`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Class`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``TypedArray`` -> `source/typed-array.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``JsonObject`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``JsonArray`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``JsonValue`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ObservableLike`` -> `source/basic.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Except`` -> `source/except.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Mutable`` -> `source/mutable.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Merge`` -> `source/merge.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``MergeExclusive`` -> `source/merge-exclusive.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``RequireAtLeastOne`` -> `source/require-at-least-one.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``RequireExactlyOne`` -> `source/require-exactly-one.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``PartialDeep`` -> `source/partial-deep.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ReadonlyDeep`` -> `source/readonly-deep.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``LiteralUnion`` -> `source/literal-union.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Promisable`` -> `source/promisable.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Opaque`` -> `source/opaque.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``SetOptional`` -> `source/set-optional.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``SetRequired`` -> `source/set-required.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ValueOf`` -> `source/value-of.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``PromiseValue`` -> `source/promise-value.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``AsyncReturnType`` -> `source/async-return-type.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ConditionalKeys`` -> `source/conditional-keys.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ConditionalPick`` -> `source/conditional-pick.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``ConditionalExcept`` -> `source/conditional-except.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``UnionToIntersection`` -> `source/union-to-intersection.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Stringified`` -> `source/stringified.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``FixedLengthArray`` -> `source/fixed-length-array.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``IterableElement`` -> `source/iterable-element.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Entry`` -> `source/entry.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Entries`` -> `source/entries.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``SetReturnType`` -> `source/set-return-type.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Asyncify`` -> `source/asyncify.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``CamelCase`` -> `ts41/camel-case.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``KebabCase`` -> `ts41/kebab-case.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``PascalCase`` -> `ts41/pascal-case.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``SnakeCase`` -> `ts41/snake-case.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``DelimiterCase`` -> `ts41/delimiter-case.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``Get`` -> `ts41/get.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``PackageJson`` -> `source/package-json.d.ts`
+- src/frontend/node_modules/ansi-escapes/node_modules/type-fest/readme.md: ``TsConfigJson`` -> `source/tsconfig-json.d.ts`
+- src/frontend/node_modules/istanbul-lib-instrument/README.md: `v0-changes.md` -> `v0-changes.md`
+- src/frontend/node_modules/prop-types/README.md: `above section` -> `#compatibility`
+- src/frontend/node_modules/prop-types/README.md: `above section about compatibility` -> `#compatibility`
+- src/frontend/node_modules/yargs/README.md: `tons more` -> `/docs/api.md`
+- src/frontend/node_modules/yargs/README.md: `docs` -> `/docs/typescript.md`
+- src/frontend/node_modules/yargs/README.md: `docs` -> `/docs/browser.md`
+- src/frontend/node_modules/yargs/README.md: `Yargs' API` -> `/docs/api.md`
+- src/frontend/node_modules/yargs/README.md: `Examples` -> `/docs/examples.md`
+- src/frontend/node_modules/yargs/README.md: `Parsing Tricks` -> `/docs/tricks.md`
+- src/frontend/node_modules/yargs/README.md: `Stop the Parser` -> `/docs/tricks.md#stop`
+- src/frontend/node_modules/yargs/README.md: `Negating Boolean Arguments` -> `/docs/tricks.md#negate`
+- src/frontend/node_modules/yargs/README.md: `Numbers` -> `/docs/tricks.md#numbers`
+- src/frontend/node_modules/yargs/README.md: `Arrays` -> `/docs/tricks.md#arrays`
+- src/frontend/node_modules/yargs/README.md: `Objects` -> `/docs/tricks.md#objects`
+- src/frontend/node_modules/yargs/README.md: `Quotes` -> `/docs/tricks.md#quotes`
+- src/frontend/node_modules/yargs/README.md: `Advanced Topics` -> `/docs/advanced.md`
+- src/frontend/node_modules/yargs/README.md: `Composing Your App Using Commands` -> `/docs/advanced.md#commands`
+- src/frontend/node_modules/yargs/README.md: `Building Configurable CLI Apps` -> `/docs/advanced.md#configuration`
+- src/frontend/node_modules/yargs/README.md: `Customizing Yargs' Parser` -> `/docs/advanced.md#customizing`
+- src/frontend/node_modules/yargs/README.md: `Bundling yargs` -> `/docs/bundling.md`
+- src/frontend/node_modules/yargs/README.md: `Contributing` -> `/contributing.md`
+- src/frontend/node_modules/asynckit/README.md: `test/test-parallel-array.js` -> `test/test-parallel-array.js`
+- src/frontend/node_modules/asynckit/README.md: `test/test-parallel-object.js` -> `test/test-parallel-object.js`
+- src/frontend/node_modules/asynckit/README.md: `test/test-serial-array.js` -> `test/test-serial-array.js`
+- src/frontend/node_modules/asynckit/README.md: `test/test-serial-object.js` -> `test/test-serial-object.js`
+- src/frontend/node_modules/asynckit/README.md: `compare-property` -> `compare-property`
+- src/frontend/node_modules/asynckit/README.md: `test folder` -> `test/`
+- src/frontend/node_modules/espree/README.md: `here` -> `#options`
+- src/frontend/node_modules/espree/README.md: `here` -> `#options`
+- src/frontend/node_modules/@pinecone-database/pinecone/README.md: `Configure pod-based indexes` -> `#configure-pod-based-indexes`
+- src/frontend/node_modules/@pinecone-database/pinecone/README.md: `Example code` -> `#example-code`
+- src/frontend/node_modules/@pinecone-database/pinecone/README.md: `Create an integrated index` -> `#create-an-integrated-index`
+- src/frontend/node_modules/@pinecone-database/pinecone/README.md: `CONTRIBUTING.md` -> `CONTRIBUTING.md`
+- src/frontend/node_modules/eslint/README.md: `Installation and Usage` -> `#installation-and-usage`
+- src/frontend/node_modules/eslint/README.md: `Configuration` -> `#configuration`
+- src/frontend/node_modules/eslint/README.md: `Code of Conduct` -> `#code-of-conduct`
+- src/frontend/node_modules/eslint/README.md: `Filing Issues` -> `#filing-issues`
+- src/frontend/node_modules/eslint/README.md: `Frequently Asked Questions` -> `#frequently-asked-questions`
+- src/frontend/node_modules/eslint/README.md: `Releases` -> `#releases`
+- src/frontend/node_modules/eslint/README.md: `Security Policy` -> `#security-policy`
+- src/frontend/node_modules/eslint/README.md: `Semantic Versioning Policy` -> `#semantic-versioning-policy`
+- src/frontend/node_modules/eslint/README.md: `Stylistic Rule Updates` -> `#stylistic-rule-updates`
+- src/frontend/node_modules/eslint/README.md: `License` -> `#license`
+- src/frontend/node_modules/eslint/README.md: `Team` -> `#team`
+- src/frontend/node_modules/eslint/README.md: `Sponsors` -> `#sponsors`
+- src/frontend/node_modules/eslint/README.md: `Technology Sponsors` -> `#technology-sponsors`
+- src/frontend/node_modules/eslint/node_modules/globals/readme.md: `JSON file` -> `globals.json`
+- src/frontend/node_modules/glob/README.md: `a fun cartoon logo made of glob characters` -> `logo/glob.png`
+- src/frontend/node_modules/cookie/README.md: ``Partitioned` `Set-Cookie`` -> `rfc-cutler-httpbis-partitioned-cookies`
+- src/frontend/node_modules/cookie/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/to-regex-range/README.md: `>1m test assertions` -> `./test/test.js`
+- src/frontend/node_modules/to-regex-range/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/to-regex-range/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/to-regex-range/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/@sinonjs/fake-timers/README.md: ``clock.tick`` -> `#clockticktime--await-clocktickasynctime`
+- src/frontend/node_modules/source-map/CHANGELOG.md: `Bug 1090768` -> `bugzil.la/1090768`
+- src/frontend/node_modules/source-map/README.md: `Examples` -> `#examples`
+- src/frontend/node_modules/source-map/README.md: `Consuming a source map` -> `#consuming-a-source-map`
+- src/frontend/node_modules/source-map/README.md: `Generating a source map` -> `#generating-a-source-map`
+- src/frontend/node_modules/source-map/README.md: `With SourceNode (high level API)` -> `#with-sourcenode-high-level-api`
+- src/frontend/node_modules/source-map/README.md: `With SourceMapGenerator (low level API)` -> `#with-sourcemapgenerator-low-level-api`
+- src/frontend/node_modules/source-map/README.md: `API` -> `#api`
+- src/frontend/node_modules/source-map/README.md: `SourceMapConsumer` -> `#sourcemapconsumer`
+- src/frontend/node_modules/source-map/README.md: `new SourceMapConsumer(rawSourceMap)` -> `#new-sourcemapconsumerrawsourcemap`
+- src/frontend/node_modules/source-map/README.md: `SourceMapConsumer.prototype.computeColumnSpans()` -> `#sourcemapconsumerprototypecomputecolumnspans`
+- src/frontend/node_modules/source-map/README.md: `SourceMapConsumer.prototype.originalPositionFor(generatedPosition)` -> `#sourcemapconsumerprototypeoriginalpositionforgeneratedposition`
+- src/frontend/node_modules/source-map/README.md: `SourceMapConsumer.prototype.generatedPositionFor(originalPosition)` -> `#sourcemapconsumerprototypegeneratedpositionfororiginalposition`
+- src/frontend/node_modules/source-map/README.md: `SourceMapConsumer.prototype.allGeneratedPositionsFor(originalPosition)` -> `#sourcemapconsumerprototypeallgeneratedpositionsfororiginalposition`
+- src/frontend/node_modules/source-map/README.md: `SourceMapConsumer.prototype.hasContentsOfAllSources()` -> `#sourcemapconsumerprototypehascontentsofallsources`
+- src/frontend/node_modules/source-map/README.md: `SourceMapConsumer.prototype.eachMapping(callback, context, order)` -> `#sourcemapconsumerprototypeeachmappingcallback-context-order`
+- src/frontend/node_modules/source-map/README.md: `SourceMapGenerator` -> `#sourcemapgenerator`
+- src/frontend/node_modules/source-map/README.md: `SourceMapGenerator.fromSourceMap(sourceMapConsumer)` -> `#sourcemapgeneratorfromsourcemapsourcemapconsumer`
+- src/frontend/node_modules/source-map/README.md: `SourceMapGenerator.prototype.addMapping(mapping)` -> `#sourcemapgeneratorprototypeaddmappingmapping`
+- src/frontend/node_modules/source-map/README.md: `SourceMapGenerator.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcemapgeneratorprototypesetsourcecontentsourcefile-sourcecontent`
+- src/frontend/node_modules/source-map/README.md: `SourceMapGenerator.prototype.toString()` -> `#sourcemapgeneratorprototypetostring`
+- src/frontend/node_modules/source-map/README.md: `SourceNode` -> `#sourcenode`
+- src/frontend/node_modules/source-map/README.md: `SourceNode.prototype.add(chunk)` -> `#sourcenodeprototypeaddchunk`
+- src/frontend/node_modules/source-map/README.md: `SourceNode.prototype.prepend(chunk)` -> `#sourcenodeprototypeprependchunk`
+- src/frontend/node_modules/source-map/README.md: `SourceNode.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcenodeprototypesetsourcecontentsourcefile-sourcecontent`
+- src/frontend/node_modules/source-map/README.md: `SourceNode.prototype.walk(fn)` -> `#sourcenodeprototypewalkfn`
+- src/frontend/node_modules/source-map/README.md: `SourceNode.prototype.walkSourceContents(fn)` -> `#sourcenodeprototypewalksourcecontentsfn`
+- src/frontend/node_modules/source-map/README.md: `SourceNode.prototype.join(sep)` -> `#sourcenodeprototypejoinsep`
+- src/frontend/node_modules/source-map/README.md: `SourceNode.prototype.replaceRight(pattern, replacement)` -> `#sourcenodeprototypereplacerightpattern-replacement`
+- src/frontend/node_modules/source-map/README.md: `SourceNode.prototype.toString()` -> `#sourcenodeprototypetostring`
+- src/frontend/node_modules/jest-each/README.md: `Tagged Template Literals` -> `#tagged-template-literal-of-rows`
+- src/frontend/node_modules/jest-each/README.md: `Demo` -> `#demo`
+- src/frontend/node_modules/jest-each/README.md: `Installation` -> `#installation`
+- src/frontend/node_modules/jest-each/README.md: `Importing` -> `#importing`
+- src/frontend/node_modules/jest-each/README.md: `Array of Rows` -> `#array-of-rows`
+- src/frontend/node_modules/jest-each/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/jest-each/README.md: `Tagged Template Literal of rows` -> `#tagged-template-literal-of-rows`
+- src/frontend/node_modules/jest-each/README.md: `Usage` -> `#usage-1`
+- src/frontend/node_modules/jest-each/README.md: `Current jest tests` -> `assets/default-demo.gif`
+- src/frontend/node_modules/jest-each/README.md: `Current jest tests` -> `assets/test-demo.gif`
+- src/frontend/node_modules/jest-each/README.md: `Current jest tests` -> `assets/tagged-template-literal.gif`
+- src/frontend/node_modules/jest-each/README.md: `Current jest tests` -> `assets/describe-demo.gif`
+- src/frontend/node_modules/fast-equals/CHANGELOG.md: `README documentation` -> `./README.md#createcustomequal`
+- src/frontend/node_modules/fast-equals/CHANGELOG.md: `the build resolution has improved` -> `#better-build-system-resolution`
+- src/frontend/node_modules/fast-equals/CHANGELOG.md: ``createCustomEqual`` -> `./README.md#createcustomequal`
+- src/frontend/node_modules/fast-equals/CHANGELOG.md: ``createCustomCircularEqual`` -> `./README.md#createcustomcircularequal`
+- src/frontend/node_modules/fast-equals/CHANGELOG.md: `the documentation` -> `./README.md#createcustomequal`
+- src/frontend/node_modules/fast-equals/CHANGELOG.md: `the documentation` -> `./README.md#createcustomcircularequal`
+- src/frontend/node_modules/fast-equals/CHANGELOG.md: ``circularDeepEqual`` -> `README.md#circulardeepequal`
+- src/frontend/node_modules/fast-equals/CHANGELOG.md: ``circularShallowEqual`` -> `README.md#circularshallowequal`
+- src/frontend/node_modules/fast-equals/CHANGELOG.md: ``sameValueZeroEqual`` -> `#samevaluezeroequal`
+- src/frontend/node_modules/fast-equals/README.md: `blazing fast` -> `#benchmarks`
+- src/frontend/node_modules/fast-equals/README.md: `fast-equals` -> `#fast-equals`
+- src/frontend/node_modules/fast-equals/README.md: `Table of contents` -> `#table-of-contents`
+- src/frontend/node_modules/fast-equals/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/fast-equals/README.md: `Specific builds` -> `#specific-builds`
+- src/frontend/node_modules/fast-equals/README.md: `Available methods` -> `#available-methods`
+- src/frontend/node_modules/fast-equals/README.md: `deepEqual` -> `#deepequal`
+- src/frontend/node_modules/fast-equals/README.md: `Comparing `Map`s` -> `#comparing-maps`
+- src/frontend/node_modules/fast-equals/README.md: `shallowEqual` -> `#shallowequal`
+- src/frontend/node_modules/fast-equals/README.md: `sameValueZeroEqual` -> `#samevaluezeroequal`
+- src/frontend/node_modules/fast-equals/README.md: `circularDeepEqual` -> `#circulardeepequal`
+- src/frontend/node_modules/fast-equals/README.md: `circularShallowEqual` -> `#circularshallowequal`
+- src/frontend/node_modules/fast-equals/README.md: `strictDeepEqual` -> `#strictdeepequal`
+- src/frontend/node_modules/fast-equals/README.md: `strictShallowEqual` -> `#strictshallowequal`
+- src/frontend/node_modules/fast-equals/README.md: `strictCircularDeepEqual` -> `#strictcirculardeepequal`
+- src/frontend/node_modules/fast-equals/README.md: `strictCircularShallowEqual` -> `#strictcircularshallowequal`
+- src/frontend/node_modules/fast-equals/README.md: `createCustomEqual` -> `#createcustomequal`
+- src/frontend/node_modules/fast-equals/README.md: `Recipes` -> `#recipes`
+- src/frontend/node_modules/fast-equals/README.md: `Benchmarks` -> `#benchmarks`
+- src/frontend/node_modules/fast-equals/README.md: `Development` -> `#development`
+- src/frontend/node_modules/fast-equals/README.md: `both keys and values are compared for deep equality` -> `#comparing-maps`
+- src/frontend/node_modules/fast-equals/README.md: `recipes` -> `#recipes`
+- src/frontend/node_modules/fast-equals/README.md: `Strict property descriptor comparison` -> `./recipes/strict-property-descriptor-check.md`
+- src/frontend/node_modules/hoist-non-react-statics/README.md: `package.json file` -> ` https://github.com/mridgway/hoist-non-react-statics/blob/master/package.json`
+- src/frontend/node_modules/statuses/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/symbol-tree/README.md: `api.md` -> `api.md`
+- src/frontend/node_modules/symbol-tree/README.md: `symbol-tree` -> `#module_symbol-tree`
+- src/frontend/node_modules/symbol-tree/README.md: `SymbolTree` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `.initialize(object)` -> `#module_symbol-tree--SymbolTree+initialize`
+- src/frontend/node_modules/symbol-tree/README.md: `.hasChildren(object)` -> `#module_symbol-tree--SymbolTree+hasChildren`
+- src/frontend/node_modules/symbol-tree/README.md: `.firstChild(object)` -> `#module_symbol-tree--SymbolTree+firstChild`
+- src/frontend/node_modules/symbol-tree/README.md: `.lastChild(object)` -> `#module_symbol-tree--SymbolTree+lastChild`
+- src/frontend/node_modules/symbol-tree/README.md: `.previousSibling(object)` -> `#module_symbol-tree--SymbolTree+previousSibling`
+- src/frontend/node_modules/symbol-tree/README.md: `.nextSibling(object)` -> `#module_symbol-tree--SymbolTree+nextSibling`
+- src/frontend/node_modules/symbol-tree/README.md: `.parent(object)` -> `#module_symbol-tree--SymbolTree+parent`
+- src/frontend/node_modules/symbol-tree/README.md: `.lastInclusiveDescendant(object)` -> `#module_symbol-tree--SymbolTree+lastInclusiveDescendant`
+- src/frontend/node_modules/symbol-tree/README.md: `.previousSiblingsIterator(object)` -> `#module_symbol-tree--SymbolTree+previousSiblingsIterator`
+- src/frontend/node_modules/symbol-tree/README.md: `.nextSiblingsIterator(object)` -> `#module_symbol-tree--SymbolTree+nextSiblingsIterator`
+- src/frontend/node_modules/symbol-tree/README.md: `.ancestorsIterator(object)` -> `#module_symbol-tree--SymbolTree+ancestorsIterator`
+- src/frontend/node_modules/symbol-tree/README.md: `.treeIterator(root, options)` -> `#module_symbol-tree--SymbolTree+treeIterator`
+- src/frontend/node_modules/symbol-tree/README.md: `.index(child)` -> `#module_symbol-tree--SymbolTree+index`
+- src/frontend/node_modules/symbol-tree/README.md: `.childrenCount(parent)` -> `#module_symbol-tree--SymbolTree+childrenCount`
+- src/frontend/node_modules/symbol-tree/README.md: `.compareTreePosition(left, right)` -> `#module_symbol-tree--SymbolTree+compareTreePosition`
+- src/frontend/node_modules/symbol-tree/README.md: `.remove(removeObject)` -> `#module_symbol-tree--SymbolTree+remove`
+- src/frontend/node_modules/symbol-tree/README.md: `.insertBefore(referenceObject, newObject)` -> `#module_symbol-tree--SymbolTree+insertBefore`
+- src/frontend/node_modules/symbol-tree/README.md: `.insertAfter(referenceObject, newObject)` -> `#module_symbol-tree--SymbolTree+insertAfter`
+- src/frontend/node_modules/symbol-tree/README.md: `.prependChild(referenceObject, newObject)` -> `#module_symbol-tree--SymbolTree+prependChild`
+- src/frontend/node_modules/symbol-tree/README.md: `.appendChild(referenceObject, newObject)` -> `#module_symbol-tree--SymbolTree+appendChild`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/symbol-tree/README.md: `<code>SymbolTree</code>` -> `#exp_module_symbol-tree--SymbolTree`
+- src/frontend/node_modules/minipass/README.md: `Timing` -> `#timing`
+- src/frontend/node_modules/@testing-library/user-event/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/@testing-library/react/CHANGELOG.md: `releases page` -> `../../releases`
+- src/frontend/node_modules/@testing-library/react/README.md: `The problem` -> `#the-problem`
+- src/frontend/node_modules/@testing-library/react/README.md: `The solution` -> `#the-solution`
+- src/frontend/node_modules/@testing-library/react/README.md: `Installation` -> `#installation`
+- src/frontend/node_modules/@testing-library/react/README.md: `Suppressing unnecessary warnings on React DOM 16.8` -> `#suppressing-unnecessary-warnings-on-react-dom-168`
+- src/frontend/node_modules/@testing-library/react/README.md: `Examples` -> `#examples`
+- src/frontend/node_modules/@testing-library/react/README.md: `Basic Example` -> `#basic-example`
+- src/frontend/node_modules/@testing-library/react/README.md: `Complex Example` -> `#complex-example`
+- src/frontend/node_modules/@testing-library/react/README.md: `More Examples` -> `#more-examples`
+- src/frontend/node_modules/@testing-library/react/README.md: `Hooks` -> `#hooks`
+- src/frontend/node_modules/@testing-library/react/README.md: `Guiding Principles` -> `#guiding-principles`
+- src/frontend/node_modules/@testing-library/react/README.md: `Docs` -> `#docs`
+- src/frontend/node_modules/@testing-library/react/README.md: `Issues` -> `#issues`
+- src/frontend/node_modules/@testing-library/react/README.md: `🐛 Bugs` -> `#-bugs`
+- src/frontend/node_modules/@testing-library/react/README.md: `💡 Feature Requests` -> `#-feature-requests`
+- src/frontend/node_modules/@testing-library/react/README.md: `❓ Questions` -> `#-questions`
+- src/frontend/node_modules/@testing-library/react/README.md: `Contributors` -> `#contributors`
+- src/frontend/node_modules/@testing-library/react/README.md: `LICENSE` -> `#license`
+- src/frontend/node_modules/@testing-library/react/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `The Problem` -> `#the-problem`
+- src/frontend/node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `This Solution` -> `#this-solution`
+- src/frontend/node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `Installation` -> `#installation`
+- src/frontend/node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `Documentation` -> `#documentation`
+- src/frontend/node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `Guiding Principles` -> `#guiding-principles`
+- src/frontend/node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `Contributors` -> `#contributors`
+- src/frontend/node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `LICENSE` -> `#license`
+- src/frontend/node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/@testing-library/jest-dom/CHANGELOG.md: `releases page` -> `../../releases`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `Installation` -> `#installation`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `With `@jest/globals`` -> `#with-jestglobals`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `With Vitest` -> `#with-vitest`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `With TypeScript` -> `#with-typescript`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `With another Jest-compatible `expect`` -> `#with-another-jest-compatible-expect`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `Custom matchers` -> `#custom-matchers`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeDisabled`` -> `#tobedisabled`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeEnabled`` -> `#tobeenabled`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeEmptyDOMElement`` -> `#tobeemptydomelement`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeInTheDocument`` -> `#tobeinthedocument`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeInvalid`` -> `#tobeinvalid`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeRequired`` -> `#toberequired`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeValid`` -> `#tobevalid`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeVisible`` -> `#tobevisible`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toContainElement`` -> `#tocontainelement`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toContainHTML`` -> `#tocontainhtml`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveAccessibleDescription`` -> `#tohaveaccessibledescription`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveAccessibleErrorMessage`` -> `#tohaveaccessibleerrormessage`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveAccessibleName`` -> `#tohaveaccessiblename`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveAttribute`` -> `#tohaveattribute`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveClass`` -> `#tohaveclass`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveFocus`` -> `#tohavefocus`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveFormValues`` -> `#tohaveformvalues`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveStyle`` -> `#tohavestyle`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveTextContent`` -> `#tohavetextcontent`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveValue`` -> `#tohavevalue`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveDisplayValue`` -> `#tohavedisplayvalue`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeChecked`` -> `#tobechecked`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBePartiallyChecked`` -> `#tobepartiallychecked`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveRole`` -> `#tohaverole`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveErrorMessage`` -> `#tohaveerrormessage`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveSelection`` -> `#tohaveselection`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `Deprecated matchers` -> `#deprecated-matchers`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeEmpty`` -> `#tobeempty`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeInTheDOM`` -> `#tobeinthedom`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveDescription`` -> `#tohavedescription`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `Inspiration` -> `#inspiration`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `Other Solutions` -> `#other-solutions`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `Guiding Principles` -> `#guiding-principles`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `Contributors` -> `#contributors`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: `LICENSE` -> `#license`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toContainElement`` -> `#tocontainelement`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toContainElement`` -> `#tocontainelement`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeChecked`` -> `#tobechecked`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveFormValues`` -> `#tohaveformvalues`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveFormValues`` -> `#tohaveformvalues`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeChecked`` -> `#tobechecked`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveFormValues`` -> `#tohaveformvalues`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveAccessibleErrorMessage`` -> `#tohaveaccessibleerrormessage`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeEmptyDOMElement`` -> `#toBeEmptyDOMElement`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeInTheDocument`` -> `#tobeinthedocument`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toBeInTheDocument`` -> `#tobeinthedocument`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toContainElement`` -> `#tocontainelement`
+- src/frontend/node_modules/@testing-library/jest-dom/README.md: ``toHaveAccessibleDescription`` -> `#tohaveaccessibledescription`
+- src/frontend/node_modules/@testing-library/jest-dom/node_modules/dom-accessibility-api/README.md: `the test readme` -> `/tests/README.md`
+- src/frontend/node_modules/execa/readme.md: `Strips the final newline` -> `#stripfinalnewline`
+- src/frontend/node_modules/execa/readme.md: `Executes locally installed binaries by name.` -> `#preferlocal`
+- src/frontend/node_modules/execa/readme.md: `Cleans up spawned processes when the parent process dies.` -> `#cleanup`
+- src/frontend/node_modules/execa/readme.md: `Get interleaved output` -> `#all`
+- src/frontend/node_modules/execa/readme.md: `*(Async only)*` -> `#execasyncfile-arguments-options`
+- src/frontend/node_modules/execa/readme.md: `Can specify file and arguments as a single string without a shell` -> `#execacommandcommand-options`
+- src/frontend/node_modules/execa/readme.md: ``shell`` -> `#shell`
+- src/frontend/node_modules/execa/readme.md: ``childProcessResult`` -> `#childProcessResult`
+- src/frontend/node_modules/execa/readme.md: ``childProcessResult.isCanceled`` -> `#iscanceled`
+- src/frontend/node_modules/execa/readme.md: ``all` option` -> `#all-2`
+- src/frontend/node_modules/execa/readme.md: ``stdout`` -> `#stdout-1`
+- src/frontend/node_modules/execa/readme.md: ``stderr`` -> `#stderr-1`
+- src/frontend/node_modules/execa/readme.md: ``childProcessResult`` -> `#childProcessResult`
+- src/frontend/node_modules/execa/readme.md: ``execa()`` -> `#execafile-arguments-options`
+- src/frontend/node_modules/execa/readme.md: ``shell` option` -> `#shell`
+- src/frontend/node_modules/execa/readme.md: ``execa.command()`` -> `#execacommand-command-options`
+- src/frontend/node_modules/execa/readme.md: ``childProcessResult`` -> `#childProcessResult`
+- src/frontend/node_modules/execa/readme.md: ``nodePath`` -> `#nodepath-for-node-only`
+- src/frontend/node_modules/execa/readme.md: ``nodeOptions`` -> `#nodeoptions-for-node-only`
+- src/frontend/node_modules/execa/readme.md: ``shell`` -> `#shell`
+- src/frontend/node_modules/execa/readme.md: ``stdio`` -> `#stdio`
+- src/frontend/node_modules/execa/readme.md: `fails` -> `#failed`
+- src/frontend/node_modules/execa/readme.md: `exit code` -> `#exitcode`
+- src/frontend/node_modules/execa/readme.md: `killed` -> `#killed`
+- src/frontend/node_modules/execa/readme.md: `signal` -> `#signal`
+- src/frontend/node_modules/execa/readme.md: `timing out` -> `#timedout`
+- src/frontend/node_modules/execa/readme.md: `being canceled` -> `#iscanceled`
+- src/frontend/node_modules/execa/readme.md: ``execa()`` -> `#execafile-arguments-options`
+- src/frontend/node_modules/execa/readme.md: ``execa.command()`` -> `#execacommandcommand-options`
+- src/frontend/node_modules/execa/readme.md: ``command`` -> `#command`
+- src/frontend/node_modules/execa/readme.md: ``execa()`` -> `#execafile-arguments-options`
+- src/frontend/node_modules/execa/readme.md: ``execa.command()`` -> `#execacommandcommand-options`
+- src/frontend/node_modules/execa/readme.md: ``all` option` -> `#all-2`
+- src/frontend/node_modules/execa/readme.md: `underlying error message` -> `#originalMessage`
+- src/frontend/node_modules/execa/readme.md: `stderr` -> `#stderr`
+- src/frontend/node_modules/execa/readme.md: `stdout` -> `#stdout`
+- src/frontend/node_modules/execa/readme.md: ``message` property` -> `#message`
+- src/frontend/node_modules/execa/readme.md: ``cwd` option` -> `#cwd`
+- src/frontend/node_modules/execa/readme.md: ``preferLocal`` -> `#preferlocal`
+- src/frontend/node_modules/execa/readme.md: ``stdout`` -> `#stdout-1`
+- src/frontend/node_modules/execa/readme.md: ``stderr`` -> `#stderr-1`
+- src/frontend/node_modules/execa/readme.md: ``all`` -> `#all`
+- src/frontend/node_modules/execa/readme.md: ``all`` -> `#all-2`
+- src/frontend/node_modules/execa/readme.md: ``error.stdout`` -> `#stdout`
+- src/frontend/node_modules/execa/readme.md: ``error.stderr`` -> `#stderr`
+- src/frontend/node_modules/execa/readme.md: ``error.all`` -> `#all`
+- src/frontend/node_modules/execa/readme.md: `promise` -> `#all`
+- src/frontend/node_modules/execa/readme.md: `resolved value` -> `#all-1`
+- src/frontend/node_modules/execa/readme.md: ``extendEnv`` -> `#extendenv`
+- src/frontend/node_modules/execa/readme.md: ``stdio: 'ipc'`` -> `#stdio`
+- src/frontend/node_modules/execa/readme.md: ``execa.node()`` -> `#execanodescriptpath-arguments-options`
+- src/frontend/node_modules/react-helmet-async/README.md: `constants.ts` -> `./src/constants.ts`
+- src/frontend/node_modules/follow-redirects/README.md: `Olivier Lalonde` -> `mailto:olalonde@gmail.com`
+- src/frontend/node_modules/follow-redirects/README.md: `James Talmage` -> `mailto:james@talmage.io`
+- src/frontend/node_modules/micromatch/README.md: `Install` -> `#install`
+- src/frontend/node_modules/micromatch/README.md: `Sponsors` -> `#sponsors`
+- src/frontend/node_modules/micromatch/README.md: `Gold Sponsors` -> `#gold-sponsors`
+- src/frontend/node_modules/micromatch/README.md: `Quickstart` -> `#quickstart`
+- src/frontend/node_modules/micromatch/README.md: `Why use micromatch?` -> `#why-use-micromatch`
+- src/frontend/node_modules/micromatch/README.md: `Matching features` -> `#matching-features`
+- src/frontend/node_modules/micromatch/README.md: `Switching to micromatch` -> `#switching-to-micromatch`
+- src/frontend/node_modules/micromatch/README.md: `From minimatch` -> `#from-minimatch`
+- src/frontend/node_modules/micromatch/README.md: `From multimatch` -> `#from-multimatch`
+- src/frontend/node_modules/micromatch/README.md: `API` -> `#api`
+- src/frontend/node_modules/micromatch/README.md: `Options` -> `#options`
+- src/frontend/node_modules/micromatch/README.md: `Options Examples` -> `#options-examples`
+- src/frontend/node_modules/micromatch/README.md: `options.basename` -> `#optionsbasename`
+- src/frontend/node_modules/micromatch/README.md: `options.bash` -> `#optionsbash`
+- src/frontend/node_modules/micromatch/README.md: `options.expandRange` -> `#optionsexpandrange`
+- src/frontend/node_modules/micromatch/README.md: `options.format` -> `#optionsformat`
+- src/frontend/node_modules/micromatch/README.md: `options.ignore` -> `#optionsignore`
+- src/frontend/node_modules/micromatch/README.md: `options.matchBase` -> `#optionsmatchbase`
+- src/frontend/node_modules/micromatch/README.md: `options.noextglob` -> `#optionsnoextglob`
+- src/frontend/node_modules/micromatch/README.md: `options.nonegate` -> `#optionsnonegate`
+- src/frontend/node_modules/micromatch/README.md: `options.noglobstar` -> `#optionsnoglobstar`
+- src/frontend/node_modules/micromatch/README.md: `options.nonull` -> `#optionsnonull`
+- src/frontend/node_modules/micromatch/README.md: `options.nullglob` -> `#optionsnullglob`
+- src/frontend/node_modules/micromatch/README.md: `options.onIgnore` -> `#optionsonignore`
+- src/frontend/node_modules/micromatch/README.md: `options.onMatch` -> `#optionsonmatch`
+- src/frontend/node_modules/micromatch/README.md: `options.onResult` -> `#optionsonresult`
+- src/frontend/node_modules/micromatch/README.md: `options.posixSlashes` -> `#optionsposixslashes`
+- src/frontend/node_modules/micromatch/README.md: `options.unescape` -> `#optionsunescape`
+- src/frontend/node_modules/micromatch/README.md: `Extended globbing` -> `#extended-globbing`
+- src/frontend/node_modules/micromatch/README.md: `Extglobs` -> `#extglobs`
+- src/frontend/node_modules/micromatch/README.md: `Braces` -> `#braces`
+- src/frontend/node_modules/micromatch/README.md: `Regex character classes` -> `#regex-character-classes`
+- src/frontend/node_modules/micromatch/README.md: `Regex groups` -> `#regex-groups`
+- src/frontend/node_modules/micromatch/README.md: `POSIX bracket expressions` -> `#posix-bracket-expressions`
+- src/frontend/node_modules/micromatch/README.md: `Notes` -> `#notes`
+- src/frontend/node_modules/micromatch/README.md: `Bash 4.3 parity` -> `#bash-43-parity`
+- src/frontend/node_modules/micromatch/README.md: `Backslashes` -> `#backslashes`
+- src/frontend/node_modules/micromatch/README.md: `Benchmarks` -> `#benchmarks`
+- src/frontend/node_modules/micromatch/README.md: `Running benchmarks` -> `#running-benchmarks`
+- src/frontend/node_modules/micromatch/README.md: `Latest results` -> `#latest-results`
+- src/frontend/node_modules/micromatch/README.md: `Contributing` -> `#contributing`
+- src/frontend/node_modules/micromatch/README.md: `About` -> `#about`
+- src/frontend/node_modules/micromatch/README.md: `main export` -> `#micromatch`
+- src/frontend/node_modules/micromatch/README.md: `.isMatch()` -> `#ismatch`
+- src/frontend/node_modules/micromatch/README.md: `Switching` -> `#switching-to-micromatch`
+- src/frontend/node_modules/micromatch/README.md: `replacement` -> `#switching-to-micromatch`
+- src/frontend/node_modules/micromatch/README.md: `fast matches` -> `#benchmarks`
+- src/frontend/node_modules/micromatch/README.md: `Advanced globbing` -> `#extended-globbing`
+- src/frontend/node_modules/micromatch/README.md: `extglobs` -> `#extglobs`
+- src/frontend/node_modules/micromatch/README.md: `braces` -> `#braces-1`
+- src/frontend/node_modules/micromatch/README.md: `POSIX brackets` -> `#posix-bracket-expressions`
+- src/frontend/node_modules/micromatch/README.md: `test assertions` -> `./test`
+- src/frontend/node_modules/micromatch/README.md: `extglobs` -> `#extglobs`
+- src/frontend/node_modules/micromatch/README.md: `POSIX character classes` -> `#posix-bracket-expressions`
+- src/frontend/node_modules/micromatch/README.md: `the notes about backslashes` -> `#backslashes`
+- src/frontend/node_modules/micromatch/README.md: `micromatch.isMatch()` -> `#ismatch`
+- src/frontend/node_modules/micromatch/README.md: `micromatch.match()` -> `#match`
+- src/frontend/node_modules/micromatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/micromatch/README.md: `.matcher` -> `index.js#L109`
+- src/frontend/node_modules/micromatch/README.md: `.isMatch` -> `index.js#L128`
+- src/frontend/node_modules/micromatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/micromatch/README.md: `.not` -> `index.js#L153`
+- src/frontend/node_modules/micromatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/micromatch/README.md: `.contains` -> `index.js#L193`
+- src/frontend/node_modules/micromatch/README.md: `.isMatch` -> `#isMatch`
+- src/frontend/node_modules/micromatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/micromatch/README.md: `.matchKeys` -> `index.js#L235`
+- src/frontend/node_modules/micromatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/micromatch/README.md: `.some` -> `index.js#L264`
+- src/frontend/node_modules/micromatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/micromatch/README.md: `.every` -> `index.js#L300`
+- src/frontend/node_modules/micromatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/micromatch/README.md: `.all` -> `index.js#L339`
+- src/frontend/node_modules/micromatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/micromatch/README.md: `.capture` -> `index.js#L366`
+- src/frontend/node_modules/micromatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/micromatch/README.md: `.makeRe` -> `index.js#L392`
+- src/frontend/node_modules/micromatch/README.md: `.scan` -> `index.js#L408`
+- src/frontend/node_modules/micromatch/README.md: `split` -> `#split`
+- src/frontend/node_modules/micromatch/README.md: `.parse` -> `index.js#L424`
+- src/frontend/node_modules/micromatch/README.md: `.braces` -> `index.js#L451`
+- src/frontend/node_modules/micromatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/micromatch/README.md: `format` -> `#optionsformat`
+- src/frontend/node_modules/micromatch/README.md: `extglobs` -> `#extglobs`
+- src/frontend/node_modules/micromatch/README.md: `onIgnore` -> `#optionsonIgnore`
+- src/frontend/node_modules/micromatch/README.md: `onMatch` -> `#optionsonMatch`
+- src/frontend/node_modules/micromatch/README.md: `onResult` -> `#optionsonResult`
+- src/frontend/node_modules/micromatch/README.md: `POSIX character classes` -> `#posix-bracket-expressions`
+- src/frontend/node_modules/micromatch/README.md: `options.basename` -> `#options-basename`
+- src/frontend/node_modules/micromatch/README.md: `extglobs` -> `#extglobs`
+- src/frontend/node_modules/micromatch/README.md: `options.nullglob` -> `#options-nullglob`
+- src/frontend/node_modules/micromatch/README.md: `the contributing guide` -> `.github/contributing.md`
+- src/frontend/node_modules/micromatch/README.md: `research existing issues first` -> `../../issues`
+- src/frontend/node_modules/micromatch/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/micromatch/README.md: `contributing guide` -> `.github/contributing.md`
+- src/frontend/node_modules/micromatch/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/micromatch/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `our preset` -> `#recommended`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `boolean-prop-naming` -> `docs/rules/boolean-prop-naming.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `button-has-type` -> `docs/rules/button-has-type.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `checked-requires-onchange-or-readonly` -> `docs/rules/checked-requires-onchange-or-readonly.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `default-props-match-prop-types` -> `docs/rules/default-props-match-prop-types.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `destructuring-assignment` -> `docs/rules/destructuring-assignment.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `display-name` -> `docs/rules/display-name.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `forbid-component-props` -> `docs/rules/forbid-component-props.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `forbid-dom-props` -> `docs/rules/forbid-dom-props.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `forbid-elements` -> `docs/rules/forbid-elements.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `forbid-foreign-prop-types` -> `docs/rules/forbid-foreign-prop-types.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `forbid-prop-types` -> `docs/rules/forbid-prop-types.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `forward-ref-uses-ref` -> `docs/rules/forward-ref-uses-ref.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `function-component-definition` -> `docs/rules/function-component-definition.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `hook-use-state` -> `docs/rules/hook-use-state.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `iframe-missing-sandbox` -> `docs/rules/iframe-missing-sandbox.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-boolean-value` -> `docs/rules/jsx-boolean-value.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-child-element-spacing` -> `docs/rules/jsx-child-element-spacing.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-closing-bracket-location` -> `docs/rules/jsx-closing-bracket-location.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-closing-tag-location` -> `docs/rules/jsx-closing-tag-location.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-curly-brace-presence` -> `docs/rules/jsx-curly-brace-presence.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-curly-newline` -> `docs/rules/jsx-curly-newline.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-curly-spacing` -> `docs/rules/jsx-curly-spacing.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-equals-spacing` -> `docs/rules/jsx-equals-spacing.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-filename-extension` -> `docs/rules/jsx-filename-extension.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-first-prop-new-line` -> `docs/rules/jsx-first-prop-new-line.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-fragments` -> `docs/rules/jsx-fragments.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-handler-names` -> `docs/rules/jsx-handler-names.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-indent` -> `docs/rules/jsx-indent.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-indent-props` -> `docs/rules/jsx-indent-props.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-key` -> `docs/rules/jsx-key.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-max-depth` -> `docs/rules/jsx-max-depth.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-max-props-per-line` -> `docs/rules/jsx-max-props-per-line.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-newline` -> `docs/rules/jsx-newline.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-no-bind` -> `docs/rules/jsx-no-bind.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-no-comment-textnodes` -> `docs/rules/jsx-no-comment-textnodes.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-no-constructed-context-values` -> `docs/rules/jsx-no-constructed-context-values.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-no-duplicate-props` -> `docs/rules/jsx-no-duplicate-props.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-no-leaked-render` -> `docs/rules/jsx-no-leaked-render.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-no-literals` -> `docs/rules/jsx-no-literals.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-no-script-url` -> `docs/rules/jsx-no-script-url.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-no-target-blank` -> `docs/rules/jsx-no-target-blank.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-no-undef` -> `docs/rules/jsx-no-undef.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-no-useless-fragment` -> `docs/rules/jsx-no-useless-fragment.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-one-expression-per-line` -> `docs/rules/jsx-one-expression-per-line.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-pascal-case` -> `docs/rules/jsx-pascal-case.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-props-no-multi-spaces` -> `docs/rules/jsx-props-no-multi-spaces.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-props-no-spread-multi` -> `docs/rules/jsx-props-no-spread-multi.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-props-no-spreading` -> `docs/rules/jsx-props-no-spreading.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-sort-default-props` -> `docs/rules/jsx-sort-default-props.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-sort-props` -> `docs/rules/jsx-sort-props.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-space-before-closing` -> `docs/rules/jsx-space-before-closing.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-tag-spacing` -> `docs/rules/jsx-tag-spacing.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-uses-react` -> `docs/rules/jsx-uses-react.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-uses-vars` -> `docs/rules/jsx-uses-vars.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `jsx-wrap-multilines` -> `docs/rules/jsx-wrap-multilines.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-access-state-in-setstate` -> `docs/rules/no-access-state-in-setstate.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-adjacent-inline-elements` -> `docs/rules/no-adjacent-inline-elements.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-array-index-key` -> `docs/rules/no-array-index-key.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-arrow-function-lifecycle` -> `docs/rules/no-arrow-function-lifecycle.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-children-prop` -> `docs/rules/no-children-prop.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-danger` -> `docs/rules/no-danger.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-danger-with-children` -> `docs/rules/no-danger-with-children.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-deprecated` -> `docs/rules/no-deprecated.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-did-mount-set-state` -> `docs/rules/no-did-mount-set-state.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-did-update-set-state` -> `docs/rules/no-did-update-set-state.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-direct-mutation-state` -> `docs/rules/no-direct-mutation-state.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-find-dom-node` -> `docs/rules/no-find-dom-node.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-invalid-html-attribute` -> `docs/rules/no-invalid-html-attribute.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-is-mounted` -> `docs/rules/no-is-mounted.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-multi-comp` -> `docs/rules/no-multi-comp.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-namespace` -> `docs/rules/no-namespace.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-object-type-as-default-prop` -> `docs/rules/no-object-type-as-default-prop.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-redundant-should-component-update` -> `docs/rules/no-redundant-should-component-update.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-render-return-value` -> `docs/rules/no-render-return-value.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-set-state` -> `docs/rules/no-set-state.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-string-refs` -> `docs/rules/no-string-refs.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-this-in-sfc` -> `docs/rules/no-this-in-sfc.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-typos` -> `docs/rules/no-typos.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-unescaped-entities` -> `docs/rules/no-unescaped-entities.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-unknown-property` -> `docs/rules/no-unknown-property.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-unsafe` -> `docs/rules/no-unsafe.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-unstable-nested-components` -> `docs/rules/no-unstable-nested-components.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-unused-class-component-methods` -> `docs/rules/no-unused-class-component-methods.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-unused-prop-types` -> `docs/rules/no-unused-prop-types.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-unused-state` -> `docs/rules/no-unused-state.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `no-will-update-set-state` -> `docs/rules/no-will-update-set-state.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `prefer-es6-class` -> `docs/rules/prefer-es6-class.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `prefer-exact-props` -> `docs/rules/prefer-exact-props.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `prefer-read-only-props` -> `docs/rules/prefer-read-only-props.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `prefer-stateless-function` -> `docs/rules/prefer-stateless-function.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `prop-types` -> `docs/rules/prop-types.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `react-in-jsx-scope` -> `docs/rules/react-in-jsx-scope.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `require-default-props` -> `docs/rules/require-default-props.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `require-optimization` -> `docs/rules/require-optimization.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `require-render-return` -> `docs/rules/require-render-return.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `self-closing-comp` -> `docs/rules/self-closing-comp.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `sort-comp` -> `docs/rules/sort-comp.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `sort-default-props` -> `docs/rules/sort-default-props.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `sort-prop-types` -> `docs/rules/sort-prop-types.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `state-in-constructor` -> `docs/rules/state-in-constructor.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `static-property-placement` -> `docs/rules/static-property-placement.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `style-prop-object` -> `docs/rules/style-prop-object.md`
+- src/frontend/node_modules/eslint-plugin-react/README.md: `void-dom-elements-no-children` -> `docs/rules/void-dom-elements-no-children.md`
+- src/frontend/node_modules/fast-glob/README.md: `Highlights` -> `#highlights`
+- src/frontend/node_modules/fast-glob/README.md: `Old and modern mode` -> `#old-and-modern-mode`
+- src/frontend/node_modules/fast-glob/README.md: `Pattern syntax` -> `#pattern-syntax`
+- src/frontend/node_modules/fast-glob/README.md: `Basic syntax` -> `#basic-syntax`
+- src/frontend/node_modules/fast-glob/README.md: `Advanced syntax` -> `#advanced-syntax`
+- src/frontend/node_modules/fast-glob/README.md: `Installation` -> `#installation`
+- src/frontend/node_modules/fast-glob/README.md: `API` -> `#api`
+- src/frontend/node_modules/fast-glob/README.md: `Asynchronous` -> `#asynchronous`
+- src/frontend/node_modules/fast-glob/README.md: `Synchronous` -> `#synchronous`
+- src/frontend/node_modules/fast-glob/README.md: `Stream` -> `#stream`
+- src/frontend/node_modules/fast-glob/README.md: `patterns` -> `#patterns`
+- src/frontend/node_modules/fast-glob/README.md: `Helpers` -> `#helpers`
+- src/frontend/node_modules/fast-glob/README.md: `generateTasks` -> `#generatetaskspatterns-options`
+- src/frontend/node_modules/fast-glob/README.md: `isDynamicPattern` -> `#isdynamicpatternpattern-options`
+- src/frontend/node_modules/fast-glob/README.md: `escapePath` -> `#escapepathpath`
+- src/frontend/node_modules/fast-glob/README.md: `convertPathToPattern` -> `#convertpathtopatternpath`
+- src/frontend/node_modules/fast-glob/README.md: `Options` -> `#options-3`
+- src/frontend/node_modules/fast-glob/README.md: `Common` -> `#common`
+- src/frontend/node_modules/fast-glob/README.md: `concurrency` -> `#concurrency`
+- src/frontend/node_modules/fast-glob/README.md: `cwd` -> `#cwd`
+- src/frontend/node_modules/fast-glob/README.md: `deep` -> `#deep`
+- src/frontend/node_modules/fast-glob/README.md: `followSymbolicLinks` -> `#followsymboliclinks`
+- src/frontend/node_modules/fast-glob/README.md: `fs` -> `#fs`
+- src/frontend/node_modules/fast-glob/README.md: `ignore` -> `#ignore`
+- src/frontend/node_modules/fast-glob/README.md: `suppressErrors` -> `#suppresserrors`
+- src/frontend/node_modules/fast-glob/README.md: `throwErrorOnBrokenSymbolicLink` -> `#throwerroronbrokensymboliclink`
+- src/frontend/node_modules/fast-glob/README.md: `Output control` -> `#output-control`
+- src/frontend/node_modules/fast-glob/README.md: `absolute` -> `#absolute`
+- src/frontend/node_modules/fast-glob/README.md: `markDirectories` -> `#markdirectories`
+- src/frontend/node_modules/fast-glob/README.md: `objectMode` -> `#objectmode`
+- src/frontend/node_modules/fast-glob/README.md: `onlyDirectories` -> `#onlydirectories`
+- src/frontend/node_modules/fast-glob/README.md: `onlyFiles` -> `#onlyfiles`
+- src/frontend/node_modules/fast-glob/README.md: `stats` -> `#stats`
+- src/frontend/node_modules/fast-glob/README.md: `unique` -> `#unique`
+- src/frontend/node_modules/fast-glob/README.md: `Matching control` -> `#matching-control`
+- src/frontend/node_modules/fast-glob/README.md: `braceExpansion` -> `#braceexpansion`
+- src/frontend/node_modules/fast-glob/README.md: `caseSensitiveMatch` -> `#casesensitivematch`
+- src/frontend/node_modules/fast-glob/README.md: `dot` -> `#dot`
+- src/frontend/node_modules/fast-glob/README.md: `extglob` -> `#extglob`
+- src/frontend/node_modules/fast-glob/README.md: `globstar` -> `#globstar`
+- src/frontend/node_modules/fast-glob/README.md: `baseNameMatch` -> `#basenamematch`
+- src/frontend/node_modules/fast-glob/README.md: `FAQ` -> `#faq`
+- src/frontend/node_modules/fast-glob/README.md: `What is a static or dynamic pattern?` -> `#what-is-a-static-or-dynamic-pattern`
+- src/frontend/node_modules/fast-glob/README.md: `How to write patterns on Windows?` -> `#how-to-write-patterns-on-windows`
+- src/frontend/node_modules/fast-glob/README.md: `Why are parentheses match wrong?` -> `#why-are-parentheses-match-wrong`
+- src/frontend/node_modules/fast-glob/README.md: `How to exclude directory from reading?` -> `#how-to-exclude-directory-from-reading`
+- src/frontend/node_modules/fast-glob/README.md: `How to use UNC path?` -> `#how-to-use-unc-path`
+- src/frontend/node_modules/fast-glob/README.md: `Compatible with `node-glob`?` -> `#compatible-with-node-glob`
+- src/frontend/node_modules/fast-glob/README.md: `Benchmarks` -> `#benchmarks`
+- src/frontend/node_modules/fast-glob/README.md: `Server` -> `#server`
+- src/frontend/node_modules/fast-glob/README.md: `Nettop` -> `#nettop`
+- src/frontend/node_modules/fast-glob/README.md: `Changelog` -> `#changelog`
+- src/frontend/node_modules/fast-glob/README.md: `License` -> `#license`
+- src/frontend/node_modules/fast-glob/README.md: ``stats`` -> `#stats`
+- src/frontend/node_modules/fast-glob/README.md: ``stats`` -> `#stats`
+- src/frontend/node_modules/fast-glob/README.md: ``ignore`` -> `#ignore`
+- src/frontend/node_modules/fast-glob/README.md: `FAQ` -> `#faq`
+- src/frontend/node_modules/fast-glob/README.md: `Pattern syntax` -> `#pattern-syntax`
+- src/frontend/node_modules/fast-glob/README.md: ``Options`` -> `#options-3`
+- src/frontend/node_modules/fast-glob/README.md: `Options` -> `#options-3`
+- src/frontend/node_modules/fast-glob/README.md: ``Task`` -> `./src/managers/tasks.ts`
+- src/frontend/node_modules/fast-glob/README.md: ``Options`` -> `#options-3`
+- src/frontend/node_modules/fast-glob/README.md: `Options` -> `#options-3`
+- src/frontend/node_modules/fast-glob/README.md: `What is a static or dynamic pattern?` -> `#what-is-a-static-or-dynamic-pattern`
+- src/frontend/node_modules/fast-glob/README.md: ``Options`` -> `#options-3`
+- src/frontend/node_modules/fast-glob/README.md: `Options` -> `#options-3`
+- src/frontend/node_modules/fast-glob/README.md: ``cwd`` -> `#cwd`
+- src/frontend/node_modules/fast-glob/README.md: ``stats`` -> `#stats`
+- src/frontend/node_modules/fast-glob/README.md: ``onlyFiles`` -> `#onlyfiles`
+- src/frontend/node_modules/fast-glob/README.md: `object mode` -> `#objectmode`
+- src/frontend/node_modules/fast-glob/README.md: ``followSymbolicLinks`` -> `#followsymboliclinks`
+- src/frontend/node_modules/fast-glob/README.md: `object mode` -> `#objectmode`
+- src/frontend/node_modules/fast-glob/README.md: `old and modern mode` -> `#old-and-modern-mode`
+- src/frontend/node_modules/fast-glob/README.md: ``caseSensitiveMatch`` -> `#casesensitivematch`
+- src/frontend/node_modules/fast-glob/README.md: ``extglob`` -> `#extglob`
+- src/frontend/node_modules/fast-glob/README.md: ``braceExpansion`` -> `#braceexpansion`
+- src/frontend/node_modules/fast-glob/README.md: ``ignore`` -> `#ignore`
+- src/frontend/node_modules/fast-glob/README.md: ``cwd`` -> `#cwd`
+- src/frontend/node_modules/fast-glob/README.md: ``.convertPathToPattern`` -> `#convertpathtopatternpath`
+- src/frontend/node_modules/fast-glob/README.md: ``.escapePath`` -> `#escapepathpath`
+- src/frontend/node_modules/fast-glob/README.md: ``ignore`` -> `#ignore`
+- src/frontend/node_modules/fast-glob/README.md: ``cwd`` -> `#cwd`
+- src/frontend/node_modules/fast-glob/README.md: ``cwd`` -> `#cwd`
+- src/frontend/node_modules/fast-glob/README.md: ``dot`` -> `#dot`
+- src/frontend/node_modules/fast-glob/README.md: ``markDirectories`` -> `#markdirectories`
+- src/frontend/node_modules/fast-glob/README.md: ``unique`` -> `#unique`
+- src/frontend/node_modules/fast-glob/README.md: ``braceExpansion`` -> `#braceexpansion`
+- src/frontend/node_modules/fast-glob/README.md: ``globstar`` -> `#globstar`
+- src/frontend/node_modules/fast-glob/README.md: ``extglob`` -> `#extglob`
+- src/frontend/node_modules/fast-glob/README.md: ``caseSensitiveMatch`` -> `#casesensitivematch`
+- src/frontend/node_modules/fast-glob/README.md: ``baseNameMatch`` -> `#basenamematch`
+- src/frontend/node_modules/fast-glob/README.md: ``onlyFiles`` -> `#onlyfiles`
+- src/frontend/node_modules/fast-glob/README.md: ``ignore`` -> `#ignore`
+- src/frontend/node_modules/fast-glob/README.md: ``followSymbolicLinks`` -> `#followsymboliclinks`
+- src/frontend/node_modules/fast-glob/README.md: ``absolute`` -> `#absolute`
+- src/frontend/node_modules/is-extglob/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/is-extglob/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/fastq/README.md: ``fastqueue`` -> `#fastqueue`
+- src/frontend/node_modules/fastq/README.md: ``push`` -> `#pushPromise`
+- src/frontend/node_modules/fastq/README.md: ``unshift`` -> `#unshiftPromise`
+- src/frontend/node_modules/recharts/CONTRIBUTING.md: `Issues and Bugs` -> `#issues`
+- src/frontend/node_modules/recharts/CONTRIBUTING.md: `Testing` -> `#testing`
+- src/frontend/node_modules/recharts/CONTRIBUTING.md: `Pull Requests` -> `#pr`
+- src/frontend/node_modules/recharts/CONTRIBUTING.md: `Code Guide` -> `#code`
+- src/frontend/node_modules/recharts/CONTRIBUTING.md: `License` -> `#license`
+- src/frontend/node_modules/framer-motion/README.md: `Why Motion?` -> `#why-motion`
+- src/frontend/node_modules/framer-motion/README.md: `🍦 Flavours` -> `#-flavours`
+- src/frontend/node_modules/framer-motion/README.md: `🎓 Examples` -> `#-examples`
+- src/frontend/node_modules/framer-motion/README.md: `🎨 Studio` -> `#-studio`
+- src/frontend/node_modules/framer-motion/README.md: `⚡️ Motion+` -> `#-motion`
+- src/frontend/node_modules/framer-motion/README.md: `👩🏻‍⚖️ License` -> `#-license`
+- src/frontend/node_modules/framer-motion/README.md: `💎 Contribute` -> `#-contribute`
+- src/frontend/node_modules/framer-motion/README.md: `✨ Sponsors` -> `#-sponsors`
+- src/frontend/node_modules/redux/README.md: `MIT` -> `LICENSE.md`
+- src/frontend/node_modules/read-cache/README.md: `Bogdan Chadkin` -> `mailto:trysound@yandex.ru`
+- src/frontend/node_modules/tough-cookie/README.md: ``Cookie.fromJSON(string)`` -> `#cookiefromjsonstrorobj`
+- src/frontend/node_modules/tough-cookie/README.md: `RFC 6265bis` -> `#rfc-6265bis`
+- src/frontend/node_modules/tough-cookie/README.md: ``MemoryCookieStore`` -> `#memorycookiestore`
+- src/frontend/node_modules/tough-cookie/README.md: `Cookie Prefixes` -> `#cookie-prefixes`
+- src/frontend/node_modules/tough-cookie/README.md: `SameSite Cookies` -> `#samesite-cookies`
+- src/frontend/node_modules/tough-cookie/README.md: ``setCookie`` -> `#setcookiecookieorstring-currenturl-options-callbackerr-cookie`
+- src/frontend/node_modules/tough-cookie/README.md: ``cookieCompare`` -> `#cookiecomparea-b`
+- src/frontend/node_modules/tough-cookie/README.md: `SameSite Cookies` -> `#samesite-cookies`
+- src/frontend/node_modules/tough-cookie/README.md: ``getCookies`` -> `#getcookiescurrenturl-options-callbackerr-cookies`
+- src/frontend/node_modules/tough-cookie/README.md: ``.getCookies()`` -> `#getcookiescurrenturl-options-callbackerr-cookies`
+- src/frontend/node_modules/tough-cookie/README.md: ``getCookieString`` -> `#getcookiestring`
+- src/frontend/node_modules/tough-cookie/README.md: ``.getCookies()`` -> `#getcookiescurrenturl-options-callbackerr-cookies`
+- src/frontend/node_modules/tough-cookie/README.md: ``getSetCookieStrings`` -> `#getsetcookiestrings`
+- src/frontend/node_modules/tough-cookie/README.md: `Serialization Format` -> `#serialization-format`
+- src/frontend/node_modules/tough-cookie/README.md: ``serialize`` -> `#serializecallbackerr-serializedobject`
+- src/frontend/node_modules/tough-cookie/README.md: ``.serializeSync()`` -> `#serializesync`
+- src/frontend/node_modules/tough-cookie/README.md: ``.deserialize`` -> `#cookiejardeserializeserialized-store-callbackerr-object`
+- src/frontend/node_modules/tough-cookie/README.md: ``.deserializeSync`` -> `#cookiejardeserializesyncserialized-store`
+- src/frontend/node_modules/tough-cookie/README.md: ``Cookie.fromJSON()`` -> `#cookiefromjsonstrorobj`
+- src/frontend/node_modules/tough-cookie/README.md: ``.clone`` -> `#clonestore-callbackerr-cloned`
+- src/frontend/node_modules/tough-cookie/README.md: ``.removeAllCookies()`` -> `#removeallcookiescallbackerr`
+- src/frontend/node_modules/tough-cookie/README.md: ``cookiejar.getCookies()`` -> `#getcookiescurrenturl-options-callbackerr-cookies`
+- src/frontend/node_modules/tough-cookie/README.md: ``putCookie`` -> `#storeputcookiecookie-callbackerr`
+- src/frontend/node_modules/tough-cookie/README.md: ``findCookie`` -> `#storefindcookiedomain-path-key-callbackerr-cookie`
+- src/frontend/node_modules/tough-cookie/README.md: ``jar.serialize()`` -> `#serializecallbackerr-serializedobject`
+- src/frontend/node_modules/tough-cookie/README.md: `Serialization Format` -> `#serialization-format`
+- src/frontend/node_modules/tough-cookie/README.md: ``compareCookie()`` -> `#cookiecomparea-b`
+- src/frontend/node_modules/kleur/readme.md: `lightweight` -> `#load-time`
+- src/frontend/node_modules/kleur/readme.md: `performant` -> `#performance`
+- src/frontend/node_modules/kleur/readme.md: `nested` -> `#nested-methods`
+- src/frontend/node_modules/kleur/readme.md: `chained` -> `#chained-methods`
+- src/frontend/node_modules/kleur/readme.md: `color support` -> `#conditional-support`
+- src/frontend/node_modules/kleur/readme.md: `API` -> `#api`
+- src/frontend/node_modules/kleur/readme.md: `chained` -> `#chained-methods`
+- src/frontend/node_modules/kleur/readme.md: `nested` -> `#nested-methods`
+- src/frontend/node_modules/dequal/readme.md: ``/bench`` -> `/bench`
+- src/frontend/node_modules/d3-ease/README.md: `ease method` -> `#ease_ease`
+- src/frontend/node_modules/d3-ease/README.md: `elastic` -> `#easeElastic`
+- src/frontend/node_modules/d3-ease/README.md: `cubic` -> `#easeCubic`
+- src/frontend/node_modules/d3-ease/README.md: `elastic` -> `#easeElastic`
+- src/frontend/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- src/frontend/node_modules/d3-ease/README.md: `cubicIn` -> `#easeCubicIn`
+- src/frontend/node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- src/frontend/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- src/frontend/node_modules/d3-ease/README.md: `cubicOut` -> `#easeCubicOut`
+- src/frontend/node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- src/frontend/node_modules/d3-ease/README.md: `polyOut` -> `#easePolyOut`
+- src/frontend/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- src/frontend/node_modules/d3-ease/README.md: `cubic` -> `#easeCubic`
+- src/frontend/node_modules/d3-ease/README.md: `linear` -> `#easeLinear`
+- src/frontend/node_modules/d3-ease/README.md: `quad` -> `#easeQuad`
+- src/frontend/node_modules/d3-ease/README.md: `cubic` -> `#easeCubic`
+- src/frontend/node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- src/frontend/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- src/frontend/node_modules/d3-ease/README.md: `quadIn` -> `#easeQuadIn`
+- src/frontend/node_modules/d3-ease/README.md: `polyOut` -> `#easePolyOut`
+- src/frontend/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- src/frontend/node_modules/d3-ease/README.md: `quadIn` -> `#easeQuadIn`
+- src/frontend/node_modules/d3-ease/README.md: `quadOut` -> `#easeQuadOut`
+- src/frontend/node_modules/d3-ease/README.md: `poly` -> `#easePoly`
+- src/frontend/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- src/frontend/node_modules/d3-ease/README.md: `polyIn` -> `#easePolyIn`
+- src/frontend/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- src/frontend/node_modules/d3-ease/README.md: `cubicIn` -> `#easeCubicIn`
+- src/frontend/node_modules/d3-ease/README.md: `polyOut` -> `#easePolyOut`
+- src/frontend/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- src/frontend/node_modules/d3-ease/README.md: `cubicIn` -> `#easeCubicIn`
+- src/frontend/node_modules/d3-ease/README.md: `cubicOut` -> `#easeCubicOut`
+- src/frontend/node_modules/d3-ease/README.md: `poly` -> `#easePoly`
+- src/frontend/node_modules/d3-ease/README.md: `exponent` -> `#poly_exponent`
+- src/frontend/node_modules/d3-ease/README.md: `sinIn` -> `#easeSinIn`
+- src/frontend/node_modules/d3-ease/README.md: `sinIn` -> `#easeSinIn`
+- src/frontend/node_modules/d3-ease/README.md: `sinOut` -> `#easeSinOut`
+- src/frontend/node_modules/d3-ease/README.md: `expIn` -> `#easeExpIn`
+- src/frontend/node_modules/d3-ease/README.md: `expIn` -> `#easeExpIn`
+- src/frontend/node_modules/d3-ease/README.md: `expOut` -> `#easeExpOut`
+- src/frontend/node_modules/d3-ease/README.md: `circleIn` -> `#easeCircleIn`
+- src/frontend/node_modules/d3-ease/README.md: `circleIn` -> `#easeCircleIn`
+- src/frontend/node_modules/d3-ease/README.md: `circleOut` -> `#easeCircleOut`
+- src/frontend/node_modules/d3-ease/README.md: `amplitude` -> `#elastic_amplitude`
+- src/frontend/node_modules/d3-ease/README.md: `period` -> `#elastic_period`
+- src/frontend/node_modules/d3-ease/README.md: `elasticIn` -> `#easeElasticIn`
+- src/frontend/node_modules/d3-ease/README.md: `elasticIn` -> `#easeElasticIn`
+- src/frontend/node_modules/d3-ease/README.md: `elasticOut` -> `#easeElasticOut`
+- src/frontend/node_modules/d3-ease/README.md: `overshoot` -> `#back_overshoot`
+- src/frontend/node_modules/d3-ease/README.md: `backIn` -> `#easeBackIn`
+- src/frontend/node_modules/d3-ease/README.md: `backIn` -> `#easeBackIn`
+- src/frontend/node_modules/d3-ease/README.md: `backOut` -> `#easeBackOut`
+- src/frontend/node_modules/d3-ease/README.md: `bounceIn` -> `#easeBounceIn`
+- src/frontend/node_modules/d3-ease/README.md: `bounceIn` -> `#easeBounceIn`
+- src/frontend/node_modules/d3-ease/README.md: `bounceOut` -> `#easeBounceOut`
+- src/frontend/node_modules/axios/README.md: `Features` -> `#features`
+- src/frontend/node_modules/axios/README.md: `Browser Support` -> `#browser-support`
+- src/frontend/node_modules/axios/README.md: `Installing` -> `#installing`
+- src/frontend/node_modules/axios/README.md: `Package manager` -> `#package-manager`
+- src/frontend/node_modules/axios/README.md: `CDN` -> `#cdn`
+- src/frontend/node_modules/axios/README.md: `Example` -> `#example`
+- src/frontend/node_modules/axios/README.md: `Axios API` -> `#axios-api`
+- src/frontend/node_modules/axios/README.md: `Request method aliases` -> `#request-method-aliases`
+- src/frontend/node_modules/axios/README.md: `Concurrency 👎` -> `#concurrency-deprecated`
+- src/frontend/node_modules/axios/README.md: `Creating an instance` -> `#creating-an-instance`
+- src/frontend/node_modules/axios/README.md: `Instance methods` -> `#instance-methods`
+- src/frontend/node_modules/axios/README.md: `Request Config` -> `#request-config`
+- src/frontend/node_modules/axios/README.md: `Response Schema` -> `#response-schema`
+- src/frontend/node_modules/axios/README.md: `Config Defaults` -> `#config-defaults`
+- src/frontend/node_modules/axios/README.md: `Global axios defaults` -> `#global-axios-defaults`
+- src/frontend/node_modules/axios/README.md: `Custom instance defaults` -> `#custom-instance-defaults`
+- src/frontend/node_modules/axios/README.md: `Config order of precedence` -> `#config-order-of-precedence`
+- src/frontend/node_modules/axios/README.md: `Interceptors` -> `#interceptors`
+- src/frontend/node_modules/axios/README.md: `Multiple Interceptors` -> `#multiple-interceptors`
+- src/frontend/node_modules/axios/README.md: `Handling Errors` -> `#handling-errors`
+- src/frontend/node_modules/axios/README.md: `Cancellation` -> `#cancellation`
+- src/frontend/node_modules/axios/README.md: `AbortController` -> `#abortcontroller`
+- src/frontend/node_modules/axios/README.md: `CancelToken 👎` -> `#canceltoken-deprecated`
+- src/frontend/node_modules/axios/README.md: `Using application/x-www-form-urlencoded format` -> `#using-applicationx-www-form-urlencoded-format`
+- src/frontend/node_modules/axios/README.md: `URLSearchParams` -> `#urlsearchparams`
+- src/frontend/node_modules/axios/README.md: `Query string` -> `#query-string-older-browsers`
+- src/frontend/node_modules/axios/README.md: `🆕 Automatic serialization` -> `#-automatic-serialization-to-urlsearchparams`
+- src/frontend/node_modules/axios/README.md: `Using multipart/form-data format` -> `#using-multipartform-data-format`
+- src/frontend/node_modules/axios/README.md: `FormData` -> `#formdata`
+- src/frontend/node_modules/axios/README.md: `🆕 Automatic serialization` -> `#-automatic-serialization-to-formdata`
+- src/frontend/node_modules/axios/README.md: `Files Posting` -> `#files-posting`
+- src/frontend/node_modules/axios/README.md: `HTML Form Posting` -> `#-html-form-posting-browser`
+- src/frontend/node_modules/axios/README.md: `🆕 Progress capturing` -> `#-progress-capturing`
+- src/frontend/node_modules/axios/README.md: `🆕 Rate limiting` -> `#-progress-capturing`
+- src/frontend/node_modules/axios/README.md: `🆕 AxiosHeaders` -> `#-axiosheaders`
+- src/frontend/node_modules/axios/README.md: `🔥 Fetch adapter` -> `#-fetch-adapter`
+- src/frontend/node_modules/axios/README.md: `Semver` -> `#semver`
+- src/frontend/node_modules/axios/README.md: `Promises` -> `#promises`
+- src/frontend/node_modules/axios/README.md: `TypeScript` -> `#typescript`
+- src/frontend/node_modules/axios/README.md: `Resources` -> `#resources`
+- src/frontend/node_modules/axios/README.md: `Credits` -> `#credits`
+- src/frontend/node_modules/axios/README.md: `License` -> `#license`
+- src/frontend/node_modules/axios/README.md: `Handling Errors` -> `#handling-errors`
+- src/frontend/node_modules/axios/README.md: `the interceptor tests` -> `./test/specs/interceptors.spec.js`
+- src/frontend/node_modules/axios/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/braces/README.md: `changelog` -> `CHANGELOG.md`
+- src/frontend/node_modules/braces/README.md: `Bash 4.3 Brace Expansion` -> `www.gnu.org/software/bash/`
+- src/frontend/node_modules/braces/README.md: `fast and performant` -> `#benchmarks`
+- src/frontend/node_modules/braces/README.md: `scales well` -> `#performance`
+- src/frontend/node_modules/braces/README.md: `Supports lists` -> `#lists`
+- src/frontend/node_modules/braces/README.md: `Supports sequences` -> `#sequences`
+- src/frontend/node_modules/braces/README.md: `Supports steps` -> `#steps`
+- src/frontend/node_modules/braces/README.md: `Supports escaping` -> `#escaping`
+- src/frontend/node_modules/braces/README.md: `braces.expand()` -> `#expand`
+- src/frontend/node_modules/braces/README.md: `.optimize` -> `#optimize`
+- src/frontend/node_modules/braces/README.md: `options.optimize` -> `#optionsoptimize`
+- src/frontend/node_modules/braces/README.md: `Bash lists` -> `#lists`
+- src/frontend/node_modules/braces/README.md: `brace expansion` -> `#brace-expansion`
+- src/frontend/node_modules/braces/README.md: `brace matching` -> `#brace-matching`
+- src/frontend/node_modules/braces/README.md: `geometric complexity` -> `#geometric-complexity`
+- src/frontend/node_modules/braces/README.md: `performance section` -> `#performance`
+- src/frontend/node_modules/braces/README.md: `"brace bomb" problem` -> `#brace-matching-pitfalls`
+- src/frontend/node_modules/braces/README.md: `test/support/generate.js` -> `test/support/generate.js`
+- src/frontend/node_modules/braces/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/braces/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/braces/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/harmony-reflect/README.md: `Read more` -> ` https://github.com/tvcutsem/harmony-reflect/issues/13#issuecomment-17249465`
+- src/frontend/node_modules/dom-accessibility-api/README.md: `the test readme` -> `/tests/README.md`
+- src/frontend/node_modules/ajv/README.md: `strict mode` -> `./docs/strict-mode.md`
+- src/frontend/node_modules/ajv/README.md: `code generation` -> `./docs/codegen.md`
+- src/frontend/node_modules/ajv/README.md: `Performance` -> `#performance`
+- src/frontend/node_modules/ajv/README.md: `Features` -> `#features`
+- src/frontend/node_modules/ajv/README.md: `Getting started` -> `#getting-started`
+- src/frontend/node_modules/ajv/README.md: `Using in browser` -> `#using-in-browser`
+- src/frontend/node_modules/ajv/README.md: `Ajv and Content Security Policies (CSP)` -> `#ajv-and-content-security-policies-csp`
+- src/frontend/node_modules/ajv/README.md: `Command line interface` -> `#command-line-interface`
+- src/frontend/node_modules/ajv/README.md: `Keywords` -> `#validation-keywords`
+- src/frontend/node_modules/ajv/README.md: `Annotation keywords` -> `#annotation-keywords`
+- src/frontend/node_modules/ajv/README.md: `Formats` -> `#formats`
+- src/frontend/node_modules/ajv/README.md: `Combining schemas with $ref` -> `#ref`
+- src/frontend/node_modules/ajv/README.md: `$data reference` -> `#data-reference`
+- src/frontend/node_modules/ajv/README.md: `$merge and $patch keywords` -> `#merge-and-patch-keywords`
+- src/frontend/node_modules/ajv/README.md: `Defining custom keywords` -> `#defining-custom-keywords`
+- src/frontend/node_modules/ajv/README.md: `Asynchronous schema compilation` -> `#asynchronous-schema-compilation`
+- src/frontend/node_modules/ajv/README.md: `Asynchronous validation` -> `#asynchronous-validation`
+- src/frontend/node_modules/ajv/README.md: `Security considerations` -> `#security-considerations`
+- src/frontend/node_modules/ajv/README.md: `Security contact` -> `#security-contact`
+- src/frontend/node_modules/ajv/README.md: `Untrusted schemas` -> `#untrusted-schemas`
+- src/frontend/node_modules/ajv/README.md: `Circular references in objects` -> `#circular-references-in-javascript-objects`
+- src/frontend/node_modules/ajv/README.md: `Trusted schemas` -> `#security-risks-of-trusted-schemas`
+- src/frontend/node_modules/ajv/README.md: `ReDoS attack` -> `#redos-attack`
+- src/frontend/node_modules/ajv/README.md: `Filtering data` -> `#filtering-data`
+- src/frontend/node_modules/ajv/README.md: `Assigning defaults` -> `#assigning-defaults`
+- src/frontend/node_modules/ajv/README.md: `Coercing data types` -> `#coercing-data-types`
+- src/frontend/node_modules/ajv/README.md: `Methods` -> `#api`
+- src/frontend/node_modules/ajv/README.md: `Options` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `Validation errors` -> `#validation-errors`
+- src/frontend/node_modules/ajv/README.md: `Plugins` -> `#plugins`
+- src/frontend/node_modules/ajv/README.md: `Related packages` -> `#related-packages`
+- src/frontend/node_modules/ajv/README.md: `Some packages using Ajv` -> `#some-packages-using-ajv`
+- src/frontend/node_modules/ajv/README.md: `Tests, Contributing, Changes history` -> `#tests`
+- src/frontend/node_modules/ajv/README.md: `Support, Code of conduct, License` -> `#open-source-software-support`
+- src/frontend/node_modules/ajv/README.md: `formats` -> `#formats`
+- src/frontend/node_modules/ajv/README.md: `validates schemas against meta-schema` -> `#api-validateschema`
+- src/frontend/node_modules/ajv/README.md: `browsers` -> `#using-in-browser`
+- src/frontend/node_modules/ajv/README.md: `asynchronous loading` -> `#asynchronous-schema-compilation`
+- src/frontend/node_modules/ajv/README.md: `option allErrors` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `error messages with parameters` -> `#validation-errors`
+- src/frontend/node_modules/ajv/README.md: `filtering data` -> `#filtering-data`
+- src/frontend/node_modules/ajv/README.md: `assigning defaults` -> `#assigning-defaults`
+- src/frontend/node_modules/ajv/README.md: `coercing data` -> `#coercing-data-types`
+- src/frontend/node_modules/ajv/README.md: `custom keywords` -> `#defining-custom-keywords`
+- src/frontend/node_modules/ajv/README.md: `$data reference` -> `#data-reference`
+- src/frontend/node_modules/ajv/README.md: `asynchronous validation` -> `#asynchronous-validation`
+- src/frontend/node_modules/ajv/README.md: `API` -> `#api`
+- src/frontend/node_modules/ajv/README.md: `Options` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `Validation errors` -> `#validation-errors`
+- src/frontend/node_modules/ajv/README.md: `Options` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `Assigning defaults` -> `#assigning-defaults`
+- src/frontend/node_modules/ajv/README.md: `ReDoS attack` -> `#redos-attack`
+- src/frontend/node_modules/ajv/README.md: `options` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `Options` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `addFormat` -> `#api-addformat`
+- src/frontend/node_modules/ajv/README.md: `Options` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `Options` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `addSchema` -> `#api`
+- src/frontend/node_modules/ajv/README.md: `Asynchronous schema compilation` -> `#asynchronous-schema-compilation`
+- src/frontend/node_modules/ajv/README.md: `addKeyword` -> `#api-addkeyword`
+- src/frontend/node_modules/ajv/README.md: `method` -> `#api-compileAsync`
+- src/frontend/node_modules/ajv/README.md: `option` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `Option` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `addFormat` -> `#api-addformat`
+- src/frontend/node_modules/ajv/README.md: `addKeyword` -> `#api-addkeyword`
+- src/frontend/node_modules/ajv/README.md: `Defining custom keywords` -> `#defining-custom-keywords`
+- src/frontend/node_modules/ajv/README.md: `Options` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `Options` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `ReDoS attack` -> `#redos-attack`
+- src/frontend/node_modules/ajv/README.md: `Ajv and Content Security Policies (CSP)` -> `#ajv-and-content-security-policies-csp`
+- src/frontend/node_modules/ajv/README.md: `addFormat` -> `#api-addformat`
+- src/frontend/node_modules/ajv/README.md: `option `removeAdditional`` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `option `useDefaults`` -> `#options`
+- src/frontend/node_modules/ajv/README.md: ``strictDefaults` option` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `options` -> `#options`
+- src/frontend/node_modules/ajv/README.md: `Asynchronous compilation` -> `#asynchronous-schema-compilation`
+- src/frontend/node_modules/ajv/README.md: `Asynchronous validation` -> `#asynchronous-validation`
+- src/frontend/node_modules/ajv/README.md: `$data reference` -> `#data-reference`
+- src/frontend/node_modules/ajv/README.md: `Defining custom keywords` -> `#defining-custom-keywords`
+- src/frontend/node_modules/ajv/README.md: `$data references` -> `#data-reference`
+- src/frontend/node_modules/ajv/README.md: `API` -> `#api`
+- src/frontend/node_modules/ajv/README.md: `Formats` -> `#formats`
+- src/frontend/node_modules/ajv/README.md: `$data reference` -> `#data-reference`
+- src/frontend/node_modules/ajv/README.md: `$data reference` -> `#data-reference`
+- src/frontend/node_modules/ajv/README.md: `Error logging` -> `#error-logging`
+- src/frontend/node_modules/ajv/README.md: `method` -> `#api-compileAsync`
+- src/frontend/node_modules/ajv/README.md: `Asynchronous compilation` -> `#asynchronous-schema-compilation`
+- src/frontend/node_modules/ajv/README.md: `Filtering data` -> `#filtering-data`
+- src/frontend/node_modules/ajv/README.md: `Assigning defaults` -> `#assigning-defaults`
+- src/frontend/node_modules/ajv/README.md: `Coercing data types` -> `#coercing-data-types`
+- src/frontend/node_modules/ajv/README.md: `Asynchronous validation` -> `#asynchronous-validation`
+- src/frontend/node_modules/ajv/README.md: `asynchronous validation` -> `#asynchronous-validation`
+- src/frontend/node_modules/ajv/README.md: `Options` -> `#options`
+- src/frontend/node_modules/open/readme.md: ``open.apps`` -> `#openapps`
+- src/frontend/node_modules/open/readme.md: `cross-platform differences` -> `#app`
+- src/frontend/node_modules/open/readme.md: ``open.apps`` -> `#openapps`
+- src/frontend/node_modules/open/readme.md: ``open`` -> `#options`
+- src/frontend/node_modules/type-check/README.md: `type syntax format` -> `#syntax`
+- src/frontend/node_modules/type-check/README.md: `guide` -> `#guide`
+- src/frontend/node_modules/type-check/README.md: `type format` -> `#type-format`
+- src/frontend/node_modules/type-check/README.md: `type format` -> `#type-format`
+- src/frontend/node_modules/type-check/README.md: `custom types` -> `#custom-types`
+- src/frontend/node_modules/type-check/README.md: `type format` -> `#type-format`
+- src/frontend/node_modules/type-check/README.md: `type format` -> `#type-format`
+- src/frontend/node_modules/type-check/README.md: `custom types` -> `#custom-types`
+- src/frontend/node_modules/object.assign/CHANGELOG.md: `es-shim API` -> `es-shims/api`
+- src/frontend/node_modules/entities/readme.md: `performance` -> `#performance`
+- src/frontend/node_modules/human-signals/CHANGELOG.md: `TypeScript definitions` -> `src/main.d.ts`
+- src/frontend/node_modules/human-signals/README.md: `descriptions` -> `#description`
+- src/frontend/node_modules/human-signals/README.md: `default actions` -> `#action`
+- src/frontend/node_modules/human-signals/README.md: `can be prevented` -> `#forced`
+- src/frontend/node_modules/human-signals/README.md: `supported` -> `#supported`
+- src/frontend/node_modules/human-signals/README.md: `names` -> `#name`
+- src/frontend/node_modules/human-signals/README.md: `signal objects` -> `#signal`
+- src/frontend/node_modules/human-signals/README.md: `numbers` -> `#number`
+- src/frontend/node_modules/human-signals/README.md: `signal objects` -> `#signal`
+- src/frontend/node_modules/human-signals/README.md: `submit an issue on GitHub` -> `../../issues`
+- src/frontend/node_modules/human-signals/README.md: `Code of conduct` -> `CODE_OF_CONDUCT.md`
+- src/frontend/node_modules/human-signals/README.md: `guidelines` -> `CONTRIBUTING.md`
+- src/frontend/node_modules/normalize-path/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/normalize-path/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/normalize-path/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/ws/README.md: `Protocol support` -> `#protocol-support`
+- src/frontend/node_modules/ws/README.md: `Installing` -> `#installing`
+- src/frontend/node_modules/ws/README.md: `Opt-in for performance` -> `#opt-in-for-performance`
+- src/frontend/node_modules/ws/README.md: `Legacy opt-in for performance` -> `#legacy-opt-in-for-performance`
+- src/frontend/node_modules/ws/README.md: `API docs` -> `#api-docs`
+- src/frontend/node_modules/ws/README.md: `WebSocket compression` -> `#websocket-compression`
+- src/frontend/node_modules/ws/README.md: `Usage examples` -> `#usage-examples`
+- src/frontend/node_modules/ws/README.md: `Sending and receiving text data` -> `#sending-and-receiving-text-data`
+- src/frontend/node_modules/ws/README.md: `Sending binary data` -> `#sending-binary-data`
+- src/frontend/node_modules/ws/README.md: `Simple server` -> `#simple-server`
+- src/frontend/node_modules/ws/README.md: `External HTTP/S server` -> `#external-https-server`
+- src/frontend/node_modules/ws/README.md: `Multiple servers sharing a single HTTP/S server` -> `#multiple-servers-sharing-a-single-https-server`
+- src/frontend/node_modules/ws/README.md: `Client authentication` -> `#client-authentication`
+- src/frontend/node_modules/ws/README.md: `Server broadcast` -> `#server-broadcast`
+- src/frontend/node_modules/ws/README.md: `Round-trip time` -> `#round-trip-time`
+- src/frontend/node_modules/ws/README.md: `Use the Node.js streams API` -> `#use-the-nodejs-streams-api`
+- src/frontend/node_modules/ws/README.md: `Other examples` -> `#other-examples`
+- src/frontend/node_modules/ws/README.md: `FAQ` -> `#faq`
+- src/frontend/node_modules/ws/README.md: `How to get the IP address of the client?` -> `#how-to-get-the-ip-address-of-the-client`
+- src/frontend/node_modules/ws/README.md: `How to detect and close broken connections?` -> `#how-to-detect-and-close-broken-connections`
+- src/frontend/node_modules/ws/README.md: `How to connect via a proxy?` -> `#how-to-connect-via-a-proxy`
+- src/frontend/node_modules/ws/README.md: `Changelog` -> `#changelog`
+- src/frontend/node_modules/ws/README.md: `License` -> `#license`
+- src/frontend/node_modules/ws/README.md: ``WS_NO_BUFFER_UTIL`` -> `./doc/ws.md#ws_no_buffer_util`
+- src/frontend/node_modules/ws/README.md: ``WS_NO_UTF_8_VALIDATE`` -> `./doc/ws.md#ws_no_utf_8_validate`
+- src/frontend/node_modules/ws/README.md: ``/doc/ws.md`` -> `./doc/ws.md`
+- src/frontend/node_modules/ws/README.md: `MIT` -> `LICENSE`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `library comparison` -> `#library-comparisons`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Install` -> `#install`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Usage` -> `#usage`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `API` -> `#api`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `picomatch` -> `#picomatch`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.test` -> `#test`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.matchBase` -> `#matchbase`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.isMatch` -> `#ismatch`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.parse` -> `#parse`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.compileRe` -> `#compilere`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.makeRe` -> `#makere`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.toRegex` -> `#toregex`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Options` -> `#options`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Picomatch options` -> `#picomatch-options`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Scan Options` -> `#scan-options`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Options Examples` -> `#options-examples`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Globbing features` -> `#globbing-features`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Braces` -> `#braces`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Matching special characters as literals` -> `#matching-special-characters-as-literals`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Library Comparisons` -> `#library-comparisons`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Benchmarks` -> `#benchmarks`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Philosophies` -> `#philosophies`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `About` -> `#about`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Author` -> `#author`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `License` -> `#license`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `picomatch` -> `lib/picomatch.js#L31`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.test` -> `lib/picomatch.js#L116`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.matchBase` -> `lib/picomatch.js#L160`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.makeRe` -> `#makeRe`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.isMatch` -> `lib/picomatch.js#L182`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `options` -> `#options`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.parse` -> `lib/picomatch.js#L198`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.scan` -> `lib/picomatch.js#L230`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.compileRe` -> `lib/picomatch.js#L244`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `parse()` -> `#parse`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.makeRe` -> `lib/picomatch.js#L285`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.toRegex` -> `lib/picomatch.js#L320`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `format` -> `#optionsformat`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `onIgnore` -> `#optionsonIgnore`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `onMatch` -> `#optionsonMatch`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `onResult` -> `#optionsonResult`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `picomatch options` -> `#picomatch-options`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.scan` -> `#scan`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Basic globbing` -> `#basic-globbing`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Advanced globbing` -> `#advanced-globbing`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `extglobs` -> `#extglobs`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `POSIX brackets` -> `#posix-brackets`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `Braces` -> `#brace-expansion`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `please create an issue` -> `../../issues/new`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `contributing guide` -> `.github/contributing.md`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `.verb.md` -> `.verb.md`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/picomatch/README.md: `MIT License` -> `LICENSE`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `Examples` -> `#examples`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `Consuming a source map` -> `#consuming-a-source-map`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `Generating a source map` -> `#generating-a-source-map`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `With SourceNode (high level API)` -> `#with-sourcenode-high-level-api`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `With SourceMapGenerator (low level API)` -> `#with-sourcemapgenerator-low-level-api`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `API` -> `#api`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer` -> `#sourcemapconsumer`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.initialize(options)` -> `#sourcemapconsumerinitializeoptions`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `new SourceMapConsumer(rawSourceMap)` -> `#new-sourcemapconsumerrawsourcemap`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.with` -> `#sourcemapconsumerwith`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.destroy()` -> `#sourcemapconsumerprototypedestroy`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.computeColumnSpans()` -> `#sourcemapconsumerprototypecomputecolumnspans`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.originalPositionFor(generatedPosition)` -> `#sourcemapconsumerprototypeoriginalpositionforgeneratedposition`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.generatedPositionFor(originalPosition)` -> `#sourcemapconsumerprototypegeneratedpositionfororiginalposition`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.allGeneratedPositionsFor(originalPosition)` -> `#sourcemapconsumerprototypeallgeneratedpositionsfororiginalposition`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.hasContentsOfAllSources()` -> `#sourcemapconsumerprototypehascontentsofallsources`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapConsumer.prototype.eachMapping(callback, context, order)` -> `#sourcemapconsumerprototypeeachmappingcallback-context-order`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapGenerator` -> `#sourcemapgenerator`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapGenerator.fromSourceMap(sourceMapConsumer)` -> `#sourcemapgeneratorfromsourcemapsourcemapconsumer`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapGenerator.prototype.addMapping(mapping)` -> `#sourcemapgeneratorprototypeaddmappingmapping`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapGenerator.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcemapgeneratorprototypesetsourcecontentsourcefile-sourcecontent`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceMapGenerator.prototype.toString()` -> `#sourcemapgeneratorprototypetostring`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode` -> `#sourcenode`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.add(chunk)` -> `#sourcenodeprototypeaddchunk`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.prepend(chunk)` -> `#sourcenodeprototypeprependchunk`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcenodeprototypesetsourcecontentsourcefile-sourcecontent`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.walk(fn)` -> `#sourcenodeprototypewalkfn`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.walkSourceContents(fn)` -> `#sourcenodeprototypewalksourcecontentsfn`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.join(sep)` -> `#sourcenodeprototypejoinsep`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.replaceRight(pattern, replacement)` -> `#sourcenodeprototypereplacerightpattern-replacement`
+- src/frontend/node_modules/rollup-plugin-visualizer/node_modules/source-map/README.md: `SourceNode.prototype.toString()` -> `#sourcenodeprototypetostring`
+- src/frontend/node_modules/isows/README.md: `MIT` -> `/LICENSE`
+- src/frontend/node_modules/react-fast-compare/README.md: `benchmarking details` -> `#benchmarking-this-library`
+- src/frontend/node_modules/react-fast-compare/README.md: `contributions guide` -> `./CONTRIBUTING.md`
+- src/frontend/node_modules/debug/README.md: `_app.js_` -> `./examples/node/app.js`
+- src/frontend/node_modules/debug/README.md: `_worker.js_` -> `./examples/node/worker.js`
+- src/frontend/node_modules/debug/README.md: `_stdout.js_` -> `./examples/node/stdout.js`
+- src/frontend/node_modules/source-map-js/README.md: `Downloads count` -> `media/downloads.png`
+- src/frontend/node_modules/source-map-js/README.md: `Examples` -> `#examples`
+- src/frontend/node_modules/source-map-js/README.md: `Consuming a source map` -> `#consuming-a-source-map`
+- src/frontend/node_modules/source-map-js/README.md: `Generating a source map` -> `#generating-a-source-map`
+- src/frontend/node_modules/source-map-js/README.md: `With SourceNode (high level API)` -> `#with-sourcenode-high-level-api`
+- src/frontend/node_modules/source-map-js/README.md: `With SourceMapGenerator (low level API)` -> `#with-sourcemapgenerator-low-level-api`
+- src/frontend/node_modules/source-map-js/README.md: `API` -> `#api`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapConsumer` -> `#sourcemapconsumer`
+- src/frontend/node_modules/source-map-js/README.md: `new SourceMapConsumer(rawSourceMap)` -> `#new-sourcemapconsumerrawsourcemap`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.computeColumnSpans()` -> `#sourcemapconsumerprototypecomputecolumnspans`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.originalPositionFor(generatedPosition)` -> `#sourcemapconsumerprototypeoriginalpositionforgeneratedposition`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.generatedPositionFor(originalPosition)` -> `#sourcemapconsumerprototypegeneratedpositionfororiginalposition`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.allGeneratedPositionsFor(originalPosition)` -> `#sourcemapconsumerprototypeallgeneratedpositionsfororiginalposition`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.hasContentsOfAllSources()` -> `#sourcemapconsumerprototypehascontentsofallsources`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapConsumer.prototype.eachMapping(callback, context, order)` -> `#sourcemapconsumerprototypeeachmappingcallback-context-order`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapGenerator` -> `#sourcemapgenerator`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapGenerator.fromSourceMap(sourceMapConsumer)` -> `#sourcemapgeneratorfromsourcemapsourcemapconsumer`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapGenerator.prototype.addMapping(mapping)` -> `#sourcemapgeneratorprototypeaddmappingmapping`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapGenerator.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcemapgeneratorprototypesetsourcecontentsourcefile-sourcecontent`
+- src/frontend/node_modules/source-map-js/README.md: `SourceMapGenerator.prototype.toString()` -> `#sourcemapgeneratorprototypetostring`
+- src/frontend/node_modules/source-map-js/README.md: `SourceNode` -> `#sourcenode`
+- src/frontend/node_modules/source-map-js/README.md: `SourceNode.prototype.add(chunk)` -> `#sourcenodeprototypeaddchunk`
+- src/frontend/node_modules/source-map-js/README.md: `SourceNode.prototype.prepend(chunk)` -> `#sourcenodeprototypeprependchunk`
+- src/frontend/node_modules/source-map-js/README.md: `SourceNode.prototype.setSourceContent(sourceFile, sourceContent)` -> `#sourcenodeprototypesetsourcecontentsourcefile-sourcecontent`
+- src/frontend/node_modules/source-map-js/README.md: `SourceNode.prototype.walk(fn)` -> `#sourcenodeprototypewalkfn`
+- src/frontend/node_modules/source-map-js/README.md: `SourceNode.prototype.walkSourceContents(fn)` -> `#sourcenodeprototypewalksourcecontentsfn`
+- src/frontend/node_modules/source-map-js/README.md: `SourceNode.prototype.join(sep)` -> `#sourcenodeprototypejoinsep`
+- src/frontend/node_modules/source-map-js/README.md: `SourceNode.prototype.replaceRight(pattern, replacement)` -> `#sourcenodeprototypereplacerightpattern-replacement`
+- src/frontend/node_modules/source-map-js/README.md: `SourceNode.prototype.toString()` -> `#sourcenodeprototypetostring`
+- src/frontend/node_modules/@inquirer/confirm/README.md: `See Theming` -> `#Theming`
+- src/frontend/node_modules/fb-watchman/README.md: `install Watchman` -> `
+https://facebook.github.io/watchman/docs/install.html`
+- src/frontend/node_modules/path-scurry/LICENSE.md: `Notices` -> `#notices`
+- src/frontend/node_modules/path-scurry/node_modules/lru-cache/README.md: `change log` -> `CHANGELOG.md`
+- src/backend/venv/lib/python3.11/site-packages/mypyc/README.md: `developer documentation` -> `doc/dev-intro.md`
+- src/backend/venv/lib/python3.11/site-packages/mypyc/README.md: `future improvements and optimizations` -> `doc/future.md`
+- src/backend/venv/lib/python3.11/site-packages/mypyc/external/googletest/README.md: `CMakeLists.txt` -> `CMakeLists.txt`
+- src/backend/venv/lib/python3.11/site-packages/mypyc/external/googletest/README.md: `include/gtest/internal/gtest-port.h` -> `include/gtest/internal/gtest-port.h`
+- src/backend/venv/lib/python3.11/site-packages/mypyc/external/googletest/README.md: `Pump manual` -> `docs/PumpManual.md`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Łukasz Langa` -> `mailto:lukasz@langa.pl`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Carol Willing` -> `mailto:carolcode@willingconsulting.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Carl Meyer` -> `mailto:carl@oddbird.net`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Jelle Zijlstra` -> `mailto:jelle.zijlstra@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Mika Naylor` -> `mailto:mail@autophagy.io`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Zsolt Dollenstein` -> `mailto:zsol.zsol@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Cooper Lees` -> `mailto:me@cooperlees.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Richard Si` -> `mailto:sichard26@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Felix Hildén` -> `mailto:felix.hilden@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Batuhan Taskaya` -> `mailto:batuhan@python.org`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Shantanu Jain` -> `mailto:hauntsaninja@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Abdur-Rahmaan Janhangeer` -> `mailto:arj.python@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Adam Johnson` -> `mailto:me@adamj.eu`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Adam Williamson` -> `mailto:adamw@happyassassin.net`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Alexander Huynh` -> `mailto:ahrex-gh-psf-black@e.sc`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Alexandr Artemyev` -> `mailto:mogost@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Alex Vandiver` -> `mailto:github@chmrr.net`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Allan Simon` -> `mailto:allan.simon@supinfo.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Amethyst Reese` -> `mailto:amy@n7.gg`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Andrew Thorp` -> `mailto:andrew.thorp.dev@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Andrew Zhou` -> `mailto:andrewfzhou@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Andrey` -> `mailto:dyuuus@yandex.ru`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Andy Freeland` -> `mailto:andy@andyfreeland.net`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Anthony Sottile` -> `mailto:asottile@umich.edu`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Antonio Ossa Guerra` -> `mailto:aaossa+black@uc.cl`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Arjaan Buijk` -> `mailto:arjaan.buijk@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Arnav Borbornah` -> `mailto:arnavborborah11@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Artem Malyshev` -> `mailto:proofit404@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Asger Hautop Drewsen` -> `mailto:asgerdrewsen@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Augie Fackler` -> `mailto:raf@durin42.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Aviskar KC` -> `mailto:aviskarkc10@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Benjamin Wohlwend` -> `mailto:bw@piquadrat.ch`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Benjamin Woodruff` -> `mailto:github@benjam.info`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Bharat Raghunathan` -> `mailto:bharatraghunthan9767@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Brandt Bucher` -> `mailto:brandtbucher@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Brett Cannon` -> `mailto:brett@python.org`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Bryan Bugyi` -> `mailto:bryan.bugyi@rutgers.edu`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Bryan Forbes` -> `mailto:bryan@reigndropsfall.net`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Calum Lind` -> `mailto:calumlind@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Charles` -> `mailto:peacech@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Christian Clauss` -> `mailto:cclauss@bluewin.ch`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Christian Heimes` -> `mailto:christian@python.org`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Chuck Wooters` -> `mailto:chuck.wooters@microsoft.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Chris Rose` -> `mailto:offline@offby1.net`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Cong` -> `mailto:congusbongus@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Cooper Ry Lees` -> `mailto:me@cooperlees.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Dan Davison` -> `mailto:dandavison7@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Daniel Hahler` -> `mailto:github@thequod.de`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Daniel M. Capella` -> `mailto:polycitizen@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `David Hotham` -> `mailto:david.hotham@metaswitch.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `David Lukes` -> `mailto:dafydd.lukes@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `David Szotten` -> `mailto:davidszotten@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Denis Laxalde` -> `mailto:denis@laxalde.org`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Douglas Thor` -> `mailto:dthor@transphormusa.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Eli Treuherz` -> `mailto:eli@treuherz.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Emil Hessman` -> `mailto:emil@hessman.se`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Felix Kohlgrüber` -> `mailto:felix.kohlgrueber@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Florent Thiery` -> `mailto:fthiery@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Giacomo Tagliabue` -> `mailto:giacomo.tag@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Greg Gandenberger` -> `mailto:ggandenberger@shoprunner.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Gregory P. Smith` -> `mailto:greg@krypto.org`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Hadi Alqattan` -> `mailto:alqattanhadizaki@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Hassan Abouelela` -> `mailto:hassan@hassanamr.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Heaford` -> `mailto:dan@heaford.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Hugo Barrera` -> `mailto::hugo@barrera.io`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Hynek Schlawack` -> `mailto:hs@ox.cx`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Ionite` -> `mailto:dev@ionite.io`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Ivan Katanić` -> `mailto:ivan.katanic@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Jakub Kadlubiec` -> `mailto:jakub.kadlubiec@skyscanner.net`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Jakub Warczarek` -> `mailto:jakub.warczarek@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Jan Hnátek` -> `mailto:jan.hnatek@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Jason Fried` -> `mailto:me@jasonfried.info`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Jason Friedland` -> `mailto:jason@friedland.id.au`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `jgirardet` -> `mailto:ijkl@netc.fr`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Jimmy Jia` -> `mailto:tesrin@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Joe Antonakakis` -> `mailto:jma353@cornell.edu`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Jon Dufresne` -> `mailto:jon.dufresne@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Jonas Obrist` -> `mailto:ojiidotch@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Jonty Wareing` -> `mailto:jonty@jonty.co.uk`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Jose Nazario` -> `mailto:jose.monkey.org@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Joseph Larson` -> `mailto:larson.joseph@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Josh Bode` -> `mailto:joshbode@fastmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Josh Holland` -> `mailto:anowlcalledjosh@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Joshua Cannon` -> `mailto:joshdcannon@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `José Padilla` -> `mailto:jpadilla@webapplicate.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Juan Luis Cano Rodríguez` -> `mailto:hello@juanlu.space`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `kaiix` -> `mailto:kvn.hou@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Katie McLaughlin` -> `mailto:katie@glasnt.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Keith Smiley` -> `mailto:keithbsmiley@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Kenyon Ralph` -> `mailto:kenyon@kenyonralph.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Kevin Kirsche` -> `mailto:Kev.Kirsche+GitHub@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Kyle Hausmann` -> `mailto:kyle.hausmann@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Kyle Sunden` -> `mailto:sunden@wisc.edu`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Linus Groh` -> `mailto:mail@linusgroh.de`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Loren Carvalho` -> `mailto:comradeloren@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Luka Sterbic` -> `mailto:luka.sterbic@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `LukasDrude` -> `mailto:mail@lukas-drude.de`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Matt VanEseltine` -> `mailto:vaneseltine@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Matthew Clapp` -> `mailto:itsayellow+dev@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Matthew Walster` -> `mailto:matthew@walster.org`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Michael Aquilina` -> `mailto:michaelaquilina@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Michael Flaxman` -> `mailto:michael.flaxman@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Michael J. Sullivan` -> `mailto:sully@msully.net`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Michael McClimon` -> `mailto:michael@mcclimon.org`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Miguel Gaiowski` -> `mailto:miggaiowski@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Mike` -> `mailto:roshi@fedoraproject.org`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `mikehoyio` -> `mailto:mikehoy@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Min ho Kim` -> `mailto:minho42@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Miroslav Shubernetskiy` -> `mailto:miroslav@miki725.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Nathan Goldbaum` -> `mailto:ngoldbau@illinois.edu`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Nathan Hunt` -> `mailto:neighthan.hunt@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Neraste` -> `mailto:neraste.herr10@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Nikolaus Waxweiler` -> `mailto:madigens@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Ofek Lev` -> `mailto:ofekmeister@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Osaetin Daniel` -> `mailto:osaetindaniel@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `otstrel` -> `mailto:otstrel@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Pablo Galindo` -> `mailto:Pablogsal@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Paul Ganssle` -> `mailto:p.ganssle@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Paul Meinhardt` -> `mailto:mnhrdt@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Peter Bengtsson` -> `mailto:mail@peterbe.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Peter Grayson` -> `mailto:pete@jpgrayson.net`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Peter Stensmyr` -> `mailto:peter.stensmyr@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Quentin Pradet` -> `mailto:quentin@pradet.me`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Ralf Schmitt` -> `mailto:ralf@systemexit.de`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Ramón Valles` -> `mailto:mroutis@protonmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Richard Fearn` -> `mailto:richardfearn@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Rishikesh Jha` -> `mailto:rishijha424@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Rupert Bedford` -> `mailto:rupert@rupertb.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Sagi Shadur` -> `mailto:saroad2@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Rémi Verschelde` -> `mailto:rverschelde@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Sami Salonen` -> `mailto:sakki@iki.fi`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Samuel Cormier-Iijima` -> `mailto:samuel@cormier-iijima.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Sanket Dasgupta` -> `mailto:sanketdasgupta@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Scott Stevenson` -> `mailto:scott@stevenson.io`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `shaoran` -> `mailto:shaoran@sakuranohana.org`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Shinya Fujino` -> `mailto:shf0811@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Stavros Korokithakis` -> `mailto:hi@stavros.io`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Stephen Rosen` -> `mailto:sirosen@globus.org`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Steven M. Vascellaro` -> `mailto:S.Vascellaro@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Sunil Kapil` -> `mailto:snlkapil@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Sébastien Eustace` -> `mailto:sebastien.eustace@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Tal Amuyal` -> `mailto:TalAmuyal@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Terrance` -> `mailto:git@terrance.allofti.me`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Thom Lu` -> `mailto:thomas.c.lu@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Thomas Grainger` -> `mailto:tagrain@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Tim Gates` -> `mailto:tim.gates@iress.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Tim Swast` -> `mailto:swast@google.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Timo` -> `mailto:timo_tk@hotmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Tom Christie` -> `mailto:tom@tomchristie.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Tony Narlock` -> `mailto:tony@git-pull.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Tsuyoshi Hombashi` -> `mailto:tsuyoshi.hombashi@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Tushar Chandra` -> `mailto:tusharchandra2018@u.northwestern.edu`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Tzu-ping Chung` -> `mailto:uranusjr@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Utsav Shah` -> `mailto:ukshah2@illinois.edu`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Ville Skyttä` -> `mailto:ville.skytta@iki.fi`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Vishwas B Sharma` -> `mailto:sharma.vishwas88@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Vlad Emelianov` -> `mailto:volshebnyi@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `williamfzc` -> `mailto:178894043@qq.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `wouter bolsterlee` -> `mailto:wouter@bolsterl.ee`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Yngve Høiseth` -> `mailto:yngve@hoiseth.net`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Yurii Karabas` -> `mailto:1998uriyyo@gmail.com`
+- src/backend/venv/lib/python3.11/site-packages/black-23.11.0.dist-info/licenses/AUTHORS.md: `Zac Hatfield-Dodds` -> `mailto:zac@zhd.dev`
+- src/backend/venv/lib/python3.11/site-packages/nltk-3.8.1.dist-info/README.md: `CONTRIBUTING.md` -> `CONTRIBUTING.md`
+- src/backend/venv/lib/python3.11/site-packages/nltk-3.8.1.dist-info/README.md: `LICENSE.txt` -> `LICENSE.txt`
+- src/backend/venv/lib/python3.11/site-packages/nltk-3.8.1.dist-info/README.md: `AUTHORS.md` -> `AUTHORS.md`
+- src/services/integrations/README.md: `API documentation` -> `../../api/README.md`
+
+## Next Steps
+1. Begin with high-priority documentation updates
+2. Focus on render.com deployment specifics
+3. Create comprehensive API documentation
+4. Implement validation checklist
+5. Test all documentation for accuracy
+
+## Agent Status
+- **Status**: Active and Ready
+- **Mission**: Complete documentation overhaul for deployment readiness
+- **Target Platform**: render.com

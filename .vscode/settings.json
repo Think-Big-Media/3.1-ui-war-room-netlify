@@ -1,0 +1,19 @@
+{
+  "sourcegraph.accessToken": "sgp_ws019830ca9f607852933114c2ad580470_214da7a9130f431f5aa65810fc074bc331cdda48",
+  "sourcegraph.endpoint": "https://sourcegraph.com",
+  "cody.enabled": true,
+  "cody.autocomplete.enabled": true,
+  "cody.chat.enabled": true,
+  "cody.commandCodeLenses": true,
+  "cody.experimental.chatPredictions": true,
+  "cody.experimental.symfContext": true,
+  "amp.enabled": true,
+  "amp.autonomousMode": true,
+  "amp.agenticWorkflows": true,
+  "cody.mcpServers": {
+
+  },
+  "amp.mcpServers": {
+    
+  }
+}

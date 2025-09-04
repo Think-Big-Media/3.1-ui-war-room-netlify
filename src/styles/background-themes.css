@@ -1,0 +1,206 @@
+/**
+ * Background Theme Patterns
+ * Static CSS definitions for War Room camouflage and theme backgrounds
+ */
+
+/* Classic Blue Theme - Original blue/slate gradient */
+.war-room-classic-blue {
+  background: linear-gradient(
+    135deg,
+    #475569 0%,
+    /* slate-600 */ #334155 25%,
+    /* slate-700 */ #1e293b 75%,
+    /* slate-800 */ #0f172a 100% /* slate-900 */
+  ) !important;
+}
+
+/* Dark Slate Theme - Very dark charcoal/black */
+.war-room-dark-slate {
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    /* slate-900 */ #020617 25%,
+    /* slate-950 */ #000000 50%,
+    /* black */ #111111 75%,
+    /* very dark gray */ #000000 100% /* black */
+  ) !important;
+}
+
+/* Tactical Camo - Enhanced woodland camouflage pattern with better visibility */
+.war-room-tactical-camo {
+  background: 
+    /* Darker diagonal overlay for Tactical Camo */
+    linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 25%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.7) 75%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    /* Primary green diagonal stripes - MUCH BIGGER */
+      repeating-linear-gradient(
+        45deg,
+        rgba(15, 80, 35, 0.4) 0px,
+        rgba(15, 80, 35, 0.4) 120px,
+        transparent 120px,
+        transparent 240px
+      ),
+    /* Secondary diagonal stripes - MUCH BIGGER */
+      repeating-linear-gradient(
+        135deg,
+        rgba(20, 60, 30, 0.35) 0px,
+        rgba(20, 60, 30, 0.35) 80px,
+        transparent 80px,
+        transparent 160px
+      ),
+    /* Brown/tan diagonal overlay for realism - MUCH BIGGER */
+      repeating-linear-gradient(
+        -30deg,
+        rgba(146, 64, 14, 0.2) 0px,
+        rgba(146, 64, 14, 0.2) 160px,
+        transparent 160px,
+        transparent 320px
+      ),
+    /* Large organic camouflage patches - DESATURATED & DARKER */
+      radial-gradient(
+        ellipse 300px 200px at 15% 25%,
+        rgba(10, 40, 20, 0.5) 0%,
+        rgba(15, 50, 25, 0.3) 50%,
+        transparent 80%
+      ),
+    radial-gradient(
+      ellipse 400px 250px at 85% 75%,
+      rgba(12, 45, 22, 0.45) 0%,
+      rgba(18, 55, 28, 0.25) 40%,
+      transparent 75%
+    ),
+    radial-gradient(ellipse 250px 300px at 50% 10%, rgba(8, 35, 18, 0.4) 0%, transparent 60%),
+    radial-gradient(ellipse 350px 220px at 70% 90%, rgba(10, 42, 25, 0.3) 0%, transparent 70%),
+    /* Large olive/brown patches for contrast - BIGGER */
+      radial-gradient(ellipse 200px 150px at 30% 80%, rgba(120, 113, 108, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 220px 280px at 90% 30%, rgba(161, 98, 7, 0.2) 0%, transparent 65%),
+    /* MUCH DARKER woodland base gradient */
+      linear-gradient(
+        135deg,
+        #052e16 0%,
+        /* green-950 */ #14532d 25%,
+        /* green-900 */ #166534 50%,
+        /* green-800 */ #15803d 75%,
+        /* green-700 */ #166534 100% /* green-800 */
+      ) !important;
+}
+
+/* Digital Camo - Pixelated military pattern with diagonal gradient and gray/green tones */
+.war-room-digital-camo {
+  background: 
+    /* Longer vertical gradient - more darkness over bottom pattern */
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.7) 40%,
+      rgba(0, 0, 0, 0.5) 70%,
+      rgba(0, 0, 0, 0.4) 85%,
+      rgba(0, 0, 0, 0.3) 100%
+    ),
+    /* True digital camo - large square pixels */
+      repeating-linear-gradient(
+        0deg,
+        rgba(75, 85, 99, 0.6) 0px,
+        rgba(75, 85, 99, 0.6) 40px,
+        rgba(55, 65, 81, 0.5) 40px,
+        rgba(55, 65, 81, 0.5) 80px,
+        rgba(107, 114, 128, 0.4) 80px,
+        rgba(107, 114, 128, 0.4) 120px,
+        transparent 120px,
+        transparent 160px
+      ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(156, 163, 175, 0.5) 0px,
+      rgba(156, 163, 175, 0.5) 40px,
+      rgba(75, 85, 99, 0.6) 40px,
+      rgba(75, 85, 99, 0.6) 80px,
+      rgba(55, 65, 81, 0.4) 80px,
+      rgba(55, 65, 81, 0.4) 120px,
+      transparent 120px,
+      transparent 160px
+    ),
+    /* Small pixelated squares for detail */
+      repeating-linear-gradient(
+        0deg,
+        rgba(209, 213, 219, 0.3) 0px,
+        rgba(209, 213, 219, 0.3) 20px,
+        transparent 20px,
+        transparent 40px
+      ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(156, 163, 175, 0.25) 0px,
+      rgba(156, 163, 175, 0.25) 20px,
+      transparent 20px,
+      transparent 40px
+    ),
+    /* Large green military accent patches - MUCH BIGGER */
+      radial-gradient(ellipse 300px 180px at 25% 75%, rgba(34, 197, 94, 0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 250px 250px at 75% 25%, rgba(22, 163, 74, 0.12) 0%, transparent 60%),
+    /* Base digital gray gradient */
+      linear-gradient(
+        135deg,
+        #111827 0%,
+        /* gray-900 */ #1f2937 25%,
+        /* gray-800 */ #374151 50%,
+        /* gray-700 */ #4b5563 75%,
+        /* gray-600 */ #6b7280 100% /* gray-500 */
+      ) !important;
+}
+
+/* Camo Overlay - Subtle texture overlay for depth */
+.war-room-camo-overlay {
+  background: 
+    /* Subtle noise texture */ repeating-radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.03) 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 4px,
+    transparent 6px
+  ) !important;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ensure all theme backgrounds cover full viewport */
+.war-room-classic-blue,
+.war-room-tactical-camo,
+.war-room-digital-camo,
+.war-room-dark-slate {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+/* Apply themes to body element */
+body.war-room-classic-blue,
+body.war-room-tactical-camo,
+body.war-room-digital-camo,
+body.war-room-dark-slate {
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+/* Dark overlay for better text readability on camo patterns */
+.war-room-tactical-camo::before,
+.war-room-digital-camo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  z-index: 0;
+}

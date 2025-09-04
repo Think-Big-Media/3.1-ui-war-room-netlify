@@ -1,0 +1,34 @@
+{
+  "health_status": {
+    "timestamp": "2025-08-05T17:56:31.241677",
+    "overall_status": "critical",
+    "pinecone_status": "unavailable",
+    "openai_status": "unavailable",
+    "last_successful_operation": null,
+    "error_count_24h": 0,
+    "performance_score": 0.0,
+    "recommendations": [
+      "Check API keys and service configuration"
+    ],
+    "alerts": [
+      "Service initialization failed - system unavailable"
+    ]
+  },
+  "detailed_metrics": [],
+  "configuration": {
+    "thresholds": {
+      "embedding_generation_ms": 2000,
+      "vector_search_ms": 1000,
+      "vector_upsert_ms": 3000,
+      "max_error_rate_24h": 0.05
+    },
+    "pinecone_index": "warroom-documents",
+    "pinecone_environment": "us-east-1",
+    "openai_model": "text-embedding-ada-002"
+  },
+  "system_info": {
+    "python_version": "3.11.0 (v3.11.0:deaf509e8f, Oct 24 2022, 14:43:23) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "pinecone_available": true,
+    "requests_available": true
+  }
+}

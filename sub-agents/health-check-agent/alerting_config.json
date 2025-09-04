@@ -1,0 +1,44 @@
+{
+  "email": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "your-email@gmail.com",
+    "password": "your-app-password",
+    "from_email": "your-email@gmail.com",
+    "to_emails": [
+      "admin@yourcompany.com",
+      "devops@yourcompany.com"
+    ],
+    "use_tls": true
+  },
+  "webhook": {
+    "enabled": false,
+    "url": "https://your-webhook-endpoint.com/alerts",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer your-token"
+    },
+    "timeout": 10
+  },
+  "slack": {
+    "enabled": false,
+    "webhook_url": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+    "channel": "#war-room-alerts",
+    "username": "WarRoom-HealthBot"
+  },
+  "pushcut": {
+    "enabled": false,
+    "api_key": "your-pushcut-api-key",
+    "notification_name": "WarRoomAlert"
+  },
+  "console": {
+    "enabled": true,
+    "color": true
+  },
+  "file": {
+    "enabled": true,
+    "log_file": "logs/alerts.log"
+  }
+}

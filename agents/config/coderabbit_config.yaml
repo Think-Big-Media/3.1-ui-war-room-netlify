@@ -1,0 +1,286 @@
+# CodeRabbit Integration Configuration
+# Complete configuration for SUB-AGENT 3 - CodeRabbit Integration
+
+# API Configuration
+github_token: "${GITHUB_TOKEN}"
+coderabbit_api_key: "${CODERABBIT_API_KEY}"
+webhook_secret: "${GITHUB_WEBHOOK_SECRET}"
+pieces_api_key: "${PIECES_API_KEY}"
+
+# Repository Configuration
+repository_url: "https://api.github.com/repos/rodericandrews/WarRoom_Development"
+repository_name: "1.0-war-room"
+target_branch: "main"
+
+# Auto-Fix Settings
+settings:
+  auto_fix_enabled: true
+  security_threshold: "medium"  # critical, high, medium, low
+  max_auto_fixes_per_pr: 10
+  min_confidence_threshold: 0.8
+  enable_rollback: true
+  rollback_timeout_hours: 24
+  
+  # Safe fix categories
+  safe_fix_categories:
+    - "style"
+    - "documentation"
+    - "import_optimization"
+    - "variable_naming"
+    - "type_annotation"
+  
+  # Never auto-fix categories
+  unsafe_fix_categories:
+    - "security"
+    - "architecture"
+    - "performance"
+
+# Security Alerting Configuration
+security_alerts:
+  enabled: true
+  severity_thresholds:
+    critical: 0  # No critical issues allowed
+    high: 2      # Max 2 high severity issues
+    medium: 10   # Max 10 medium severity issues
+  
+  # Alert channels
+  channels:
+    email:
+      enabled: true
+      smtp_server: "smtp.gmail.com"
+      smtp_port: 587
+      username: "${SMTP_USERNAME}"
+      password: "${SMTP_PASSWORD}"
+      from_address: "security@warroom.dev"
+      to_addresses:
+        - "security-team@warroom.dev"
+        - "cto@warroom.dev"
+    
+    slack:
+      enabled: true
+      webhook_url: "${SLACK_WEBHOOK_URL}"
+      channel: "#security-alerts"
+      mention_users: ["@channel"]
+    
+    github:
+      enabled: true
+      create_issues: true
+      labels: ["security", "urgent", "coderabbit"]
+      assignees: ["rodericandrews"]
+  
+  # Escalation rules
+  escalation:
+    critical_delay_minutes: 15
+    high_delay_minutes: 60
+    medium_delay_minutes: 240
+
+# Webhook Server Configuration
+webhook_server:
+  host: "0.0.0.0"
+  port: 8080
+  ssl_enabled: false
+  ssl_cert_path: ""
+  ssl_key_path: ""
+  
+  # Security
+  rate_limiting:
+    enabled: true
+    max_requests_per_minute: 100
+    max_requests_per_hour: 1000
+  
+  # Monitoring
+  health_check_path: "/health"
+  metrics_path: "/metrics"
+  status_path: "/status"
+
+# Pieces Integration Configuration
+pieces:
+  enabled: true
+  auto_store_patterns: true
+  pattern_categories:
+    - "coderabbit-fixes"
+    - "security-patterns"
+    - "quality-improvements"
+  
+  # Storage settings
+  duplicate_detection: true
+  similarity_threshold: 0.8
+  pattern_validation: true
+  auto_tagging: true
+  
+  # Default tags
+  default_tags:
+    - "coderabbit"
+    - "automated"
+    - "war-room"
+
+# CI/CD Integration Configuration
+cicd:
+  platforms:
+    github_actions:
+      enabled: true
+      workflow_file: ".github/workflows/coderabbit-integration.yml"
+      trigger_events:
+        - "push"
+        - "pull_request"
+        - "pull_request_review"
+    
+    jenkins:
+      enabled: false
+      url: "${JENKINS_URL}"
+      username: "${JENKINS_USERNAME}"
+      token: "${JENKINS_TOKEN}"
+    
+    gitlab_ci:
+      enabled: false
+      url: "${GITLAB_URL}"
+      token: "${GITLAB_TOKEN}"
+  
+  # Pipeline settings
+  pipeline:
+    stages:
+      - "source"
+      - "build" 
+      - "test"
+      - "security_scan"
+      - "quality_gate"
+      - "deploy_staging"
+      - "integration_test"
+      - "deploy_production"
+    
+    deployment_gates:
+      - "security_clear"
+      - "quality_threshold"
+      - "test_coverage"
+    
+    thresholds:
+      min_quality_score: 0.8
+      min_test_coverage: 0.8
+      max_critical_security_issues: 0
+      max_high_security_issues: 2
+    
+    timeouts:
+      build_minutes: 15
+      test_minutes: 30
+      security_scan_minutes: 10
+      deploy_minutes: 10
+
+# Monitoring and Logging
+monitoring:
+  metrics:
+    enabled: true
+    port: 9090
+    endpoint: "/metrics"
+    
+  logging:
+    level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    file: "/var/log/coderabbit/integration.log"
+    max_size_mb: 100
+    backup_count: 5
+    
+  health_checks:
+    enabled: true
+    interval_seconds: 30
+    timeout_seconds: 10
+    
+  alerting:
+    enabled: true
+    on_failures: true
+    on_performance_degradation: true
+
+# Database Configuration (for persistent storage)
+database:
+  type: "sqlite"  # sqlite, postgresql, mysql
+  
+  sqlite:
+    path: "/var/lib/coderabbit/database.db"
+    
+  postgresql:
+    host: "${DB_HOST}"
+    port: 5432
+    database: "${DB_NAME}"
+    username: "${DB_USERNAME}"
+    password: "${DB_PASSWORD}"
+    
+  mysql:
+    host: "${DB_HOST}"
+    port: 3306
+    database: "${DB_NAME}"
+    username: "${DB_USERNAME}"
+    password: "${DB_PASSWORD}"
+
+# Deployment Configuration
+deployment:
+  environment: "production"  # development, staging, production
+  
+  staging:
+    url: "https://staging-war-room.warroom.dev"
+    health_endpoint: "/health"
+    
+  production:
+    url: "https://war-room-oa9t.onrender.com"
+    health_endpoint: "/health"
+    
+  notifications:
+    on_deployment:
+      slack:
+        webhook: "${DEPLOYMENT_SLACK_WEBHOOK}"
+        channel: "#deployments"
+      
+      email:
+        recipients: ["ops@warroom.dev"]
+
+# Feature Flags
+features:
+  auto_fix_engine: true
+  security_alerting: true
+  pieces_integration: true
+  cicd_integration: true
+  webhook_monitoring: true
+  pattern_storage: true
+  
+  # Experimental features
+  experimental:
+    ai_powered_fixes: false
+    predictive_security: false
+    automated_refactoring: false
+
+# Performance Tuning
+performance:
+  max_concurrent_reviews: 5
+  max_concurrent_fixes: 10
+  review_timeout_minutes: 30
+  fix_timeout_minutes: 5
+  
+  cache:
+    enabled: true
+    ttl_minutes: 60
+    max_size_mb: 100
+    
+  rate_limits:
+    github_api_requests_per_hour: 5000
+    coderabbit_api_requests_per_hour: 1000
+    pieces_api_requests_per_hour: 500
+
+# Security Configuration
+security:
+  encryption:
+    enabled: true
+    algorithm: "AES-256"
+    key_rotation_days: 90
+    
+  authentication:
+    token_expiry_hours: 24
+    max_failed_attempts: 5
+    lockout_duration_minutes: 15
+    
+  audit:
+    enabled: true
+    log_all_actions: true
+    retain_logs_days: 90
+    
+  secrets:
+    storage: "environment"  # environment, vault, file
+    vault_url: "${VAULT_URL}"
+    vault_token: "${VAULT_TOKEN}"

@@ -1,0 +1,108 @@
+# Core Knowledge Management Dependencies
+scikit-learn>=1.3.0          # Machine learning capabilities
+nltk>=3.8                    # Natural language processing
+numpy>=1.24.0                # Numerical computing
+pandas>=2.0.0                # Data analysis and manipulation
+
+# Web and Communication
+aiohttp>=3.8.0               # Async HTTP client for API calls
+websockets>=11.0             # Real-time agent communication
+requests>=2.31.0             # HTTP requests for APIs
+
+# Template and Documentation Generation
+jinja2>=3.1.0                # Template engine for code generation
+markdown>=3.4.0              # Markdown processing
+
+# Code Analysis and Formatting
+black>=23.0.0                # Python code formatter
+isort>=5.12.0                # Import sorting
+ast-decompiler>=1.0.0        # AST analysis
+
+# Natural Language Processing
+textblob>=0.17.0             # Text analysis and sentiment
+spacy>=3.6.0                 # Advanced NLP (optional)
+
+# Data Visualization and Reporting
+matplotlib>=3.7.0            # Chart generation
+seaborn>=0.12.0              # Statistical data visualization
+plotly>=5.15.0               # Interactive plots (optional)
+
+# Email and Notifications
+smtplib                      # Built-in email support (included in Python)
+
+# Date and Time Handling
+python-dateutil>=2.8.0       # Extended date/time handling
+
+# Configuration and Utilities
+pyyaml>=6.0                  # YAML configuration files
+toml>=0.10.0                 # TOML configuration support
+python-dotenv>=1.0.0         # Environment variable loading
+pathlib                      # Path handling (included in Python 3.4+)
+dataclasses                  # Data classes (included in Python 3.7+)
+typing-extensions>=4.0.0     # Extended typing support
+asyncio                      # Async programming (included in Python 3.4+)
+
+# Testing and Development (Optional)
+pytest>=7.0.0                # Testing framework
+pytest-asyncio>=0.21.0       # Async testing support
+pytest-cov>=4.0.0           # Coverage reporting
+mock>=4.0.0                  # Mock objects for testing
+
+# Security and Validation
+cryptography>=41.0.0         # Encryption and security
+jsonschema>=4.18.0           # JSON schema validation
+
+# Optional Performance Enhancements
+uvloop>=0.17.0               # Faster event loop (Unix only)
+orjson>=3.9.0                # Faster JSON processing
+
+# Optional Machine Learning Enhancements
+transformers>=4.30.0         # Hugging Face transformers (for advanced NLP)
+torch>=2.0.0                 # PyTorch (for advanced ML models)
+sentence-transformers>=2.2.0 # Sentence embeddings (for semantic search)
+
+# File Format Support
+openpyxl>=3.1.0              # Excel file support
+xlsxwriter>=3.1.0            # Excel writing
+python-docx>=0.8.11          # Word document support
+
+# Network and API Utilities
+httpx>=0.24.0                # Alternative HTTP client
+urllib3>=2.0.0               # HTTP client utilities
+
+# Logging and Monitoring
+structlog>=23.0.0            # Structured logging
+prometheus-client>=0.17.0    # Metrics collection (optional)
+
+# Database Support (Optional)
+sqlalchemy>=2.0.0            # SQL toolkit and ORM
+alembic>=1.11.0              # Database migrations
+asyncpg>=0.28.0              # Async PostgreSQL driver
+aiosqlite>=0.19.0            # Async SQLite driver
+
+# Cache and Storage (Optional)
+redis>=4.6.0                 # Redis client
+diskcache>=5.6.0             # Disk-based caching
+
+# Process Management
+psutil>=5.9.0                # System and process utilities
+
+# CLI and User Interface
+click>=8.1.0                 # Command line interface
+rich>=13.0.0                 # Rich text and beautiful formatting
+tqdm>=4.65.0                 # Progress bars
+
+# Code Quality and Linting (Development)
+flake8>=6.0.0                # Code linting
+mypy>=1.4.0                  # Type checking
+pre-commit>=3.3.0            # Git pre-commit hooks
+bandit>=1.7.0                # Security linting
+
+# Documentation Generation (Development)
+sphinx>=7.0.0                # Documentation generation
+sphinx-rtd-theme>=1.2.0      # ReadTheDocs theme
+sphinx-autodoc-typehints>=1.23.0 # Type hint documentation
+
+# Version and Package Information
+packaging>=23.0              # Package version utilities
+importlib-metadata>=6.0.0    # Package metadata access

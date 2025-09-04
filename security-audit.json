@@ -1,0 +1,194 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "d3-color": {
+      "name": "d3-color",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1088594,
+          "name": "d3-color",
+          "dependency": "d3-color",
+          "title": "d3-color vulnerable to ReDoS",
+          "url": "https://github.com/advisories/GHSA-36jr-mh4h-2g58",
+          "severity": "high",
+          "cwe": [
+            "CWE-400"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<3.1.0"
+        }
+      ],
+      "effects": [
+        "d3-interpolate",
+        "d3-transition"
+      ],
+      "range": "<3.1.0",
+      "nodes": [
+        "node_modules/d3-transition/node_modules/d3-color",
+        "node_modules/d3-zoom/node_modules/d3-color"
+      ],
+      "fixAvailable": {
+        "name": "react-simple-maps",
+        "version": "1.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "d3-interpolate": {
+      "name": "d3-interpolate",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "d3-color"
+      ],
+      "effects": [
+        "d3-transition"
+      ],
+      "range": "0.1.3 - 2.0.1",
+      "nodes": [
+        "node_modules/d3-transition/node_modules/d3-interpolate",
+        "node_modules/d3-zoom/node_modules/d3-interpolate"
+      ],
+      "fixAvailable": {
+        "name": "react-simple-maps",
+        "version": "1.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "d3-transition": {
+      "name": "d3-transition",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "d3-color",
+        "d3-interpolate"
+      ],
+      "effects": [
+        "d3-zoom"
+      ],
+      "range": "0.0.7 - 2.0.0",
+      "nodes": [
+        "node_modules/d3-transition"
+      ],
+      "fixAvailable": {
+        "name": "react-simple-maps",
+        "version": "1.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "d3-zoom": {
+      "name": "d3-zoom",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "d3-interpolate",
+        "d3-transition"
+      ],
+      "effects": [
+        "react-simple-maps"
+      ],
+      "range": "0.0.2 - 2.0.0",
+      "nodes": [
+        "node_modules/d3-zoom"
+      ],
+      "fixAvailable": {
+        "name": "react-simple-maps",
+        "version": "1.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "esbuild": {
+      "name": "esbuild",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1102341,
+          "name": "esbuild",
+          "dependency": "esbuild",
+          "title": "esbuild enables any website to send any requests to the development server and read the response",
+          "url": "https://github.com/advisories/GHSA-67mh-4wv8-2f99",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-346"
+          ],
+          "cvss": {
+            "score": 5.3,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+          },
+          "range": "<=0.24.2"
+        }
+      ],
+      "effects": [
+        "vite"
+      ],
+      "range": "<=0.24.2",
+      "nodes": [
+        "node_modules/esbuild"
+      ],
+      "fixAvailable": {
+        "name": "vite",
+        "version": "7.1.1",
+        "isSemVerMajor": true
+      }
+    },
+    "react-simple-maps": {
+      "name": "react-simple-maps",
+      "severity": "high",
+      "isDirect": true,
+      "via": [
+        "d3-zoom"
+      ],
+      "effects": [],
+      "range": "2.0.0 - 3.0.0",
+      "nodes": [
+        "node_modules/react-simple-maps"
+      ],
+      "fixAvailable": {
+        "name": "react-simple-maps",
+        "version": "1.0.0",
+        "isSemVerMajor": true
+      }
+    },
+    "vite": {
+      "name": "vite",
+      "severity": "moderate",
+      "isDirect": true,
+      "via": [
+        "esbuild"
+      ],
+      "effects": [],
+      "range": "0.11.0 - 6.1.6",
+      "nodes": [
+        "node_modules/vite"
+      ],
+      "fixAvailable": {
+        "name": "vite",
+        "version": "7.1.1",
+        "isSemVerMajor": true
+      }
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 2,
+      "high": 5,
+      "critical": 0,
+      "total": 7
+    },
+    "dependencies": {
+      "prod": 161,
+      "dev": 809,
+      "optional": 72,
+      "peer": 1,
+      "peerOptional": 0,
+      "total": 969
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "approvalBatching": {
+    "enabled": true,
+    "batchSize": 5,
+    "warningThreshold": 3,
+    "autoGroupBy": ["file_operations", "git_operations", "deployment", "system_commands"],
+    "notifications": {
+      "sound": true,
+      "visual": true,
+      "estimatedTime": true,
+      "completionAlert": true
+    },
+    "workflow": {
+      "preBatchWarning": "🚨 APPROVAL BATCH COMING UP 🚨",
+      "postBatchMessage": "✅ Batch complete! You can step away now.",
+      "completionAlert": "🔔 TASKS COMPLETE - YOUR ACTION NEEDED 🔔",
+      "timeEstimateFormat": "Estimated time needed: {minutes} minutes"
+    }
+  },
+  "completionNotifications": {
+    "enabled": true,
+    "triggerOn": [
+      "batch_complete",
+      "results_ready",
+      "action_required",
+      "error_occurred",
+      "important_update"
+    ],
+    "soundAlert": true,
+    "message": "🔔 {taskType} complete! Please review the results.",
+    "requiresAcknowledgment": true
+  },
+  "claudeCodeSpecific": {
+    "autoCommit": false,
+    "requireConfirmation": true,
+    "approvalRequiredFor": [
+      "file_creation",
+      "file_modification",
+      "git_push", 
+      "git_commit",
+      "package_install",
+      "deployment_trigger",
+      "system_command",
+      "database_migration"
+    ],
+    "batchGrouping": {
+      "file_operations": ["create", "modify", "delete"],
+      "git_operations": ["commit", "push", "branch", "merge"],
+      "deployment": ["railway", "render", "vercel", "aws"],
+      "system_commands": ["npm", "pip", "docker", "alembic"]
+    }
+  }
+} 

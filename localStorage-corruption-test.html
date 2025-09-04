@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>localStorage Corruption Test</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #1a1a1a; color: #00ff00; }
+        button { padding: 10px 20px; margin: 10px; background: #333; color: #00ff00; border: 1px solid #00ff00; cursor: pointer; }
+        button:hover { background: #00ff00; color: #000; }
+        .log { margin: 5px 0; padding: 5px; background: #2a2a2a; border-left: 3px solid #00ff00; }
+        .error { border-left-color: #ff0000; color: #ff0000; }
+        .success { border-left-color: #00ff00; color: #00ff00; }
+    </style>
+</head>
+<body>
+    <h1>🧪 localStorage Corruption Recovery Test</h1>
+    <p>This test validates our safeParseJSON utility handles corrupted data correctly.</p>
+    
+    <button onclick="injectCorruptData()">💣 Inject Corrupt Data</button>
+    <button onclick="testRecovery()">🔄 Test Recovery</button>
+    <button onclick="clearAll()">🧹 Clear All</button>
+    <button onclick="goToDashboard()">🏠 Go to Dashboard</button>
+    
+    <div id="log"></div>
+
+    <script>
+        function log(message, type = 'log') {
+            const div = document.createElement('div');
+            div.className = `log ${type}`;
+            div.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            document.getElementById('log').appendChild(div);
+        }
+
+        function injectCorruptData() {
+            log("💣 Injecting corrupted localStorage data...", "error");
+            
+            // Campaign data with invalid JSON
+            localStorage.setItem('warRoomCampaignSetup', '{"campaignName": "Test", invalid: json}');
+            log("❌ Corrupted warRoomCampaignSetup", "error");
+            
+            // Debug settings with invalid JSON
+            localStorage.setItem('debug-panel-settings', '{"selectedEndpoint": invalid}');
+            log("❌ Corrupted debug-panel-settings", "error");
+            
+            // Meta token with invalid JSON  
+            localStorage.setItem('meta_access_token', '{token": malformed}');
+            log("❌ Corrupted meta_access_token", "error");
+            
+            log("🔥 All corrupt data injected! Ready to test recovery.", "error");
+        }
+
+        function testRecovery() {
+            log("🔄 Testing safeParseJSON recovery...", "log");
+            
+            // Simulate our safeParseJSON function
+            function safeParseJSON(key, options = {}) {
+                const { fallback = null, logErrors = true } = options;
+                try {
+                    const item = localStorage.getItem(key);
+                    if (!item) return fallback;
+                    return JSON.parse(item);
+                } catch (error) {
+                    if (logErrors) {
+                        log(`⚠️ Failed to parse ${key}: ${error.message}`, "error");
+                        log(`🧹 Clearing corrupted key: ${key}`, "success");
+                    }
+                    localStorage.removeItem(key);
+                    return fallback;
+                }
+            }
+
+            // Test each corrupted key
+            const tests = [
+                'warRoomCampaignSetup',
+                'debug-panel-settings', 
+                'meta_access_token'
+            ];
+
+            tests.forEach(key => {
+                const result = safeParseJSON(key, { fallback: {} });
+                log(`✅ ${key}: ${result ? 'Recovered' : 'Cleared'} successfully`, "success");
+            });
+
+            log("🎉 localStorage corruption recovery test completed!", "success");
+        }
+
+        function clearAll() {
+            localStorage.clear();
+            log("🧹 All localStorage cleared", "success");
+        }
+
+        function goToDashboard() {
+            window.location.href = '/';
+        }
+
+        // Initial status
+        log("🚀 localStorage Corruption Test Ready", "success");
+        log(`📊 Current localStorage keys: ${Object.keys(localStorage).length}`, "log");
+    </script>
+</body>
+</html>

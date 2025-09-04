@@ -1,0 +1,113 @@
+{
+  "war_room_health_report": {
+    "metadata": {
+      "agent": "SUB-AGENT 1 - HEALTH_CHECK_AGENT",
+      "version": "1.0.0",
+      "target_url": "https://war-room-oa9t.onrender.com",
+      "timestamp": "2025-08-08T06:23:23.792255+00:00",
+      "check_duration_seconds": 1.4328687191009521
+    },
+    "summary": {
+      "overall_status": "CRITICAL",
+      "health_score": 10,
+      "migration_ready": false,
+      "total_checks": 2,
+      "passed_checks": 0,
+      "warning_checks": 1,
+      "failed_checks": 1
+    },
+    "migration_assessment": {
+      "ready_for_migration": false,
+      "critical_blockers": [
+        "Site is not available - CRITICAL"
+      ],
+      "recommendations": [
+        "Address failing health checks before migration",
+        "URGENT: Resolve all critical issues immediately"
+      ],
+      "go_no_go_decision": "NO-GO"
+    },
+    "detailed_results": [
+      {
+        "name": "Site Availability",
+        "status": "fail",
+        "response_time_ms": 271.1780071258545,
+        "details": {
+          "status_code": 503,
+          "content_length": 258555,
+          "headers": {
+            "Date": "Fri, 08 Aug 2025 06:23:22 GMT",
+            "Content-Type": "text/html; charset=utf-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "cf-cache-status": "DYNAMIC",
+            "Server": "cloudflare",
+            "CF-RAY": "96bcecb53cf36f27-CDG",
+            "alt-svc": "h3=\":443\"; ma=86400"
+          },
+          "ssl_cert_valid": true,
+          "redirects": 0
+        },
+        "error": "Status 503",
+        "timestamp": "2025-08-08T06:23:22.790191+00:00"
+      },
+      {
+        "name": "System Resources",
+        "status": "warning",
+        "response_time_ms": 1001.1551380157471,
+        "details": {
+          "memory": {
+            "total_gb": 16.0,
+            "available_gb": 2.82,
+            "used_percent": 82.4,
+            "process_rss_mb": 34.7,
+            "process_vms_mb": 401021.58
+          },
+          "cpu": {
+            "cores": 10,
+            "usage_percent": 34.2,
+            "load_1min": 4.18896484375,
+            "load_5min": 4.77783203125,
+            "load_15min": 5.3642578125,
+            "load_ratio": 0.418896484375
+          },
+          "disk": {
+            "total_gb": 228.27,
+            "free_gb": 9.49,
+            "used_percent": 59.5
+          }
+        },
+        "error": "High memory usage: 82.4%",
+        "timestamp": "2025-08-08T06:23:23.791841+00:00"
+      }
+    ],
+    "performance_metrics": {
+      "response_times_ms": {
+        "Site Availability": 271.1780071258545,
+        "System Resources": 1001.1551380157471
+      },
+      "sla_compliance": {
+        "threshold_ms": 3000,
+        "compliant_checks": 2,
+        "total_checks": 2
+      }
+    },
+    "system_health": {
+      "overall_status": "CRITICAL",
+      "health_score": 10,
+      "migration_ready": false,
+      "critical_issues": [
+        "Site is not available - CRITICAL"
+      ],
+      "warnings": [
+        "Performance concern: System Resources"
+      ],
+      "recommendations": [
+        "Address failing health checks before migration",
+        "URGENT: Resolve all critical issues immediately"
+      ],
+      "timestamp": "2025-08-08T06:23:23.792255+00:00",
+      "check_duration_seconds": 1.4328687191009521
+    }
+  }
+}

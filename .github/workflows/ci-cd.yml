@@ -1,0 +1,670 @@
+name: War Room CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+    inputs:
+      skip_tests:
+        description: 'Skip test execution'
+        required: false
+        default: 'false'
+        type: boolean
+      deploy_environment:
+        description: 'Environment to deploy to'
+        required: false
+        default: 'auto'
+        type: choice
+        options:
+        - auto
+        - staging
+        - production
+        - skip
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  deployments: write
+  statuses: write
+
+env:
+  PYTHON_VERSION: "3.11"
+  NODE_VERSION: "20"
+  # Retry configuration
+  MAX_RETRIES: "3"
+  RETRY_DELAY: "30"
+
+jobs:
+  # Matrix strategy for comprehensive testing
+  test-matrix:
+    name: Test Matrix (${{ matrix.test-type }}, ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        test-type: [frontend, backend, integration]
+        node-version: [18, 20]
+        python-version: ["3.10", "3.11"]
+        exclude:
+          # Optimize matrix to avoid unnecessary combinations
+          - test-type: frontend
+            python-version: "3.10"
+          - test-type: backend
+            node-version: 18
+          - test-type: integration
+            node-version: 18
+            python-version: "3.10"
+      fail-fast: false
+    
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: warroom_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+      
+      redis:
+        image: redis:7
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history for better analysis
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      if: matrix.test-type == 'backend' || matrix.test-type == 'integration'
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Set up Node.js ${{ matrix.node-version }}
+      if: matrix.test-type == 'frontend' || matrix.test-type == 'integration'
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    # Enhanced caching strategy
+    - name: Cache Python dependencies
+      if: matrix.test-type == 'backend' || matrix.test-type == 'integration'
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cache/pip
+          ~/.local/lib/python${{ matrix.python-version }}/site-packages
+        key: ${{ runner.os }}-python-${{ matrix.python-version }}-${{ hashFiles('**/requirements*.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-python-${{ matrix.python-version }}-
+          ${{ runner.os }}-python-
+    
+    - name: Cache Node dependencies
+      if: matrix.test-type == 'frontend' || matrix.test-type == 'integration'
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.npm
+          node_modules
+          */*/node_modules
+        key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-${{ matrix.node-version }}-
+          ${{ runner.os }}-node-
+    
+    # Install dependencies with retry logic
+    - name: Install Python dependencies
+      if: matrix.test-type == 'backend' || matrix.test-type == 'integration'
+      run: |
+        python -m pip install --upgrade pip
+        for i in {1..3}; do
+          if [ -f src/backend/requirements.txt ]; then
+            pip install -r src/backend/requirements.txt && break
+          fi
+          echo "Attempt $i failed, retrying in 10 seconds..."
+          sleep 10
+        done
+        pip install pytest pytest-cov black ruff mypy bandit safety
+    
+    - name: Install Node dependencies
+      if: matrix.test-type == 'frontend' || matrix.test-type == 'integration'
+      run: |
+        for i in {1..3}; do
+          npm ci && break
+          echo "Attempt $i failed, retrying in 10 seconds..."
+          sleep 10
+        done
+    
+    # Backend linting and security
+    - name: Run Python linting and security checks
+      if: matrix.test-type == 'backend' || matrix.test-type == 'integration'
+      run: |
+        if [ -d src/backend ]; then
+          cd src/backend
+          echo "Running Black formatter check..."
+          black --check --diff . || (echo "::warning::Code formatting issues found" && true)
+          
+          echo "Running Ruff linter..."
+          ruff check . || (echo "::warning::Linting issues found" && true)
+          
+          echo "Running MyPy type checking..."
+          mypy . || (echo "::warning::Type checking issues found" && true)
+          
+          echo "Running Bandit security analysis..."
+          bandit -r . -f json -o bandit-report.json || (echo "::warning::Security issues found" && true)
+          
+          echo "Running Safety dependency check..."
+          safety check || (echo "::warning::Vulnerable dependencies found" && true)
+        fi
+    
+    # Frontend linting and security
+    - name: Run Node linting and security checks
+      if: matrix.test-type == 'frontend' || matrix.test-type == 'integration'
+      run: |
+        echo "Running ESLint..."
+        npm run lint || (echo "::warning::Linting issues found" && true)
+        
+        echo "Running TypeScript type checking..."
+        npm run type-check || (echo "::warning::Type checking issues found" && true)
+        
+        echo "Running npm audit..."
+        npm audit --audit-level moderate || (echo "::warning::Vulnerable dependencies found" && true)
+    
+    # Backend tests with retry logic
+    - name: Run Python tests with retry
+      if: (matrix.test-type == 'backend' || matrix.test-type == 'integration') && github.event.inputs.skip_tests != 'true'
+      env:
+        DATABASE_URL: postgresql://postgres:postgres@localhost:5432/warroom_test
+        REDIS_URL: redis://localhost:6379
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
+        PINECONE_ENVIRONMENT: ${{ secrets.PINECONE_ENVIRONMENT }}
+        JWT_SECRET: test-secret-key
+      run: |
+        cd src/backend
+        for i in {1..3}; do
+          echo "Test attempt $i..."
+          if pytest --cov=. --cov-report=xml --cov-report=term-missing --cov-report=html --maxfail=3 -v; then
+            echo "Tests passed on attempt $i"
+            break
+          else
+            if [ $i -eq 3 ]; then
+              echo "Tests failed after 3 attempts"
+              exit 1
+            fi
+            echo "Tests failed on attempt $i, retrying in ${{ env.RETRY_DELAY }} seconds..."
+            sleep ${{ env.RETRY_DELAY }}
+          fi
+        done
+    
+    # Frontend tests with retry logic
+    - name: Run Node tests with retry
+      if: (matrix.test-type == 'frontend' || matrix.test-type == 'integration') && github.event.inputs.skip_tests != 'true'
+      env:
+        CI: true
+        NODE_OPTIONS: '--max-old-space-size=4096'
+      run: |
+        for i in {1..3}; do
+          echo "Test attempt $i..."
+          if npm run test:stable -- --coverage --ci --maxWorkers=2; then
+            echo "Frontend tests passed on attempt $i"
+            break
+          else
+            if [ $i -eq 3 ]; then
+              echo "Frontend tests failed after 3 attempts"
+              exit 1
+            fi
+            echo "Frontend tests failed on attempt $i, retrying in ${{ env.RETRY_DELAY }} seconds..."
+            sleep ${{ env.RETRY_DELAY }}
+          fi
+        done
+    
+    # Upload coverage with retry logic
+    - name: Upload backend coverage to Codecov
+      if: (matrix.test-type == 'backend' || matrix.test-type == 'integration') && github.event.inputs.skip_tests != 'true'
+      uses: codecov/codecov-action@v4
+      with:
+        file: ./src/backend/coverage.xml
+        flags: backend
+        name: backend-coverage-${{ matrix.python-version }}
+        fail_ci_if_error: false
+        retry_max: 3
+        retry_delay: 30
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    
+    - name: Upload frontend coverage to Codecov
+      if: (matrix.test-type == 'frontend' || matrix.test-type == 'integration') && github.event.inputs.skip_tests != 'true'
+      uses: codecov/codecov-action@v4
+      with:
+        file: ./coverage/lcov.info
+        flags: frontend
+        name: frontend-coverage-${{ matrix.node-version }}
+        fail_ci_if_error: false
+        retry_max: 3
+        retry_delay: 30
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    
+    # Upload test artifacts
+    - name: Upload test artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-${{ matrix.test-type }}-${{ matrix.os }}-${{ github.run_number }}
+        path: |
+          src/backend/coverage.xml
+          src/backend/htmlcov/
+          src/backend/bandit-report.json
+          coverage/
+          test-results/
+        retention-days: 14
+
+  # Enhanced security scanning
+  security-scan:
+    name: Security Analysis
+    runs-on: ubuntu-latest
+    needs: test-matrix
+    if: always() && (needs.test-matrix.result == 'success' || needs.test-matrix.result == 'failure')
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+    
+    # Advanced security scanning
+    - name: Run comprehensive security scan
+      run: |
+        # Install security tools
+        pip install bandit safety semgrep
+        npm install -g audit-ci
+        
+        echo "Running Bandit security scan..."
+        bandit -r src/backend -f json -o bandit-report.json || true
+        
+        echo "Running Safety dependency vulnerability scan..."
+        safety check --json --output safety-report.json || true
+        
+        echo "Running Semgrep static analysis..."
+        python -m semgrep --config=auto --json --output=semgrep-report.json src/ || true
+        
+        echo "Running npm security audit..."
+        npm ci
+        audit-ci --moderate --output-format json --output audit-report.json || true
+    
+    - name: Upload security scan results
+      uses: actions/upload-artifact@v4
+      with:
+        name: security-reports-${{ github.run_number }}
+        path: |
+          bandit-report.json
+          safety-report.json
+          semgrep-report.json
+          audit-report.json
+        retention-days: 30
+
+  # Performance testing integration
+  performance-tests:
+    name: Performance Testing
+    runs-on: ubuntu-latest
+    needs: test-matrix
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Run performance tests
+      uses: ./.github/workflows/performance-testing.yml
+      with:
+        test_type: 'health'
+        environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
+
+  # Build verification
+  build-verification:
+    name: Build Verification
+    runs-on: ubuntu-latest
+    needs: test-matrix
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Build frontend
+      run: |
+        npm run build
+        echo "Build completed successfully"
+    
+    - name: Verify build artifacts
+      run: |
+        if [ ! -d "dist" ]; then
+          echo "Build artifacts missing"
+          exit 1
+        fi
+        echo "Build verification completed"
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-artifacts-${{ github.run_number }}
+        path: dist/
+        retention-days: 7
+
+  # Deployment with gates and approvals
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: [test-matrix, security-scan, build-verification]
+    if: github.ref == 'refs/heads/develop' && github.event.inputs.deploy_environment != 'skip'
+    environment:
+      name: staging
+      url: https://war-room-staging.onrender.com
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Deploy to Render Staging
+      env:
+        RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        RENDER_SERVICE_ID: ${{ secrets.RENDER_STAGING_SERVICE_ID }}
+      run: |
+        echo "Deploying to Render staging environment"
+        
+        # Create deployment
+        if [ -n "$RENDER_API_KEY" ] && [ -n "$RENDER_SERVICE_ID" ]; then
+          curl -X POST "https://api.render.com/v1/services/$RENDER_SERVICE_ID/deploys" \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"clearCache": "clear"}'
+          echo "Staging deployment initiated"
+        else
+          echo "::warning::Staging deployment credentials not configured"
+        fi
+    
+    - name: Wait for deployment
+      run: |
+        echo "Waiting for deployment to complete..."
+        sleep 60  # Wait for deployment
+    
+    - name: Verify staging deployment
+      run: |
+        echo "Verifying staging deployment..."
+        for i in {1..10}; do
+          if curl -f -s "https://war-room-staging.onrender.com/health" > /dev/null; then
+            echo "✅ Staging deployment verified"
+            break
+          fi
+          if [ $i -eq 10 ]; then
+            echo "❌ Staging deployment verification failed"
+            exit 1
+          fi
+          echo "Attempt $i failed, retrying in 30 seconds..."
+          sleep 30
+        done
+
+  # Production deployment with manual approval
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: [test-matrix, security-scan, build-verification, deploy-staging]
+    if: github.ref == 'refs/heads/main' && github.event.inputs.deploy_environment != 'skip'
+    environment:
+      name: production
+      url: https://war-room-oa9t.onrender.com
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Pre-deployment checks
+      run: |
+        echo "Running pre-deployment checks..."
+        
+        # Check if staging is healthy
+        echo "Checking staging health..."
+        curl -f -s "https://war-room-staging.onrender.com/health" || {
+          echo "::error::Staging environment is not healthy"
+          exit 1
+        }
+        
+        echo "✅ Pre-deployment checks passed"
+    
+    - name: Deploy to Production
+      env:
+        RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        RENDER_SERVICE_ID: war-room-oa9t
+      run: |
+        echo "🚀 Deploying to Production (war-room-oa9t)"
+        
+        # Deploy using Render API
+        if [ -n "$RENDER_API_KEY" ] && [ -n "$RENDER_SERVICE_ID" ]; then
+          DEPLOY_RESPONSE=$(curl -s -X POST "https://api.render.com/v1/services/$RENDER_SERVICE_ID/deploys" \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"clearCache": "clear"}')
+          
+          DEPLOY_ID=$(echo "$DEPLOY_RESPONSE" | jq -r '.id')
+          echo "Production deployment initiated with ID: $DEPLOY_ID"
+          echo "DEPLOY_ID=$DEPLOY_ID" >> $GITHUB_OUTPUT
+        elif [ -n "${{ secrets.RENDER_DEPLOY_HOOK_URL }}" ]; then
+          echo "Using deploy hook for deployment"
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+        else
+          echo "::warning::No deployment method configured"
+        fi
+    
+    - name: Monitor deployment progress
+      env:
+        RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        RENDER_SERVICE_ID: war-room-oa9t
+      run: |
+        echo "Monitoring deployment progress..."
+        
+        # Wait for deployment to complete (max 10 minutes)
+        timeout=600
+        interval=30
+        elapsed=0
+        
+        while [ $elapsed -lt $timeout ]; do
+          if curl -f -s --max-time 10 "https://war-room-oa9t.onrender.com/health" > /dev/null; then
+            echo "✅ Production deployment completed successfully"
+            break
+          fi
+          
+          echo "Deployment in progress... (${elapsed}s/${timeout}s)"
+          sleep $interval
+          elapsed=$((elapsed + interval))
+        done
+        
+        if [ $elapsed -ge $timeout ]; then
+          echo "::error::Deployment timeout reached"
+          exit 1
+        fi
+    
+    - name: Post-deployment verification
+      run: |
+        echo "Running post-deployment verification..."
+        
+        # Test critical endpoints
+        endpoints=("/health" "/api/health" "/")
+        
+        for endpoint in "${endpoints[@]}"; do
+          echo "Testing endpoint: $endpoint"
+          if curl -f -s --max-time 30 "https://war-room-oa9t.onrender.com$endpoint" > /dev/null; then
+            echo "✅ $endpoint is responding"
+          else
+            echo "::error::❌ $endpoint is not responding"
+            exit 1
+          fi
+        done
+        
+        echo "✅ All critical endpoints are healthy"
+
+  # Notification system
+  notify-on-failure:
+    name: Notify on Failure
+    runs-on: ubuntu-latest
+    needs: [test-matrix, security-scan, build-verification, deploy-staging, deploy-production]
+    if: failure()
+    
+    steps:
+    - name: Notify Slack on failure
+      if: env.SLACK_WEBHOOK_URL != ''
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      run: |
+        curl -X POST -H 'Content-type: application/json' \
+          --data '{
+            "text":"🚨 CI/CD Pipeline Failed",
+            "attachments":[
+              {
+                "color":"danger",
+                "fields":[
+                  {"title":"Repository","value":"${{ github.repository }}","short":true},
+                  {"title":"Branch","value":"${{ github.ref_name }}","short":true},
+                  {"title":"Commit","value":"${{ github.sha }}","short":true},
+                  {"title":"Author","value":"${{ github.actor }}","short":true},
+                  {"title":"Workflow","value":"${{ github.workflow }}","short":false},
+                  {"title":"Run","value":"https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}","short":false}
+                ]
+              }
+            ]
+          }' \
+          "$SLACK_WEBHOOK_URL"
+    
+    - name: Notify Discord on failure
+      if: env.DISCORD_WEBHOOK_URL != ''
+      env:
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      run: |
+        curl -H "Content-Type: application/json" \
+          -d '{
+            "embeds": [{
+              "title": "🚨 CI/CD Pipeline Failed",
+              "color": 15158332,
+              "fields": [
+                {"name": "Repository", "value": "${{ github.repository }}", "inline": true},
+                {"name": "Branch", "value": "${{ github.ref_name }}", "inline": true},
+                {"name": "Author", "value": "${{ github.actor }}", "inline": true},
+                {"name": "Workflow Run", "value": "[View Details](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})"}
+              ],
+              "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%S.%3NZ)'"             }]
+          }' \
+          "$DISCORD_WEBHOOK_URL"
+  
+  # Success notifications
+  notify-on-success:
+    name: Notify on Success
+    runs-on: ubuntu-latest
+    needs: [test-matrix, security-scan, build-verification, deploy-staging, deploy-production]
+    if: success() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+    
+    steps:
+    - name: Notify Slack on success
+      if: env.SLACK_WEBHOOK_URL != ''
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      run: |
+        environment="${{ github.ref == 'refs/heads/main' && 'Production' || 'Staging' }}"
+        curl -X POST -H 'Content-type: application/json' \
+          --data '{
+            "text":"✅ Deployment Successful",
+            "attachments":[
+              {
+                "color":"good",
+                "fields":[
+                  {"title":"Environment","value":"'$environment'","short":true},
+                  {"title":"Branch","value":"${{ github.ref_name }}","short":true},
+                  {"title":"Commit","value":"${{ github.sha }}","short":true},
+                  {"title":"Author","value":"${{ github.actor }}","short":true}
+                ]
+              }
+            ]
+          }' \
+          "$SLACK_WEBHOOK_URL"
+
+  # Pipeline summary and cleanup
+  pipeline-summary:
+    name: Pipeline Summary
+    runs-on: ubuntu-latest
+    needs: [test-matrix, security-scan, build-verification, deploy-staging, deploy-production]
+    if: always()
+    
+    steps:
+    - name: Generate pipeline summary
+      run: |
+        echo "## 🚀 CI/CD Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Workflow:** ${{ github.workflow }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Actor:** ${{ github.actor }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Run ID:** ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        echo "### Job Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "| Job | Status |" >> $GITHUB_STEP_SUMMARY
+        echo "|-----|--------|" >> $GITHUB_STEP_SUMMARY
+        echo "| Test Matrix | ${{ needs.test-matrix.result == 'success' && '✅' || '❌' }} ${{ needs.test-matrix.result }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Security Scan | ${{ needs.security-scan.result == 'success' && '✅' || '❌' }} ${{ needs.security-scan.result }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Build Verification | ${{ needs.build-verification.result == 'success' && '✅' || '❌' }} ${{ needs.build-verification.result }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Deploy Staging | ${{ needs.deploy-staging.result == 'success' && '✅' || needs.deploy-staging.result == 'skipped' && '⏭️' || '❌' }} ${{ needs.deploy-staging.result }} |" >> $GITHUB_STEP_SUMMARY
+        echo "| Deploy Production | ${{ needs.deploy-production.result == 'success' && '✅' || needs.deploy-production.result == 'skipped' && '⏭️' || '❌' }} ${{ needs.deploy-production.result }} |" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        # Overall status
+        if [[ "${{ needs.test-matrix.result }}" == "success" && "${{ needs.security-scan.result }}" == "success" && "${{ needs.build-verification.result }}" == "success" ]]; then
+          echo "### ✅ Pipeline Status: SUCCESS" >> $GITHUB_STEP_SUMMARY
+          echo "All core pipeline jobs completed successfully!" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "### ❌ Pipeline Status: FAILED" >> $GITHUB_STEP_SUMMARY
+          echo "One or more pipeline jobs failed. Please review the logs above." >> $GITHUB_STEP_SUMMARY
+        fi
+    
+    - name: Set pipeline status
+      run: |
+        if [[ "${{ needs.test-matrix.result }}" == "success" && "${{ needs.security-scan.result }}" == "success" && "${{ needs.build-verification.result }}" == "success" ]]; then
+          echo "PIPELINE_STATUS=success" >> $GITHUB_OUTPUT
+          exit 0
+        else
+          echo "PIPELINE_STATUS=failure" >> $GITHUB_OUTPUT
+          exit 1
+        fi

@@ -1,0 +1,488 @@
+{
+  "tech_stack": [
+    "Python",
+    "FastAPI",
+    "TypeScript",
+    "React",
+    "PostgreSQL",
+    "Redis",
+    "WebSocket",
+    "Vite",
+    "Tailwind CSS",
+    "SQLAlchemy",
+    "Alembic",
+    "JWT Auth",
+    "Supabase",
+    "PostHog",
+    "Docker"
+  ],
+  "features": [
+    {
+      "name": "Monitoring API",
+      "description": "Real-time monitoring system with crisis detection, brand mention tracking via Mentionlytics API",
+      "files": [
+        "src/backend/api/v1/endpoints/monitoring.py",
+        "src/lib/monitoring/unifiedMonitor.ts",
+        "src/lib/monitoring/crisisDetector.ts",
+        "src/lib/monitoring/mentionlytics.ts",
+        "src/lib/monitoring/alertService.ts"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Monitoring API",
+          "version": "1.0.0"
+        },
+        "paths": {
+          "/api/v1/monitoring/status": {
+            "get": {
+              "summary": "Get monitoring system status",
+              "responses": {
+                "200": {
+                  "description": "System status",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "status": {"type": "string"},
+                          "services": {"type": "array"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/monitoring/mentions": {
+            "get": {
+              "summary": "Get brand mentions",
+              "responses": {
+                "200": {
+                  "description": "Brand mentions data"
+                }
+              }
+            }
+          },
+          "/api/v1/monitoring/alerts": {
+            "get": {
+              "summary": "Get active alerts",
+              "responses": {
+                "200": {
+                  "description": "Active alerts list"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Meta Business API Integration",
+      "description": "Facebook/Meta Business API integration for ad campaigns, insights, and audience management",
+      "files": [
+        "src/lib/apis/meta/client.ts",
+        "src/lib/apis/meta/auth.ts",
+        "src/lib/apis/meta/endpoints.ts",
+        "src/lib/apis/meta/rateLimiter.ts",
+        "src/lib/apis/meta/cache.ts",
+        "src/hooks/meta/useMetaAds.ts",
+        "src/hooks/meta/useMetaCampaigns.ts"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Meta Business API",
+          "version": "19.0"
+        },
+        "paths": {
+          "/meta/campaigns": {
+            "get": {
+              "summary": "Get Meta ad campaigns",
+              "responses": {
+                "200": {
+                  "description": "Campaign data"
+                }
+              }
+            }
+          },
+          "/meta/insights": {
+            "get": {
+              "summary": "Get campaign insights",
+              "responses": {
+                "200": {
+                  "description": "Campaign performance data"
+                }
+              }
+            }
+          },
+          "/meta/audiences": {
+            "get": {
+              "summary": "Get custom audiences",
+              "responses": {
+                "200": {
+                  "description": "Audience data"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Analytics API",
+      "description": "Campaign analytics, volunteer tracking, donation metrics, and real-time dashboard data",
+      "files": [
+        "src/backend/api/v1/endpoints/analytics.py",
+        "src/services/analyticsApi.ts",
+        "src/store/analyticsSlice.ts",
+        "src/components/analytics/DashboardChart.tsx",
+        "src/components/dashboard/MetricCard.tsx"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Analytics API",
+          "version": "1.0.0"
+        },
+        "paths": {
+          "/api/v1/analytics/overview": {
+            "get": {
+              "summary": "Get analytics overview",
+              "responses": {
+                "200": {
+                  "description": "Analytics overview data"
+                }
+              }
+            }
+          },
+          "/api/v1/analytics/campaigns": {
+            "get": {
+              "summary": "Get campaign analytics",
+              "responses": {
+                "200": {
+                  "description": "Campaign performance metrics"
+                }
+              }
+            }
+          },
+          "/api/v1/analytics/volunteers": {
+            "get": {
+              "summary": "Get volunteer metrics",
+              "responses": {
+                "200": {
+                  "description": "Volunteer engagement data"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Alert System API",
+      "description": "Real-time alert management, crisis detection, and notification system",
+      "files": [
+        "src/backend/api/v1/endpoints/alerts.py",
+        "src/lib/monitoring/alertEngine.ts",
+        "src/components/alert-center/AlertCard.tsx",
+        "src/components/alert-center/AlertFilters.tsx",
+        "src/hooks/useAlertManagement.ts"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Alert System API",
+          "version": "1.0.0"
+        },
+        "paths": {
+          "/api/v1/alerts": {
+            "get": {
+              "summary": "Get all alerts",
+              "responses": {
+                "200": {
+                  "description": "List of alerts"
+                }
+              }
+            },
+            "post": {
+              "summary": "Create new alert",
+              "responses": {
+                "201": {
+                  "description": "Alert created"
+                }
+              }
+            }
+          },
+          "/api/v1/alerts/{alert_id}": {
+            "put": {
+              "summary": "Update alert status",
+              "responses": {
+                "200": {
+                  "description": "Alert updated"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Document Intelligence API",
+      "description": "AI-powered document analysis using OpenAI and Pinecone for campaign intelligence",
+      "files": [
+        "src/backend/api/v1/endpoints/documents.py",
+        "src/backend/services/document_service.py",
+        "src/services/openaiService.ts",
+        "src/services/pineconeService.ts"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Document Intelligence API",
+          "version": "1.0.0"
+        },
+        "paths": {
+          "/api/v1/documents/upload": {
+            "post": {
+              "summary": "Upload document for analysis",
+              "responses": {
+                "200": {
+                  "description": "Document processed"
+                }
+              }
+            }
+          },
+          "/api/v1/documents/search": {
+            "get": {
+              "summary": "Search documents using vector similarity",
+              "responses": {
+                "200": {
+                  "description": "Search results"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "WebSocket API",
+      "description": "Real-time data streaming for dashboard updates, monitoring alerts, and live campaign metrics",
+      "files": [
+        "src/backend/api/v1/endpoints/websocket.py",
+        "src/backend/api/v1/endpoints/websocket_ad_monitor.py",
+        "src/lib/websocket/dashboardWebSocket.ts",
+        "src/hooks/useWebSocket.ts",
+        "src/hooks/useDashboardWebSocket.ts"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "WebSocket API",
+          "version": "1.0.0"
+        },
+        "paths": {
+          "/ws/analytics": {
+            "get": {
+              "summary": "WebSocket connection for real-time analytics",
+              "responses": {
+                "101": {
+                  "description": "WebSocket connection established"
+                }
+              }
+            }
+          },
+          "/ws/monitoring": {
+            "get": {
+              "summary": "WebSocket connection for monitoring alerts",
+              "responses": {
+                "101": {
+                  "description": "WebSocket connection established"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Authentication API",
+      "description": "JWT-based authentication with Supabase integration and role-based access control",
+      "files": [
+        "src/contexts/SupabaseAuthContext.tsx",
+        "src/services/supabaseAuthApi.ts",
+        "src/lib/supabase/auth.ts",
+        "src/components/auth/LoginForm.tsx",
+        "src/components/auth/ProtectedRoute.tsx"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Authentication API",
+          "version": "1.0.0"
+        },
+        "paths": {
+          "/auth/login": {
+            "post": {
+              "summary": "Login user",
+              "responses": {
+                "200": {
+                  "description": "Login successful"
+                }
+              }
+            }
+          },
+          "/auth/register": {
+            "post": {
+              "summary": "Register new user",
+              "responses": {
+                "201": {
+                  "description": "User registered"
+                }
+              }
+            }
+          },
+          "/auth/refresh": {
+            "post": {
+              "summary": "Refresh access token",
+              "responses": {
+                "200": {
+                  "description": "Token refreshed"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Ad Insights API", 
+      "description": "Google Ads and Meta Ads performance tracking and insights aggregation",
+      "files": [
+        "src/backend/api/v1/endpoints/ad_insights.py",
+        "src/lib/apis/google/client.ts",
+        "src/services/googleAdsService.ts",
+        "src/components/dashboard/AdsPlatformMetrics.tsx",
+        "src/components/dashboard/MetaCampaignInsights.tsx"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Ad Insights API",
+          "version": "1.0.0"
+        },
+        "paths": {
+          "/api/v1/ad-insights/google": {
+            "get": {
+              "summary": "Get Google Ads insights",
+              "responses": {
+                "200": {
+                  "description": "Google Ads performance data"
+                }
+              }
+            }
+          },
+          "/api/v1/ad-insights/meta": {
+            "get": {
+              "summary": "Get Meta Ads insights",
+              "responses": {
+                "200": {
+                  "description": "Meta Ads performance data"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Crisis Detection System",
+      "description": "Real-time crisis monitoring with AI-powered analysis, alert management, and multi-channel notifications",
+      "files": [
+        "src/frontend/src/components/dashboard/CrisisAlertPanel.tsx",
+        "src/frontend/src/components/alerts/CrisisAlertBanner.tsx",
+        "src/frontend/src/components/alerts/CrisisSeverityIndicator.tsx",
+        "src/frontend/src/components/alerts/AlertHistorySidebar.tsx",
+        "src/frontend/src/services/crisisAlertService.ts",
+        "src/frontend/src/services/crisisDetectionService.ts",
+        "src/frontend/src/hooks/useCrisisAlerts.ts",
+        "src/workflows/crisis-detection/workflow.py",
+        "src/workflows/crisis-detection/agents/crisis_detection.py",
+        "src/workflows/crisis-detection/agents/monitoring.py",
+        "src/workflows/crisis-detection/agents/alert_routing.py"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Crisis Detection API",
+          "version": "1.0.0"
+        },
+        "paths": {
+          "/api/crisis-detection/initialize": {
+            "post": {
+              "summary": "Initialize crisis detection system",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "organizationId": {"type": "string"},
+                        "campaignContext": {"type": "object"}
+                      }
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "Crisis detection initialized"
+                }
+              }
+            }
+          },
+          "/api/crisis-detection/scan": {
+            "post": {
+              "summary": "Trigger manual crisis scan",
+              "responses": {
+                "200": {
+                  "description": "Scan triggered"
+                }
+              }
+            }
+          },
+          "/api/crisis-alerts": {
+            "get": {
+              "summary": "Get crisis alerts",
+              "responses": {
+                "200": {
+                  "description": "List of crisis alerts"
+                }
+              }
+            },
+            "post": {
+              "summary": "Create crisis alert",
+              "responses": {
+                "201": {
+                  "description": "Alert created"
+                }
+              }
+            }
+          },
+          "/ws/crisis-detection": {
+            "get": {
+              "summary": "WebSocket for real-time crisis updates",
+              "responses": {
+                "101": {
+                  "description": "WebSocket connection established"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

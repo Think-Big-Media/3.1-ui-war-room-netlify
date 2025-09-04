@@ -1,0 +1,30 @@
+services:
+  # War Room 2025 - Production deployment in War Room AI workspace
+  - type: web
+    name: war-room-2025
+    runtime: python
+    plan: starter
+    
+    # Build command - Python only, frontend is pre-built and committed
+    buildCommand: |
+      cd src/backend && pip install -r requirements.txt
+    
+    # Start Command - serves both frontend and backend
+    startCommand: cd src/backend && python serve_bulletproof.py
+    
+    # Health Check Configuration
+    healthCheckPath: /health
+    
+    # Environment Variables
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+      - key: RENDER_ENV
+        value: "production"
+      - key: ENVIRONMENT
+        value: "production"
+      
+    # Auto-deploy from GitHub
+    repo: https://github.com/Think-Big-Media/1.0-war-room
+    branch: main
+    autoDeploy: true

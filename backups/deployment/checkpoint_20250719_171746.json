@@ -1,0 +1,7 @@
+{
+    "checkpoint_id": "20250719_171746",
+    "created_at": "2025-07-19T15:17:46Z",
+    "missing_env_vars": ["DATABASE_URL","JWT_SECRET","SUPABASE_URL","SUPABASE_ANON_KEY","REDIS_URL"]",
+    "missing_files": [""]",
+    "status": "failed"
+}

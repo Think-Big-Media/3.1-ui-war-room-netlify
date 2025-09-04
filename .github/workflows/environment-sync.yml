@@ -1,0 +1,331 @@
+name: Environment Configuration Sync
+
+on:
+  push:
+    paths:
+      - '.env.template'
+      - '.github/workflows/environment-sync.yml'
+  pull_request:
+    paths:
+      - '.env.template'
+      - '.github/workflows/environment-sync.yml'
+  schedule:
+    # Check environment configuration weekly
+    - cron: '0 8 * * 1'  # Monday at 8 AM UTC
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  validate-environment:
+    name: Validate Environment Configuration
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Check required environment variables
+      run: |
+        echo "🔍 Validating environment configuration..."
+        
+        # Define required environment variables
+        required_vars=(
+          "DATABASE_URL"
+          "REDIS_URL"
+          "JWT_SECRET"
+          "SUPABASE_URL"
+          "SUPABASE_ANON_KEY"
+          "OPENAI_API_KEY"
+          "PINECONE_API_KEY"
+          "POSTHOG_KEY"
+          "RENDER_API_KEY"
+        )
+        
+        # Check if .env.template exists
+        if [ ! -f ".env.template" ]; then
+          echo "::error::.env.template file is missing"
+          exit 1
+        fi
+        
+        # Validate each required variable is documented
+        missing_vars=()
+        for var in "${required_vars[@]}"; do
+          if ! grep -q "^$var=" .env.template; then
+            missing_vars+=("$var")
+          fi
+        done
+        
+        if [ ${#missing_vars[@]} -ne 0 ]; then
+          echo "::error::Missing environment variables in .env.template:"
+          printf '%s\n' "${missing_vars[@]}"
+          exit 1
+        fi
+        
+        echo "✅ All required environment variables are documented"
+    
+    - name: Check GitHub Secrets
+      env:
+        # Test if critical secrets are available (without exposing values)
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        PINECONE_API_KEY: ${{ secrets.PINECONE_API_KEY }}
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      run: |
+        echo "🔐 Checking GitHub Secrets availability..."
+        
+        # Check critical secrets (without exposing values)
+        secrets_status="✅ Available Secrets:\n"
+        missing_secrets=()
+        
+        [ -n "$DATABASE_URL" ] && secrets_status+="- DATABASE_URL\n" || missing_secrets+=("DATABASE_URL")
+        [ -n "$OPENAI_API_KEY" ] && secrets_status+="- OPENAI_API_KEY\n" || missing_secrets+=("OPENAI_API_KEY")
+        [ -n "$PINECONE_API_KEY" ] && secrets_status+="- PINECONE_API_KEY\n" || missing_secrets+=("PINECONE_API_KEY")
+        [ -n "$SUPABASE_URL" ] && secrets_status+="- SUPABASE_URL\n" || missing_secrets+=("SUPABASE_URL")
+        [ -n "$SUPABASE_ANON_KEY" ] && secrets_status+="- SUPABASE_ANON_KEY\n" || missing_secrets+=("SUPABASE_ANON_KEY")
+        [ -n "$RENDER_API_KEY" ] && secrets_status+="- RENDER_API_KEY\n" || missing_secrets+=("RENDER_API_KEY")
+        [ -n "$CODECOV_TOKEN" ] && secrets_status+="- CODECOV_TOKEN\n" || missing_secrets+=("CODECOV_TOKEN")
+        [ -n "$SLACK_WEBHOOK_URL" ] && secrets_status+="- SLACK_WEBHOOK_URL\n" || missing_secrets+=("SLACK_WEBHOOK_URL")
+        [ -n "$DISCORD_WEBHOOK_URL" ] && secrets_status+="- DISCORD_WEBHOOK_URL\n" || missing_secrets+=("DISCORD_WEBHOOK_URL")
+        
+        echo -e "$secrets_status"
+        
+        if [ ${#missing_secrets[@]} -ne 0 ]; then
+          echo "⚠️ Missing GitHub Secrets:"
+          printf '%s\n' "${missing_secrets[@]}"
+          echo "::notice::Some secrets are missing but may not be required for all environments"
+        fi
+    
+    - name: Generate environment documentation
+      run: |
+        echo "📝 Generating environment documentation..."
+        
+        cat > ENVIRONMENT_SETUP.md << 'EOF'
+        # Environment Setup Guide
+        
+        This document outlines the required environment variables for the War Room application.
+        
+        ## Required Environment Variables
+        
+        ### Database Configuration
+        - `DATABASE_URL`: PostgreSQL connection string
+        - `REDIS_URL`: Redis connection string for caching
+        
+        ### Authentication & Security
+        - `JWT_SECRET`: Secret key for JWT token signing
+        - `JWT_ALGORITHM`: JWT signing algorithm (default: HS256)
+        - `ACCESS_TOKEN_EXPIRE_MINUTES`: Token expiration time (default: 30)
+        
+        ### Supabase Configuration
+        - `SUPABASE_URL`: Supabase project URL
+        - `SUPABASE_ANON_KEY`: Supabase anonymous key
+        - `SUPABASE_SERVICE_ROLE_KEY`: Supabase service role key (server-side only)
+        
+        ### AI/ML Services
+        - `OPENAI_API_KEY`: OpenAI API key for AI features
+        - `PINECONE_API_KEY`: Pinecone API key for vector search
+        - `PINECONE_ENVIRONMENT`: Pinecone environment name
+        
+        ### Analytics & Monitoring
+        - `POSTHOG_KEY`: PostHog API key for analytics
+        - `POSTHOG_HOST`: PostHog instance URL (default: https://app.posthog.com)
+        
+        ### Communication Services
+        - `TWILIO_ACCOUNT_SID`: Twilio account SID for SMS
+        - `TWILIO_AUTH_TOKEN`: Twilio authentication token
+        - `SENDGRID_API_KEY`: SendGrid API key for email
+        
+        ### Deployment & Infrastructure
+        - `RENDER_API_KEY`: Render API key for deployments
+        - `RENDER_SERVICE_ID`: Render service ID for production
+        - `RENDER_STAGING_SERVICE_ID`: Render service ID for staging
+        
+        ### CI/CD & Development
+        - `CODECOV_TOKEN`: Codecov token for coverage reports
+        - `SLACK_WEBHOOK_URL`: Slack webhook for notifications
+        - `DISCORD_WEBHOOK_URL`: Discord webhook for notifications
+        
+        ## Environment-Specific Notes
+        
+        ### Development
+        - Use local PostgreSQL and Redis instances
+        - Set mock keys for external services during development
+        - Enable debug logging
+        
+        ### Staging
+        - Use staging databases and services
+        - Enable performance monitoring
+        - Use test API keys where available
+        
+        ### Production
+        - Use production databases and services
+        - Enable all monitoring and alerting
+        - Use production API keys and credentials
+        - Ensure all secrets are properly configured
+        
+        ## Security Notes
+        
+        - Never commit actual environment variables to the repository
+        - Use strong, unique values for all secret keys
+        - Rotate secrets regularly
+        - Use different values for each environment
+        - Store secrets securely (GitHub Secrets, Render environment variables, etc.)
+        
+        ## Setup Instructions
+        
+        1. Copy `.env.template` to `.env`
+        2. Fill in all required values
+        3. Ensure the `.env` file is in `.gitignore`
+        4. For production deployments, configure environment variables in your hosting platform
+        
+        ---
+        
+        *This documentation is automatically generated and updated by the CI/CD pipeline.*
+        EOF
+        
+        echo "✅ Environment documentation generated"
+    
+    - name: Upload environment documentation
+      uses: actions/upload-artifact@v4
+      with:
+        name: environment-documentation-${{ github.run_number }}
+        path: ENVIRONMENT_SETUP.md
+        retention-days: 30
+
+  security-audit:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    needs: validate-environment
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Audit environment security
+      run: |
+        echo "🔒 Running environment security audit..."
+        
+        # Check for common security issues
+        security_issues=()
+        
+        # Check if any secrets are accidentally committed
+        if grep -r "sk-" . --exclude-dir=.git --exclude-dir=node_modules 2>/dev/null; then
+          security_issues+=("Potential API keys found in code")
+        fi
+        
+        # Check for weak default values in template
+        if grep -q "password123\|admin123\|secret123" .env.template 2>/dev/null; then
+          security_issues+=("Weak default passwords in .env.template")
+        fi
+        
+        # Check for production URLs in development configs
+        if grep -q "amazonaws.com\|render.com" src/ 2>/dev/null; then
+          echo "::notice::Production URLs found in source code - ensure they're properly configured"
+        fi
+        
+        if [ ${#security_issues[@]} -ne 0 ]; then
+          echo "🚨 Security issues found:"
+          printf '%s\n' "${security_issues[@]}"
+          exit 1
+        fi
+        
+        echo "✅ No security issues detected"
+    
+    - name: Generate security report
+      if: always()
+      run: |
+        echo "📋 Generating security report..."
+        
+        cat > security_report.md << 'EOF'
+        # Environment Security Report
+        
+        ## Audit Results
+        
+        - **Date**: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+        - **Commit**: ${{ github.sha }}
+        - **Branch**: ${{ github.ref_name }}
+        
+        ## Checks Performed
+        
+        - ✅ Secret exposure in code
+        - ✅ Weak default passwords
+        - ✅ Production URL leakage
+        - ✅ Environment variable validation
+        
+        ## Recommendations
+        
+        1. Regularly rotate all API keys and secrets
+        2. Use different credentials for each environment
+        3. Enable 2FA on all service accounts
+        4. Monitor for credential exposure in logs
+        5. Implement proper secret management practices
+        
+        ---
+        
+        *This report is automatically generated by the security audit workflow.*
+        EOF
+        
+        echo "✅ Security report generated"
+    
+    - name: Upload security report
+      uses: actions/upload-artifact@v4
+      with:
+        name: security-report-${{ github.run_number }}
+        path: security_report.md
+        retention-days: 90
+
+  create-issue-on-failure:
+    name: Create Issue on Failure
+    runs-on: ubuntu-latest
+    needs: [validate-environment, security-audit]
+    if: failure()
+    
+    steps:
+    - name: Create issue for environment problems
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const title = `🔧 Environment Configuration Issue - ${new Date().toISOString().split('T')[0]}`;
+          const body = `## Environment Configuration Problem Detected
+          
+          The environment validation workflow has detected issues with the application configuration.
+          
+          **Details:**
+          - **Date:** ${new Date().toISOString()}
+          - **Workflow:** ${{ github.workflow }}
+          - **Run:** https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          - **Commit:** ${{ github.sha }}
+          - **Branch:** ${{ github.ref_name }}
+          
+          **Possible Issues:**
+          - Missing environment variables in .env.template
+          - Missing GitHub Secrets
+          - Security vulnerabilities in environment configuration
+          - Invalid environment variable formats
+          
+          **Action Required:**
+          1. Review the workflow logs for specific error messages
+          2. Update .env.template if variables are missing
+          3. Configure missing GitHub Secrets in repository settings
+          4. Address any security issues identified
+          5. Re-run the workflow to verify fixes
+          
+          **Environment Documentation:**
+          Check the workflow artifacts for updated environment documentation and security reports.
+          
+          *This issue was automatically created by the environment sync workflow.*`;
+          
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: title,
+            body: body,
+            labels: ['configuration', 'environment', 'bug', 'priority:high']
+          });

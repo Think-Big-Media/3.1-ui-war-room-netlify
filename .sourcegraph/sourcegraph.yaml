@@ -1,0 +1,59 @@
+# Sourcegraph Configuration for War Room
+# This enables code intelligence and search features
+
+# Code Intelligence
+codeIntel:
+  # Enable auto-indexing for better code navigation
+  autoIndex:
+    enabled: true
+    
+  # Language-specific settings
+  languages:
+    # TypeScript/JavaScript
+    - language: typescript
+      indexer: scip-typescript
+    - language: javascript
+      indexer: scip-typescript
+      
+    # Python
+    - language: python
+      indexer: scip-python
+      
+    # CSS/SCSS
+    - language: css
+      indexer: auto
+      
+# Search Configuration
+search:
+  # Exclude patterns
+  exclude:
+    - node_modules/**
+    - venv/**
+    - build/**
+    - dist/**
+    - coverage/**
+    - "*.min.js"
+    - "*.min.css"
+    - backups/**
+    - .git/**
+    
+  # Include patterns (explicitly include src)
+  include:
+    - src/**
+    - docs/**
+    - scripts/**
+    - "*.md"
+    - "*.yaml"
+    - "*.yml"
+    - "*.json"
+
+# Repository metadata
+repository:
+  description: "War Room - Campaign Management Platform"
+  topics:
+    - react
+    - typescript
+    - fastapi
+    - python
+    - postgresql
+    - campaign-management

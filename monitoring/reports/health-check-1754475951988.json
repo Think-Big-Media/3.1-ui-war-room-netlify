@@ -1,0 +1,118 @@
+{
+  "timestamp": "2025-08-06T10:24:28.905Z",
+  "overall": "critical",
+  "site": {
+    "available": false,
+    "error": "timeout of 10000ms exceeded",
+    "responseTime": 10024,
+    "statusCode": null
+  },
+  "apis": {
+    "/api/health": {
+      "healthy": false,
+      "error": "timeout of 10000ms exceeded",
+      "statusCode": null,
+      "responseTime": 10006
+    },
+    "/api/v1/status": {
+      "healthy": false,
+      "error": "timeout of 10000ms exceeded",
+      "statusCode": null,
+      "responseTime": 10004
+    },
+    "/docs": {
+      "healthy": false,
+      "error": "timeout of 10000ms exceeded",
+      "statusCode": null,
+      "responseTime": 10003
+    },
+    "/api/v1/analytics/status": {
+      "healthy": false,
+      "error": "timeout of 10000ms exceeded",
+      "statusCode": null,
+      "responseTime": 10003
+    },
+    "/api/v1/auth/status": {
+      "healthy": false,
+      "error": "timeout of 10000ms exceeded",
+      "statusCode": null,
+      "responseTime": 10003
+    }
+  },
+  "system": {
+    "memory": {
+      "total": 17179869184,
+      "used": 17042227200,
+      "free": 137641984,
+      "percentage": 0.9919881820678711,
+      "process": {
+        "rss": 52740096,
+        "heapUsed": 7987296,
+        "heapTotal": 8912896,
+        "external": 3262552
+      }
+    },
+    "cpu": {
+      "loadAvg": [
+        4.3740234375,
+        3.99169921875,
+        3.35498046875
+      ],
+      "cpuCount": 10,
+      "platform": "darwin",
+      "arch": "arm64"
+    },
+    "uptime": 72839,
+    "processUptime": 60.085797125
+  },
+  "performance": {
+    "requests": [
+      {
+        "success": false,
+        "responseTime": 10003,
+        "error": "timeout of 10000ms exceeded"
+      },
+      {
+        "success": false,
+        "responseTime": 10003,
+        "error": "timeout of 10000ms exceeded"
+      },
+      {
+        "success": true,
+        "responseTime": 648
+      },
+      {
+        "success": true,
+        "responseTime": 187
+      },
+      {
+        "success": true,
+        "responseTime": 189
+      }
+    ],
+    "stats": {
+      "successRate": "60.0",
+      "avgResponseTime": "341.33",
+      "minResponseTime": 187,
+      "maxResponseTime": 648,
+      "consistency": 461
+    }
+  },
+  "summary": {
+    "healthScore": 11,
+    "healthGrade": "F",
+    "penalties": [
+      "Site unavailable (-40)",
+      "Unhealthy APIs (-30)",
+      "Critical memory usage (-15)",
+      "Low success rate (-4)"
+    ],
+    "overall": "unhealthy",
+    "timestamp": "2025-08-06T10:25:51.988Z",
+    "checkDuration": 83083
+  },
+  "recommendations": [
+    "Investigate site availability issues immediately",
+    "High memory usage detected (99.2%)"
+  ]
+}

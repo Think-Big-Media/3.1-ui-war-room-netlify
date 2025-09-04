@@ -1,0 +1,355 @@
+name: Performance Testing
+
+on:
+  # Run on pushes to main branch
+  push:
+    branches: [ main ]
+  
+  # Run on pull requests
+  pull_request:
+    branches: [ main ]
+  
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      test_type:
+        description: 'Type of performance test to run'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+        - all
+        - health
+        - analytics
+        - campaigns
+        - frontend
+      environment:
+        description: 'Environment to test'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+        - production
+        - staging
+  
+  # Scheduled performance regression testing
+  schedule:
+    # Run performance tests daily at 6 AM UTC (after keep-warm has been running)
+    - cron: '0 6 * * *'
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  performance-test:
+    name: Performance Test Suite
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        test-type: 
+          - ${{ github.event.inputs.test_type || 'health' }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        
+    - name: Install k6
+      run: |
+        sudo gpg --no-default-keyring --keyring /usr/share/keyrings/k6-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69
+        echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | sudo tee /etc/apt/sources.list.d/k6.list
+        sudo apt-get update
+        sudo apt-get install k6
+        k6 version
+        
+    - name: Verify service availability
+      run: |
+        echo "🏥 Checking service health before performance testing..."
+        max_attempts=5
+        attempt=1
+        
+        while [ $attempt -le $max_attempts ]; do
+          echo "Attempt $attempt/$max_attempts: Checking https://war-room-oa9t.onrender.com/health"
+          
+          if curl -f -s --max-time 30 "https://war-room-oa9t.onrender.com/health" > /dev/null; then
+            echo "✅ Service is responsive"
+            break
+          else
+            echo "⚠️ Service not responsive, waiting..."
+            if [ $attempt -eq $max_attempts ]; then
+              echo "❌ Service unavailable after $max_attempts attempts"
+              echo "This may be due to cold start. Attempting to warm up the service..."
+              curl -s --max-time 60 "https://war-room-oa9t.onrender.com/health" || true
+              curl -s --max-time 60 "https://war-room-oa9t.onrender.com/" || true
+              sleep 10
+            else
+              sleep 15
+            fi
+          fi
+          
+          attempt=$((attempt + 1))
+        done
+        
+    - name: Run Health Endpoint Performance Test
+      if: matrix.test-type == 'health' || matrix.test-type == 'all'
+      run: |
+        cd tests/performance
+        echo "🏥 Running Health Endpoint Performance Test"
+        
+        k6 run \
+          --env TEST_ENV=${{ github.event.inputs.environment || 'production' }} \
+          --out json=results/health_$(date +%Y%m%d_%H%M%S).json \
+          --quiet \
+          k6-scripts/health-endpoint.js \
+          2>&1 | tee results/health_$(date +%Y%m%d_%H%M%S).log
+          
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
+        
+    - name: Run Analytics Endpoints Performance Test
+      if: matrix.test-type == 'analytics' || matrix.test-type == 'all'
+      run: |
+        cd tests/performance
+        echo "📊 Running Analytics Endpoints Performance Test"
+        
+        k6 run \
+          --env TEST_ENV=${{ github.event.inputs.environment || 'production' }} \
+          --out json=results/analytics_$(date +%Y%m%d_%H%M%S).json \
+          --quiet \
+          k6-scripts/analytics-endpoints.js \
+          2>&1 | tee results/analytics_$(date +%Y%m%d_%H%M%S).log
+          
+    - name: Run Campaigns Endpoints Performance Test  
+      if: matrix.test-type == 'campaigns' || matrix.test-type == 'all'
+      run: |
+        cd tests/performance
+        echo "🎯 Running Campaigns Endpoints Performance Test"
+        
+        k6 run \
+          --env TEST_ENV=${{ github.event.inputs.environment || 'production' }} \
+          --out json=results/campaigns_$(date +%Y%m%d_%H%M%S).json \
+          --quiet \
+          k6-scripts/campaigns-endpoints.js \
+          2>&1 | tee results/campaigns_$(date +%Y%m%d_%H%M%S).log
+          
+    - name: Run Frontend Load Time Performance Test
+      if: matrix.test-type == 'frontend' || matrix.test-type == 'all'
+      run: |
+        cd tests/performance
+        echo "🌐 Running Frontend Load Time Performance Test"
+        
+        k6 run \
+          --env TEST_ENV=${{ github.event.inputs.environment || 'production' }} \
+          --out json=results/frontend_$(date +%Y%m%d_%H%M%S).json \
+          --quiet \
+          k6-scripts/frontend-load-time.js \
+          2>&1 | tee results/frontend_$(date +%Y%m%d_%H%M%S).log
+          
+    - name: Run Baseline Performance Test
+      if: matrix.test-type == 'all'
+      run: |
+        cd tests/performance
+        echo "⚡ Running Baseline Performance Test"
+        
+        k6 run \
+          --env TEST_ENV=${{ github.event.inputs.environment || 'production' }} \
+          --out json=results/baseline_$(date +%Y%m%d_%H%M%S).json \
+          k6-scripts/simple-baseline.js \
+          2>&1 | tee results/baseline_$(date +%Y%m%d_%H%M%S).log
+          
+    - name: Generate Performance Report
+      run: |
+        cd tests/performance
+        
+        # Create performance summary
+        timestamp=$(date +"%Y-%m-%d %H:%M:%S UTC")
+        report_file="results/performance_report_$(date +%Y%m%d_%H%M%S).md"
+        
+        cat > "$report_file" << EOF
+        # Performance Test Report
+        
+        **Test Date:** $timestamp  
+        **Environment:** ${{ github.event.inputs.environment || 'production' }}  
+        **Test Type:** ${{ matrix.test-type }}  
+        **Trigger:** ${{ github.event_name }}  
+        **Branch:** ${{ github.ref_name }}  
+        **Commit:** ${{ github.sha }}
+        
+        ## Test Summary
+        
+        EOF
+        
+        # Add results from log files if they exist
+        for log_file in results/*.log; do
+          if [ -f "$log_file" ]; then
+            test_name=$(basename "$log_file" .log)
+            echo "### $test_name" >> "$report_file"
+            echo "" >> "$report_file"
+            
+            # Extract key metrics from log file
+            if grep -q "THRESHOLDS" "$log_file"; then
+              echo "**Thresholds:**" >> "$report_file"
+              sed -n '/THRESHOLDS/,/TOTAL RESULTS/p' "$log_file" | head -20 >> "$report_file"
+              echo "" >> "$report_file"
+            fi
+            
+            if grep -q "http_req_duration" "$log_file"; then
+              echo "**Response Time Metrics:**" >> "$report_file"
+              grep "http_req_duration" "$log_file" | head -5 >> "$report_file"
+              echo "" >> "$report_file"
+            fi
+            
+            echo "---" >> "$report_file"
+            echo "" >> "$report_file"
+          fi
+        done
+        
+        echo "📄 Performance report generated: $report_file"
+        
+    - name: Check Performance Thresholds
+      run: |
+        cd tests/performance
+        
+        # Initialize status
+        performance_passed=true
+        
+        # Check if any log files contain threshold failures
+        for log_file in results/*.log; do
+          if [ -f "$log_file" ]; then
+            if grep -q "have been crossed" "$log_file"; then
+              echo "❌ Performance thresholds failed in $(basename "$log_file")"
+              performance_passed=false
+            else
+              echo "✅ Performance thresholds passed in $(basename "$log_file")"  
+            fi
+          fi
+        done
+        
+        if [ "$performance_passed" = false ]; then
+          echo "::warning::Performance thresholds were exceeded in one or more tests"
+          echo "performance_status=warning" >> $GITHUB_OUTPUT
+        else
+          echo "::notice::All performance thresholds passed"
+          echo "performance_status=success" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Upload Performance Test Results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: performance-test-results-${{ matrix.test-type }}-${{ github.run_number }}
+        path: |
+          tests/performance/results/*.json
+          tests/performance/results/*.log  
+          tests/performance/results/*.md
+        retention-days: 30
+        
+    - name: Comment Performance Results on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const path = require('path');
+          
+          // Find the latest performance report
+          const resultsDir = 'tests/performance/results';
+          const files = fs.readdirSync(resultsDir);
+          const reportFile = files.find(f => f.startsWith('performance_report_') && f.endsWith('.md'));
+          
+          if (reportFile) {
+            const reportPath = path.join(resultsDir, reportFile);
+            const reportContent = fs.readFileSync(reportPath, 'utf8');
+            
+            const comment = `## 🚀 Performance Test Results
+            
+            Performance tests have been completed for this PR.
+            
+            ${reportContent}
+            
+            📊 **Full results available in the [workflow artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})**
+            
+            *Automated performance testing by GitHub Actions*`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+          }
+          
+    - name: Create Performance Dashboard Issue
+      if: github.event_name == 'schedule' && env.performance_status == 'warning'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const title = `🚨 Performance Regression Detected - ${new Date().toISOString().split('T')[0]}`;
+          const body = `## Performance Alert
+          
+          Automated performance testing has detected performance regressions in the application.
+          
+          **Details:**
+          - **Date:** ${new Date().toISOString()}
+          - **Environment:** ${{ github.event.inputs.environment || 'production' }}
+          - **Workflow:** ${{ github.workflow }}
+          - **Run:** https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          
+          **Action Required:**
+          1. Review performance test results in the workflow artifacts
+          2. Identify the root cause of performance degradation
+          3. Implement performance optimizations
+          4. Re-run performance tests to verify improvements
+          
+          **Performance Test Results:**
+          [View full results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          
+          *This issue was automatically created by the performance testing workflow.*`;
+          
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: title,
+            body: body,
+            labels: ['performance', 'bug', 'priority:high']
+          });
+
+  performance-summary:
+    name: Performance Summary
+    runs-on: ubuntu-latest
+    needs: [performance-test]
+    if: always()
+    
+    steps:
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: performance-results
+        
+    - name: Create Performance Summary
+      run: |
+        echo "## 🚀 Performance Test Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Environment:** ${{ github.event.inputs.environment || 'production' }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Test Type:** ${{ github.event.inputs.test_type || 'health' }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        # Check if artifacts exist and summarize
+        if [ -d "performance-results" ]; then
+          echo "**Artifacts Generated:**" >> $GITHUB_STEP_SUMMARY
+          find performance-results -name "*.json" -o -name "*.md" | while read -r file; do
+            filename=$(basename "$file")
+            echo "- 📄 $filename" >> $GITHUB_STEP_SUMMARY
+          done
+        else
+          echo "No performance test artifacts found." >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "📊 **View detailed results in the workflow artifacts above.**" >> $GITHUB_STEP_SUMMARY

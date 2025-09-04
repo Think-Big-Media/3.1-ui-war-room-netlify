@@ -1,0 +1,70 @@
+name: Generate Daily Report
+
+on:
+  schedule:
+    # Run at 9:00 AM EST (2:00 PM UTC) every day
+    - cron: '0 14 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0 # Get full history for better reporting
+        persist-credentials: true
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: |
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f package.json ]; then npm install; fi
+
+    - name: Create reports directory
+      run: |
+        mkdir -p reports/daily
+    
+    - name: Generate daily report
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      run: |
+        if [ -f scripts/generate-daily-report.py ]; then
+          python scripts/generate-daily-report.py
+        else
+          echo "Warning: Daily report script not found"
+          echo "# Daily Report - $(date +'%Y-%m-%d')" > reports/daily/$(date +'%Y-%m-%d')-daily-report.md
+          echo "Generated automatically at $(date)" >> reports/daily/$(date +'%Y-%m-%d')-daily-report.md
+        fi
+
+    - name: Commit and push report
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add reports/daily/*.md
+        git diff --staged --quiet || git commit -m "📊 Automated daily report for $(date +'%Y-%m-%d')"
+        git push origin HEAD:${GITHUB_REF#refs/heads/}
+
+    - name: Send notification
+      if: success()
+      run: |
+        echo "Daily report generated successfully for $(date +'%Y-%m-%d')"
+        # Optional: Add Slack/Discord notification here

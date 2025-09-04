@@ -1,0 +1,58 @@
+services:
+  # V2 STAGING SERVICE - Clean slate with proper build configuration
+  - type: web
+    name: war-room-v2-staging
+    runtime: python
+    plan: starter
+    
+    # COMPLETE BUILD COMMAND - Both frontend and backend
+    buildCommand: |
+      echo "🚀 V2 Staging Build Starting..."
+      echo "📦 Installing Python dependencies..."
+      pip install -r requirements.txt
+      echo "✅ Python dependencies installed"
+      echo "⚛️ Building Frontend (CRITICAL)..."
+      cd src/frontend
+      npm install
+      npm run build
+      echo "✅ Frontend built successfully"
+      cd ../..
+      echo "🎯 Build complete!"
+    
+    # Start command - serves both frontend and backend
+    startCommand: cd src/backend && python serve_bulletproof.py
+    
+    # Health check
+    healthCheckPath: /health
+    
+    # Environment variables
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: NODE_VERSION
+        value: "20.11.1"
+      - key: PORT
+        value: "10000"
+      - key: NODE_ENV
+        value: "production"
+      - key: RENDER_ENV
+        value: "staging"
+      - key: SERVICE_VERSION
+        value: "v2-staging"
+      
+    # GitHub repository
+    repo: https://github.com/Think-Big-Media/1.0-war-room
+    branch: aug12-working-deployment
+    autoDeploy: true
+    
+    # Build filters - rebuild on any change
+    buildFilter:
+      paths:
+        - src/**
+        - package.json
+        - requirements.txt
+        - render-v2-staging.yaml
+      ignoredPaths:
+        - README.md
+        - docs/**
+        - .github/**

@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: staging
+    runtime: python
+    repo: https://github.com/Think-Big-Media/1.0-war-room
+    branch: main
+    rootDir: .
+    buildCommand: |
+      pip install -r src/backend/requirements.txt &&
+      cd src/frontend &&
+      npm install &&
+      npm run build
+    startCommand: cd src/backend && python serve_bulletproof.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: '3.11'
+      - key: NODE_VERSION
+        value: '20.11.1'
+      - key: PORT
+        value: '10000'
+      - key: RENDER_ENV
+        value: 'production'
+      - key: BACKEND_CORS_ORIGINS
+        value: 'https://one-0-war-room.onrender.com'

@@ -1,0 +1,3602 @@
+{
+  "timestamp": "2025-08-08T03:16:44.517967+00:00",
+  "components": {
+    "src/components/FloatingChatBar.tsx": {
+      "file_size": 16298,
+      "lines_of_code": 448,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 5,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 14,
+        "inline_functions": 19
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 19,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 65
+    },
+    "src/components/TickerTape.tsx": {
+      "file_size": 6267,
+      "lines_of_code": 216,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 1,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 4,
+        "inline_functions": 12
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 6,
+        "external_dependencies": 3
+      },
+      "optimization_score": 85
+    },
+    "src/components/AuthDebug.tsx": {
+      "file_size": 1068,
+      "lines_of_code": 24,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 5,
+        "inline_functions": 1
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 2,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/ErrorBoundary.tsx": {
+      "file_size": 2812,
+      "lines_of_code": 98,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 3,
+        "conditional_renders": 3,
+        "inline_functions": 1
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 2,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/generated/CommandCenter.tsx": {
+      "file_size": 13861,
+      "lines_of_code": 477,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 16
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 20,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 9,
+        "external_dependencies": 4
+      },
+      "optimization_score": 65
+    },
+    "src/components/generated/CampaignControl.tsx": {
+      "file_size": 3961,
+      "lines_of_code": 119,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 5,
+        "inline_functions": 7
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 12,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/generated/SidebarNavigation.tsx": {
+      "file_size": 14031,
+      "lines_of_code": 372,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 4,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 12,
+        "inline_functions": 24
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 23,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 6,
+        "external_dependencies": 4
+      },
+      "optimization_score": 65
+    },
+    "src/components/generated/AlertCenter.tsx": {
+      "file_size": 5478,
+      "lines_of_code": 168,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 2,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 3,
+        "inline_functions": 8
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 18,
+        "external_dependencies": 4
+      },
+      "optimization_score": 100
+    },
+    "src/components/generated/FloatingChatBar.tsx": {
+      "file_size": 16301,
+      "lines_of_code": 448,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 5,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 14,
+        "inline_functions": 19
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 19,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 65
+    },
+    "src/components/generated/SettingsPage.tsx": {
+      "file_size": 13700,
+      "lines_of_code": 347,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 6,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 2,
+        "inline_functions": 8
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 6,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 8,
+        "external_dependencies": 4
+      },
+      "optimization_score": 73
+    },
+    "src/components/generated/IntelligenceHub.tsx": {
+      "file_size": 15219,
+      "lines_of_code": 431,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 3,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 5,
+        "inline_functions": 12
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 8,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 7,
+        "external_dependencies": 3
+      },
+      "optimization_score": 69
+    },
+    "src/components/generated/InformationCenter.tsx": {
+      "file_size": 17317,
+      "lines_of_code": 492,
+      "complexity_indicators": {
+        "nested_jsx_depth": 3,
+        "hook_usage_count": 3,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 11,
+        "inline_functions": 31
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 6,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 9,
+        "external_dependencies": 4
+      },
+      "optimization_score": 73
+    },
+    "src/components/generated/TickerTape.tsx": {
+      "file_size": 6276,
+      "lines_of_code": 216,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 1,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 4,
+        "inline_functions": 12
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 6,
+        "external_dependencies": 3
+      },
+      "optimization_score": 85
+    },
+    "src/components/generated/ContentEnginePage.tsx": {
+      "file_size": 2761,
+      "lines_of_code": 82,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 2,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 7
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 11,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/generated/QuickActions.tsx": {
+      "file_size": 4165,
+      "lines_of_code": 130,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 2
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 7,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 86
+    },
+    "src/components/generated/ContentCalendarPage.tsx": {
+      "file_size": 3083,
+      "lines_of_code": 100,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 1,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 3,
+        "inline_functions": 3
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 3,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 15,
+        "external_dependencies": 3
+      },
+      "optimization_score": 94
+    },
+    "src/components/generated/NotFound.tsx": {
+      "file_size": 417,
+      "lines_of_code": 14,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 1
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 1,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/generated/RealTimeMonitoring.tsx": {
+      "file_size": 3240,
+      "lines_of_code": 97,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 1,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 2,
+        "inline_functions": 4
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 13,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/generated/ErrorBoundary.tsx": {
+      "file_size": 1731,
+      "lines_of_code": 56,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 1,
+        "conditional_renders": 1,
+        "inline_functions": 0
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 1,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/ui/card.tsx": {
+      "file_size": 2130,
+      "lines_of_code": 85,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 6,
+        "conditional_renders": 0,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 2,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/ui/alert.tsx": {
+      "file_size": 2069,
+      "lines_of_code": 64,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 3,
+        "conditional_renders": 0,
+        "inline_functions": 3
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/ui/badge.tsx": {
+      "file_size": 1525,
+      "lines_of_code": 40,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 1,
+        "conditional_renders": 0,
+        "inline_functions": 0
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/ui/button.tsx": {
+      "file_size": 2226,
+      "lines_of_code": 59,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 1,
+        "conditional_renders": 1,
+        "inline_functions": 1
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 100
+    },
+    "src/components/ui/input.tsx": {
+      "file_size": 1188,
+      "lines_of_code": 38,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 1,
+        "conditional_renders": 0,
+        "inline_functions": 1
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/test/SupabaseMigrationTest.tsx": {
+      "file_size": 8036,
+      "lines_of_code": 220,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 2,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 8,
+        "inline_functions": 13
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 1
+      },
+      "optimization_score": 85
+    },
+    "src/components/auth/ForgotPasswordForm.tsx": {
+      "file_size": 11076,
+      "lines_of_code": 302,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 1,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 5,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 85
+    },
+    "src/components/auth/LoginForm.tsx": {
+      "file_size": 11801,
+      "lines_of_code": 320,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 3,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 9,
+        "inline_functions": 7
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 85
+    },
+    "src/components/auth/RegisterForm.tsx": {
+      "file_size": 21940,
+      "lines_of_code": 573,
+      "complexity_indicators": {
+        "nested_jsx_depth": 8,
+        "hook_usage_count": 4,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 24,
+        "inline_functions": 11
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": true,
+        "deep_nesting": true,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 73
+    },
+    "src/components/auth/ResetPasswordForm.tsx": {
+      "file_size": 17089,
+      "lines_of_code": 456,
+      "complexity_indicators": {
+        "nested_jsx_depth": 5,
+        "hook_usage_count": 5,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 11,
+        "inline_functions": 11
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 83
+    },
+    "src/components/auth/ProtectedRoute.tsx": {
+      "file_size": 10013,
+      "lines_of_code": 340,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 8,
+        "inline_functions": 8
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 83
+    },
+    "src/components/auth/SupabaseForgotPasswordForm.tsx": {
+      "file_size": 10573,
+      "lines_of_code": 314,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 3,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 5,
+        "inline_functions": 5
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 85
+    },
+    "src/components/auth/EmailVerificationPage.tsx": {
+      "file_size": 15232,
+      "lines_of_code": 368,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 3,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 10,
+        "inline_functions": 10
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 2
+      },
+      "optimization_score": 85
+    },
+    "src/components/auth/LoginBypass.tsx": {
+      "file_size": 2675,
+      "lines_of_code": 88,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 3
+      },
+      "optimization_score": 100
+    },
+    "src/components/auth/SupabaseEmailVerificationPage.tsx": {
+      "file_size": 12866,
+      "lines_of_code": 375,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 5,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 8,
+        "inline_functions": 11
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 85
+    },
+    "src/components/auth/SupabaseLoginForm.tsx": {
+      "file_size": 19493,
+      "lines_of_code": 496,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 4,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 13,
+        "inline_functions": 10
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 85
+    },
+    "src/components/auth/SupabaseResetPasswordForm.tsx": {
+      "file_size": 15130,
+      "lines_of_code": 415,
+      "complexity_indicators": {
+        "nested_jsx_depth": 5,
+        "hook_usage_count": 5,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 15,
+        "inline_functions": 12
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 83
+    },
+    "src/components/auth/SupabaseRegisterForm.tsx": {
+      "file_size": 24848,
+      "lines_of_code": 629,
+      "complexity_indicators": {
+        "nested_jsx_depth": 7,
+        "hook_usage_count": 5,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 22,
+        "inline_functions": 14
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": true,
+        "deep_nesting": true,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 73
+    },
+    "src/components/auth/SupabaseDebug.tsx": {
+      "file_size": 2405,
+      "lines_of_code": 65,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 1,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 3
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/layout/MainLayout.tsx": {
+      "file_size": 8189,
+      "lines_of_code": 214,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 2,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 14,
+        "inline_functions": 8
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 4
+      },
+      "optimization_score": 85
+    },
+    "src/components/shared/GlobalFooter.tsx": {
+      "file_size": 446,
+      "lines_of_code": 17,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 1
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 1,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/shared/CustomDropdown.tsx": {
+      "file_size": 5168,
+      "lines_of_code": 172,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 2,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 8,
+        "inline_functions": 11
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 6,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 88
+    },
+    "src/components/shared/Card.tsx": {
+      "file_size": 2555,
+      "lines_of_code": 102,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 1,
+        "conditional_renders": 2,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 2
+      },
+      "optimization_score": 98
+    },
+    "src/components/shared/HeroCard.tsx": {
+      "file_size": 598,
+      "lines_of_code": 26,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 1
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 2,
+        "external_dependencies": 1
+      },
+      "optimization_score": 98
+    },
+    "src/components/shared/PageHeader.tsx": {
+      "file_size": 1021,
+      "lines_of_code": 50,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 1
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 6,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 2,
+        "external_dependencies": 2
+      },
+      "optimization_score": 88
+    },
+    "src/components/shared/PageLayout.tsx": {
+      "file_size": 1844,
+      "lines_of_code": 61,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 2
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 1
+      },
+      "optimization_score": 98
+    },
+    "src/components/shared/StatCard.tsx": {
+      "file_size": 2336,
+      "lines_of_code": 95,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 2,
+        "inline_functions": 1
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 96
+    },
+    "src/components/shared/MetricCard.tsx": {
+      "file_size": 2393,
+      "lines_of_code": 91,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 6,
+        "inline_functions": 3
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 98
+    },
+    "src/components/dashboard/AlertCenter.tsx": {
+      "file_size": 11194,
+      "lines_of_code": 315,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 3,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 15,
+        "inline_functions": 14
+      },
+      "performance_patterns": {
+        "has_memo": true,
+        "has_useMemo": false,
+        "has_useCallback": true,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 10,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 80
+    },
+    "src/components/dashboard/Dashboard.tsx": {
+      "file_size": 6437,
+      "lines_of_code": 197,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 1,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 5,
+        "inline_functions": 8
+      },
+      "performance_patterns": {
+        "has_memo": true,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 8,
+        "external_dependencies": 3
+      },
+      "optimization_score": 100
+    },
+    "src/components/dashboard/SentimentGauge.tsx": {
+      "file_size": 12544,
+      "lines_of_code": 375,
+      "complexity_indicators": {
+        "nested_jsx_depth": 5,
+        "hook_usage_count": 2,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 9,
+        "inline_functions": 11
+      },
+      "performance_patterns": {
+        "has_memo": true,
+        "has_useMemo": true,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 98
+    },
+    "src/components/dashboard/MetricsDisplay.tsx": {
+      "file_size": 14500,
+      "lines_of_code": 419,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 2,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 15,
+        "inline_functions": 19
+      },
+      "performance_patterns": {
+        "has_memo": true,
+        "has_useMemo": true,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 27,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 80
+    },
+    "src/components/dashboard/MetricCard.tsx": {
+      "file_size": 7978,
+      "lines_of_code": 276,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 12,
+        "inline_functions": 5
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 2
+      },
+      "optimization_score": 85
+    },
+    "src/components/dashboard/CampaignHealth.tsx": {
+      "file_size": 14489,
+      "lines_of_code": 423,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 5,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 28,
+        "inline_functions": 20
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": true,
+        "has_useCallback": true,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 8,
+        "external_dependencies": 3
+      },
+      "optimization_score": 93
+    },
+    "src/components/dashboard/AnalyticsOverview.tsx": {
+      "file_size": 15512,
+      "lines_of_code": 402,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 2,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 22,
+        "inline_functions": 15
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": true,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 2
+      },
+      "optimization_score": 86
+    },
+    "src/components/dashboard/ActivityFeed.tsx": {
+      "file_size": 11077,
+      "lines_of_code": 308,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 19,
+        "inline_functions": 11
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 8,
+        "external_dependencies": 4
+      },
+      "optimization_score": 85
+    },
+    "src/components/common/ConnectionStatus.tsx": {
+      "file_size": 4319,
+      "lines_of_code": 152,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 14,
+        "inline_functions": 3
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 5,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 90
+    },
+    "src/components/content-calendar/ContentCardComponent.tsx": {
+      "file_size": 2269,
+      "lines_of_code": 71,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 3
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 4,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 92
+    },
+    "src/components/content-calendar/DayView.tsx": {
+      "file_size": 2145,
+      "lines_of_code": 75,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 5
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/content-calendar/MonthView.tsx": {
+      "file_size": 2376,
+      "lines_of_code": 77,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 5,
+        "inline_functions": 3
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 2,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/content-calendar/CalendarControls.tsx": {
+      "file_size": 3126,
+      "lines_of_code": 88,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 4,
+        "inline_functions": 8
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 3,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 6,
+        "external_dependencies": 3
+      },
+      "optimization_score": 94
+    },
+    "src/components/content-calendar/CalendarStats.tsx": {
+      "file_size": 2295,
+      "lines_of_code": 93,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 2
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 3,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 94
+    },
+    "src/components/content-calendar/WeekView.tsx": {
+      "file_size": 2224,
+      "lines_of_code": 73,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 3,
+        "inline_functions": 5
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/content-calendar/utils.tsx": {
+      "file_size": 3272,
+      "lines_of_code": 121,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 2,
+        "inline_functions": 8
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/content-engine/ContentFormatGrid.tsx": {
+      "file_size": 3003,
+      "lines_of_code": 89,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 3,
+        "inline_functions": 9
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/content-engine/GHLPublisher.tsx": {
+      "file_size": 5478,
+      "lines_of_code": 175,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 2,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 6,
+        "inline_functions": 10
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 3,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 6,
+        "external_dependencies": 3
+      },
+      "optimization_score": 94
+    },
+    "src/components/content-engine/ContentFormatCard.tsx": {
+      "file_size": 3559,
+      "lines_of_code": 92,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 2,
+        "inline_functions": 5
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 3,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 6,
+        "external_dependencies": 3
+      },
+      "optimization_score": 94
+    },
+    "src/components/content-engine/ContentClusterHeader.tsx": {
+      "file_size": 4092,
+      "lines_of_code": 107,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 5
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 3,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 94
+    },
+    "src/components/content-engine/ScheduledPosts.tsx": {
+      "file_size": 2797,
+      "lines_of_code": 84,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 2,
+        "inline_functions": 2
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 3,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 94
+    },
+    "src/components/content-engine/utils.tsx": {
+      "file_size": 2410,
+      "lines_of_code": 95,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 2,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/campaign-control/AssetControls.tsx": {
+      "file_size": 2502,
+      "lines_of_code": 70,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/campaign-control/KanbanBoard.tsx": {
+      "file_size": 1837,
+      "lines_of_code": 60,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 7
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 2
+      },
+      "optimization_score": 96
+    },
+    "src/components/campaign-control/ProjectCard.tsx": {
+      "file_size": 2855,
+      "lines_of_code": 89,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 5
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 2
+      },
+      "optimization_score": 96
+    },
+    "src/components/campaign-control/CampaignTabs.tsx": {
+      "file_size": 1241,
+      "lines_of_code": 39,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 4
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/campaign-control/AssetCard.tsx": {
+      "file_size": 2476,
+      "lines_of_code": 84,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 8
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 2
+      },
+      "optimization_score": 98
+    },
+    "src/components/campaign-control/ProjectControls.tsx": {
+      "file_size": 2492,
+      "lines_of_code": 70,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/campaign-control/AssetGrid.tsx": {
+      "file_size": 1245,
+      "lines_of_code": 50,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 5
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 2
+      },
+      "optimization_score": 96
+    },
+    "src/components/campaign-control/utils.tsx": {
+      "file_size": 2536,
+      "lines_of_code": 91,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/campaign-control/ActivityFeed.tsx": {
+      "file_size": 1528,
+      "lines_of_code": 48,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 2
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 2
+      },
+      "optimization_score": 96
+    },
+    "src/components/monitoring/TrendingTopics.tsx": {
+      "file_size": 2900,
+      "lines_of_code": 82,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 2,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 7,
+        "external_dependencies": 3
+      },
+      "optimization_score": 98
+    },
+    "src/components/monitoring/SentimentBreakdown.tsx": {
+      "file_size": 1817,
+      "lines_of_code": 45,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 1
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/monitoring/MonitoringAlert.tsx": {
+      "file_size": 1493,
+      "lines_of_code": 53,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 3
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 96
+    },
+    "src/components/monitoring/InfluencerTracker.tsx": {
+      "file_size": 2710,
+      "lines_of_code": 73,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/monitoring/MonitoringControls.tsx": {
+      "file_size": 1652,
+      "lines_of_code": 51,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 4,
+        "inline_functions": 2
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/monitoring/utils.tsx": {
+      "file_size": 2350,
+      "lines_of_code": 84,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/monitoring/MentionsStream.tsx": {
+      "file_size": 5512,
+      "lines_of_code": 139,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 10
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 8,
+        "external_dependencies": 3
+      },
+      "optimization_score": 96
+    },
+    "src/components/monitoring/PlatformPerformance.tsx": {
+      "file_size": 1912,
+      "lines_of_code": 55,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 3
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/SEO/StructuredData.tsx": {
+      "file_size": 6041,
+      "lines_of_code": 217,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 10
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 2,
+        "external_dependencies": 2
+      },
+      "optimization_score": 81
+    },
+    "src/components/SEO/Head.tsx": {
+      "file_size": 6787,
+      "lines_of_code": 189,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 7,
+        "conditional_renders": 8,
+        "inline_functions": 9
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 7,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 2,
+        "external_dependencies": 2
+      },
+      "optimization_score": 86
+    },
+    "src/components/alert-center/AssignedAlertsTracker.tsx": {
+      "file_size": 2450,
+      "lines_of_code": 79,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 5
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 1
+      },
+      "optimization_score": 100
+    },
+    "src/components/alert-center/InformationStreamCard.tsx": {
+      "file_size": 2419,
+      "lines_of_code": 81,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 4,
+        "inline_functions": 4
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 98
+    },
+    "src/components/alert-center/AlertSummary.tsx": {
+      "file_size": 2092,
+      "lines_of_code": 71,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 1,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/alert-center/AlertCard.tsx": {
+      "file_size": 6122,
+      "lines_of_code": 169,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 8,
+        "inline_functions": 10
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 4,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 6,
+        "external_dependencies": 3
+      },
+      "optimization_score": 92
+    },
+    "src/components/alert-center/AlertFilters.tsx": {
+      "file_size": 2197,
+      "lines_of_code": 80,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 4
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/alert-center/CollaborationModal.tsx": {
+      "file_size": 5346,
+      "lines_of_code": 150,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 1,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 4,
+        "inline_functions": 10
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 6,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 3
+      },
+      "optimization_score": 88
+    },
+    "src/components/alert-center/InformationStreamsTab.tsx": {
+      "file_size": 5302,
+      "lines_of_code": 169,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 13
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 7,
+        "external_dependencies": 3
+      },
+      "optimization_score": 96
+    },
+    "src/components/alert-center/utils.tsx": {
+      "file_size": 3574,
+      "lines_of_code": 149,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 7
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 3,
+        "external_dependencies": 2
+      },
+      "optimization_score": 100
+    },
+    "src/components/analytics/DateRangeFilter.tsx": {
+      "file_size": 11532,
+      "lines_of_code": 363,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 6,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 10,
+        "inline_functions": 30
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 9,
+        "external_dependencies": 4
+      },
+      "optimization_score": 85
+    },
+    "src/components/analytics/DashboardChart.tsx": {
+      "file_size": 7297,
+      "lines_of_code": 239,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 4,
+        "inline_functions": 11
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 7,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 4,
+        "external_dependencies": 4
+      },
+      "optimization_score": 71
+    },
+    "src/components/analytics/GeographicMap.tsx": {
+      "file_size": 6470,
+      "lines_of_code": 196,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 12
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 3,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 6,
+        "external_dependencies": 4
+      },
+      "optimization_score": 94
+    },
+    "src/components/analytics/VolunteerGrowthChart.tsx": {
+      "file_size": 3702,
+      "lines_of_code": 126,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 2,
+        "inline_functions": 5
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 3,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 6,
+        "external_dependencies": 4
+      },
+      "optimization_score": 94
+    },
+    "src/components/analytics/MetricCard.tsx": {
+      "file_size": 5859,
+      "lines_of_code": 203,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 6,
+        "inline_functions": 8
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 7,
+        "external_dependencies": 3
+      },
+      "optimization_score": 85
+    },
+    "src/components/analytics/DashboardLayout.tsx": {
+      "file_size": 7629,
+      "lines_of_code": 230,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 2,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 3,
+        "inline_functions": 10
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": true
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 13,
+        "external_dependencies": 3
+      },
+      "optimization_score": 85
+    },
+    "src/components/analytics/ActivityFeed.tsx": {
+      "file_size": 9225,
+      "lines_of_code": 284,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 4,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 15,
+        "inline_functions": 11
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 1,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 7,
+        "external_dependencies": 4
+      },
+      "optimization_score": 83
+    },
+    "src/components/analytics/DonationChart.tsx": {
+      "file_size": 4127,
+      "lines_of_code": 152,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 3,
+        "inline_functions": 9
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 96
+    },
+    "src/components/analytics/EventAttendanceChart.tsx": {
+      "file_size": 3159,
+      "lines_of_code": 118,
+      "complexity_indicators": {
+        "nested_jsx_depth": 2,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 2,
+        "inline_functions": 6
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 3,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 94
+    },
+    "src/components/debug/WebSocketTester.tsx": {
+      "file_size": 7074,
+      "lines_of_code": 209,
+      "complexity_indicators": {
+        "nested_jsx_depth": 1,
+        "hook_usage_count": 1,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 6,
+        "inline_functions": 10
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 2,
+        "large_component": true,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 5,
+        "external_dependencies": 3
+      },
+      "optimization_score": 81
+    },
+    "src/components/ui/index.ts": {
+      "file_size": 402,
+      "lines_of_code": 6,
+      "complexity_indicators": {
+        "nested_jsx_depth": 0,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 0
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 0,
+        "external_dependencies": 0
+      },
+      "optimization_score": 100
+    },
+    "src/components/auth/supabase-index.ts": {
+      "file_size": 474,
+      "lines_of_code": 10,
+      "complexity_indicators": {
+        "nested_jsx_depth": 0,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 0
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 0,
+        "external_dependencies": 0
+      },
+      "optimization_score": 100
+    },
+    "src/components/auth/index.ts": {
+      "file_size": 1298,
+      "lines_of_code": 54,
+      "complexity_indicators": {
+        "nested_jsx_depth": 0,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 0
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 0,
+        "external_dependencies": 0
+      },
+      "optimization_score": 100
+    },
+    "src/components/dashboard/index.ts": {
+      "file_size": 234,
+      "lines_of_code": 8,
+      "complexity_indicators": {
+        "nested_jsx_depth": 0,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 0
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 0,
+        "external_dependencies": 0
+      },
+      "optimization_score": 100
+    },
+    "src/components/SEO/index.ts": {
+      "file_size": 437,
+      "lines_of_code": 22,
+      "complexity_indicators": {
+        "nested_jsx_depth": 0,
+        "hook_usage_count": 0,
+        "prop_drilling_depth": 0,
+        "conditional_renders": 0,
+        "inline_functions": 0
+      },
+      "performance_patterns": {
+        "has_memo": false,
+        "has_useMemo": false,
+        "has_useCallback": false,
+        "has_lazy_loading": false,
+        "has_suspense": false
+      },
+      "anti_patterns": {
+        "inline_object_props": 0,
+        "large_component": false,
+        "deep_nesting": false,
+        "many_props": false
+      },
+      "bundle_impact": {
+        "import_count": 0,
+        "external_dependencies": 0
+      },
+      "optimization_score": 100
+    }
+  },
+  "services": {
+    "src/services/informationService.ts": {
+      "file_size": 8907,
+      "lines_of_code": 300,
+      "complexity_indicators": {
+        "function_count": 14,
+        "async_operations": 0,
+        "error_handling": 0,
+        "api_calls": 0
+      },
+      "performance_patterns": {
+        "has_caching": false,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 0,
+        "memory_intensive": true
+      },
+      "optimization_score": 90
+    },
+    "src/services/googleAdsService.ts": {
+      "file_size": 6396,
+      "lines_of_code": 233,
+      "complexity_indicators": {
+        "function_count": 17,
+        "async_operations": 4,
+        "error_handling": 0,
+        "api_calls": 2
+      },
+      "performance_patterns": {
+        "has_caching": false,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 0,
+        "memory_intensive": false
+      },
+      "optimization_score": 90
+    },
+    "src/services/analyticsApi.ts": {
+      "file_size": 4459,
+      "lines_of_code": 153,
+      "complexity_indicators": {
+        "function_count": 12,
+        "async_operations": 0,
+        "error_handling": 0,
+        "api_calls": 0
+      },
+      "performance_patterns": {
+        "has_caching": true,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": false,
+        "synchronous_operations": 0,
+        "memory_intensive": false
+      },
+      "optimization_score": 100
+    },
+    "src/services/supabaseServices.ts": {
+      "file_size": 11216,
+      "lines_of_code": 442,
+      "complexity_indicators": {
+        "function_count": 44,
+        "async_operations": 52,
+        "error_handling": 0,
+        "api_calls": 0
+      },
+      "performance_patterns": {
+        "has_caching": true,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 0,
+        "memory_intensive": true
+      },
+      "optimization_score": 85
+    },
+    "src/services/authApi.ts": {
+      "file_size": 8187,
+      "lines_of_code": 320,
+      "complexity_indicators": {
+        "function_count": 31,
+        "async_operations": 4,
+        "error_handling": 1,
+        "api_calls": 0
+      },
+      "performance_patterns": {
+        "has_caching": false,
+        "has_throttling": false,
+        "has_retry_logic": true,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 0,
+        "memory_intensive": false
+      },
+      "optimization_score": 80
+    },
+    "src/services/adInsightsApi.ts": {
+      "file_size": 5462,
+      "lines_of_code": 178,
+      "complexity_indicators": {
+        "function_count": 19,
+        "async_operations": 8,
+        "error_handling": 1,
+        "api_calls": 2
+      },
+      "performance_patterns": {
+        "has_caching": false,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 3,
+        "memory_intensive": false
+      },
+      "optimization_score": 90
+    },
+    "src/services/supabaseAuthApi.ts": {
+      "file_size": 13720,
+      "lines_of_code": 464,
+      "complexity_indicators": {
+        "function_count": 38,
+        "async_operations": 44,
+        "error_handling": 10,
+        "api_calls": 0
+      },
+      "performance_patterns": {
+        "has_caching": false,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 0,
+        "memory_intensive": false
+      },
+      "optimization_score": 75
+    },
+    "src/services/posthog.ts": {
+      "file_size": 6207,
+      "lines_of_code": 279,
+      "complexity_indicators": {
+        "function_count": 15,
+        "async_operations": 0,
+        "error_handling": 0,
+        "api_calls": 1
+      },
+      "performance_patterns": {
+        "has_caching": false,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": false,
+        "synchronous_operations": 0,
+        "memory_intensive": false
+      },
+      "optimization_score": 100
+    },
+    "src/services/tickerService.ts": {
+      "file_size": 8246,
+      "lines_of_code": 291,
+      "complexity_indicators": {
+        "function_count": 30,
+        "async_operations": 16,
+        "error_handling": 2,
+        "api_calls": 2
+      },
+      "performance_patterns": {
+        "has_caching": false,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 0,
+        "memory_intensive": true
+      },
+      "optimization_score": 75
+    },
+    "src/services/activityApi.ts": {
+      "file_size": 6866,
+      "lines_of_code": 199,
+      "complexity_indicators": {
+        "function_count": 18,
+        "async_operations": 10,
+        "error_handling": 3,
+        "api_calls": 4
+      },
+      "performance_patterns": {
+        "has_caching": false,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 5,
+        "memory_intensive": true
+      },
+      "optimization_score": 90
+    },
+    "src/services/ghlService.ts": {
+      "file_size": 4355,
+      "lines_of_code": 175,
+      "complexity_indicators": {
+        "function_count": 21,
+        "async_operations": 6,
+        "error_handling": 1,
+        "api_calls": 2
+      },
+      "performance_patterns": {
+        "has_caching": false,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 0,
+        "memory_intensive": false
+      },
+      "optimization_score": 75
+    },
+    "src/services/integrations/useGoogleAds.ts": {
+      "file_size": 16271,
+      "lines_of_code": 541,
+      "complexity_indicators": {
+        "function_count": 73,
+        "async_operations": 28,
+        "error_handling": 1,
+        "api_calls": 1
+      },
+      "performance_patterns": {
+        "has_caching": true,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 0,
+        "memory_intensive": true
+      },
+      "optimization_score": 85
+    },
+    "src/services/integrations/metaAdsIntegration.ts": {
+      "file_size": 18997,
+      "lines_of_code": 598,
+      "complexity_indicators": {
+        "function_count": 70,
+        "async_operations": 28,
+        "error_handling": 3,
+        "api_calls": 0
+      },
+      "performance_patterns": {
+        "has_caching": true,
+        "has_throttling": false,
+        "has_retry_logic": true,
+        "has_timeout": true
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 0,
+        "memory_intensive": true
+      },
+      "optimization_score": 90
+    },
+    "src/services/integrations/useMetaAds.ts": {
+      "file_size": 9766,
+      "lines_of_code": 333,
+      "complexity_indicators": {
+        "function_count": 47,
+        "async_operations": 14,
+        "error_handling": 1,
+        "api_calls": 0
+      },
+      "performance_patterns": {
+        "has_caching": true,
+        "has_throttling": false,
+        "has_retry_logic": true,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": true,
+        "synchronous_operations": 0,
+        "memory_intensive": false
+      },
+      "optimization_score": 90
+    },
+    "src/services/integrations/index.ts": {
+      "file_size": 1079,
+      "lines_of_code": 39,
+      "complexity_indicators": {
+        "function_count": 7,
+        "async_operations": 0,
+        "error_handling": 0,
+        "api_calls": 0
+      },
+      "performance_patterns": {
+        "has_caching": false,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": false
+      },
+      "optimization_opportunities": {
+        "large_functions": false,
+        "synchronous_operations": 0,
+        "memory_intensive": false
+      },
+      "optimization_score": 100
+    },
+    "src/services/monitoring-service.js": {
+      "file_size": 3703,
+      "lines_of_code": 142,
+      "complexity_indicators": {
+        "function_count": 9,
+        "async_operations": 3,
+        "error_handling": 2,
+        "api_calls": 3
+      },
+      "performance_patterns": {
+        "has_caching": false,
+        "has_throttling": false,
+        "has_retry_logic": false,
+        "has_timeout": true
+      },
+      "optimization_opportunities": {
+        "large_functions": false,
+        "synchronous_operations": 0,
+        "memory_intensive": false
+      },
+      "optimization_score": 100
+    }
+  },
+  "bundle_analysis": {
+    "build_success": true,
+    "build_output": "\n> war-room-frontend@1.0.0 build:analyze\n> ANALYZE=true vite build\n\nvite v5.4.19 building for production...\ntransforming...\n\u2713 2081 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                             1.17 kB \u2502 gzip:   0.52 kB\ndist/assets/index-4a-Vge4a.css            119.20 kB \u2502 gzip:  18.46 kB\ndist/assets/analytics-vendor-l0sNRNKZ.js    0.00 kB \u2502 gzip:   0.02 kB\ndist/assets/charts-vendor-yu-e-KE5.js       0.04 kB \u2502 gzip:   0.06 kB\ndist/assets/maps-vendor-yu-e-KE5.js         0.04 kB \u2502 gzip:   0.06 kB\ndist/assets/dnd-vendor-yu-e-KE5.js          0.04 kB \u2502 gzip:   0.06 kB\ndist/assets/utils-vendor-BTGVH9Kg.js       20.28 kB \u2502 gzip:   6.83 kB\ndist/assets/icons-vendor-DPB2a9tU.js       23.88 kB \u2502 gzip:   4.67 kB\ndist/assets/ui-vendor-CJJbbpAy.js          30.75 kB \u2502 gzip:  11.48 kB\ndist/assets/auth-vendor-B_CLJEkM.js       118.24 kB \u2502 gzip:  32.29 kB\ndist/assets/react-vendor-BOdqUGhd.js      160.03 kB \u2502 gzip:  52.18 kB\ndist/assets/index-DJEaqKir.js             415.82 kB \u2502 gzip: 120.85 kB\n\u2713 built in 1m 11s\n",
+    "dependencies_count": 28,
+    "dev_dependencies_count": 35,
+    "large_dependencies": [
+      "@radix-ui/react-slot",
+      "@supabase/auth-helpers-react",
+      "@tanstack/react-query",
+      "d3-scale",
+      "framer-motion",
+      "lucide-react",
+      "react",
+      "react-beautiful-dnd",
+      "react-dom",
+      "react-error-boundary",
+      "react-helmet-async",
+      "react-hook-form",
+      "react-redux",
+      "react-router-dom",
+      "react-simple-maps"
+    ]
+  },
+  "runtime_metrics": {}
+}

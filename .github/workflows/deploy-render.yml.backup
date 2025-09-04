@@ -1,0 +1,78 @@
+name: Deploy to Render
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  RENDER_SERVICE_ID: srv-d1ub5iumcj7s73ebrpo0
+  RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Deploy to Render
+      run: |
+        # Trigger deployment on existing war-room-oa9t service
+        echo "🚀 Deploying to Render service: ${{ env.RENDER_SERVICE_ID }}"
+        
+        # Using Render Deploy Hook if available
+        if [ -n "${{ secrets.RENDER_DEPLOY_HOOK_URL }}" ]; then
+          echo "Using Deploy Hook URL"
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
+        else
+          # Alternative: Use Render API to trigger deployment
+          echo "Using Render API"
+          
+          # Use hardcoded service ID: srv-d1ub5iumcj7s73ebrpo0
+          SERVICE_ID="${{ env.RENDER_SERVICE_ID }}"
+          
+          # Trigger deployment (clear cache to force rebuild)
+          curl -X POST \
+            -H "Authorization: Bearer ${{ env.RENDER_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            "https://api.render.com/v1/services/${SERVICE_ID}/deploys" \
+            -d '{"clearCache": true}'
+        fi
+    
+    - name: Wait for deployment to start
+      run: |
+        echo "⏳ Waiting for deployment to start..."
+        sleep 30
+    
+    - name: Check deployment status
+      run: |
+        echo "🔍 Checking deployment status..."
+        
+        # Check if the service is responding
+        MAX_ATTEMPTS=20
+        ATTEMPT=0
+        
+        while [ $ATTEMPT -lt $MAX_ATTEMPTS ]; do
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" https://war-room-oa9t.onrender.com/health || echo "000")
+          
+          if [ "$RESPONSE" = "200" ]; then
+            echo "✅ Deployment successful! Service is responding."
+            exit 0
+          else
+            echo "Attempt $((ATTEMPT + 1))/$MAX_ATTEMPTS: Service returned $RESPONSE"
+            ATTEMPT=$((ATTEMPT + 1))
+            sleep 30
+          fi
+        done
+        
+        echo "⚠️ Deployment may still be in progress. Check Render dashboard."
+    
+    - name: Notify deployment status
+      if: always()
+      run: |
+        if [ "${{ job.status }}" = "success" ]; then
+          echo "✅ Deployment to war-room-oa9t completed successfully"
+        else
+          echo "❌ Deployment to war-room-oa9t encountered issues"
+        fi

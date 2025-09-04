@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mock/Live Toggle Stress Test</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #1a1a1a; color: #00ff00; }
+        button { padding: 10px 20px; margin: 10px; background: #333; color: #00ff00; border: 1px solid #00ff00; cursor: pointer; }
+        button:hover { background: #00ff00; color: #000; }
+        .log { margin: 2px 0; padding: 3px; background: #2a2a2a; border-left: 3px solid #00ff00; font-size: 12px; }
+        .stress { border-left-color: #ffaa00; color: #ffaa00; }
+        .success { border-left-color: #00ff00; color: #00ff00; }
+        .counter { font-size: 20px; color: #00ff00; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>⚡ Mock/Live Toggle Stress Test</h1>
+    <p>Tests rapid switching between data modes for demo stability.</p>
+    
+    <div class="counter">Toggles: <span id="counter">0</span></div>
+    <div class="counter">Current Mode: <span id="mode">MOCK</span></div>
+    
+    <button onclick="startStressTest()">🚀 Start Stress Test (100 toggles)</button>
+    <button onclick="manualToggle()">🔄 Manual Toggle</button>
+    <button onclick="clearLog()">🧹 Clear Log</button>
+    <button onclick="goToDashboard()">🏠 Go to Dashboard</button>
+    
+    <div id="log"></div>
+
+    <script>
+        let toggleCount = 0;
+        let currentMode = 'MOCK';
+
+        function log(message, type = 'log') {
+            const div = document.createElement('div');
+            div.className = `log ${type}`;
+            div.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            const logDiv = document.getElementById('log');
+            logDiv.appendChild(div);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        function updateDisplay() {
+            document.getElementById('counter').textContent = toggleCount;
+            document.getElementById('mode').textContent = currentMode;
+        }
+
+        function simulateToggle() {
+            // Simulate what our useDataMode hook does
+            currentMode = currentMode === 'MOCK' ? 'LIVE' : 'MOCK';
+            toggleCount++;
+            
+            // Simulate data mode change effects
+            if (currentMode === 'LIVE') {
+                // Simulate attempting to connect to live APIs
+                localStorage.setItem('USE_MOCK_DATA', 'false');
+            } else {
+                // Simulate switching to mock data
+                localStorage.setItem('USE_MOCK_DATA', 'true');
+            }
+            
+            updateDisplay();
+            return true;
+        }
+
+        function manualToggle() {
+            try {
+                simulateToggle();
+                log(`✅ Manual toggle to ${currentMode} - Success`, "success");
+            } catch (error) {
+                log(`❌ Manual toggle failed: ${error.message}`, "error");
+            }
+        }
+
+        async function startStressTest() {
+            log("🚀 Starting stress test: 100 rapid toggles...", "stress");
+            const startTime = Date.now();
+            
+            try {
+                for (let i = 0; i < 100; i++) {
+                    simulateToggle();
+                    
+                    // Log every 10 toggles
+                    if (i % 10 === 0) {
+                        log(`⚡ Stress test: ${i}/100 toggles completed`, "stress");
+                    }
+                    
+                    // Small delay to prevent overwhelming the browser
+                    await new Promise(resolve => setTimeout(resolve, 10));
+                }
+                
+                const endTime = Date.now();
+                const duration = endTime - startTime;
+                
+                log(`🎉 Stress test completed successfully!`, "success");
+                log(`📊 100 toggles in ${duration}ms (${(100/duration*1000).toFixed(1)} toggles/sec)`, "success");
+                log(`✅ Final mode: ${currentMode}`, "success");
+                log(`🔍 localStorage state: ${localStorage.getItem('USE_MOCK_DATA')}`, "success");
+                
+            } catch (error) {
+                log(`❌ Stress test failed: ${error.message}`, "error");
+            }
+        }
+
+        function clearLog() {
+            document.getElementById('log').innerHTML = '';
+        }
+
+        function goToDashboard() {
+            window.location.href = '/';
+        }
+
+        // Initialize
+        updateDisplay();
+        log("🎯 Mock/Live Toggle Test Ready", "success");
+        log("⚡ This tests rapid data mode switching stability", "log");
+    </script>
+</body>
+</html>

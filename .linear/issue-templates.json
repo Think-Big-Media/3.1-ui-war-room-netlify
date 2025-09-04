@@ -1,0 +1,142 @@
+{
+  "templates": [
+    {
+      "name": "Bug Report",
+      "key": "bug",
+      "description": "Report a bug in War Room",
+      "issueTemplate": {
+        "title": "[Bug] ",
+        "description": "## Description\nClear description of the bug\n\n## Steps to Reproduce\n1. \n2. \n3. \n\n## Expected Behavior\n\n\n## Actual Behavior\n\n\n## Environment\n- Component: [Frontend/Backend/Infrastructure]\n- Browser/OS: \n- Version: \n\n## Screenshots\n\n\n## Logs\n```\n\n```",
+        "labelIds": ["bug"],
+        "priority": 2
+      }
+    },
+    {
+      "name": "Feature Request",
+      "key": "feature",
+      "description": "Request a new feature",
+      "issueTemplate": {
+        "title": "[Feature] ",
+        "description": "## Problem Statement\nWhat problem does this solve?\n\n## Proposed Solution\n\n\n## User Story\nAs a [user type], I want to [action] so that [benefit]\n\n## Acceptance Criteria\n- [ ] \n- [ ] \n- [ ] \n\n## Technical Considerations\n\n\n## Design Requirements\n\n\n## Priority\n[Critical/High/Medium/Low]",
+        "labelIds": ["feature"],
+        "priority": 3
+      }
+    },
+    {
+      "name": "AI Agent Task",
+      "key": "ai-task",
+      "description": "Task for AI agents",
+      "issueTemplate": {
+        "title": "[AI] ",
+        "description": "## Task Type\n[Implementation/Documentation/Analysis/Testing/Code Review]\n\n## Description\n\n\n## Context\nRelevant files, PRs, or documentation:\n- \n\n## Requirements\n- [ ] \n- [ ] \n- [ ] \n\n## Agent Assignment\n@codegen / @chatprd / @devin\n\n## Success Criteria\n\n\n## Additional Notes\n",
+        "labelIds": ["ai-agent"],
+        "priority": 3
+      }
+    },
+    {
+      "name": "Checkpoint System",
+      "key": "checkpoint",
+      "description": "Checkpoint-related work",
+      "issueTemplate": {
+        "title": "[Checkpoint] ",
+        "description": "## Type\n[Workflow/Database/Deployment]\n\n## Description\n\n\n## Current Behavior\n\n\n## Desired Behavior\n\n\n## Implementation Plan\n1. \n2. \n3. \n\n## Testing Strategy\n\n\n## Performance Considerations\n",
+        "labelIds": ["checkpoint", "feature"],
+        "priority": 2
+      }
+    },
+    {
+      "name": "Infrastructure",
+      "key": "infra",
+      "description": "Infrastructure and deployment",
+      "issueTemplate": {
+        "title": "[Infra] ",
+        "description": "## Component\n[Railway/AWS/Database/Redis/Docker]\n\n## Issue Description\n\n\n## Impact\n- [ ] Production\n- [ ] Staging\n- [ ] Development\n\n## Proposed Solution\n\n\n## Rollback Plan\n\n\n## Monitoring\nHow will we know it's working?\n\n## Documentation Updates Needed\n- [ ] Deployment guide\n- [ ] Runbook\n- [ ] Architecture diagram",
+        "labelIds": ["infrastructure", "deployment"],
+        "priority": 1
+      }
+    },
+    {
+      "name": "Performance Issue",
+      "key": "performance",
+      "description": "Performance optimization",
+      "issueTemplate": {
+        "title": "[Perf] ",
+        "description": "## Performance Issue\n\n\n## Metrics\n- Current: \n- Target: \n\n## Profiling Data\n```\n\n```\n\n## Root Cause Analysis\n\n\n## Optimization Strategy\n1. \n2. \n3. \n\n## Success Metrics\nHow will we measure improvement?\n\n## Risk Assessment\n",
+        "labelIds": ["performance"],
+        "priority": 2
+      }
+    },
+    {
+      "name": "Security Issue",
+      "key": "security",
+      "description": "Security vulnerability or concern",
+      "issueTemplate": {
+        "title": "[Security] ",
+        "description": "## Vulnerability Type\n[XSS/SQL Injection/Auth/Data Exposure/Other]\n\n## Severity\n[Critical/High/Medium/Low]\n\n## Description\n\n\n## Steps to Reproduce\n1. \n2. \n\n## Impact\n\n\n## Proposed Fix\n\n\n## Testing\nHow will we verify the fix?\n\n## References\n- OWASP: \n- CVE: ",
+        "labelIds": ["security", "bug"],
+        "priority": 0
+      }
+    },
+    {
+      "name": "Documentation",
+      "key": "docs",
+      "description": "Documentation updates",
+      "issueTemplate": {
+        "title": "[Docs] ",
+        "description": "## Documentation Type\n[API/User Guide/Architecture/Deployment/Other]\n\n## What needs documenting?\n\n\n## Current State\n\n\n## Required Sections\n- [ ] \n- [ ] \n- [ ] \n\n## Code Examples Needed\n\n\n## Reviewer\nWho should review this?\n\n## AI Agent Help\n@chatprd can assist with initial draft",
+        "labelIds": ["documentation"],
+        "priority": 4
+      }
+    },
+    {
+      "name": "Testing",
+      "key": "test",
+      "description": "Test creation or fixes",
+      "issueTemplate": {
+        "title": "[Test] ",
+        "description": "## Test Type\n[Unit/Integration/E2E/Performance/Security]\n\n## Component to Test\n\n\n## Current Coverage\n\n\n## Test Scenarios\n1. \n2. \n3. \n\n## Edge Cases\n- \n- \n\n## Test Data Requirements\n\n\n## Success Criteria\n- [ ] All tests pass\n- [ ] Coverage > 80%\n- [ ] No flaky tests",
+        "labelIds": ["testing"],
+        "priority": 3
+      }
+    },
+    {
+      "name": "Technical Debt",
+      "key": "tech-debt",
+      "description": "Code refactoring or cleanup",
+      "issueTemplate": {
+        "title": "[Tech Debt] ",
+        "description": "## Area of Concern\n\n\n## Current Issues\n- \n- \n\n## Proposed Improvements\n1. \n2. \n3. \n\n## Benefits\n- Performance: \n- Maintainability: \n- Reliability: \n\n## Migration Strategy\n\n\n## Backwards Compatibility\n",
+        "labelIds": ["technical-debt", "enhancement"],
+        "priority": 4
+      }
+    }
+  ],
+  "labels": [
+    {"name": "bug", "color": "#e11d48"},
+    {"name": "feature", "color": "#8b5cf6"},
+    {"name": "enhancement", "color": "#3b82f6"},
+    {"name": "documentation", "color": "#10b981"},
+    {"name": "performance", "color": "#f59e0b"},
+    {"name": "security", "color": "#dc2626"},
+    {"name": "checkpoint", "color": "#6366f1"},
+    {"name": "deployment", "color": "#14b8a6"},
+    {"name": "infrastructure", "color": "#6b7280"},
+    {"name": "ai-agent", "color": "#a855f7"},
+    {"name": "testing", "color": "#22c55e"},
+    {"name": "technical-debt", "color": "#f97316"},
+    {"name": "blocked", "color": "#991b1b"},
+    {"name": "ready", "color": "#059669"},
+    {"name": "in-review", "color": "#2563eb"}
+  ],
+  "workflows": {
+    "states": [
+      {"name": "Backlog", "type": "backlog"},
+      {"name": "Todo", "type": "unstarted"},
+      {"name": "In Progress", "type": "started"},
+      {"name": "In Review", "type": "started"},
+      {"name": "Testing", "type": "started"},
+      {"name": "Done", "type": "completed"},
+      {"name": "Canceled", "type": "canceled"}
+    ]
+  }
+}

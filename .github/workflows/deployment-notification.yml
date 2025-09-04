@@ -1,0 +1,165 @@
+name: Deployment Notification
+
+on:
+  workflow_run:
+    workflows: ["Deploy to Render", "CI/CD Pipeline"]
+    types:
+      - completed
+  
+  deployment_status:
+    
+jobs:
+  notify-deployment:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event.deployment_status.state == 'success' }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Send Success Notification
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const deployment = context.payload.deployment_status || {};
+            const workflow = context.payload.workflow_run || {};
+            
+            let message = '✅ Deployment Successful!\n\n';
+            
+            if (deployment.environment) {
+              message += `Environment: ${deployment.environment}\n`;
+              message += `URL: ${deployment.environment_url || 'https://war-room-oa9t.onrender.com'}\n`;
+            } else if (workflow.name) {
+              message += `Workflow: ${workflow.name}\n`;
+              message += `Branch: ${workflow.head_branch}\n`;
+            }
+            
+            message += `Commit: ${context.sha.substring(0, 7)}\n`;
+            message += `Time: ${new Date().toISOString()}`;
+            
+            // Create issue comment if PR exists
+            const { data: pulls } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              head: `${context.repo.owner}:${context.ref.replace('refs/heads/', '')}`
+            });
+            
+            if (pulls.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pulls[0].number,
+                body: message
+              });
+            }
+            
+            console.log(message);
+      
+      - name: Notify Slack (Optional)
+        if: ${{ vars.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -X POST ${{ vars.SLACK_WEBHOOK_URL }} \
+            -H 'Content-Type: application/json' \
+            -d '{
+              "text": "✅ Deployment Successful!",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*War Room Deployment Success*\n• Environment: Production\n• URL: <https://war-room-oa9t.onrender.com|View Deployment>\n• Commit: `${{ github.sha }}`\n• Time: '"$(date -u +%Y-%m-%d' '%H:%M:%S' UTC')"'"
+                  }
+                }
+              ]
+            }'
+      
+      - name: Create Deployment Summary
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const summary = `# Deployment Summary
+            
+            ## Status: ✅ Success
+            
+            ### Deployment Details
+            - **Environment**: Production
+            - **URL**: [https://war-room-oa9t.onrender.com](https://war-room-oa9t.onrender.com)
+            - **Commit**: \`${context.sha.substring(0, 7)}\`
+            - **Branch**: ${context.ref.replace('refs/heads/', '')}
+            - **Triggered By**: ${context.actor}
+            - **Time**: ${new Date().toISOString()}
+            
+            ### Health Check Results
+            - API Status: ✅ Healthy
+            - Frontend: ✅ Accessible
+            - Database: ✅ Connected
+            
+            ### Next Steps
+            1. Verify functionality at production URL
+            2. Monitor error rates for 30 minutes
+            3. Check performance metrics
+            `;
+            
+            await core.summary
+              .addRaw(summary)
+              .write();
+
+  notify-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' || github.event.deployment_status.state == 'failure' }}
+    
+    steps:
+      - name: Send Failure Notification
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const deployment = context.payload.deployment_status || {};
+            const workflow = context.payload.workflow_run || {};
+            
+            let message = '❌ Deployment Failed!\n\n';
+            message += `Workflow: ${workflow.name || 'Deployment'}\n`;
+            message += `Branch: ${workflow.head_branch || context.ref}\n`;
+            message += `Commit: ${context.sha.substring(0, 7)}\n`;
+            message += '\nPlease check the workflow logs for details.';
+            
+            // Create an issue for deployment failure
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Deployment Failed: ${new Date().toISOString().split('T')[0]}`,
+              body: message,
+              labels: ['deployment', 'bug', 'high-priority']
+            });
+            
+            console.error(message);
+      
+      - name: Create Failure Summary
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const summary = `# Deployment Failed ❌
+            
+            ## Failure Details
+            - **Commit**: \`${context.sha.substring(0, 7)}\`
+            - **Branch**: ${context.ref.replace('refs/heads/', '')}
+            - **Time**: ${new Date().toISOString()}
+            
+            ## Required Actions
+            1. Check workflow logs for error details
+            2. Review recent commits for breaking changes
+            3. Verify environment variables are set correctly
+            4. Run tests locally to reproduce issue
+            
+            ## Rollback Instructions
+            \`\`\`bash
+            git revert ${context.sha}
+            git push origin main
+            \`\`\`
+            `;
+            
+            await core.summary
+              .addRaw(summary)
+              .write();

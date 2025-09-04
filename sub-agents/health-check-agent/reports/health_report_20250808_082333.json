@@ -1,0 +1,350 @@
+{
+  "war_room_health_report": {
+    "metadata": {
+      "agent": "SUB-AGENT 1 - HEALTH_CHECK_AGENT",
+      "version": "1.0.0",
+      "target_url": "https://httpbin.org",
+      "timestamp": "2025-08-08T06:23:33.686689+00:00",
+      "check_duration_seconds": 4.029991865158081
+    },
+    "summary": {
+      "overall_status": "CRITICAL",
+      "health_score": 69,
+      "migration_ready": false,
+      "total_checks": 18,
+      "passed_checks": 4,
+      "warning_checks": 12,
+      "failed_checks": 2
+    },
+    "migration_assessment": {
+      "ready_for_migration": false,
+      "critical_blockers": [
+        "Database connectivity failed - CRITICAL"
+      ],
+      "recommendations": [
+        "Address failing health checks before migration",
+        "URGENT: Resolve all critical issues immediately",
+        "Review SSL certificate configuration"
+      ],
+      "go_no_go_decision": "NO-GO"
+    },
+    "detailed_results": [
+      {
+        "name": "Site Availability",
+        "status": "pass",
+        "response_time_ms": 358.6859703063965,
+        "details": {
+          "status_code": 200,
+          "content_length": 9591,
+          "headers": {
+            "Date": "Fri, 08 Aug 2025 06:23:30 GMT",
+            "Content-Type": "text/html; charset=utf-8",
+            "Content-Length": "9593",
+            "Connection": "keep-alive",
+            "Server": "gunicorn/19.9.0",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": "true"
+          },
+          "ssl_cert_valid": true,
+          "redirects": 0
+        },
+        "error": null,
+        "timestamp": "2025-08-08T06:23:30.015458+00:00"
+      },
+      {
+        "name": "API Endpoint /",
+        "status": "pass",
+        "response_time_ms": 310.1391792297363,
+        "details": {
+          "status_code": 200,
+          "content_type": "text/html; charset=utf-8",
+          "data": null,
+          "url": "https://httpbin.org/"
+        },
+        "error": null,
+        "timestamp": "2025-08-08T06:23:30.326232+00:00"
+      },
+      {
+        "name": "API Endpoint /health",
+        "status": "warning",
+        "response_time_ms": 337.8009796142578,
+        "details": {
+          "status_code": 404,
+          "content_type": "text/html",
+          "data": null,
+          "url": "https://httpbin.org/health"
+        },
+        "error": "Client error: 404",
+        "timestamp": "2025-08-08T06:23:30.354385+00:00"
+      },
+      {
+        "name": "API Endpoint /api/health",
+        "status": "warning",
+        "response_time_ms": 366.99485778808594,
+        "details": {
+          "status_code": 404,
+          "content_type": "text/html",
+          "data": null,
+          "url": "https://httpbin.org/api/health"
+        },
+        "error": "Client error: 404",
+        "timestamp": "2025-08-08T06:23:30.383706+00:00"
+      },
+      {
+        "name": "API Endpoint /api/v1/status",
+        "status": "warning",
+        "response_time_ms": 1083.9507579803467,
+        "details": {
+          "status_code": 404,
+          "content_type": "text/html",
+          "data": null,
+          "url": "https://httpbin.org/api/v1/status"
+        },
+        "error": "Client error: 404",
+        "timestamp": "2025-08-08T06:23:31.100774+00:00"
+      },
+      {
+        "name": "API Endpoint /docs",
+        "status": "warning",
+        "response_time_ms": 366.4083480834961,
+        "details": {
+          "status_code": 404,
+          "content_type": "text/html",
+          "data": null,
+          "url": "https://httpbin.org/docs"
+        },
+        "error": "Endpoint not found (404) - might be expected",
+        "timestamp": "2025-08-08T06:23:30.383363+00:00"
+      },
+      {
+        "name": "API Endpoint /api/v1/analytics/status",
+        "status": "warning",
+        "response_time_ms": 326.10416412353516,
+        "details": {
+          "status_code": 404,
+          "content_type": "text/html",
+          "data": null,
+          "url": "https://httpbin.org/api/v1/analytics/status"
+        },
+        "error": "Client error: 404",
+        "timestamp": "2025-08-08T06:23:30.652476+00:00"
+      },
+      {
+        "name": "API Endpoint /api/v1/monitoring/status",
+        "status": "warning",
+        "response_time_ms": 83.87398719787598,
+        "details": {
+          "status_code": 404,
+          "content_type": "text/html",
+          "data": null,
+          "url": "https://httpbin.org/api/v1/monitoring/status"
+        },
+        "error": "Client error: 404",
+        "timestamp": "2025-08-08T06:23:30.438348+00:00"
+      },
+      {
+        "name": "API Endpoint /api/v1/alerts/status",
+        "status": "warning",
+        "response_time_ms": 92.52810478210449,
+        "details": {
+          "status_code": 404,
+          "content_type": "text/html",
+          "data": null,
+          "url": "https://httpbin.org/api/v1/alerts/status"
+        },
+        "error": "Client error: 404",
+        "timestamp": "2025-08-08T06:23:30.476021+00:00"
+      },
+      {
+        "name": "API Endpoint /api/v1/checkpoints/status",
+        "status": "warning",
+        "response_time_ms": 91.78996086120605,
+        "details": {
+          "status_code": 404,
+          "content_type": "text/html",
+          "data": null,
+          "url": "https://httpbin.org/api/v1/checkpoints/status"
+        },
+        "error": "Client error: 404",
+        "timestamp": "2025-08-08T06:23:30.475567+00:00"
+      },
+      {
+        "name": "API Endpoint /api/meta/status",
+        "status": "warning",
+        "response_time_ms": 87.86416053771973,
+        "details": {
+          "status_code": 404,
+          "content_type": "text/html",
+          "data": null,
+          "url": "https://httpbin.org/api/meta/status"
+        },
+        "error": "Client error: 404",
+        "timestamp": "2025-08-08T06:23:30.526296+00:00"
+      },
+      {
+        "name": "API Endpoint /api/timeout/status",
+        "status": "warning",
+        "response_time_ms": 92.03791618347168,
+        "details": {
+          "status_code": 404,
+          "content_type": "text/html",
+          "data": null,
+          "url": "https://httpbin.org/api/timeout/status"
+        },
+        "error": "Client error: 404",
+        "timestamp": "2025-08-08T06:23:30.567763+00:00"
+      },
+      {
+        "name": "API Endpoint /api/google/auth/status",
+        "status": "warning",
+        "response_time_ms": 91.56179428100586,
+        "details": {
+          "status_code": 404,
+          "content_type": "text/html",
+          "data": null,
+          "url": "https://httpbin.org/api/google/auth/status"
+        },
+        "error": "Client error: 404",
+        "timestamp": "2025-08-08T06:23:30.567671+00:00"
+      },
+      {
+        "name": "Performance Benchmark",
+        "status": "pass",
+        "response_time_ms": 237.05501556396484,
+        "details": {
+          "total_requests": 10,
+          "successful_requests": 10,
+          "success_rate_percent": 100.0,
+          "avg_response_time_ms": 237.05501556396484,
+          "min_response_time_ms": 85.75606346130371,
+          "max_response_time_ms": 1083.724021911621,
+          "p95_response_time_ms": 1083.724021911621,
+          "consistency_ms": 997.9679584503174,
+          "total_test_time_ms": 1578.3960819244385,
+          "concurrent_requests": 3,
+          "sla_threshold_ms": 3000
+        },
+        "error": null,
+        "timestamp": "2025-08-08T06:23:32.680372+00:00"
+      },
+      {
+        "name": "Database Connectivity",
+        "status": "fail",
+        "response_time_ms": 1098.0029106140137,
+        "details": {
+          "checked_via": "/api/health endpoint",
+          "health_endpoint_status": "warning"
+        },
+        "error": "Could not determine database status from health endpoint",
+        "timestamp": "2025-08-08T06:23:32.200072+00:00"
+      },
+      {
+        "name": "SSL Certificate",
+        "status": "fail",
+        "response_time_ms": 188.32707405090332,
+        "details": {
+          "error_type": "SSLCertVerificationError"
+        },
+        "error": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:992)",
+        "timestamp": "2025-08-08T06:23:31.290704+00:00"
+      },
+      {
+        "name": "Fallback Mechanisms",
+        "status": "pass",
+        "response_time_ms": 84.29384231567383,
+        "details": {
+          "error_handling": "404_response",
+          "content_type": "text/html"
+        },
+        "error": null,
+        "timestamp": "2025-08-08T06:23:31.375157+00:00"
+      },
+      {
+        "name": "System Resources",
+        "status": "warning",
+        "response_time_ms": 1005.8989524841309,
+        "details": {
+          "memory": {
+            "total_gb": 16.0,
+            "available_gb": 2.66,
+            "used_percent": 83.4,
+            "process_rss_mb": 28.89,
+            "process_vms_mb": 401150.58
+          },
+          "cpu": {
+            "cores": 10,
+            "usage_percent": 34.3,
+            "load_1min": 4.646484375,
+            "load_5min": 4.8515625,
+            "load_15min": 5.3828125,
+            "load_ratio": 0.4646484375
+          },
+          "disk": {
+            "total_gb": 228.27,
+            "free_gb": 9.49,
+            "used_percent": 59.5
+          }
+        },
+        "error": "High memory usage: 83.4%",
+        "timestamp": "2025-08-08T06:23:33.686540+00:00"
+      }
+    ],
+    "performance_metrics": {
+      "response_times_ms": {
+        "Site Availability": 358.6859703063965,
+        "API Endpoint /": 310.1391792297363,
+        "API Endpoint /health": 337.8009796142578,
+        "API Endpoint /api/health": 366.99485778808594,
+        "API Endpoint /api/v1/status": 1083.9507579803467,
+        "API Endpoint /docs": 366.4083480834961,
+        "API Endpoint /api/v1/analytics/status": 326.10416412353516,
+        "API Endpoint /api/v1/monitoring/status": 83.87398719787598,
+        "API Endpoint /api/v1/alerts/status": 92.52810478210449,
+        "API Endpoint /api/v1/checkpoints/status": 91.78996086120605,
+        "API Endpoint /api/meta/status": 87.86416053771973,
+        "API Endpoint /api/timeout/status": 92.03791618347168,
+        "API Endpoint /api/google/auth/status": 91.56179428100586,
+        "Performance Benchmark": 237.05501556396484,
+        "Database Connectivity": 1098.0029106140137,
+        "SSL Certificate": 188.32707405090332,
+        "Fallback Mechanisms": 84.29384231567383,
+        "System Resources": 1005.8989524841309
+      },
+      "sla_compliance": {
+        "threshold_ms": 3000,
+        "compliant_checks": 18,
+        "total_checks": 18
+      }
+    },
+    "system_health": {
+      "overall_status": "CRITICAL",
+      "health_score": 69,
+      "migration_ready": false,
+      "critical_issues": [
+        "Database connectivity failed - CRITICAL"
+      ],
+      "warnings": [
+        "Performance concern: API Endpoint /health",
+        "Performance concern: API Endpoint /api/health",
+        "Performance concern: API Endpoint /api/v1/status",
+        "Performance concern: API Endpoint /docs",
+        "Performance concern: API Endpoint /api/v1/analytics/status",
+        "Performance concern: API Endpoint /api/v1/monitoring/status",
+        "Performance concern: API Endpoint /api/v1/alerts/status",
+        "Performance concern: API Endpoint /api/v1/checkpoints/status",
+        "Performance concern: API Endpoint /api/meta/status",
+        "Performance concern: API Endpoint /api/timeout/status",
+        "Performance concern: API Endpoint /api/google/auth/status",
+        "Component failure: SSL Certificate",
+        "Performance concern: System Resources"
+      ],
+      "recommendations": [
+        "Address failing health checks before migration",
+        "URGENT: Resolve all critical issues immediately",
+        "Review SSL certificate configuration"
+      ],
+      "timestamp": "2025-08-08T06:23:33.686689+00:00",
+      "check_duration_seconds": 4.029991865158081
+    }
+  }
+}

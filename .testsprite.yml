@@ -1,0 +1,69 @@
+version: 1
+# TestSprite Configuration for War Room
+# Using API key authentication only (no project ID needed)
+
+# Automated test generation
+auto_tests:
+  enabled: true
+  coverage_target: 80%
+  frameworks:
+    - jest
+    - pytest
+  
+# Visual regression testing  
+visual:
+  enabled: true
+  threshold: 0.01
+  viewports:
+    - width: 1920
+      height: 1080
+    - width: 768
+      height: 1024
+    - width: 375
+      height: 667
+  
+# Performance monitoring
+performance:
+  enabled: true
+  budgets:
+    - metric: FCP  # First Contentful Paint
+      max: 1500
+    - metric: LCP  # Largest Contentful Paint
+      max: 2500
+    - metric: CLS  # Cumulative Layout Shift
+      max: 0.1
+    - metric: FID  # First Input Delay
+      max: 100
+      
+# Security scanning
+security:
+  enabled: true
+  owasp_scan: true
+  dependency_check: true
+  
+# Monitoring
+monitor:
+  production_url: https://war-room-oa9t.onrender.com
+  check_interval: 5m
+  regions:
+    - us-east-1
+    - eu-west-1
+  alerts:
+    - type: downtime
+      threshold: 1m
+      notify: email
+    - type: performance
+      threshold: 3000ms
+      notify: email
+    - type: error_rate
+      threshold: 1%
+      notify: email
+
+# Test environments
+environments:
+  production:
+    url: https://war-room-oa9t.onrender.com
+  staging:
+    url: https://war-room-staging.onrender.com
+  local:
+    url: http://localhost:5173
