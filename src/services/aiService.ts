@@ -16,6 +16,12 @@ class AIService {
   
   constructor() {
     this.apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+    console.log('🚀 [AI Service] Constructor - API Key loaded:', {
+      hasKey: !!this.apiKey,
+      keyLength: this.apiKey?.length || 0,
+      keyPrefix: this.apiKey?.substring(0, 10) || 'none',
+      allEnvKeys: Object.keys(import.meta.env).filter(key => key.startsWith('VITE_OPENAI'))
+    });
   }
 
   /**
