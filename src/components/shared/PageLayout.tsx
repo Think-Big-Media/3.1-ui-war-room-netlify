@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react';
 import type React from 'react';
 import { useLocation } from 'react-router-dom';
-import TopNavigation from '../generated/SidebarNavigation';
+import TopNavigation from '../TopNavigation';
 import FloatingChatBar from '../FloatingChatBar';
 import GlobalFooter from './GlobalFooter';
 import { createLogger } from '../../utils/logger';
