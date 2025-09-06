@@ -48,17 +48,17 @@
   [context.production.environment]
     NODE_ENV = "production"
     REACT_APP_ENV = "production"
-    VITE_ENCORE_API_URL = "https://war-room-3-backend-d2msjrk82vjjq794glog.lp.dev"
+    VITE_ENCORE_API_URL = "https://war-room-backend-d2qou4c82vjupa5k36ug.lp.dev"
     VITE_USE_MOCK_DATA = "false"
 
 [context.branch-deploy]
   [context.branch-deploy.environment]
     NODE_ENV = "development"
-    VITE_ENCORE_API_URL = "https://war-room-3-backend-d2msjrk82vjjq794glog.lp.dev"
+    VITE_ENCORE_API_URL = "https://war-room-backend-d2qou4c82vjupa5k36ug.lp.dev"
     VITE_USE_MOCK_DATA = "true"
 
 [context.deploy-preview]
   [context.deploy-preview.environment]
     NODE_ENV = "development"
-    VITE_ENCORE_API_URL = "https://war-room-3-backend-d2msjrk82vjjq794glog.lp.dev"
+    VITE_ENCORE_API_URL = "https://war-room-backend-d2qou4c82vjupa5k36ug.lp.dev"
     VITE_USE_MOCK_DATA = "true"

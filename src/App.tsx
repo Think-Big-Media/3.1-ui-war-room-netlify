@@ -33,6 +33,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import TickerTape from './components/TickerTape';
 import { NotificationProvider } from './components/shared/NotificationSystem';
 import FloatingChatBar from './components/FloatingChatBar';
+import { DebugSidecar, useDebugTrigger } from './components/DebugSidecar';
 
 // Context Providers
 import { SupabaseAuthProvider } from './contexts/SupabaseAuthContext';
@@ -43,6 +44,9 @@ import './warroom.css';
 
 function App() {
   console.log('%c[DIAGNOSTIC] 5. App.tsx component function is executing.', 'color: yellow;');
+  
+  // Initialize debug trigger hook
+  const { isDebugOpen, closeDebug } = useDebugTrigger();
   
   // Apply saved theme on app load
   React.useEffect(() => {
@@ -135,6 +139,9 @@ function App() {
 
               {/* Global Components */}
               <TickerTape />
+              
+              {/* Admin System - Debug Sidecar */}
+              <DebugSidecar isOpen={isDebugOpen} onClose={closeDebug} />
               </ErrorBoundary>
             </Router>
           </NotificationProvider>

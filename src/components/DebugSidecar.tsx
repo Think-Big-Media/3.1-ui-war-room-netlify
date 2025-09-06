@@ -586,7 +586,7 @@ export const DebugSidecar: React.FC<DebugSidecarProps> = ({ isOpen, onClose }) =
   );
 };
 
-// Global debug trigger (double-click bottom-right corner)
+// Global debug trigger (double-click bottom-right corner + triple-click logo)
 export const useDebugTrigger = () => {
   const [isDebugOpen, setIsDebugOpen] = useState(false);
 
@@ -619,12 +619,20 @@ export const useDebugTrigger = () => {
       }
     };
 
+    // Listen for triple-click logo admin activation
+    const handleDebugSidecarToggle = (e: CustomEvent) => {
+      const { isOpen } = e.detail;
+      setIsDebugOpen(isOpen);
+    };
+
     window.addEventListener('click', handleDoubleClick);
     window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('debug-sidecar-toggle', handleDebugSidecarToggle as EventListener);
 
     return () => {
       window.removeEventListener('click', handleDoubleClick);
       window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('debug-sidecar-toggle', handleDebugSidecarToggle as EventListener);
       if (clickTimer) clearTimeout(clickTimer);
     };
   }, []);
