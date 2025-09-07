@@ -43,6 +43,13 @@
   status = 200
   force = true
 
+# Mentionlytics proxy endpoints
+[[redirects]]
+  from = "/api/v1/mentionlytics/*"
+  to = "/.netlify/functions/mentionlytics-proxy/:splat"
+  status = 200
+  force = true
+
 # Environment-specific settings
 [context.production]
   [context.production.environment]
