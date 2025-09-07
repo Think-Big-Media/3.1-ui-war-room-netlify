@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { informationService } from '../../services/informationService';
 import { type InformationItem } from '../../types/information';
+import { NAV_LABELS, ROUTES } from '../../constants/NAMING_CONSTANTS';
 import {
   getSectionTheme,
   getNavActiveClasses,
@@ -29,6 +30,9 @@ import {
 } from 'lucide-react';
 
 const TopNavigation: React.FC = () => {
+  // 🔍 DIAGNOSTIC: Component mounted
+  console.log('🔍 [DIAGNOSTIC] TopNavigation component mounted');
+  
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [teamAlerts, setTeamAlerts] = useState<InformationItem[]>([]);
@@ -88,44 +92,47 @@ const TopNavigation: React.FC = () => {
   const navItems = [
     {
       icon: Home,
-      label: 'DASHBOARD',
-      path: '/',
+      label: NAV_LABELS.DASHBOARD,
+      path: ROUTES.DASHBOARD,
       route: 'dashboard',
-      active: location.pathname === '/',
-      theme: getSectionTheme('/'),
+      active: location.pathname === '/' || location.pathname === ROUTES.DASHBOARD,
+      theme: getSectionTheme(ROUTES.DASHBOARD),
       accent: 'var(--accent-dashboard)',
     },
     {
       icon: BarChart3,
-      label: 'LIVE MONITORING',
-      path: '/real-time-monitoring',
+      label: NAV_LABELS.LIVE_MONITORING,
+      path: ROUTES.LIVE_MONITORING,
       route: 'live-monitoring',
-      active: location.pathname === '/real-time-monitoring',
-      theme: getSectionTheme('/real-time-monitoring'),
+      active:
+        location.pathname === ROUTES.LIVE_MONITORING ||
+        location.pathname === '/real-time-monitoring',
+      theme: getSectionTheme(ROUTES.LIVE_MONITORING),
       accent: 'var(--accent-live-monitoring)',
     },
     {
       icon: Target,
-      label: 'WAR ROOM',
-      path: '/campaign-control',
+      label: NAV_LABELS.WAR_ROOM,
+      path: ROUTES.WAR_ROOM,
       route: 'war-room',
-      active: location.pathname === '/campaign-control',
-      theme: getSectionTheme('/campaign-control'),
+      active: location.pathname === ROUTES.WAR_ROOM || location.pathname === '/campaign-control',
+      theme: getSectionTheme(ROUTES.WAR_ROOM),
       accent: 'var(--accent-war-room)',
     },
     {
       icon: Brain,
-      label: 'INTELLIGENCE',
-      path: '/intelligence-hub',
+      label: NAV_LABELS.INTELLIGENCE,
+      path: ROUTES.INTELLIGENCE,
       route: 'intelligence',
-      active: location.pathname === '/intelligence-hub',
-      theme: getSectionTheme('/intelligence-hub'),
+      active:
+        location.pathname === ROUTES.INTELLIGENCE || location.pathname === '/intelligence-hub',
+      theme: getSectionTheme(ROUTES.INTELLIGENCE),
       accent: 'var(--accent-intelligence)',
     },
     {
       icon: Bell,
-      label: 'ALERT CENTER',
-      path: '/alert-center',
+      label: NAV_LABELS.ALERT_CENTER,
+      path: ROUTES.ALERT_CENTER,
       route: 'alert-center',
       active: location.pathname === '/alert-center',
       theme: getSectionTheme('/alert-center'),
@@ -133,8 +140,8 @@ const TopNavigation: React.FC = () => {
     },
     {
       icon: Settings,
-      label: 'SETTINGS',
-      path: '/settings',
+      label: NAV_LABELS.SETTINGS,
+      path: ROUTES.SETTINGS,
       route: 'settings',
       active: location.pathname === '/settings',
       theme: getSectionTheme('/settings'),
@@ -148,6 +155,7 @@ const TopNavigation: React.FC = () => {
 
   // Triple-click admin activation handler
   const handleLogoClick = (e: React.MouseEvent) => {
+    console.log('🔍 [DIAGNOSTIC] Logo clicked! Current count:', logoClickCount + 1);
     e.preventDefault();
     
     setLogoClickCount(prev => prev + 1);
@@ -157,16 +165,21 @@ const TopNavigation: React.FC = () => {
     }
 
     logoClickTimeoutRef.current = setTimeout(() => {
+      console.log('🔍 [DIAGNOSTIC] Processing click sequence. Final count:', logoClickCount + 1);
+      
       if (logoClickCount + 1 >= 3) {
         // Triple-click detected - activate admin mode
         setIsAdminMode(true);
-        console.log('🔧 Admin mode activated via triple-click logo');
+        console.log('🔧 [SUCCESS] Admin mode activated via triple-click logo!');
+        console.log('🔍 [DIAGNOSTIC] Dispatching debug-sidecar-toggle event...');
         
         // Dispatch event to activate DebugSidecar
         const event = new CustomEvent('debug-sidecar-toggle', { detail: { isOpen: true } });
         window.dispatchEvent(event);
+        console.log('🔍 [DIAGNOSTIC] Event dispatched successfully');
       } else if (logoClickCount + 1 === 1) {
         // Single click - normal navigation
+        console.log('🔍 [DIAGNOSTIC] Single click detected, navigating to dashboard');
         handleNavigation('/');
       }
       
@@ -223,30 +236,29 @@ const TopNavigation: React.FC = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 lg:px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo/Brand - Responsive - Triple-click activates admin mode */}
+          {/* Logo/Brand - Triple-click for admin mode */}
           <button
             onClick={handleLogoClick}
             className="flex items-center ml-[25px] hover:opacity-80 transition-opacity duration-200 cursor-pointer"
           >
             {isAdminMode ? (
-              <span className="text-red-400 font-bold text-lg">Admin Dashboard</span>
+              // Admin Dashboard text when in admin mode
+              <div className="text-white font-bold text-lg">Admin Dashboard</div>
             ) : (
               <>
-                {/* Full logo for large screens */}
+                {/* Full logo for large screens - increased size */}
                 <img
                   src="/images/WarRoom_Logo_White.png"
                   alt="War Room"
-                  className="hidden lg:block h-[26px] w-auto object-contain"
-                  style={{ minWidth: '80px', maxWidth: '120px' }}
+                  className="hidden lg:block h-[32px] w-auto"
                 />
-                {/* Logomark for tablet */}
+                {/* Logomark for tablet - increased size */}
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F8686f311497044c0932b7d2247296478%2Ff489a630137d4a28b75e743a04ae8f49?format=webp&width=800"
                   alt="War Room"
-                  className="hidden md:block lg:hidden h-[28px] w-auto object-contain"
-                  style={{ aspectRatio: '1/1' }}
+                  className="hidden md:block lg:hidden h-[36px] w-auto"
                 />
-                {/* Small logo for mobile header */}
+                {/* Small logo for mobile header - keep same size */}
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F8686f311497044c0932b7d2247296478%2Ff489a630137d4a28b75e743a04ae8f49?format=webp&width=800"
                   alt="War Room"
@@ -257,7 +269,7 @@ const TopNavigation: React.FC = () => {
           </button>
 
           {/* Navigation Items - Responsive */}
-          <div className="hidden md:flex items-center space-x-0.5 lg:space-x-1 xl:space-x-2">
+          <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {navItems.map((item, index) => (
               <button
                 key={index}
@@ -270,7 +282,7 @@ const TopNavigation: React.FC = () => {
                     '--item-accent': item.accent,
                   } as React.CSSProperties
                 }
-                className={`nav-item group px-1.5 lg:px-2 xl:px-3 py-1 rounded-lg text-[10px] md:text-[11px] lg:text-xs xl:text-sm flex items-center space-x-0.5 lg:space-x-1 ${
+                className={`nav-item group px-2 lg:px-3 py-1 rounded-lg text-xs lg:text-sm flex items-center space-x-1 ${
                   item.active
                     ? getNavActiveClasses(item.theme)
                     : 'text-white/70 hover:text-white hover:bg-white/10 hover:shadow-lg'
@@ -278,7 +290,7 @@ const TopNavigation: React.FC = () => {
               >
                 {/* Hide icons on tablet, show on large screens */}
                 <item.icon
-                  className={`icon w-3 h-3 lg:w-3.5 lg:h-3.5 xl:w-4 xl:h-4 flex-shrink-0 hidden lg:block ${
+                  className={`icon w-4 h-4 flex-shrink-0 hidden lg:block ${
                     item.active
                       ? getNavIconActiveClasses(item.theme)
                       : getNavIconHoverClasses(item.theme)
@@ -297,7 +309,9 @@ const TopNavigation: React.FC = () => {
                 />
                 <span
                   className={`label ${item.active ? 'nav-active-text' : getNavHoverClasses(item.theme)} ${
-                    ['LIVE MONITORING', 'WAR ROOM', 'ALERT CENTER'].includes(item.label)
+                    ['REAL-TIME MONITORING', 'CAMPAIGN CONTROL', 'ALERT CENTER'].includes(
+                      item.label
+                    )
                       ? 'nav-label'
                       : ''
                   }`}
@@ -309,9 +323,9 @@ const TopNavigation: React.FC = () => {
                   <span className="hidden lg:inline">{item.label}</span>
                   {/* Shorter text for tablet */}
                   <span className="lg:hidden">
-                    {item.label === 'LIVE MONITORING'
+                    {item.label === NAV_LABELS.LIVE_MONITORING
                       ? 'LIVE'
-                      : item.label === 'ALERT CENTER'
+                      : item.label === NAV_LABELS.ALERT_CENTER
                         ? 'ALERTS'
                         : item.label}
                   </span>
@@ -321,17 +335,17 @@ const TopNavigation: React.FC = () => {
           </div>
 
           {/* Right Side Actions - Moved 25px left with tighter spacing */}
-          <div className="flex items-center space-x-0.5 md:space-x-1 lg:space-x-1.5 xl:space-x-2 mr-[15px] lg:mr-[20px] xl:mr-[25px]">
+          <div className="flex items-center space-x-1 md:space-x-1.5 lg:space-x-2 mr-[25px]">
             {/* Notifications */}
             <div className="relative" ref={notificationsRef}>
               <button
                 onClick={() => setShowNotifications(!showNotifications)}
-                className="p-1 md:p-1.5 lg:p-2 rounded-lg text-white/70 hover:text-white hover:bg-white/10 hover:shadow-md relative"
+                className="p-1.5 lg:p-2 rounded-lg text-white/70 hover:text-white hover:bg-white/10 hover:shadow-md relative"
                 style={{
                   transition: 'all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                 }}
               >
-                <Bell className="w-3.5 h-3.5 md:w-4 md:h-4 lg:w-4 lg:h-4 xl:w-5 xl:h-5" />
+                <Bell className="w-4 h-4 lg:w-5 lg:h-5" />
                 {unreadAlerts.length > 0 && (
                   <div className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 notification-badge rounded-lg flex items-center justify-center transition-colors">
                     <span className="notification-badge-text text-[11px] font-medium">
@@ -421,12 +435,12 @@ const TopNavigation: React.FC = () => {
             {/* User Profile */}
             <button
               onClick={() => navigate('/settings')}
-              className="p-1 md:p-1.5 lg:p-2 rounded-lg text-white/70 hover:text-white hover:bg-white/10 hover:shadow-md"
+              className="p-1.5 lg:p-2 rounded-lg text-white/70 hover:text-white hover:bg-white/10 hover:shadow-md"
               style={{
                 transition: 'all 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94)',
               }}
             >
-              <User className="w-3.5 h-3.5 md:w-4 md:h-4 lg:w-4 lg:h-4 xl:w-5 xl:h-5" />
+              <User className="w-4 h-4 lg:w-5 lg:h-5" />
             </button>
 
             {/* Mobile Menu Button - Far Right */}

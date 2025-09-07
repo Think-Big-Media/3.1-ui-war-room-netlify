@@ -24,6 +24,8 @@ interface ChatSession {
 interface FloatingChatBarProps {
   onSendMessage: (message: string) => void;
   placeholder?: string;
+  isAdminMode?: boolean;
+  pageContext?: string;
 }
 
 // Component to format AI messages with natural flow and mixed content
@@ -130,6 +132,8 @@ const FormattedMessage: React.FC<{ content: string }> = ({ content }) => {
 const FloatingChatBar: React.FC<FloatingChatBarProps> = ({
   onSendMessage,
   placeholder = 'Tell me about...',
+  isAdminMode = false,
+  pageContext = 'Dashboard',
 }) => {
   const [message, setMessage] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -227,9 +231,12 @@ const FloatingChatBar: React.FC<FloatingChatBarProps> = ({
       const userQuery = message.trim();
       setMessage('');
 
-      // Get AI response
+      // Get AI response with admin context
       try {
-        const aiResponse = await aiService.processMessage(userQuery);
+        const aiResponse = await aiService.processMessage(userQuery, {
+          isAdminMode,
+          pageContext
+        });
         
         const aiMessage: ChatMessage = {
           id: (Date.now() + 1).toString(),

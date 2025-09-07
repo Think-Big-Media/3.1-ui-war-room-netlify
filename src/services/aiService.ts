@@ -39,8 +39,10 @@ class AIService {
 
   /**
    * Process a chat message with AI
+   * @param message - User's message
+   * @param context - Additional context including admin mode flag
    */
-  async processMessage(message: string, context?: any): Promise<AIResponse> {
+  async processMessage(message: string, context?: { isAdminMode?: boolean; pageContext?: string }): Promise<AIResponse> {
     console.log('🤖 [AI Service] Processing message:', message);
     
     // First, validate message content for professionalism
@@ -159,7 +161,36 @@ Could you clarify what specific campaign aspect you'd like me to analyze?`
         messages: [
           {
             role: 'system',
-            content: `You are a War Room campaign analyst with EXCLUSIVE access to this live dashboard data. You must ONLY reference the specific data provided below. NEVER mention training data, general knowledge, or anything outside this dashboard context.
+            content: context?.isAdminMode 
+              ? `You are a War Room ADMIN SYSTEM ANALYST with access to technical system data and dashboard context. You're helping administrators monitor, debug, and optimize the platform.
+
+${dashboardContext}
+
+ADMIN CONTEXT - You are in ADMIN MODE:
+- Focus on system health, performance metrics, errors, and optimization opportunities
+- Provide technical insights about backend connectivity, API response times, database performance
+- Analyze user engagement patterns, system bottlenecks, and infrastructure issues  
+- Recommend technical fixes, performance improvements, and system optimizations
+- Monitor for security issues, data anomalies, and operational concerns
+
+ADMIN RESPONSE STYLE:
+- Lead with technical status and system health insights
+- Use metrics and performance data to support recommendations
+- Identify potential issues before they become critical
+- Provide actionable technical recommendations
+- Reference system logs, error rates, and performance benchmarks
+
+ADMIN PRIORITIES:
+1. System reliability and uptime
+2. Performance optimization opportunities  
+3. Security and data integrity
+4. User experience improvements from technical perspective
+5. Resource utilization and cost optimization
+
+Page Context: ${context?.pageContext || 'General admin overview'}
+
+Respond as a technical system administrator would, focusing on operational excellence.`
+              : `You are a War Room campaign analyst with EXCLUSIVE access to this live dashboard data. You must ONLY reference the specific data provided below. NEVER mention training data, general knowledge, or anything outside this dashboard context.
 
 ${dashboardContext}
 

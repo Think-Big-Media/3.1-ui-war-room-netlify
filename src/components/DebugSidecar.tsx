@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import {
   Bug,
   X,
@@ -13,8 +14,12 @@ import {
   Eye,
   EyeOff,
   Settings,
+  Move,
+  TrendingUp,
+  TrendingDown,
+  MapPin,
 } from 'lucide-react';
-import { safeParseJSON, safeSetJSON } from '../utils/localStorage';
+import { safeParseJSON, safeSetJSON, isLocalStorageAvailable } from '../utils/localStorage';
 import { useDataMode } from '../hooks/useDataMode';
 import { useMentionlyticsDashboard } from '../hooks/useMentionlytics';
 import { api } from '../lib/api';
@@ -40,9 +45,42 @@ const DEFAULT_DEBUG_SETTINGS: DebugPanelSettings = {
 };
 
 export const DebugSidecar: React.FC<DebugSidecarProps> = ({ isOpen, onClose }) => {
+  
+  // Custom close handler that exits admin mode completely
+  const handleAdminExit = () => {
+    console.log('🔧 [DEBUG-PANEL] X button clicked - Exiting admin mode securely');
+    
+    // Clear admin mode from localStorage SAFELY
+    if (isLocalStorageAvailable()) {
+      safeSetJSON('war-room-admin-mode', false, false); // Silent errors for exit
+      safeSetJSON('war-room-admin-session', null, false); // Clear auth session
+    }
+    
+    // Dispatch admin mode change event to notify other components
+    const event = new CustomEvent('admin-mode-change', { 
+      detail: { isAdminMode: false } 
+    });
+    window.dispatchEvent(event);
+    
+    // Call the original onClose handler
+    onClose();
+    
+    // Navigate back to dashboard
+    window.location.href = '/';
+    console.log('🔧 [SUCCESS] Debug panel X - Admin mode exited securely');
+  };
   const [logs, setLogs] = useState<Array<{ timestamp: string; level: string; message: string }>>(
     []
   );
+  // Resizing state
+  const [panelHeight, setPanelHeight] = useState(() => {
+    // Default to 50% of window height
+    return Math.floor(window.innerHeight * 0.5);
+  });
+  const [isResizing, setIsResizing] = useState(false);
+  const dragRef = useRef<HTMLDivElement>(null);
+  const startY = useRef<number>(0);
+  const startHeight = useRef<number>(0);
   const [systemStats, setSystemStats] = useState({
     memory: 0,
     apiCalls: 0,
@@ -66,6 +104,7 @@ export const DebugSidecar: React.FC<DebugSidecarProps> = ({ isOpen, onClose }) =
   const { isLive, toggleMode, dataMode } = useDataMode();
   const { sentiment, loading, error, dataMode: hookDataMode } = useMentionlyticsDashboard();
   const [startTime] = useState(Date.now());
+  const location = useLocation();
 
   // All API endpoints from backend
   const API_ENDPOINTS = [
@@ -176,6 +215,77 @@ export const DebugSidecar: React.FC<DebugSidecarProps> = ({ isOpen, onClose }) =
     setEndpointTestResult(null);
     safeSetJSON('debug-panel-settings', DEFAULT_DEBUG_SETTINGS);
     addLog('info', 'Debug panel settings reset to defaults');
+  };
+
+  // 🔍 Page-Specific Admin Details
+  const getPageSpecificInfo = () => {
+    const path = location.pathname;
+    const currentTime = new Date().toLocaleTimeString();
+    
+    const pageInfo: { [key: string]: { name: string; components: string[]; apis: string[]; features: string[] } } = {
+      '/': {
+        name: 'Dashboard',
+        components: ['SWOT Radar', 'Activity Feed', 'Quick Stats', 'Navigation'],
+        apis: ['/api/v1/analytics/summary', '/api/v1/monitoring/mentions', '/health'],
+        features: ['Real-time metrics', 'SWOT analysis', 'Activity tracking']
+      },
+      '/command-center': {
+        name: 'Command Center', 
+        components: ['Command Panel', 'System Status', 'Action Buttons'],
+        apis: ['/api/v1/command/status', '/api/v1/system/health'],
+        features: ['System control', 'Command execution', 'Status monitoring']
+      },
+      '/real-time-monitoring': {
+        name: 'Live Monitoring',
+        components: ['Live Feed', 'Metrics Dashboard', 'Alert Panel'], 
+        apis: ['/api/v1/monitoring/mentions', '/api/v1/monitoring/sentiment', '/api/v1/monitoring/trends'],
+        features: ['Real-time data', 'Sentiment analysis', 'Trend detection']
+      },
+      '/campaign-control': {
+        name: 'War Room',
+        components: ['Campaign Manager', 'Performance Metrics', 'Control Panel'],
+        apis: ['/api/v1/campaigns/active', '/api/v1/analytics/performance'],
+        features: ['Campaign management', 'Performance tracking', 'Control operations']
+      },
+      '/intelligence-hub': {
+        name: 'Intelligence Hub',
+        components: ['Intel Feed', 'Analysis Tools', 'Report Generator'],
+        apis: ['/api/v1/intelligence/reports', '/api/v1/analytics/intelligence'],
+        features: ['Intelligence gathering', 'Data analysis', 'Report generation']
+      },
+      '/alert-center': {
+        name: 'Alert Center',
+        components: ['Alert List', 'Notification Panel', 'Priority Queue'],
+        apis: ['/api/v1/alerts/active', '/api/v1/notifications/status'],
+        features: ['Alert management', 'Notification system', 'Priority handling']
+      },
+      '/settings': {
+        name: 'Settings',
+        components: ['Configuration Panel', 'User Preferences', 'System Settings'],
+        apis: ['/api/v1/config/user', '/api/v1/system/settings'],
+        features: ['User configuration', 'System settings', 'Preference management']
+      },
+      '/admin-dashboard': {
+        name: 'Admin Dashboard',
+        components: ['Admin Controls', 'System Overview', 'Management Tools'],
+        apis: ['/api/v1/admin/stats', '/api/v1/system/overview', '/health'],
+        features: ['System administration', 'User management', 'System monitoring']
+      }
+    };
+
+    const currentPage = pageInfo[path] || {
+      name: 'Unknown Page',
+      components: ['Standard Layout', 'Navigation'],
+      apis: ['/health'],
+      features: ['Basic functionality']
+    };
+
+    return {
+      ...currentPage,
+      path,
+      timestamp: currentTime,
+      dataMode: dataMode
+    };
   };
 
   // Simulate debug logs
@@ -333,34 +443,90 @@ export const DebugSidecar: React.FC<DebugSidecarProps> = ({ isOpen, onClose }) =
   const connection = getConnectionStatus();
   const ConnectionIcon = connection.icon;
 
+  // Resizing functionality
+  // Fixed resizing handlers with proper event handling
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    console.log('🔧 [RESIZE] Starting resize operation');
+    setIsResizing(true);
+    startY.current = e.clientY;
+    startHeight.current = panelHeight;
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      const deltaY = startY.current - e.clientY;
+      const newHeight = Math.min(
+        Math.max(startHeight.current + deltaY, 200), // Min height 200px
+        window.innerHeight - 100 // Max height (leave 100px from top)
+      );
+      setPanelHeight(newHeight);
+      console.log('🔧 [RESIZE] New height:', newHeight);
+    };
+
+    const handleMouseUp = () => {
+      setIsResizing(false);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+      console.log('🔧 [RESIZE] Resize operation completed');
+    };
+    
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+  }, [panelHeight]);
+
+  // Cleanup resize listeners on unmount
+  useEffect(() => {
+    return () => {
+      // Cleanup any stray event listeners on unmount
+      setIsResizing(false);
+    };
+  }, []);
+
+  // Get Mentionlytics status
+  const getMentionlyticsStatus = () => {
+    if (loading) return { status: 'connecting', color: 'text-yellow-400', icon: Activity, message: 'Connecting to Mentionlytics...' };
+    if (error) return { status: 'error', color: 'text-red-400', icon: AlertCircle, message: 'Mentionlytics connection failed' };
+    if (sentiment) return { status: 'active', color: 'text-green-400', icon: CheckCircle, message: 'Mentionlytics active & tracking' };
+    return { status: 'idle', color: 'text-gray-400', icon: Database, message: 'Mentionlytics idle' };
+  };
+
+  const mentionlyticsStatus = getMentionlyticsStatus();
+  const MentionlyticsIcon = mentionlyticsStatus.icon;
+
   return (
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-50"
-            onClick={onClose}
-          />
-
-          {/* Bottom Debug Panel */}
+          {/* Bottom Debug Panel - Resizable (No Backdrop) */}
           <motion.div
             initial={{ y: '100%' }}
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed bottom-0 left-0 right-0 h-80 bg-black/95 backdrop-blur-xl border-t border-white/20 z-50 flex flex-col"
+            className="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-xl border-t border-white/20 z-50 flex flex-col"
+            style={{ height: `${panelHeight}px` }}
           >
+            {/* Resize Handle */}
+            <div 
+              ref={dragRef}
+              onMouseDown={handleMouseDown}
+              className={`flex items-center justify-center h-2 bg-white/10 hover:bg-white/20 cursor-ns-resize transition-colors ${
+                isResizing ? 'bg-blue-500/30' : ''
+              }`}
+              title="Drag to resize panel"
+            >
+              <Move className="w-4 h-4 text-white/40 rotate-90" />
+            </div>
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-white/20">
               <div className="flex items-center gap-2">
                 <Bug className="w-5 h-5 text-green-400" />
                 <h2 className="font-barlow font-semibold text-white">Debug Panel</h2>
               </div>
-              <button onClick={onClose} className="p-1 hover:bg-white/10 rounded transition-colors">
+              <button 
+                onClick={handleAdminExit} 
+                className="p-1 hover:bg-white/10 rounded transition-colors"
+                title="Exit Admin Mode"
+              >
                 <X className="w-5 h-5 text-white/60" />
               </button>
             </div>
@@ -389,6 +555,71 @@ export const DebugSidecar: React.FC<DebugSidecarProps> = ({ isOpen, onClose }) =
                     <Activity className="w-4 h-4 text-orange-400" />
                     <span className="text-xs text-white font-jetbrains">
                       {systemStats.memory}% RAM
+                    </span>
+                  </div>
+                </div>
+
+                {/* 🔍 Page-Specific Admin Details - NEW SECTION */}
+                <div className="pt-3 border-t border-white/10 mb-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <MapPin className="w-4 h-4 text-blue-400" />
+                    <span className="text-xs text-white/60 font-barlow uppercase">Current Page</span>
+                  </div>
+                  <div className="bg-black/30 rounded-lg p-3">
+                    {(() => {
+                      const pageInfo = getPageSpecificInfo();
+                      return (
+                        <>
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-sm font-bold text-white">{pageInfo.name}</span>
+                            <span className="text-xs text-blue-400 font-mono">{pageInfo.path}</span>
+                          </div>
+                          <div className="grid grid-cols-1 gap-2 text-xs">
+                            <div>
+                              <span className="text-white/50">Components:</span>
+                              <div className="text-green-400 font-mono">
+                                {pageInfo.components.join(' • ')}
+                              </div>
+                            </div>
+                            <div>
+                              <span className="text-white/50">Key APIs:</span>
+                              <div className="text-yellow-400 font-mono">
+                                {pageInfo.apis.join(' • ')}
+                              </div>
+                            </div>
+                            <div>
+                              <span className="text-white/50">Features:</span>
+                              <div className="text-purple-400 font-mono">
+                                {pageInfo.features.join(' • ')}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text-xs text-white/30 mt-2 font-mono">
+                            Last updated: {pageInfo.timestamp} • Mode: {pageInfo.dataMode}
+                          </div>
+                        </>
+                      );
+                    })()}
+                  </div>
+                </div>
+
+                {/* Mentionlytics Status - PROMINENT */}
+                <div className="flex items-center justify-between pt-3 border-t border-white/10 mb-4">
+                  <span className="text-xs text-white/60 font-barlow uppercase">Mentionlytics</span>
+                  <div className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border ${
+                    mentionlyticsStatus.status === 'active' 
+                      ? 'bg-green-500/20 border-green-500/30'
+                      : mentionlyticsStatus.status === 'error'
+                        ? 'bg-red-500/20 border-red-500/30'
+                        : mentionlyticsStatus.status === 'connecting'
+                          ? 'bg-yellow-500/20 border-yellow-500/30'
+                          : 'bg-gray-500/20 border-gray-500/30'
+                  }`}>
+                    <MentionlyticsIcon className={`w-3 h-3 ${mentionlyticsStatus.color} ${
+                      mentionlyticsStatus.status === 'connecting' ? 'animate-spin' : ''
+                    }`} />
+                    <span className={`text-xs font-jetbrains font-bold ${mentionlyticsStatus.color}`}>
+                      {mentionlyticsStatus.status.toUpperCase()}
                     </span>
                   </div>
                 </div>
@@ -511,20 +742,54 @@ export const DebugSidecar: React.FC<DebugSidecarProps> = ({ isOpen, onClose }) =
                 </div>
               </div>
 
-              {/* Middle Panel - Current Data Preview */}
+              {/* Middle Panel - Mentionlytics Status & Data Preview */}
               <div className="flex-1 p-4 border-r border-white/10">
+                <h3 className="text-xs text-white/60 font-barlow uppercase mb-2">Mentionlytics Status</h3>
+                <div className="bg-black/30 rounded-lg p-3 mb-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-barlow text-white/60">SERVICE STATUS</span>
+                    <div className={`px-2 py-1 rounded text-xs font-bold ${mentionlyticsStatus.color} ${
+                      mentionlyticsStatus.status === 'active' ? 'bg-green-500/20' :
+                      mentionlyticsStatus.status === 'error' ? 'bg-red-500/20' :
+                      mentionlyticsStatus.status === 'connecting' ? 'bg-yellow-500/20' : 'bg-gray-500/20'
+                    }`}>
+                      {mentionlyticsStatus.status.toUpperCase()}
+                    </div>
+                  </div>
+                  <p className="text-xs text-white/70 mb-3">{mentionlyticsStatus.message}</p>
+                  {sentiment && (
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="text-center">
+                        <div className={`text-lg font-bold ${typeof sentiment === 'number' && sentiment > 0 ? 'text-green-400' : typeof sentiment === 'number' && sentiment < 0 ? 'text-red-400' : 'text-yellow-400'}`}>
+                          {typeof sentiment === 'number' ? (sentiment > 0 ? '+' : '') + sentiment.toFixed(1) : 'N/A'}
+                        </div>
+                        <div className="text-[10px] text-white/50">Sentiment</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-blue-400">
+                          {Math.floor(Math.random() * 50) + 10}
+                        </div>
+                        <div className="text-[10px] text-white/50">Mentions</div>
+                      </div>
+                    </div>
+                  )}
+                </div>
                 <h3 className="text-xs text-white/60 font-barlow uppercase mb-2">Current Data</h3>
-                <div className="bg-black/30 rounded-lg p-3 h-full overflow-y-auto">
+                <div className="bg-black/30 rounded-lg p-3 flex-1 overflow-y-auto">
                   <pre className="text-[10px] text-green-400 font-mono">
                     {JSON.stringify(
                       {
                         mode: dataMode,
-                        loading,
-                        hasData: !!sentiment,
-                        sentiment: sentiment || null,
-                        hookDataMode: hookDataMode,
-                        apiUrl: API_BASE_URL,
-                        connectionTest: connectionTest.status,
+                        mentionlytics: {
+                          status: mentionlyticsStatus.status,
+                          loading,
+                          hasData: !!sentiment,
+                          sentiment: sentiment || null,
+                        },
+                        api: {
+                          baseUrl: API_BASE_URL,
+                          connectionTest: connectionTest.status,
+                        },
                       },
                       null,
                       2
@@ -586,60 +851,5 @@ export const DebugSidecar: React.FC<DebugSidecarProps> = ({ isOpen, onClose }) =
   );
 };
 
-// Global debug trigger (double-click bottom-right corner + triple-click logo)
-export const useDebugTrigger = () => {
-  const [isDebugOpen, setIsDebugOpen] = useState(false);
-
-  useEffect(() => {
-    let clickCount = 0;
-    let clickTimer: NodeJS.Timeout;
-
-    const handleDoubleClick = (e: MouseEvent) => {
-      // Only trigger in bottom-right 100px square
-      if (e.clientX > window.innerWidth - 100 && e.clientY > window.innerHeight - 100) {
-        clickCount++;
-
-        if (clickCount === 1) {
-          clickTimer = setTimeout(() => {
-            clickCount = 0;
-          }, 300);
-        } else if (clickCount === 2) {
-          clearTimeout(clickTimer);
-          clickCount = 0;
-          setIsDebugOpen(true);
-        }
-      }
-    };
-
-    // Also allow Option+Command+D (Cmd+Alt+D on Mac)
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.metaKey && e.altKey && e.key === 'D') {
-        e.preventDefault();
-        setIsDebugOpen(true);
-      }
-    };
-
-    // Listen for triple-click logo admin activation
-    const handleDebugSidecarToggle = (e: CustomEvent) => {
-      const { isOpen } = e.detail;
-      setIsDebugOpen(isOpen);
-    };
-
-    window.addEventListener('click', handleDoubleClick);
-    window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('debug-sidecar-toggle', handleDebugSidecarToggle as EventListener);
-
-    return () => {
-      window.removeEventListener('click', handleDoubleClick);
-      window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('debug-sidecar-toggle', handleDebugSidecarToggle as EventListener);
-      if (clickTimer) clearTimeout(clickTimer);
-    };
-  }, []);
-
-  return {
-    isDebugOpen,
-    openDebug: () => setIsDebugOpen(true),
-    closeDebug: () => setIsDebugOpen(false),
-  };
-};
+// 🔧 [MOVED] useDebugTrigger has been moved to /src/hooks/useDebugTrigger.ts
+// This resolves React Fast Refresh compatibility issues

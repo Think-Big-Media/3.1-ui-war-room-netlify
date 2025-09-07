@@ -32,14 +32,14 @@
 # API Proxy - Forward all /api/* requests to Encore backend
 [[redirects]]
   from = "/api/*"
-  to = "https://war-room-3-backend-d2msjrk82vjjq794glog.lp.dev/api/:splat"
+  to = "https://staging-war-room-backend-foundation-z9n2.encr.app/api/:splat"
   status = 200
   force = true
   
 # Additional API endpoints if needed
 [[redirects]]
   from = "/auth/*"
-  to = "https://war-room-3-backend-d2msjrk82vjjq794glog.lp.dev/auth/:splat"
+  to = "https://staging-war-room-backend-foundation-z9n2.encr.app/auth/:splat"
   status = 200
   force = true
 
@@ -48,17 +48,17 @@
   [context.production.environment]
     NODE_ENV = "production"
     REACT_APP_ENV = "production"
-    VITE_ENCORE_API_URL = "https://war-room-backend-d2qou4c82vjupa5k36ug.lp.dev"
+    VITE_ENCORE_API_URL = "https://staging-war-room-backend-foundation-z9n2.encr.app"
     VITE_USE_MOCK_DATA = "false"
 
 [context.branch-deploy]
   [context.branch-deploy.environment]
     NODE_ENV = "development"
-    VITE_ENCORE_API_URL = "https://war-room-backend-d2qou4c82vjupa5k36ug.lp.dev"
+    VITE_ENCORE_API_URL = "https://staging-war-room-backend-foundation-z9n2.encr.app"
     VITE_USE_MOCK_DATA = "true"
 
 [context.deploy-preview]
   [context.deploy-preview.environment]
     NODE_ENV = "development"
-    VITE_ENCORE_API_URL = "https://war-room-backend-d2qou4c82vjupa5k36ug.lp.dev"
+    VITE_ENCORE_API_URL = "https://staging-war-room-backend-foundation-z9n2.encr.app"
     VITE_USE_MOCK_DATA = "true"

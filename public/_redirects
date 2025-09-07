@@ -1,5 +1,13 @@
 # API proxy to Encore backend (must come first)
 /api/*  https://war-room-3-backend-d2msjrk82vjjq794glog.lp.dev/api/:splat  200
 
+# Security redirects - block common attack patterns
+/.env* /404.html 404
+/.git* /404.html 404
+/admin /admin-dashboard 301
+/administrator /404.html 404
+/wp-admin /404.html 404
+/phpmyadmin /404.html 404
+
 # SPA redirect - serve index.html for all routes (catch-all, must be last)
 /*    /index.html   200
