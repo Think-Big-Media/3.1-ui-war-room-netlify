@@ -6,12 +6,11 @@
 
 // API Base URLs
 export const API_CONFIG = {
-  // Backend API - Updated for 4.0 backend integration  
+  // Backend API - Encore deployment  
   backend: {
     baseURL:
-      import.meta.env.VITE_API_URL || 'https://[4.0-BACKEND-URL-TBD].lp.dev',
+      import.meta.env.VITE_API_URL || 'https://staging-einstein-war-room-mvp-zmx2.encr.app',
     timeout: 30000,
-    // Note: 4.0 backend will have /api/v1/ prefixed endpoints to match frontend expectations
   },
 
   // Google Ads API

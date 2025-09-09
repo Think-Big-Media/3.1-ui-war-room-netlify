@@ -30,14 +30,14 @@ export const LiveIntelligence: React.FC = memo(() => {
     const loadPosts = async () => {
       try {
         const mentions = await mentionlyticsService.getMentionsFeed(10);
-        // Check if we're getting synthetic/fake data
-        const isSynthetic = mentions.some(m => 
+        // Check if we're getting synthetic/fake data or no data
+        const isSynthetic = Array.isArray(mentions) ? mentions.some(m => 
           m.id?.includes('synthetic') || 
           m.author === 'Jack Harrison' ||
           m.author === 'PoliticalWire'
-        );
+        ) : false;
         
-        if (isSynthetic || mentions.length === 0) {
+        if (isSynthetic || !Array.isArray(mentions) || mentions.length === 0) {
           // Don't show synthetic data
           setPosts([]);
         } else {

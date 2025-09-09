@@ -200,7 +200,7 @@ export default function Dashboard() {
               ></div>
             </div>
             <div className="text-2xl font-bold text-sky-400 mb-1 font-condensed" style={{fontWeight: 500}}>
-              {sentimentData ? sentimentData.total.toLocaleString() : '1,039'}
+              {sentimentData?.total?.toLocaleString() || '0'}
             </div>
             <div className="text-xs text-white/60 font-jetbrains">24h volume • +12% vs yesterday</div>
           </Card>

@@ -30,11 +30,8 @@ class MentionlyticsService {
   constructor() {
     this.config = getEnvironmentConfig();
     this.endpoints = getAPIEndpoints();
-    // Check if we're in mock mode from localStorage or env
-    this.isMockMode =
-      localStorage.getItem('VITE_USE_MOCK_DATA') === 'true' ||
-      this.config.features.mockMode ||
-      !this.config.mentionlytics.apiToken;
+    // Only use mock mode if explicitly enabled
+    this.isMockMode = localStorage.getItem('VITE_USE_MOCK_DATA') === 'true';
   }
 
   // Toggle between mock and live data
@@ -67,8 +64,8 @@ class MentionlyticsService {
       return response.data;
     } catch (error) {
       console.error('Error fetching sentiment data:', error);
-      // Fallback to mock data if API fails
-      return mockSentimentData;
+      // Return empty data if API fails (no mock fallback)
+      return { positive: 0, negative: 0, neutral: 0, total: 0, period };
     }
   }
 
@@ -87,7 +84,8 @@ class MentionlyticsService {
       return response.data;
     } catch (error) {
       console.error('Error fetching geographic data:', error);
-      return mockGeographicData;
+      // Return empty array if API fails (no mock fallback)
+      return [];
     }
   }
 
@@ -108,7 +106,8 @@ class MentionlyticsService {
       return response.data;
     } catch (error) {
       console.error('Error fetching mentions feed:', error);
-      return mockMentionsFeed.slice(0, limit);
+      // Return empty array if API fails (no mock fallback)
+      return [];
     }
   }
 
@@ -125,7 +124,8 @@ class MentionlyticsService {
       return response.data;
     } catch (error) {
       console.error('Error fetching influencers:', error);
-      return mockInfluencers.slice(0, limit);
+      // Return empty array if API fails (no mock fallback)
+      return [];
     }
   }
 
@@ -146,7 +146,8 @@ class MentionlyticsService {
       return response.data;
     } catch (error) {
       console.error('Error fetching share of voice:', error);
-      return mockShareOfVoice;
+      // Return empty array if API fails (no mock fallback)
+      return [];
     }
   }
 
@@ -163,7 +164,8 @@ class MentionlyticsService {
       return response.data;
     } catch (error) {
       console.error('Error fetching sentiment trends:', error);
-      return mockSentimentTrend.slice(-days);
+      // Return empty array if API fails (no mock fallback)
+      return [];
     }
   }
 
@@ -186,6 +188,7 @@ class MentionlyticsService {
       return response.data;
     } catch (error) {
       console.error('Error fetching trending topics:', error);
+      // Return empty array if API fails
       return [];
     }
   }
