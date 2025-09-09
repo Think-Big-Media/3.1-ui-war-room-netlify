@@ -30,14 +30,27 @@ export const LiveIntelligence: React.FC = memo(() => {
     const loadPosts = async () => {
       try {
         const mentions = await mentionlyticsService.getMentionsFeed(10);
-        const enhancedPosts = mentions.map((mention, index) => ({
-          ...mention,
-          isBreaking: index === 0 && mention.sentiment === 'positive', // Mark first positive as breaking
-          imageUrl: imageUrls[index % imageUrls.length],
-        }));
-        setPosts(enhancedPosts);
+        // Check if we're getting synthetic/fake data
+        const isSynthetic = mentions.some(m => 
+          m.id?.includes('synthetic') || 
+          m.author === 'Jack Harrison' ||
+          m.author === 'PoliticalWire'
+        );
+        
+        if (isSynthetic || mentions.length === 0) {
+          // Don't show synthetic data
+          setPosts([]);
+        } else {
+          const enhancedPosts = mentions.map((mention, index) => ({
+            ...mention,
+            isBreaking: index === 0 && mention.sentiment === 'positive',
+            imageUrl: imageUrls[index % imageUrls.length],
+          }));
+          setPosts(enhancedPosts);
+        }
       } catch (error) {
         console.error('Error loading Live Intelligence posts:', error);
+        setPosts([]); // Clear posts on error
       } finally {
         setLoading(false);
       }
@@ -134,13 +147,20 @@ export const LiveIntelligence: React.FC = memo(() => {
 
     // Subscribe to live feed for new mentions
     const unsubscribe = mentionlyticsService.subscribeToLiveFeed((newMention) => {
+      // Filter out synthetic data
+      if (newMention.id?.includes('synthetic') || 
+          newMention.author === 'Jack Harrison' ||
+          newMention.author === 'PoliticalWire') {
+        return; // Don't add synthetic data
+      }
+      
       const enhancedMention = {
         ...newMention,
-        isBreaking: newMention.sentiment === 'positive' && Math.random() > 0.7, // Random breaking news
+        isBreaking: newMention.sentiment === 'positive' && Math.random() > 0.7,
         imageUrl: imageUrls[Math.floor(Math.random() * imageUrls.length)],
       };
       
-      setPosts((prev) => [enhancedMention, ...prev].slice(0, 10)); // Keep latest 10
+      setPosts((prev) => [enhancedMention, ...prev].slice(0, 10));
     });
 
     return () => {
@@ -176,6 +196,11 @@ export const LiveIntelligence: React.FC = memo(() => {
         {loading ? (
           <div className="flex items-center justify-center h-32">
             <div className="text-white/60 text-sm">Loading intelligence...</div>
+          </div>
+        ) : posts.length === 0 ? (
+          <div className="flex flex-col items-center justify-center h-full gap-4">
+            <div className="text-white/40 text-sm">No live data available</div>
+            <div className="text-white/30 text-xs">Real-time intelligence feed requires active data connection</div>
           </div>
         ) : (
           posts.map((post, index) => (
