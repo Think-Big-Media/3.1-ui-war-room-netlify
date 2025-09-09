@@ -7,7 +7,7 @@ import Card from '../components/shared/Card';
 import { WidgetErrorBoundary } from '../components/shared/ErrorBoundary';
 import { SWOTRadarDashboard } from '../components/generated/SWOTRadarDashboard';
 import CommandStatusBar from '../components/dashboard/CommandStatusBar';
-import MentionlyticsPoliticalMap from '../components/political/MentionlyticsPoliticalMap';
+import EnhancedPoliticalMap from '../components/political/EnhancedPoliticalMap';
 import { DualPieCharts } from '../components/dashboard/DualPieCharts';
 import { PlatformDominanceGrid } from '../components/dashboard/PlatformDominanceGrid';
 import { PhraseCloud } from '../components/dashboard/PhraseCloud';
@@ -263,10 +263,8 @@ export default function Dashboard() {
         <div className="dashboard px-4">
           {/* Left Column */}
           <div className="left-column">
-            {/* Political Map */}
-            <Card variant="glass" padding="md" className="political-map hoverable">
-              <MentionlyticsPoliticalMap />
-            </Card>
+            {/* Enhanced Political Map with Google Civic & FEC Data */}
+            <EnhancedPoliticalMap />
 
             {/* Live Intelligence - Moved to top, made taller */}
             <WidgetErrorBoundary widgetName="Live Intelligence">
