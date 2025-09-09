@@ -83,6 +83,16 @@ export const getEnvironmentConfig = () => {
       projectId: import.meta.env.VITE_MENTIONLYTICS_PROJECT_ID,
     },
 
+    // FEC API credentials
+    fec: {
+      apiKey: import.meta.env.VITE_FEC_API_KEY,
+    },
+
+    // Google Civic Information API
+    googleCivic: {
+      apiKey: import.meta.env.VITE_GOOGLE_CIVIC_API_KEY,
+    },
+
     // Other services
     supabase: {
       url: import.meta.env.VITE_SUPABASE_URL,
@@ -142,24 +152,36 @@ export const hasRealCredentials = () => {
   const hasMentionlyticsCredentials =
     isValidCredential(config.mentionlytics.apiToken);
 
+  const hasFECCredentials =
+    isValidCredential(config.fec.apiKey);
+
+  const hasGoogleCivicCredentials =
+    isValidCredential(config.googleCivic.apiKey);
+
   return {
     meta: hasMetaCredentials,
     googleAds: hasGoogleCredentials,
     sendgrid: hasSendGridCredentials,
     mentionlytics: hasMentionlyticsCredentials,
+    fec: hasFECCredentials,
+    googleCivic: hasGoogleCivicCredentials,
     supabase: hasSupabaseCredentials,
     posthog: hasPostHogCredentials,
     any:
       hasMetaCredentials ||
       hasGoogleCredentials ||
       hasSendGridCredentials ||
-      hasMentionlyticsCredentials,
+      hasMentionlyticsCredentials ||
+      hasFECCredentials ||
+      hasGoogleCivicCredentials,
     all:
       hasMetaCredentials &&
       hasGoogleCredentials &&
       hasSendGridCredentials &&
       hasSupabaseCredentials &&
-      hasMentionlyticsCredentials,
+      hasMentionlyticsCredentials &&
+      hasFECCredentials &&
+      hasGoogleCivicCredentials,
   };
 };
 
@@ -286,6 +308,8 @@ export const getSafeConfigForLogging = () => {
       googleAds: !!config.googleAds.clientId,
       sendgrid: !!config.sendgrid.email,
       mentionlytics: !!config.mentionlytics.apiToken,
+      fec: !!config.fec.apiKey,
+      googleCivic: !!config.googleCivic.apiKey,
       supabase: !!config.supabase.url,
       posthog: !!config.posthog.key,
       openai: !!config.openai.apiKey,

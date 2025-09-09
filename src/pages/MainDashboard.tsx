@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import PageLayout from '../components/shared/PageLayout';
 import { useBackgroundClasses } from '../contexts/BackgroundThemeContext';
+import EnhancedPoliticalMap from '../components/political/EnhancedPoliticalMap';
 import '../main-dashboard.css';
 
 export default function MainDashboard() {
@@ -130,42 +131,8 @@ export default function MainDashboard() {
             <div className="dashboard">
               {/* Left Column */}
               <div className="left-column">
-                {/* Political Map - NO TITLE */}
-                <div className="card political-map">
-                  <div className="map-container">
-                    <div className="map-visual">
-                      {/* Political Map Image */}
-                      <img
-                        src="https://p129.p0.n0.cdn.zight.com/items/BluAK9rN/cb190d20-eec7-4e05-8969-259b1dbd9d69.png?source=client&v=6826eb6cb151acf76bf79d55b23b9628"
-                        alt="Political Map"
-                        className="electoral-map-svg"
-                        style={{
-                          width: '90%',
-                          height: '90%',
-                          objectFit: 'contain',
-                        }}
-                      />
-                    </div>
-                    <div className="map-data">
-                      <div
-                        style={{
-                          fontSize: '9px',
-                          color: '#64748b',
-                          marginBottom: '5px',
-                        }}
-                      >
-                        SWING STATES
-                      </div>
-                      <div className="map-data-item">• Pennsylvania: +2.3% D</div>
-                      <div className="map-data-item">• Michigan: -1.2% R</div>
-                      <div className="map-data-item">• Wisconsin: TOSS UP</div>
-                      <div className="map-data-item">• Arizona: +0.8% R</div>
-                      <div className="map-data-item">• Georgia: +1.5% D</div>
-                      <div className="map-data-item">• Nevada: TOSS UP</div>
-                      <div className="map-data-item">• Florida: +3.2% R</div>
-                    </div>
-                  </div>
-                </div>
+                {/* Enhanced Political Map with Google Civic & FEC Data */}
+                <EnhancedPoliticalMap />
 
                 {/* SWOT Radar + Live Intelligence - ALIGNED */}
                 <div className="card swot-intelligence">
