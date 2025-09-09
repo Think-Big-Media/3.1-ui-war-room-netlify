@@ -9,6 +9,7 @@ export const PhraseCloud: React.FC = () => {
   const [trendingPhrases, setTrendingPhrases] = useState<string[]>([]);
   const [topKeywords, setTopKeywords] = useState<string[]>([]);
   const [competitors, setCompetitors] = useState<any[]>([]);
+  const [twitterPhrases, setTwitterPhrases] = useState<string[]>([]);
 
   useEffect(() => {
     const stored = localStorage.getItem('warRoomCampaignSetup');
@@ -28,20 +29,49 @@ export const PhraseCloud: React.FC = () => {
       }
     }
 
+    // Load actual Twitter data for phrases
+    mentionlyticsService.getMentionsFeed(20).then((mentions) => {
+      if (mentions && mentions.length > 0) {
+        // Extract actual phrases from Twitter content
+        const twitterContent = mentions
+          .map(m => m.text)
+          .filter(text => text && text.length > 20 && text.length < 150)
+          .slice(0, 10);
+        setTwitterPhrases(twitterContent);
+        
+        // Extract keywords from Twitter content
+        const keywords = new Set<string>();
+        mentions.forEach(m => {
+          const words = m.text.toLowerCase().split(/\s+/);
+          words.forEach(word => {
+            if (word.length > 5 && !['https', 'twitter', 'campaign'].includes(word)) {
+              keywords.add(word);
+            }
+          });
+        });
+        const topWords = Array.from(keywords).slice(0, 5);
+        if (topWords.length > 0 && !parsedCampaignData?.keywords) {
+          setTopKeywords(topWords);
+        }
+      }
+    }).catch(err => {
+      console.log('Error loading Twitter content:', err);
+    });
+    
     // Load trending topics from mentionlytics service
     mentionlyticsService.getTrendingTopics().then((topics) => {
       const phrases = topics.map((t: any) => t.topic);
       setTrendingPhrases(phrases);
       
       // If no campaign keywords, use trending topics as fallback
-      if (!parsedCampaignData?.keywords && topics.length > 0) {
+      if (!parsedCampaignData?.keywords && topics.length > 0 && topKeywords.length === 0) {
         const fallbackKeywords = topics.slice(0, 3).map((t: any) => t.topic);
         setTopKeywords(fallbackKeywords);
       }
     }).catch(err => {
       console.log('Using fallback keywords due to:', err);
       // Fallback keywords if Mentionlytics fails
-      if (!parsedCampaignData?.keywords) {
+      if (!parsedCampaignData?.keywords && topKeywords.length === 0) {
         setTopKeywords(['Campaign Focus', 'Key Issues', 'Public Policy']);
       }
     });
@@ -61,19 +91,8 @@ export const PhraseCloud: React.FC = () => {
     'Building a stronger tomorrow',
   ];
 
-  // Social media phrases based on trending topics and campaign activity
-  const socialMediaPhrases = [
-    'New Jersey families are finally seeing real progress on infrastructure investments',
-    'Healthcare reform initiatives are gaining momentum across suburban districts',
-    'Economic development policies are making a tangible difference for working families',
-    'Education funding breakthrough represents a major victory for students statewide',
-    'Climate action initiatives show promising results in environmental protection',
-    'Working class families are getting the support they deserve after years of neglect',
-    'Public safety improvements remain a top priority for community leaders',
-    'Tax reform measures are delivering real benefits to middle class households',
-    'Social Security protection measures ensure retirement security for seniors',
-    'Veterans advocacy programs demonstrate our commitment to those who served',
-  ];
+  // Use actual Twitter content if available, otherwise use defaults
+  const socialMediaPhrases = twitterPhrases.length > 0 ? twitterPhrases : defaultPhrases;
 
   // Combine actual social media phrases based on campaign keywords and trending topics
   const allPhrases = [
