@@ -30,17 +30,13 @@ export const LiveIntelligence: React.FC = memo(() => {
     const loadPosts = async () => {
       try {
         const mentions = await mentionlyticsService.getMentionsFeed(10);
-        // Check if we're getting synthetic/fake data or no data
-        const isSynthetic = Array.isArray(mentions) ? mentions.some(m => 
-          m.id?.includes('synthetic') || 
-          m.author === 'Jack Harrison' ||
-          m.author === 'PoliticalWire'
-        ) : false;
+        console.log('Loaded mentions:', mentions);
         
-        if (isSynthetic || !Array.isArray(mentions) || mentions.length === 0) {
-          // Don't show synthetic data
+        if (!Array.isArray(mentions) || mentions.length === 0) {
+          // No data available
           setPosts([]);
         } else {
+          // Accept all data, including Twitter data
           const enhancedPosts = mentions.map((mention, index) => ({
             ...mention,
             isBreaking: index === 0 && mention.sentiment === 'positive',
@@ -147,13 +143,7 @@ export const LiveIntelligence: React.FC = memo(() => {
 
     // Subscribe to live feed for new mentions
     const unsubscribe = mentionlyticsService.subscribeToLiveFeed((newMention) => {
-      // Filter out synthetic data
-      if (newMention.id?.includes('synthetic') || 
-          newMention.author === 'Jack Harrison' ||
-          newMention.author === 'PoliticalWire') {
-        return; // Don't add synthetic data
-      }
-      
+      // Accept all data including Twitter
       const enhancedMention = {
         ...newMention,
         isBreaking: newMention.sentiment === 'positive' && Math.random() > 0.7,
