@@ -14,16 +14,39 @@ export const LiveIntelligence: React.FC = memo(() => {
   const [posts, setPosts] = useState<SocialPost[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Image URLs for visual enhancement
-  const imageUrls = [
-    'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=120&h=120&fit=crop&crop=faces',
-    'https://images.unsplash.com/photo-1541872705-1f73c6400ec9?w=120&h=120&fit=crop&crop=center',
-    'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=120&h=120&fit=crop&crop=center',
-    'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=120&h=120&fit=crop&crop=center',
-    'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=120&h=120&fit=crop&crop=center',
-    'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=120&h=120&fit=crop&crop=center',
-    'https://images.unsplash.com/photo-1436450412740-6b988f486c6b?w=120&h=120&fit=crop&crop=center',
-  ];
+  // Generate dynamic images based on content
+  const getImageUrl = (mention: any, index: number) => {
+    // Check if mention has an actual image URL
+    if (mention.imageUrl && !mention.imageUrl.includes('unsplash')) {
+      return mention.imageUrl;
+    }
+    
+    // Generate image based on content type
+    const text = (mention.text || mention.content || '').toLowerCase();
+    
+    // Political/government imagery for political content
+    if (text.includes('election') || text.includes('governor') || text.includes('democrat') || text.includes('republican')) {
+      return `https://picsum.photos/seed/politics-${index}/130/130`;
+    }
+    
+    // Policy imagery for policy content
+    if (text.includes('policy') || text.includes('healthcare') || text.includes('education')) {
+      return `https://picsum.photos/seed/policy-${index}/130/130`;
+    }
+    
+    // Campaign imagery for campaign content
+    if (text.includes('campaign') || text.includes('rally') || text.includes('vote')) {
+      return `https://picsum.photos/seed/campaign-${index}/130/130`;
+    }
+    
+    // Generate avatar based on author name
+    const authorName = mention.author || 'Twitter User';
+    const initials = authorName.split(' ').map((n: string) => n[0]).join('').toUpperCase();
+    const bgColor = ['4A90E2', 'E94B3C', '6B5B95', '88B04B', 'F7CAC9', '92A8D1'][index % 6];
+    
+    // Use UI Avatars for a professional look
+    return `https://ui-avatars.com/api/?name=${encodeURIComponent(authorName)}&background=${bgColor}&color=fff&size=130&bold=true`;
+  };
 
   // Load initial data from mentionlytics
   useEffect(() => {
@@ -40,7 +63,7 @@ export const LiveIntelligence: React.FC = memo(() => {
           const enhancedPosts = mentions.map((mention, index) => ({
             ...mention,
             isBreaking: index === 0 && mention.sentiment === 'positive',
-            imageUrl: imageUrls[index % imageUrls.length],
+            imageUrl: getImageUrl(mention, index),
           }));
           setPosts(enhancedPosts);
         }
@@ -147,7 +170,7 @@ export const LiveIntelligence: React.FC = memo(() => {
       const enhancedMention = {
         ...newMention,
         isBreaking: newMention.sentiment === 'positive' && Math.random() > 0.7,
-        imageUrl: imageUrls[Math.floor(Math.random() * imageUrls.length)],
+        imageUrl: getImageUrl(newMention, Math.floor(Math.random() * 10)),
       };
       
       setPosts((prev) => [enhancedMention, ...prev].slice(0, 10));
@@ -157,7 +180,7 @@ export const LiveIntelligence: React.FC = memo(() => {
       clearInterval(interval);
       unsubscribe();
     };
-  }, [posts.length, imageUrls]);
+  }, [posts.length]);
 
   // Handle clicking on a post - navigate to detailed view
   const handlePostClick = (post: SocialPost) => {
