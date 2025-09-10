@@ -1,8 +1,12 @@
-import React, { useState, useMemo, memo } from 'react';
+import React, { useState, useMemo, memo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 import { scaleQuantize } from 'd3-scale';
 import { useGeographicMentions } from '../../hooks/useMentionlytics';
+
+// FEC API Configuration
+const FEC_API_KEY = import.meta.env.VITE_FEC_API_KEY || '3kSPSUh0S5UnrM3XCLYLQcS1H31ILf04n5nqr9He';
+const FEC_API_BASE = 'https://api.open.fec.gov/v1';
 
 // Try different CDN URL format
 const geoUrl = 'https://unpkg.com/us-atlas@3/states-10m.json';
@@ -19,6 +23,10 @@ interface StateData {
   };
   sentimentScore: number;
   topKeywords: string[];
+  // FEC Real Data
+  totalContributions: number;
+  contributors: number;
+  realDataAvailable: boolean;
 }
 
 interface TooltipState {
@@ -32,6 +40,10 @@ const MentionlyticsPoliticalMap: React.FC = memo(() => {
   const navigate = useNavigate();
   const containerRef = React.useRef<HTMLDivElement>(null);
   const { data: mentionlyticsData, loading, dataMode } = useGeographicMentions();
+  
+  // State for real FEC data
+  const [realFECData, setRealFECData] = useState<Record<string, {contributions: number, contributors: number}>>({});
+  const [fecLoading, setFecLoading] = useState(false);
 
   // Removed debug logging - map is working now!
 
@@ -42,7 +54,52 @@ const MentionlyticsPoliticalMap: React.FC = memo(() => {
     data: null,
   });
 
-  // Convert Mentionlytics data to state lookup
+  // Fetch real FEC data for major states
+  useEffect(() => {
+    const fetchRealData = async () => {
+      setFecLoading(true);
+      const majorStates = ['TX', 'FL', 'CA', 'NY', 'PA', 'GA', 'NC', 'MI', 'AZ', 'WI', 'OH', 'VA'];
+      const fecData: Record<string, {contributions: number, contributors: number}> = {};
+
+      for (const state of majorStates) {
+        try {
+          const response = await fetch(
+            `${FEC_API_BASE}/schedules/schedule_a/by_state/?api_key=${FEC_API_KEY}&state=${state}&cycle=2024&per_page=1`
+          );
+          
+          if (response.ok) {
+            const data = await response.json();
+            const total = data.results?.[0]?.total || 0;
+            const count = data.results?.[0]?.count || 0;
+            fecData[state] = { contributions: total, contributors: count };
+            console.log(`Real FEC Data - ${state}: $${total.toLocaleString()}`);
+          }
+        } catch (error) {
+          console.error(`FEC API error for ${state}:`, error);
+        }
+      }
+      
+      setRealFECData(fecData);
+      setFecLoading(false);
+    };
+
+    // Only fetch if we have an API key
+    if (FEC_API_KEY) {
+      fetchRealData();
+    }
+  }, []);
+
+  // Helper function to get state abbreviation from name
+  const getStateAbbr = (stateName: string): string => {
+    const stateMap: Record<string, string> = {
+      'Texas': 'TX', 'Florida': 'FL', 'California': 'CA', 'New York': 'NY',
+      'Pennsylvania': 'PA', 'Georgia': 'GA', 'North Carolina': 'NC', 
+      'Michigan': 'MI', 'Arizona': 'AZ', 'Wisconsin': 'WI', 'Ohio': 'OH', 'Virginia': 'VA'
+    };
+    return stateMap[stateName] || '';
+  };
+
+  // Convert Mentionlytics data to state lookup with real FEC data
   const stateDataMap = useMemo(() => {
     const map = new Map<string, StateData>();
 
@@ -59,6 +116,9 @@ const MentionlyticsPoliticalMap: React.FC = memo(() => {
               100
             : 0;
 
+        const stateAbbr = getStateAbbr(locationData.state);
+        const fecData = realFECData[stateAbbr] || { contributions: 0, contributors: 0 };
+        
         map.set(locationData.state, {
           id: locationData.state,
           name: locationData.state,
@@ -66,12 +126,15 @@ const MentionlyticsPoliticalMap: React.FC = memo(() => {
           sentiment: locationData.sentiment,
           sentimentScore,
           topKeywords: locationData.topKeywords,
+          totalContributions: fecData.contributions,
+          contributors: fecData.contributors,
+          realDataAvailable: fecData.contributions > 0,
         });
       });
     }
 
     return map;
-  }, [mentionlyticsData]);
+  }, [mentionlyticsData, realFECData]);
 
   // Get top states by activity
   const topStates = useMemo(() => {
@@ -84,6 +147,8 @@ const MentionlyticsPoliticalMap: React.FC = memo(() => {
         mentions: state.mentions,
         sentimentScore: state.sentimentScore,
         sentiment: state.sentiment,
+        totalContributions: state.totalContributions,
+        realDataAvailable: state.realDataAvailable,
       }));
   }, [stateDataMap]);
 
@@ -126,7 +191,10 @@ const MentionlyticsPoliticalMap: React.FC = memo(() => {
       mentions: 0,
       sentiment: { positive: 0, negative: 0, neutral: 0 },
       sentimentScore: 0,
-      topKeywords: ['No activity']
+      topKeywords: ['No activity'],
+      totalContributions: 0,
+      contributors: 0,
+      realDataAvailable: false,
     };
 
     setTooltip({
@@ -231,6 +299,10 @@ const MentionlyticsPoliticalMap: React.FC = memo(() => {
         <div className="hidden md:flex w-48 pl-4 flex-col justify-start pt-4">
           <div className="text-xs text-white/60 mb-2 uppercase font-semibold tracking-wider font-barlow text-right">
             TOP ACTIVITY
+            {fecLoading && <div className="text-yellow-400 text-xs">Loading FEC data...</div>}
+            {Object.keys(realFECData).length > 0 && !fecLoading && (
+              <div className="text-green-400 text-xs">🚀 Real FEC Data</div>
+            )}
           </div>
           <div className="space-y-0.5 text-right">
             {topStates.map((state) => {
@@ -241,8 +313,17 @@ const MentionlyticsPoliticalMap: React.FC = memo(() => {
                     ? 'text-sky-400'
                     : 'text-rose-400';
 
-              const displayValue =
-                state.sentimentScore !== 0
+              // Helper function to format money
+              const formatMoney = (amount: number): string => {
+                if (amount >= 1000000000) return `$${(amount / 1000000000).toFixed(1)}B`;
+                if (amount >= 1000000) return `$${(amount / 1000000).toFixed(1)}M`;
+                if (amount >= 1000) return `$${(amount / 1000).toFixed(0)}K`;
+                return `$${amount.toFixed(0)}`;
+              };
+
+              const displayValue = state.realDataAvailable
+                ? formatMoney(state.totalContributions)
+                : state.sentimentScore !== 0
                   ? `${state.sentimentScore > 0 ? '+' : ''}${state.sentimentScore.toFixed(0)}%`
                   : `${state.mentions} mentions`;
 
@@ -315,6 +396,27 @@ const MentionlyticsPoliticalMap: React.FC = memo(() => {
                   {tooltip.data.mentions.toLocaleString()}
                 </span>
               </div>
+
+              {/* Real FEC Data Section */}
+              {tooltip.data.realDataAvailable && (
+                <>
+                  <div className="font-jetbrains border-t border-white/20 pt-2 mt-2">
+                    <div className="text-yellow-400 font-bold mb-1">💰 REAL FEC DATA</div>
+                    <div>Total Contributions: <span className="text-green-400 font-bold">
+                      {(() => {
+                        const amount = tooltip.data.totalContributions;
+                        if (amount >= 1000000000) return `$${(amount / 1000000000).toFixed(1)}B`;
+                        if (amount >= 1000000) return `$${(amount / 1000000).toFixed(1)}M`;
+                        if (amount >= 1000) return `$${(amount / 1000).toFixed(0)}K`;
+                        return `$${amount.toFixed(0)}`;
+                      })()}
+                    </span></div>
+                    <div>Contributors: <span className="text-blue-400 font-bold">
+                      {tooltip.data.contributors.toLocaleString()}
+                    </span></div>
+                  </div>
+                </>
+              )}
 
               <div className="grid grid-cols-3 gap-1 text-xs mb-2">
                 <div className="text-emerald-400">+{tooltip.data.sentiment.positive}</div>
